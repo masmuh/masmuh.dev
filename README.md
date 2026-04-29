@@ -1,62 +1,62 @@
 # Personal Portfolio Website
 
-Website portfolio profesional yang dibangun menggunakan **Astro**. Proyek ini menampilkan showcase proyek, pengalaman kerja, dan detail teknis dari berbagai sistem yang telah dikembangkan.
+A professional portfolio website built using **Astro**. This project showcases projects, work experience, and technical details of various systems developed.
 
-## 🚀 Struktur Direktori
+## 🚀 Directory Structure
 
-Berikut adalah struktur folder dalam proyek ini:
+Here is the folder structure in this project:
 
 ```text
 /
 ├── src/
-│   ├── assets/             # Aset gambar dan media
-│   ├── components/         # Komponen UI Astro yang dapat digunakan kembali
-│   ├── content/            # Konten berbasis Markdown/MDX
-│   │   ├── projects/       # Data proyek (Case Studies)
-│   │   └── gallery/        # Data galeri
-│   ├── layouts/            # Template layout halaman utama
-│   ├── pages/              # Rute/Halaman website (index, portfolio, dll)
-│   │   └── projects/       # Halaman dinamis untuk detail proyek
-│   └── styles/             # File CSS/Styling
-├── public/                 # Aset statis yang tidak diproses (favicon, dll)
-├── update-metadata.cjs     # Script utilitas untuk memperbarui metadata proyek
-├── cleanup-markdown.cjs    # Script untuk membersihkan file markdown
-├── astro.config.mjs        # Konfigurasi utama Astro
-└── package.json            # Daftar dependensi dan script NPM
+│   ├── assets/             # Image and media assets
+│   ├── components/         # Reusable Astro UI components
+│   ├── content/            # Markdown/MDX based content
+│   │   ├── projects/       # Project data (Case Studies)
+│   │   └── gallery/        # Gallery data
+│   ├── layouts/            # Main page layout templates
+│   ├── pages/              # Website routes/pages (index, portfolio, etc.)
+│   │   └── projects/       # Dynamic pages for project details
+│   └── styles/             # CSS/Styling files
+├── public/                 # Unprocessed static assets (favicon, etc.)
+├── update-metadata.cjs     # Utility script to update project metadata
+├── cleanup-markdown.cjs    # Script to clean up markdown files
+├── astro.config.mjs        # Main Astro configuration
+└── package.json            # List of dependencies and NPM scripts
 ```
 
-## 🛠️ Teknologi yang Digunakan
+## 🛠️ Technologies Used
 
 - **Framework:** [Astro](https://astro.build/)
 - **Content Management:** Markdown & Astro Content Collections
 - **Styling:** Vanilla CSS / Custom Styles
 - **Runtime:** Node.js
 
-## 💻 Cara Menjalankan Proyek
+## 💻 How to Run the Project
 
-Pastikan Anda sudah menginstal [Node.js](https://nodejs.org/).
+Ensure you have [Node.js](https://nodejs.org/) installed.
 
-1. **Instal Dependensi:**
+1. **Install Dependencies:**
    ```bash
    npm install
    ```
 
-2. **Jalankan Development Server:**
+2. **Run Development Server:**
    ```bash
    npm run dev
    ```
-   Buka `http://localhost:4321` di browser Anda.
+   Open `http://localhost:4321` in your browser.
 
-3. **Build untuk Produksi:**
+3. **Build for Production:**
    ```bash
    npm run build
    ```
 
-## 📝 Catatan Tambahan
+## 📝 Additional Notes
 
-Proyek ini menyertakan beberapa script khusus (`.cjs`) untuk membantu otomatisasi pemeliharaan konten:
-- `update-metadata.cjs`: Digunakan untuk sinkronisasi metadata dari file proyek.
-- `cleanup-markdown.cjs`: Membantu merapikan format file markdown di folder content.
+This project includes several custom scripts (`.cjs`) to help automate content maintenance:
+- `update-metadata.cjs`: Used to synchronize metadata from project files.
+- `cleanup-markdown.cjs`: Helps tidy up markdown file formatting in the content folder.
 
 ---
-*Dibuat dengan ❤️ menggunakan Astro.*
+*Built with ❤️ using Astro.*
