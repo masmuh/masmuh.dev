@@ -1,6 +1,6 @@
 ---
 title: "ISMS NextGen"
-client: "Kano Solution"
+client: "Sampoerna"
 date: "January 2026"
 category: "corporate"
 type: "Logistics Core · Distributed"

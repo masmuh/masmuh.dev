@@ -1,6 +1,6 @@
 ---
 title: "ISMS Echomail"
-client: "Kano Solution"
+client: "Sampoerna"
 date: "January 2026"
 category: "corporate"
 type: "Background Service · Notification Engine"

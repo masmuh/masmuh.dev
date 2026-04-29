@@ -1,6 +1,6 @@
 ---
 title: "ISMS EaseHub"
-client: "Philip Morris Indonesia"
+client: "Sampoerna"
 date: "January 2026"
 category: "corporate"
 type: "Warehouse Management · WMS"

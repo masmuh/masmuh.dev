@@ -1,6 +1,6 @@
 ---
 title: "KaniTax Automation"
-client: "Sampoerna"
+client: "Tri Hasta Perkasa"
 date: "January 2026"
 category: "corporate"
 type: "Financial · Compliance"

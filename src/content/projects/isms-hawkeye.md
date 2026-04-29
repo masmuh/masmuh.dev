@@ -1,6 +1,6 @@
 ---
 title: "ISMS Hawkeye"
-client: "Kano Solution"
+client: "Sampoerna"
 date: "January 2026"
 category: "corporate"
 type: "Observability · Monitoring"

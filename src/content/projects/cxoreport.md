@@ -1,6 +1,6 @@
 ---
 title: "CXOStaging Backend"
-client: "CXO Software"
+client: "Bagong"
 date: "February 2026"
 category: "corporate"
 type: "Financial Reporting · ETL"

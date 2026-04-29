@@ -1,6 +1,6 @@
 ---
 title: "EMS Enterprise Suite"
-client: "Kano Solution"
+client: "Sampoerna"
 date: "January 2026"
 category: "corporate"
 type: "Business Ops · ERP-Lite"
