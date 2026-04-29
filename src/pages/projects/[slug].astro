@@ -1,0 +1,222 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((entry) => ({
+    params: { slug: entry.id.replace('.md', '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, client, date, description } = entry.data;
+---
+
+<Layout title={`${title} — Project Detail`}>
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">← Back to Portfolio</a>
+  </nav>
+
+  <article class="project-detail reveal">
+    <header class="project-header">
+      <div class="project-eyebrow">// Project Overview</div>
+      <h1 class="project-title">{title}</h1>
+      <div class="project-meta">
+        {client && (
+          <div class="meta-item">
+            <span class="meta-label">Client</span>
+            <span class="meta-value">{client}</span>
+          </div>
+        )}
+        {date && (
+          <div class="meta-item">
+            <span class="meta-label">Date</span>
+            <span class="meta-value">{date}</span>
+          </div>
+        )}
+      </div>
+      {description && <p class="project-subtitle">{description}</p>}
+    </header>
+
+    <div class="project-content">
+      <Content />
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-txt">© 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+  /* Premium Project Detail Styles */
+  .project-detail {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 140px 60px 100px;
+  }
+
+  .project-header {
+    margin-bottom: 80px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 40px;
+  }
+
+  .project-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .project-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .project-meta {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .meta-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .meta-value {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 400;
+  }
+
+  .project-subtitle {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  /* Markdown Content Styling */
+  .project-content {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--white);
+  }
+
+  .project-content h1, 
+  .project-content h2, 
+  .project-content h3 {
+    font-family: var(--font-display);
+    color: var(--cyan);
+    margin: 48px 0 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .project-content h2 { font-size: 28px; }
+  .project-content h3 { font-size: 22px; }
+
+  .project-content p {
+    margin-bottom: 24px;
+    color: var(--muted);
+  }
+
+  .project-content strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .project-content ul, 
+  .project-content ol {
+    margin-bottom: 32px;
+    padding-left: 20px;
+    list-style: none;
+  }
+
+  .project-content li {
+    margin-bottom: 12px;
+    position: relative;
+    color: var(--muted);
+  }
+
+  .project-content li::before {
+    content: '→';
+    position: absolute;
+    left: -25px;
+    color: var(--green);
+    font-family: var(--font-mono);
+  }
+
+  .project-content code {
+    font-family: var(--font-mono);
+    background: var(--surface);
+    padding: 2px 6px;
+    border: 1px solid var(--border);
+    color: var(--green);
+    font-size: 0.9em;
+  }
+
+  .project-content pre {
+    background: var(--bg2) !important;
+    border: 1px solid var(--border);
+    padding: 24px;
+    margin: 32px 0;
+    overflow-x: auto;
+  }
+
+  .project-content pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--white);
+  }
+
+  .project-content blockquote {
+    border-left: 3px solid var(--cyan);
+    padding: 16px 24px;
+    margin: 32px 0;
+    background: var(--cyan-glow);
+    font-style: italic;
+  }
+
+  .project-content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  @media (max-width: 768px) {
+    .project-detail {
+      padding: 100px 24px 60px;
+    }
+    .project-header {
+      margin-bottom: 40px;
+    }
+  }
+</style>

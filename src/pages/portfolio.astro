@@ -1,0 +1,369 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<Layout title="Portfolio — Mas Muhammad">
+  <nav>
+    <a href="/" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/" class="nav-back">← Back to Home</a>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-eyebrow">// Selected Work</div>
+    <h1 class="page-title">Portfolio</h1>
+    <p class="page-subtitle">
+      A collection of corporate, open-source, consulting, and personal projects
+      — spanning enterprise architectures, autonomous AI pipelines, and
+      high-performance backend systems.
+    </p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="corporate">Corporate</button>
+    <button class="filter-btn" data-filter="open-source">Open Source</button>
+    <button class="filter-btn" data-filter="personal">Personal</button>
+    <button class="filter-btn" data-filter="consulting">Consulting</button>
+  </div>
+
+  <div class="grid" id="grid">
+    {
+      projects.map((project) => (
+        <a
+          href={`/projects/${project.id}`}
+          class="card reveal"
+          data-cat={project.data.category}
+        >
+          <div class={`card-thumb ${project.data.thumbClass || "thumb-shell"}`}>
+            <div class="thumb-bg" />
+            <div class="thumb-icon">{project.data.icon}</div>
+            <span class="thumb-label">{project.data.category}</span>
+          </div>
+          <div class="card-body">
+            <div class="card-type">{project.data.type}</div>
+            <div class="card-name">{project.data.title}</div>
+            <div class="card-desc">{project.data.description}</div>
+            <div class="card-stack">
+              {project.data.stack.map((tag) => (
+                <span class="stack-tag">{tag}</span>
+              ))}
+            </div>
+            <div class="card-link">View Details</div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+
+  <footer>
+    <div class="footer-left">© 2026 <span>Mas Muhammad</span></div>
+    <div class="footer-center">PORTFOLIO.SHIELD // {projects.length} PROJECTS</div>
+    <div class="footer-right">
+      Indonesia 🇮🇩
+    </div>
+  </footer>
+
+  <script>
+    // FILTER LOGIC
+    function filter(cat, btn) {
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.querySelectorAll(".card").forEach((card) => {
+        if (cat === "all" || card.dataset.cat === cat) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    document.querySelectorAll(".filter-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filter(btn.dataset.filter, btn);
+      });
+    });
+  </script>
+</Layout>
+
+<style>
+  .page-header {
+    padding: 140px 60px 60px;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  .page-subtitle {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 500px;
+    line-height: 1.8;
+  }
+
+  .filter-bar {
+    padding: 32px 60px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-btn {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .filter-btn.active,
+  .filter-btn:hover {
+    border-color: var(--border-bright);
+    color: var(--cyan);
+    background: var(--cyan-glow);
+  }
+
+  .grid {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: block;
+  }
+  .card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--green));
+    transform: scaleX(0);
+    transition: transform 0.4s;
+    transform-origin: left;
+  }
+  .card:hover {
+    border-color: var(--border-bright);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+  .card:hover::after {
+    transform: scaleX(1);
+  }
+
+  .card-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-thumb-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .thumb-icon {
+    font-size: 48px;
+    opacity: 0.6;
+    position: relative;
+    z-index: 1;
+  }
+  .thumb-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+  }
+
+  /* Unique thumb BGs */
+  .thumb-oats {
+    background: radial-gradient(ellipse at 30% 50%, #1a0a2e, #050810);
+  }
+  .thumb-oats .thumb-bg {
+    background: linear-gradient(135deg, #6b21a8, #3b0764);
+  }
+  .thumb-wicara {
+    background: radial-gradient(ellipse at 70% 30%, #0a1a2e, #050810);
+  }
+  .thumb-wicara .thumb-bg {
+    background: linear-gradient(135deg, #0c4a6e, #082f49);
+  }
+  .thumb-jobhunter {
+    background: radial-gradient(ellipse at 50% 70%, #0a2e1a, #050810);
+  }
+  .thumb-jobhunter .thumb-bg {
+    background: linear-gradient(135deg, #14532d, #052e16);
+  }
+  .thumb-foculing {
+    background: radial-gradient(ellipse at 80% 20%, #2e1a0a, #050810);
+  }
+  .thumb-foculing .thumb-bg {
+    background: linear-gradient(135deg, #7c2d12, #431407);
+  }
+  .thumb-msglow {
+    background: radial-gradient(ellipse at 20% 80%, #0a2e2e, #050810);
+  }
+  .thumb-msglow .thumb-bg {
+    background: linear-gradient(135deg, #134e4a, #042f2e);
+  }
+  .thumb-academic {
+    background: radial-gradient(ellipse at 60% 40%, #1a2e0a, #050810);
+  }
+  .thumb-academic .thumb-bg {
+    background: linear-gradient(135deg, #365314, #1a2e05);
+  }
+  .thumb-sampoerna {
+    background: radial-gradient(ellipse at 40% 60%, #2e0a0a, #050810);
+  }
+  .thumb-sampoerna .thumb-bg {
+    background: linear-gradient(135deg, #7f1d1d, #450a0a);
+  }
+  .thumb-shell {
+    background: radial-gradient(ellipse at 70% 50%, #2e240a, #050810);
+  }
+  .thumb-shell .thumb-bg {
+    background: linear-gradient(135deg, #a16207, #422006);
+  }
+  .thumb-telkomsel {
+    background: radial-gradient(ellipse at 30% 70%, #2e0a1a, #050810);
+  }
+  .thumb-telkomsel .thumb-bg {
+    background: linear-gradient(135deg, #9d174d, #4c0519);
+  }
+
+  .thumb-label {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--border-bright);
+    color: var(--cyan);
+    background: rgba(5, 8, 16, 0.7);
+  }
+
+  .card-body {
+    padding: 28px;
+  }
+  .card-type {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    opacity: 0.7;
+  }
+  .card-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .card-desc {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .card-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .stack-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    padding: 3px 8px;
+    background: rgba(0, 200, 255, 0.06);
+    border: 1px solid var(--border);
+    color: var(--cyan-dim);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .card-link {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-link::after {
+    content: "→";
+    transition: transform 0.3s;
+  }
+  .card:hover .card-link::after {
+    transform: translateX(4px);
+  }
+
+
+  @media (max-width: 768px) {
+    nav,
+    footer {
+      padding: 16px 24px;
+    }
+    .page-header,
+    .filter-bar {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .grid {
+      padding: 24px;
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
