@@ -1,7 +1,7 @@
 ---
 title: "ISMS NextGen"
 client: "Sampoerna"
-date: "January 2026"
+date: "April 2024"
 category: "corporate"
 type: "Logistics Core · Distributed"
 description: "Next-generation core engine for the ISMS logistics suite, architected for high scalability and complex distributed job processing."

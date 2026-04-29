@@ -1,7 +1,7 @@
 ---
 title: "Logdis Middleware"
 client: "Sampoerna"
-date: "January 2026"
+date: "April 2023"
 category: "corporate"
 type: "Logistics · Distribution"
 description: "High-throughput distribution middleware optimizing last-mile delivery routing and carrier assignment for large-scale logistics."

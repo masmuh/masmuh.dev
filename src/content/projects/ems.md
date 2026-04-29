@@ -1,7 +1,7 @@
 ---
 title: "EMS Enterprise Suite"
 client: "Sampoerna"
-date: "January 2026"
+date: "April 2021"
 category: "corporate"
 type: "Business Ops · ERP-Lite"
 description: "Full-scale ERP-lite system managing business logic, procurement, and project tracking for enterprise-level operations."

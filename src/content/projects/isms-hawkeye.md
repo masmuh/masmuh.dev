@@ -1,7 +1,7 @@
 ---
 title: "ISMS Hawkeye"
 client: "Sampoerna"
-date: "January 2026"
+date: "October 2025"
 category: "corporate"
 type: "Observability · Monitoring"
 description: "Centralized monitoring and observability platform tracking job health, API latency, and server metrics across the ISMS ecosystem."

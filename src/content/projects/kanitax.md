@@ -1,7 +1,7 @@
 ---
 title: "KaniTax Automation"
 client: "Tri Hasta Perkasa"
-date: "January 2026"
+date: "December 2022"
 category: "corporate"
 type: "Financial · Compliance"
 description: "Specialized tax calculation and reporting engine for Indonesian corporate tax compliance, featuring E-Faktur API integration."

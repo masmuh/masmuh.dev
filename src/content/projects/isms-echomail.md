@@ -1,7 +1,7 @@
 ---
 title: "ISMS Echomail"
 client: "Sampoerna"
-date: "January 2026"
+date: "August 2025"
 category: "corporate"
 type: "Background Service · Notification Engine"
 description: "High-performance background service for processing duplicate invoice legal numbers and handling multi-catalog system notifications using concurrent data aggregation."
