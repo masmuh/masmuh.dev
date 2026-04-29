@@ -12,11 +12,10 @@ thumbClass: "thumb-msglow"
 
 ---
 
-## Portfolio: Senior Technical Architect
+## Portfolio: Senior Architectural Case Study
 
 ### 1. Project Identity
-WEIS (Well Engineering Information System) is a mission-critical enterprise platform designed for **Shell’s Well Engineering division**. It serves as the primary backbone for managing the lifecycle of drilling and completion activities, business planning (Busplan), and performance improvement initiatives (PIP). The system acts as a strategic "Decision Support System" that bridges high-fidelity engineering data with financial forecasting, enabling global stakeholders to track operational efficiency and project benchmarks in real-time.
-
+**WEIS (Well Engineering Information System)** is a mission-critical enterprise platform designed for **Shell’s Well Engineering division**. It serves as the primary backbone for managing the lifecycle of drilling and completion activities, business planning (Busplan), and performance improvement initiatives (PIP). The system acts as a strategic "Decision Support System" that bridges high-fidelity engineering data with financial forecasting, enabling global stakeholders to track operational efficiency and project benchmarks in real-time.
 
 ### 2. Architectural Challenges
 *   **Highly Variable Data Domain**: Unlike standard CRUD applications, well engineering data is deeply nested and non-uniform. Each well has unique phases, maturity levels, and technical risk indices, making traditional relational schemas rigid and fragile.
@@ -24,20 +23,19 @@ WEIS (Well Engineering Information System) is a mission-critical enterprise plat
 *   **Computational Intensity**: Generating complex engineering visualizations (e.g., Waterfall Charts, Probabilistic Time/Cost Estimations) requires processing massive datasets through multi-step algorithms (Learning Curve Factors, NPT, and TECOP performance modeling).
 *   **Operational Continuity**: The platform needed to support long-running background tasks (Report generation, Batch uploads) without impacting the responsiveness of the real-time engineering dashboards.
 
-
 ### 3. Decision Logic (Trade-off Analysis)
-*   **Persistence: Why MongoDB over SQL Server?**
+*   **Persistence: MongoDB (NoSQL) over SQL Server**
     *   *Analysis*: Well engineering phases are dynamic; new attributes (e.g., specific risk indicators or environment-specific data) are added frequently.
-    *   *Decision*: Chose **MongoDB** to leverage its schema-less nature. This allowed for rapid iteration of the domain model without the overhead of complex SQL migrations or polymorphic table structures. 
-    *   *Trade-off*: Accepted the lack of multi-document ACID transactions (at the time) in favor of high write throughput and data structure flexibility.
-*   **Frontend: ASP.NET MVC + Knockout.js**
-    *   *Analysis*: The user base required a desktop-like experience for data-heavy grids and charts.
-    *   *Decision*: Implemented a hybrid approach using **Knockout.js** for client-side MVVM bindings and **Kendo UI** for specialized widgets. This provided a responsive UI while maintaining the SEO and security benefits of server-side MVC.
+    *   *Decision*: Selected **MongoDB** to leverage its schema-less nature. This allowed for rapid iteration of the domain model without the overhead of complex SQL migrations. 
+    *   *Trade-off*: Sacrificed strict relational constraints and multi-document ACID transactions (at the time) for high write throughput and maximum data structure flexibility.
+*   **Frontend Architecture: ASP.NET MVC + Knockout.js**
+    *   *Analysis*: The user base required a desktop-like experience for data-heavy grids and complex charts.
+    *   *Decision*: Implemented a hybrid approach using **Knockout.js** for client-side MVVM bindings. This provided a responsive UI while maintaining the security benefits of server-side MVC.
+    *   *Trade-off*: Increased client-side complexity compared to pure server-side rendering, but successfully met the high interactivity requirements of engineering leads.
 *   **Communication: SignalR for Real-time Feedback**
-    *   *Analysis*: Long-running calculations for "Business Plans" often exceeded HTTP timeout limits.
-    *   *Decision*: Integrated **SignalR** to provide a persistent websocket connection, allowing the server to push progress updates and calculation results to the UI asynchronously.
-
----
+    *   *Analysis*: Long-running calculations for "Business Plans" often exceeded standard HTTP timeout limits.
+    *   *Decision*: Integrated **SignalR** to provide a persistent websocket connection, allowing the server to push calculation progress and results to the UI asynchronously.
+    *   *Trade-off*: Required additional server resource management for persistent connections, but eliminated "page timeout" frustrations for global users.
 
 ### 4. Business Impact
 *   **Reduced Planning Cycle**: Automated the generation of "Monthly Late Estimates" (MLE), reducing the time required for engineering leads to update project statuses from days to hours.
@@ -45,6 +43,9 @@ WEIS (Well Engineering Information System) is a mission-critical enterprise plat
 *   **Centralized Engineering Intelligence**: Replaced thousands of disconnected spreadsheets with a single "Source of Truth," enabling global benchmarking across different operating units (OUs).
 *   **Operational Scalability**: The system successfully scaled to manage hundreds of wells globally, supporting Shell’s expansion into more complex deep-water drilling environments.
 
----
-
-#
+### 5. Senior Retrospective (Modernization Analysis)
+*   **If Architected Today (2026)**:
+    *   **Language & Framework**: Transition from ASP.NET MVC to **.NET 10 Web API** with a **Next.js** or **React** frontend. This would provide a more modular, component-based UI and better separation of concerns.
+    *   **Persistence**: I would evaluate **PostgreSQL with JSONB** for a hybrid approach—keeping relational integrity for financial data while using JSON for flexible engineering attributes.
+    *   **Architecture**: Move towards a **Microservices** or **Modular Monolith** architecture to isolate the "Computational Engine" (Waterfall/Probabilistic logic) from the primary management UI.
+    *   **Infrastructure**: Deploy on **Azure Kubernetes Service (AKS)** with Linux containers to enable horizontal auto-scaling during peak reporting periods, replacing the fixed-capacity IIS environment.
