@@ -28,9 +28,9 @@ const projects = (await getCollection("projects")).sort((a, b) => {
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="corporate">Corporate</button>
+    <button class="filter-btn" data-filter="consulting">Consulting</button>
     <button class="filter-btn" data-filter="open-source">Open Source</button>
     <button class="filter-btn" data-filter="personal">Personal</button>
-    <button class="filter-btn" data-filter="consulting">Consulting</button>
   </div>
 
   <div class="grid" id="grid">
@@ -64,10 +64,10 @@ const projects = (await getCollection("projects")).sort((a, b) => {
 
   <footer>
     <div class="footer-left">© 2026 <span>Mas Muhammad</span></div>
-    <div class="footer-center">PORTFOLIO.SHIELD // {projects.length} PROJECTS</div>
-    <div class="footer-right">
-      Indonesia 🇮🇩
+    <div class="footer-center">
+      PORTFOLIO.SHIELD // {projects.length} PROJECTS
     </div>
+    <div class="footer-right">Indonesia 🇮🇩</div>
   </footer>
 
   <script>
@@ -353,7 +353,6 @@ const projects = (await getCollection("projects")).sort((a, b) => {
   .card:hover .card-link::after {
     transform: translateX(4px);
   }
-
 
   @media (max-width: 768px) {
     nav,
