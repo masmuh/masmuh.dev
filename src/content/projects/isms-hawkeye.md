@@ -12,11 +12,13 @@ thumbClass: "thumb-oats"
 
 ---
 
-## 1. Project Identity: The Reporting Backbone
+## 1. Project Identity
+
 ISMS HawkEye serves as the **Central Data Dispatcher** for the ISMS enterprise ecosystem. Its primary role is to bridge the gap between distributed regional data silos and centralized analytical platforms. By automating the extraction, transformation, and secure transmission of critical business data from multiple SQL Server instances to AWS S3, HawkEye enables real-time business intelligence and ensures regulatory reporting compliance across diverse geographical areas.
 
 
 ## 2. Architectural Challenges
+
 Building a reliable data pipeline in a fragmented enterprise environment presented several high-complexity challenges:
 
 - **Distributed Data Fragmentation**: The system needed to extract data from multiple regional databases with varying latencies and connection reliabilities.
@@ -25,7 +27,8 @@ Building a reliable data pipeline in a fragmented enterprise environment present
 - **Stateful Delta-Sync**: Managing incremental data loads (CDC-lite) across hundreds of jobs required a reliable state-management system to prevent data gaps or duplicates during recovery from failures.
 
 
-## 3. Decision Logic & Trade-off Analysis
+## 3. Decision Logic
+
 The architecture of HawkEye was guided by the principle of **"Configurable Resilience"**:
 
 - **Command-Line Interface (CLI) Pattern**: 
@@ -44,6 +47,7 @@ The architecture of HawkEye was guided by the principle of **"Configurable Resil
 ---
 
 ## 4. Business Impact
+
 The implementation of ISMS HawkEye transitioned the organization from manual, error-prone data collection to a professional-grade automated pipeline:
 
 - **Operational Efficiency**: Reduced the manual effort for data aggregation by **100%**, freeing up technical staff for higher-value activities.

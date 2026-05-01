@@ -11,15 +11,18 @@ thumbClass: "thumb-msglow"
 --- 
 
 ### 1. Project Identity
+
 **MS Glow Reborn Ecosystem** was architected as the unified digital nervous system for MS Glow (J99 Corp), one of Indonesia's most prominent skincare enterprises. The ecosystem integrates 27+ service domains—ranging from core e-commerce and member management to physical clinic/store orchestration. Its most mission-critical component is the **Genuine Verification System**, a high-velocity anti-counterfeiting platform designed to protect brand integrity and consumer safety by validating millions of unique product identifiers in real-time.
 
 ### 2. Architectural Challenges
+
 *   **High-Velocity Product Authentication**: The system must handle thousands of concurrent verification requests for unique QR/Security codes, requiring sub-second response times to ensure a seamless consumer experience at the point of purchase.
 *   **Domain Fragmentation & Consistency**: Orchestrating logic across 27+ service domains (Product, Member, Seller, Clinic, Store, etc.) while maintaining a "Single Source of Truth" without the overhead of a massive monolithic database.
 *   **Large-Scale Asset Delivery**: As a visually-driven beauty brand, the platform required a high-performance CDN service to manage and serve massive volumes of marketing assets across multiple web and mobile interfaces.
 *   **Distributed Background Processing**: Generating unique security codes and processing verification logs are resource-intensive tasks that cannot block the primary request-response cycle of the customer-facing APIs.
 
-### 3. Decision Logic (Trade-off Analysis)
+### 3. Decision Logic
+
 *   **Architecture: Shared Kernel SOA (Service-Oriented Architecture)**
     *   *Analysis*: Multiple specialized services (CDN, Genuine, Products) required identical business rules and validation logic.
     *   *Decision*: Implemented a **Shared Kernel** approach using `core_application` and `core_domain` libraries.
@@ -38,6 +41,7 @@ thumbClass: "thumb-msglow"
     *   *Trade-off*: Slight impact on cold-start performance, but provided a robust defense against configuration exposure in Kubernetes environments.
 
 ### 4. Business Impact
+
 *   **Brand Integrity Restoration**: The robust Genuine Verification System successfully mitigated the impact of counterfeit products, restoring consumer trust and protecting brand equity.
 *   **Operational Unified Management**: Consolidated the management of physical clinics, retail stores, and online sellers into a single administrative panel, reducing operational overhead by 40%.
 *   **Marketing Agility**: The integrated CMS and CDN services allowed the marketing team to deploy brand campaigns and "Wiki" content across all digital touchpoints instantly.

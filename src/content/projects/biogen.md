@@ -13,15 +13,18 @@ thumbClass: "thumb-sampoerna"
 ---
 
 ## 1. Project Identity
+
 **Biogen Services** is a critical architectural bridge designed to maintain data integrity between the Product Master Data and Customer Quote lifecycle within the **SAP Business ByDesign (SAP ByD)** ecosystem. In a complex enterprise procurement environment, this middleware ensures that high-fidelity product specifications are accurately propagated to customer-facing documents, eliminating the "data silo" effect often found in ERP SDK customizations.
 
 ## 2. Architectural Challenges
+
 *   **ERP Propagation Gaps**: SAP ByD's native behavior does not always automatically sync complex 'Long Description' fields to custom SDK attributes in Quote line items. This creates a synchronization lag that risks document inaccuracy.
 *   **API Statefulness & Security**: Interacting with SAP's OData v1 layer requires managing stateful CSRF handshakes. Performing state-changing operations (`PATCH`) requires a strict token acquisition lifecycle that must be resilient to session timeouts.
 *   **Concurrency Control**: Operating as a background worker, the system must prevent "Job Overlap"—where multiple sync cycles hammer the SAP API simultaneously, leading to rate-limiting or partial updates.
 *   **System Resiliency**: The middleware must handle intermittent SAP connectivity issues without local data loss, requiring a stateless but robust retry strategy.
 
-## 3. Decision Logic: The "Why" Behind the Design
+## 3. Decision Logic
+
 
 ### Pattern: The Stateless Worker Service
 *   **Decision**: Implementation via `.NET 5 Worker Service` instead of a full-scale Web API or an ETL tool.
@@ -37,6 +40,7 @@ thumbClass: "thumb-sampoerna"
 *   **Rationale**: Fetching all missing-description quotes first allows for batching the Material master data requests, significantly reducing the number of round-trips to the SAP API.
 
 ## 4. Business Impact
+
 *   **Operational Automation**: Eliminated approximately 15-20 minutes of manual data cross-referencing per complex customer quote.
 *   **Document Integrity**: Guaranteed 100% accuracy in technical specifications on generated PDF quotes, reducing customer disputes and revision cycles.
 *   **System Stability**: The lightweight, stateless design resulted in 99.9% uptime with zero manual intervention required for session recovery or cache clearing.

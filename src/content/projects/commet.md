@@ -13,15 +13,18 @@ thumbClass: "thumb-commet"
 ---
  
 ### 1. Project Identity
+
 **COMMET (Community Metadata System)** was architected as a mission-critical middleware engine for Telkomsel's "Community" business unit. The system's primary role was to orchestrate the lifecycle of **Closed User Groups (CUG)**—specialized tariff plans for corporate and community segments. It functioned as the bridge between customer-facing channels (USSD, SMS, Web) and backend fulfillment/charging systems, managing complex whitelisting rules and multi-partner integrations (e.g., BTPN registration programs).
 
 ### 2. Architectural Challenges
+
 *   **Massive Throughput & Low Latency**: In a telco environment, provisioning requests (like joining a CUG or activating a premium offer) must be processed in near real-time (sub-second) to maintain USSD session integrity and user experience.
 *   **Distributed System Orchestration**: The system had to reliably coordinate transactions across disparate platforms, including the Enterprise Service Bus (ESB), external partner APIs (SOAP/XML), and internal fulfillment systems (FA).
 *   **Data Locality & High Volume**: Managing millions of whitelisted MSISDNs and their associated CUG metadata required an architecture that could handle massive data lookups without becoming a bottleneck.
 *   **Complex Business State Machine**: Handling varied registration states (Registered, Pending, Change Requested, etc.) across different card types (Prepaid vs. Postpaid) necessitated a robust and flexible logic engine.
 
-### 3. Decision Logic (Trade-off Analysis)
+### 3. Decision Logic
+
 *   **Logic Implementation: Oracle PL/SQL (Inside the Database)**
     *   *Analysis*: The system was data-heavy. Moving millions of records to an application layer for processing would incur significant network I/O.
     *   *Decision*: Implemented core business logic and orchestration directly within **PL/SQL Packages**. 
@@ -36,6 +39,7 @@ thumbClass: "thumb-commet"
     *   *Trade-off*: Slightly increased transaction time, but ensured 100% auditability and simplified troubleshooting for the ops team.
 
 ### 4. Business Impact
+
 *   **Real-time Revenue Enablement**: Automated the activation of "Premium Offers," allowing Telkomsel to launch time-sensitive marketing campaigns with zero manual intervention.
 *   **Operational Efficiency**: The whitelisting engine automated the onboarding of thousands of corporate employees daily, reducing the workload on the backend support teams by an estimated 70%.
 *   **Strategic Partner Integration**: Successfully enabled co-branding programs (e.g., BTPN) by providing a secure, high-speed API bridge for third-party registrations.
