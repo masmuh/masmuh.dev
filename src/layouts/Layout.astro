@@ -21,6 +21,18 @@ const { title = "Mas Muhammad — Senior Backend Engineer" } = Astro.props;
 			href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap"
 			rel="stylesheet"
 		/>
+
+		<!-- Google tag (gtag.js) -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-JD2ZJ5D3X8"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-JD2ZJ5D3X8");
+		</script>
 	</head>
 	<body>
 		<slot />

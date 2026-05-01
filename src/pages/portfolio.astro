@@ -354,13 +354,33 @@ const projects = (await getCollection("projects")).sort((a, b) => {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--cyan);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .card-link::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: var(--cyan);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px var(--cyan);
   }
   .card-link::after {
     content: "→";
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+  }
+  .card:hover .card-link {
+    color: var(--white);
+    text-shadow: 0 0 8px var(--cyan);
+  }
+  .card:hover .card-link::before {
+    width: 100%;
   }
   .card:hover .card-link::after {
     transform: translateX(4px);
