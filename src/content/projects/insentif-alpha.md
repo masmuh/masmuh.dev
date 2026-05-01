@@ -4,7 +4,7 @@ client: "Sanofi"
 date: "September 2014"
 category: "corporate"
 type: "Financial Automation · Incentive Engine"
-description: "A high-precision sales incentive calculation engine designed to automate complex commission structures for multi-divisional sales forces."
+description: "For Sanofi. Reduced monthly incentive processing from days - hours. Automated hundreds of incentive variations."
 stack: ["C#", "ASP.NET Web Forms", "SQL Server", "Stored Procedures"]
 icon: "💰"
 thumbClass: "thumb-green"

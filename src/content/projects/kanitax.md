@@ -4,7 +4,7 @@ client: "Tri Hasta Perkasa"
 date: "December 2022"
 category: "corporate"
 type: "Financial · Compliance"
-description: "Specialized tax calculation and reporting engine for Indonesian corporate tax compliance, featuring E-Faktur API integration."
+description: "For Tri Hasta Perkasa. 90% reduction in manual tax entry. Real-time tax status visibility. Audit-ready logs."
 stack: [".NET Core 3.1", "EF Core", "E-Faktur API", "SQL Server"]
 icon: "📑"
 thumbClass: "thumb-sampoerna"

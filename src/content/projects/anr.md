@@ -4,7 +4,7 @@ client: "Bank Mandiri"
 date: "August 2023"
 category: "corporate"
 type: "Financial Middleware · Bank Mandiri"
-description: "Automated 'Financial Bridge' connecting SAP Business ByDesign with Bank Mandiri’s corporate banking infrastructure for seamless payment orchestration."
+description: "For Bank Mandiri. ~90% manual ops reduction. 100% bank-compliant batch file generation. Full audit trail."
 stack: [".NET 9", "LiteDB", "SAP OData", "Windows Service"]
 icon: "🌉"
 thumbClass: "thumb-shell"

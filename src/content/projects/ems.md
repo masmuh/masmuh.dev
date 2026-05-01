@@ -4,7 +4,7 @@ client: "Sampoerna"
 date: "April 2021"
 category: "corporate"
 type: "Business Ops · ERP-Lite"
-description: "Full-scale ERP-lite system managing business logic, procurement, and project tracking for enterprise-level operations."
+description: "For Sampoerna. 90% reduction in manual tax document generation. 24/7 document accessibility during SAP maintenance."
 stack: [".NET Core 3.1", "Dapper", "SQL Server", "Clean Architecture"]
 icon: "🏢"
 thumbClass: "thumb-msglow"

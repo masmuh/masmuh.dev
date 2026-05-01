@@ -4,7 +4,7 @@ client: "MS Glow (J99 Corp)"
 date: "December 2022"
 category: "consulting"
 type: "Customer Portal · Identity Management · Distributed Systems"
-description: "A high-performance customer-facing gateway for MS Glow, integrating Google OAuth, advanced rate-limiting, and scalable MongoDB storage to serve millions of end-users."
+description: "For MS Glow. Google OAuth boosted registration conversions. ~60% junk traffic reduction via intelligent rate limiting."
 stack: [".NET 6", "MongoDB", "Google OAuth", "AspNetCoreRateLimit", "AutoMapper"]
 icon: "✨"
 thumbClass: "thumb-portaglow"

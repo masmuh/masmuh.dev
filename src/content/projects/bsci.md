@@ -4,7 +4,7 @@ client: "Boston Scientific"
 date: "June 2021"
 category: "corporate"
 type: "Middleware · ERP Integration"
-description: "High-performance enterprise middleware orchestrating real-time synchronization between field-mobility applications and SAP Business ByDesign."
+description: "For Boston Scientific. Cut order-to-ERP from 24 hrs - 5 min. Reconciliation errors -90%. SAP load -60%."
 stack: [".NET 5", "MongoDB", "Redis", "WCF/SOAP", "SAP ByD"]
 icon: "⚙️"
 thumbClass: "thumb-telkomsel"

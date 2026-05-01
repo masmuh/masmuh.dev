@@ -4,7 +4,7 @@ client: "MS Glow (J99 Corp)"
 date: "February 2024"
 category: "consulting"
 type: "POS System · Multi-tenant Inventory · Distributed Payments"
-description: "A robust, multi-tenant POS engine for the MS Glow ecosystem, featuring complex real-time discounting, cross-database inventory synchronization, and hybrid .NET/Go payment integration."
+description: "For MS Glow. 1-2M daily transactions. ~80% reduction in manual stock checks. Zero failures at peak load."
 stack: [".NET 6", "Golang", "MongoDB", "Xendit", "Docker", "Kubernetes"]
 icon: "🛒"
 thumbClass: "thumb-posglowverse"

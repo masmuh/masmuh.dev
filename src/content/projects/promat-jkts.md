@@ -4,7 +4,7 @@ client: "Sanofi"
 date: "October 2014"
 category: "corporate"
 type: "Supply Chain · Inventory Management · Workflow Engine"
-description: "A centralized ecosystem for managing pharmaceutical promotional materials, integrating multi-level approval matrices and automated inventory reconciliation across regional branches."
+description: "For Sanofi. ~40% reduction in approval turnaround time. Closed-loop audit trail for promotional materials."
 stack: ["VB.NET", "ASP.NET Web Forms", "SQL Server", "SSRS", "JavaScript"]
 icon: "📦"
 thumbClass: "thumb-blue"

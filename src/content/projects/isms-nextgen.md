@@ -4,7 +4,7 @@ client: "Sampoerna"
 date: "April 2024"
 category: "corporate"
 type: "Logistics Core · Distributed"
-description: "Next-generation core engine for the ISMS logistics suite, architected for high scalability and complex distributed job processing."
+description: "For Sampoerna. Data sync from hours - minutes. 90% fewer manual server interventions."
 stack: [".NET Core 3.1", "SQL Server", "Clean Architecture"]
 icon: "🚀"
 thumbClass: "thumb-shell"

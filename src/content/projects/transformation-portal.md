@@ -4,7 +4,7 @@ client: "Telkomsel"
 date: "March 2014"
 category: "corporate"
 type: "Enterprise Communication · Identity Management"
-description: "A centralized digital hub for managing corporate strategic transformation, integrating deep Active Directory authentication and real-time engagement modules."
+description: "For Telkomsel. Centralized corporate communication for thousands of employees. 100% announcement reach. Real-time employee pulse measurement."
 stack: ["ASP.NET Web Forms", "C#", "SQL Server", "LDAP/AD"]
 icon: "🚀"
 thumbClass: "thumb-transformation"

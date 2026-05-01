@@ -4,7 +4,7 @@ client: "Sanofi"
 date: "October 2014"
 category: "corporate"
 type: "Regulatory Compliance · Automation"
-description: "A centralized pharmaceutical registration tracking and notification system designed to ensure global regulatory compliance for Sanofi's product portfolio."
+description: "For Sanofi. Eliminated manual spreadsheet tracking. Zero product registration expirations missed."
 stack: ["VB.NET", "ASP.NET Web Forms", "SQL Server", "LDAP"]
 icon: "📋"
 thumbClass: "thumb-blue"

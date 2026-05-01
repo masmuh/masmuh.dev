@@ -4,7 +4,7 @@ client: "Telkomsel"
 date: "July 2014"
 category: "corporate"
 type: "Enterprise Middleware · CUG Management · Real-time Provisioning"
-description: "A high-performance telco middleware designed to orchestrate Closed User Group (CUG) services, subscriber whitelisting, and multi-partner registration workflows."
+description: "For Telkomsel. ~70% reduction in backend support workload. 99.9% availability for CUG provisioning."
 stack: ["Oracle PL/SQL", "Oracle Database", "SOAP/XML", "USSD/SMS Gateway", "Enterprise Service Bus"]
 icon: "🌐"
 thumbClass: "thumb-commet"

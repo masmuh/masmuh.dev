@@ -4,7 +4,7 @@ client: "MS Glow (J99 Corp)"
 date: "January 2022"
 category: "consulting"
 type: "Polyglot Microservices · E-commerce · Cloud Native"
-description: "A high-performance seller management ecosystem built with Go and .NET Core, orchestrating complex order flows, automated payments, and multi-warehouse logistics."
+description: "For MS Glow. Auto-scaling on GKE - zero transaction failures at peak load. 60% reduction in manual order intervention."
 stack: ["Go", ".NET Core", "GKE", "MongoDB", "PostgreSQL", "Xendit", "GitLab CI"]
 icon: "🛍️"
 thumbClass: "thumb-msglow"

@@ -4,7 +4,7 @@ client: "Biogen"
 date: "July 2021"
 category: "corporate"
 type: "SAP Integration · Data Integrity"
-description: "Critical architectural bridge maintaining data integrity between Product Master Data and Customer Quote lifecycles within the SAP ecosystem."
+description: "For Biogen. Eliminated 15-20 min/quote manual effort. 99.9% uptime with zero manual intervention."
 stack: [".NET Core 3.1", "Quartz.NET", "SAP OData", "LiteDB"]
 icon: "🧬"
 thumbClass: "thumb-sampoerna"

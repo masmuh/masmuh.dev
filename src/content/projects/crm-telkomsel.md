@@ -4,7 +4,7 @@ client: "Telkomsel"
 date: "August 2013"
 category: "corporate"
 type: "Enterprise Portal · Employee Engagement · Survey System"
-description: "A centralized internal platform for corporate communication and employee feedback, designed to streamline survey distribution and leadership engagement."
+description: "For Telkomsel. Transformed paper-based surveys to real-time digital - 85% faster data aggregation. Centralized corporate announcements."
 stack: ["ASP.NET 3.5", "C#", "SQL Server", "ADO.NET", "Windows Auth", "jQuery"]
 icon: "📊"
 thumbClass: "thumb-crm-tsel"

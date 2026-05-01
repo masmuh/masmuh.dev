@@ -4,7 +4,7 @@ client: "Sampoerna"
 date: "January 2026"
 category: "corporate"
 type: "Warehouse Management · WMS"
-description: "Multi-tenant warehouse management platform facilitating real-time inventory tracking and complex 3PL integrations."
+description: "For Sampoerna. Data reconciliation from 4-6 hrs - 15 min. 99.8% batch export success rate."
 stack: [".NET 9", "WPF", "SQL Server", "SQLite"]
 icon: "📦"
 thumbClass: "thumb-academic"

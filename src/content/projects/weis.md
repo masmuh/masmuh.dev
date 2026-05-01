@@ -4,7 +4,7 @@ client: "Shell"
 date: "September 2016"
 category: "corporate"
 type: "Oil & Gas · Engineering"
-description: "Specialized engineering platform for well construction planning and probabilistic risk assessment within the energy sector."
+description: "For Shell. Reduced well planning cycle from days - hours. Centralized global engineering intelligence across operating units."
 stack: ["MongoDB", "ASP.NET MVC", "Knockout.js", "SignalR"]
 icon: "⛽"
 thumbClass: "thumb-msglow"

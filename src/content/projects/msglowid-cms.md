@@ -4,7 +4,7 @@ client: "MS Glow (J99 Corp)"
 date: "January 2022"
 category: "consulting"
 type: "Enterprise CMS · Anti-Counterfeiting · Distributed Systems"
-description: "The digital backbone for Indonesia's leading skincare brand, orchestrating 27+ service domains and a high-scale product authenticity verification system."
+description: "For MS Glow. 27+ service domains unified. Real-time anti-counterfeiting for millions of items. ~40% manual overhead reduction."
 stack: [".NET 5", "MongoDB", "Docker", "GitLab CI", "JWT"]
 icon: "🧴"
 thumbClass: "thumb-msglow"

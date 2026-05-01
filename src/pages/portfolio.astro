@@ -25,6 +25,18 @@ const projects = (await getCollection("projects")).sort((a, b) => {
     </p>
   </div>
 
+  <div class="hero-strip">
+    <div class="hero-strip-inner">
+      <span class="hero-stat"><strong>26</strong> enterprise systems</span>
+      <span class="hero-divider">&middot;</span>
+      <span class="hero-stat"><strong>11</strong> years</span>
+      <span class="hero-divider">&middot;</span>
+      <span class="hero-stat"><strong>Fortune 500</strong> clients</span>
+      <span class="hero-divider">&middot;</span>
+      <span class="hero-stat"><strong>Zero</strong> critical downtime</span>
+    </div>
+  </div>
+
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="corporate">Corporate</button>
@@ -124,6 +136,34 @@ const projects = (await getCollection("projects")).sort((a, b) => {
     color: var(--muted);
     max-width: 500px;
     line-height: 1.8;
+  }
+
+  .hero-strip {
+    padding: 28px 60px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+    background: var(--bg2);
+  }
+  .hero-strip-inner {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .hero-stat {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .hero-stat strong {
+    color: var(--cyan);
+    font-weight: 700;
+  }
+  .hero-divider {
+    color: var(--border);
+    font-size: 14px;
   }
 
   .filter-bar {
@@ -392,9 +432,16 @@ const projects = (await getCollection("projects")).sort((a, b) => {
       padding: 16px 24px;
     }
     .page-header,
+    .hero-strip,
     .filter-bar {
       padding-left: 24px;
       padding-right: 24px;
+    }
+    .hero-strip-inner {
+      gap: 12px;
+    }
+    .hero-stat {
+      font-size: 10px;
     }
     .grid {
       padding: 24px;

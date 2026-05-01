@@ -4,7 +4,7 @@ client: "Kano Solution (Project Bagong)"
 date: "February 2026"
 category: "corporate"
 type: "Data Engineering · Backend Architecture"
-description: "High-performance Go-based ETL engine designed to aggregate fragmented multi-tenant transactional data into real-time executive dashboards."
+description: "For Bagong. Near-real-time C-level KPI dashboards. 5-min data refresh for critical metrics."
 stack: ["Go 1.23", "MongoDB", "ETL", "Cron"]
 icon: "📊"
 thumbClass: "thumb-oats"

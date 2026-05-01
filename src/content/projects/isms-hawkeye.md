@@ -4,7 +4,7 @@ client: "Sampoerna"
 date: "October 2025"
 category: "corporate"
 type: "Observability · Monitoring"
-description: "Centralized monitoring and observability platform tracking job health, API latency, and server metrics across the ISMS ecosystem."
+description: "For Sampoerna. 100% reduction in manual data aggregation effort. Scaled to dozens of concurrent data sources."
 stack: ["InfluxDB", "Grafana", "NLog", ".NET Worker"]
 icon: "👁️"
 thumbClass: "thumb-oats"

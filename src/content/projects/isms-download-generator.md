@@ -4,7 +4,7 @@ client: "Sampoerna"
 date: "January 2026"
 category: "corporate"
 type: "Logistics · Document Gen"
-description: "Automated PDF/Excel generation engine for high-volume logistics documentation, handling thousands of labels and manifests daily."
+description: "For Sampoerna. 75% reduction in data latency. 99.9% error reduction in legacy data parsing."
 stack: [".NET Worker", "Aspose.Words", "iText7", "NPOI"]
 icon: "📄"
 thumbClass: "thumb-wicara"

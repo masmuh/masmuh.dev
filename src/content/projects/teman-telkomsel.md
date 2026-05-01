@@ -4,7 +4,7 @@ client: "Telkomsel"
 date: "June 2014"
 category: "corporate"
 type: "SMS Gateway · Community Management · Enterprise Messaging"
-description: "A high-volume Web-to-SMS gateway and community management platform designed for massive broadcast delivery and real-time engagement tracking."
+description: "For Telkomsel. High-volume SMS broadcast automation. Real-time Sent-vs-Delivered dashboards. AES-256 subscriber encryption."
 stack: ["PHP", "CodeIgniter", "Oracle 11g", "OCI8", "AES-256", "Flexigrid"]
 icon: "📱"
 thumbClass: "thumb-teman-tsel"

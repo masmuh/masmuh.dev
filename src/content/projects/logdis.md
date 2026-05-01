@@ -4,7 +4,7 @@ client: "Sampoerna"
 date: "April 2023"
 category: "corporate"
 type: "Logistics · Distribution"
-description: "High-throughput distribution middleware optimizing last-mile delivery routing and carrier assignment for large-scale logistics."
+description: "For Sampoerna. 90% reduction in manual labor. Real-time distribution bottleneck monitoring."
 stack: [".NET Core 3.1", "Dapper", "SQL Server", "Clean Architecture"]
 icon: "🚚"
 thumbClass: "thumb-telkomsel"

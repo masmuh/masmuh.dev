@@ -4,7 +4,7 @@ client: "Sampoerna"
 date: "August 2025"
 category: "corporate"
 type: "Background Service · Notification Engine"
-description: "High-performance background service for processing duplicate invoice legal numbers and handling multi-catalog system notifications using concurrent data aggregation."
+description: "For Sampoerna. 85% reduction in audit latency. 60% fewer false-positive alerts. Catalog-agnostic architecture."
 stack: [".NET 9", "SQL Server", "SMTP", "EPPlus", "NLog"]
 icon: "✉️"
 thumbClass: "thumb-foculing"

@@ -4,7 +4,7 @@ client: "Sampoerna"
 date: "October 2020"
 category: "corporate"
 type: "Enterprise CRM · Lead Ops"
-description: "Advanced lead management system designed for high-volume enterprise sales workflows, featuring automated assignment and conversion tracking."
+description: "For Sampoerna. Automated reconciliation from weeks - hours. Saved billions IDR in avoidable customs penalties."
 stack: [".NET 5", "EF Core", "SQL Server", "SignalR"]
 icon: "📈"
 thumbClass: "thumb-jobhunter"
