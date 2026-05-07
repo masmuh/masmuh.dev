@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Crawl-delay: 10
 
 Sitemap: https://masmuh.web.id/sitemap-index.xml
