@@ -1,0 +1,199 @@
+---
+import HeroSection from "./HeroSection.astro";
+import AboutSection from "./AboutSection.astro";
+import SkillsSection from "./SkillsSection.astro";
+import ExperienceSection from "./ExperienceSection.astro";
+import ProjectsSection from "./ProjectsSection.astro";
+import ContactSection from "./ContactSection.astro";
+
+interface Section {
+  id: string;
+  num: string;
+  label: string;
+}
+
+const sections: Section[] = [
+  { id: "hero", num: "00", label: "Home" },
+  { id: "about", num: "01", label: "About" },
+  { id: "skills", num: "02", label: "Skills" },
+  { id: "experience", num: "03", label: "Experience" },
+  { id: "projects", num: "04", label: "Projects" },
+  { id: "contact", num: "05", label: "Contact" },
+];
+---
+
+<div class="switcher-layout">
+  <nav class="switcher-nav" aria-label="Section navigation">
+    {sections.map((s) => (
+      <button
+        class="switcher-nav-item"
+        class:list={{ active: s.id === "hero" }}
+        data-switcher-target={sections.indexOf(s)}
+        aria-label={`Switch to ${s.label} section`}
+      >{s.num} {s.label}</button>
+    ))}
+  </nav>
+
+  <div class="switcher-cards">
+    <div class="switcher-card active" data-switcher-card="hero">
+      <HeroSection />
+    </div>
+    <div class="switcher-card" data-switcher-card="about">
+      <AboutSection />
+    </div>
+    <div class="switcher-card" data-switcher-card="skills">
+      <SkillsSection />
+    </div>
+    <div class="switcher-card" data-switcher-card="experience">
+      <ExperienceSection />
+    </div>
+    <div class="switcher-card" data-switcher-card="projects">
+      <ProjectsSection />
+    </div>
+    <div class="switcher-card" data-switcher-card="contact">
+      <ContactSection />
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const cards = document.querySelectorAll("[data-switcher-card]");
+  const navItems = document.querySelectorAll("[data-switcher-target]");
+  let activeIndex = 0;
+  let countersTriggered = false;
+
+  function switchTo(index) {
+    if (index === activeIndex) return;
+    if (index < 0 || index >= cards.length) return;
+
+    var direction = index > activeIndex ? "forward" : "backward";
+    var oldCard = cards[activeIndex];
+    var newCard = cards[index];
+
+    navItems.forEach(function (item, i) {
+      item.classList.toggle("active", i === index);
+    });
+
+    var sectionName = newCard.getAttribute("data-switcher-card");
+
+    document.querySelectorAll("[data-section]").forEach(function (el) {
+      var href = el.getAttribute("href") || "";
+      el.classList.toggle(
+        "active-link",
+        href.replace("#", "") === sectionName
+      );
+    });
+
+    history.replaceState(null, "", sectionName === "hero" ? "/" : "#" + sectionName);
+    activeIndex = index;
+
+    oldCard.classList.remove("active");
+    oldCard.classList.add(
+      direction === "forward" ? "anim-out-left" : "anim-out-right"
+    );
+    newCard.classList.add(
+      direction === "forward" ? "anim-in-right" : "anim-in-left"
+    );
+
+    setTimeout(function () {
+      oldCard.classList.remove("anim-out-left", "anim-out-right");
+      newCard.classList.remove("anim-in-right", "anim-in-left");
+      newCard.classList.add("active");
+    }, 450);
+
+    if (sectionName === "hero" && !countersTriggered) {
+      countersTriggered = true;
+      triggerCounters();
+    }
+  }
+
+  document.addEventListener("click", function (e) {
+    var trigger = e.target.closest(
+      "[data-switcher-target], [data-section]"
+    );
+    if (!trigger) return;
+
+    var target =
+      trigger.getAttribute("data-switcher-target") ||
+      trigger.getAttribute("data-section");
+    if (!target) return;
+
+    var index;
+    if (/^\d+$/.test(target)) {
+      index = parseInt(target, 10);
+    } else {
+      index = Array.from(cards).findIndex(function (c) {
+        return c.getAttribute("data-switcher-card") === target;
+      });
+    }
+
+    if (index >= 0) {
+      e.preventDefault();
+      switchTo(index);
+      var mn = document.getElementById("mobileNav");
+      var mo = document.getElementById("mobileOverlay");
+      var hb = document.getElementById("navHamburger");
+      if (mn) mn.classList.remove("active");
+      if (mo) mo.classList.remove("active");
+      if (hb) hb.classList.remove("active");
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+      e.preventDefault();
+      switchTo(Math.min(activeIndex + 1, cards.length - 1));
+    } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      switchTo(Math.max(activeIndex - 1, 0));
+    }
+  });
+
+  if (window.location.hash) {
+    var section = window.location.hash.replace("#", "");
+    var idx = Array.from(cards).findIndex(function (c) {
+      return c.getAttribute("data-switcher-card") === section;
+    });
+    if (idx >= 0) {
+      setTimeout(function () {
+        switchTo(idx);
+      }, 100);
+    }
+  }
+
+  function triggerCounters() {
+    var els = document.querySelectorAll(".stat-num");
+    els.forEach(function (el) {
+      var text = el.textContent.trim();
+      if (text === "11") animateCounter(el, 11);
+      else if (text === "128") animateCounter(el, 128);
+      else if (text === "25K+") {
+        el.textContent = "0K+";
+        var c = 0;
+        var t = setInterval(function () {
+          c++;
+          el.textContent = c + "K+";
+          if (c >= 25) clearInterval(t);
+        }, 30);
+      }
+    });
+  }
+
+  function animateCounter(el, target, suffix) {
+    if (suffix === undefined) suffix = "";
+    var start = 0;
+    var step = target / 60;
+    var timer = setInterval(function () {
+      start += step;
+      if (start >= target) {
+        start = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.floor(start) + suffix;
+    }, 16);
+  }
+
+  document.body.classList.add("no-switcher-scroll");
+})();
+</script>

@@ -9,11 +9,36 @@ const projects = (await getCollection("projects")).sort((a, b) => {
 });
 ---
 
-<Layout title="Portfolio — Mas Muhammad">
+<Layout title="Portfolio — Mas Muhammad" description="Selected projects spanning enterprise architectures, distributed systems, and AI tooling — 26 systems built for Biogen, Sanofi, Shell, Sampoerna and more.">
   <nav>
     <a href="/" class="nav-logo">MAS<span>.</span>MUH</a>
     <a href="/" class="nav-back">← Back to Home</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">☀️</span>
+      <span class="theme-icon-dark">🌙</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
 
   <div class="page-header">
     <div class="page-eyebrow">// Selected Work</div>
@@ -83,18 +108,15 @@ const projects = (await getCollection("projects")).sort((a, b) => {
   </footer>
 
   <script>
-    // FILTER LOGIC
     function filter(cat, btn) {
       document
         .querySelectorAll(".filter-btn")
         .forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       document.querySelectorAll(".card").forEach((card) => {
-        if (cat === "all" || card.dataset.cat === cat) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+        const match = cat === "all" || card.dataset.cat === cat;
+        card.classList.toggle("hidden", !match);
+        card.setAttribute("aria-hidden", !match);
       });
     }
 
@@ -211,6 +233,9 @@ const projects = (await getCollection("projects")).sort((a, b) => {
     transition: all 0.3s;
     text-decoration: none;
     display: block;
+  }
+  .card.hidden {
+    display: none;
   }
   .card::after {
     content: "";
@@ -425,6 +450,30 @@ const projects = (await getCollection("projects")).sort((a, b) => {
   .card:hover .card-link::after {
     transform: translateX(4px);
   }
+
+  html.light .thumb-oats { background: radial-gradient(ellipse at 30% 50%, #e8d5f5, #f0eef5); }
+  html.light .thumb-oats .thumb-bg { background: linear-gradient(135deg, #d4b8f0, #c4a8e0); }
+  html.light .thumb-wicara { background: radial-gradient(ellipse at 70% 30%, #d0e4f0, #eef2f5); }
+  html.light .thumb-wicara .thumb-bg { background: linear-gradient(135deg, #b0d0e8, #98c0d8); }
+  html.light .thumb-jobhunter { background: radial-gradient(ellipse at 50% 70%, #d8f0e0, #eef5f0); }
+  html.light .thumb-jobhunter .thumb-bg { background: linear-gradient(135deg, #b0e0c0, #98d0b0); }
+  html.light .thumb-foculing { background: radial-gradient(ellipse at 80% 20%, #f0e0d0, #f5f0ee); }
+  html.light .thumb-foculing .thumb-bg { background: linear-gradient(135deg, #e0c0a8, #d0b098); }
+  html.light .thumb-msglow { background: radial-gradient(ellipse at 20% 80%, #d0e8e8, #eef5f5); }
+  html.light .thumb-msglow .thumb-bg { background: linear-gradient(135deg, #b0d0d0, #98c0c0); }
+  html.light .thumb-portaglow { background: radial-gradient(ellipse at 50% 50%, #f0e8d0, #f5f2ee); }
+  html.light .thumb-portaglow .thumb-bg { background: linear-gradient(135deg, #f5d8a0, #e8c890); }
+  html.light .thumb-posglowverse { background: radial-gradient(ellipse at 40% 40%, #d0f0e0, #eef5f0); }
+  html.light .thumb-posglowverse .thumb-bg { background: linear-gradient(135deg, #a8e0c0, #90d0b0); }
+  html.light .thumb-academic { background: radial-gradient(ellipse at 60% 40%, #e0e8d0, #f0f5ee); }
+  html.light .thumb-academic .thumb-bg { background: linear-gradient(135deg, #c0d8a0, #b0c890); }
+  html.light .thumb-sampoerna { background: radial-gradient(ellipse at 40% 60%, #f0d8d8, #f5eeef); }
+  html.light .thumb-sampoerna .thumb-bg { background: linear-gradient(135deg, #e0b0b0, #d0a0a0); }
+  html.light .thumb-shell { background: radial-gradient(ellipse at 70% 50%, #f0e8d0, #f5f2ee); }
+  html.light .thumb-shell .thumb-bg { background: linear-gradient(135deg, #e0c890, #d0b888); }
+  html.light .thumb-telkomsel { background: radial-gradient(ellipse at 30% 70%, #f0d8e0, #f5eef0); }
+  html.light .thumb-telkomsel .thumb-bg { background: linear-gradient(135deg, #e0b0c0, #d0a0b0); }
+  html.light .thumb-label { background: rgba(255, 255, 255, 0.8); }
 
   @media (max-width: 768px) {
     nav,

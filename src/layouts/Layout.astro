@@ -3,9 +3,15 @@ import "../styles/global.css";
 
 interface Props {
 	title?: string;
+	description?: string;
 }
 
-const { title = "Mas Muhammad — Senior Backend Engineer" } = Astro.props;
+const {
+	title = "Mas Muhammad — Senior Backend Engineer",
+	description = "Senior Backend Engineer with 11 years of experience in .NET, distributed systems, and containerized architectures. Built mission-critical systems for Biogen, Sanofi, Shell, Boston Scientific & Sampoerna.",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -16,6 +22,23 @@ const { title = "Mas Muhammad — Senior Backend Engineer" } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content="Mas Muhammad" />
+		<link rel="canonical" href={canonicalURL.href} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL.href} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Mas Muhammad" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap"
@@ -30,114 +53,80 @@ const { title = "Mas Muhammad — Senior Backend Engineer" } = Astro.props;
 				dataLayer.push(arguments);
 			}
 			gtag("js", new Date());
-
 			gtag("config", "G-JD2ZJ5D3X8");
+		</script>
+
+		<script is:inline>
+			(function() {
+				const stored = localStorage.getItem("theme");
+				const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+				if (stored === "light" || (!stored && !prefersDark)) {
+					document.documentElement.classList.add("light");
+				}
+			})();
 		</script>
 	</head>
 	<body>
 		<slot />
 
-		<!-- CURSOR -->
-		<div class="cursor" id="cursor"></div>
-		<div class="cursor-ring" id="cursorRing"></div>
-
 		<script>
-			// CURSOR
-			const cursor = document.getElementById("cursor");
-			const ring = document.getElementById("cursorRing");
-			let mx = 0,
-				my = 0,
-				rx = 0,
-				ry = 0;
-			document.addEventListener("mousemove", (e) => {
-				mx = e.clientX;
-				my = e.clientY;
-				cursor.style.left = mx + "px";
-				cursor.style.top = my + "px";
-			});
-			function animateRing() {
-				rx += (mx - rx) * 0.12;
-				ry += (my - ry) * 0.12;
-				ring.style.left = rx + "px";
-				ring.style.top = ry + "px";
-				requestAnimationFrame(animateRing);
+			// THEME TOGGLE
+			function toggleTheme() {
+				document.documentElement.classList.toggle("light");
+				localStorage.setItem(
+					"theme",
+					document.documentElement.classList.contains("light") ? "light" : "dark"
+				);
 			}
-			animateRing();
-			document.querySelectorAll("a, button").forEach((el) => {
-				el.addEventListener("mouseenter", () => {
-					cursor.style.width = "20px";
-					cursor.style.height = "20px";
-					cursor.style.background = "var(--green)";
-				});
-				el.addEventListener("mouseleave", () => {
-					cursor.style.width = "12px";
-					cursor.style.height = "12px";
-					cursor.style.background = "var(--cyan)";
-				});
+			document.getElementById("themeToggle")?.addEventListener("click", toggleTheme);
+			document.getElementById("mobileThemeToggle")?.addEventListener("click", toggleTheme);
+
+			// MOBILE NAV
+			const hamburger = document.getElementById("navHamburger");
+			const mobileNav = document.getElementById("mobileNav");
+			const mobileOverlay = document.getElementById("mobileOverlay");
+			const mobileClose = document.getElementById("mobileNavClose");
+
+			function openMobileNav() {
+				mobileNav.classList.add("active");
+				mobileOverlay.classList.add("active");
+				hamburger?.classList.add("active");
+				document.body.style.overflow = "hidden";
+			}
+
+			function closeMobileNav() {
+				mobileNav.classList.remove("active");
+				mobileOverlay.classList.remove("active");
+				hamburger?.classList.remove("active");
+				document.body.style.overflow = "";
+			}
+
+			hamburger?.addEventListener("click", openMobileNav);
+			mobileOverlay?.addEventListener("click", closeMobileNav);
+			mobileClose?.addEventListener("click", closeMobileNav);
+			document.querySelectorAll(".mobile-nav-links a").forEach((link) => {
+				link.addEventListener("click", closeMobileNav);
 			});
 
-			// SCROLL REVEAL
+			// SCROLL REVEAL (portfolio, project pages)
 			const reveals = document.querySelectorAll(".reveal");
-			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry, i) => {
-						if (entry.isIntersecting) {
-							setTimeout(
-								() => entry.target.classList.add("visible"),
-								60,
-							);
-							observer.unobserve(entry.target);
-						}
-					});
-				},
-				{ threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
-			);
-			reveals.forEach((el) => observer.observe(el));
-
-			// COUNTER ANIMATION
-			function animateCounter(el, target, suffix = "") {
-				let start = 0;
-				const isFloat = target % 1 !== 0;
-				const step = target / 60;
-				const timer = setInterval(() => {
-					start += step;
-					if (start >= target) {
-						start = target;
-						clearInterval(timer);
-					}
-					el.textContent = isFloat
-						? start.toFixed(1)
-						: Math.floor(start) + suffix;
-				}, 16);
-			}
-			const statNums = document.querySelectorAll(".stat-num");
-			const numObserver = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							const el = entry.target;
-							const text = el.textContent;
-							if (text === "11") animateCounter(el, 11);
-							else if (text === "128") animateCounter(el, 128);
-							else if (text === "25K+") {
-								el.textContent = "0K+";
-								animateCounter({ textContent: "" }, 25, "");
-								let c = 0;
-								const t = setInterval(() => {
-									c++;
-									el.textContent = c + "K+";
-									if (c >= 25) clearInterval(t);
-								}, 30);
-							} else if (text === "0") {
-								/* stays 0 */
+			if (reveals.length) {
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry, i) => {
+							if (entry.isIntersecting) {
+								setTimeout(
+									() => entry.target.classList.add("visible"),
+									60,
+								);
+								observer.unobserve(entry.target);
 							}
-							numObserver.unobserve(el);
-						}
-					});
-				},
-				{ threshold: 0.5 },
-			);
-			statNums.forEach((el) => numObserver.observe(el));
+						});
+					},
+					{ threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+				);
+				reveals.forEach((el) => observer.observe(el));
+			}
 		</script>
 	</body>
 </html>
