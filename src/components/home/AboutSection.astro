@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import profileImg from '../../content/gallery/pro2.jpg';
+---
+
 <section id="about">
   <div class="section-header">
     <span class="section-num">01 —</span>
@@ -5,25 +10,30 @@
     <div class="section-line"></div>
   </div>
   <div class="about-grid">
-    <div class="about-text">
-      <p>
-        Senior Backend Engineer with <strong>11 years of experience</strong> — including
-        <strong>2 years as Technical Lead</strong> — specializing in the <span class="hl">.NET ecosystem</span>,
-        distributed systems, and containerized backend architectures.
-      </p>
-      <p>
-        Proven track record delivering <strong>mission-critical, high-availability systems</strong>
-        for multinational clients including <span class="hl">Sanofi, Shell, Boston Scientific, and Sampoerna</span>.
-      </p>
-      <p>
-        <span class="hl2">Remote work veteran (8+ years)</span> with deep expertise
-        in async collaboration, self-directed delivery across global teams, and
-        growing proficiency in <span class="hl">AI-integrated tooling and on-device inference pipelines</span>.
-      </p>
-      <p>
-        Published author of <em>Mastering .NET 10: Modern Backend Development</em>
-        — available on Amazon.
-      </p>
+    <div class="about-intro-row">
+      <div class="about-avatar-sm">
+        <Image src={profileImg} alt="Mas Muhammad" width={80} height={80} class="about-avatar-img" />
+      </div>
+      <div class="about-text">
+        <p>
+          Senior Backend Engineer with <strong>11 years of experience</strong> — including
+          <strong>2 years as Technical Lead</strong> — specializing in the <span class="hl">.NET ecosystem</span>,
+          distributed systems, and containerized backend architectures.
+        </p>
+        <p>
+          Proven track record delivering <strong>mission-critical, high-availability systems</strong>
+          for multinational clients including <span class="hl">Sanofi, Shell, Boston Scientific, and Sampoerna</span>.
+        </p>
+        <p>
+          <span class="hl2">Remote work veteran (8+ years)</span> with deep expertise
+          in async collaboration, self-directed delivery across global teams, and
+          growing proficiency in <span class="hl">AI-integrated tooling and on-device inference pipelines</span>.
+        </p>
+        <p>
+          Published author of <em>Mastering .NET 10: Modern Backend Development</em>
+          — available on Amazon.
+        </p>
+      </div>
     </div>
   </div>
 
@@ -72,3 +82,198 @@
     </div>
   </div>
 </section>
+
+<style>
+  .about-grid { max-width: 720px; }
+
+  .about-intro-row {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+  }
+
+  .about-avatar-sm {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--cyan), var(--green));
+  }
+
+  .about-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid var(--bg);
+  }
+
+  .about-text {
+    font-size: 15px;
+    line-height: 2;
+    color: var(--muted);
+  }
+
+  .about-text p { margin-bottom: 20px; }
+  .about-text strong { color: var(--white); font-weight: 400; }
+  .about-text .hl { color: var(--cyan); }
+  .about-text .hl2 { color: var(--green); }
+
+  .achievements-grid {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .ach-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .ach-card:hover { border-color: rgba(0, 255, 157, 0.4); }
+  .ach-icon { font-size: 32px; margin-bottom: 16px; }
+
+  .ach-value {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--green);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .ach-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .ach-desc {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-family: var(--font-mono);
+    opacity: 0.7;
+  }
+
+  .book-section {
+    margin-top: 60px;
+    background: linear-gradient(135deg, var(--surface), var(--bg2));
+    border: 1px solid var(--border-bright);
+    padding: 60px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-section::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.08), transparent 70%);
+    pointer-events: none;
+  }
+
+  .book-cover {
+    width: 160px;
+    background: var(--book-cover-bg);
+    border: 1px solid var(--border-bright);
+    aspect-ratio: 2/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 200, 255, 0.1);
+  }
+
+  .book-cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--cyan), var(--green));
+  }
+
+  .book-cover-title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .book-cover-sub {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    color: var(--cyan-dim);
+    text-align: center;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  .book-logo { font-size: 28px; margin-bottom: 12px; }
+
+  .book-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .book-title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .book-desc {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 500px;
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: 768px) {
+    .about-intro-row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .book-section {
+      padding: 36px 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .achievements-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+

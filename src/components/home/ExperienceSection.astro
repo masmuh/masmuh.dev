@@ -144,3 +144,98 @@
     </div>
   </div>
 </section>
+
+<style>
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin-left: 20px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--cyan), var(--border), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 60px;
+  }
+
+  .timeline-item:last-child { margin-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -4px;
+    top: 0;
+    width: 9px;
+    height: 9px;
+    background: var(--cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--cyan);
+  }
+
+  .timeline-dot.muted {
+    background: var(--border-bright);
+    box-shadow: none;
+  }
+
+  .timeline-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  .timeline-role {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .timeline-company {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--green);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .timeline-points { list-style: none; }
+
+  .timeline-points li {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    padding-left: 16px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .timeline-points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--cyan);
+    font-size: 10px;
+  }
+
+  .timeline-points strong { color: var(--white); font-weight: 400; }
+
+  @media (max-width: 768px) {
+    .timeline { margin-left: 10px; }
+    .timeline-item { padding-left: 24px; }
+    .timeline-role { font-size: 18px; }
+  }
+</style>
+

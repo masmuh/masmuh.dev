@@ -1,3 +1,6 @@
+---
+---
+
 <section class="hero">
   <div class="hero-scan"></div>
 
@@ -27,11 +30,13 @@
   </svg>
 
   <div class="hero-content">
-    <div class="hero-eyebrow">Senior Backend Engineer · Indonesia</div>
-    <h1 class="hero-name">
-      <span class="glitch" data-text="MAS">MAS</span>
-      <span class="line2">MUHAMMAD</span>
-    </h1>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Senior Backend Engineer · Indonesia</div>
+      <h1 class="hero-name">
+        <span class="glitch" data-text="MAS">MAS</span>
+        <span class="line2">MUHAMMAD</span>
+      </h1>
+    </div>
     <p class="hero-title">
       <span class="highlight">.NET · Distributed Systems · Containerized Architectures</span><br />
       <span class="hl2">11 years</span> building mission-critical backend infrastructure
@@ -72,3 +77,143 @@
     </div>
   </div>
 </section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 60px 60px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .hero-scan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    animation: scan 4s ease-in-out infinite;
+  }
+
+  @keyframes scan {
+    0% { top: 0; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  .hero-content { max-width: 900px; }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-eyebrow::before {
+    content: '// ';
+    color: var(--muted);
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 8vw, 110px);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -3px;
+    animation: fadeUp 0.8s 0.1s ease both;
+    color: var(--white);
+  }
+
+  .hero-name .line2 {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(232, 244, 255, 0.3);
+  }
+
+  .hero-title {
+    margin-top: 32px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    animation: fadeUp 0.8s 0.2s ease both;
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  .hero-title .highlight { color: var(--cyan); }
+  .hero-title .hl2 { color: var(--green); }
+
+  .hero-cta {
+    margin-top: 52px;
+    display: flex;
+    gap: 16px;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .hero-visual {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    opacity: 0.15;
+    animation: rotate-slow 40s linear infinite;
+  }
+
+  @keyframes rotate-slow {
+    to { transform: translateY(-50%) rotate(360deg); }
+  }
+
+  .hero-stats {
+    position: absolute;
+    right: 60px;
+    bottom: 80px;
+    display: flex;
+    gap: 40px;
+    animation: fadeUp 0.8s 0.5s ease both;
+    z-index: 2;
+  }
+
+  .stat { text-align: center; }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--cyan);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 100px 24px 60px; }
+
+    .hero-stats {
+      position: relative;
+      right: auto;
+      bottom: auto;
+      margin-top: 40px;
+      justify-content: center;
+    }
+
+    .hero-visual { display: none; }
+  }
+</style>
+

@@ -5,9 +5,10 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Resume — Mas Muhammad" description="Download or print the resume of Mas Muhammad, Senior Backend Engineer with 11 years of experience in .NET, distributed systems, and containerized architectures.">
   <div class="resume-page">
     <div class="resume-actions">
-      <button class="resume-btn" id="printBtn">Print / Save as PDF</button>
+      <button class="resume-btn" id="printBtn">📄 Download as PDF</button>
       <a href="/" class="resume-btn resume-btn-secondary">← Back to Home</a>
     </div>
+    <div class="resume-hint">Tip: In the print dialog, select <strong>"Save as PDF"</strong> as the destination</div>
 
     <div class="resume-sheet" id="resumeSheet">
       <header class="resume-header">
@@ -114,10 +115,10 @@ import Layout from "../layouts/Layout.astro";
             <div class="resume-job-date">Jun 2013 — Jul 2014</div>
           </div>
           <ul class="resume-list">
-            <li>Managed backend services for Telkomsel broadcast system � high-volume SMS gateway processing thousands of messages daily</li>
+            <li>Managed backend services for Telkomsel broadcast system — high-volume SMS gateway processing thousands of messages daily</li>
             <li>Built COMMET middleware (Oracle PL/SQL) for real-time CUG provisioning for millions of MSISDNs</li>
             <li>Engineered Teman Telkomsel (Web-to-SMS Gateway) with AES-256 PII encryption</li>
-            <li>Intensive PL/SQL optimization for OLTP/OLAP workloads � reducing report generation time by ~50%</li>
+            <li>Intensive PL/SQL optimization for OLTP/OLAP workloads — reducing report generation time by ~50%</li>
           </ul>
         </div>
       </section>
@@ -153,14 +154,7 @@ import Layout from "../layouts/Layout.astro";
             <span class="resume-skill-cat">Integrations:</span>
             <span>SAP ByDesign (OData/SOAP), Xendit (PCI), Shipper, E-Faktur, Bank Mandiri, Power BI</span>
           </div>
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">Frontend:</span>
-            <span>React.js, Vue.js, Tauri/Wails, .NET MAUI, SignalR</span>
-          </div>
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">Integrations:</span>
-            <span>SAP ByDesign (OData/SOAP), Xendit (PCI), Shipper, E-Faktur, Bank Mandiri, Power BI</span>
-          </div>
+
           <div class="resume-skill-group">
             <span class="resume-skill-cat">Observability:</span>
             <span>Grafana, InfluxDB, NLog, Structured Logging</span>
@@ -211,6 +205,20 @@ import Layout from "../layouts/Layout.astro";
     gap: 12px;
     margin-bottom: 32px;
     justify-content: flex-end;
+  }
+
+  .resume-hint {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    text-align: right;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+  }
+
+  .resume-hint strong {
+    color: var(--cyan);
   }
 
   .resume-btn {

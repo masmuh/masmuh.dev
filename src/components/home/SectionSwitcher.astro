@@ -34,6 +34,11 @@ const sections: Section[] = [
     ))}
   </nav>
 
+  <div class="switcher-hint" id="switcherHint" aria-live="polite">
+    <span class="hint-icon">⌨</span>
+    <span>Use <kbd>←</kbd> <kbd>→</kbd> arrow keys or click tabs to navigate</span>
+  </div>
+
   <div class="switcher-cards">
     <div class="switcher-card active" data-switcher-card="hero">
       <HeroSection />
@@ -56,16 +61,177 @@ const sections: Section[] = [
   </div>
 </div>
 
+<style>
+  .switcher-layout {
+    position: relative;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .switcher-nav {
+    display: flex;
+    gap: 0;
+    padding: 0 64px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    background: var(--bg);
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .switcher-nav::-webkit-scrollbar { display: none; }
+
+  .switcher-nav-item {
+    padding: 14px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .switcher-nav-item:hover {
+    color: var(--cyan);
+    border-bottom-color: rgba(0, 200, 255, 0.3);
+  }
+
+  .switcher-nav-item.active {
+    color: var(--cyan);
+    border-bottom-color: var(--cyan);
+  }
+
+  .switcher-cards {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .switcher-card {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .switcher-card.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .switcher-card::-webkit-scrollbar { width: 3px; }
+  .switcher-card::-webkit-scrollbar-track { background: transparent; }
+  .switcher-card::-webkit-scrollbar-thumb { background: var(--border-bright); }
+
+  @keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes slideOutLeft {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-100%); opacity: 0; }
+  }
+
+  @keyframes slideOutRight {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+  }
+
+  .anim-in-right { animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .anim-in-left { animation: slideInLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .anim-out-left { animation: slideOutLeft 0.25s cubic-bezier(0.4, 0, 0.2, 1) both; }
+  .anim-out-right { animation: slideOutRight 0.25s cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+  .switcher-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    opacity: 1;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    max-height: 40px;
+    overflow: hidden;
+  }
+
+  .switcher-hint.hidden {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 16px;
+    border-bottom: none;
+  }
+
+  .switcher-hint kbd {
+    display: inline-block;
+    padding: 1px 6px;
+    border: 1px solid var(--border-bright);
+    background: var(--bg2);
+    color: var(--cyan);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .hint-icon {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    .switcher-layout { height: calc(100vh - 64px); margin-top: 64px; }
+    .switcher-nav { padding: 0 16px; }
+
+    .switcher-hint { font-size: 9px; padding: 6px 12px; }
+    .switcher-hint kbd { font-size: 9px; }
+  }
+</style>
+
+
 <script>
 (function () {
   const cards = document.querySelectorAll("[data-switcher-card]");
   const navItems = document.querySelectorAll("[data-switcher-target]");
+  const hint = document.getElementById("switcherHint");
   let activeIndex = 0;
   let countersTriggered = false;
+  let hintDismissed = false;
+
+  function dismissHint() {
+    if (!hintDismissed && hint) {
+      hintDismissed = true;
+      hint.classList.add("hidden");
+    }
+  }
 
   function switchTo(index) {
     if (index === activeIndex) return;
     if (index < 0 || index >= cards.length) return;
+
+    dismissHint();
 
     var direction = index > activeIndex ? "forward" : "backward";
     var oldCard = cards[activeIndex];

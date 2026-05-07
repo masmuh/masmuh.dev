@@ -1,0 +1,155 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 — Page Not Found" description="The page you're looking for doesn't exist.">
+  <div class="error-page">
+    <div class="error-scan"></div>
+    <div class="error-content">
+      <div class="error-eyebrow">// System Error</div>
+      <h1 class="error-code">
+        <span class="glitch" data-text="404">404</span>
+      </h1>
+      <div class="error-message">Page Not Found</div>
+      <p class="error-desc">
+        The resource you requested does not exist or has been relocated.<br />
+        Check the URL or navigate back to a known endpoint.
+      </p>
+      <div class="error-terminal">
+        <div class="error-terminal-line">
+          <span class="prompt">$</span> <span class="cmd">curl</span> <span class="val">{Astro.url.pathname}</span>
+        </div>
+        <div class="error-terminal-line">
+          <span class="comment">// ERROR: 404 — resource not found</span>
+        </div>
+        <div class="error-terminal-line">
+          <span class="prompt">$</span> <span class="blink"></span>
+        </div>
+      </div>
+      <div class="error-actions">
+        <a href="/" class="btn-primary">← Back to Home</a>
+        <a href="/portfolio" class="btn-secondary">View Portfolio</a>
+        <a href="/resume" class="btn-secondary">View Resume</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    padding: 60px 24px;
+  }
+
+  .error-scan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    animation: scan 4s ease-in-out infinite;
+  }
+
+  @keyframes scan {
+    0% { top: 0; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  .error-content {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .error-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .error-code {
+    font-family: var(--font-display);
+    font-size: clamp(100px, 20vw, 200px);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: -6px;
+    margin-bottom: 16px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .error-message {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .error-desc {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .error-terminal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    text-align: left;
+    margin-bottom: 40px;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .error-terminal-line {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 2.2;
+    color: var(--muted);
+  }
+
+  .prompt { color: var(--green); }
+  .cmd { color: var(--cyan); }
+  .val { color: var(--white); }
+  .comment { color: rgba(232, 244, 255, 0.35); }
+
+  .blink {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: var(--cyan);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .error-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.5s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

@@ -78,3 +78,117 @@
     <div>Built with <span class="sf-cyan">Astro</span></div>
   </div>
 </section>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-intro {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .contact-intro .hl { color: var(--cyan); }
+
+  .contact-text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-link::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--cyan);
+    transform: scaleY(0);
+    transition: transform 0.3s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--border-bright);
+    transform: translateX(4px);
+  }
+
+  .contact-link:hover::before { transform: scaleY(1); }
+
+  .contact-link-icon {
+    font-size: 18px;
+    width: 24px;
+    color: var(--cyan);
+  }
+
+  .contact-link-text {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--white);
+  }
+
+  .contact-link-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .switcher-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .switcher-footer .sf-cyan { color: var(--cyan); }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    
+    .switcher-footer {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+  }
+</style>
+
