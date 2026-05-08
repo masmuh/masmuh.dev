@@ -1,0 +1,1106 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="ISMS Download Generator — Mas Muhammad"
+  description="Automated PDF/Excel generation engine for high-volume logistics documentation, handling thousands of labels and manifests daily."
+>
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">← Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light"></span>
+      <span class="theme-icon-dark"></span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button
+        class="mobile-nav-close"
+        id="mobileNavClose"
+        aria-label="Close menu"></button
+      >
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle"
+      >Toggle Theme</button
+    >
+  </div>
+
+  <div class="isms-dg">
+    <!-- NAV -->
+    <div class="isms-nav">
+      <a href="/portfolio" class="isms-nav-back">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"></path></svg
+        >
+        Portfolio
+      </a>
+      <span class="isms-nav-dot">·</span>
+      <span class="isms-nav-title">ISMS Download Generator</span>
+    </div>
+
+    <!-- HERO -->
+    <header class="isms-hero">
+      <div class="isms-hero-meta">
+        <span class="isms-badge isms-badge-corporate">Corporate</span>
+        <span class="isms-badge isms-badge-client">Sampoerna</span>
+        <span class="isms-badge isms-badge-year">2026</span>
+      </div>
+      <h1 class="isms-hero-title">
+        ISMS <span>Download</span><br />Generator<span class="isms-cursor"
+        ></span>
+      </h1>
+      <p class="isms-hero-desc">
+        A specialized ETL middleware bridging raw, unstructured telemetry data
+        from field devices with centralized enterprise analytics — converting
+        high-volume legacy fixed-width streams into structured, audit-ready CSV
+        assets for downstream BI consumption.
+      </p>
+      <div class="isms-stack-pills">
+        <span class="isms-stack-pill">.NET Worker</span>
+        <span class="isms-stack-pill">Aspose.Words</span>
+        <span class="isms-stack-pill">iText7</span>
+        <span class="isms-stack-pill">NPOI</span>
+        <span class="isms-stack-pill">TPL</span>
+        <span class="isms-stack-pill">SQL Server</span>
+        <span class="isms-stack-pill">Windows Auth / AD</span>
+      </div>
+    </header>
+
+    <!-- METRICS -->
+    <section class="isms-section">
+      <div class="isms-section-label">
+        <span class="isms-section-label-text">Impact</span>
+        <div class="isms-section-label-line"></div>
+        <span class="isms-section-label-num">01</span>
+      </div>
+      <div class="isms-metrics-grid">
+        <div class="isms-metric-card">
+          <div class="isms-metric-val">75%</div>
+          <div class="isms-metric-label">Data latency reduction</div>
+          <div class="isms-metric-sub">Hours → minutes per cycle</div>
+        </div>
+        <div class="isms-metric-card">
+          <div class="isms-metric-val">99.9%</div>
+          <div class="isms-metric-label">Error reduction</div>
+          <div class="isms-metric-sub">Legacy parsing accuracy</div>
+        </div>
+        <div class="isms-metric-card isms-metric-amber">
+          <div class="isms-metric-val">0</div>
+          <div class="isms-metric-label">Code changes for schema update</div>
+          <div class="isms-metric-sub">Via DB entry only</div>
+        </div>
+        <div class="isms-metric-card isms-metric-amber">
+          <div class="isms-metric-val">25×</div>
+          <div class="isms-metric-label">Parallel batch size</div>
+          <div class="isms-metric-sub">Predictable memory footprint</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="isms-section">
+      <div class="isms-section-label">
+        <span class="isms-section-label-text">Architecture</span>
+        <div class="isms-section-label-line"></div>
+        <span class="isms-section-label-num">02</span>
+      </div>
+      <div class="isms-arch-diagram">
+        <div class="isms-arch-diagram-inner">
+          <div class="isms-arch-node isms-arch-source">
+            <div class="isms-arch-node-icon"></div>
+            <div class="isms-arch-node-label">File Share</div>
+            <div class="isms-arch-node-sub">ZIP archives</div>
+          </div>
+
+          <div class="isms-arch-arrow">
+            <div class="isms-arch-arrow-line"></div>
+            <div class="isms-arch-arrow-label">batch scan</div>
+          </div>
+
+          <div class="isms-arch-core-wrap">
+            <div class="isms-arch-node isms-arch-core">
+              <div
+                class="isms-arch-node-label"
+                style="font-size:13px; margin-bottom:10px;"
+              >
+                .NET Worker Service
+              </div>
+              <div class="isms-core-stack">
+                <div class="isms-core-step">
+                  <div class="isms-core-step-dot"></div>
+                  Cron trigger · batch scanner
+                </div>
+                <div class="isms-core-step">
+                  <div class="isms-core-step-dot"></div>
+                  TPL parser · Parallel.ForEach
+                </div>
+                <div class="isms-core-step">
+                  <div
+                    class="isms-core-step-dot"
+                    style="background:var(--isms-blue)"
+                  >
+                  </div>
+                  CSV writer · audit trail
+                </div>
+              </div>
+            </div>
+            <div class="isms-schema-connector">
+              <div class="isms-schema-line-v"></div>
+              <div class="isms-schema-arrow-label">schema-on-read</div>
+              <div class="isms-schema-line-v"></div>
+              <div class="isms-arch-node isms-schema-node">
+                <div class="isms-arch-node-label">SQL Server</div>
+                <div class="isms-arch-node-sub">Schema metadata</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="isms-arch-arrow">
+            <div class="isms-arch-arrow-line"></div>
+            <div class="isms-arch-arrow-label">structured CSV</div>
+          </div>
+
+          <div class="isms-arch-node isms-arch-output">
+            <div class="isms-arch-node-icon"></div>
+            <div class="isms-arch-node-label">S3 Storage</div>
+            <div class="isms-arch-node-sub">AYO HERO</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECISIONS -->
+    <section class="isms-section">
+      <div class="isms-section-label">
+        <span class="isms-section-label-text">Decision Log</span>
+        <div class="isms-section-label-line"></div>
+        <span class="isms-section-label-num">03</span>
+      </div>
+      <div class="isms-decision-list">
+        <div class="isms-decision-card">
+          <div class="isms-decision-header">
+            <div class="isms-decision-num">01</div>
+            <div>
+              <div class="isms-decision-title">
+                Schema Management — Metadata-Driven Mapping
+              </div>
+              <div class="isms-decision-problem">
+                Hard-coding parsing logic for every proprietary format creates
+                maintenance debt that compounds with every new region or format
+                version.
+              </div>
+            </div>
+          </div>
+          <div class="isms-decision-body">
+            <div>
+              <div class="isms-decision-col-label isms-decision-chosen">
+                ▸ Chosen
+              </div>
+              <div class="isms-decision-col-text">
+                Schema-on-read pattern powered by SQL Server metadata tables.
+                Field mappings and column lengths are stored as rows — updatable
+                without a single line of code change or CI/CD cycle.
+              </div>
+            </div>
+            <div>
+              <div class="isms-decision-col-label isms-decision-tradeoff">
+                ▸ Trade-off
+              </div>
+              <div class="isms-decision-col-text">
+                Slight runtime overhead when fetching mapping rules at startup —
+                accepted because the ROI in maintenance agility is massive
+                across a fleet of constantly-evolving regional formats.
+              </div>
+            </div>
+          </div>
+          <div class="isms-decision-code">
+            <pre><span class="isms-token-cm">//  Before: hard-coded regional logic</span>
+<span class="isms-token-kw">if</span> (region == <span class="isms-token-str">"JAWA"</span>) ParseFormatA(line);
+<span class="isms-token-kw">else if</span> (region == <span class="isms-token-str">"BALI"</span>) ParseFormatB(line);
+
+<span class="isms-token-cm">//  After: schema-on-read</span>
+<span class="isms-token-kw">var</span> schema = <span class="isms-token-fn">_schemaRepo.GetMapping</span>(region, version);
+<span class="isms-token-kw">var</span> record = <span class="isms-token-fn">_parser.Parse</span>(line, schema);</pre>
+          </div>
+        </div>
+
+        <div class="isms-decision-card">
+          <div class="isms-decision-header">
+            <div class="isms-decision-num">02</div>
+            <div>
+              <div class="isms-decision-title">
+                Processing Model — Aggressive Parallelism (TPL)
+              </div>
+              <div class="isms-decision-problem">
+                Sequential processing of thousands of ZIP archives created an
+                unacceptable bottleneck in the daily reporting cycle.
+              </div>
+            </div>
+          </div>
+          <div class="isms-decision-body">
+            <div>
+              <div class="isms-decision-col-label isms-decision-chosen">
+                ▸ Chosen
+              </div>
+              <div class="isms-decision-col-text">
+                Task Parallel Library (TPL) with Parallel.ForEach + 25-file
+                batch increments. CPU saturation maximized while memory
+                footprint remains bounded and predictable.
+              </div>
+            </div>
+            <div>
+              <div class="isms-decision-col-label isms-decision-tradeoff">
+                ▸ Trade-off
+              </div>
+              <div class="isms-decision-col-text">
+                Increased memory pressure under high concurrency — mitigated by
+                batch-based recursive processing. Each batch runs full GC at
+                completion, preventing heap bloat during sustained throughput.
+              </div>
+            </div>
+          </div>
+          <div class="isms-decision-code">
+            <pre><span class="isms-token-kw">var</span> batches = archives.<span class="isms-token-fn">Chunk</span>(<span class="isms-token-acc">25</span>);
+
+<span class="isms-token-kw">foreach</span> (<span class="isms-token-kw">var</span> batch <span class="isms-token-kw">in</span> batches)
+&#123;
+    <span class="isms-token-fn">Parallel.ForEach</span>(batch, archive =&gt;
+    &#123;
+        <span class="isms-token-kw">var</span> records = <span class="isms-token-fn">ExtractAndParse</span>(archive);
+        <span class="isms-token-fn">WriteToCsv</span>(records);
+    &#125;);
+    GC.<span class="isms-token-fn">Collect</span>(); <span class="isms-token-cm">// predictable GC at batch boundaries</span>
+&#125;</pre>
+          </div>
+        </div>
+
+        <div class="isms-decision-card">
+          <div class="isms-decision-header">
+            <div class="isms-decision-num">03</div>
+            <div>
+              <div class="isms-decision-title">
+                Auth Strategy — Integrated Windows Authentication
+              </div>
+              <div class="isms-decision-problem">
+                System operates within a highly secured corporate DMZ —
+                authentication must be zero-friction for the ops team while
+                maintaining strict access control.
+              </div>
+            </div>
+          </div>
+          <div class="isms-decision-body">
+            <div>
+              <div class="isms-decision-col-label isms-decision-chosen">
+                ▸ Chosen
+              </div>
+              <div class="isms-decision-col-text">
+                Integrated Windows Security for AuthN/AuthZ via Active
+                Directory. Zero credential management overhead — the existing AD
+                infrastructure handles identity completely.
+              </div>
+            </div>
+            <div>
+              <div class="isms-decision-col-label isms-decision-tradeoff">
+                ▸ Trade-off
+              </div>
+              <div class="isms-decision-col-text">
+                Less flexible than modern OAuth2/OIDC patterns. Accepted: the
+                reduced attack surface and operational simplicity outweigh
+                flexibility concerns in this closed corporate DMZ context.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS IMPACT -->
+    <section class="isms-section">
+      <div class="isms-section-label">
+        <span class="isms-section-label-text">Business Impact</span>
+        <div class="isms-section-label-line"></div>
+        <span class="isms-section-label-num">04</span>
+      </div>
+      <div class="isms-impact-wrapper">
+        <table class="isms-impact-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Delta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="isms-row-label">Daily reporting cycle</td>
+              <td class="isms-before">Hours</td>
+              <td class="isms-after">Minutes</td>
+              <td class="isms-delta">↓ 75% latency</td>
+            </tr>
+            <tr>
+              <td class="isms-row-label">Legacy parsing errors</td>
+              <td class="isms-before">High (manual)</td>
+              <td class="isms-after">Near-zero</td>
+              <td class="isms-delta">↓ 99.9% errors</td>
+            </tr>
+            <tr>
+              <td class="isms-row-label">Schema change cycle</td>
+              <td class="isms-before">Full CI/CD deploy</td>
+              <td class="isms-after">DB entry update</td>
+              <td class="isms-delta">0 code changes</td>
+            </tr>
+            <tr>
+              <td class="isms-row-label">Audit compliance</td>
+              <td class="isms-before">Manual reconciliation</td>
+              <td class="isms-after">Auto-persistent logs</td>
+              <td class="isms-delta">100% traceable</td>
+            </tr>
+            <tr>
+              <td class="isms-row-label">Seasonal scaling</td>
+              <td class="isms-before">Architectural refactor</td>
+              <td class="isms-after">Add compute node</td>
+              <td class="isms-delta">Stateless horizontal</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="isms-section">
+      <div class="isms-section-label">
+        <span class="isms-section-label-text">Tech Stack</span>
+        <div class="isms-section-label-line"></div>
+        <span class="isms-section-label-num">05</span>
+      </div>
+      <div class="isms-impact-wrapper">
+        <table class="isms-stack-table">
+          <tbody>
+            <tr>
+              <td class="isms-layer">Runtime</td>
+              <td class="isms-tech">.NET Worker Service</td>
+            </tr>
+            <tr>
+              <td class="isms-layer">Document Gen</td>
+              <td class="isms-tech">Aspose.Words · iText7 · NPOI · EPPlus</td>
+            </tr>
+            <tr>
+              <td class="isms-layer">Parallelism</td>
+              <td class="isms-tech">TPL · Parallel.ForEach · Task</td>
+            </tr>
+            <tr>
+              <td class="isms-layer">Database</td>
+              <td class="isms-tech">SQL Server (schema metadata + audit log)</td
+              >
+            </tr>
+            <tr>
+              <td class="isms-layer">Auth</td>
+              <td class="isms-tech"
+                >Windows Integrated Auth · Active Directory</td
+              >
+            </tr>
+            <tr>
+              <td class="isms-layer">Storage</td>
+              <td class="isms-tech">Network File Share (SMB) · ZIP archives</td>
+            </tr>
+            <tr>
+              <td class="isms-layer">Output</td>
+              <td class="isms-tech">Structured CSV → downstream BI pipeline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="isms-footer">
+      <span class="isms-footer-text"
+        >Part of ISMS logistics suite · Sampoerna · Kano Solution · 2020–Present</span
+      >
+      <a href="/portfolio" class="isms-footer-link">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"></path></svg
+        >
+        Back to portfolio
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-txt">© 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+  .isms-dg {
+    --isms-bg: #0a0b0d;
+    --isms-bg2: #0f1114;
+    --isms-bg3: #141720;
+    --isms-surface: #1a1e28;
+    --isms-surface2: #212636;
+    --isms-border: #2a2f40;
+    --isms-border2: #363c50;
+    --isms-accent: #00e5a0;
+    --isms-accent2: #00b87a;
+    --isms-accent-dim: rgba(0, 229, 160, 0.08);
+    --isms-accent-dim2: rgba(0, 229, 160, 0.15);
+    --isms-amber: #f59e0b;
+    --isms-amber-dim: rgba(245, 158, 11, 0.1);
+    --isms-blue: #60a5fa;
+    --isms-blue-dim: rgba(96, 165, 250, 0.1);
+    --isms-red: #f87171;
+    --isms-text: #e8eaf0;
+    --isms-text2: #8b92a8;
+    --isms-text3: #5a6077;
+    --isms-mono: "JetBrains Mono", monospace;
+    --isms-display: "Syne", sans-serif;
+    --isms-radius: 10px;
+    --isms-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+  }
+
+  .isms-dg * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .isms-dg body {
+    background: var(--isms-bg);
+    color: var(--isms-text);
+    font-family: var(--isms-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .isms-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--isms-border);
+  }
+  .isms-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--isms-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .isms-nav-back:hover {
+    color: var(--isms-accent);
+  }
+  .isms-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .isms-nav-dot {
+    color: var(--isms-border2);
+  }
+  .isms-nav-title {
+    color: var(--isms-text3);
+    font-size: 12px;
+  }
+
+  .isms-hero {
+    margin-bottom: 56px;
+  }
+  .isms-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .isms-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .isms-badge-corporate {
+    background: var(--isms-blue-dim);
+    color: var(--isms-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .isms-badge-client {
+    background: var(--isms-accent-dim);
+    color: var(--isms-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .isms-badge-year {
+    background: var(--isms-surface);
+    color: var(--isms-text3);
+    border-color: var(--isms-border);
+  }
+
+  .isms-hero-title {
+    font-family: var(--isms-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .isms-hero-title span {
+    color: var(--isms-accent);
+    position: relative;
+  }
+
+  .isms-hero-desc {
+    color: var(--isms-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .isms-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .isms-stack-pill {
+    background: var(--isms-surface);
+    border: 1px solid var(--isms-border);
+    color: var(--isms-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .isms-stack-pill:hover {
+    border-color: var(--isms-accent);
+    color: var(--isms-accent);
+    background: var(--isms-accent-dim);
+  }
+
+  .isms-section {
+    margin-bottom: 52px;
+  }
+  .isms-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .isms-section-label-text {
+    font-family: var(--isms-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--isms-text3);
+    text-transform: uppercase;
+  }
+  .isms-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--isms-border);
+  }
+  .isms-section-label-num {
+    font-size: 11px;
+    color: var(--isms-border2);
+  }
+
+  .isms-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .isms-metric-card {
+    background: var(--isms-bg3);
+    border: 1px solid var(--isms-border);
+    border-radius: var(--isms-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .isms-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--isms-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .isms-metric-card:hover {
+    border-color: var(--isms-border2);
+  }
+  .isms-metric-card:hover::before {
+    opacity: 1;
+  }
+  .isms-metric-amber .isms-metric-val {
+    color: var(--isms-amber);
+  }
+  .isms-metric-amber::before {
+    background: var(--isms-amber);
+  }
+
+  .isms-metric-val {
+    font-family: var(--isms-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--isms-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .isms-metric-label {
+    font-size: 12px;
+    color: var(--isms-text2);
+    margin-bottom: 3px;
+  }
+  .isms-metric-sub {
+    font-size: 11px;
+    color: var(--isms-text3);
+  }
+
+  .isms-arch-diagram {
+    background: var(--isms-bg3);
+    border: 1px solid var(--isms-border);
+    border-radius: var(--isms-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .isms-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .isms-arch-node {
+    background: var(--isms-surface);
+    border: 1px solid var(--isms-border2);
+    border-radius: var(--isms-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .isms-arch-core {
+    background: var(--isms-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .isms-arch-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .isms-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--isms-amber-dim);
+    min-width: 110px;
+  }
+  .isms-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .isms-arch-node-label {
+    font-family: var(--isms-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .isms-arch-node-sub {
+    font-size: 10px;
+    color: var(--isms-text3);
+    font-family: var(--isms-mono);
+  }
+
+  .isms-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--isms-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .isms-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--isms-border),
+      var(--isms-accent),
+      var(--isms-border)
+    );
+    position: relative;
+  }
+  .isms-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--isms-accent);
+    font-size: 10px;
+  }
+  .isms-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--isms-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .isms-arch-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .isms-core-step {
+    background: var(--isms-bg3);
+    border: 1px solid var(--isms-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--isms-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .isms-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--isms-accent);
+    flex-shrink: 0;
+  }
+
+  .isms-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .isms-schema-arrow-label {
+    font-size: 9px;
+    color: var(--isms-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .isms-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .isms-decision-card {
+    background: var(--isms-bg3);
+    border: 1px solid var(--isms-border);
+    border-radius: var(--isms-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .isms-decision-card:hover {
+    border-color: var(--isms-border2);
+  }
+
+  .isms-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .isms-decision-num {
+    font-family: var(--isms-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--isms-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .isms-decision-title {
+    font-family: var(--isms-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .isms-decision-problem {
+    font-size: 12px;
+    color: var(--isms-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--isms-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .isms-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .isms-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .isms-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .isms-decision-chosen {
+    color: var(--isms-accent);
+  }
+  .isms-decision-tradeoff {
+    color: var(--isms-amber);
+  }
+  .isms-decision-col-text {
+    font-size: 12px;
+    color: var(--isms-text2);
+    line-height: 1.65;
+  }
+
+  .isms-decision-code {
+    background: var(--isms-bg);
+    border-top: 1px solid var(--isms-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--isms-text2);
+    overflow-x: auto;
+  }
+  .isms-decision-code pre {
+    margin: 0;
+    font-family: var(--isms-mono);
+    line-height: 1.6;
+  }
+  .isms-token-kw {
+    color: #c792ea;
+  }
+  .isms-token-fn {
+    color: #82aaff;
+  }
+  .isms-token-str {
+    color: #c3e88d;
+  }
+  .isms-token-cm {
+    color: var(--isms-text3);
+    font-style: italic;
+  }
+  .isms-token-acc {
+    color: var(--isms-accent);
+  }
+
+  .isms-impact-wrapper {
+    background: var(--isms-bg3);
+    border: 1px solid var(--isms-border);
+    border-radius: var(--isms-radius);
+    overflow: hidden;
+  }
+  .isms-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .isms-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--isms-text3);
+    border-bottom: 1px solid var(--isms-border);
+    font-family: var(--isms-display);
+    font-weight: 600;
+  }
+  .isms-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--isms-border);
+    color: var(--isms-text2);
+  }
+  .isms-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-impact-table tr:hover td {
+    background: var(--isms-surface);
+  }
+  .isms-before {
+    color: var(--isms-red);
+  }
+  .isms-after {
+    color: var(--isms-accent);
+  }
+  .isms-delta {
+    color: var(--isms-accent);
+    font-weight: 500;
+    font-family: var(--isms-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .isms-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .isms-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .isms-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--isms-border);
+  }
+  .isms-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-layer {
+    color: var(--isms-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .isms-tech {
+    color: var(--isms-accent);
+    font-family: var(--isms-mono);
+  }
+  .isms-stack-table tr:hover td {
+    background: var(--isms-surface);
+  }
+
+  .isms-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--isms-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .isms-footer-text {
+    font-size: 11px;
+    color: var(--isms-text3);
+  }
+  .isms-footer-link {
+    font-size: 11px;
+    color: var(--isms-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .isms-footer-link:hover {
+    color: var(--isms-accent);
+  }
+
+  @keyframes isms-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .isms-hero {
+    animation: isms-fadeUp 0.5s ease both;
+  }
+  .isms-section:nth-child(2) {
+    animation: isms-fadeUp 0.5s 0.1s ease both;
+  }
+  .isms-section:nth-child(3) {
+    animation: isms-fadeUp 0.5s 0.15s ease both;
+  }
+  .isms-section:nth-child(4) {
+    animation: isms-fadeUp 0.5s 0.2s ease both;
+  }
+  .isms-section:nth-child(5) {
+    animation: isms-fadeUp 0.5s 0.25s ease both;
+  }
+  .isms-section:nth-child(6) {
+    animation: isms-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .isms-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--isms-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: isms-blink 1s step-end infinite;
+  }
+  @keyframes isms-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+</style>

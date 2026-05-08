@@ -1,0 +1,889 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="ANR Enterprise Bridge - Mas Muhammad" description="A .NET 9.0 background worker service that bridges SAP Business ByDesign with enterprise payment processing. Automates bill payment and tax payment data fetching via OData, processes file transfers over SFTP/FTP, handles callback updates, and sends email notifications — all on cron-driven schedules.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="anr">
+
+<header class="anr-hero">
+<div class="anr-hero-meta">
+<span class="anr-badge anr-badge-corporate">Corporate</span><span class="anr-badge anr-badge-client">Bank Mandiri</span> 
+<span class="anr-badge anr-badge-year">August 2023</span>
+</div>
+<h1 class="anr-hero-title">ANR <span>Enterprise</span><br>Bridge<span class="anr-cursor"></span></h1>
+<p class="anr-hero-desc">
+A .NET 9.0 background worker service that bridges SAP Business ByDesign with enterprise payment processing. Automates bill payment and tax payment data fetching via OData, processes file transfers over SFTP/FTP, handles callback updates, and sends email notifications — all on cron-driven schedules.
+</p>
+<div class="anr-stack-pills">
+<span class="anr-stack-pill">C# .NET 9.0</span>
+<span class="anr-stack-pill">Windows Service</span>
+<span class="anr-stack-pill">LiteDB</span>
+<span class="anr-stack-pill">SAP BYD OData</span>
+<span class="anr-stack-pill">SFTP/FTP</span>
+<span class="anr-stack-pill">MailKit</span>
+<span class="anr-stack-pill">Docker</span>
+</div>
+</header>
+
+<section class="anr-section">
+<div class="anr-section-label">
+<span class="anr-section-label-text">Impact</span>
+<div class="anr-section-label-line"></div>
+<span class="anr-section-label-num">01</span>
+</div>
+<div class="anr-metrics-grid">
+<div class="anr-metric-card">
+<div class="anr-metric-val">4,975+</div>
+<div class="anr-metric-label">Lines of Code</div>
+<div class="anr-metric-sub">C# across 58 files</div>
+</div>
+<div class="anr-metric-card">
+<div class="anr-metric-val">3</div>
+<div class="anr-metric-label">Worker Services</div>
+<div class="anr-metric-sub">Cron-scheduled jobs</div>
+</div>
+<div class="anr-metric-card">
+<div class="anr-metric-val">9</div>
+<div class="anr-metric-label">Service Modules</div>
+<div class="anr-metric-sub">Interface-based services</div>
+</div>
+<div class="anr-metric-card anr-red">
+<div class="anr-metric-val">Mission Critical</div>
+<div class="anr-metric-label">System Level</div>
+<div class="anr-metric-sub">Payment automation</div>
+</div>
+</div>
+</section>
+
+<section class="anr-section">
+<div class="anr-section-label">
+<span class="anr-section-label-text">Architecture</span>
+<div class="anr-section-label-line"></div>
+<span class="anr-section-label-num">02</span>
+</div>
+<div class="anr-arch-diagram">
+<div class="anr-arch-diagram-inner">
+
+<div class="anr-arch-node anr-source">
+<div class="anr-arch-node-icon"></div>
+<div class="anr-arch-node-label">SAP BYD</div>
+<div class="anr-arch-node-sub">OData API</div>
+</div>
+
+<div class="anr-arch-arrow">
+<div class="anr-arch-arrow-line"></div>
+<div class="anr-arch-arrow-label">fetch</div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+<div class="anr-arch-node core" style="width:220px;">
+<div class="anr-arch-node-label" style="font-size:13px; margin-bottom:10px;">.NET 9.0 Worker</div>
+<div class="anr-core-stack">
+<div class="anr-core-step"><div class="anr-core-step-dot"></div>Worker · Fetch cycle</div>
+<div class="anr-core-step"><div class="anr-core-step-dot"></div>Worker · Callback</div>
+<div class="anr-core-step"><div class="anr-core-step-dot" style="background:var(--blue)"></div>Worker · Upload</div>
+</div>
+</div>
+<div class="anr-schema-connector" style="margin-top:0;">
+<div class="anr-schema-line-v"></div>
+<div class="anr-schema-arrow-label">NCrontab Scheduler</div>
+<div class="anr-schema-line-v"></div>
+<div class="anr-arch-node anr-schema-node">
+<div class="anr-arch-node-label" style="font-size:11px; color: #f59e0b;">Service Layer</div>
+<div class="anr-arch-node-sub">Fetch · Callback · FTP · Auth · Mail</div>
+</div>
+</div>
+</div>
+
+<div class="anr-arch-arrow">
+<div class="anr-arch-arrow-line"></div>
+<div class="anr-arch-arrow-label">persist</div>
+</div>
+
+<div class="anr-arch-node anr-output">
+<div class="anr-arch-node-icon"></div>
+<div class="anr-arch-node-label">LiteDB</div>
+<div class="anr-arch-node-sub">Embedded document DB</div>
+</div>
+
+<div class="anr-arch-arrow" style="min-width:40px;">
+<div class="anr-arch-arrow-line" style="width:30px;"></div>
+<div class="anr-arch-arrow-label">transfer</div>
+</div>
+
+<div class="anr-arch-node anr-source" style="border-color:rgba(245,158,11,0.3);">
+<div class="anr-arch-node-icon"></div>
+<div class="anr-arch-node-label">SFTP / FTP</div>
+<div class="anr-arch-node-sub">File exchange</div>
+</div>
+
+<div class="anr-arch-arrow" style="min-width:40px;">
+<div class="anr-arch-arrow-line" style="width:30px;"></div>
+<div class="anr-arch-arrow-label">notify</div>
+</div>
+
+<div class="anr-arch-node anr-output" style="border-color:rgba(96,165,250,0.3);">
+<div class="anr-arch-node-icon"></div>
+<div class="anr-arch-node-label">Email</div>
+<div class="anr-arch-node-sub">SMTP notifications</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="anr-section">
+<div class="anr-section-label">
+<span class="anr-section-label-text">Tech Stack</span>
+<div class="anr-section-label-line"></div>
+<span class="anr-section-label-num">03</span>
+</div>
+<div class="anr-impact-wrapper">
+<table class="anr-stack-table">
+<tbody>
+<tr><td class="anr-layer">Runtime</td><td class="anr-tech">.NET 9.0 (C# 13)</td></tr>
+<tr><td class="anr-layer">Host Model</td><td class="anr-tech">Windows Service + Linux systemd + Docker</td></tr>
+<tr><td class="anr-layer">Database</td><td class="anr-tech">LiteDB 5.0 (embedded)</td></tr>
+<tr><td class="anr-layer">File Transfer</td><td class="anr-tech">FluentFTP · SSH.NET (SFTP)</td></tr>
+<tr><td class="anr-layer">Email</td><td class="anr-tech">MailKit (SMTP via resend.com)</td></tr>
+<tr><td class="anr-layer">Logging</td><td class="anr-tech">NLog · Serilog</td></tr>
+<tr><td class="anr-layer">ERP Integration</td><td class="anr-tech">SAP Business ByDesign OData</td></tr>
+<tr><td class="anr-layer">Scheduling</td><td class="anr-tech">NCrontab.Signed (cron expressions)</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="anr-section">
+<div class="anr-section-label">
+<span class="anr-section-label-text">Capabilities</span>
+<div class="anr-section-label-line"></div>
+<span class="anr-section-label-num">04</span>
+</div>
+<div class="anr-impact-wrapper">
+<table class="anr-stack-table">
+<tbody>
+<tr><td class="anr-layer">Bill Payment</td><td class="anr-tech">Fetch bill payment advice from SAP BYD OData, process and persist locally</td></tr>
+<tr><td class="anr-layer">Tax Payment</td><td class="anr-tech">Automated tax payment data extraction and file generation</td></tr>
+<tr><td class="anr-layer">File Exchange</td><td class="anr-tech">SFTP/FTP upload of outgoing payment files and download of callback files</td></tr>
+<tr><td class="anr-layer">Callback Processing</td><td class="anr-tech">Process payment status callbacks and update SAP via OData</td></tr>
+<tr><td class="anr-layer">Inbound Files</td><td class="anr-tech">Read and process incoming payment files (CSV, Excel, text)</td></tr>
+<tr><td class="anr-layer">Notifications</td><td class="anr-tech">Automated email notifications via SMTP with HTML templates</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .anr {
+    --anr-bg: #0a0b0d;
+    --anr-bg2: #0f1114;
+    --anr-bg3: #141720;
+    --anr-surface: #1a1e28;
+    --anr-surface2: #212636;
+    --anr-border: #2a2f40;
+    --anr-border2: #363c50;
+    --anr-accent: #00e5a0;
+    --anr-accent2: #00b87a;
+    --anr-accent-dim: rgba(0, 229, 160, 0.08);
+    --anr-accent-dim2: rgba(0, 229, 160, 0.15);
+    --anr-amber: #f59e0b;
+    --anr-amber-dim: rgba(245, 158, 11, 0.1);
+    --anr-blue: #60a5fa;
+    --anr-blue-dim: rgba(96, 165, 250, 0.1);
+    --anr-red: #f87171;
+    --anr-text: #e8eaf0;
+    --anr-text2: #8b92a8;
+    --anr-text3: #5a6077;
+    --anr-mono: "JetBrains Mono", monospace;
+    --anr-display: "Syne", sans-serif;
+    --anr-radius: 10px;
+    --anr-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .anr * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .anr body {
+    background: var(--anr-bg);
+    color: var(--anr-text);
+    font-family: var(--anr-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .anr-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--anr-border);
+  }
+  .anr-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--anr-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .anr-nav-back:hover {
+    color: var(--anr-accent);
+  }
+  .anr-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .anr-nav-dot {
+    color: var(--anr-border2);
+  }
+  .anr-nav-title {
+    color: var(--anr-text3);
+    font-size: 12px;
+  }
+
+  .anr-hero {
+    margin-bottom: 56px;
+  }
+  .anr-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .anr-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .anr-badge-corporate {
+    background: var(--anr-blue-dim);
+    color: var(--anr-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .anr-badge-client {
+    background: var(--anr-accent-dim);
+    color: var(--anr-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .anr-badge-year {
+    background: var(--anr-surface);
+    color: var(--anr-text3);
+    border-color: var(--anr-border);
+  }
+
+  .anr-hero-title {
+    font-family: var(--anr-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .anr-hero-title span {
+    color: var(--anr-accent);
+    position: relative;
+  }
+
+  .anr-hero-desc {
+    color: var(--anr-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .anr-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .anr-stack-pill {
+    background: var(--anr-surface);
+    border: 1px solid var(--anr-border);
+    color: var(--anr-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .anr-stack-pill:hover {
+    border-color: var(--anr-accent);
+    color: var(--anr-accent);
+    background: var(--anr-accent-dim);
+  }
+
+  .anr-section {
+    margin-bottom: 52px;
+  }
+  .anr-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .anr-section-label-text {
+    font-family: var(--anr-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--anr-text3);
+    text-transform: uppercase;
+  }
+  .anr-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--anr-border);
+  }
+  .anr-section-label-num {
+    font-size: 11px;
+    color: var(--anr-border2);
+  }
+
+  .anr-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .anr-metric-card {
+    background: var(--anr-bg3);
+    border: 1px solid var(--anr-border);
+    border-radius: var(--anr-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .anr-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--anr-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .anr-metric-card:hover {
+    border-color: var(--anr-border2);
+  }
+  .anr-metric-card:hover::before {
+    opacity: 1;
+  }
+  .anr-metric-amber .anr-metric-val {
+    color: var(--anr-amber);
+  }
+  .anr-metric-amber::before {
+    background: var(--anr-amber);
+  }
+
+  .anr-metric-val {
+    font-family: var(--anr-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--anr-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .anr-metric-label {
+    font-size: 12px;
+    color: var(--anr-text2);
+    margin-bottom: 3px;
+  }
+  .anr-metric-sub {
+    font-size: 11px;
+    color: var(--anr-text3);
+  }
+
+  .anr-arch-diagram {
+    background: var(--anr-bg3);
+    border: 1px solid var(--anr-border);
+    border-radius: var(--anr-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .anr-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .anr-arch-node {
+    background: var(--anr-surface);
+    border: 1px solid var(--anr-border2);
+    border-radius: var(--anr-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .anr-core {
+    background: var(--anr-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .anr-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .anr-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--anr-amber-dim);
+    min-width: 110px;
+  }
+  .anr-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .anr-arch-node-label {
+    font-family: var(--anr-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .anr-arch-node-sub {
+    font-size: 10px;
+    color: var(--anr-text3);
+    font-family: var(--anr-mono);
+  }
+
+  .anr-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--anr-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .anr-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--anr-border),
+      var(--anr-accent),
+      var(--anr-border)
+    );
+    position: relative;
+  }
+  .anr-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--anr-accent);
+    font-size: 10px;
+  }
+  .anr-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--anr-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .anr-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .anr-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .anr-core-step {
+    background: var(--anr-bg3);
+    border: 1px solid var(--anr-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--anr-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .anr-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--anr-accent);
+    flex-shrink: 0;
+  }
+
+  .anr-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .anr-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .anr-schema-arrow-label {
+    font-size: 9px;
+    color: var(--anr-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .anr-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .anr-decision-card {
+    background: var(--anr-bg3);
+    border: 1px solid var(--anr-border);
+    border-radius: var(--anr-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .anr-decision-card:hover {
+    border-color: var(--anr-border2);
+  }
+
+  .anr-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .anr-decision-num {
+    font-family: var(--anr-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--anr-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .anr-decision-title {
+    font-family: var(--anr-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .anr-decision-problem {
+    font-size: 12px;
+    color: var(--anr-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--anr-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .anr-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .anr-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .anr-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .anr-decision-chosen {
+    color: var(--anr-accent);
+  }
+  .anr-decision-tradeoff {
+    color: var(--anr-amber);
+  }
+  .anr-decision-col-text {
+    font-size: 12px;
+    color: var(--anr-text2);
+    line-height: 1.65;
+  }
+
+  .anr-decision-code {
+    background: var(--anr-bg);
+    border-top: 1px solid var(--anr-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--anr-text2);
+    overflow-x: auto;
+  }
+  .anr-decision-code pre {
+    margin: 0;
+    font-family: var(--anr-mono);
+    line-height: 1.6;
+  }
+  .anr-token-kw {
+    color: #c792ea;
+  }
+  .anr-token-fn {
+    color: #82aaff;
+  }
+  .anr-token-str {
+    color: #c3e88d;
+  }
+  .anr-token-cm {
+    color: var(--anr-text3);
+    font-style: italic;
+  }
+  .anr-token-acc {
+    color: var(--anr-accent);
+  }
+
+  .anr-impact-wrapper {
+    background: var(--anr-bg3);
+    border: 1px solid var(--anr-border);
+    border-radius: var(--anr-radius);
+    overflow: hidden;
+  }
+  .anr-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .anr-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--anr-text3);
+    border-bottom: 1px solid var(--anr-border);
+    font-family: var(--anr-display);
+    font-weight: 600;
+  }
+  .anr-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--anr-border);
+    color: var(--anr-text2);
+  }
+  .anr-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .anr-impact-table tr:hover td {
+    background: var(--anr-surface);
+  }
+  .anr-before {
+    color: var(--anr-red);
+  }
+  .anr-after {
+    color: var(--anr-accent);
+  }
+  .anr-delta {
+    color: var(--anr-accent);
+    font-weight: 500;
+    font-family: var(--anr-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .anr-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .anr-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .anr-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--anr-border);
+  }
+  .anr-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .anr-layer {
+    color: var(--anr-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .anr-tech {
+    color: var(--anr-accent);
+    font-family: var(--anr-mono);
+  }
+  .anr-stack-table tr:hover td {
+    background: var(--anr-surface);
+  }
+
+  .anr-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--anr-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .anr-footer-text {
+    font-size: 11px;
+    color: var(--anr-text3);
+  }
+  .anr-footer-link {
+    font-size: 11px;
+    color: var(--anr-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .anr-footer-link:hover {
+    color: var(--anr-accent);
+  }
+
+  @keyframes anr-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .anr-hero {
+    animation: anr-fadeUp 0.5s ease both;
+  }
+  .anr-section:nth-child(2) {
+    animation: anr-fadeUp 0.5s 0.1s ease both;
+  }
+  .anr-section:nth-child(3) {
+    animation: anr-fadeUp 0.5s 0.15s ease both;
+  }
+  .anr-section:nth-child(4) {
+    animation: anr-fadeUp 0.5s 0.2s ease both;
+  }
+  .anr-section:nth-child(5) {
+    animation: anr-fadeUp 0.5s 0.25s ease both;
+  }
+  .anr-section:nth-child(6) {
+    animation: anr-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .anr-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--anr-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: anr-blink 1s step-end infinite;
+  }
+  @keyframes anr-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .anr-badge-client { background: var(--anr-accent-dim); color: var(--anr-accent); border-color: rgba(0,229,160,0.2); }
+  .anr-metric-val { font-size: 22px; }
+  .anr-amber .anr-metric-val { color: var(--anr-amber); }
+  .anr-amber::before { background: var(--anr-amber); }
+  .anr-red .anr-metric-val { color: var(--anr-red); }
+  .anr-red::before { background: var(--anr-red); }
+  .anr-blue .anr-metric-val { color: var(--anr-blue); }
+  .anr-blue::before { background: var(--anr-blue); }
+  .anr-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .anr-business-line-cards { grid-template-columns: 1fr; } }
+  .anr-bl-card { background: var(--anr-bg2); border: 1px solid var(--anr-border); border-radius: var(--anr-radius); padding: 16px; }
+  .anr-bl-card-title { font-family: var(--anr-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .anr-bl-card-desc { font-size: 11px; color: var(--anr-text3); line-height: 1.6; }
+  .anr-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--anr-accent-dim); color: var(--anr-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .anr-bl-card-tag.anr-amber-tag { background: var(--anr-amber-dim); color: var(--anr-amber); border-color: rgba(245,158,11,0.2); }
+  .anr-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .anr-cap-list { grid-template-columns: 1fr; } }
+  .anr-cap-item { background: var(--anr-bg3); border: 1px solid var(--anr-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--anr-text2); }
+  .anr-cap-item:hover { border-color: var(--anr-border2); color: var(--anr-text); }
+  .anr-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--anr-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .anr-flow-panel { background: var(--anr-bg2); border: 1px solid var(--anr-border); border-radius: var(--anr-radius); padding: 20px; margin-top: 20px; }
+  .anr-flow-panel-title { font-family: var(--anr-display); font-size: 12px; font-weight: 600; color: var(--anr-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .anr-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .anr-flow-step { display: flex; align-items: center; gap: 8px; }
+  .anr-flow-step-box { background: var(--anr-surface); border: 1px solid var(--anr-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--anr-text2); white-space: nowrap; }
+  .anr-flow-step-box.anr-accent { border-color: rgba(0,229,160,0.3); color: var(--anr-accent); }
+  .anr-flow-step-arr { color: var(--anr-text3); font-size: 11px; margin: 0 4px; }
+</style>

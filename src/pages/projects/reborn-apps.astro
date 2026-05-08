@@ -1,0 +1,904 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="MS Glow Reborn Ecosystem - Mas Muhammad" description="A comprehensive e-commerce ecosystem for MS Glow cosmetics brand powering product catalog management, seller and store management, order processing with shopping cart lifecycle, genuine product verification via QR, clinic directory, and full content management system. Built with C# (.NET 5) microservices with Vue.js frontends following clean layered architecture with ArgoCD GitOps deployment.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="reborn-apps">
+
+<header class="reborn-apps-hero">
+    <div class="reborn-apps-hero-meta">
+      <span class="reborn-apps-badge badge-consulting">Consulting</span>
+      <span class="reborn-apps-badge reborn-apps-badge-domain">E-commerce</span>
+      <span class="reborn-apps-badge reborn-apps-badge-year">January 2022</span>
+    </div>
+    <h1 class="reborn-apps-hero-title">
+      MS Glow<br>
+      <span>Reborn Ecosystem</span><span class="reborn-apps-cursor"></span>
+    </h1>
+    <p class="reborn-apps-hero-desc">
+      A comprehensive e-commerce ecosystem for MS Glow cosmetics brand powering product
+      catalog management, seller and store management, order processing with shopping
+      cart lifecycle, genuine product verification via QR, clinic directory, and full
+      content management system. Built with C# (.NET 5) microservices with Vue.js
+      frontends following clean layered architecture with ArgoCD GitOps deployment.
+    </p>
+    <div class="reborn-apps-stack-pills">
+      <span class="reborn-apps-stack-pill">C# .NET 5</span>
+      <span class="reborn-apps-stack-pill">Vue.js / Nuxt.js</span>
+      <span class="reborn-apps-stack-pill">MongoDB</span>
+      <span class="reborn-apps-stack-pill">JWT Auth</span>
+      <span class="reborn-apps-stack-pill">AutoMapper</span>
+      <span class="reborn-apps-stack-pill">Swagger</span>
+      <span class="reborn-apps-stack-pill">Docker + K8s</span>
+      <span class="reborn-apps-stack-pill">ArgoCD</span>
+    </div>
+  </header>
+
+  <section class="reborn-apps-section">
+    <div class="reborn-apps-section-label">
+      <span class="reborn-apps-section-label-num">01</span>
+      <span class="reborn-apps-section-label-text">Impact &amp; Metrics</span>
+      <span class="reborn-apps-section-label-line"></span>
+    </div>
+
+    <div class="reborn-apps-metrics-grid">
+      <div class="reborn-apps-metric-card">
+        <div class="reborn-apps-metric-val">86K+</div>
+        <div class="reborn-apps-metric-label">Lines of Code</div>
+        <div class="reborn-apps-metric-sub">C# + JS + CSHTML</div>
+      </div>
+      <div class="reborn-apps-metric-card">
+        <div class="reborn-apps-metric-val">156+</div>
+        <div class="reborn-apps-metric-label">API Endpoints</div>
+        <div class="reborn-apps-metric-sub">RESTful microservices</div>
+      </div>
+      <div class="reborn-apps-metric-card">
+        <div class="reborn-apps-metric-val">39</div>
+        <div class="reborn-apps-metric-label">Database Collections</div>
+        <div class="reborn-apps-metric-sub">MongoDB</div>
+      </div>
+      <div class="reborn-apps-metric-card reborn-apps-red">
+        <div class="reborn-apps-metric-val">10</div>
+        <div class="reborn-apps-metric-label">Complexity Score</div>
+        <div class="reborn-apps-metric-sub">Mission Critical</div>
+      </div>
+    </div>
+
+    <div class="reborn-apps-business-line-cards">
+      <div class="reborn-apps-bl-card">
+        <div class="reborn-apps-bl-card-title">E-commerce Core</div>
+        <div class="reborn-apps-bl-card-desc">Product catalog with taxonomy (classification, brand, category, skin concern), shopping cart lifecycle, seller registration and store management, pricing and invoicing.</div>
+        <span class="reborn-apps-bl-card-tag">Product + Order</span>
+      </div>
+      <div class="reborn-apps-bl-card">
+        <div class="reborn-apps-bl-card-title">Content Management</div>
+        <div class="reborn-apps-bl-card-desc">Full CMS for news, journal, banner, brand story, public relations, FAQs, static pages, legal, sub-brands, and YouTube content with image uploads.</div>
+        <span class="reborn-apps-bl-card-tag reborn-apps-amber-tag">Enterprise CMS</span>
+      </div>
+      <div class="reborn-apps-bl-card">
+        <div class="reborn-apps-bl-card-title">Genuine Verification</div>
+        <div class="reborn-apps-bl-card-desc">QR-based product authentication system with passphrase generation, hash collection, batch upload, CDN storage, and verify checker API for consumers.</div>
+        <span class="reborn-apps-bl-card-tag">Anti-Counterfeit</span>
+      </div>
+      <div class="reborn-apps-bl-card">
+        <div class="reborn-apps-bl-card-title">Directory &amp; Community</div>
+        <div class="reborn-apps-bl-card-desc">Clinic directory with city-based search, member management, join seller flow, area/geography database (provinces, regencies, districts, villages), and YouTube integration.</div>
+        <span class="reborn-apps-bl-card-tag reborn-apps-amber-tag">Directory</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="reborn-apps-section">
+    <div class="reborn-apps-section-label">
+      <span class="reborn-apps-section-label-num">02</span>
+      <span class="reborn-apps-section-label-text">Architecture</span>
+      <span class="reborn-apps-section-label-line"></span>
+    </div>
+
+    <div class="reborn-apps-arch-diagram">
+      <div class="reborn-apps-arch-diagram-inner" style="display:flex; align-items:center; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <div class="reborn-apps-arch-node reborn-apps-source">
+          <div class="reborn-apps-arch-node-icon"></div>
+          <div class="reborn-apps-arch-node-label">Public Storefront</div>
+          <div class="reborn-apps-arch-node-sub">Nuxt.js SPA</div>
+        </div>
+        <div class="reborn-apps-arch-node reborn-apps-source">
+          <div class="reborn-apps-arch-node-icon"></div>
+          <div class="reborn-apps-arch-node-label">Admin Panel</div>
+          <div class="reborn-apps-arch-node-sub">ASP.NET MVC + JS</div>
+        </div>
+        <div class="reborn-apps-arch-node reborn-apps-source">
+          <div class="reborn-apps-arch-node-icon"></div>
+          <div class="reborn-apps-arch-node-label">Genuine Checker</div>
+          <div class="reborn-apps-arch-node-sub">Vue.js SPA</div>
+        </div>
+        <div class="reborn-apps-arch-arrow" style="min-width: 40px;">
+          <div class="reborn-apps-arch-arrow-line" style="width: 20px;"></div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+          <div class="reborn-apps-arch-node core" style="width:200px;">
+            <div class="reborn-apps-arch-node-label" style="font-size:13px; margin-bottom:10px;">API Microservices</div>
+            <div class="reborn-apps-core-stack">
+              <div class="reborn-apps-core-step"><div class="reborn-apps-core-step-dot"></div>Main Service (30+ Controllers)</div>
+              <div class="reborn-apps-core-step"><div class="reborn-apps-core-step-dot"></div>Products Service</div>
+              <div class="reborn-apps-core-step"><div class="reborn-apps-core-step-dot"></div>Genuine Service</div>
+              <div class="reborn-apps-core-step"><div class="reborn-apps-core-step-dot" style="background:var(--blue)"></div>CDN Service</div>
+              <div class="reborn-apps-core-step"><div class="reborn-apps-core-step-dot"></div>Background Workers</div>
+            </div>
+          </div>
+        </div>
+        <div class="reborn-apps-arch-arrow">
+          <div class="reborn-apps-arch-arrow-line"></div>
+          <div class="reborn-apps-arch-arrow-label">persist</div>
+        </div>
+        <div class="reborn-apps-arch-node reborn-apps-output">
+          <div class="reborn-apps-arch-node-icon"></div>
+          <div class="reborn-apps-arch-node-label">MongoDB</div>
+          <div class="reborn-apps-arch-node-sub">33 collections</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reborn-apps-section">
+    <div class="reborn-apps-section-label">
+      <span class="reborn-apps-section-label-num">03</span>
+      <span class="reborn-apps-section-label-text">Tech Stack</span>
+      <span class="reborn-apps-section-label-line"></span>
+    </div>
+
+    <div class="reborn-apps-impact-wrapper">
+      <table class="reborn-apps-stack-table">
+        <tbody>
+          <tr><td class="reborn-apps-layer">Runtime</td><td class="reborn-apps-tech">.NET 5.0 / .NET Core 3.1 / .NET 6.0</td></tr>
+          <tr><td class="reborn-apps-layer">Web Framework</td><td class="reborn-apps-tech">ASP.NET Core Web API + MVC</td></tr>
+          <tr><td class="reborn-apps-layer">Frontend</td><td class="reborn-apps-tech">Vue.js 2 / Nuxt.js / Razor MVC / jQuery</td></tr>
+          <tr><td class="reborn-apps-layer">Database</td><td class="reborn-apps-tech">MongoDB (33 collections)</td></tr>
+          <tr><td class="reborn-apps-layer">Auth</td><td class="reborn-apps-tech">JWT Bearer + Basic Authentication</td></tr>
+          <tr><td class="reborn-apps-layer">API Documentation</td><td class="reborn-apps-tech">Swagger / Swashbuckle</td></tr>
+          <tr><td class="reborn-apps-layer">OR/M</td><td class="reborn-apps-tech">Custom MongoDBContext + MongoQueryBuilder</td></tr>
+          <tr><td class="reborn-apps-layer">Export</td><td class="reborn-apps-tech">EPPlus, CsvHelper, ExcelDataReader</td></tr>
+          <tr><td class="reborn-apps-layer">Email</td><td class="reborn-apps-tech">MailKit + MimeKit</td></tr>
+          <tr><td class="reborn-apps-layer">Mapping</td><td class="reborn-apps-tech">AutoMapper</td></tr>
+          <tr><td class="reborn-apps-layer">Background Jobs</td><td class="reborn-apps-tech">.NET Worker Service (4 workers)</td></tr>
+          <tr><td class="reborn-apps-layer">Infrastructure</td><td class="reborn-apps-tech">Docker + Kubernetes (GKE) + ArgoCD</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="reborn-apps-section">
+    <div class="reborn-apps-section-label">
+      <span class="reborn-apps-section-label-num">04</span>
+      <span class="reborn-apps-section-label-text">Capabilities</span>
+      <span class="reborn-apps-section-label-line"></span>
+    </div>
+
+    <div class="reborn-apps-impact-wrapper">
+      <table class="reborn-apps-stack-table">
+        <tbody>
+          <tr><td class="reborn-apps-layer">Product Catalog</td><td class="reborn-apps-tech">SKU management, sub-product taxonomy, category, brand, classification, skin concern, gallery, variants, ingredients</td></tr>
+          <tr><td class="reborn-apps-layer">Shopping Cart</td><td class="reborn-apps-tech">Checkout flow, order management, buyer/seller order views, status tracking</td></tr>
+          <tr><td class="reborn-apps-layer">Seller Management</td><td class="reborn-apps-tech">Registration, activation, city-based lookup, store management, user roles (Admin, Seller, Buyer)</td></tr>
+          <tr><td class="reborn-apps-layer">Content CMS</td><td class="reborn-apps-tech">News, journal, banner (web+mobile), brand story, public relations, FAQs, static pages, terms, legal, sub-brands, YouTube</td></tr>
+          <tr><td class="reborn-apps-layer">Genuine Verification</td><td class="reborn-apps-tech">QR code authentication, passphrase system, hash collection, upload undian, batch processing, CDN delivery</td></tr>
+          <tr><td class="reborn-apps-layer">Clinic Directory</td><td class="reborn-apps-tech">Aesthetic clinic listings, city-based search, contact management</td></tr>
+          <tr><td class="reborn-apps-layer">Area Database</td><td class="reborn-apps-tech">Provinces, regencies, districts, villages — populated and searchable</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .reborn-apps {
+    --reborn-apps-bg: #0a0b0d;
+    --reborn-apps-bg2: #0f1114;
+    --reborn-apps-bg3: #141720;
+    --reborn-apps-surface: #1a1e28;
+    --reborn-apps-surface2: #212636;
+    --reborn-apps-border: #2a2f40;
+    --reborn-apps-border2: #363c50;
+    --reborn-apps-accent: #00e5a0;
+    --reborn-apps-accent2: #00b87a;
+    --reborn-apps-accent-dim: rgba(0, 229, 160, 0.08);
+    --reborn-apps-accent-dim2: rgba(0, 229, 160, 0.15);
+    --reborn-apps-amber: #f59e0b;
+    --reborn-apps-amber-dim: rgba(245, 158, 11, 0.1);
+    --reborn-apps-blue: #60a5fa;
+    --reborn-apps-blue-dim: rgba(96, 165, 250, 0.1);
+    --reborn-apps-red: #f87171;
+    --reborn-apps-text: #e8eaf0;
+    --reborn-apps-text2: #8b92a8;
+    --reborn-apps-text3: #5a6077;
+    --reborn-apps-mono: "JetBrains Mono", monospace;
+    --reborn-apps-display: "Syne", sans-serif;
+    --reborn-apps-radius: 10px;
+    --reborn-apps-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .reborn-apps * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .reborn-apps body {
+    background: var(--reborn-apps-bg);
+    color: var(--reborn-apps-text);
+    font-family: var(--reborn-apps-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .reborn-apps-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--reborn-apps-border);
+  }
+  .reborn-apps-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--reborn-apps-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .reborn-apps-nav-back:hover {
+    color: var(--reborn-apps-accent);
+  }
+  .reborn-apps-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .reborn-apps-nav-dot {
+    color: var(--reborn-apps-border2);
+  }
+  .reborn-apps-nav-title {
+    color: var(--reborn-apps-text3);
+    font-size: 12px;
+  }
+
+  .reborn-apps-hero {
+    margin-bottom: 56px;
+  }
+  .reborn-apps-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .reborn-apps-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .reborn-apps-badge-corporate {
+    background: var(--reborn-apps-blue-dim);
+    color: var(--reborn-apps-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .reborn-apps-badge-client {
+    background: var(--reborn-apps-accent-dim);
+    color: var(--reborn-apps-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .reborn-apps-badge-year {
+    background: var(--reborn-apps-surface);
+    color: var(--reborn-apps-text3);
+    border-color: var(--reborn-apps-border);
+  }
+
+  .reborn-apps-hero-title {
+    font-family: var(--reborn-apps-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .reborn-apps-hero-title span {
+    color: var(--reborn-apps-accent);
+    position: relative;
+  }
+
+  .reborn-apps-hero-desc {
+    color: var(--reborn-apps-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .reborn-apps-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .reborn-apps-stack-pill {
+    background: var(--reborn-apps-surface);
+    border: 1px solid var(--reborn-apps-border);
+    color: var(--reborn-apps-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .reborn-apps-stack-pill:hover {
+    border-color: var(--reborn-apps-accent);
+    color: var(--reborn-apps-accent);
+    background: var(--reborn-apps-accent-dim);
+  }
+
+  .reborn-apps-section {
+    margin-bottom: 52px;
+  }
+  .reborn-apps-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .reborn-apps-section-label-text {
+    font-family: var(--reborn-apps-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--reborn-apps-text3);
+    text-transform: uppercase;
+  }
+  .reborn-apps-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--reborn-apps-border);
+  }
+  .reborn-apps-section-label-num {
+    font-size: 11px;
+    color: var(--reborn-apps-border2);
+  }
+
+  .reborn-apps-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .reborn-apps-metric-card {
+    background: var(--reborn-apps-bg3);
+    border: 1px solid var(--reborn-apps-border);
+    border-radius: var(--reborn-apps-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .reborn-apps-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--reborn-apps-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .reborn-apps-metric-card:hover {
+    border-color: var(--reborn-apps-border2);
+  }
+  .reborn-apps-metric-card:hover::before {
+    opacity: 1;
+  }
+  .reborn-apps-metric-amber .reborn-apps-metric-val {
+    color: var(--reborn-apps-amber);
+  }
+  .reborn-apps-metric-amber::before {
+    background: var(--reborn-apps-amber);
+  }
+
+  .reborn-apps-metric-val {
+    font-family: var(--reborn-apps-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--reborn-apps-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .reborn-apps-metric-label {
+    font-size: 12px;
+    color: var(--reborn-apps-text2);
+    margin-bottom: 3px;
+  }
+  .reborn-apps-metric-sub {
+    font-size: 11px;
+    color: var(--reborn-apps-text3);
+  }
+
+  .reborn-apps-arch-diagram {
+    background: var(--reborn-apps-bg3);
+    border: 1px solid var(--reborn-apps-border);
+    border-radius: var(--reborn-apps-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .reborn-apps-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .reborn-apps-arch-node {
+    background: var(--reborn-apps-surface);
+    border: 1px solid var(--reborn-apps-border2);
+    border-radius: var(--reborn-apps-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .reborn-apps-core {
+    background: var(--reborn-apps-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .reborn-apps-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .reborn-apps-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--reborn-apps-amber-dim);
+    min-width: 110px;
+  }
+  .reborn-apps-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .reborn-apps-arch-node-label {
+    font-family: var(--reborn-apps-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .reborn-apps-arch-node-sub {
+    font-size: 10px;
+    color: var(--reborn-apps-text3);
+    font-family: var(--reborn-apps-mono);
+  }
+
+  .reborn-apps-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--reborn-apps-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .reborn-apps-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--reborn-apps-border),
+      var(--reborn-apps-accent),
+      var(--reborn-apps-border)
+    );
+    position: relative;
+  }
+  .reborn-apps-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--reborn-apps-accent);
+    font-size: 10px;
+  }
+  .reborn-apps-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--reborn-apps-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .reborn-apps-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .reborn-apps-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .reborn-apps-core-step {
+    background: var(--reborn-apps-bg3);
+    border: 1px solid var(--reborn-apps-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--reborn-apps-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .reborn-apps-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--reborn-apps-accent);
+    flex-shrink: 0;
+  }
+
+  .reborn-apps-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .reborn-apps-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .reborn-apps-schema-arrow-label {
+    font-size: 9px;
+    color: var(--reborn-apps-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .reborn-apps-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .reborn-apps-decision-card {
+    background: var(--reborn-apps-bg3);
+    border: 1px solid var(--reborn-apps-border);
+    border-radius: var(--reborn-apps-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .reborn-apps-decision-card:hover {
+    border-color: var(--reborn-apps-border2);
+  }
+
+  .reborn-apps-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .reborn-apps-decision-num {
+    font-family: var(--reborn-apps-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--reborn-apps-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .reborn-apps-decision-title {
+    font-family: var(--reborn-apps-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .reborn-apps-decision-problem {
+    font-size: 12px;
+    color: var(--reborn-apps-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--reborn-apps-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .reborn-apps-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .reborn-apps-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .reborn-apps-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .reborn-apps-decision-chosen {
+    color: var(--reborn-apps-accent);
+  }
+  .reborn-apps-decision-tradeoff {
+    color: var(--reborn-apps-amber);
+  }
+  .reborn-apps-decision-col-text {
+    font-size: 12px;
+    color: var(--reborn-apps-text2);
+    line-height: 1.65;
+  }
+
+  .reborn-apps-decision-code {
+    background: var(--reborn-apps-bg);
+    border-top: 1px solid var(--reborn-apps-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--reborn-apps-text2);
+    overflow-x: auto;
+  }
+  .reborn-apps-decision-code pre {
+    margin: 0;
+    font-family: var(--reborn-apps-mono);
+    line-height: 1.6;
+  }
+  .reborn-apps-token-kw {
+    color: #c792ea;
+  }
+  .reborn-apps-token-fn {
+    color: #82aaff;
+  }
+  .reborn-apps-token-str {
+    color: #c3e88d;
+  }
+  .reborn-apps-token-cm {
+    color: var(--reborn-apps-text3);
+    font-style: italic;
+  }
+  .reborn-apps-token-acc {
+    color: var(--reborn-apps-accent);
+  }
+
+  .reborn-apps-impact-wrapper {
+    background: var(--reborn-apps-bg3);
+    border: 1px solid var(--reborn-apps-border);
+    border-radius: var(--reborn-apps-radius);
+    overflow: hidden;
+  }
+  .reborn-apps-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .reborn-apps-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--reborn-apps-text3);
+    border-bottom: 1px solid var(--reborn-apps-border);
+    font-family: var(--reborn-apps-display);
+    font-weight: 600;
+  }
+  .reborn-apps-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--reborn-apps-border);
+    color: var(--reborn-apps-text2);
+  }
+  .reborn-apps-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .reborn-apps-impact-table tr:hover td {
+    background: var(--reborn-apps-surface);
+  }
+  .reborn-apps-before {
+    color: var(--reborn-apps-red);
+  }
+  .reborn-apps-after {
+    color: var(--reborn-apps-accent);
+  }
+  .reborn-apps-delta {
+    color: var(--reborn-apps-accent);
+    font-weight: 500;
+    font-family: var(--reborn-apps-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .reborn-apps-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .reborn-apps-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .reborn-apps-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--reborn-apps-border);
+  }
+  .reborn-apps-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .reborn-apps-layer {
+    color: var(--reborn-apps-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .reborn-apps-tech {
+    color: var(--reborn-apps-accent);
+    font-family: var(--reborn-apps-mono);
+  }
+  .reborn-apps-stack-table tr:hover td {
+    background: var(--reborn-apps-surface);
+  }
+
+  .reborn-apps-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--reborn-apps-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .reborn-apps-footer-text {
+    font-size: 11px;
+    color: var(--reborn-apps-text3);
+  }
+  .reborn-apps-footer-link {
+    font-size: 11px;
+    color: var(--reborn-apps-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .reborn-apps-footer-link:hover {
+    color: var(--reborn-apps-accent);
+  }
+
+  @keyframes reborn-apps-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .reborn-apps-hero {
+    animation: reborn-apps-fadeUp 0.5s ease both;
+  }
+  .reborn-apps-section:nth-child(2) {
+    animation: reborn-apps-fadeUp 0.5s 0.1s ease both;
+  }
+  .reborn-apps-section:nth-child(3) {
+    animation: reborn-apps-fadeUp 0.5s 0.15s ease both;
+  }
+  .reborn-apps-section:nth-child(4) {
+    animation: reborn-apps-fadeUp 0.5s 0.2s ease both;
+  }
+  .reborn-apps-section:nth-child(5) {
+    animation: reborn-apps-fadeUp 0.5s 0.25s ease both;
+  }
+  .reborn-apps-section:nth-child(6) {
+    animation: reborn-apps-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .reborn-apps-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--reborn-apps-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: reborn-apps-blink 1s step-end infinite;
+  }
+  @keyframes reborn-apps-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .reborn-apps-badge-client { background: var(--reborn-apps-accent-dim); color: var(--reborn-apps-accent); border-color: rgba(0,229,160,0.2); }
+  .reborn-apps-metric-val { font-size: 22px; }
+  .reborn-apps-amber .reborn-apps-metric-val { color: var(--reborn-apps-amber); }
+  .reborn-apps-amber::before { background: var(--reborn-apps-amber); }
+  .reborn-apps-red .reborn-apps-metric-val { color: var(--reborn-apps-red); }
+  .reborn-apps-red::before { background: var(--reborn-apps-red); }
+  .reborn-apps-blue .reborn-apps-metric-val { color: var(--reborn-apps-blue); }
+  .reborn-apps-blue::before { background: var(--reborn-apps-blue); }
+  .reborn-apps-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .reborn-apps-business-line-cards { grid-template-columns: 1fr; } }
+  .reborn-apps-bl-card { background: var(--reborn-apps-bg2); border: 1px solid var(--reborn-apps-border); border-radius: var(--reborn-apps-radius); padding: 16px; }
+  .reborn-apps-bl-card-title { font-family: var(--reborn-apps-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .reborn-apps-bl-card-desc { font-size: 11px; color: var(--reborn-apps-text3); line-height: 1.6; }
+  .reborn-apps-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--reborn-apps-accent-dim); color: var(--reborn-apps-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .reborn-apps-bl-card-tag.reborn-apps-amber-tag { background: var(--reborn-apps-amber-dim); color: var(--reborn-apps-amber); border-color: rgba(245,158,11,0.2); }
+  .reborn-apps-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .reborn-apps-cap-list { grid-template-columns: 1fr; } }
+  .reborn-apps-cap-item { background: var(--reborn-apps-bg3); border: 1px solid var(--reborn-apps-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--reborn-apps-text2); }
+  .reborn-apps-cap-item:hover { border-color: var(--reborn-apps-border2); color: var(--reborn-apps-text); }
+  .reborn-apps-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--reborn-apps-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .reborn-apps-flow-panel { background: var(--reborn-apps-bg2); border: 1px solid var(--reborn-apps-border); border-radius: var(--reborn-apps-radius); padding: 20px; margin-top: 20px; }
+  .reborn-apps-flow-panel-title { font-family: var(--reborn-apps-display); font-size: 12px; font-weight: 600; color: var(--reborn-apps-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .reborn-apps-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .reborn-apps-flow-step { display: flex; align-items: center; gap: 8px; }
+  .reborn-apps-flow-step-box { background: var(--reborn-apps-surface); border: 1px solid var(--reborn-apps-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--reborn-apps-text2); white-space: nowrap; }
+  .reborn-apps-flow-step-box.reborn-apps-accent { border-color: rgba(0,229,160,0.3); color: var(--reborn-apps-accent); }
+  .reborn-apps-flow-step-arr { color: var(--reborn-apps-text3); font-size: 11px; margin: 0 4px; }
+</style>

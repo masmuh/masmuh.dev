@@ -1,0 +1,904 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="MS Glow Enterprise CMS - Mas Muhammad" description="An enterprise content management system with genuine product verification for MS Glow cosmetics brand. Features multi-tenant CMS for product catalog, brand storytelling, SEO content, clinic directory, and QR-based product authentication. Built on .NET 5 with microservices architecture serving both public storefront (Nuxt.js) and admin panel (ASP.NET MVC + Vue).">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="msglowid-cms">
+
+<header class="msglowid-cms-hero">
+    <div class="msglowid-cms-hero-meta">
+      <span class="msglowid-cms-badge badge-consulting">Consulting</span>
+      <span class="msglowid-cms-badge msglowid-cms-badge-domain">E-commerce CMS</span>
+      <span class="msglowid-cms-badge msglowid-cms-badge-year">January 2022</span>
+    </div>
+    <h1 class="msglowid-cms-hero-title">
+      Enterprise CMS<br>
+      <span>&amp; Genuine Verification</span><span class="msglowid-cms-cursor"></span>
+    </h1>
+    <p class="msglowid-cms-hero-desc">
+      An enterprise content management system with genuine product verification for MS
+      Glow cosmetics brand. Features multi-tenant CMS for product catalog, brand
+      storytelling, SEO content, clinic directory, and QR-based product authentication.
+      Built on .NET 5 with microservices architecture serving both public storefront
+      (Nuxt.js) and admin panel (ASP.NET MVC + Vue).
+    </p>
+    <div class="msglowid-cms-stack-pills">
+      <span class="msglowid-cms-stack-pill">C# .NET 5</span>
+      <span class="msglowid-cms-stack-pill">Vue.js / Nuxt.js</span>
+      <span class="msglowid-cms-stack-pill">MongoDB</span>
+      <span class="msglowid-cms-stack-pill">JWT Auth</span>
+      <span class="msglowid-cms-stack-pill">AutoMapper</span>
+      <span class="msglowid-cms-stack-pill">Swagger</span>
+      <span class="msglowid-cms-stack-pill">Docker + K8s</span>
+      <span class="msglowid-cms-stack-pill">GitLab CI</span>
+    </div>
+  </header>
+
+  <section class="msglowid-cms-section">
+    <div class="msglowid-cms-section-label">
+      <span class="msglowid-cms-section-label-num">01</span>
+      <span class="msglowid-cms-section-label-text">Impact &amp; Metrics</span>
+      <span class="msglowid-cms-section-label-line"></span>
+    </div>
+
+    <div class="msglowid-cms-metrics-grid">
+      <div class="msglowid-cms-metric-card">
+        <div class="msglowid-cms-metric-val">100K+</div>
+        <div class="msglowid-cms-metric-label">Lines of Code</div>
+        <div class="msglowid-cms-metric-sub">C# + Vue + JS + Razor</div>
+      </div>
+      <div class="msglowid-cms-metric-card">
+        <div class="msglowid-cms-metric-val">129+</div>
+        <div class="msglowid-cms-metric-label">API Endpoints</div>
+        <div class="msglowid-cms-metric-sub">RESTful microservices</div>
+      </div>
+      <div class="msglowid-cms-metric-card">
+        <div class="msglowid-cms-metric-val">39</div>
+        <div class="msglowid-cms-metric-label">Database Collections</div>
+        <div class="msglowid-cms-metric-sub">MongoDB</div>
+      </div>
+      <div class="msglowid-cms-metric-card msglowid-cms-red">
+        <div class="msglowid-cms-metric-val">10</div>
+        <div class="msglowid-cms-metric-label">Complexity Score</div>
+        <div class="msglowid-cms-metric-sub">Mission Critical</div>
+      </div>
+    </div>
+
+    <div class="msglowid-cms-business-line-cards">
+      <div class="msglowid-cms-bl-card">
+        <div class="msglowid-cms-bl-card-title">Content Management</div>
+        <div class="msglowid-cms-bl-card-desc">Full enterprise CMS for news, journal, banner, brand story, PR, FAQs, static pages, legal, sub-brands, YouTube integration with image upload and rich content editing.</div>
+        <span class="msglowid-cms-bl-card-tag">Enterprise CMS</span>
+      </div>
+      <div class="msglowid-cms-bl-card">
+        <div class="msglowid-cms-bl-card-title">Genuine Verification</div>
+        <div class="msglowid-cms-bl-card-desc">QR code-based product authentication system with passphrase generation, hash tracking, batch file upload, CDN storage, and public verify checker API for consumers.</div>
+        <span class="msglowid-cms-bl-card-tag msglowid-cms-amber-tag">Anti-Counterfeit</span>
+      </div>
+      <div class="msglowid-cms-bl-card">
+        <div class="msglowid-cms-bl-card-title">Product Ecosystem</div>
+        <div class="msglowid-cms-bl-card-desc">Product catalog with SKU management, sub-product taxonomy by classification/category/skin concern, variant management, gallery, and ingredients tracking.</div>
+        <span class="msglowid-cms-bl-card-tag">Product Catalog</span>
+      </div>
+      <div class="msglowid-cms-bl-card">
+        <div class="msglowid-cms-bl-card-title">Admin &amp; Directory</div>
+        <div class="msglowid-cms-bl-card-desc">Administrator panel for all content, seller/member management, clinic directory, area database (provinces to villages), and wiki sync from external sources.</div>
+        <span class="msglowid-cms-bl-card-tag msglowid-cms-amber-tag">Admin Panel</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="msglowid-cms-section">
+    <div class="msglowid-cms-section-label">
+      <span class="msglowid-cms-section-label-num">02</span>
+      <span class="msglowid-cms-section-label-text">Architecture</span>
+      <span class="msglowid-cms-section-label-line"></span>
+    </div>
+
+    <div class="msglowid-cms-arch-diagram">
+      <div class="msglowid-cms-arch-diagram-inner">
+        <div class="msglowid-cms-arch-node msglowid-cms-source">
+          <div class="msglowid-cms-arch-node-icon"></div>
+          <div class="msglowid-cms-arch-node-label">Public Storefront</div>
+          <div class="msglowid-cms-arch-node-sub">Nuxt.js</div>
+        </div>
+        <div class="msglowid-cms-arch-node msglowid-cms-source">
+          <div class="msglowid-cms-arch-node-icon"></div>
+          <div class="msglowid-cms-arch-node-label">Admin Panel</div>
+          <div class="msglowid-cms-arch-node-sub">ASP.NET MVC</div>
+        </div>
+        <div class="msglowid-cms-arch-node msglowid-cms-source">
+          <div class="msglowid-cms-arch-node-icon"></div>
+          <div class="msglowid-cms-arch-node-label">Genuine Checker</div>
+          <div class="msglowid-cms-arch-node-sub">Vue SPA</div>
+        </div>
+        <div class="msglowid-cms-arch-arrow" style="min-width: 30px;">
+          <div class="msglowid-cms-arch-arrow-line" style="width: 15px;"></div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+          <div class="msglowid-cms-arch-node core" style="width:210px;">
+            <div class="msglowid-cms-arch-node-label" style="font-size:13px; margin-bottom:10px;">API Gateway &amp; Services</div>
+            <div class="msglowid-cms-core-stack">
+              <div class="msglowid-cms-core-step"><div class="msglowid-cms-core-step-dot"></div>Main API (28+ Controllers)</div>
+              <div class="msglowid-cms-core-step"><div class="msglowid-cms-core-step-dot"></div>Products API</div>
+              <div class="msglowid-cms-core-step"><div class="msglowid-cms-core-step-dot"></div>Genuine Checker API</div>
+              <div class="msglowid-cms-core-step"><div class="msglowid-cms-core-step-dot" style="background:var(--blue)"></div>CDN / Media Service</div>
+              <div class="msglowid-cms-core-step"><div class="msglowid-cms-core-step-dot"></div>Application Layer</div>
+            </div>
+          </div>
+        </div>
+        <div class="msglowid-cms-arch-arrow">
+          <div class="msglowid-cms-arch-arrow-line"></div>
+          <div class="msglowid-cms-arch-arrow-label">persist</div>
+        </div>
+        <div class="msglowid-cms-arch-node msglowid-cms-output">
+          <div class="msglowid-cms-arch-node-icon"></div>
+          <div class="msglowid-cms-arch-node-label">MongoDB</div>
+          <div class="msglowid-cms-arch-node-sub">39 collections</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="msglowid-cms-section">
+    <div class="msglowid-cms-section-label">
+      <span class="msglowid-cms-section-label-num">03</span>
+      <span class="msglowid-cms-section-label-text">Tech Stack</span>
+      <span class="msglowid-cms-section-label-line"></span>
+    </div>
+
+    <div class="msglowid-cms-impact-wrapper">
+      <table class="msglowid-cms-stack-table">
+        <tbody>
+          <tr><td class="msglowid-cms-layer">Runtime</td><td class="msglowid-cms-tech">.NET 5.0 / .NET Core 3.1</td></tr>
+          <tr><td class="msglowid-cms-layer">Web Framework</td><td class="msglowid-cms-tech">ASP.NET Core Web API + MVC</td></tr>
+          <tr><td class="msglowid-cms-layer">Frontend</td><td class="msglowid-cms-tech">Nuxt.js / Vue CLI / Vue 2 / Vuetify 2</td></tr>
+          <tr><td class="msglowid-cms-layer">Database</td><td class="msglowid-cms-tech">MongoDB (MongoDB.Driver)</td></tr>
+          <tr><td class="msglowid-cms-layer">Auth</td><td class="msglowid-cms-tech">JWT Bearer + Basic Authentication</td></tr>
+          <tr><td class="msglowid-cms-layer">API Documentation</td><td class="msglowid-cms-tech">Swagger / Swashbuckle</td></tr>
+          <tr><td class="msglowid-cms-layer">ORM</td><td class="msglowid-cms-tech">Custom MongoDBContext + Expression-to-SQL parser</td></tr>
+          <tr><td class="msglowid-cms-layer">Excel/CSV</td><td class="msglowid-cms-tech">EPPlus, CsvHelper, ExcelDataReader</td></tr>
+          <tr><td class="msglowid-cms-layer">Email</td><td class="msglowid-cms-tech">MailKit + MimeKit</td></tr>
+          <tr><td class="msglowid-cms-layer">Mapping</td><td class="msglowid-cms-tech">AutoMapper</td></tr>
+          <tr><td class="msglowid-cms-layer">Background Jobs</td><td class="msglowid-cms-tech">.NET Worker Service</td></tr>
+          <tr><td class="msglowid-cms-layer">Infrastructure</td><td class="msglowid-cms-tech">Docker + Kubernetes (GKE) + GitLab CI</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="msglowid-cms-section">
+    <div class="msglowid-cms-section-label">
+      <span class="msglowid-cms-section-label-num">04</span>
+      <span class="msglowid-cms-section-label-text">Capabilities</span>
+      <span class="msglowid-cms-section-label-line"></span>
+    </div>
+
+    <div class="msglowid-cms-impact-wrapper">
+      <table class="msglowid-cms-stack-table">
+        <tbody>
+          <tr><td class="msglowid-cms-layer">CMS Modules</td><td class="msglowid-cms-tech">Banner, Brand Story, News, Journal, Public Relations, FAQs, Static Pages, Legal, Sub-Brands, YouTube</td></tr>
+          <tr><td class="msglowid-cms-layer">Product Management</td><td class="msglowid-cms-tech">SKU catalog, sub-product taxonomy, classification, category, skin concern, gallery, variants, ingredients</td></tr>
+          <tr><td class="msglowid-cms-layer">Genuine Verification</td><td class="msglowid-cms-tech">QR authentication, passphrase system, hash collection, batch upload, CDN delivery, public checker API</td></tr>
+          <tr><td class="msglowid-cms-layer">Seller &amp; Member</td><td class="msglowid-cms-tech">Registration, city-based search, activation workflow, session management, role-based access</td></tr>
+          <tr><td class="msglowid-cms-layer">Clinic Directory</td><td class="msglowid-cms-tech">Aesthetic clinic listings, city-based directory, contact management</td></tr>
+          <tr><td class="msglowid-cms-layer">Geographic Data</td><td class="msglowid-cms-tech">Populated provinces, regencies, districts, villages database with search API</td></tr>
+          <tr><td class="msglowid-cms-layer">Wiki Sync</td><td class="msglowid-cms-tech">External wiki synchronization for sellers, products, and dimension data</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .msglowid-cms {
+    --msglowid-cms-bg: #0a0b0d;
+    --msglowid-cms-bg2: #0f1114;
+    --msglowid-cms-bg3: #141720;
+    --msglowid-cms-surface: #1a1e28;
+    --msglowid-cms-surface2: #212636;
+    --msglowid-cms-border: #2a2f40;
+    --msglowid-cms-border2: #363c50;
+    --msglowid-cms-accent: #00e5a0;
+    --msglowid-cms-accent2: #00b87a;
+    --msglowid-cms-accent-dim: rgba(0, 229, 160, 0.08);
+    --msglowid-cms-accent-dim2: rgba(0, 229, 160, 0.15);
+    --msglowid-cms-amber: #f59e0b;
+    --msglowid-cms-amber-dim: rgba(245, 158, 11, 0.1);
+    --msglowid-cms-blue: #60a5fa;
+    --msglowid-cms-blue-dim: rgba(96, 165, 250, 0.1);
+    --msglowid-cms-red: #f87171;
+    --msglowid-cms-text: #e8eaf0;
+    --msglowid-cms-text2: #8b92a8;
+    --msglowid-cms-text3: #5a6077;
+    --msglowid-cms-mono: "JetBrains Mono", monospace;
+    --msglowid-cms-display: "Syne", sans-serif;
+    --msglowid-cms-radius: 10px;
+    --msglowid-cms-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .msglowid-cms * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .msglowid-cms body {
+    background: var(--msglowid-cms-bg);
+    color: var(--msglowid-cms-text);
+    font-family: var(--msglowid-cms-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .msglowid-cms-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--msglowid-cms-border);
+  }
+  .msglowid-cms-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--msglowid-cms-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .msglowid-cms-nav-back:hover {
+    color: var(--msglowid-cms-accent);
+  }
+  .msglowid-cms-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .msglowid-cms-nav-dot {
+    color: var(--msglowid-cms-border2);
+  }
+  .msglowid-cms-nav-title {
+    color: var(--msglowid-cms-text3);
+    font-size: 12px;
+  }
+
+  .msglowid-cms-hero {
+    margin-bottom: 56px;
+  }
+  .msglowid-cms-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .msglowid-cms-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .msglowid-cms-badge-corporate {
+    background: var(--msglowid-cms-blue-dim);
+    color: var(--msglowid-cms-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .msglowid-cms-badge-client {
+    background: var(--msglowid-cms-accent-dim);
+    color: var(--msglowid-cms-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .msglowid-cms-badge-year {
+    background: var(--msglowid-cms-surface);
+    color: var(--msglowid-cms-text3);
+    border-color: var(--msglowid-cms-border);
+  }
+
+  .msglowid-cms-hero-title {
+    font-family: var(--msglowid-cms-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .msglowid-cms-hero-title span {
+    color: var(--msglowid-cms-accent);
+    position: relative;
+  }
+
+  .msglowid-cms-hero-desc {
+    color: var(--msglowid-cms-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .msglowid-cms-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .msglowid-cms-stack-pill {
+    background: var(--msglowid-cms-surface);
+    border: 1px solid var(--msglowid-cms-border);
+    color: var(--msglowid-cms-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .msglowid-cms-stack-pill:hover {
+    border-color: var(--msglowid-cms-accent);
+    color: var(--msglowid-cms-accent);
+    background: var(--msglowid-cms-accent-dim);
+  }
+
+  .msglowid-cms-section {
+    margin-bottom: 52px;
+  }
+  .msglowid-cms-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .msglowid-cms-section-label-text {
+    font-family: var(--msglowid-cms-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--msglowid-cms-text3);
+    text-transform: uppercase;
+  }
+  .msglowid-cms-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--msglowid-cms-border);
+  }
+  .msglowid-cms-section-label-num {
+    font-size: 11px;
+    color: var(--msglowid-cms-border2);
+  }
+
+  .msglowid-cms-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .msglowid-cms-metric-card {
+    background: var(--msglowid-cms-bg3);
+    border: 1px solid var(--msglowid-cms-border);
+    border-radius: var(--msglowid-cms-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .msglowid-cms-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--msglowid-cms-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .msglowid-cms-metric-card:hover {
+    border-color: var(--msglowid-cms-border2);
+  }
+  .msglowid-cms-metric-card:hover::before {
+    opacity: 1;
+  }
+  .msglowid-cms-metric-amber .msglowid-cms-metric-val {
+    color: var(--msglowid-cms-amber);
+  }
+  .msglowid-cms-metric-amber::before {
+    background: var(--msglowid-cms-amber);
+  }
+
+  .msglowid-cms-metric-val {
+    font-family: var(--msglowid-cms-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--msglowid-cms-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .msglowid-cms-metric-label {
+    font-size: 12px;
+    color: var(--msglowid-cms-text2);
+    margin-bottom: 3px;
+  }
+  .msglowid-cms-metric-sub {
+    font-size: 11px;
+    color: var(--msglowid-cms-text3);
+  }
+
+  .msglowid-cms-arch-diagram {
+    background: var(--msglowid-cms-bg3);
+    border: 1px solid var(--msglowid-cms-border);
+    border-radius: var(--msglowid-cms-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .msglowid-cms-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .msglowid-cms-arch-node {
+    background: var(--msglowid-cms-surface);
+    border: 1px solid var(--msglowid-cms-border2);
+    border-radius: var(--msglowid-cms-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .msglowid-cms-core {
+    background: var(--msglowid-cms-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .msglowid-cms-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .msglowid-cms-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--msglowid-cms-amber-dim);
+    min-width: 110px;
+  }
+  .msglowid-cms-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .msglowid-cms-arch-node-label {
+    font-family: var(--msglowid-cms-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .msglowid-cms-arch-node-sub {
+    font-size: 10px;
+    color: var(--msglowid-cms-text3);
+    font-family: var(--msglowid-cms-mono);
+  }
+
+  .msglowid-cms-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--msglowid-cms-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .msglowid-cms-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--msglowid-cms-border),
+      var(--msglowid-cms-accent),
+      var(--msglowid-cms-border)
+    );
+    position: relative;
+  }
+  .msglowid-cms-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--msglowid-cms-accent);
+    font-size: 10px;
+  }
+  .msglowid-cms-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--msglowid-cms-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .msglowid-cms-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .msglowid-cms-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .msglowid-cms-core-step {
+    background: var(--msglowid-cms-bg3);
+    border: 1px solid var(--msglowid-cms-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--msglowid-cms-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .msglowid-cms-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--msglowid-cms-accent);
+    flex-shrink: 0;
+  }
+
+  .msglowid-cms-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .msglowid-cms-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .msglowid-cms-schema-arrow-label {
+    font-size: 9px;
+    color: var(--msglowid-cms-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .msglowid-cms-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .msglowid-cms-decision-card {
+    background: var(--msglowid-cms-bg3);
+    border: 1px solid var(--msglowid-cms-border);
+    border-radius: var(--msglowid-cms-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .msglowid-cms-decision-card:hover {
+    border-color: var(--msglowid-cms-border2);
+  }
+
+  .msglowid-cms-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .msglowid-cms-decision-num {
+    font-family: var(--msglowid-cms-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--msglowid-cms-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .msglowid-cms-decision-title {
+    font-family: var(--msglowid-cms-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .msglowid-cms-decision-problem {
+    font-size: 12px;
+    color: var(--msglowid-cms-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--msglowid-cms-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .msglowid-cms-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .msglowid-cms-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .msglowid-cms-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .msglowid-cms-decision-chosen {
+    color: var(--msglowid-cms-accent);
+  }
+  .msglowid-cms-decision-tradeoff {
+    color: var(--msglowid-cms-amber);
+  }
+  .msglowid-cms-decision-col-text {
+    font-size: 12px;
+    color: var(--msglowid-cms-text2);
+    line-height: 1.65;
+  }
+
+  .msglowid-cms-decision-code {
+    background: var(--msglowid-cms-bg);
+    border-top: 1px solid var(--msglowid-cms-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--msglowid-cms-text2);
+    overflow-x: auto;
+  }
+  .msglowid-cms-decision-code pre {
+    margin: 0;
+    font-family: var(--msglowid-cms-mono);
+    line-height: 1.6;
+  }
+  .msglowid-cms-token-kw {
+    color: #c792ea;
+  }
+  .msglowid-cms-token-fn {
+    color: #82aaff;
+  }
+  .msglowid-cms-token-str {
+    color: #c3e88d;
+  }
+  .msglowid-cms-token-cm {
+    color: var(--msglowid-cms-text3);
+    font-style: italic;
+  }
+  .msglowid-cms-token-acc {
+    color: var(--msglowid-cms-accent);
+  }
+
+  .msglowid-cms-impact-wrapper {
+    background: var(--msglowid-cms-bg3);
+    border: 1px solid var(--msglowid-cms-border);
+    border-radius: var(--msglowid-cms-radius);
+    overflow: hidden;
+  }
+  .msglowid-cms-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .msglowid-cms-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--msglowid-cms-text3);
+    border-bottom: 1px solid var(--msglowid-cms-border);
+    font-family: var(--msglowid-cms-display);
+    font-weight: 600;
+  }
+  .msglowid-cms-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--msglowid-cms-border);
+    color: var(--msglowid-cms-text2);
+  }
+  .msglowid-cms-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .msglowid-cms-impact-table tr:hover td {
+    background: var(--msglowid-cms-surface);
+  }
+  .msglowid-cms-before {
+    color: var(--msglowid-cms-red);
+  }
+  .msglowid-cms-after {
+    color: var(--msglowid-cms-accent);
+  }
+  .msglowid-cms-delta {
+    color: var(--msglowid-cms-accent);
+    font-weight: 500;
+    font-family: var(--msglowid-cms-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .msglowid-cms-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .msglowid-cms-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .msglowid-cms-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--msglowid-cms-border);
+  }
+  .msglowid-cms-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .msglowid-cms-layer {
+    color: var(--msglowid-cms-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .msglowid-cms-tech {
+    color: var(--msglowid-cms-accent);
+    font-family: var(--msglowid-cms-mono);
+  }
+  .msglowid-cms-stack-table tr:hover td {
+    background: var(--msglowid-cms-surface);
+  }
+
+  .msglowid-cms-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--msglowid-cms-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .msglowid-cms-footer-text {
+    font-size: 11px;
+    color: var(--msglowid-cms-text3);
+  }
+  .msglowid-cms-footer-link {
+    font-size: 11px;
+    color: var(--msglowid-cms-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .msglowid-cms-footer-link:hover {
+    color: var(--msglowid-cms-accent);
+  }
+
+  @keyframes msglowid-cms-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .msglowid-cms-hero {
+    animation: msglowid-cms-fadeUp 0.5s ease both;
+  }
+  .msglowid-cms-section:nth-child(2) {
+    animation: msglowid-cms-fadeUp 0.5s 0.1s ease both;
+  }
+  .msglowid-cms-section:nth-child(3) {
+    animation: msglowid-cms-fadeUp 0.5s 0.15s ease both;
+  }
+  .msglowid-cms-section:nth-child(4) {
+    animation: msglowid-cms-fadeUp 0.5s 0.2s ease both;
+  }
+  .msglowid-cms-section:nth-child(5) {
+    animation: msglowid-cms-fadeUp 0.5s 0.25s ease both;
+  }
+  .msglowid-cms-section:nth-child(6) {
+    animation: msglowid-cms-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .msglowid-cms-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--msglowid-cms-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: msglowid-cms-blink 1s step-end infinite;
+  }
+  @keyframes msglowid-cms-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .msglowid-cms-badge-client { background: var(--msglowid-cms-accent-dim); color: var(--msglowid-cms-accent); border-color: rgba(0,229,160,0.2); }
+  .msglowid-cms-metric-val { font-size: 22px; }
+  .msglowid-cms-amber .msglowid-cms-metric-val { color: var(--msglowid-cms-amber); }
+  .msglowid-cms-amber::before { background: var(--msglowid-cms-amber); }
+  .msglowid-cms-red .msglowid-cms-metric-val { color: var(--msglowid-cms-red); }
+  .msglowid-cms-red::before { background: var(--msglowid-cms-red); }
+  .msglowid-cms-blue .msglowid-cms-metric-val { color: var(--msglowid-cms-blue); }
+  .msglowid-cms-blue::before { background: var(--msglowid-cms-blue); }
+  .msglowid-cms-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .msglowid-cms-business-line-cards { grid-template-columns: 1fr; } }
+  .msglowid-cms-bl-card { background: var(--msglowid-cms-bg2); border: 1px solid var(--msglowid-cms-border); border-radius: var(--msglowid-cms-radius); padding: 16px; }
+  .msglowid-cms-bl-card-title { font-family: var(--msglowid-cms-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .msglowid-cms-bl-card-desc { font-size: 11px; color: var(--msglowid-cms-text3); line-height: 1.6; }
+  .msglowid-cms-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--msglowid-cms-accent-dim); color: var(--msglowid-cms-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .msglowid-cms-bl-card-tag.msglowid-cms-amber-tag { background: var(--msglowid-cms-amber-dim); color: var(--msglowid-cms-amber); border-color: rgba(245,158,11,0.2); }
+  .msglowid-cms-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .msglowid-cms-cap-list { grid-template-columns: 1fr; } }
+  .msglowid-cms-cap-item { background: var(--msglowid-cms-bg3); border: 1px solid var(--msglowid-cms-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--msglowid-cms-text2); }
+  .msglowid-cms-cap-item:hover { border-color: var(--msglowid-cms-border2); color: var(--msglowid-cms-text); }
+  .msglowid-cms-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--msglowid-cms-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .msglowid-cms-flow-panel { background: var(--msglowid-cms-bg2); border: 1px solid var(--msglowid-cms-border); border-radius: var(--msglowid-cms-radius); padding: 20px; margin-top: 20px; }
+  .msglowid-cms-flow-panel-title { font-family: var(--msglowid-cms-display); font-size: 12px; font-weight: 600; color: var(--msglowid-cms-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .msglowid-cms-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .msglowid-cms-flow-step { display: flex; align-items: center; gap: 8px; }
+  .msglowid-cms-flow-step-box { background: var(--msglowid-cms-surface); border: 1px solid var(--msglowid-cms-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--msglowid-cms-text2); white-space: nowrap; }
+  .msglowid-cms-flow-step-box.msglowid-cms-accent { border-color: rgba(0,229,160,0.3); color: var(--msglowid-cms-accent); }
+  .msglowid-cms-flow-step-arr { color: var(--msglowid-cms-text3); font-size: 11px; margin: 0 4px; }
+</style>

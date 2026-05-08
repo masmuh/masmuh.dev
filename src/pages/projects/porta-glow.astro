@@ -1,0 +1,889 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Porta-Glow - Mas Muhammad" description="A unified customer engagement portal for MS Glow customers featuring Google OAuth single sign-on, customer profile management, application key management, and a backpanel admin interface. Built with C# (.NET 6) following clean architecture patterns with MongoDB persistence and rate-limited APIs.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="porta-glow">
+
+<header class="porta-glow-hero">
+    <div class="porta-glow-hero-meta">
+      <span class="porta-glow-badge badge-consulting">Consulting</span>
+      <span class="porta-glow-badge porta-glow-badge-domain">Customer Portal</span>
+      <span class="porta-glow-badge porta-glow-badge-year">December 2022</span>
+    </div>
+    <h1 class="porta-glow-hero-title">
+      Porta-Glow<br>
+      <span>Customer Portal</span><span class="porta-glow-cursor"></span>
+    </h1>
+    <p class="porta-glow-hero-desc">
+      A unified customer engagement portal for MS Glow customers featuring Google OAuth
+      single sign-on, customer profile management, application key management, and a
+      backpanel admin interface. Built with C# (.NET 6) following clean architecture
+      patterns with MongoDB persistence and rate-limited APIs.
+    </p>
+    <div class="porta-glow-stack-pills">
+      <span class="porta-glow-stack-pill">C# .NET 6</span>
+      <span class="porta-glow-stack-pill">MongoDB</span>
+      <span class="porta-glow-stack-pill">Google OAuth</span>
+      <span class="porta-glow-stack-pill">AutoMapper</span>
+      <span class="porta-glow-stack-pill">FluentValidation</span>
+      <span class="porta-glow-stack-pill">Swagger</span>
+      <span class="porta-glow-stack-pill">Rate Limiting</span>
+    </div>
+  </header>
+
+  <section class="porta-glow-section">
+    <div class="porta-glow-section-label">
+      <span class="porta-glow-section-label-num">01</span>
+      <span class="porta-glow-section-label-text">Impact &amp; Metrics</span>
+      <span class="porta-glow-section-label-line"></span>
+    </div>
+
+    <div class="porta-glow-metrics-grid">
+      <div class="porta-glow-metric-card">
+        <div class="porta-glow-metric-val">2.5K+</div>
+        <div class="porta-glow-metric-label">Lines of Code</div>
+        <div class="porta-glow-metric-sub">C# + Razor + CSS</div>
+      </div>
+      <div class="porta-glow-metric-card">
+        <div class="porta-glow-metric-val">4</div>
+        <div class="porta-glow-metric-label">API Endpoints</div>
+        <div class="porta-glow-metric-sub">RESTful + OAuth</div>
+      </div>
+      <div class="porta-glow-metric-card">
+        <div class="porta-glow-metric-val">7</div>
+        <div class="porta-glow-metric-label">Database Models</div>
+        <div class="porta-glow-metric-sub">MongoDB collections</div>
+      </div>
+      <div class="porta-glow-metric-card porta-glow-amber">
+        <div class="porta-glow-metric-val">7</div>
+        <div class="porta-glow-metric-label">Complexity Score</div>
+        <div class="porta-glow-metric-sub">Enterprise System</div>
+      </div>
+    </div>
+
+    <div class="porta-glow-business-line-cards">
+      <div class="porta-glow-bl-card">
+        <div class="porta-glow-bl-card-title">Authentication</div>
+        <div class="porta-glow-bl-card-desc">Google OAuth single sign-on with ASP.NET Core Identity stored in MongoDB, supporting external login and callback flows with JWT-based session management.</div>
+        <span class="porta-glow-bl-card-tag">Google OAuth</span>
+      </div>
+      <div class="porta-glow-bl-card">
+        <div class="porta-glow-bl-card-title">Customer Management</div>
+        <div class="porta-glow-bl-card-desc">Customer profile CRUD with address management, gender and discount enumeration, and audit trail tracking via ChangesModel for created/updated timestamps.</div>
+        <span class="porta-glow-bl-card-tag porta-glow-amber-tag">Profile CRUD</span>
+      </div>
+      <div class="porta-glow-bl-card">
+        <div class="porta-glow-bl-card-title">API Key Management</div>
+        <div class="porta-glow-bl-card-desc">Application ID and key management service with unique key generation, expiration tracking, validator integration, and FluentValidation rules.</div>
+        <span class="porta-glow-bl-card-tag">Key Management</span>
+      </div>
+      <div class="porta-glow-bl-card">
+        <div class="porta-glow-bl-card-title">Admin Backpanel</div>
+        <div class="porta-glow-bl-card-desc">Separate Swagger-documented API areas for backpanel (v1) and website (v2) with rate limiting (2 requests per 10s) and CORS configuration.</div>
+        <span class="porta-glow-bl-card-tag porta-glow-amber-tag">Swagger v1/v2</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="porta-glow-section">
+    <div class="porta-glow-section-label">
+      <span class="porta-glow-section-label-num">02</span>
+      <span class="porta-glow-section-label-text">Architecture</span>
+      <span class="porta-glow-section-label-line"></span>
+    </div>
+
+    <div class="porta-glow-arch-diagram">
+      <div class="porta-glow-arch-diagram-inner">
+        <div class="porta-glow-arch-node porta-glow-source">
+          <div class="porta-glow-arch-node-icon"></div>
+          <div class="porta-glow-arch-node-label">Auth UI</div>
+          <div class="porta-glow-arch-node-sub">ASP.NET MVC</div>
+        </div>
+        <div class="porta-glow-arch-arrow">
+          <div class="porta-glow-arch-arrow-line"></div>
+          <div class="porta-glow-arch-arrow-label">HTTPS</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+          <div class="porta-glow-arch-node core" style="width:200px;">
+            <div class="porta-glow-arch-node-label" style="font-size:13px; margin-bottom:10px;">Web API</div>
+            <div class="porta-glow-core-stack">
+              <div class="porta-glow-core-step"><div class="porta-glow-core-step-dot"></div>Backpanel Controllers</div>
+              <div class="porta-glow-core-step"><div class="porta-glow-core-step-dot"></div>Website Controllers</div>
+              <div class="porta-glow-core-step"><div class="porta-glow-core-step-dot"></div>Application Services</div>
+              <div class="porta-glow-core-step"><div class="porta-glow-core-step-dot" style="background:var(--blue)"></div>Google OAuth</div>
+            </div>
+          </div>
+        </div>
+        <div class="porta-glow-arch-arrow">
+          <div class="porta-glow-arch-arrow-line"></div>
+          <div class="porta-glow-arch-arrow-label">persist</div>
+        </div>
+        <div class="porta-glow-arch-node porta-glow-output">
+          <div class="porta-glow-arch-node-icon"></div>
+          <div class="porta-glow-arch-node-label">MongoDB</div>
+          <div class="porta-glow-arch-node-sub">Identity + Data</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="porta-glow-section">
+    <div class="porta-glow-section-label">
+      <span class="porta-glow-section-label-num">03</span>
+      <span class="porta-glow-section-label-text">Tech Stack</span>
+      <span class="porta-glow-section-label-line"></span>
+    </div>
+
+    <div class="porta-glow-impact-wrapper">
+      <table class="porta-glow-stack-table">
+        <tbody>
+          <tr><td class="porta-glow-layer">Runtime</td><td class="porta-glow-tech">.NET 6.0</td></tr>
+          <tr><td class="porta-glow-layer">Web Framework</td><td class="porta-glow-tech">ASP.NET Core Web API + MVC</td></tr>
+          <tr><td class="porta-glow-layer">Database</td><td class="porta-glow-tech">MongoDB (MongoDB.Driver 2.14.1)</td></tr>
+          <tr><td class="porta-glow-layer">Identity</td><td class="porta-glow-tech">AspNetCore.Identity.MongoDbCore</td></tr>
+          <tr><td class="porta-glow-layer">Auth</td><td class="porta-glow-tech">Google OAuth 2.0 + Cookie Authentication</td></tr>
+          <tr><td class="porta-glow-layer">API Documentation</td><td class="porta-glow-tech">Swagger / Swashbuckle (v1 Backpanel, v2 Website)</td></tr>
+          <tr><td class="porta-glow-layer">Validation</td><td class="porta-glow-tech">FluentValidation 11.4.0</td></tr>
+          <tr><td class="porta-glow-layer">Mapping</td><td class="porta-glow-tech">AutoMapper 12.0.0</td></tr>
+          <tr><td class="porta-glow-layer">Rate Limiting</td><td class="porta-glow-tech">AspNetCoreRateLimit (2 req / 10s)</td></tr>
+          <tr><td class="porta-glow-layer">ORM</td><td class="porta-glow-tech">Custom MongoDBContext + Expression-to-SQL parser</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="porta-glow-section">
+    <div class="porta-glow-section-label">
+      <span class="porta-glow-section-label-num">04</span>
+      <span class="porta-glow-section-label-text">Capabilities</span>
+      <span class="porta-glow-section-label-line"></span>
+    </div>
+
+    <div class="porta-glow-impact-wrapper">
+      <table class="porta-glow-stack-table">
+        <tbody>
+          <tr><td class="porta-glow-layer">Authentication</td><td class="porta-glow-tech">Google OAuth external login, cookie-based session, callback handling, role-based authorization</td></tr>
+          <tr><td class="porta-glow-layer">Customer Management</td><td class="porta-glow-tech">Profile CRUD with address management, gender/discount enums, activation status, audit trail</td></tr>
+          <tr><td class="porta-glow-layer">Application Keys</td><td class="porta-glow-tech">API key generation, value management, description, expiration tracking, FluentValidation</td></tr>
+          <tr><td class="porta-glow-layer">Application Settings</td><td class="porta-glow-tech">Key-value setting store, configuration management</td></tr>
+          <tr><td class="porta-glow-layer">API Areas</td><td class="porta-glow-tech">Separated Backpanel (admin) and Website (public) API groups with distinct Swagger docs</td></tr>
+          <tr><td class="porta-glow-layer">Rate Limiting</td><td class="porta-glow-tech">2 requests per 10 seconds per endpoint with configurable policies</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .porta-glow {
+    --porta-glow-bg: #0a0b0d;
+    --porta-glow-bg2: #0f1114;
+    --porta-glow-bg3: #141720;
+    --porta-glow-surface: #1a1e28;
+    --porta-glow-surface2: #212636;
+    --porta-glow-border: #2a2f40;
+    --porta-glow-border2: #363c50;
+    --porta-glow-accent: #00e5a0;
+    --porta-glow-accent2: #00b87a;
+    --porta-glow-accent-dim: rgba(0, 229, 160, 0.08);
+    --porta-glow-accent-dim2: rgba(0, 229, 160, 0.15);
+    --porta-glow-amber: #f59e0b;
+    --porta-glow-amber-dim: rgba(245, 158, 11, 0.1);
+    --porta-glow-blue: #60a5fa;
+    --porta-glow-blue-dim: rgba(96, 165, 250, 0.1);
+    --porta-glow-red: #f87171;
+    --porta-glow-text: #e8eaf0;
+    --porta-glow-text2: #8b92a8;
+    --porta-glow-text3: #5a6077;
+    --porta-glow-mono: "JetBrains Mono", monospace;
+    --porta-glow-display: "Syne", sans-serif;
+    --porta-glow-radius: 10px;
+    --porta-glow-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .porta-glow * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .porta-glow body {
+    background: var(--porta-glow-bg);
+    color: var(--porta-glow-text);
+    font-family: var(--porta-glow-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .porta-glow-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--porta-glow-border);
+  }
+  .porta-glow-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--porta-glow-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .porta-glow-nav-back:hover {
+    color: var(--porta-glow-accent);
+  }
+  .porta-glow-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .porta-glow-nav-dot {
+    color: var(--porta-glow-border2);
+  }
+  .porta-glow-nav-title {
+    color: var(--porta-glow-text3);
+    font-size: 12px;
+  }
+
+  .porta-glow-hero {
+    margin-bottom: 56px;
+  }
+  .porta-glow-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .porta-glow-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .porta-glow-badge-corporate {
+    background: var(--porta-glow-blue-dim);
+    color: var(--porta-glow-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .porta-glow-badge-client {
+    background: var(--porta-glow-accent-dim);
+    color: var(--porta-glow-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .porta-glow-badge-year {
+    background: var(--porta-glow-surface);
+    color: var(--porta-glow-text3);
+    border-color: var(--porta-glow-border);
+  }
+
+  .porta-glow-hero-title {
+    font-family: var(--porta-glow-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .porta-glow-hero-title span {
+    color: var(--porta-glow-accent);
+    position: relative;
+  }
+
+  .porta-glow-hero-desc {
+    color: var(--porta-glow-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .porta-glow-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .porta-glow-stack-pill {
+    background: var(--porta-glow-surface);
+    border: 1px solid var(--porta-glow-border);
+    color: var(--porta-glow-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .porta-glow-stack-pill:hover {
+    border-color: var(--porta-glow-accent);
+    color: var(--porta-glow-accent);
+    background: var(--porta-glow-accent-dim);
+  }
+
+  .porta-glow-section {
+    margin-bottom: 52px;
+  }
+  .porta-glow-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .porta-glow-section-label-text {
+    font-family: var(--porta-glow-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--porta-glow-text3);
+    text-transform: uppercase;
+  }
+  .porta-glow-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--porta-glow-border);
+  }
+  .porta-glow-section-label-num {
+    font-size: 11px;
+    color: var(--porta-glow-border2);
+  }
+
+  .porta-glow-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .porta-glow-metric-card {
+    background: var(--porta-glow-bg3);
+    border: 1px solid var(--porta-glow-border);
+    border-radius: var(--porta-glow-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .porta-glow-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--porta-glow-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .porta-glow-metric-card:hover {
+    border-color: var(--porta-glow-border2);
+  }
+  .porta-glow-metric-card:hover::before {
+    opacity: 1;
+  }
+  .porta-glow-metric-amber .porta-glow-metric-val {
+    color: var(--porta-glow-amber);
+  }
+  .porta-glow-metric-amber::before {
+    background: var(--porta-glow-amber);
+  }
+
+  .porta-glow-metric-val {
+    font-family: var(--porta-glow-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--porta-glow-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .porta-glow-metric-label {
+    font-size: 12px;
+    color: var(--porta-glow-text2);
+    margin-bottom: 3px;
+  }
+  .porta-glow-metric-sub {
+    font-size: 11px;
+    color: var(--porta-glow-text3);
+  }
+
+  .porta-glow-arch-diagram {
+    background: var(--porta-glow-bg3);
+    border: 1px solid var(--porta-glow-border);
+    border-radius: var(--porta-glow-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .porta-glow-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .porta-glow-arch-node {
+    background: var(--porta-glow-surface);
+    border: 1px solid var(--porta-glow-border2);
+    border-radius: var(--porta-glow-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .porta-glow-core {
+    background: var(--porta-glow-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .porta-glow-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .porta-glow-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--porta-glow-amber-dim);
+    min-width: 110px;
+  }
+  .porta-glow-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .porta-glow-arch-node-label {
+    font-family: var(--porta-glow-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .porta-glow-arch-node-sub {
+    font-size: 10px;
+    color: var(--porta-glow-text3);
+    font-family: var(--porta-glow-mono);
+  }
+
+  .porta-glow-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--porta-glow-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .porta-glow-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--porta-glow-border),
+      var(--porta-glow-accent),
+      var(--porta-glow-border)
+    );
+    position: relative;
+  }
+  .porta-glow-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--porta-glow-accent);
+    font-size: 10px;
+  }
+  .porta-glow-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--porta-glow-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .porta-glow-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .porta-glow-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .porta-glow-core-step {
+    background: var(--porta-glow-bg3);
+    border: 1px solid var(--porta-glow-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--porta-glow-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .porta-glow-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--porta-glow-accent);
+    flex-shrink: 0;
+  }
+
+  .porta-glow-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .porta-glow-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .porta-glow-schema-arrow-label {
+    font-size: 9px;
+    color: var(--porta-glow-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .porta-glow-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .porta-glow-decision-card {
+    background: var(--porta-glow-bg3);
+    border: 1px solid var(--porta-glow-border);
+    border-radius: var(--porta-glow-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .porta-glow-decision-card:hover {
+    border-color: var(--porta-glow-border2);
+  }
+
+  .porta-glow-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .porta-glow-decision-num {
+    font-family: var(--porta-glow-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--porta-glow-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .porta-glow-decision-title {
+    font-family: var(--porta-glow-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .porta-glow-decision-problem {
+    font-size: 12px;
+    color: var(--porta-glow-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--porta-glow-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .porta-glow-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .porta-glow-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .porta-glow-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .porta-glow-decision-chosen {
+    color: var(--porta-glow-accent);
+  }
+  .porta-glow-decision-tradeoff {
+    color: var(--porta-glow-amber);
+  }
+  .porta-glow-decision-col-text {
+    font-size: 12px;
+    color: var(--porta-glow-text2);
+    line-height: 1.65;
+  }
+
+  .porta-glow-decision-code {
+    background: var(--porta-glow-bg);
+    border-top: 1px solid var(--porta-glow-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--porta-glow-text2);
+    overflow-x: auto;
+  }
+  .porta-glow-decision-code pre {
+    margin: 0;
+    font-family: var(--porta-glow-mono);
+    line-height: 1.6;
+  }
+  .porta-glow-token-kw {
+    color: #c792ea;
+  }
+  .porta-glow-token-fn {
+    color: #82aaff;
+  }
+  .porta-glow-token-str {
+    color: #c3e88d;
+  }
+  .porta-glow-token-cm {
+    color: var(--porta-glow-text3);
+    font-style: italic;
+  }
+  .porta-glow-token-acc {
+    color: var(--porta-glow-accent);
+  }
+
+  .porta-glow-impact-wrapper {
+    background: var(--porta-glow-bg3);
+    border: 1px solid var(--porta-glow-border);
+    border-radius: var(--porta-glow-radius);
+    overflow: hidden;
+  }
+  .porta-glow-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .porta-glow-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--porta-glow-text3);
+    border-bottom: 1px solid var(--porta-glow-border);
+    font-family: var(--porta-glow-display);
+    font-weight: 600;
+  }
+  .porta-glow-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--porta-glow-border);
+    color: var(--porta-glow-text2);
+  }
+  .porta-glow-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .porta-glow-impact-table tr:hover td {
+    background: var(--porta-glow-surface);
+  }
+  .porta-glow-before {
+    color: var(--porta-glow-red);
+  }
+  .porta-glow-after {
+    color: var(--porta-glow-accent);
+  }
+  .porta-glow-delta {
+    color: var(--porta-glow-accent);
+    font-weight: 500;
+    font-family: var(--porta-glow-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .porta-glow-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .porta-glow-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .porta-glow-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--porta-glow-border);
+  }
+  .porta-glow-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .porta-glow-layer {
+    color: var(--porta-glow-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .porta-glow-tech {
+    color: var(--porta-glow-accent);
+    font-family: var(--porta-glow-mono);
+  }
+  .porta-glow-stack-table tr:hover td {
+    background: var(--porta-glow-surface);
+  }
+
+  .porta-glow-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--porta-glow-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .porta-glow-footer-text {
+    font-size: 11px;
+    color: var(--porta-glow-text3);
+  }
+  .porta-glow-footer-link {
+    font-size: 11px;
+    color: var(--porta-glow-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .porta-glow-footer-link:hover {
+    color: var(--porta-glow-accent);
+  }
+
+  @keyframes porta-glow-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .porta-glow-hero {
+    animation: porta-glow-fadeUp 0.5s ease both;
+  }
+  .porta-glow-section:nth-child(2) {
+    animation: porta-glow-fadeUp 0.5s 0.1s ease both;
+  }
+  .porta-glow-section:nth-child(3) {
+    animation: porta-glow-fadeUp 0.5s 0.15s ease both;
+  }
+  .porta-glow-section:nth-child(4) {
+    animation: porta-glow-fadeUp 0.5s 0.2s ease both;
+  }
+  .porta-glow-section:nth-child(5) {
+    animation: porta-glow-fadeUp 0.5s 0.25s ease both;
+  }
+  .porta-glow-section:nth-child(6) {
+    animation: porta-glow-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .porta-glow-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--porta-glow-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: porta-glow-blink 1s step-end infinite;
+  }
+  @keyframes porta-glow-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .porta-glow-badge-client { background: var(--porta-glow-accent-dim); color: var(--porta-glow-accent); border-color: rgba(0,229,160,0.2); }
+  .porta-glow-metric-val { font-size: 22px; }
+  .porta-glow-amber .porta-glow-metric-val { color: var(--porta-glow-amber); }
+  .porta-glow-amber::before { background: var(--porta-glow-amber); }
+  .porta-glow-red .porta-glow-metric-val { color: var(--porta-glow-red); }
+  .porta-glow-red::before { background: var(--porta-glow-red); }
+  .porta-glow-blue .porta-glow-metric-val { color: var(--porta-glow-blue); }
+  .porta-glow-blue::before { background: var(--porta-glow-blue); }
+  .porta-glow-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .porta-glow-business-line-cards { grid-template-columns: 1fr; } }
+  .porta-glow-bl-card { background: var(--porta-glow-bg2); border: 1px solid var(--porta-glow-border); border-radius: var(--porta-glow-radius); padding: 16px; }
+  .porta-glow-bl-card-title { font-family: var(--porta-glow-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .porta-glow-bl-card-desc { font-size: 11px; color: var(--porta-glow-text3); line-height: 1.6; }
+  .porta-glow-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--porta-glow-accent-dim); color: var(--porta-glow-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .porta-glow-bl-card-tag.porta-glow-amber-tag { background: var(--porta-glow-amber-dim); color: var(--porta-glow-amber); border-color: rgba(245,158,11,0.2); }
+  .porta-glow-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .porta-glow-cap-list { grid-template-columns: 1fr; } }
+  .porta-glow-cap-item { background: var(--porta-glow-bg3); border: 1px solid var(--porta-glow-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--porta-glow-text2); }
+  .porta-glow-cap-item:hover { border-color: var(--porta-glow-border2); color: var(--porta-glow-text); }
+  .porta-glow-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--porta-glow-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .porta-glow-flow-panel { background: var(--porta-glow-bg2); border: 1px solid var(--porta-glow-border); border-radius: var(--porta-glow-radius); padding: 20px; margin-top: 20px; }
+  .porta-glow-flow-panel-title { font-family: var(--porta-glow-display); font-size: 12px; font-weight: 600; color: var(--porta-glow-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .porta-glow-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .porta-glow-flow-step { display: flex; align-items: center; gap: 8px; }
+  .porta-glow-flow-step-box { background: var(--porta-glow-surface); border: 1px solid var(--porta-glow-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--porta-glow-text2); white-space: nowrap; }
+  .porta-glow-flow-step-box.porta-glow-accent { border-color: rgba(0,229,160,0.3); color: var(--porta-glow-accent); }
+  .porta-glow-flow-step-arr { color: var(--porta-glow-text3); font-size: 11px; margin: 0 4px; }
+</style>

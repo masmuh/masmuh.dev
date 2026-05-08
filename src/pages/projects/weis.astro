@@ -1,0 +1,1167 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="WEIS Engineering System - Mas Muhammad" description="A Well Exploration Information System for oil &amp; gas well cost estimation and planning featuring well activity tracking, business plan management, performance improvement plans, and waterfall reporting with real-time communications. Built with ASP.NET MVC 5 on .NET Framework 4.6 with MongoDB and SignalR.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="weis">
+
+<header class="weis-hero">
+    <div class="weis-hero-meta">
+      <span class="weis-badge weis-badge-corporate">Corporate</span><span class="weis-badge weis-badge-client">Shell</span> 
+      <span class="weis-badge weis-badge-critical">Mission Critical</span>
+      <span class="weis-badge weis-badge-year">September 2016</span>
+    </div>
+    <h1 class="weis-hero-title">
+      WEIS Engineering System<br>
+      <span>Well Exploration Information System</span>
+    </h1>
+    <p class="weis-hero-desc">
+      A Well Exploration Information System for oil &amp; gas well cost estimation and planning
+      featuring well activity tracking, business plan management, performance improvement plans,
+      and waterfall reporting with real-time communications. Built with ASP.NET MVC 5 on
+      .NET Framework 4.6 with MongoDB and SignalR.
+    </p>
+    <div class="weis-stack-pills">
+      <span class="weis-stack-pill">C# .NET 4.6.2</span>
+      <span class="weis-stack-pill">ASP.NET MVC 5</span>
+      <span class="weis-stack-pill">Web API 2</span>
+      <span class="weis-stack-pill">MongoDB</span>
+      <span class="weis-stack-pill">Oracle</span>
+      <span class="weis-stack-pill">Entity Framework 6</span>
+      <span class="weis-stack-pill">SignalR 2.4</span>
+      <span class="weis-stack-pill">Kendo UI</span>
+      <span class="weis-stack-pill">Knockout.js</span>
+      <span class="weis-stack-pill">Docker</span>
+    </div>
+  </header>
+
+  <section class="weis-section">
+    <div class="weis-section-label">
+      <span class="weis-section-label-num">01</span>
+      <span class="weis-section-label-text">Impact &amp; Metrics</span>
+      <span class="weis-section-label-line"></span>
+    </div>
+
+    <div class="weis-metrics-grid">
+      <div class="weis-metric-card">
+        <div class="weis-metric-val">485K+</div>
+        <div class="weis-metric-label">Lines of Code</div>
+        <div class="weis-metric-sub">C# + JS + views + config</div>
+      </div>
+      <div class="weis-metric-card weis-amber">
+        <div class="weis-metric-val">20+</div>
+        <div class="weis-metric-label">REST API Endpoints</div>
+        <div class="weis-metric-sub">Web API 2 controllers</div>
+      </div>
+      <div class="weis-metric-card weis-blue">
+        <div class="weis-metric-val">50+</div>
+        <div class="weis-metric-label">Domain Entities</div>
+        <div class="weis-metric-sub">Entity Framework + MongoDB models</div>
+      </div>
+      <div class="weis-metric-card weis-red">
+        <div class="weis-metric-val">10</div>
+        <div class="weis-metric-label">Complexity Rating</div>
+        <div class="weis-metric-sub">Mission Critical — Oil &amp; Gas</div>
+      </div>
+    </div>
+
+    <div class="weis-impact-wrapper" style="margin-top:20px;">
+      <table class="weis-impact-table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Before</th>
+            <th>After</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="weis-row-label">Cost Estimation</td>
+            <td class="weis-before">Manual spreadsheets, version chaos</td>
+            <td class="weis-after">Centralized platform with real-time collaboration</td>
+            <td class="weis-delta">+ automated</td>
+          </tr>
+          <tr>
+            <td class="weis-row-label">Report Generation</td>
+            <td class="weis-before">Days per report, manual Excel assembly</td>
+            <td class="weis-after">One-click Excel/PDF with Aspose.Cells</td>
+            <td class="weis-delta">+ 10x faster</td>
+          </tr>
+          <tr>
+            <td class="weis-row-label">Team Communications</td>
+            <td class="weis-before">Email chains, delayed updates</td>
+            <td class="weis-after">Real-time via SignalR WebSocket</td>
+            <td class="weis-delta">+ instant</td>
+          </tr>
+          <tr>
+            <td class="weis-row-label">Deployment</td>
+            <td class="weis-before">Manual IIS deploy, downtime</td>
+            <td class="weis-after">Docker + GitLab CI/CD zero-downtime</td>
+            <td class="weis-delta">+ CI/CD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="weis-section">
+    <div class="weis-section-label">
+      <span class="weis-section-label-num">02</span>
+      <span class="weis-section-label-text">Architecture</span>
+      <span class="weis-section-label-line"></span>
+    </div>
+
+    <div class="weis-arch-diagram">
+      <div class="weis-arch-diagram-inner">
+        <div class="weis-arch-node weis-source">
+          <div class="weis-arch-node-icon"></div>
+          <div class="weis-arch-node-label">Browser</div>
+          <div class="weis-arch-node-sub">Kendo UI + Knockout.js</div>
+        </div>
+        <div class="weis-arch-arrow">
+          <div class="weis-arch-arrow-line"></div>
+          <div class="weis-arch-arrow-label">HTTP / SignalR</div>
+        </div>
+        <div class="weis-arch-node core">
+          <div class="weis-arch-node-icon"></div>
+          <div class="weis-arch-node-label">MVC Controllers + WebAPI</div>
+          <div class="weis-arch-node-sub">ASP.NET MVC 5 / Web API 2</div>
+          <div class="weis-core-stack">
+            <div class="weis-core-step">
+              <span class="weis-core-step-dot"></span>
+              OWIN middleware pipeline
+            </div>
+            <div class="weis-core-step">
+              <span class="weis-core-step-dot weis-blue"></span>
+              Service Layer — business logic
+            </div>
+            <div class="weis-core-step">
+              <span class="weis-core-step-dot weis-amber"></span>
+              Repository pattern — data access
+            </div>
+          </div>
+        </div>
+        <div class="weis-arch-arrow">
+          <div class="weis-arch-arrow-line"></div>
+          <div class="weis-arch-arrow-label">queries</div>
+        </div>
+        <div class="weis-arch-node weis-output" style="min-width:150px;">
+          <div class="weis-arch-node-icon"></div>
+          <div class="weis-arch-node-label">Dual Database</div>
+          <div class="weis-arch-node-sub">MongoDB + Oracle</div>
+          <div class="weis-core-stack">
+            <div class="weis-core-step">
+              <span class="weis-core-step-dot weis-blue"></span>
+              MongoDB — operational data
+            </div>
+            <div class="weis-core-step">
+              <span class="weis-core-step-dot weis-amber"></span>
+              Oracle (EF 6) — master data
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center;">
+      <div class="weis-arch-node weis-db-node">
+        <div class="weis-arch-node-icon"></div>
+        <div class="weis-arch-node-label">SignalR Hub</div>
+        <div class="weis-arch-node-sub">real-time WebSocket</div>
+      </div>
+      <div class="weis-arch-arrow" style="min-width:40px;">
+        <div class="weis-arch-arrow-line" style="width:20px;"></div>
+        <div class="weis-arch-arrow-label">push</div>
+      </div>
+      <div class="weis-arch-node weis-db-node">
+        <div class="weis-arch-node-icon"></div>
+        <div class="weis-arch-node-label">Docker</div>
+        <div class="weis-arch-node-sub">GitLab CI/CD</div>
+      </div>
+      <div class="weis-arch-arrow" style="min-width:40px;">
+        <div class="weis-arch-arrow-line" style="width:20px;"></div>
+        <div class="weis-arch-arrow-label">deploy</div>
+      </div>
+      <div class="weis-arch-node weis-db-node">
+        <div class="weis-arch-node-icon"></div>
+        <div class="weis-arch-node-label">Aspose.Cells</div>
+        <div class="weis-arch-node-sub">Excel / PDF generation</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="weis-section">
+    <div class="weis-section-label">
+      <span class="weis-section-label-num">03</span>
+      <span class="weis-section-label-text">Key Capabilities</span>
+      <span class="weis-section-label-line"></span>
+    </div>
+
+    <div class="weis-cap-list">
+      <div class="weis-cap-item">
+        <span class="weis-cap-icon"></span>
+        Well activity planning &amp; actual tracking
+      </div>
+      <div class="weis-cap-item">
+        <span class="weis-cap-icon"></span>
+        Business plan management with cost estimation
+      </div>
+      <div class="weis-cap-item">
+        <span class="weis-cap-icon"></span>
+        Performance Improvement Plan (PIP) tracking
+      </div>
+      <div class="weis-cap-item">
+        <span class="weis-cap-icon"></span>
+        Waterfall reporting &amp; cumulative cost analysis
+      </div>
+      <div class="weis-cap-item">
+        <span class="weis-cap-icon"></span>
+        Rig scheduling &amp; sequence chart visualization
+      </div>
+      <div class="weis-cap-item">
+        <span class="weis-cap-icon"></span>
+        Monthly/weekly reporting with Excel/PDF generation
+      </div>
+      <div class="weis-cap-item">
+        <span class="weis-cap-icon"></span>
+        Real-time communications via SignalR WebSocket
+      </div>
+      <div class="weis-cap-item">
+        <span class="weis-cap-icon"></span>
+        Docker container deployment with GitLab CI/CD
+      </div>
+    </div>
+  </section>
+
+  <section class="weis-section">
+    <div class="weis-section-label">
+      <span class="weis-section-label-num">04</span>
+      <span class="weis-section-label-text">Decision Log</span>
+      <span class="weis-section-label-line"></span>
+    </div>
+
+    <div class="weis-decision-list">
+
+      <div class="weis-decision-card">
+        <div class="weis-decision-header">
+          <span class="weis-decision-num">01</span>
+          <div>
+            <div class="weis-decision-title">MVC 5 + Web API 2 Over Modern SPA</div>
+            <div class="weis-decision-problem">The project needed both server-rendered views for complex reporting dashboards and REST endpoints for real-time data. In 2018, .NET Core was still in 2.x and lacked full SignalR support. The engineering team was already proficient in full .NET Framework.</div>
+          </div>
+        </div>
+        <div class="weis-decision-body">
+          <div>
+            <div class="weis-decision-col-label weis-chosen"> Chosen — MVC 5 + Web API 2</div>
+            <div class="weis-decision-col-text">Dual pipeline approach: MVC controllers delivered server-rendered Kendo UI views with Knockout.js MVVM binding for interactivity. Web API 2 provided 20+ REST endpoints consumed by the frontend for dynamic data. Shared service layer prevented logic duplication.</div>
+          </div>
+          <div>
+            <div class="weis-decision-col-label weis-tradeoff">△ Tradeoff — .NET Core / SPA</div>
+            <div class="weis-decision-col-text">.NET Core 2.1 was emerging but SignalR support was experimental. Migrating to a React/Angular SPA would have doubled delivery time and required retraining the existing ASP.NET team. Infrastructure was Windows-only at project start.</div>
+          </div>
+        </div>
+        <div class="weis-decision-code">
+<pre><span class="weis-token-cm">// Dual pipeline — MVC controller + Web API in same project</span>
+[<span class="weis-token-fn">Authorize</span>]
+<span class="weis-token-kw">public class</span> <span class="weis-token-fn">WellActivityController</span> : Controller
+&#123;
+    <span class="weis-token-kw">public</span> ActionResult <span class="weis-token-fn">Index</span>()
+    &#123;
+        <span class="weis-token-kw">return</span> View(<span class="weis-token-fn">_service</span>.<span class="weis-token-fn">GetDashboardData</span>());
+    &#125;
+&#125;
+
+[<span class="weis-token-fn">RoutePrefix</span>(<span class="weis-token-str">"api/wells"</span>)]
+<span class="weis-token-kw">public class</span> <span class="weis-token-fn">WellApiController</span> : ApiController
+&#123;
+    [<span class="weis-token-fn">Route</span>(<span class="weis-token-str">"&#123;id&#125;/cost"</span>)]
+    <span class="weis-token-kw">public</span> IHttpActionResult <span class="weis-token-fn">GetCostBreakdown</span>(<span class="weis-token-kw">string</span> id)
+    &#123;
+        <span class="weis-token-kw">var</span> result = <span class="weis-token-fn">_costService</span>.<span class="weis-token-fn">GetWaterfall</span>(id);
+        <span class="weis-token-kw">return</span> <span class="weis-token-fn">Ok</span>(result);
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="weis-decision-card">
+        <div class="weis-decision-header">
+          <span class="weis-decision-num">02</span>
+          <div>
+            <div class="weis-decision-title">MongoDB + Oracle Dual-Database Strategy</div>
+            <div class="weis-decision-problem">Well exploration data has two distinct profiles: rapidly changing operational data (activity logs, cost waterfalls, real-time comms) and stable master/reference data (well structures, organizational hierarchies, historical records). A single RDBMS struggled with the schema flexibility needed for operational data.</div>
+          </div>
+        </div>
+        <div class="weis-decision-body">
+          <div>
+            <div class="weis-decision-col-label weis-chosen"> Chosen — MongoDB + Oracle</div>
+            <div class="weis-decision-col-text">MongoDB handled operational data with flexible schemas — well activities, cost breakdowns, and real-time messages. Oracle (via EF 6) managed master data with strict referential integrity — organizational units, well master records, and user authentication. A service layer abstracted the dual source transparently.</div>
+          </div>
+          <div>
+            <div class="weis-decision-col-label weis-tradeoff">△ Tradeoff — Single RDBMS / NoSQL</div>
+            <div class="weis-decision-col-text">Pure Oracle would have required complex EAV patterns for flexible operational data. Pure MongoDB would lose ACID guarantees for master reference data that needed strict relationships. Dual database added operational complexity but matched each data domain's natural characteristics.</div>
+          </div>
+        </div>
+        <div class="weis-decision-code">
+<pre><span class="weis-token-cm">// Service layer abstracts dual-database access</span>
+<span class="weis-token-kw">public class</span> <span class="weis-token-fn">WellService</span> : IWellService
+&#123;
+    <span class="weis-token-kw">private readonly</span> MongoCollection&lt;WellActivity&gt; _ops;
+    <span class="weis-token-kw">private readonly</span> IWellMasterRepository _master;
+
+    <span class="weis-token-kw">public</span> WellActivityDto <span class="weis-token-fn">GetWellData</span>(<span class="weis-token-kw">string</span> wellId)
+    &#123;
+        <span class="weis-token-kw">var</span> master = <span class="weis-token-fn">_master</span>.<span class="weis-token-fn">GetById</span>(wellId);  <span class="weis-token-cm">// Oracle</span>
+        <span class="weis-token-kw">var</span> activity = <span class="weis-token-fn">_ops</span>.<span class="weis-token-fn">FindById</span>(wellId); <span class="weis-token-cm">// MongoDB</span>
+        <span class="weis-token-kw">return new</span> WellActivityDto &#123; Well = master, Activity = activity &#125;;
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="weis-decision-card">
+        <div class="weis-decision-header">
+          <span class="weis-decision-num">03</span>
+          <div>
+            <div class="weis-decision-title">Knockout.js + Kendo UI Instead of React</div>
+            <div class="weis-decision-problem">The reporting dashboards needed complex data grids, pivot tables, charts, and Excel-like interactions. Building these UI components from scratch or with a pure React ecosystem would have been prohibitively time-consuming for an engineering-focused team.</div>
+          </div>
+        </div>
+        <div class="weis-decision-body">
+          <div>
+            <div class="weis-decision-col-label weis-chosen"> Chosen — Kendo UI + Knockout.js MVVM</div>
+            <div class="weis-decision-col-text">Kendo UI provided production-ready grids, charts, and scheduling widgets out of the box — critical for waterfall cost charts and rig scheduling. Knockout.js MVVM pattern bound Kendo widgets to ViewModels cleanly. Reduced UI development by ~60% compared to building custom components.</div>
+          </div>
+          <div>
+            <div class="weis-decision-col-label weis-tradeoff">△ Tradeoff — React Ecosystem</div>
+            <div class="decision-text">React with AG-Grid or similar would have offered better long-term maintainability and a larger community. However, the learning curve for the existing team, plus the need for extensive custom widget building, outweighed the benefits given the project's aggressive timeline.</div>
+          </div>
+        </div>
+        <div class="weis-decision-code">
+<pre><span class="weis-token-cm">// Knockout ViewModel binding to Kendo UI grid</span>
+<span class="weis-token-kw">function</span> <span class="weis-token-fn">WaterfallViewModel</span>() &#123;
+    <span class="weis-token-kw">var</span> self = <span class="weis-token-kw">this</span>;
+    self.wells = ko.<span class="weis-token-fn">observableArray</span>([]);
+    self.selectedWell = ko.<span class="weis-token-fn">observable</span>();
+
+    self.<span class="weis-token-fn">loadCostWaterfall</span> = <span class="weis-token-kw">function</span>() &#123;
+        $.<span class="weis-token-fn">getJSON</span>(<span class="weis-token-str">"/api/wells/"</span> + self.<span class="weis-token-fn">selectedWell</span>() + <span class="weis-token-str">"/cost"</span>)
+            .<span class="weis-token-fn">done</span>(<span class="weis-token-kw">function</span>(data) &#123;
+                $(<span class="weis-token-str">"#waterfallGrid"</span>).<span class="weis-token-fn">data</span>(<span class="weis-token-str">"kendoGrid"</span>)
+                    .<span class="weis-token-fn">dataSource</span>.<span class="weis-token-fn">data</span>(data);
+            &#125;);
+    &#125;;
+&#125;
+ko.<span class="weis-token-fn">applyBindings</span>(<span class="weis-token-kw">new</span> <span class="weis-token-fn">WaterfallViewModel</span>());</pre>
+        </div>
+      </div>
+
+      <div class="weis-decision-card">
+        <div class="weis-decision-header">
+          <span class="weis-decision-num">04</span>
+          <div>
+            <div class="weis-decision-title">SignalR for Real-Time Communications</div>
+            <div class="weis-decision-problem">Engineering teams needed instant notifications when cost estimates changed, when well activities were updated, and for urgent messages. Polling-based approaches would have created unacceptable latency and database load.</div>
+          </div>
+        </div>
+        <div class="weis-decision-body">
+          <div>
+            <div class="weis-decision-col-label weis-chosen"> Chosen — SignalR 2.4 WebSocket</div>
+            <div class="weis-decision-col-text">SignalR established persistent WebSocket connections between the browser and the OWIN-hosted hub. When any well activity or cost estimate changed, the server pushed updates to all connected clients in real-time. Automatic fallback to long-polling when WebSocket was unavailable. Integrated with OWIN middleware seamlessly.</div>
+          </div>
+          <div>
+            <div class="weis-decision-col-label weis-tradeoff">△ Tradeoff — gRPC / Server-Sent Events</div>
+            <div class="weis-decision-col-text">gRPC streaming would have required proto definitions and .NET Core. SSE only supported one-way server-to-client communication without native .NET library support in 2018. SignalR was the mature, well-supported choice for the .NET Framework ecosystem.</div>
+          </div>
+        </div>
+        <div class="weis-decision-code">
+<pre><span class="weis-token-cm">// SignalR hub broadcasting cost updates to all clients</span>
+<span class="weis-token-kw">public class</span> <span class="weis-token-fn">CostHub</span> : Hub
+&#123;
+    <span class="weis-token-kw">public async Task</span> <span class="weis-token-fn">NotifyCostChange</span>(<span class="weis-token-kw">string</span> wellId, CostUpdate update)
+    &#123;
+        <span class="weis-token-kw">await</span> Clients.All.<span class="weis-token-fn">costUpdated</span>(wellId, update);
+    &#125;
+&#125;
+
+<span class="weis-token-cm">// Startup.cs — OWIN configuration</span>
+<span class="weis-token-kw">public class</span> <span class="weis-token-fn">Startup</span>
+&#123;
+    <span class="weis-token-kw">public void</span> <span class="weis-token-fn">Configuration</span>(IAppBuilder app)
+    &#123;
+        app.<span class="weis-token-fn">MapSignalR</span>();
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="weis-section">
+    <div class="weis-section-label">
+      <span class="weis-section-label-num">05</span>
+      <span class="weis-section-label-text">Tech Stack</span>
+      <span class="weis-section-label-line"></span>
+    </div>
+
+    <div class="weis-arch-diagram">
+      <table class="weis-stack-table">
+        <tr>
+          <td class="weis-layer">Frontend</td>
+          <td class="weis-tech">Razor Views, Kendo UI, Knockout.js MVVM, jQuery, Bootstrap, SignalR JS client</td>
+        </tr>
+        <tr>
+          <td class="weis-layer">Controllers</td>
+          <td class="weis-tech">ASP.NET MVC 5 Controllers, Web API 2 Controllers, OWIN middleware</td>
+        </tr>
+        <tr>
+          <td class="weis-layer">Service Layer</td>
+          <td class="weis-tech">C# service classes with dependency injection, business logic, DTO mapping</td>
+        </tr>
+        <tr>
+          <td class="weis-layer">Data Access</td>
+          <td class="weis-tech">Entity Framework 6 (Oracle), MongoDB.Driver 2.x, Repository pattern</td>
+        </tr>
+        <tr>
+          <td class="weis-layer">Database</td>
+          <td class="weis-tech">MongoDB (operational), Oracle Database (master/reference via EF 6)</td>
+        </tr>
+        <tr>
+          <td class="weis-layer">Real-Time</td>
+          <td class="weis-tech">SignalR 2.4 (WebSocket with long-polling fallback)</td>
+        </tr>
+        <tr>
+          <td class="weis-layer">Reporting</td>
+          <td class="weis-tech">Aspose.Cells for Excel/PDF generation, Kendo UI charts</td>
+        </tr>
+        <tr>
+          <td class="weis-layer">Runtime</td>
+          <td class="weis-tech">.NET Framework 4.6.2, IIS / Docker container</td>
+        </tr>
+        <tr>
+          <td class="weis-layer">CI/CD</td>
+          <td class="weis-tech">GitLab CI/CD, Docker, Windows container deployment</td>
+        </tr>
+        <tr>
+          <td class="weis-layer">IDE &amp; Tooling</td>
+          <td class="weis-tech">Visual Studio 2017/2019, ReSharper, Git, MongoDB Compass, Oracle SQL Developer</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .weis {
+    --weis-bg: #0a0b0d;
+    --weis-bg2: #0f1114;
+    --weis-bg3: #141720;
+    --weis-surface: #1a1e28;
+    --weis-surface2: #212636;
+    --weis-border: #2a2f40;
+    --weis-border2: #363c50;
+    --weis-accent: #00e5a0;
+    --weis-accent2: #00b87a;
+    --weis-accent-dim: rgba(0, 229, 160, 0.08);
+    --weis-accent-dim2: rgba(0, 229, 160, 0.15);
+    --weis-amber: #f59e0b;
+    --weis-amber-dim: rgba(245, 158, 11, 0.1);
+    --weis-blue: #60a5fa;
+    --weis-blue-dim: rgba(96, 165, 250, 0.1);
+    --weis-red: #f87171;
+    --weis-text: #e8eaf0;
+    --weis-text2: #8b92a8;
+    --weis-text3: #5a6077;
+    --weis-mono: "JetBrains Mono", monospace;
+    --weis-display: "Syne", sans-serif;
+    --weis-radius: 10px;
+    --weis-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .weis * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .weis body {
+    background: var(--weis-bg);
+    color: var(--weis-text);
+    font-family: var(--weis-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .weis-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--weis-border);
+  }
+  .weis-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--weis-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .weis-nav-back:hover {
+    color: var(--weis-accent);
+  }
+  .weis-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .weis-nav-dot {
+    color: var(--weis-border2);
+  }
+  .weis-nav-title {
+    color: var(--weis-text3);
+    font-size: 12px;
+  }
+
+  .weis-hero {
+    margin-bottom: 56px;
+  }
+  .weis-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .weis-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .weis-badge-corporate {
+    background: var(--weis-blue-dim);
+    color: var(--weis-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .weis-badge-client {
+    background: var(--weis-accent-dim);
+    color: var(--weis-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .weis-badge-year {
+    background: var(--weis-surface);
+    color: var(--weis-text3);
+    border-color: var(--weis-border);
+  }
+
+  .weis-hero-title {
+    font-family: var(--weis-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .weis-hero-title span {
+    color: var(--weis-accent);
+    position: relative;
+  }
+
+  .weis-hero-desc {
+    color: var(--weis-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .weis-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .weis-stack-pill {
+    background: var(--weis-surface);
+    border: 1px solid var(--weis-border);
+    color: var(--weis-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .weis-stack-pill:hover {
+    border-color: var(--weis-accent);
+    color: var(--weis-accent);
+    background: var(--weis-accent-dim);
+  }
+
+  .weis-section {
+    margin-bottom: 52px;
+  }
+  .weis-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .weis-section-label-text {
+    font-family: var(--weis-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--weis-text3);
+    text-transform: uppercase;
+  }
+  .weis-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--weis-border);
+  }
+  .weis-section-label-num {
+    font-size: 11px;
+    color: var(--weis-border2);
+  }
+
+  .weis-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .weis-metric-card {
+    background: var(--weis-bg3);
+    border: 1px solid var(--weis-border);
+    border-radius: var(--weis-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .weis-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--weis-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .weis-metric-card:hover {
+    border-color: var(--weis-border2);
+  }
+  .weis-metric-card:hover::before {
+    opacity: 1;
+  }
+  .weis-metric-amber .weis-metric-val {
+    color: var(--weis-amber);
+  }
+  .weis-metric-amber::before {
+    background: var(--weis-amber);
+  }
+
+  .weis-metric-val {
+    font-family: var(--weis-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--weis-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .weis-metric-label {
+    font-size: 12px;
+    color: var(--weis-text2);
+    margin-bottom: 3px;
+  }
+  .weis-metric-sub {
+    font-size: 11px;
+    color: var(--weis-text3);
+  }
+
+  .weis-arch-diagram {
+    background: var(--weis-bg3);
+    border: 1px solid var(--weis-border);
+    border-radius: var(--weis-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .weis-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .weis-arch-node {
+    background: var(--weis-surface);
+    border: 1px solid var(--weis-border2);
+    border-radius: var(--weis-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .weis-core {
+    background: var(--weis-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .weis-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .weis-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--weis-amber-dim);
+    min-width: 110px;
+  }
+  .weis-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .weis-arch-node-label {
+    font-family: var(--weis-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .weis-arch-node-sub {
+    font-size: 10px;
+    color: var(--weis-text3);
+    font-family: var(--weis-mono);
+  }
+
+  .weis-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--weis-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .weis-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--weis-border),
+      var(--weis-accent),
+      var(--weis-border)
+    );
+    position: relative;
+  }
+  .weis-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--weis-accent);
+    font-size: 10px;
+  }
+  .weis-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--weis-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .weis-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .weis-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .weis-core-step {
+    background: var(--weis-bg3);
+    border: 1px solid var(--weis-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--weis-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .weis-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--weis-accent);
+    flex-shrink: 0;
+  }
+
+  .weis-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .weis-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .weis-schema-arrow-label {
+    font-size: 9px;
+    color: var(--weis-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .weis-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .weis-decision-card {
+    background: var(--weis-bg3);
+    border: 1px solid var(--weis-border);
+    border-radius: var(--weis-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .weis-decision-card:hover {
+    border-color: var(--weis-border2);
+  }
+
+  .weis-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .weis-decision-num {
+    font-family: var(--weis-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--weis-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .weis-decision-title {
+    font-family: var(--weis-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .weis-decision-problem {
+    font-size: 12px;
+    color: var(--weis-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--weis-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .weis-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .weis-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .weis-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .weis-decision-chosen {
+    color: var(--weis-accent);
+  }
+  .weis-decision-tradeoff {
+    color: var(--weis-amber);
+  }
+  .weis-decision-col-text {
+    font-size: 12px;
+    color: var(--weis-text2);
+    line-height: 1.65;
+  }
+
+  .weis-decision-code {
+    background: var(--weis-bg);
+    border-top: 1px solid var(--weis-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--weis-text2);
+    overflow-x: auto;
+  }
+  .weis-decision-code pre {
+    margin: 0;
+    font-family: var(--weis-mono);
+    line-height: 1.6;
+  }
+  .weis-token-kw {
+    color: #c792ea;
+  }
+  .weis-token-fn {
+    color: #82aaff;
+  }
+  .weis-token-str {
+    color: #c3e88d;
+  }
+  .weis-token-cm {
+    color: var(--weis-text3);
+    font-style: italic;
+  }
+  .weis-token-acc {
+    color: var(--weis-accent);
+  }
+
+  .weis-impact-wrapper {
+    background: var(--weis-bg3);
+    border: 1px solid var(--weis-border);
+    border-radius: var(--weis-radius);
+    overflow: hidden;
+  }
+  .weis-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .weis-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--weis-text3);
+    border-bottom: 1px solid var(--weis-border);
+    font-family: var(--weis-display);
+    font-weight: 600;
+  }
+  .weis-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--weis-border);
+    color: var(--weis-text2);
+  }
+  .weis-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .weis-impact-table tr:hover td {
+    background: var(--weis-surface);
+  }
+  .weis-before {
+    color: var(--weis-red);
+  }
+  .weis-after {
+    color: var(--weis-accent);
+  }
+  .weis-delta {
+    color: var(--weis-accent);
+    font-weight: 500;
+    font-family: var(--weis-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .weis-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .weis-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .weis-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--weis-border);
+  }
+  .weis-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .weis-layer {
+    color: var(--weis-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .weis-tech {
+    color: var(--weis-accent);
+    font-family: var(--weis-mono);
+  }
+  .weis-stack-table tr:hover td {
+    background: var(--weis-surface);
+  }
+
+  .weis-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--weis-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .weis-footer-text {
+    font-size: 11px;
+    color: var(--weis-text3);
+  }
+  .weis-footer-link {
+    font-size: 11px;
+    color: var(--weis-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .weis-footer-link:hover {
+    color: var(--weis-accent);
+  }
+
+  @keyframes weis-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .weis-hero {
+    animation: weis-fadeUp 0.5s ease both;
+  }
+  .weis-section:nth-child(2) {
+    animation: weis-fadeUp 0.5s 0.1s ease both;
+  }
+  .weis-section:nth-child(3) {
+    animation: weis-fadeUp 0.5s 0.15s ease both;
+  }
+  .weis-section:nth-child(4) {
+    animation: weis-fadeUp 0.5s 0.2s ease both;
+  }
+  .weis-section:nth-child(5) {
+    animation: weis-fadeUp 0.5s 0.25s ease both;
+  }
+  .weis-section:nth-child(6) {
+    animation: weis-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .weis-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--weis-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: weis-blink 1s step-end infinite;
+  }
+  @keyframes weis-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .weis-badge-client { background: var(--weis-accent-dim); color: var(--weis-accent); border-color: rgba(0,229,160,0.2); }
+  .weis-metric-val { font-size: 22px; }
+  .weis-amber .weis-metric-val { color: var(--weis-amber); }
+  .weis-amber::before { background: var(--weis-amber); }
+  .weis-red .weis-metric-val { color: var(--weis-red); }
+  .weis-red::before { background: var(--weis-red); }
+  .weis-blue .weis-metric-val { color: var(--weis-blue); }
+  .weis-blue::before { background: var(--weis-blue); }
+  .weis-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .weis-business-line-cards { grid-template-columns: 1fr; } }
+  .weis-bl-card { background: var(--weis-bg2); border: 1px solid var(--weis-border); border-radius: var(--weis-radius); padding: 16px; }
+  .weis-bl-card-title { font-family: var(--weis-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .weis-bl-card-desc { font-size: 11px; color: var(--weis-text3); line-height: 1.6; }
+  .weis-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--weis-accent-dim); color: var(--weis-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .weis-bl-card-tag.weis-amber-tag { background: var(--weis-amber-dim); color: var(--weis-amber); border-color: rgba(245,158,11,0.2); }
+  .weis-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .weis-cap-list { grid-template-columns: 1fr; } }
+  .weis-cap-item { background: var(--weis-bg3); border: 1px solid var(--weis-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--weis-text2); }
+  .weis-cap-item:hover { border-color: var(--weis-border2); color: var(--weis-text); }
+  .weis-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--weis-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .weis-flow-panel { background: var(--weis-bg2); border: 1px solid var(--weis-border); border-radius: var(--weis-radius); padding: 20px; margin-top: 20px; }
+  .weis-flow-panel-title { font-family: var(--weis-display); font-size: 12px; font-weight: 600; color: var(--weis-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .weis-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .weis-flow-step { display: flex; align-items: center; gap: 8px; }
+  .weis-flow-step-box { background: var(--weis-surface); border: 1px solid var(--weis-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--weis-text2); white-space: nowrap; }
+  .weis-flow-step-box.weis-accent { border-color: rgba(0,229,160,0.3); color: var(--weis-accent); }
+  .weis-flow-step-arr { color: var(--weis-text3); font-size: 11px; margin: 0 4px; }
+</style>

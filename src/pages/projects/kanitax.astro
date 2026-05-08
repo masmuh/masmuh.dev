@@ -1,0 +1,879 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="KaniTax Automation - Mas Muhammad" description="A tax invoice management system built with C# (.NET 6.0). Synchronizes invoices with SAP Business ByDesign, manages customer/supplier master data, handles tax numbering, and provides both REST API and admin backpanel interfaces with JWT authentication and role-based access control.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="kanitax">
+
+<header class="kanitax-hero">
+<div class="kanitax-hero-meta">
+<span class="kanitax-badge kanitax-badge-corporate">Corporate</span><span class="kanitax-badge kanitax-badge-client">Tri Hasta Perkasa</span> 
+<span class="kanitax-badge kanitax-badge-year">December 2022</span>
+</div>
+<h1 class="kanitax-hero-title">KaniTax <span>Automation</span><span class="kanitax-cursor"></span></h1>
+<p class="kanitax-hero-desc">
+A tax invoice management system built with C# (.NET 6.0). Synchronizes invoices with SAP Business ByDesign, manages customer/supplier master data, handles tax numbering, and provides both REST API and admin backpanel interfaces with JWT authentication and role-based access control.
+</p>
+<div class="kanitax-stack-pills">
+<span class="kanitax-stack-pill">C# .NET 6.0</span>
+<span class="kanitax-stack-pill">ASP.NET Core</span>
+<span class="kanitax-stack-pill">MongoDB</span>
+<span class="kanitax-stack-pill">SAP BYD</span>
+<span class="kanitax-stack-pill">JWT Bearer</span>
+<span class="kanitax-stack-pill">AutoMapper</span>
+<span class="kanitax-stack-pill">Swagger</span>
+</div>
+</header>
+
+<section class="kanitax-section">
+<div class="kanitax-section-label">
+<span class="kanitax-section-label-text">Impact</span>
+<div class="kanitax-section-label-line"></div>
+<span class="kanitax-section-label-num">01</span>
+</div>
+<div class="kanitax-metrics-grid">
+<div class="kanitax-metric-card">
+<div class="kanitax-metric-val">7,500+</div>
+<div class="kanitax-metric-label">Lines of Code</div>
+<div class="kanitax-metric-sub">C# across 4 projects</div>
+</div>
+<div class="kanitax-metric-card">
+<div class="kanitax-metric-val">21</div>
+<div class="kanitax-metric-label">API Endpoints</div>
+<div class="kanitax-metric-sub">REST + MVC routes</div>
+</div>
+<div class="kanitax-metric-card">
+<div class="kanitax-metric-val">10</div>
+<div class="kanitax-metric-label">Complexity Score</div>
+<div class="kanitax-metric-sub">Enterprise grade</div>
+</div>
+<div class="kanitax-metric-card kanitax-red">
+<div class="kanitax-metric-val">Mission Critical</div>
+<div class="kanitax-metric-label">System Level</div>
+<div class="kanitax-metric-sub">Tax compliance system</div>
+</div>
+</div>
+</section>
+
+<section class="kanitax-section">
+<div class="kanitax-section-label">
+<span class="kanitax-section-label-text">Architecture</span>
+<div class="kanitax-section-label-line"></div>
+<span class="kanitax-section-label-num">02</span>
+</div>
+<div class="kanitax-arch-diagram">
+<div class="kanitax-arch-diagram-inner">
+
+<div class="kanitax-arch-node kanitax-source">
+<div class="kanitax-arch-node-icon"></div>
+<div class="kanitax-arch-node-label">Client Apps</div>
+<div class="kanitax-arch-node-sub">REST + MVC clients</div>
+</div>
+
+<div class="kanitax-arch-arrow">
+<div class="kanitax-arch-arrow-line"></div>
+<div class="kanitax-arch-arrow-label">HTTP / JWT</div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+<div class="kanitax-arch-node core" style="width:220px;">
+<div class="kanitax-arch-node-label" style="font-size:13px; margin-bottom:10px;">.NET 6.0 Web API</div>
+<div class="kanitax-core-stack">
+<div class="kanitax-core-step"><div class="kanitax-core-step-dot"></div>API Controllers</div>
+<div class="kanitax-core-step"><div class="kanitax-core-step-dot"></div>Application Services</div>
+<div class="kanitax-core-step"><div class="kanitax-core-step-dot" style="background:var(--blue)"></div>Domain / Data Layer</div>
+</div>
+</div>
+<div class="kanitax-schema-connector" style="margin-top:0;">
+<div class="kanitax-schema-line-v"></div>
+<div class="kanitax-schema-arrow-label">admin MVC</div>
+<div class="kanitax-schema-line-v"></div>
+<div class="kanitax-arch-node kanitax-schema-node">
+<div class="kanitax-arch-node-label" style="font-size:11px; color: #f59e0b;">Backpanel</div>
+<div class="kanitax-arch-node-sub">ASP.NET Core MVC</div>
+</div>
+</div>
+</div>
+
+<div class="kanitax-arch-arrow">
+<div class="kanitax-arch-arrow-line"></div>
+<div class="kanitax-arch-arrow-label">MongoDB Driver</div>
+</div>
+
+<div class="kanitax-arch-node kanitax-output">
+<div class="kanitax-arch-node-icon"></div>
+<div class="kanitax-arch-node-label">MongoDB</div>
+<div class="kanitax-arch-node-sub">Document store</div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; gap:0; margin-left:16px;">
+<div class="kanitax-arch-arrow" style="min-width:40px;">
+<div class="kanitax-arch-arrow-line" style="width:30px;"></div>
+<div class="kanitax-arch-arrow-label">OData</div>
+</div>
+<div class="kanitax-arch-node kanitax-source" style="border-color:rgba(96,165,250,0.3);">
+<div class="kanitax-arch-node-icon"></div>
+<div class="kanitax-arch-node-label">SAP BYD</div>
+<div class="kanitax-arch-node-sub">ERP integration</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="kanitax-section">
+<div class="kanitax-section-label">
+<span class="kanitax-section-label-text">Tech Stack</span>
+<div class="kanitax-section-label-line"></div>
+<span class="kanitax-section-label-num">03</span>
+</div>
+<div class="kanitax-impact-wrapper">
+<table class="kanitax-stack-table">
+<tbody>
+<tr><td class="kanitax-layer">Runtime</td><td class="kanitax-tech">.NET 6.0 (C#)</td></tr>
+<tr><td class="kanitax-layer">Web Framework</td><td class="kanitax-tech">ASP.NET Core Web API + MVC</td></tr>
+<tr><td class="kanitax-layer">Database</td><td class="kanitax-tech">MongoDB (MongoDB.Driver 2.18)</td></tr>
+<tr><td class="kanitax-layer">Authentication</td><td class="kanitax-tech">JWT Bearer + Google OAuth</td></tr>
+<tr><td class="kanitax-layer">Mapping</td><td class="kanitax-tech">AutoMapper 12.0</td></tr>
+<tr><td class="kanitax-layer">API Docs</td><td class="kanitax-tech">Swashbuckle (Swagger)</td></tr>
+<tr><td class="kanitax-layer">Export</td><td class="kanitax-tech">CsvHelper 30.0</td></tr>
+<tr><td class="kanitax-layer">ERP Integration</td><td class="kanitax-tech">SAP Business ByDesign OData</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="kanitax-section">
+<div class="kanitax-section-label">
+<span class="kanitax-section-label-text">Capabilities</span>
+<div class="kanitax-section-label-line"></div>
+<span class="kanitax-section-label-num">04</span>
+</div>
+<div class="kanitax-impact-wrapper">
+<table class="kanitax-stack-table">
+<tbody>
+<tr><td class="kanitax-layer">Invoice Sync</td><td class="kanitax-tech">Bidirectional sync with SAP BYD for customer invoices</td></tr>
+<tr><td class="kanitax-layer">Master Data</td><td class="kanitax-tech">Customer, supplier, material, company profile management</td></tr>
+<tr><td class="kanitax-layer">Tax Numbering</td><td class="kanitax-tech">Automated tax number generation and tracking</td></tr>
+<tr><td class="kanitax-layer">Auth</td><td class="kanitax-tech">JWT-based authentication with token validation</td></tr>
+<tr><td class="kanitax-layer">Admin Panel</td><td class="kanitax-tech">MVC backpanel with CRUD operations and audit logging</td></tr>
+<tr><td class="kanitax-layer">File Export</td><td class="kanitax-tech">Download invoices and reports via dedicated endpoints</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .kanitax {
+    --kanitax-bg: #0a0b0d;
+    --kanitax-bg2: #0f1114;
+    --kanitax-bg3: #141720;
+    --kanitax-surface: #1a1e28;
+    --kanitax-surface2: #212636;
+    --kanitax-border: #2a2f40;
+    --kanitax-border2: #363c50;
+    --kanitax-accent: #00e5a0;
+    --kanitax-accent2: #00b87a;
+    --kanitax-accent-dim: rgba(0, 229, 160, 0.08);
+    --kanitax-accent-dim2: rgba(0, 229, 160, 0.15);
+    --kanitax-amber: #f59e0b;
+    --kanitax-amber-dim: rgba(245, 158, 11, 0.1);
+    --kanitax-blue: #60a5fa;
+    --kanitax-blue-dim: rgba(96, 165, 250, 0.1);
+    --kanitax-red: #f87171;
+    --kanitax-text: #e8eaf0;
+    --kanitax-text2: #8b92a8;
+    --kanitax-text3: #5a6077;
+    --kanitax-mono: "JetBrains Mono", monospace;
+    --kanitax-display: "Syne", sans-serif;
+    --kanitax-radius: 10px;
+    --kanitax-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .kanitax * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .kanitax body {
+    background: var(--kanitax-bg);
+    color: var(--kanitax-text);
+    font-family: var(--kanitax-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .kanitax-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--kanitax-border);
+  }
+  .kanitax-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--kanitax-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .kanitax-nav-back:hover {
+    color: var(--kanitax-accent);
+  }
+  .kanitax-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .kanitax-nav-dot {
+    color: var(--kanitax-border2);
+  }
+  .kanitax-nav-title {
+    color: var(--kanitax-text3);
+    font-size: 12px;
+  }
+
+  .kanitax-hero {
+    margin-bottom: 56px;
+  }
+  .kanitax-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .kanitax-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .kanitax-badge-corporate {
+    background: var(--kanitax-blue-dim);
+    color: var(--kanitax-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .kanitax-badge-client {
+    background: var(--kanitax-accent-dim);
+    color: var(--kanitax-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .kanitax-badge-year {
+    background: var(--kanitax-surface);
+    color: var(--kanitax-text3);
+    border-color: var(--kanitax-border);
+  }
+
+  .kanitax-hero-title {
+    font-family: var(--kanitax-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .kanitax-hero-title span {
+    color: var(--kanitax-accent);
+    position: relative;
+  }
+
+  .kanitax-hero-desc {
+    color: var(--kanitax-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .kanitax-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .kanitax-stack-pill {
+    background: var(--kanitax-surface);
+    border: 1px solid var(--kanitax-border);
+    color: var(--kanitax-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .kanitax-stack-pill:hover {
+    border-color: var(--kanitax-accent);
+    color: var(--kanitax-accent);
+    background: var(--kanitax-accent-dim);
+  }
+
+  .kanitax-section {
+    margin-bottom: 52px;
+  }
+  .kanitax-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .kanitax-section-label-text {
+    font-family: var(--kanitax-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--kanitax-text3);
+    text-transform: uppercase;
+  }
+  .kanitax-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--kanitax-border);
+  }
+  .kanitax-section-label-num {
+    font-size: 11px;
+    color: var(--kanitax-border2);
+  }
+
+  .kanitax-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .kanitax-metric-card {
+    background: var(--kanitax-bg3);
+    border: 1px solid var(--kanitax-border);
+    border-radius: var(--kanitax-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .kanitax-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--kanitax-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .kanitax-metric-card:hover {
+    border-color: var(--kanitax-border2);
+  }
+  .kanitax-metric-card:hover::before {
+    opacity: 1;
+  }
+  .kanitax-metric-amber .kanitax-metric-val {
+    color: var(--kanitax-amber);
+  }
+  .kanitax-metric-amber::before {
+    background: var(--kanitax-amber);
+  }
+
+  .kanitax-metric-val {
+    font-family: var(--kanitax-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--kanitax-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .kanitax-metric-label {
+    font-size: 12px;
+    color: var(--kanitax-text2);
+    margin-bottom: 3px;
+  }
+  .kanitax-metric-sub {
+    font-size: 11px;
+    color: var(--kanitax-text3);
+  }
+
+  .kanitax-arch-diagram {
+    background: var(--kanitax-bg3);
+    border: 1px solid var(--kanitax-border);
+    border-radius: var(--kanitax-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .kanitax-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .kanitax-arch-node {
+    background: var(--kanitax-surface);
+    border: 1px solid var(--kanitax-border2);
+    border-radius: var(--kanitax-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .kanitax-core {
+    background: var(--kanitax-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .kanitax-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .kanitax-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--kanitax-amber-dim);
+    min-width: 110px;
+  }
+  .kanitax-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .kanitax-arch-node-label {
+    font-family: var(--kanitax-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .kanitax-arch-node-sub {
+    font-size: 10px;
+    color: var(--kanitax-text3);
+    font-family: var(--kanitax-mono);
+  }
+
+  .kanitax-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--kanitax-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .kanitax-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--kanitax-border),
+      var(--kanitax-accent),
+      var(--kanitax-border)
+    );
+    position: relative;
+  }
+  .kanitax-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--kanitax-accent);
+    font-size: 10px;
+  }
+  .kanitax-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--kanitax-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .kanitax-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .kanitax-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .kanitax-core-step {
+    background: var(--kanitax-bg3);
+    border: 1px solid var(--kanitax-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--kanitax-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .kanitax-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--kanitax-accent);
+    flex-shrink: 0;
+  }
+
+  .kanitax-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .kanitax-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .kanitax-schema-arrow-label {
+    font-size: 9px;
+    color: var(--kanitax-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .kanitax-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .kanitax-decision-card {
+    background: var(--kanitax-bg3);
+    border: 1px solid var(--kanitax-border);
+    border-radius: var(--kanitax-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .kanitax-decision-card:hover {
+    border-color: var(--kanitax-border2);
+  }
+
+  .kanitax-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .kanitax-decision-num {
+    font-family: var(--kanitax-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--kanitax-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .kanitax-decision-title {
+    font-family: var(--kanitax-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .kanitax-decision-problem {
+    font-size: 12px;
+    color: var(--kanitax-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--kanitax-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .kanitax-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .kanitax-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .kanitax-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .kanitax-decision-chosen {
+    color: var(--kanitax-accent);
+  }
+  .kanitax-decision-tradeoff {
+    color: var(--kanitax-amber);
+  }
+  .kanitax-decision-col-text {
+    font-size: 12px;
+    color: var(--kanitax-text2);
+    line-height: 1.65;
+  }
+
+  .kanitax-decision-code {
+    background: var(--kanitax-bg);
+    border-top: 1px solid var(--kanitax-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--kanitax-text2);
+    overflow-x: auto;
+  }
+  .kanitax-decision-code pre {
+    margin: 0;
+    font-family: var(--kanitax-mono);
+    line-height: 1.6;
+  }
+  .kanitax-token-kw {
+    color: #c792ea;
+  }
+  .kanitax-token-fn {
+    color: #82aaff;
+  }
+  .kanitax-token-str {
+    color: #c3e88d;
+  }
+  .kanitax-token-cm {
+    color: var(--kanitax-text3);
+    font-style: italic;
+  }
+  .kanitax-token-acc {
+    color: var(--kanitax-accent);
+  }
+
+  .kanitax-impact-wrapper {
+    background: var(--kanitax-bg3);
+    border: 1px solid var(--kanitax-border);
+    border-radius: var(--kanitax-radius);
+    overflow: hidden;
+  }
+  .kanitax-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .kanitax-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--kanitax-text3);
+    border-bottom: 1px solid var(--kanitax-border);
+    font-family: var(--kanitax-display);
+    font-weight: 600;
+  }
+  .kanitax-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--kanitax-border);
+    color: var(--kanitax-text2);
+  }
+  .kanitax-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .kanitax-impact-table tr:hover td {
+    background: var(--kanitax-surface);
+  }
+  .kanitax-before {
+    color: var(--kanitax-red);
+  }
+  .kanitax-after {
+    color: var(--kanitax-accent);
+  }
+  .kanitax-delta {
+    color: var(--kanitax-accent);
+    font-weight: 500;
+    font-family: var(--kanitax-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .kanitax-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .kanitax-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .kanitax-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--kanitax-border);
+  }
+  .kanitax-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .kanitax-layer {
+    color: var(--kanitax-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .kanitax-tech {
+    color: var(--kanitax-accent);
+    font-family: var(--kanitax-mono);
+  }
+  .kanitax-stack-table tr:hover td {
+    background: var(--kanitax-surface);
+  }
+
+  .kanitax-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--kanitax-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .kanitax-footer-text {
+    font-size: 11px;
+    color: var(--kanitax-text3);
+  }
+  .kanitax-footer-link {
+    font-size: 11px;
+    color: var(--kanitax-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .kanitax-footer-link:hover {
+    color: var(--kanitax-accent);
+  }
+
+  @keyframes kanitax-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .kanitax-hero {
+    animation: kanitax-fadeUp 0.5s ease both;
+  }
+  .kanitax-section:nth-child(2) {
+    animation: kanitax-fadeUp 0.5s 0.1s ease both;
+  }
+  .kanitax-section:nth-child(3) {
+    animation: kanitax-fadeUp 0.5s 0.15s ease both;
+  }
+  .kanitax-section:nth-child(4) {
+    animation: kanitax-fadeUp 0.5s 0.2s ease both;
+  }
+  .kanitax-section:nth-child(5) {
+    animation: kanitax-fadeUp 0.5s 0.25s ease both;
+  }
+  .kanitax-section:nth-child(6) {
+    animation: kanitax-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .kanitax-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--kanitax-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: kanitax-blink 1s step-end infinite;
+  }
+  @keyframes kanitax-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .kanitax-badge-client { background: var(--kanitax-accent-dim); color: var(--kanitax-accent); border-color: rgba(0,229,160,0.2); }
+  .kanitax-metric-val { font-size: 22px; }
+  .kanitax-amber .kanitax-metric-val { color: var(--kanitax-amber); }
+  .kanitax-amber::before { background: var(--kanitax-amber); }
+  .kanitax-red .kanitax-metric-val { color: var(--kanitax-red); }
+  .kanitax-red::before { background: var(--kanitax-red); }
+  .kanitax-blue .kanitax-metric-val { color: var(--kanitax-blue); }
+  .kanitax-blue::before { background: var(--kanitax-blue); }
+  .kanitax-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .kanitax-business-line-cards { grid-template-columns: 1fr; } }
+  .kanitax-bl-card { background: var(--kanitax-bg2); border: 1px solid var(--kanitax-border); border-radius: var(--kanitax-radius); padding: 16px; }
+  .kanitax-bl-card-title { font-family: var(--kanitax-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .kanitax-bl-card-desc { font-size: 11px; color: var(--kanitax-text3); line-height: 1.6; }
+  .kanitax-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--kanitax-accent-dim); color: var(--kanitax-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .kanitax-bl-card-tag.kanitax-amber-tag { background: var(--kanitax-amber-dim); color: var(--kanitax-amber); border-color: rgba(245,158,11,0.2); }
+  .kanitax-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .kanitax-cap-list { grid-template-columns: 1fr; } }
+  .kanitax-cap-item { background: var(--kanitax-bg3); border: 1px solid var(--kanitax-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--kanitax-text2); }
+  .kanitax-cap-item:hover { border-color: var(--kanitax-border2); color: var(--kanitax-text); }
+  .kanitax-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--kanitax-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .kanitax-flow-panel { background: var(--kanitax-bg2); border: 1px solid var(--kanitax-border); border-radius: var(--kanitax-radius); padding: 20px; margin-top: 20px; }
+  .kanitax-flow-panel-title { font-family: var(--kanitax-display); font-size: 12px; font-weight: 600; color: var(--kanitax-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .kanitax-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .kanitax-flow-step { display: flex; align-items: center; gap: 8px; }
+  .kanitax-flow-step-box { background: var(--kanitax-surface); border: 1px solid var(--kanitax-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--kanitax-text2); white-space: nowrap; }
+  .kanitax-flow-step-box.kanitax-accent { border-color: rgba(0,229,160,0.3); color: var(--kanitax-accent); }
+  .kanitax-flow-step-arr { color: var(--kanitax-text3); font-size: 11px; margin: 0 4px; }
+</style>

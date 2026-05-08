@@ -1,0 +1,875 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="ISMS Echomail - Mas Muhammad" description="A .NET 9.0 CLI batch job for detecting duplicate invoice legal numbers across hundreds of distributed SQL Server catalogs. Routes email notifications with inline HTML or Excel attachments to CPO stakeholders via configurable channels and parallel query execution.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="isms-echomail">
+
+<header class="isms-echomail-hero">
+<div class="isms-echomail-hero-meta">
+<span class="isms-echomail-badge isms-echomail-badge-corporate">Corporate</span><span class="isms-echomail-badge isms-echomail-badge-client">Sampoerna</span> 
+<span class="isms-echomail-badge isms-echomail-badge-year">August 2025</span>
+</div>
+<h1 class="isms-echomail-hero-title">ISMS <span>Echomail</span><span class="isms-echomail-cursor"></span></h1>
+<p class="isms-echomail-hero-desc">
+A .NET 9.0 CLI batch job for detecting duplicate invoice legal numbers across hundreds of distributed SQL Server catalogs. Routes email notifications with inline HTML or Excel attachments to CPO stakeholders via configurable channels and parallel query execution.
+</p>
+<div class="isms-echomail-stack-pills">
+<span class="isms-echomail-stack-pill">C# .NET 9.0</span>
+<span class="isms-echomail-stack-pill">Console App</span>
+<span class="isms-echomail-stack-pill">SQL Server</span>
+<span class="isms-echomail-stack-pill">EPPlus</span>
+<span class="isms-echomail-stack-pill">NLog</span>
+<span class="isms-echomail-stack-pill">Channels</span>
+</div>
+</header>
+
+<section class="isms-echomail-section">
+<div class="isms-echomail-section-label">
+<span class="isms-echomail-section-label-text">Impact</span>
+<div class="isms-echomail-section-label-line"></div>
+<span class="isms-echomail-section-label-num">01</span>
+</div>
+<div class="isms-echomail-metrics-grid">
+<div class="isms-echomail-metric-card">
+<div class="isms-echomail-metric-val">1,240</div>
+<div class="isms-echomail-metric-label">Lines of Code</div>
+<div class="isms-echomail-metric-sub">C# across 15 files</div>
+</div>
+<div class="isms-echomail-metric-card">
+<div class="isms-echomail-metric-val">2</div>
+<div class="isms-echomail-metric-label">Job Modes</div>
+<div class="isms-echomail-metric-sub">Invoice + Notification</div>
+</div>
+<div class="isms-echomail-metric-card isms-echomail-amber">
+<div class="isms-echomail-metric-val">3</div>
+<div class="isms-echomail-metric-label">Complexity Score</div>
+<div class="isms-echomail-metric-sub">Utility/Tool level</div>
+</div>
+<div class="isms-echomail-metric-card isms-echomail-amber">
+<div class="isms-echomail-metric-val">Utility</div>
+<div class="isms-echomail-metric-label">System Level</div>
+<div class="isms-echomail-metric-sub">Focused batch tool</div>
+</div>
+</div>
+</section>
+
+<section class="isms-echomail-section">
+<div class="isms-echomail-section-label">
+<span class="isms-echomail-section-label-text">Architecture</span>
+<div class="isms-echomail-section-label-line"></div>
+<span class="isms-echomail-section-label-num">02</span>
+</div>
+<div class="isms-echomail-arch-diagram">
+<div class="isms-echomail-arch-diagram-inner">
+
+<div class="isms-echomail-arch-node isms-echomail-source">
+<div class="isms-echomail-arch-node-icon"></div>
+<div class="isms-echomail-arch-node-label">SQL Server</div>
+<div class="isms-echomail-arch-node-sub">Distributed catalogs</div>
+</div>
+
+<div class="isms-echomail-arch-arrow">
+<div class="isms-echomail-arch-arrow-line"></div>
+<div class="isms-echomail-arch-arrow-label">parallel query</div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+<div class="isms-echomail-arch-node core" style="width:220px;">
+<div class="isms-echomail-arch-node-label" style="font-size:13px; margin-bottom:10px;">.NET 9.0 Console App</div>
+<div class="isms-echomail-core-stack">
+<div class="isms-echomail-core-step"><div class="isms-echomail-core-step-dot"></div>CLI Arg Parser</div>
+<div class="isms-echomail-core-step"><div class="isms-echomail-core-step-dot"></div>Service Layer</div>
+<div class="isms-echomail-core-step"><div class="isms-echomail-core-step-dot" style="background:var(--blue)"></div>Retry · Channels · MaxDOP</div>
+</div>
+</div>
+<div class="isms-echomail-schema-connector" style="margin-top:0;">
+<div class="isms-echomail-schema-line-v"></div>
+<div class="isms-echomail-schema-arrow-label">2 modes</div>
+<div class="isms-echomail-schema-line-v"></div>
+<div class="isms-echomail-arch-node isms-echomail-schema-node">
+<div class="isms-echomail-arch-node-label" style="font-size:11px; color: #f59e0b;">Invoice / Notification</div>
+<div class="isms-echomail-arch-node-sub">CLI job dispatch</div>
+</div>
+</div>
+</div>
+
+<div class="isms-echomail-arch-arrow">
+<div class="isms-echomail-arch-arrow-line"></div>
+<div class="isms-echomail-arch-arrow-label">output</div>
+</div>
+
+<div class="isms-echomail-arch-node isms-echomail-output">
+<div class="isms-echomail-arch-node-icon"></div>
+<div class="isms-echomail-arch-node-label">Email</div>
+<div class="isms-echomail-arch-node-sub">HTML · Excel attachments</div>
+</div>
+
+<div class="isms-echomail-arch-arrow" style="min-width:40px;">
+<div class="isms-echomail-arch-arrow-line" style="width:30px;"></div>
+<div class="isms-echomail-arch-arrow-label">export</div>
+</div>
+
+<div class="isms-echomail-arch-node isms-echomail-source" style="border-color:rgba(245,158,11,0.3);">
+<div class="isms-echomail-arch-node-icon"></div>
+<div class="isms-echomail-arch-node-label">Excel / CSV</div>
+<div class="isms-echomail-arch-node-sub">EPPlus export</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="isms-echomail-section">
+<div class="isms-echomail-section-label">
+<span class="isms-echomail-section-label-text">Tech Stack</span>
+<div class="isms-echomail-section-label-line"></div>
+<span class="isms-echomail-section-label-num">03</span>
+</div>
+<div class="isms-echomail-impact-wrapper">
+<table class="isms-echomail-stack-table">
+<tbody>
+<tr><td class="isms-echomail-layer">Runtime</td><td class="isms-echomail-tech">.NET 9.0 (C# 13)</td></tr>
+<tr><td class="isms-echomail-layer">Type</td><td class="isms-echomail-tech">Console Application (CLI batch job)</td></tr>
+<tr><td class="isms-echomail-layer">Database</td><td class="isms-echomail-tech">Microsoft SQL Server (raw ADO.NET)</td></tr>
+<tr><td class="isms-echomail-layer">Excel Export</td><td class="isms-echomail-tech">EPPlus 8.3.0</td></tr>
+<tr><td class="isms-echomail-layer">Concurrency</td><td class="isms-echomail-tech">System.Threading.Channels (Producer-Consumer, MaxDOP 10)</td></tr>
+<tr><td class="isms-echomail-layer">Logging</td><td class="isms-echomail-tech">NLog 6.0</td></tr>
+<tr><td class="isms-echomail-layer">Config</td><td class="isms-echomail-tech">Microsoft.Extensions.Configuration.Json 9.0</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="isms-echomail-section">
+<div class="isms-echomail-section-label">
+<span class="isms-echomail-section-label-text">Capabilities</span>
+<div class="isms-echomail-section-label-line"></div>
+<div class="isms-echomail-section-label-num">04</div>
+</div>
+<div class="isms-echomail-impact-wrapper">
+<table class="isms-echomail-stack-table">
+<tbody>
+<tr><td class="isms-echomail-layer">Duplicate Detection</td><td class="isms-echomail-tech">Scan hundreds of distributed SQL catalogs for duplicate invoice legal numbers</td></tr>
+<tr><td class="isms-echomail-layer">Parallel Execution</td><td class="isms-echomail-tech">Configurable MaxDOP (up to 10) with retry logic (max 3 retries)</td></tr>
+<tr><td class="isms-echomail-layer">Email Notifications</td><td class="isms-echomail-tech">Route results via SMTP with HTML body or Excel attachment</td></tr>
+<tr><td class="isms-echomail-layer">File Output</td><td class="isms-echomail-tech">Export results to CSV and Excel (EPPlus) formats</td></tr>
+<tr><td class="isms-echomail-layer">Schema Reflection</td><td class="isms-echomail-tech">Dynamic schema discovery for flexible column formatting</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .isms-echomail {
+    --isms-echomail-bg: #0a0b0d;
+    --isms-echomail-bg2: #0f1114;
+    --isms-echomail-bg3: #141720;
+    --isms-echomail-surface: #1a1e28;
+    --isms-echomail-surface2: #212636;
+    --isms-echomail-border: #2a2f40;
+    --isms-echomail-border2: #363c50;
+    --isms-echomail-accent: #00e5a0;
+    --isms-echomail-accent2: #00b87a;
+    --isms-echomail-accent-dim: rgba(0, 229, 160, 0.08);
+    --isms-echomail-accent-dim2: rgba(0, 229, 160, 0.15);
+    --isms-echomail-amber: #f59e0b;
+    --isms-echomail-amber-dim: rgba(245, 158, 11, 0.1);
+    --isms-echomail-blue: #60a5fa;
+    --isms-echomail-blue-dim: rgba(96, 165, 250, 0.1);
+    --isms-echomail-red: #f87171;
+    --isms-echomail-text: #e8eaf0;
+    --isms-echomail-text2: #8b92a8;
+    --isms-echomail-text3: #5a6077;
+    --isms-echomail-mono: "JetBrains Mono", monospace;
+    --isms-echomail-display: "Syne", sans-serif;
+    --isms-echomail-radius: 10px;
+    --isms-echomail-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .isms-echomail * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .isms-echomail body {
+    background: var(--isms-echomail-bg);
+    color: var(--isms-echomail-text);
+    font-family: var(--isms-echomail-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .isms-echomail-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--isms-echomail-border);
+  }
+  .isms-echomail-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--isms-echomail-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .isms-echomail-nav-back:hover {
+    color: var(--isms-echomail-accent);
+  }
+  .isms-echomail-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .isms-echomail-nav-dot {
+    color: var(--isms-echomail-border2);
+  }
+  .isms-echomail-nav-title {
+    color: var(--isms-echomail-text3);
+    font-size: 12px;
+  }
+
+  .isms-echomail-hero {
+    margin-bottom: 56px;
+  }
+  .isms-echomail-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .isms-echomail-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .isms-echomail-badge-corporate {
+    background: var(--isms-echomail-blue-dim);
+    color: var(--isms-echomail-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .isms-echomail-badge-client {
+    background: var(--isms-echomail-accent-dim);
+    color: var(--isms-echomail-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .isms-echomail-badge-year {
+    background: var(--isms-echomail-surface);
+    color: var(--isms-echomail-text3);
+    border-color: var(--isms-echomail-border);
+  }
+
+  .isms-echomail-hero-title {
+    font-family: var(--isms-echomail-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .isms-echomail-hero-title span {
+    color: var(--isms-echomail-accent);
+    position: relative;
+  }
+
+  .isms-echomail-hero-desc {
+    color: var(--isms-echomail-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .isms-echomail-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .isms-echomail-stack-pill {
+    background: var(--isms-echomail-surface);
+    border: 1px solid var(--isms-echomail-border);
+    color: var(--isms-echomail-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .isms-echomail-stack-pill:hover {
+    border-color: var(--isms-echomail-accent);
+    color: var(--isms-echomail-accent);
+    background: var(--isms-echomail-accent-dim);
+  }
+
+  .isms-echomail-section {
+    margin-bottom: 52px;
+  }
+  .isms-echomail-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .isms-echomail-section-label-text {
+    font-family: var(--isms-echomail-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--isms-echomail-text3);
+    text-transform: uppercase;
+  }
+  .isms-echomail-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--isms-echomail-border);
+  }
+  .isms-echomail-section-label-num {
+    font-size: 11px;
+    color: var(--isms-echomail-border2);
+  }
+
+  .isms-echomail-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .isms-echomail-metric-card {
+    background: var(--isms-echomail-bg3);
+    border: 1px solid var(--isms-echomail-border);
+    border-radius: var(--isms-echomail-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .isms-echomail-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--isms-echomail-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .isms-echomail-metric-card:hover {
+    border-color: var(--isms-echomail-border2);
+  }
+  .isms-echomail-metric-card:hover::before {
+    opacity: 1;
+  }
+  .isms-echomail-metric-amber .isms-echomail-metric-val {
+    color: var(--isms-echomail-amber);
+  }
+  .isms-echomail-metric-amber::before {
+    background: var(--isms-echomail-amber);
+  }
+
+  .isms-echomail-metric-val {
+    font-family: var(--isms-echomail-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--isms-echomail-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .isms-echomail-metric-label {
+    font-size: 12px;
+    color: var(--isms-echomail-text2);
+    margin-bottom: 3px;
+  }
+  .isms-echomail-metric-sub {
+    font-size: 11px;
+    color: var(--isms-echomail-text3);
+  }
+
+  .isms-echomail-arch-diagram {
+    background: var(--isms-echomail-bg3);
+    border: 1px solid var(--isms-echomail-border);
+    border-radius: var(--isms-echomail-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .isms-echomail-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .isms-echomail-arch-node {
+    background: var(--isms-echomail-surface);
+    border: 1px solid var(--isms-echomail-border2);
+    border-radius: var(--isms-echomail-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .isms-echomail-core {
+    background: var(--isms-echomail-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .isms-echomail-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .isms-echomail-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--isms-echomail-amber-dim);
+    min-width: 110px;
+  }
+  .isms-echomail-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .isms-echomail-arch-node-label {
+    font-family: var(--isms-echomail-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .isms-echomail-arch-node-sub {
+    font-size: 10px;
+    color: var(--isms-echomail-text3);
+    font-family: var(--isms-echomail-mono);
+  }
+
+  .isms-echomail-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--isms-echomail-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .isms-echomail-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--isms-echomail-border),
+      var(--isms-echomail-accent),
+      var(--isms-echomail-border)
+    );
+    position: relative;
+  }
+  .isms-echomail-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--isms-echomail-accent);
+    font-size: 10px;
+  }
+  .isms-echomail-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--isms-echomail-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .isms-echomail-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-echomail-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .isms-echomail-core-step {
+    background: var(--isms-echomail-bg3);
+    border: 1px solid var(--isms-echomail-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--isms-echomail-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .isms-echomail-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--isms-echomail-accent);
+    flex-shrink: 0;
+  }
+
+  .isms-echomail-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-echomail-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .isms-echomail-schema-arrow-label {
+    font-size: 9px;
+    color: var(--isms-echomail-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .isms-echomail-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .isms-echomail-decision-card {
+    background: var(--isms-echomail-bg3);
+    border: 1px solid var(--isms-echomail-border);
+    border-radius: var(--isms-echomail-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .isms-echomail-decision-card:hover {
+    border-color: var(--isms-echomail-border2);
+  }
+
+  .isms-echomail-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .isms-echomail-decision-num {
+    font-family: var(--isms-echomail-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--isms-echomail-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .isms-echomail-decision-title {
+    font-family: var(--isms-echomail-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .isms-echomail-decision-problem {
+    font-size: 12px;
+    color: var(--isms-echomail-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--isms-echomail-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .isms-echomail-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .isms-echomail-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .isms-echomail-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .isms-echomail-decision-chosen {
+    color: var(--isms-echomail-accent);
+  }
+  .isms-echomail-decision-tradeoff {
+    color: var(--isms-echomail-amber);
+  }
+  .isms-echomail-decision-col-text {
+    font-size: 12px;
+    color: var(--isms-echomail-text2);
+    line-height: 1.65;
+  }
+
+  .isms-echomail-decision-code {
+    background: var(--isms-echomail-bg);
+    border-top: 1px solid var(--isms-echomail-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--isms-echomail-text2);
+    overflow-x: auto;
+  }
+  .isms-echomail-decision-code pre {
+    margin: 0;
+    font-family: var(--isms-echomail-mono);
+    line-height: 1.6;
+  }
+  .isms-echomail-token-kw {
+    color: #c792ea;
+  }
+  .isms-echomail-token-fn {
+    color: #82aaff;
+  }
+  .isms-echomail-token-str {
+    color: #c3e88d;
+  }
+  .isms-echomail-token-cm {
+    color: var(--isms-echomail-text3);
+    font-style: italic;
+  }
+  .isms-echomail-token-acc {
+    color: var(--isms-echomail-accent);
+  }
+
+  .isms-echomail-impact-wrapper {
+    background: var(--isms-echomail-bg3);
+    border: 1px solid var(--isms-echomail-border);
+    border-radius: var(--isms-echomail-radius);
+    overflow: hidden;
+  }
+  .isms-echomail-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .isms-echomail-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--isms-echomail-text3);
+    border-bottom: 1px solid var(--isms-echomail-border);
+    font-family: var(--isms-echomail-display);
+    font-weight: 600;
+  }
+  .isms-echomail-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--isms-echomail-border);
+    color: var(--isms-echomail-text2);
+  }
+  .isms-echomail-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-echomail-impact-table tr:hover td {
+    background: var(--isms-echomail-surface);
+  }
+  .isms-echomail-before {
+    color: var(--isms-echomail-red);
+  }
+  .isms-echomail-after {
+    color: var(--isms-echomail-accent);
+  }
+  .isms-echomail-delta {
+    color: var(--isms-echomail-accent);
+    font-weight: 500;
+    font-family: var(--isms-echomail-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .isms-echomail-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .isms-echomail-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .isms-echomail-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--isms-echomail-border);
+  }
+  .isms-echomail-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-echomail-layer {
+    color: var(--isms-echomail-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .isms-echomail-tech {
+    color: var(--isms-echomail-accent);
+    font-family: var(--isms-echomail-mono);
+  }
+  .isms-echomail-stack-table tr:hover td {
+    background: var(--isms-echomail-surface);
+  }
+
+  .isms-echomail-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--isms-echomail-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .isms-echomail-footer-text {
+    font-size: 11px;
+    color: var(--isms-echomail-text3);
+  }
+  .isms-echomail-footer-link {
+    font-size: 11px;
+    color: var(--isms-echomail-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .isms-echomail-footer-link:hover {
+    color: var(--isms-echomail-accent);
+  }
+
+  @keyframes isms-echomail-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .isms-echomail-hero {
+    animation: isms-echomail-fadeUp 0.5s ease both;
+  }
+  .isms-echomail-section:nth-child(2) {
+    animation: isms-echomail-fadeUp 0.5s 0.1s ease both;
+  }
+  .isms-echomail-section:nth-child(3) {
+    animation: isms-echomail-fadeUp 0.5s 0.15s ease both;
+  }
+  .isms-echomail-section:nth-child(4) {
+    animation: isms-echomail-fadeUp 0.5s 0.2s ease both;
+  }
+  .isms-echomail-section:nth-child(5) {
+    animation: isms-echomail-fadeUp 0.5s 0.25s ease both;
+  }
+  .isms-echomail-section:nth-child(6) {
+    animation: isms-echomail-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .isms-echomail-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--isms-echomail-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: isms-echomail-blink 1s step-end infinite;
+  }
+  @keyframes isms-echomail-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .isms-echomail-badge-client { background: var(--isms-echomail-accent-dim); color: var(--isms-echomail-accent); border-color: rgba(0,229,160,0.2); }
+  .isms-echomail-metric-val { font-size: 22px; }
+  .isms-echomail-amber .isms-echomail-metric-val { color: var(--isms-echomail-amber); }
+  .isms-echomail-amber::before { background: var(--isms-echomail-amber); }
+  .isms-echomail-red .isms-echomail-metric-val { color: var(--isms-echomail-red); }
+  .isms-echomail-red::before { background: var(--isms-echomail-red); }
+  .isms-echomail-blue .isms-echomail-metric-val { color: var(--isms-echomail-blue); }
+  .isms-echomail-blue::before { background: var(--isms-echomail-blue); }
+  .isms-echomail-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .isms-echomail-business-line-cards { grid-template-columns: 1fr; } }
+  .isms-echomail-bl-card { background: var(--isms-echomail-bg2); border: 1px solid var(--isms-echomail-border); border-radius: var(--isms-echomail-radius); padding: 16px; }
+  .isms-echomail-bl-card-title { font-family: var(--isms-echomail-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .isms-echomail-bl-card-desc { font-size: 11px; color: var(--isms-echomail-text3); line-height: 1.6; }
+  .isms-echomail-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--isms-echomail-accent-dim); color: var(--isms-echomail-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .isms-echomail-bl-card-tag.isms-echomail-amber-tag { background: var(--isms-echomail-amber-dim); color: var(--isms-echomail-amber); border-color: rgba(245,158,11,0.2); }
+  .isms-echomail-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .isms-echomail-cap-list { grid-template-columns: 1fr; } }
+  .isms-echomail-cap-item { background: var(--isms-echomail-bg3); border: 1px solid var(--isms-echomail-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--isms-echomail-text2); }
+  .isms-echomail-cap-item:hover { border-color: var(--isms-echomail-border2); color: var(--isms-echomail-text); }
+  .isms-echomail-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--isms-echomail-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .isms-echomail-flow-panel { background: var(--isms-echomail-bg2); border: 1px solid var(--isms-echomail-border); border-radius: var(--isms-echomail-radius); padding: 20px; margin-top: 20px; }
+  .isms-echomail-flow-panel-title { font-family: var(--isms-echomail-display); font-size: 12px; font-weight: 600; color: var(--isms-echomail-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .isms-echomail-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .isms-echomail-flow-step { display: flex; align-items: center; gap: 8px; }
+  .isms-echomail-flow-step-box { background: var(--isms-echomail-surface); border: 1px solid var(--isms-echomail-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--isms-echomail-text2); white-space: nowrap; }
+  .isms-echomail-flow-step-box.isms-echomail-accent { border-color: rgba(0,229,160,0.3); color: var(--isms-echomail-accent); }
+  .isms-echomail-flow-step-arr { color: var(--isms-echomail-text3); font-size: 11px; margin: 0 4px; }
+</style>

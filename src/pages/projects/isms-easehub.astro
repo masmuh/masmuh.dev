@@ -1,0 +1,855 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="ISMS EaseHub - Mas Muhammad" description="A WPF desktop dashboard for IT operations built with .NET 9. Multi-database SQL-to-Excel export engine with Channel-based producer-consumer parallel execution, AES-256 encryption utility, HMAC-SHA256 key generator, and dark-themed modern UI.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="isms-easehub">
+
+<header class="isms-easehub-hero">
+<div class="isms-easehub-hero-meta">
+<span class="isms-easehub-badge isms-easehub-badge-corporate">Corporate</span><span class="isms-easehub-badge isms-easehub-badge-client">Sampoerna</span> 
+<span class="isms-easehub-badge isms-easehub-badge-year">January 2026</span>
+</div>
+<h1 class="isms-easehub-hero-title">ISMS <span>EaseHub</span><span class="isms-easehub-cursor"></span></h1>
+<p class="isms-easehub-hero-desc">
+A WPF desktop dashboard for IT operations built with .NET 9. Multi-database SQL-to-Excel export engine with Channel-based producer-consumer parallel execution, AES-256 encryption utility, HMAC-SHA256 key generator, and dark-themed modern UI.
+</p>
+<div class="isms-easehub-stack-pills">
+<span class="isms-easehub-stack-pill">C# .NET 9.0</span>
+<span class="isms-easehub-stack-pill">WPF</span>
+<span class="isms-easehub-stack-pill">SQL Server</span>
+<span class="isms-easehub-stack-pill">EPPlus</span>
+<span class="isms-easehub-stack-pill">NLog</span>
+<span class="isms-easehub-stack-pill">System.Channels</span>
+</div>
+</header>
+
+<section class="isms-easehub-section">
+<div class="isms-easehub-section-label">
+<span class="isms-easehub-section-label-text">Impact</span>
+<div class="isms-easehub-section-label-line"></div>
+<span class="isms-easehub-section-label-num">01</span>
+</div>
+<div class="isms-easehub-metrics-grid">
+<div class="isms-easehub-metric-card">
+<div class="isms-easehub-metric-val">1,250</div>
+<div class="isms-easehub-metric-label">Lines of Code</div>
+<div class="isms-easehub-metric-sub">C# + XAML across 11 files</div>
+</div>
+<div class="isms-easehub-metric-card">
+<div class="isms-easehub-metric-val">4</div>
+<div class="isms-easehub-metric-label">Dashboard Views</div>
+<div class="isms-easehub-metric-sub">Export, KeyGen, Crypto, About</div>
+</div>
+<div class="isms-easehub-metric-card isms-easehub-amber">
+<div class="isms-easehub-metric-val">2</div>
+<div class="isms-easehub-metric-label">Complexity Score</div>
+<div class="isms-easehub-metric-sub">Based on code analysis</div>
+</div>
+<div class="isms-easehub-metric-card isms-easehub-amber">
+<div class="isms-easehub-metric-val">Utility</div>
+<div class="isms-easehub-metric-label">System Level</div>
+<div class="isms-easehub-metric-sub">Focused desktop tool</div>
+</div>
+</div>
+</section>
+
+<section class="isms-easehub-section">
+<div class="isms-easehub-section-label">
+<span class="isms-easehub-section-label-text">Architecture</span>
+<div class="isms-easehub-section-label-line"></div>
+<span class="isms-easehub-section-label-num">02</span>
+</div>
+<div class="isms-easehub-arch-diagram">
+<div class="isms-easehub-arch-diagram-inner">
+
+<div class="isms-easehub-arch-node isms-easehub-source">
+<div class="isms-easehub-arch-node-icon"></div>
+<div class="isms-easehub-arch-node-label">SQL Server</div>
+<div class="isms-easehub-arch-node-sub">Multi-DB parallel</div>
+</div>
+
+<div class="isms-easehub-arch-arrow">
+<div class="isms-easehub-arch-arrow-line"></div>
+<div class="isms-easehub-arch-arrow-label">query with retry</div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+<div class="isms-easehub-arch-node core" style="width:220px;">
+<div class="isms-easehub-arch-node-label" style="font-size:13px; margin-bottom:10px;">.NET 9.0 WPF App</div>
+<div class="isms-easehub-core-stack">
+<div class="isms-easehub-core-step"><div class="isms-easehub-core-step-dot"></div>MainWindow (UI)</div>
+<div class="isms-easehub-core-step"><div class="isms-easehub-core-step-dot"></div>Helper Layer</div>
+<div class="isms-easehub-core-step"><div class="isms-easehub-core-step-dot" style="background:var(--blue)"></div>Channel + MaxDOP 10</div>
+</div>
+</div>
+</div>
+
+<div class="isms-easehub-arch-arrow">
+<div class="isms-easehub-arch-arrow-line"></div>
+<div class="isms-easehub-arch-arrow-label">export</div>
+</div>
+
+<div class="isms-easehub-arch-node isms-easehub-output">
+<div class="isms-easehub-arch-node-icon"></div>
+<div class="isms-easehub-arch-node-label">Excel / CSV</div>
+<div class="isms-easehub-arch-node-sub">EPPlus export</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="isms-easehub-section">
+<div class="isms-easehub-section-label">
+<span class="isms-easehub-section-label-text">Tech Stack</span>
+<div class="isms-easehub-section-label-line"></div>
+<span class="isms-easehub-section-label-num">03</span>
+</div>
+<div class="isms-easehub-impact-wrapper">
+<table class="isms-easehub-stack-table">
+<tbody>
+<tr><td class="isms-easehub-layer">Runtime</td><td class="isms-easehub-tech">.NET 9.0-windows (C# 13)</td></tr>
+<tr><td class="isms-easehub-layer">UI Framework</td><td class="isms-easehub-tech">WPF / XAML (Dark-themed sidebar dashboard)</td></tr>
+<tr><td class="isms-easehub-layer">Database</td><td class="isms-easehub-tech">Microsoft.Data.SqlClient + Microsoft.Data.Sqlite</td></tr>
+<tr><td class="isms-easehub-layer">Excel Export</td><td class="isms-easehub-tech">EPPlus 8.4.0</td></tr>
+<tr><td class="isms-easehub-layer">Concurrency</td><td class="isms-easehub-tech">System.Threading.Channels (Producer-Consumer, MaxDOP 10)</td></tr>
+<tr><td class="isms-easehub-layer">Logging</td><td class="isms-easehub-tech">NLog 6.0 (file + RichTextBox)</td></tr>
+<tr><td class="isms-easehub-layer">Configuration</td><td class="isms-easehub-tech">YAML (YamlDotNet 16.3)</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="isms-easehub-section">
+<div class="isms-easehub-section-label">
+<span class="isms-easehub-section-label-text">Capabilities</span>
+<div class="isms-easehub-section-label-line"></div>
+<div class="isms-easehub-section-label-num">04</div>
+</div>
+<div class="isms-easehub-impact-wrapper">
+<table class="isms-easehub-stack-table">
+<tbody>
+<tr><td class="isms-easehub-layer">SQL-to-Excel Export</td><td class="isms-easehub-tech">Parallel multi-DB query execution with Channel-based producer-consumer, retry logic (3x), and 10-min timeout</td></tr>
+<tr><td class="isms-easehub-layer">Key Generator</td><td class="isms-easehub-tech">HMAC-SHA256 key derivation with configurable secret profiles (NextGen, BV1, Custom)</td></tr>
+<tr><td class="isms-easehub-layer">Text Locker</td><td class="isms-easehub-tech">AES-256 encryption/decryption utility with random IV generation</td></tr>
+<tr><td class="isms-easehub-layer">Dynamic Schema</td><td class="isms-easehub-tech">SQL schema-aware DataTable creation with CancellationToken support</td></tr>
+<tr><td class="isms-easehub-layer">Modern UI</td><td class="isms-easehub-tech">Dark-themed WPF dashboard with embedded geometry icons and sidebar navigation</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .isms-easehub {
+    --isms-easehub-bg: #0a0b0d;
+    --isms-easehub-bg2: #0f1114;
+    --isms-easehub-bg3: #141720;
+    --isms-easehub-surface: #1a1e28;
+    --isms-easehub-surface2: #212636;
+    --isms-easehub-border: #2a2f40;
+    --isms-easehub-border2: #363c50;
+    --isms-easehub-accent: #00e5a0;
+    --isms-easehub-accent2: #00b87a;
+    --isms-easehub-accent-dim: rgba(0, 229, 160, 0.08);
+    --isms-easehub-accent-dim2: rgba(0, 229, 160, 0.15);
+    --isms-easehub-amber: #f59e0b;
+    --isms-easehub-amber-dim: rgba(245, 158, 11, 0.1);
+    --isms-easehub-blue: #60a5fa;
+    --isms-easehub-blue-dim: rgba(96, 165, 250, 0.1);
+    --isms-easehub-red: #f87171;
+    --isms-easehub-text: #e8eaf0;
+    --isms-easehub-text2: #8b92a8;
+    --isms-easehub-text3: #5a6077;
+    --isms-easehub-mono: "JetBrains Mono", monospace;
+    --isms-easehub-display: "Syne", sans-serif;
+    --isms-easehub-radius: 10px;
+    --isms-easehub-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .isms-easehub * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .isms-easehub body {
+    background: var(--isms-easehub-bg);
+    color: var(--isms-easehub-text);
+    font-family: var(--isms-easehub-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .isms-easehub-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--isms-easehub-border);
+  }
+  .isms-easehub-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--isms-easehub-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .isms-easehub-nav-back:hover {
+    color: var(--isms-easehub-accent);
+  }
+  .isms-easehub-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .isms-easehub-nav-dot {
+    color: var(--isms-easehub-border2);
+  }
+  .isms-easehub-nav-title {
+    color: var(--isms-easehub-text3);
+    font-size: 12px;
+  }
+
+  .isms-easehub-hero {
+    margin-bottom: 56px;
+  }
+  .isms-easehub-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .isms-easehub-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .isms-easehub-badge-corporate {
+    background: var(--isms-easehub-blue-dim);
+    color: var(--isms-easehub-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .isms-easehub-badge-client {
+    background: var(--isms-easehub-accent-dim);
+    color: var(--isms-easehub-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .isms-easehub-badge-year {
+    background: var(--isms-easehub-surface);
+    color: var(--isms-easehub-text3);
+    border-color: var(--isms-easehub-border);
+  }
+
+  .isms-easehub-hero-title {
+    font-family: var(--isms-easehub-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .isms-easehub-hero-title span {
+    color: var(--isms-easehub-accent);
+    position: relative;
+  }
+
+  .isms-easehub-hero-desc {
+    color: var(--isms-easehub-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .isms-easehub-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .isms-easehub-stack-pill {
+    background: var(--isms-easehub-surface);
+    border: 1px solid var(--isms-easehub-border);
+    color: var(--isms-easehub-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .isms-easehub-stack-pill:hover {
+    border-color: var(--isms-easehub-accent);
+    color: var(--isms-easehub-accent);
+    background: var(--isms-easehub-accent-dim);
+  }
+
+  .isms-easehub-section {
+    margin-bottom: 52px;
+  }
+  .isms-easehub-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .isms-easehub-section-label-text {
+    font-family: var(--isms-easehub-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--isms-easehub-text3);
+    text-transform: uppercase;
+  }
+  .isms-easehub-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--isms-easehub-border);
+  }
+  .isms-easehub-section-label-num {
+    font-size: 11px;
+    color: var(--isms-easehub-border2);
+  }
+
+  .isms-easehub-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .isms-easehub-metric-card {
+    background: var(--isms-easehub-bg3);
+    border: 1px solid var(--isms-easehub-border);
+    border-radius: var(--isms-easehub-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .isms-easehub-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--isms-easehub-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .isms-easehub-metric-card:hover {
+    border-color: var(--isms-easehub-border2);
+  }
+  .isms-easehub-metric-card:hover::before {
+    opacity: 1;
+  }
+  .isms-easehub-metric-amber .isms-easehub-metric-val {
+    color: var(--isms-easehub-amber);
+  }
+  .isms-easehub-metric-amber::before {
+    background: var(--isms-easehub-amber);
+  }
+
+  .isms-easehub-metric-val {
+    font-family: var(--isms-easehub-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--isms-easehub-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .isms-easehub-metric-label {
+    font-size: 12px;
+    color: var(--isms-easehub-text2);
+    margin-bottom: 3px;
+  }
+  .isms-easehub-metric-sub {
+    font-size: 11px;
+    color: var(--isms-easehub-text3);
+  }
+
+  .isms-easehub-arch-diagram {
+    background: var(--isms-easehub-bg3);
+    border: 1px solid var(--isms-easehub-border);
+    border-radius: var(--isms-easehub-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .isms-easehub-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .isms-easehub-arch-node {
+    background: var(--isms-easehub-surface);
+    border: 1px solid var(--isms-easehub-border2);
+    border-radius: var(--isms-easehub-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .isms-easehub-core {
+    background: var(--isms-easehub-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .isms-easehub-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .isms-easehub-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--isms-easehub-amber-dim);
+    min-width: 110px;
+  }
+  .isms-easehub-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .isms-easehub-arch-node-label {
+    font-family: var(--isms-easehub-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .isms-easehub-arch-node-sub {
+    font-size: 10px;
+    color: var(--isms-easehub-text3);
+    font-family: var(--isms-easehub-mono);
+  }
+
+  .isms-easehub-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--isms-easehub-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .isms-easehub-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--isms-easehub-border),
+      var(--isms-easehub-accent),
+      var(--isms-easehub-border)
+    );
+    position: relative;
+  }
+  .isms-easehub-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--isms-easehub-accent);
+    font-size: 10px;
+  }
+  .isms-easehub-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--isms-easehub-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .isms-easehub-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-easehub-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .isms-easehub-core-step {
+    background: var(--isms-easehub-bg3);
+    border: 1px solid var(--isms-easehub-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--isms-easehub-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .isms-easehub-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--isms-easehub-accent);
+    flex-shrink: 0;
+  }
+
+  .isms-easehub-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-easehub-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .isms-easehub-schema-arrow-label {
+    font-size: 9px;
+    color: var(--isms-easehub-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .isms-easehub-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .isms-easehub-decision-card {
+    background: var(--isms-easehub-bg3);
+    border: 1px solid var(--isms-easehub-border);
+    border-radius: var(--isms-easehub-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .isms-easehub-decision-card:hover {
+    border-color: var(--isms-easehub-border2);
+  }
+
+  .isms-easehub-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .isms-easehub-decision-num {
+    font-family: var(--isms-easehub-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--isms-easehub-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .isms-easehub-decision-title {
+    font-family: var(--isms-easehub-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .isms-easehub-decision-problem {
+    font-size: 12px;
+    color: var(--isms-easehub-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--isms-easehub-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .isms-easehub-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .isms-easehub-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .isms-easehub-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .isms-easehub-decision-chosen {
+    color: var(--isms-easehub-accent);
+  }
+  .isms-easehub-decision-tradeoff {
+    color: var(--isms-easehub-amber);
+  }
+  .isms-easehub-decision-col-text {
+    font-size: 12px;
+    color: var(--isms-easehub-text2);
+    line-height: 1.65;
+  }
+
+  .isms-easehub-decision-code {
+    background: var(--isms-easehub-bg);
+    border-top: 1px solid var(--isms-easehub-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--isms-easehub-text2);
+    overflow-x: auto;
+  }
+  .isms-easehub-decision-code pre {
+    margin: 0;
+    font-family: var(--isms-easehub-mono);
+    line-height: 1.6;
+  }
+  .isms-easehub-token-kw {
+    color: #c792ea;
+  }
+  .isms-easehub-token-fn {
+    color: #82aaff;
+  }
+  .isms-easehub-token-str {
+    color: #c3e88d;
+  }
+  .isms-easehub-token-cm {
+    color: var(--isms-easehub-text3);
+    font-style: italic;
+  }
+  .isms-easehub-token-acc {
+    color: var(--isms-easehub-accent);
+  }
+
+  .isms-easehub-impact-wrapper {
+    background: var(--isms-easehub-bg3);
+    border: 1px solid var(--isms-easehub-border);
+    border-radius: var(--isms-easehub-radius);
+    overflow: hidden;
+  }
+  .isms-easehub-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .isms-easehub-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--isms-easehub-text3);
+    border-bottom: 1px solid var(--isms-easehub-border);
+    font-family: var(--isms-easehub-display);
+    font-weight: 600;
+  }
+  .isms-easehub-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--isms-easehub-border);
+    color: var(--isms-easehub-text2);
+  }
+  .isms-easehub-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-easehub-impact-table tr:hover td {
+    background: var(--isms-easehub-surface);
+  }
+  .isms-easehub-before {
+    color: var(--isms-easehub-red);
+  }
+  .isms-easehub-after {
+    color: var(--isms-easehub-accent);
+  }
+  .isms-easehub-delta {
+    color: var(--isms-easehub-accent);
+    font-weight: 500;
+    font-family: var(--isms-easehub-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .isms-easehub-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .isms-easehub-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .isms-easehub-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--isms-easehub-border);
+  }
+  .isms-easehub-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-easehub-layer {
+    color: var(--isms-easehub-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .isms-easehub-tech {
+    color: var(--isms-easehub-accent);
+    font-family: var(--isms-easehub-mono);
+  }
+  .isms-easehub-stack-table tr:hover td {
+    background: var(--isms-easehub-surface);
+  }
+
+  .isms-easehub-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--isms-easehub-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .isms-easehub-footer-text {
+    font-size: 11px;
+    color: var(--isms-easehub-text3);
+  }
+  .isms-easehub-footer-link {
+    font-size: 11px;
+    color: var(--isms-easehub-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .isms-easehub-footer-link:hover {
+    color: var(--isms-easehub-accent);
+  }
+
+  @keyframes isms-easehub-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .isms-easehub-hero {
+    animation: isms-easehub-fadeUp 0.5s ease both;
+  }
+  .isms-easehub-section:nth-child(2) {
+    animation: isms-easehub-fadeUp 0.5s 0.1s ease both;
+  }
+  .isms-easehub-section:nth-child(3) {
+    animation: isms-easehub-fadeUp 0.5s 0.15s ease both;
+  }
+  .isms-easehub-section:nth-child(4) {
+    animation: isms-easehub-fadeUp 0.5s 0.2s ease both;
+  }
+  .isms-easehub-section:nth-child(5) {
+    animation: isms-easehub-fadeUp 0.5s 0.25s ease both;
+  }
+  .isms-easehub-section:nth-child(6) {
+    animation: isms-easehub-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .isms-easehub-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--isms-easehub-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: isms-easehub-blink 1s step-end infinite;
+  }
+  @keyframes isms-easehub-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .isms-easehub-badge-client { background: var(--isms-easehub-accent-dim); color: var(--isms-easehub-accent); border-color: rgba(0,229,160,0.2); }
+  .isms-easehub-metric-val { font-size: 22px; }
+  .isms-easehub-amber .isms-easehub-metric-val { color: var(--isms-easehub-amber); }
+  .isms-easehub-amber::before { background: var(--isms-easehub-amber); }
+  .isms-easehub-red .isms-easehub-metric-val { color: var(--isms-easehub-red); }
+  .isms-easehub-red::before { background: var(--isms-easehub-red); }
+  .isms-easehub-blue .isms-easehub-metric-val { color: var(--isms-easehub-blue); }
+  .isms-easehub-blue::before { background: var(--isms-easehub-blue); }
+  .isms-easehub-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .isms-easehub-business-line-cards { grid-template-columns: 1fr; } }
+  .isms-easehub-bl-card { background: var(--isms-easehub-bg2); border: 1px solid var(--isms-easehub-border); border-radius: var(--isms-easehub-radius); padding: 16px; }
+  .isms-easehub-bl-card-title { font-family: var(--isms-easehub-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .isms-easehub-bl-card-desc { font-size: 11px; color: var(--isms-easehub-text3); line-height: 1.6; }
+  .isms-easehub-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--isms-easehub-accent-dim); color: var(--isms-easehub-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .isms-easehub-bl-card-tag.isms-easehub-amber-tag { background: var(--isms-easehub-amber-dim); color: var(--isms-easehub-amber); border-color: rgba(245,158,11,0.2); }
+  .isms-easehub-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .isms-easehub-cap-list { grid-template-columns: 1fr; } }
+  .isms-easehub-cap-item { background: var(--isms-easehub-bg3); border: 1px solid var(--isms-easehub-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--isms-easehub-text2); }
+  .isms-easehub-cap-item:hover { border-color: var(--isms-easehub-border2); color: var(--isms-easehub-text); }
+  .isms-easehub-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--isms-easehub-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .isms-easehub-flow-panel { background: var(--isms-easehub-bg2); border: 1px solid var(--isms-easehub-border); border-radius: var(--isms-easehub-radius); padding: 20px; margin-top: 20px; }
+  .isms-easehub-flow-panel-title { font-family: var(--isms-easehub-display); font-size: 12px; font-weight: 600; color: var(--isms-easehub-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .isms-easehub-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .isms-easehub-flow-step { display: flex; align-items: center; gap: 8px; }
+  .isms-easehub-flow-step-box { background: var(--isms-easehub-surface); border: 1px solid var(--isms-easehub-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--isms-easehub-text2); white-space: nowrap; }
+  .isms-easehub-flow-step-box.isms-easehub-accent { border-color: rgba(0,229,160,0.3); color: var(--isms-easehub-accent); }
+  .isms-easehub-flow-step-arr { color: var(--isms-easehub-text3); font-size: 11px; margin: 0 4px; }
+</style>

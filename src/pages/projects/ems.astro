@@ -1,0 +1,1164 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="EMS Enterprise Suite - Mas Muhammad" description="A government-regulated excise compliance platform built for PT Sampoerna — Indonesia&apos;s largest tobacco manufacturer. Manages the complete lifecycle of excisable goods: electronic excise document submission (CK-1 through CK-5, PBCK series, LACK series), excise payment and billing, brand registration, manufacturing licenses, SAP integration, and multi-level government workflow approvals.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="ems">
+
+<header class="ems-hero">
+    <div class="ems-hero-meta">
+      <span class="ems-badge ems-badge-corporate">Corporate</span><span class="ems-badge ems-badge-client">Sampoerna</span> 
+      <span class="ems-badge ems-badge-critical">Mission Critical</span>
+      <span class="ems-badge ems-badge-year">April 2021</span>
+    </div>
+    <h1 class="ems-hero-title">
+      EMS Enterprise Suite<br>
+      <span>Excise Management System</span>
+    </h1>
+    <p class="ems-hero-desc">
+      A government-regulated excise compliance platform built for PT Sampoerna — Indonesia's largest tobacco manufacturer. Manages the complete lifecycle of excisable goods: electronic excise document submission (CK-1 through CK-5, PBCK series, LACK series), excise payment and billing, brand registration, manufacturing licenses, SAP integration, and multi-level government workflow approvals.
+    </p>
+    <div class="ems-stack-pills">
+      <span class="ems-stack-pill">C# .NET 4.5</span>
+      <span class="ems-stack-pill">ASP.NET MVC 5</span>
+      <span class="ems-stack-pill">Web API 2</span>
+      <span class="ems-stack-pill">Entity Framework 6</span>
+      <span class="ems-stack-pill">SQL Server</span>
+      <span class="ems-stack-pill">SimpleInjector</span>
+      <span class="ems-stack-pill">Crystal Reports</span>
+      <span class="ems-stack-pill">Quartz.NET</span>
+      <span class="ems-stack-pill">iTextSharp</span>
+      <span class="ems-stack-pill">Kendo UI</span>
+      <span class="ems-stack-pill">TinyMCE</span>
+      <span class="ems-stack-pill">SSIS</span>
+    </div>
+  </header>
+
+  <section class="ems-section">
+    <div class="ems-section-label">
+      <span class="ems-section-label-num">01</span>
+      <span class="ems-section-label-text">Impact &amp; Metrics</span>
+      <span class="ems-section-label-line"></span>
+    </div>
+
+    <div class="ems-metrics-grid">
+      <div class="ems-metric-card ems-red">
+        <div class="ems-metric-val">600K+</div>
+        <div class="ems-metric-label">Lines of Code</div>
+        <div class="ems-metric-sub">C# + JS + Razor + SQL</div>
+      </div>
+      <div class="ems-metric-card ems-amber">
+        <div class="ems-metric-val">85</div>
+        <div class="ems-metric-label">MVC Controllers</div>
+        <div class="ems-metric-sub">1,363+ action methods</div>
+      </div>
+      <div class="ems-metric-card ems-blue">
+        <div class="ems-metric-val">130+</div>
+        <div class="ems-metric-label">Database Entities</div>
+        <div class="ems-metric-sub">EF EDMX + 460 SQL migrations</div>
+      </div>
+      <div class="ems-metric-card ems-red">
+        <div class="ems-metric-val">10</div>
+        <div class="ems-metric-label">Complexity Rating</div>
+        <div class="ems-metric-sub">Mission Critical — Government Compliance</div>
+      </div>
+    </div>
+
+    <div class="ems-impact-wrapper" style="margin-top:20px;">
+      <table class="ems-impact-table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Before</th>
+            <th>After</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ems-row-label">Excise Document Submission</td>
+            <td class="ems-before">Paper-based, manual DJBC submission</td>
+            <td class="ems-after">Full electronic CK/PBCK/LACK/BACK lifecycle with government approval workflow</td>
+            <td class="ems-delta">+ fully digital</td>
+          </tr>
+          <tr>
+            <td class="ems-row-label">SAP Integration</td>
+            <td class="ems-before">Manual data entry, reconciliation delays</td>
+            <td class="ems-after">Automated XML inbound/outbound for STO, GI, GR, TF transactions</td>
+            <td class="ems-delta">+ real-time sync</td>
+          </tr>
+          <tr>
+            <td class="ems-row-label">Reporting</td>
+            <td class="ems-before">Manual spreadsheets, compliance risk</td>
+            <td class="ems-after">Crystal Reports + RDLC + Excel/PDF with QR codes</td>
+            <td class="ems-delta">+ audit-ready</td>
+          </tr>
+          <tr>
+            <td class="ems-row-label">Manufacturing License</td>
+            <td class="ems-before">Paper applications, months per approval</td>
+            <td class="ems-after">Digital workflow — applications, interviews, SKEP issuance</td>
+            <td class="ems-delta">+ 60% faster</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="ems-section">
+    <div class="ems-section-label">
+      <span class="ems-section-label-num">02</span>
+      <span class="ems-section-label-text">Architecture</span>
+      <span class="ems-section-label-line"></span>
+    </div>
+
+    <div class="ems-arch-diagram">
+      <div class="ems-arch-diagram-inner">
+        <div class="ems-arch-node ems-source">
+          <div class="ems-arch-node-icon"></div>
+          <div class="ems-arch-node-label">Browser</div>
+          <div class="ems-arch-node-sub">Kendo UI + TinyMCE + jQuery</div>
+        </div>
+        <div class="ems-arch-arrow">
+          <div class="ems-arch-arrow-line"></div>
+          <div class="ems-arch-arrow-label">HTTP</div>
+        </div>
+        <div class="ems-arch-node core">
+          <div class="ems-arch-node-icon"></div>
+          <div class="ems-arch-node-label">MVC 5 + Web API 2</div>
+          <div class="ems-arch-node-sub">85 Controllers · SimpleInjector DI</div>
+          <div class="ems-core-stack">
+            <div class="ems-core-step">
+              <span class="ems-core-step-dot"></span>
+              Presentation — Razor + Kendo UI
+            </div>
+            <div class="ems-core-step">
+              <span class="ems-core-step-dot ems-blue"></span>
+              BLL — 80+ Service Classes
+            </div>
+            <div class="ems-core-step">
+              <span class="ems-core-step-dot ems-amber"></span>
+              DAL — Generic Repo + Unit of Work
+            </div>
+          </div>
+        </div>
+        <div class="ems-arch-arrow">
+          <div class="ems-arch-arrow-line"></div>
+          <div class="ems-arch-arrow-label">queries</div>
+        </div>
+        <div class="ems-arch-node ems-output">
+          <div class="ems-arch-node-icon"></div>
+          <div class="ems-arch-node-label">SQL Server</div>
+          <div class="ems-arch-node-sub">EMS Database — 130+ tables</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center;">
+      <div class="ems-arch-node ems-db-node">
+        <div class="ems-arch-node-icon"></div>
+        <div class="ems-arch-node-label">Quartz.NET</div>
+        <div class="ems-arch-node-sub">Windows Service Scheduler</div>
+      </div>
+      <div class="ems-arch-arrow" style="min-width:40px;">
+        <div class="ems-arch-arrow-line" style="width:20px;"></div>
+        <div class="ems-arch-arrow-label">XML</div>
+      </div>
+      <div class="ems-arch-node ems-db-node">
+        <div class="ems-arch-node-icon"></div>
+        <div class="ems-arch-node-label">SAP ByDesign</div>
+        <div class="ems-arch-node-sub">STO · GI · GR · TF</div>
+      </div>
+      <div class="ems-arch-arrow" style="min-width:40px;">
+        <div class="ems-arch-arrow-line" style="width:20px;"></div>
+        <div class="ems-arch-arrow-label">ETL</div>
+      </div>
+      <div class="ems-arch-node ems-db-node">
+        <div class="ems-arch-node-icon"></div>
+        <div class="ems-arch-node-label">Crystal Reports</div>
+        <div class="ems-arch-node-sub">44 .rpt templates</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ems-section">
+    <div class="ems-section-label">
+      <span class="ems-section-label-num">03</span>
+      <span class="ems-section-label-text">Key Capabilities</span>
+      <span class="ems-section-label-line"></span>
+    </div>
+
+    <div class="ems-cap-list">
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        CK-4C excise document lifecycle — create, approve, government approval
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        CK-5 material movement tracking (domestic, import, export, waste)
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        PBCK-1 quota management and monitoring
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        LACK-1/LACK-2/LACK-10 deficiency notes and reconciliation
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        Excise payment &amp; billing — DJBC billing, payment orders, recap
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        Brand registration (new, update HJE) with SKEP tariff determination
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        Manufacturing license — applications, interviews, SKEP issuance
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        SAP ByDesign integration via XML messaging
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        Multi-level workflow — POA, Controller, Government approval
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        Crystal Reports + Excel + PDF with QR/barcode generation
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        Stuffing plan, SO page, inventory movement tracking
+      </div>
+      <div class="ems-cap-item">
+        <span class="ems-cap-icon"></span>
+        Waste management — disposal workflow, stock tracking, role-based access
+      </div>
+    </div>
+  </section>
+
+  <section class="ems-section">
+    <div class="ems-section-label">
+      <span class="ems-section-label-num">04</span>
+      <span class="ems-section-label-text">Decision Log</span>
+      <span class="ems-section-label-line"></span>
+    </div>
+
+    <div class="ems-decision-list">
+
+      <div class="ems-decision-card">
+        <div class="ems-decision-header">
+          <span class="ems-decision-num">01</span>
+          <div>
+            <div class="ems-decision-title">MVC 5 + Web API 2 for Government Document Lifecycle</div>
+            <div class="ems-decision-problem">The EMS handles government-regulated excise documents with complex state machines — documents move through Draft → Internal Approval → Government Approval → Completed. Each transition triggers Crystal Reports generation, SAP XML messaging, and audit logging. Simple CRUD patterns wouldn't suffice.</div>
+          </div>
+        </div>
+        <div class="ems-decision-body">
+          <div>
+            <div class="ems-decision-col-label ems-chosen"> Chosen — MVC 5 with State Machine Workflow</div>
+            <div class="ems-decision-col-text">Each document type (CK4C, LACK1, PBCK1, etc.) had a dedicated controller with workflow actions: ApproveDocument, RejectDocument, GovApproveDocument, CompleteDocument. A shared WORKFLOW_STATE table tracked transitions with configurable state machines. Web API 2 provided REST endpoints for the workflow engine.</div>
+          </div>
+          <div>
+            <div class="ems-decision-col-label ems-tradeoff">△ Tradeoff — Workflow Engine / BPMN</div>
+            <div class="ems-decision-col-text">A dedicated BPMN engine like Camunda or Windows Workflow Foundation would have provided visual process design and monitoring. However, the tight integration with Crystal Reports print triggers, SAP XML outbound, and email notifications per state transition made custom state management more practical and debuggable.</div>
+          </div>
+        </div>
+        <div class="ems-decision-code">
+<pre><span class="ems-token-cm">// CK4C document approval with workflow transition</span>
+[<span class="ems-token-fn">HttpPost</span>]
+<span class="ems-token-kw">public</span> ActionResult <span class="ems-token-fn">GovApproveDocument</span>(<span class="ems-token-kw">string</span> id)
+&#123;
+    <span class="ems-token-kw">var</span> doc = _ck4cBll.<span class="ems-token-fn">GetById</span>(id);
+    doc.Status = WorkflowState.GovApproved;
+
+    <span class="ems-token-fn">_workflow</span>.<span class="ems-token-fn">LogTransition</span>(id, WorkflowState.GovApproved, CurrentUser);
+    <span class="ems-token-fn">_reporting</span>.<span class="ems-token-fn">GeneratePrintOut</span>(doc);
+    <span class="ems-token-fn">_sapMessaging</span>.<span class="ems-token-fn">SendOutbound</span>(doc);
+
+    <span class="ems-token-kw">return</span> <span class="ems-token-fn">RedirectToAction</span>(<span class="ems-token-str">"Index"</span>);
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="ems-decision-card">
+        <div class="ems-decision-header">
+          <span class="ems-decision-num">02</span>
+          <div>
+            <div class="ems-decision-title">Crystal Reports Over Modern Reporting Tools</div>
+            <div class="ems-decision-problem">Government excise forms have strict, legally-mandated print layouts with specific fonts, barcode/QR code placement, paper sizes, and watermarks. Each CK/PBCK/LACK form requires exact print reproductions that match the DJBC's official format — deviations could result in regulatory non-compliance.</div>
+          </div>
+        </div>
+        <div class="ems-decision-body">
+          <div>
+            <div class="ems-decision-col-label ems-chosen"> Chosen — Crystal Reports + iTextSharp</div>
+            <div class="ems-decision-col-text">44 Crystal Reports (.rpt) files were designed pixel-perfect to match government form specifications. Crystal Reports' precise layout engine handled complex headers, subreports, and conditional sections. iTextSharp supplemented with dynamic PDF generation for digital delivery. QR codes via QRCoder were embedded for government verification.</div>
+          </div>
+          <div>
+            <div class="ems-decision-col-label ems-tradeoff">△ Tradeoff — JS PDF / SSRS / Power BI</div>
+            <div class="ems-decision-col-text">Modern alternatives like jsPDF or Power BI couldn't match the pixel-level control needed for legal print forms. SSRS was considered but had limitations with complex subreport nesting and barcode positioning. Crystal Reports, despite its legacy tooling, was the only option that met the strict regulatory requirements.</div>
+          </div>
+        </div>
+        <div class="ems-decision-code">
+<pre><span class="ems-token-cm">// Crystal Reports print-out generation with QR Code</span>
+<span class="ems-token-kw">public byte</span>[] <span class="ems-token-fn">GenerateCK4CPrintOut</span>(CK4C document)
+&#123;
+    <span class="ems-token-kw">var</span> report = <span class="ems-token-kw">new</span> <span class="ems-token-fn">ReportDocument</span>();
+    report.<span class="ems-token-fn">Load</span>(<span class="ems-token-str">"~/Reports/CK4C_PrintOut.rpt"</span>);
+
+    <span class="ems-token-kw">var</span> qrCode = <span class="ems-token-fn">GenerateQRCode</span>(document.Id);
+    report.<span class="ems-token-fn">SetParameterValue</span>(<span class="ems-token-str">"QRCodeImage"</span>, qrCode);
+    report.<span class="ems-token-fn">SetDataSource</span>(document.Items);
+
+    <span class="ems-token-kw">return</span> <span class="ems-token-fn">ExportToPdf</span>(report);
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="ems-decision-card">
+        <div class="ems-decision-header">
+          <span class="ems-decision-num">03</span>
+          <div>
+            <div class="ems-decision-title">SAP XML Messaging Over Direct API</div>
+            <div class="ems-decision-problem">SAP ByDesign integration required bi-directional data flow — excise document approvals needed to trigger inventory movements (GI, GR, STO) in SAP, while SAP material movements needed to appear in EMS. Direct REST/SOAP calls from the web application risked blocking the UI thread during SAP's potentially slow responses.</div>
+          </div>
+        </div>
+        <div class="ems-decision-body">
+          <div>
+            <div class="ems-decision-col-label ems-chosen"> Chosen — Async XML Messaging via File Exchange</div>
+            <div class="ems-decision-col-text">A dedicated XMLReader project parsed inbound SAP files. Outbound messages were generated as XML and placed in network folders for SAP pickup. Quartz.NET scheduler processed the queue asynchronously. This decoupled EMS from SAP availability and provided reliable audit trails via XML_LOGS tables.</div>
+          </div>
+          <div>
+            <div class="ems-decision-col-label ems-tradeoff">△ Tradeoff — Real-time SOAP/REST API</div>
+            <div class="ems-decision-col-text">SAP ByDesign's native OData/SOAP APIs would have provided real-time integration. However, SAP API rate limits, network latency from the Indonesian data center, and the need for transactional integrity across systems made the file-based approach more robust. The tradeoff was 15-30 minute sync latency.</div>
+          </div>
+        </div>
+        <div class="ems-decision-code">
+<pre><span class="ems-token-cm">// XML outbound message for SAP STO creation</span>
+<span class="ems-token-kw">public void</span> <span class="ems-token-fn">SendOutbound</span>(CK4C document)
+&#123;
+    <span class="ems-token-kw">var</span> xml = <span class="ems-token-kw">new</span> <span class="ems-token-fn">XDocument</span>(
+        <span class="ems-token-kw">new</span> <span class="ems-token-fn">XElement</span>(<span class="ems-token-str">"ExciseDocument"</span>,
+            <span class="ems-token-kw">new</span> <span class="ems-token-fn">XAttribute</span>(<span class="ems-token-str">"Type"</span>, <span class="ems-token-str">"CK4C"</span>),
+            <span class="ems-token-kw">new</span> <span class="ems-token-fn">XElement</span>(<span class="ems-token-str">"DocumentId"</span>, document.Id),
+            <span class="ems-token-kw">new</span> <span class="ems-token-fn">XElement</span>(<span class="ems-token-str">"Status"</span>, document.Status),
+            <span class="ems-token-kw">new</span> <span class="ems-token-fn">XElement</span>(<span class="ems-token-str">"Items"</span>, document.Items.<span class="ems-token-fn">Select</span>(i => <span class="ems-token-kw">new</span> <span class="ems-token-fn">XElement</span>(<span class="ems-token-str">"Item"</span>,
+                <span class="ems-token-kw">new</span> <span class="ems-token-fn">XElement</span>(<span class="ems-token-str">"MaterialId"</span>, i.MaterialId),
+                <span class="ems-token-kw">new</span> <span class="ems-token-fn">XElement</span>(<span class="ems-token-str">"Quantity"</span>, i.Quantity))))));
+
+    <span class="ems-token-kw">var</span> path = <span class="ems-token-fn">Path</span>.<span class="ems-token-fn">Combine</span>(_config.SapOutboundPath,
+        <span class="ems-token-str">$"EMS_CK4C_&#123;document.Id&#125;_&#123;DateTime.Now:yyyyMMddHHmmss&#125;.xml"</span>);
+    xml.<span class="ems-token-fn">Save</span>(path);
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="ems-decision-card">
+        <div class="ems-decision-header">
+          <span class="ems-decision-num">04</span>
+          <div>
+            <div class="ems-decision-title">Active Directory / LDAP Authentication</div>
+            <div class="problem">The tobacco industry is heavily regulated — only authorized personnel can access excise documents, approve payments, or submit to government. With hundreds of users across plants, warehouses, and HQ, managing passwords separately from the corporate AD would have been a security and operational risk.</div>
+          </div>
+        </div>
+        <div class="ems-decision-body">
+          <div>
+            <div class="ems-decision-col-label ems-chosen"> Chosen — LDAP + Role-Based Authorization</div>
+            <div class="ems-decision-col-text">A custom `[AuthorizeAD]` attribute validated users against Active Directory on every request. Roles (POA, Controller, Viewer, FL Approver, SCCS, Admin, SuperAdmin) were mapped via BROLE_MAP and PAGE tables. Each menu/action was authorized independently using page-level permissions.</div>
+          </div>
+          <div>
+            <div class="ems-decision-col-label ems-tradeoff">△ Tradeoff — ASP.NET Identity / OAuth</div>
+            <div class="ems-decision-col-text">ASP.NET Identity with OAuth would have provided social login and modern token-based auth. However, the corporate environment required strict AD group management, and the government audit trail needed user identity to trace back to the corporate directory. LDAP provided native integration without credential duplication.</div>
+          </div>
+        </div>
+        <div class="ems-decision-code">
+<pre><span class="ems-token-cm">// Custom LDAP authorization attribute</span>
+[<span class="ems-token-fn">AttributeUsage</span>(AttributeTargets.Class | AttributeTargets.Method)]
+<span class="ems-token-kw">public class</span> <span class="ems-token-fn">AuthorizeADAttribute</span> : AuthorizeAttribute
+&#123;
+    <span class="ems-token-kw">protected override bool</span> <span class="ems-token-fn">AuthorizeCore</span>(HttpContextBase httpContext)
+    &#123;
+        <span class="ems-token-kw">var</span> identity = httpContext.User.Identity <span class="ems-token-kw">as</span> WindowsIdentity;
+        <span class="ems-token-kw">if</span> (identity == <span class="ems-token-kw">null</span>) <span class="ems-token-kw">return</span> <span class="ems-token-kw">false</span>;
+
+        <span class="ems-token-kw">var</span> user = _userService.<span class="ems-token-fn">GetByDomainName</span>(identity.Name);
+        <span class="ems-token-kw">if</span> (user == <span class="ems-token-kw">null</span> || !user.IsActive) <span class="ems-token-kw">return</span> <span class="ems-token-kw">false</span>;
+
+        httpContext.Items[<span class="ems-token-str">"CurrentUser"</span>] = user;
+        <span class="ems-token-kw">return</span> <span class="ems-token-fn">CheckPageAccess</span>(user, httpContext.Request.Url);
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ems-section">
+    <div class="ems-section-label">
+      <span class="ems-section-label-num">05</span>
+      <span class="ems-section-label-text">Tech Stack</span>
+      <span class="ems-section-label-line"></span>
+    </div>
+
+    <div class="ems-arch-diagram">
+      <table class="ems-stack-table">
+        <tr>
+          <td class="ems-layer">Frontend</td>
+          <td class="ems-tech">Razor Views, Kendo UI, jQuery 2.x, Bootstrap 3, TinyMCE 4.6, Moment.js, QRCode.js</td>
+        </tr>
+        <tr>
+          <td class="ems-layer">Web Framework</td>
+          <td class="ems-tech">ASP.NET MVC 5.2, Web API 2.2, SimpleInjector 2.6, AutoMapper 3.2</td>
+        </tr>
+        <tr>
+          <td class="ems-layer">Business Logic</td>
+          <td class="ems-tech">80+ BLL classes, 31 service interfaces, IBLL pattern, Contract layer for decoupling</td>
+        </tr>
+        <tr>
+          <td class="ems-layer">Data Access</td>
+          <td class="ems-tech">Entity Framework 6.1 (Database-First, EDMX), Generic Repository + Unit of Work</td>
+        </tr>
+        <tr>
+          <td class="ems-layer">Database</td>
+          <td class="ems-tech">SQL Server, 130+ tables, 460 migration scripts, SSIS ETL packages</td>
+        </tr>
+        <tr>
+          <td class="ems-layer">Authentication</td>
+          <td class="ems-tech">Active Directory / LDAP, Windows Authentication, Custom role-based page authorization</td>
+        </tr>
+        <tr>
+          <td class="ems-layer">Reporting</td>
+          <td class="ems-tech">Crystal Reports (44 .rpt files), iTextSharp 5.5, Spire.PDF, SpreadsheetLight, RDLC</td>
+        </tr>
+        <tr>
+          <td class="ems-layer">Integration</td>
+          <td class="ems-tech">SAP ByDesign XML messaging (inbound/outbound), CSV/EDI file exchange</td>
+        </tr>
+        <tr>
+          <td class="ems-layer">Scheduling</td>
+          <td class="ems-tech">Quartz.NET 2.2, Windows Service (Scheduler + Messaging)</td>
+        </tr>
+        <tr>
+          <td class="ems-layer">Security</td>
+          <td class="ems-tech">QRCoder 1.3, ZXing.Net 0.16 (QR/barcode), pdf encryption, digital signatures</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .ems {
+    --ems-bg: #0a0b0d;
+    --ems-bg2: #0f1114;
+    --ems-bg3: #141720;
+    --ems-surface: #1a1e28;
+    --ems-surface2: #212636;
+    --ems-border: #2a2f40;
+    --ems-border2: #363c50;
+    --ems-accent: #00e5a0;
+    --ems-accent2: #00b87a;
+    --ems-accent-dim: rgba(0, 229, 160, 0.08);
+    --ems-accent-dim2: rgba(0, 229, 160, 0.15);
+    --ems-amber: #f59e0b;
+    --ems-amber-dim: rgba(245, 158, 11, 0.1);
+    --ems-blue: #60a5fa;
+    --ems-blue-dim: rgba(96, 165, 250, 0.1);
+    --ems-red: #f87171;
+    --ems-text: #e8eaf0;
+    --ems-text2: #8b92a8;
+    --ems-text3: #5a6077;
+    --ems-mono: "JetBrains Mono", monospace;
+    --ems-display: "Syne", sans-serif;
+    --ems-radius: 10px;
+    --ems-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .ems * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ems body {
+    background: var(--ems-bg);
+    color: var(--ems-text);
+    font-family: var(--ems-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .ems-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--ems-border);
+  }
+  .ems-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ems-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .ems-nav-back:hover {
+    color: var(--ems-accent);
+  }
+  .ems-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .ems-nav-dot {
+    color: var(--ems-border2);
+  }
+  .ems-nav-title {
+    color: var(--ems-text3);
+    font-size: 12px;
+  }
+
+  .ems-hero {
+    margin-bottom: 56px;
+  }
+  .ems-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .ems-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .ems-badge-corporate {
+    background: var(--ems-blue-dim);
+    color: var(--ems-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .ems-badge-client {
+    background: var(--ems-accent-dim);
+    color: var(--ems-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .ems-badge-year {
+    background: var(--ems-surface);
+    color: var(--ems-text3);
+    border-color: var(--ems-border);
+  }
+
+  .ems-hero-title {
+    font-family: var(--ems-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .ems-hero-title span {
+    color: var(--ems-accent);
+    position: relative;
+  }
+
+  .ems-hero-desc {
+    color: var(--ems-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .ems-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .ems-stack-pill {
+    background: var(--ems-surface);
+    border: 1px solid var(--ems-border);
+    color: var(--ems-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .ems-stack-pill:hover {
+    border-color: var(--ems-accent);
+    color: var(--ems-accent);
+    background: var(--ems-accent-dim);
+  }
+
+  .ems-section {
+    margin-bottom: 52px;
+  }
+  .ems-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .ems-section-label-text {
+    font-family: var(--ems-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--ems-text3);
+    text-transform: uppercase;
+  }
+  .ems-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--ems-border);
+  }
+  .ems-section-label-num {
+    font-size: 11px;
+    color: var(--ems-border2);
+  }
+
+  .ems-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .ems-metric-card {
+    background: var(--ems-bg3);
+    border: 1px solid var(--ems-border);
+    border-radius: var(--ems-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .ems-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--ems-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .ems-metric-card:hover {
+    border-color: var(--ems-border2);
+  }
+  .ems-metric-card:hover::before {
+    opacity: 1;
+  }
+  .ems-metric-amber .ems-metric-val {
+    color: var(--ems-amber);
+  }
+  .ems-metric-amber::before {
+    background: var(--ems-amber);
+  }
+
+  .ems-metric-val {
+    font-family: var(--ems-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--ems-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .ems-metric-label {
+    font-size: 12px;
+    color: var(--ems-text2);
+    margin-bottom: 3px;
+  }
+  .ems-metric-sub {
+    font-size: 11px;
+    color: var(--ems-text3);
+  }
+
+  .ems-arch-diagram {
+    background: var(--ems-bg3);
+    border: 1px solid var(--ems-border);
+    border-radius: var(--ems-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .ems-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .ems-arch-node {
+    background: var(--ems-surface);
+    border: 1px solid var(--ems-border2);
+    border-radius: var(--ems-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .ems-core {
+    background: var(--ems-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .ems-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .ems-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--ems-amber-dim);
+    min-width: 110px;
+  }
+  .ems-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .ems-arch-node-label {
+    font-family: var(--ems-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .ems-arch-node-sub {
+    font-size: 10px;
+    color: var(--ems-text3);
+    font-family: var(--ems-mono);
+  }
+
+  .ems-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--ems-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .ems-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--ems-border),
+      var(--ems-accent),
+      var(--ems-border)
+    );
+    position: relative;
+  }
+  .ems-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--ems-accent);
+    font-size: 10px;
+  }
+  .ems-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--ems-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .ems-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .ems-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .ems-core-step {
+    background: var(--ems-bg3);
+    border: 1px solid var(--ems-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--ems-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ems-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--ems-accent);
+    flex-shrink: 0;
+  }
+
+  .ems-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .ems-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .ems-schema-arrow-label {
+    font-size: 9px;
+    color: var(--ems-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .ems-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ems-decision-card {
+    background: var(--ems-bg3);
+    border: 1px solid var(--ems-border);
+    border-radius: var(--ems-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .ems-decision-card:hover {
+    border-color: var(--ems-border2);
+  }
+
+  .ems-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .ems-decision-num {
+    font-family: var(--ems-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ems-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .ems-decision-title {
+    font-family: var(--ems-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .ems-decision-problem {
+    font-size: 12px;
+    color: var(--ems-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--ems-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .ems-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .ems-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .ems-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .ems-decision-chosen {
+    color: var(--ems-accent);
+  }
+  .ems-decision-tradeoff {
+    color: var(--ems-amber);
+  }
+  .ems-decision-col-text {
+    font-size: 12px;
+    color: var(--ems-text2);
+    line-height: 1.65;
+  }
+
+  .ems-decision-code {
+    background: var(--ems-bg);
+    border-top: 1px solid var(--ems-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--ems-text2);
+    overflow-x: auto;
+  }
+  .ems-decision-code pre {
+    margin: 0;
+    font-family: var(--ems-mono);
+    line-height: 1.6;
+  }
+  .ems-token-kw {
+    color: #c792ea;
+  }
+  .ems-token-fn {
+    color: #82aaff;
+  }
+  .ems-token-str {
+    color: #c3e88d;
+  }
+  .ems-token-cm {
+    color: var(--ems-text3);
+    font-style: italic;
+  }
+  .ems-token-acc {
+    color: var(--ems-accent);
+  }
+
+  .ems-impact-wrapper {
+    background: var(--ems-bg3);
+    border: 1px solid var(--ems-border);
+    border-radius: var(--ems-radius);
+    overflow: hidden;
+  }
+  .ems-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .ems-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ems-text3);
+    border-bottom: 1px solid var(--ems-border);
+    font-family: var(--ems-display);
+    font-weight: 600;
+  }
+  .ems-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--ems-border);
+    color: var(--ems-text2);
+  }
+  .ems-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .ems-impact-table tr:hover td {
+    background: var(--ems-surface);
+  }
+  .ems-before {
+    color: var(--ems-red);
+  }
+  .ems-after {
+    color: var(--ems-accent);
+  }
+  .ems-delta {
+    color: var(--ems-accent);
+    font-weight: 500;
+    font-family: var(--ems-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .ems-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .ems-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .ems-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--ems-border);
+  }
+  .ems-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .ems-layer {
+    color: var(--ems-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .ems-tech {
+    color: var(--ems-accent);
+    font-family: var(--ems-mono);
+  }
+  .ems-stack-table tr:hover td {
+    background: var(--ems-surface);
+  }
+
+  .ems-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ems-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .ems-footer-text {
+    font-size: 11px;
+    color: var(--ems-text3);
+  }
+  .ems-footer-link {
+    font-size: 11px;
+    color: var(--ems-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .ems-footer-link:hover {
+    color: var(--ems-accent);
+  }
+
+  @keyframes ems-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .ems-hero {
+    animation: ems-fadeUp 0.5s ease both;
+  }
+  .ems-section:nth-child(2) {
+    animation: ems-fadeUp 0.5s 0.1s ease both;
+  }
+  .ems-section:nth-child(3) {
+    animation: ems-fadeUp 0.5s 0.15s ease both;
+  }
+  .ems-section:nth-child(4) {
+    animation: ems-fadeUp 0.5s 0.2s ease both;
+  }
+  .ems-section:nth-child(5) {
+    animation: ems-fadeUp 0.5s 0.25s ease both;
+  }
+  .ems-section:nth-child(6) {
+    animation: ems-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .ems-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--ems-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: ems-blink 1s step-end infinite;
+  }
+  @keyframes ems-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .ems-badge-client { background: var(--ems-accent-dim); color: var(--ems-accent); border-color: rgba(0,229,160,0.2); }
+  .ems-metric-val { font-size: 22px; }
+  .ems-amber .ems-metric-val { color: var(--ems-amber); }
+  .ems-amber::before { background: var(--ems-amber); }
+  .ems-red .ems-metric-val { color: var(--ems-red); }
+  .ems-red::before { background: var(--ems-red); }
+  .ems-blue .ems-metric-val { color: var(--ems-blue); }
+  .ems-blue::before { background: var(--ems-blue); }
+  .ems-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .ems-business-line-cards { grid-template-columns: 1fr; } }
+  .ems-bl-card { background: var(--ems-bg2); border: 1px solid var(--ems-border); border-radius: var(--ems-radius); padding: 16px; }
+  .ems-bl-card-title { font-family: var(--ems-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .ems-bl-card-desc { font-size: 11px; color: var(--ems-text3); line-height: 1.6; }
+  .ems-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--ems-accent-dim); color: var(--ems-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .ems-bl-card-tag.ems-amber-tag { background: var(--ems-amber-dim); color: var(--ems-amber); border-color: rgba(245,158,11,0.2); }
+  .ems-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .ems-cap-list { grid-template-columns: 1fr; } }
+  .ems-cap-item { background: var(--ems-bg3); border: 1px solid var(--ems-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--ems-text2); }
+  .ems-cap-item:hover { border-color: var(--ems-border2); color: var(--ems-text); }
+  .ems-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--ems-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .ems-flow-panel { background: var(--ems-bg2); border: 1px solid var(--ems-border); border-radius: var(--ems-radius); padding: 20px; margin-top: 20px; }
+  .ems-flow-panel-title { font-family: var(--ems-display); font-size: 12px; font-weight: 600; color: var(--ems-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .ems-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .ems-flow-step { display: flex; align-items: center; gap: 8px; }
+  .ems-flow-step-box { background: var(--ems-surface); border: 1px solid var(--ems-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--ems-text2); white-space: nowrap; }
+  .ems-flow-step-box.ems-accent { border-color: rgba(0,229,160,0.3); color: var(--ems-accent); }
+  .ems-flow-step-arr { color: var(--ems-text3); font-size: 11px; margin: 0 4px; }
+</style>

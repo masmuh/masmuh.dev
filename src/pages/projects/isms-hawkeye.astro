@@ -1,0 +1,868 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="ISMS Hawkeye - Mas Muhammad" description="An enterprise data integration and file transfer service for ISMS (Integrated Sales Management System). Multi-threaded CSV export engine across 20+ database areas with AES-256 encrypted ZIP generation, S3 cloud upload, SMTP email reporting, and session-based job tracking.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="isms-hawkeye">
+
+<header class="isms-hawkeye-hero">
+<div class="isms-hawkeye-hero-meta">
+<span class="isms-hawkeye-badge isms-hawkeye-badge-corporate">Corporate</span><span class="isms-hawkeye-badge isms-hawkeye-badge-client">Sampoerna</span> 
+<span class="isms-hawkeye-badge isms-hawkeye-badge-year">October 2025</span>
+</div>
+<h1 class="isms-hawkeye-hero-title">ISMS <span>Hawkeye</span><span class="isms-hawkeye-cursor"></span></h1>
+<p class="isms-hawkeye-hero-desc">
+An enterprise data integration and file transfer service for ISMS (Integrated Sales Management System). Multi-threaded CSV export engine across 20+ database areas with AES-256 encrypted ZIP generation, S3 cloud upload, SMTP email reporting, and session-based job tracking.
+</p>
+<div class="isms-hawkeye-stack-pills">
+<span class="isms-hawkeye-stack-pill">C# .NET Framework 4.8</span>
+<span class="isms-hawkeye-stack-pill">T-SQL</span>
+<span class="isms-hawkeye-stack-pill">AWS S3</span>
+<span class="isms-hawkeye-stack-pill">EPPlus</span>
+<span class="isms-hawkeye-stack-pill">Parallel Processing</span>
+<span class="isms-hawkeye-stack-pill">NLog</span>
+</div>
+</header>
+
+<section class="isms-hawkeye-section">
+<div class="isms-hawkeye-section-label">
+<span class="isms-hawkeye-section-label-text">Impact</span>
+<div class="isms-hawkeye-section-label-line"></div>
+<span class="isms-hawkeye-section-label-num">01</span>
+</div>
+<div class="isms-hawkeye-metrics-grid">
+<div class="isms-hawkeye-metric-card">
+<div class="isms-hawkeye-metric-val">6,600</div>
+<div class="isms-hawkeye-metric-label">Lines of Code</div>
+<div class="isms-hawkeye-metric-sub">C# + T-SQL across 137 files</div>
+</div>
+<div class="isms-hawkeye-metric-card">
+<div class="isms-hawkeye-metric-val">9</div>
+<div class="isms-hawkeye-metric-label">Job Commands</div>
+<div class="isms-hawkeye-metric-sub">CLI job dispatcher</div>
+</div>
+<div class="isms-hawkeye-metric-card">
+<div class="isms-hawkeye-metric-val">10</div>
+<div class="isms-hawkeye-metric-label">Complexity Score</div>
+<div class="isms-hawkeye-metric-sub">Based on code analysis</div>
+</div>
+<div class="isms-hawkeye-metric-card">
+<div class="isms-hawkeye-metric-val">Mission Critical</div>
+<div class="isms-hawkeye-metric-label">System Level</div>
+<div class="isms-hawkeye-metric-sub">Impact classification</div>
+</div>
+</div>
+</section>
+
+<section class="isms-hawkeye-section">
+<div class="isms-hawkeye-section-label">
+<span class="isms-hawkeye-section-label-text">Architecture</span>
+<div class="isms-hawkeye-section-label-line"></div>
+<span class="isms-hawkeye-section-label-num">02</span>
+</div>
+<div class="isms-hawkeye-arch-diagram">
+<div class="isms-hawkeye-arch-diagram-inner">
+
+<div class="isms-hawkeye-arch-node isms-hawkeye-source">
+<div class="isms-hawkeye-arch-node-icon"></div>
+<div class="isms-hawkeye-arch-node-label">SQL Server</div>
+<div class="isms-hawkeye-arch-node-sub">20+ database areas</div>
+</div>
+
+<div class="isms-hawkeye-arch-arrow">
+<div class="isms-hawkeye-arch-arrow-line"></div>
+<div class="isms-hawkeye-arch-arrow-label">parallel query</div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+<div class="isms-hawkeye-arch-node core" style="width:220px;">
+<div class="isms-hawkeye-arch-node-label" style="font-size:13px; margin-bottom:10px;">.NET 4.8 Console App</div>
+<div class="isms-hawkeye-core-stack">
+<div class="isms-hawkeye-core-step"><div class="isms-hawkeye-core-step-dot"></div>CLI Arg Parser</div>
+<div class="isms-hawkeye-core-step"><div class="isms-hawkeye-core-step-dot"></div>Service Layer</div>
+<div class="isms-hawkeye-core-step"><div class="isms-hawkeye-core-step-dot" style="background:var(--blue)"></div>Helper Layer</div>
+</div>
+</div>
+</div>
+
+<div class="isms-hawkeye-arch-arrow">
+<div class="isms-hawkeye-arch-arrow-line"></div>
+<div class="isms-hawkeye-arch-arrow-label">upload</div>
+</div>
+
+<div class="isms-hawkeye-arch-node isms-hawkeye-output">
+<div class="isms-hawkeye-arch-node-icon"></div>
+<div class="isms-hawkeye-arch-node-label">AWS S3</div>
+<div class="isms-hawkeye-arch-node-sub">Encrypted ZIP storage</div>
+</div>
+
+<div class="isms-hawkeye-arch-arrow" style="min-width:40px;">
+<div class="isms-hawkeye-arch-arrow-line" style="width:30px;"></div>
+<div class="isms-hawkeye-arch-arrow-label">notify</div>
+</div>
+
+<div class="isms-hawkeye-arch-node isms-hawkeye-source" style="border-color:rgba(245,158,11,0.3);">
+<div class="isms-hawkeye-arch-node-icon"></div>
+<div class="isms-hawkeye-arch-node-label">SMTP Email</div>
+<div class="isms-hawkeye-arch-node-sub">HTML reports</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="isms-hawkeye-section">
+<div class="isms-hawkeye-section-label">
+<span class="isms-hawkeye-section-label-text">Tech Stack</span>
+<div class="isms-hawkeye-section-label-line"></div>
+<span class="isms-hawkeye-section-label-num">03</span>
+</div>
+<div class="isms-hawkeye-impact-wrapper">
+<table class="isms-hawkeye-stack-table">
+<tbody>
+<tr><td class="isms-hawkeye-layer">Runtime</td><td class="isms-hawkeye-tech">.NET Framework 4.8 (C#)</td></tr>
+<tr><td class="isms-hawkeye-layer">Database</td><td class="isms-hawkeye-tech">Microsoft SQL Server (ADO.NET, SqlBulkCopy)</td></tr>
+<tr><td class="isms-hawkeye-layer">Cloud</td><td class="isms-hawkeye-tech">AWS S3 (AWSSDK.S3 3.7)</td></tr>
+<tr><td class="isms-hawkeye-layer">Excel Export</td><td class="isms-hawkeye-tech">EPPlus 8.0.5</td></tr>
+<tr><td class="isms-hawkeye-layer">Encryption</td><td class="isms-hawkeye-tech">SevenZipSharp (AES-256 ZIP) + System.Security.Cryptography</td></tr>
+<tr><td class="isms-hawkeye-layer">Logging</td><td class="isms-hawkeye-tech">NLog 5.3</td></tr>
+<tr><td class="isms-hawkeye-layer">Concurrency</td><td class="isms-hawkeye-tech">SemaphoreSlim, Parallel.ForEach, Task.WhenAll</td></tr>
+<tr><td class="isms-hawkeye-layer">Configuration</td><td class="isms-hawkeye-tech">YAML (YamlDotNet) + CSV mappings</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="isms-hawkeye-section">
+<div class="isms-hawkeye-section-label">
+<span class="isms-hawkeye-section-label-text">Capabilities</span>
+<div class="isms-hawkeye-section-label-line"></div>
+<div class="isms-hawkeye-section-label-num">04</div>
+</div>
+<div class="isms-hawkeye-impact-wrapper">
+<table class="isms-hawkeye-stack-table">
+<tbody>
+<tr><td class="isms-hawkeye-layer">CSV Export Engine</td><td class="isms-hawkeye-tech">Multi-threaded parallel CSV export across 20+ SQL Server database areas</td></tr>
+<tr><td class="isms-hawkeye-layer">Receipt Collection</td><td class="isms-hawkeye-tech">Parallel receipt collection with retry logic and sales reconciliation</td></tr>
+<tr><td class="isms-hawkeye-layer">Secure File Transfer</td><td class="isms-hawkeye-tech">AES-256 encrypted ZIP archives uploaded to AWS S3 with automated lifecycle</td></tr>
+<tr><td class="isms-hawkeye-layer">Email Reporting</td><td class="isms-hawkeye-tech">SMTP delivery of HTML/CSV reports with logistic and cancellation data</td></tr>
+<tr><td class="isms-hawkeye-layer">Job Orchestration</td><td class="isms-hawkeye-tech">CLI-driven job dispatcher with 9 commands, session logging, and YAML-based config</td></tr>
+<tr><td class="isms-hawkeye-layer">File Transfer</td><td class="isms-hawkeye-tech">YAML-driven file copy/move across network directories with audit trail</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .isms-hawkeye {
+    --isms-hawkeye-bg: #0a0b0d;
+    --isms-hawkeye-bg2: #0f1114;
+    --isms-hawkeye-bg3: #141720;
+    --isms-hawkeye-surface: #1a1e28;
+    --isms-hawkeye-surface2: #212636;
+    --isms-hawkeye-border: #2a2f40;
+    --isms-hawkeye-border2: #363c50;
+    --isms-hawkeye-accent: #00e5a0;
+    --isms-hawkeye-accent2: #00b87a;
+    --isms-hawkeye-accent-dim: rgba(0, 229, 160, 0.08);
+    --isms-hawkeye-accent-dim2: rgba(0, 229, 160, 0.15);
+    --isms-hawkeye-amber: #f59e0b;
+    --isms-hawkeye-amber-dim: rgba(245, 158, 11, 0.1);
+    --isms-hawkeye-blue: #60a5fa;
+    --isms-hawkeye-blue-dim: rgba(96, 165, 250, 0.1);
+    --isms-hawkeye-red: #f87171;
+    --isms-hawkeye-text: #e8eaf0;
+    --isms-hawkeye-text2: #8b92a8;
+    --isms-hawkeye-text3: #5a6077;
+    --isms-hawkeye-mono: "JetBrains Mono", monospace;
+    --isms-hawkeye-display: "Syne", sans-serif;
+    --isms-hawkeye-radius: 10px;
+    --isms-hawkeye-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .isms-hawkeye * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .isms-hawkeye body {
+    background: var(--isms-hawkeye-bg);
+    color: var(--isms-hawkeye-text);
+    font-family: var(--isms-hawkeye-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .isms-hawkeye-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--isms-hawkeye-border);
+  }
+  .isms-hawkeye-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--isms-hawkeye-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .isms-hawkeye-nav-back:hover {
+    color: var(--isms-hawkeye-accent);
+  }
+  .isms-hawkeye-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .isms-hawkeye-nav-dot {
+    color: var(--isms-hawkeye-border2);
+  }
+  .isms-hawkeye-nav-title {
+    color: var(--isms-hawkeye-text3);
+    font-size: 12px;
+  }
+
+  .isms-hawkeye-hero {
+    margin-bottom: 56px;
+  }
+  .isms-hawkeye-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .isms-hawkeye-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .isms-hawkeye-badge-corporate {
+    background: var(--isms-hawkeye-blue-dim);
+    color: var(--isms-hawkeye-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .isms-hawkeye-badge-client {
+    background: var(--isms-hawkeye-accent-dim);
+    color: var(--isms-hawkeye-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .isms-hawkeye-badge-year {
+    background: var(--isms-hawkeye-surface);
+    color: var(--isms-hawkeye-text3);
+    border-color: var(--isms-hawkeye-border);
+  }
+
+  .isms-hawkeye-hero-title {
+    font-family: var(--isms-hawkeye-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .isms-hawkeye-hero-title span {
+    color: var(--isms-hawkeye-accent);
+    position: relative;
+  }
+
+  .isms-hawkeye-hero-desc {
+    color: var(--isms-hawkeye-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .isms-hawkeye-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .isms-hawkeye-stack-pill {
+    background: var(--isms-hawkeye-surface);
+    border: 1px solid var(--isms-hawkeye-border);
+    color: var(--isms-hawkeye-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .isms-hawkeye-stack-pill:hover {
+    border-color: var(--isms-hawkeye-accent);
+    color: var(--isms-hawkeye-accent);
+    background: var(--isms-hawkeye-accent-dim);
+  }
+
+  .isms-hawkeye-section {
+    margin-bottom: 52px;
+  }
+  .isms-hawkeye-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .isms-hawkeye-section-label-text {
+    font-family: var(--isms-hawkeye-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--isms-hawkeye-text3);
+    text-transform: uppercase;
+  }
+  .isms-hawkeye-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--isms-hawkeye-border);
+  }
+  .isms-hawkeye-section-label-num {
+    font-size: 11px;
+    color: var(--isms-hawkeye-border2);
+  }
+
+  .isms-hawkeye-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .isms-hawkeye-metric-card {
+    background: var(--isms-hawkeye-bg3);
+    border: 1px solid var(--isms-hawkeye-border);
+    border-radius: var(--isms-hawkeye-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .isms-hawkeye-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--isms-hawkeye-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .isms-hawkeye-metric-card:hover {
+    border-color: var(--isms-hawkeye-border2);
+  }
+  .isms-hawkeye-metric-card:hover::before {
+    opacity: 1;
+  }
+  .isms-hawkeye-metric-amber .isms-hawkeye-metric-val {
+    color: var(--isms-hawkeye-amber);
+  }
+  .isms-hawkeye-metric-amber::before {
+    background: var(--isms-hawkeye-amber);
+  }
+
+  .isms-hawkeye-metric-val {
+    font-family: var(--isms-hawkeye-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--isms-hawkeye-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .isms-hawkeye-metric-label {
+    font-size: 12px;
+    color: var(--isms-hawkeye-text2);
+    margin-bottom: 3px;
+  }
+  .isms-hawkeye-metric-sub {
+    font-size: 11px;
+    color: var(--isms-hawkeye-text3);
+  }
+
+  .isms-hawkeye-arch-diagram {
+    background: var(--isms-hawkeye-bg3);
+    border: 1px solid var(--isms-hawkeye-border);
+    border-radius: var(--isms-hawkeye-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .isms-hawkeye-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .isms-hawkeye-arch-node {
+    background: var(--isms-hawkeye-surface);
+    border: 1px solid var(--isms-hawkeye-border2);
+    border-radius: var(--isms-hawkeye-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .isms-hawkeye-core {
+    background: var(--isms-hawkeye-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .isms-hawkeye-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .isms-hawkeye-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--isms-hawkeye-amber-dim);
+    min-width: 110px;
+  }
+  .isms-hawkeye-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .isms-hawkeye-arch-node-label {
+    font-family: var(--isms-hawkeye-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .isms-hawkeye-arch-node-sub {
+    font-size: 10px;
+    color: var(--isms-hawkeye-text3);
+    font-family: var(--isms-hawkeye-mono);
+  }
+
+  .isms-hawkeye-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--isms-hawkeye-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .isms-hawkeye-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--isms-hawkeye-border),
+      var(--isms-hawkeye-accent),
+      var(--isms-hawkeye-border)
+    );
+    position: relative;
+  }
+  .isms-hawkeye-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--isms-hawkeye-accent);
+    font-size: 10px;
+  }
+  .isms-hawkeye-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--isms-hawkeye-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .isms-hawkeye-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-hawkeye-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .isms-hawkeye-core-step {
+    background: var(--isms-hawkeye-bg3);
+    border: 1px solid var(--isms-hawkeye-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--isms-hawkeye-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .isms-hawkeye-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--isms-hawkeye-accent);
+    flex-shrink: 0;
+  }
+
+  .isms-hawkeye-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-hawkeye-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .isms-hawkeye-schema-arrow-label {
+    font-size: 9px;
+    color: var(--isms-hawkeye-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .isms-hawkeye-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .isms-hawkeye-decision-card {
+    background: var(--isms-hawkeye-bg3);
+    border: 1px solid var(--isms-hawkeye-border);
+    border-radius: var(--isms-hawkeye-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .isms-hawkeye-decision-card:hover {
+    border-color: var(--isms-hawkeye-border2);
+  }
+
+  .isms-hawkeye-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .isms-hawkeye-decision-num {
+    font-family: var(--isms-hawkeye-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--isms-hawkeye-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .isms-hawkeye-decision-title {
+    font-family: var(--isms-hawkeye-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .isms-hawkeye-decision-problem {
+    font-size: 12px;
+    color: var(--isms-hawkeye-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--isms-hawkeye-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .isms-hawkeye-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .isms-hawkeye-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .isms-hawkeye-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .isms-hawkeye-decision-chosen {
+    color: var(--isms-hawkeye-accent);
+  }
+  .isms-hawkeye-decision-tradeoff {
+    color: var(--isms-hawkeye-amber);
+  }
+  .isms-hawkeye-decision-col-text {
+    font-size: 12px;
+    color: var(--isms-hawkeye-text2);
+    line-height: 1.65;
+  }
+
+  .isms-hawkeye-decision-code {
+    background: var(--isms-hawkeye-bg);
+    border-top: 1px solid var(--isms-hawkeye-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--isms-hawkeye-text2);
+    overflow-x: auto;
+  }
+  .isms-hawkeye-decision-code pre {
+    margin: 0;
+    font-family: var(--isms-hawkeye-mono);
+    line-height: 1.6;
+  }
+  .isms-hawkeye-token-kw {
+    color: #c792ea;
+  }
+  .isms-hawkeye-token-fn {
+    color: #82aaff;
+  }
+  .isms-hawkeye-token-str {
+    color: #c3e88d;
+  }
+  .isms-hawkeye-token-cm {
+    color: var(--isms-hawkeye-text3);
+    font-style: italic;
+  }
+  .isms-hawkeye-token-acc {
+    color: var(--isms-hawkeye-accent);
+  }
+
+  .isms-hawkeye-impact-wrapper {
+    background: var(--isms-hawkeye-bg3);
+    border: 1px solid var(--isms-hawkeye-border);
+    border-radius: var(--isms-hawkeye-radius);
+    overflow: hidden;
+  }
+  .isms-hawkeye-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .isms-hawkeye-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--isms-hawkeye-text3);
+    border-bottom: 1px solid var(--isms-hawkeye-border);
+    font-family: var(--isms-hawkeye-display);
+    font-weight: 600;
+  }
+  .isms-hawkeye-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--isms-hawkeye-border);
+    color: var(--isms-hawkeye-text2);
+  }
+  .isms-hawkeye-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-hawkeye-impact-table tr:hover td {
+    background: var(--isms-hawkeye-surface);
+  }
+  .isms-hawkeye-before {
+    color: var(--isms-hawkeye-red);
+  }
+  .isms-hawkeye-after {
+    color: var(--isms-hawkeye-accent);
+  }
+  .isms-hawkeye-delta {
+    color: var(--isms-hawkeye-accent);
+    font-weight: 500;
+    font-family: var(--isms-hawkeye-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .isms-hawkeye-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .isms-hawkeye-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .isms-hawkeye-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--isms-hawkeye-border);
+  }
+  .isms-hawkeye-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-hawkeye-layer {
+    color: var(--isms-hawkeye-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .isms-hawkeye-tech {
+    color: var(--isms-hawkeye-accent);
+    font-family: var(--isms-hawkeye-mono);
+  }
+  .isms-hawkeye-stack-table tr:hover td {
+    background: var(--isms-hawkeye-surface);
+  }
+
+  .isms-hawkeye-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--isms-hawkeye-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .isms-hawkeye-footer-text {
+    font-size: 11px;
+    color: var(--isms-hawkeye-text3);
+  }
+  .isms-hawkeye-footer-link {
+    font-size: 11px;
+    color: var(--isms-hawkeye-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .isms-hawkeye-footer-link:hover {
+    color: var(--isms-hawkeye-accent);
+  }
+
+  @keyframes isms-hawkeye-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .isms-hawkeye-hero {
+    animation: isms-hawkeye-fadeUp 0.5s ease both;
+  }
+  .isms-hawkeye-section:nth-child(2) {
+    animation: isms-hawkeye-fadeUp 0.5s 0.1s ease both;
+  }
+  .isms-hawkeye-section:nth-child(3) {
+    animation: isms-hawkeye-fadeUp 0.5s 0.15s ease both;
+  }
+  .isms-hawkeye-section:nth-child(4) {
+    animation: isms-hawkeye-fadeUp 0.5s 0.2s ease both;
+  }
+  .isms-hawkeye-section:nth-child(5) {
+    animation: isms-hawkeye-fadeUp 0.5s 0.25s ease both;
+  }
+  .isms-hawkeye-section:nth-child(6) {
+    animation: isms-hawkeye-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .isms-hawkeye-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--isms-hawkeye-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: isms-hawkeye-blink 1s step-end infinite;
+  }
+  @keyframes isms-hawkeye-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .isms-hawkeye-badge-client { background: var(--isms-hawkeye-accent-dim); color: var(--isms-hawkeye-accent); border-color: rgba(0,229,160,0.2); }
+  .isms-hawkeye-metric-val { font-size: 22px; }
+  .isms-hawkeye-amber .isms-hawkeye-metric-val { color: var(--isms-hawkeye-amber); }
+  .isms-hawkeye-amber::before { background: var(--isms-hawkeye-amber); }
+  .isms-hawkeye-red .isms-hawkeye-metric-val { color: var(--isms-hawkeye-red); }
+  .isms-hawkeye-red::before { background: var(--isms-hawkeye-red); }
+  .isms-hawkeye-blue .isms-hawkeye-metric-val { color: var(--isms-hawkeye-blue); }
+  .isms-hawkeye-blue::before { background: var(--isms-hawkeye-blue); }
+  .isms-hawkeye-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .isms-hawkeye-business-line-cards { grid-template-columns: 1fr; } }
+  .isms-hawkeye-bl-card { background: var(--isms-hawkeye-bg2); border: 1px solid var(--isms-hawkeye-border); border-radius: var(--isms-hawkeye-radius); padding: 16px; }
+  .isms-hawkeye-bl-card-title { font-family: var(--isms-hawkeye-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .isms-hawkeye-bl-card-desc { font-size: 11px; color: var(--isms-hawkeye-text3); line-height: 1.6; }
+  .isms-hawkeye-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--isms-hawkeye-accent-dim); color: var(--isms-hawkeye-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .isms-hawkeye-bl-card-tag.isms-hawkeye-amber-tag { background: var(--isms-hawkeye-amber-dim); color: var(--isms-hawkeye-amber); border-color: rgba(245,158,11,0.2); }
+  .isms-hawkeye-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .isms-hawkeye-cap-list { grid-template-columns: 1fr; } }
+  .isms-hawkeye-cap-item { background: var(--isms-hawkeye-bg3); border: 1px solid var(--isms-hawkeye-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--isms-hawkeye-text2); }
+  .isms-hawkeye-cap-item:hover { border-color: var(--isms-hawkeye-border2); color: var(--isms-hawkeye-text); }
+  .isms-hawkeye-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--isms-hawkeye-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .isms-hawkeye-flow-panel { background: var(--isms-hawkeye-bg2); border: 1px solid var(--isms-hawkeye-border); border-radius: var(--isms-hawkeye-radius); padding: 20px; margin-top: 20px; }
+  .isms-hawkeye-flow-panel-title { font-family: var(--isms-hawkeye-display); font-size: 12px; font-weight: 600; color: var(--isms-hawkeye-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .isms-hawkeye-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .isms-hawkeye-flow-step { display: flex; align-items: center; gap: 8px; }
+  .isms-hawkeye-flow-step-box { background: var(--isms-hawkeye-surface); border: 1px solid var(--isms-hawkeye-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--isms-hawkeye-text2); white-space: nowrap; }
+  .isms-hawkeye-flow-step-box.isms-hawkeye-accent { border-color: rgba(0,229,160,0.3); color: var(--isms-hawkeye-accent); }
+  .isms-hawkeye-flow-step-arr { color: var(--isms-hawkeye-text3); font-size: 11px; margin: 0 4px; }
+</style>

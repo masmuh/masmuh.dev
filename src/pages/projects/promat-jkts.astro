@@ -1,0 +1,1123 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="e-Promat: Enterprise Material Logistics - Mas Muhammad" description="An enterprise promotional material logistics system for Sanofi managing the full lifecycle of promotional items from procurement to distribution, inventory management, and destruction. Built with VB.NET ASP.NET WebForms with multi-level approval workflows.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="promat-jkts">
+
+<header class="promat-jkts-hero">
+    <div class="promat-jkts-hero-meta">
+      <span class="promat-jkts-badge promat-jkts-badge-corporate">Corporate</span><span class="promat-jkts-badge promat-jkts-badge-client">Sanofi</span> 
+      
+      <span class="promat-jkts-badge promat-jkts-badge-domain">Pharma / Material Logistics</span>
+      <span class="promat-jkts-badge promat-jkts-badge-year">October 2014</span>
+    </div>
+    <h1 class="promat-jkts-hero-title">e-Promat <span>Enterprise Material Logistics</span><span class="promat-jkts-cursor"></span></h1>
+    <p class="promat-jkts-hero-desc">
+      An enterprise promotional material logistics system for Sanofi managing the full lifecycle of promotional items from procurement to distribution, inventory management, and destruction. Built with VB.NET ASP.NET WebForms with multi-level approval workflows.
+    </p>
+    <div class="promat-jkts-stack-pills">
+      <span class="promat-jkts-stack-pill">VB.NET</span>
+      <span class="promat-jkts-stack-pill">ASP.NET WebForms</span>
+      <span class="promat-jkts-stack-pill">.NET 2.0</span>
+      <span class="promat-jkts-stack-pill">SQL Server</span>
+      <span class="promat-jkts-stack-pill">AjaxControlToolkit</span>
+      <span class="promat-jkts-stack-pill">SSRS Reports</span>
+      <span class="promat-jkts-stack-pill">30+ Tables</span>
+    </div>
+  </header>
+
+  <section class="promat-jkts-section">
+    <div class="promat-jkts-section-label">
+      <span class="promat-jkts-section-label-text">Impact</span>
+      <div class="promat-jkts-section-label-line"></div>
+      <span class="promat-jkts-section-label-num">01</span>
+    </div>
+    <div class="promat-jkts-metrics-grid">
+      <div class="promat-jkts-metric-card">
+        <div class="promat-jkts-metric-val">8,300+</div>
+        <div class="promat-jkts-metric-label">Lines of Code</div>
+        <div class="promat-jkts-metric-sub">VB.NET code-behind</div>
+      </div>
+      <div class="promat-jkts-metric-card promat-jkts-amber">
+        <div class="promat-jkts-metric-val">0</div>
+        <div class="promat-jkts-metric-label">API Endpoints</div>
+        <div class="promat-jkts-metric-sub">Traditional WebForms</div>
+      </div>
+      <div class="promat-jkts-metric-card promat-jkts-amber">
+        <div class="promat-jkts-metric-val">30+</div>
+        <div class="promat-jkts-metric-label">Database Tables</div>
+        <div class="promat-jkts-metric-sub">SQL Server relational</div>
+      </div>
+      <div class="promat-jkts-metric-card promat-jkts-red">
+        <div class="promat-jkts-metric-val">10</div>
+        <div class="promat-jkts-metric-label">Complexity Score</div>
+        <div class="promat-jkts-metric-sub">Mission Critical</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="promat-jkts-section">
+    <div class="promat-jkts-section-label">
+      <span class="promat-jkts-section-label-text">Architecture</span>
+      <div class="promat-jkts-section-label-line"></div>
+      <span class="promat-jkts-section-label-num">02</span>
+    </div>
+    <div class="promat-jkts-arch-diagram">
+      <div class="promat-jkts-arch-diagram-inner">
+
+        <div class="promat-jkts-arch-node promat-jkts-source">
+          <div class="promat-jkts-arch-node-icon"></div>
+          <div class="promat-jkts-arch-node-label">ASPX Pages</div>
+          <div class="promat-jkts-arch-node-sub">UI / Presentation</div>
+        </div>
+
+        <div class="promat-jkts-arch-arrow">
+          <div class="promat-jkts-arch-arrow-line"></div>
+          <div class="promat-jkts-arch-arrow-label">postback</div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+          <div class="promat-jkts-arch-node core" style="width:220px;">
+            <div class="promat-jkts-arch-node-label" style="font-size:13px; margin-bottom:10px;">Code-Behind Layer</div>
+            <div class="promat-jkts-core-stack">
+              <div class="promat-jkts-core-step">
+                <div class="promat-jkts-core-step-dot"></div>
+                Event handlers · Page_Load
+              </div>
+              <div class="promat-jkts-core-step">
+                <div class="promat-jkts-core-step-dot"></div>
+                Approval workflow logic
+              </div>
+              <div class="promat-jkts-core-step">
+                <div class="promat-jkts-core-step-dot" style="background:var(--blue)"></div>
+                ADO.NET · Stored Procedures
+              </div>
+            </div>
+          </div>
+          <div class="promat-jkts-schema-connector" style="margin-top:0;">
+            <div class="promat-jkts-schema-line-v"></div>
+            <div class="promat-jkts-schema-arrow-label">30+ tables</div>
+            <div class="promat-jkts-schema-line-v"></div>
+            <div class="promat-jkts-arch-node promat-jkts-schema-node">
+              <div class="promat-jkts-arch-node-label" style="font-size:11px; color: #f59e0b;">SQL Server</div>
+              <div class="promat-jkts-arch-node-sub">Stored Procedures</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <div class="promat-jkts-arch-arrow">
+            <div class="promat-jkts-arch-arrow-line"></div>
+            <div class="promat-jkts-arch-arrow-label">email</div>
+          </div>
+          <div class="promat-jkts-arch-node promat-jkts-output" style="margin-top:4px;">
+            <div class="promat-jkts-arch-node-icon"></div>
+            <div class="promat-jkts-arch-node-label">SMTP Notification</div>
+            <div class="promat-jkts-arch-node-sub">Approval workflow</div>
+          </div>
+          <div class="promat-jkts-schema-connector" style="margin-top:8px;">
+            <div class="promat-jkts-schema-line-v"></div>
+            <div class="promat-jkts-schema-arrow-label">reports</div>
+            <div class="promat-jkts-schema-line-v"></div>
+            <div class="promat-jkts-arch-node promat-jkts-schema-node">
+              <div class="promat-jkts-arch-node-label" style="font-size:11px; color: #f59e0b;">SSRS Reports</div>
+              <div class="promat-jkts-arch-node-sub">Transaction reporting</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="promat-jkts-section">
+    <div class="promat-jkts-section-label">
+      <span class="promat-jkts-section-label-text">Decision Log</span>
+      <div class="promat-jkts-section-label-line"></div>
+      <span class="promat-jkts-section-label-num">03</span>
+    </div>
+    <div class="promat-jkts-decision-list">
+
+      <div class="promat-jkts-decision-card">
+        <div class="promat-jkts-decision-header">
+          <div class="promat-jkts-decision-num">01</div>
+          <div>
+            <div class="promat-jkts-decision-title">Multi-Level Approval Workflow with Email Notification</div>
+            <div class="promat-jkts-decision-problem">
+              Purchase orders and destruction requests require sequential approval from multiple hierarchy levels. Manual email/paper approvals caused delays and lost requests.
+            </div>
+          </div>
+        </div>
+        <div class="promat-jkts-decision-body">
+          <div>
+            <div class="promat-jkts-decision-col-label promat-jkts-chosen">▸ Chosen</div>
+            <div class="promat-jkts-decision-col-text">
+              State-machine approval engine with configurable approval chains. Each transaction tracks its current status and next approver. SMTP email notifications trigger on status transitions with direct action links.
+            </div>
+          </div>
+          <div>
+            <div class="promat-jkts-decision-col-label promat-jkts-tradeoff">▸ Trade-off</div>
+            <div class="promat-jkts-decision-col-text">
+              Sequential approval adds processing latency for high-volume orders. A parallel approval model would be faster but risks inconsistent decisions. Sequential was chosen for audit integrity.
+            </div>
+          </div>
+        </div>
+        <div class="promat-jkts-decision-code">
+<pre><span class="promat-jkts-token-cm">' Approval state machine — status transitions</span>
+<span class="promat-jkts-token-kw">Select Case</span> currentStatus
+    <span class="promat-jkts-token-kw">Case</span> <span class="promat-jkts-token-str">"DRAFT"</span>
+        UpdateStatus(orderId, <span class="promat-jkts-token-str">"PENDING_APPROVAL"</span>)
+        SendApprovalEmail(orderId, level1Approver)
+    <span class="promat-jkts-token-kw">Case</span> <span class="promat-jkts-token-str">"PENDING_APPROVAL"</span>
+        <span class="promat-jkts-token-kw">If</span> isLevel1Approval <span class="promat-jkts-token-kw">Then</span>
+            UpdateStatus(orderId, <span class="promat-jkts-token-str">"LEVEL2_APPROVAL"</span>)
+            SendApprovalEmail(orderId, level2Approver)
+        <span class="promat-jkts-token-kw">End If</span>
+    <span class="promat-jkts-token-kw">Case</span> <span class="promat-jkts-token-str">"LEVEL2_APPROVAL"</span>
+        UpdateStatus(orderId, <span class="promat-jkts-token-str">"APPROVED"</span>)
+        NotifyRequester(orderId, <span class="promat-jkts-token-str">"Order approved"</span>)
+<span class="promat-jkts-token-kw">End Select</span></pre>
+        </div>
+      </div>
+
+      <div class="promat-jkts-decision-card">
+        <div class="promat-jkts-decision-header">
+          <div class="promat-jkts-decision-num">02</div>
+          <div>
+            <div class="promat-jkts-decision-title">VB.NET Code-Behind over MVC / Web API</div>
+            <div class="promat-jkts-decision-problem">
+              Greenfield project in 2013 within Sanofi's .NET 2.0 standardized environment. Need to align with corporate technology roadmap and existing infrastructure.
+            </div>
+          </div>
+        </div>
+        <div class="promat-jkts-decision-body">
+          <div>
+            <div class="promat-jkts-decision-col-label promat-jkts-chosen">▸ Chosen</div>
+            <div class="promat-jkts-decision-col-text">
+              Classic ASP.NET WebForms with VB.NET code-behind. Matches the corporate .NET 2.0 standard. Server controls with AjaxControlToolkit for interactive UI without writing JavaScript-heavy frontends.
+            </div>
+          </div>
+          <div>
+            <div class="promat-jkts-decision-col-label promat-jkts-tradeoff">▸ Trade-off</div>
+            <div class="promat-jkts-decision-col-text">
+              Tight coupling between UI and logic through code-behind. No separation of concerns compared to MVC. Acceptable for a departmental system with a small dev team focused on rapid delivery.
+            </div>
+          </div>
+        </div>
+        <div class="promat-jkts-decision-code">
+<pre><span class="promat-jkts-token-cm">' VB.NET code-behind pattern — Page_Load data binding</span>
+<span class="promat-jkts-token-kw">Protected Sub</span> <span class="promat-jkts-token-fn">Page_Load</span>(<span class="promat-jkts-token-kw">ByVal</span> sender <span class="promat-jkts-token-kw">As</span> Object,
+    <span class="promat-jkts-token-kw">ByVal</span> e <span class="promat-jkts-token-kw">As</span> EventArgs) <span class="promat-jkts-token-kw">Handles</span> Me.Load
+    <span class="promat-jkts-token-kw">If Not</span> IsPostBack <span class="promat-jkts-token-kw">Then</span>
+        BindMaterialGrid()
+        LoadDropdowns()
+    <span class="promat-jkts-token-kw">End If</span>
+<span class="promat-jkts-token-kw">End Sub</span>
+
+<span class="promat-jkts-token-kw">Private Sub</span> <span class="promat-jkts-token-fn">BindMaterialGrid</span>()
+    <span class="promat-jkts-token-kw">Dim</span> dt <span class="promat-jkts-token-kw">As</span> DataTable = ExecuteSP(<span class="promat-jkts-token-str">"sp_Promat_GetMaterials"</span>, Nothing)
+    gvMaterials.DataSource = dt
+    gvMaterials.DataBind()
+<span class="promat-jkts-token-kw">End Sub</span></pre>
+        </div>
+      </div>
+
+      <div class="promat-jkts-decision-card">
+        <div class="promat-jkts-decision-header">
+          <div class="promat-jkts-decision-num">03</div>
+          <div>
+            <div class="promat-jkts-decision-title">Stored Procedures for Data Access Layer</div>
+            <div class="promat-jkts-decision-problem">
+              Complex inventory queries with multi-table joins, stock calculations, and approval status filtering. ORM overhead was unacceptable for the transaction volume and query complexity.
+            </div>
+          </div>
+        </div>
+        <div class="promat-jkts-decision-body">
+          <div>
+            <div class="promat-jkts-decision-col-label promat-jkts-chosen">▸ Chosen</div>
+            <div class="promat-jkts-decision-col-text">
+              All data access through SQL Server stored procedures. ADO.NET calls via SqlCommand with CommandType.StoredProcedure. Centralized query logic for DBA optimization and auditing.
+            </div>
+          </div>
+          <div>
+            <div class="promat-jkts-decision-col-label promat-jkts-tradeoff">▸ Trade-off</div>
+            <div class="promat-jkts-decision-col-text">
+              Business logic split between VB.NET code and stored procedures. Debugging requires both SSMS and Visual Studio. But performance on complex inventory rollups justified the approach.
+            </div>
+          </div>
+        </div>
+        <div class="promat-jkts-decision-code">
+<pre><span class="promat-jkts-token-cm">' Stored procedure call from code-behind</span>
+<span class="promat-jkts-token-kw">Private Function</span> <span class="promat-jkts-token-fn">ExecuteSP</span>(<span class="promat-jkts-token-kw">ByVal</span> spName <span class="promat-jkts-token-kw">As</span> <span class="promat-jkts-token-mth">String</span>,
+    <span class="promat-jkts-token-kw">ByVal</span> params <span class="promat-jkts-token-kw">As</span> List(<span class="promat-jkts-token-kw">Of</span> SqlParameter)) <span class="promat-jkts-token-kw">As</span> DataTable
+    <span class="promat-jkts-token-kw">Using</span> conn <span class="promat-jkts-token-kw">As</span> <span class="promat-jkts-token-kw">New</span> <span class="promat-jkts-token-fn">SqlConnection</span>(connString)
+        <span class="promat-jkts-token-kw">Using</span> cmd <span class="promat-jkts-token-kw">As</span> <span class="promat-jkts-token-kw">New</span> <span class="promat-jkts-token-fn">SqlCommand</span>(spName, conn)
+            cmd.CommandType = CommandType.StoredProcedure
+            <span class="promat-jkts-token-kw">If</span> params <span class="promat-jkts-token-kw">IsNot</span> <span class="promat-jkts-token-kw">Nothing</span> <span class="promat-jkts-token-kw">Then</span>
+                cmd.Parameters.AddRange(params.ToArray())
+            <span class="promat-jkts-token-kw">End If</span>
+            <span class="promat-jkts-token-kw">Dim</span> da <span class="promat-jkts-token-kw">As</span> <span class="promat-jkts-token-kw">New</span> <span class="promat-jkts-token-fn">SqlDataAdapter</span>(cmd)
+            <span class="promat-jkts-token-kw">Dim</span> dt <span class="promat-jkts-token-kw">As</span> <span class="promat-jkts-token-kw">New</span> DataTable()
+            da.Fill(dt)
+            <span class="promat-jkts-token-kw">Return</span> dt
+        <span class="promat-jkts-token-kw">End Using</span>
+    <span class="promat-jkts-token-kw">End Using</span>
+<span class="promat-jkts-token-kw">End Function</span></pre>
+        </div>
+      </div>
+
+      <div class="promat-jkts-decision-card">
+        <div class="promat-jkts-decision-header">
+          <div class="promat-jkts-decision-num">04</div>
+          <div>
+            <div class="promat-jkts-decision-title">SSRS Reports over Ad-Hoc Reporting</div>
+            <div class="promat-jkts-decision-problem">
+              Regulatory and audit requirements demand formal, printable reports for procurement, inventory, destruction, and distribution transactions. Ad-hoc query tools insufficient.
+            </div>
+          </div>
+        </div>
+        <div class="promat-jkts-decision-body">
+          <div>
+            <div class="promat-jkts-decision-col-label promat-jkts-chosen">▸ Chosen</div>
+            <div class="promat-jkts-decision-col-text">
+              SQL Server Reporting Services (SSRS) for all transaction types. Parameterized reports with date ranges, branch filters, and status filters. Rendered as PDF for archival and audit sign-off.
+            </div>
+          </div>
+          <div>
+            <div class="promat-jkts-decision-col-label promat-jkts-tradeoff">▸ Trade-off</div>
+            <div class="promat-jkts-decision-col-text">
+              SSRS requires Report Server infrastructure and licensing. Report embedding in WebForms requires ReportViewer control. Static report layouts require DBA/developer changes for modifications.
+            </div>
+          </div>
+        </div>
+        <div class="promat-jkts-decision-code">
+<pre><span class="promat-jkts-token-cm">' SSRS ReportViewer in ASPX page</span>
+&lt;rsweb:ReportViewer ID=<span class="promat-jkts-token-str">"rvDestruction"</span> runat=<span class="promat-jkts-token-str">"server"</span>
+    ProcessingMode=<span class="promat-jkts-token-str">"Remote"</span>
+    ServerUrl=<span class="promat-jkts-token-str">"http://report-server/ReportServer"</span>
+    ReportPath=<span class="promat-jkts-token-str">"/PromatReports/rpt_DestructionCertificate"</span>
+    Width=<span class="promat-jkts-token-str">"100%"</span> Height=<span class="promat-jkts-token-str">"600px"</span> /&gt;
+
+<span class="promat-jkts-token-cm">' Code-behind parameter binding</span>
+rvDestruction.ServerReport.<span class="promat-jkts-token-fn">SetParameters</span>(
+    <span class="promat-jkts-token-kw">New</span> List(<span class="promat-jkts-token-kw">Of</span> ReportParameter) <span class="promat-jkts-token-kw">From</span> &#123;
+        <span class="promat-jkts-token-kw">New</span> ReportParameter(<span class="promat-jkts-token-str">"DestructionID"</span>, destructionId)
+    &#125;)</pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="promat-jkts-section">
+    <div class="promat-jkts-section-label">
+      <span class="promat-jkts-section-label-text">Business Impact</span>
+      <div class="promat-jkts-section-label-line"></div>
+      <span class="promat-jkts-section-label-num">04</span>
+    </div>
+    <div class="promat-jkts-impact-wrapper">
+      <table class="promat-jkts-impact-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Before</th>
+            <th>After</th>
+            <th>Delta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="promat-jkts-row-label">Material lifecycle</td>
+            <td class="promat-jkts-before">Spreadsheets / email</td>
+            <td class="promat-jkts-after">End-to-end system</td>
+            <td class="promat-jkts-delta">Full traceability</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-row-label">Approval process</td>
+            <td class="promat-jkts-before">Manual email / paper</td>
+            <td class="promat-jkts-after">Multi-level workflow</td>
+            <td class="promat-jkts-delta">Audit trail + auto-notify</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-row-label">Branch inventory</td>
+            <td class="promat-jkts-before">Regional silos</td>
+            <td class="promat-jkts-after">Centralized visibility</td>
+            <td class="promat-jkts-delta">Real-time stock across regions</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-row-label">Compliance reporting</td>
+            <td class="promat-jkts-before">Manual report compilation</td>
+            <td class="promat-jkts-after">SSRS on-demand reports</td>
+            <td class="promat-jkts-delta">Regulatory-ready in minutes</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-row-label">Unauthorized spend</td>
+            <td class="promat-jkts-before">No approval enforcement</td>
+            <td class="promat-jkts-after">Chain-of-approval enforced</td>
+            <td class="promat-jkts-delta">Significant cost reduction</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="promat-jkts-section">
+    <div class="promat-jkts-section-label">
+      <span class="promat-jkts-section-label-text">Tech Stack</span>
+      <div class="promat-jkts-section-label-line"></div>
+      <span class="promat-jkts-section-label-num">05</span>
+    </div>
+    <div class="promat-jkts-impact-wrapper">
+      <table class="promat-jkts-stack-table">
+        <tbody>
+          <tr>
+            <td class="promat-jkts-layer">Framework</td>
+            <td class="promat-jkts-tech">ASP.NET WebForms · .NET Framework 2.0</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-layer">Language</td>
+            <td class="promat-jkts-tech">VB.NET</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-layer">Database</td>
+            <td class="promat-jkts-tech">SQL Server (30+ tables)</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-layer">Data Access</td>
+            <td class="promat-jkts-tech">ADO.NET · Stored Procedures</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-layer">UI Toolkit</td>
+            <td class="promat-jkts-tech">AjaxControlToolkit · Server Controls</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-layer">Reporting</td>
+            <td class="promat-jkts-tech">SQL Server Reporting Services (SSRS)</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-layer">Notifications</td>
+            <td class="promat-jkts-tech">SMTP Email (System.Net.Mail)</td>
+          </tr>
+          <tr>
+            <td class="promat-jkts-layer">Architecture</td>
+            <td class="promat-jkts-tech">ASPX → Code-Behind → SP → SQL Server</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .promat-jkts {
+    --promat-jkts-bg: #0a0b0d;
+    --promat-jkts-bg2: #0f1114;
+    --promat-jkts-bg3: #141720;
+    --promat-jkts-surface: #1a1e28;
+    --promat-jkts-surface2: #212636;
+    --promat-jkts-border: #2a2f40;
+    --promat-jkts-border2: #363c50;
+    --promat-jkts-accent: #00e5a0;
+    --promat-jkts-accent2: #00b87a;
+    --promat-jkts-accent-dim: rgba(0, 229, 160, 0.08);
+    --promat-jkts-accent-dim2: rgba(0, 229, 160, 0.15);
+    --promat-jkts-amber: #f59e0b;
+    --promat-jkts-amber-dim: rgba(245, 158, 11, 0.1);
+    --promat-jkts-blue: #60a5fa;
+    --promat-jkts-blue-dim: rgba(96, 165, 250, 0.1);
+    --promat-jkts-red: #f87171;
+    --promat-jkts-text: #e8eaf0;
+    --promat-jkts-text2: #8b92a8;
+    --promat-jkts-text3: #5a6077;
+    --promat-jkts-mono: "JetBrains Mono", monospace;
+    --promat-jkts-display: "Syne", sans-serif;
+    --promat-jkts-radius: 10px;
+    --promat-jkts-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .promat-jkts * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .promat-jkts body {
+    background: var(--promat-jkts-bg);
+    color: var(--promat-jkts-text);
+    font-family: var(--promat-jkts-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .promat-jkts-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--promat-jkts-border);
+  }
+  .promat-jkts-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--promat-jkts-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .promat-jkts-nav-back:hover {
+    color: var(--promat-jkts-accent);
+  }
+  .promat-jkts-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .promat-jkts-nav-dot {
+    color: var(--promat-jkts-border2);
+  }
+  .promat-jkts-nav-title {
+    color: var(--promat-jkts-text3);
+    font-size: 12px;
+  }
+
+  .promat-jkts-hero {
+    margin-bottom: 56px;
+  }
+  .promat-jkts-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .promat-jkts-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .promat-jkts-badge-corporate {
+    background: var(--promat-jkts-blue-dim);
+    color: var(--promat-jkts-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .promat-jkts-badge-client {
+    background: var(--promat-jkts-accent-dim);
+    color: var(--promat-jkts-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .promat-jkts-badge-year {
+    background: var(--promat-jkts-surface);
+    color: var(--promat-jkts-text3);
+    border-color: var(--promat-jkts-border);
+  }
+
+  .promat-jkts-hero-title {
+    font-family: var(--promat-jkts-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .promat-jkts-hero-title span {
+    color: var(--promat-jkts-accent);
+    position: relative;
+  }
+
+  .promat-jkts-hero-desc {
+    color: var(--promat-jkts-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .promat-jkts-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .promat-jkts-stack-pill {
+    background: var(--promat-jkts-surface);
+    border: 1px solid var(--promat-jkts-border);
+    color: var(--promat-jkts-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .promat-jkts-stack-pill:hover {
+    border-color: var(--promat-jkts-accent);
+    color: var(--promat-jkts-accent);
+    background: var(--promat-jkts-accent-dim);
+  }
+
+  .promat-jkts-section {
+    margin-bottom: 52px;
+  }
+  .promat-jkts-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .promat-jkts-section-label-text {
+    font-family: var(--promat-jkts-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--promat-jkts-text3);
+    text-transform: uppercase;
+  }
+  .promat-jkts-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--promat-jkts-border);
+  }
+  .promat-jkts-section-label-num {
+    font-size: 11px;
+    color: var(--promat-jkts-border2);
+  }
+
+  .promat-jkts-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .promat-jkts-metric-card {
+    background: var(--promat-jkts-bg3);
+    border: 1px solid var(--promat-jkts-border);
+    border-radius: var(--promat-jkts-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .promat-jkts-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--promat-jkts-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .promat-jkts-metric-card:hover {
+    border-color: var(--promat-jkts-border2);
+  }
+  .promat-jkts-metric-card:hover::before {
+    opacity: 1;
+  }
+  .promat-jkts-metric-amber .promat-jkts-metric-val {
+    color: var(--promat-jkts-amber);
+  }
+  .promat-jkts-metric-amber::before {
+    background: var(--promat-jkts-amber);
+  }
+
+  .promat-jkts-metric-val {
+    font-family: var(--promat-jkts-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--promat-jkts-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .promat-jkts-metric-label {
+    font-size: 12px;
+    color: var(--promat-jkts-text2);
+    margin-bottom: 3px;
+  }
+  .promat-jkts-metric-sub {
+    font-size: 11px;
+    color: var(--promat-jkts-text3);
+  }
+
+  .promat-jkts-arch-diagram {
+    background: var(--promat-jkts-bg3);
+    border: 1px solid var(--promat-jkts-border);
+    border-radius: var(--promat-jkts-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .promat-jkts-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .promat-jkts-arch-node {
+    background: var(--promat-jkts-surface);
+    border: 1px solid var(--promat-jkts-border2);
+    border-radius: var(--promat-jkts-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .promat-jkts-core {
+    background: var(--promat-jkts-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .promat-jkts-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .promat-jkts-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--promat-jkts-amber-dim);
+    min-width: 110px;
+  }
+  .promat-jkts-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .promat-jkts-arch-node-label {
+    font-family: var(--promat-jkts-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .promat-jkts-arch-node-sub {
+    font-size: 10px;
+    color: var(--promat-jkts-text3);
+    font-family: var(--promat-jkts-mono);
+  }
+
+  .promat-jkts-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--promat-jkts-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .promat-jkts-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--promat-jkts-border),
+      var(--promat-jkts-accent),
+      var(--promat-jkts-border)
+    );
+    position: relative;
+  }
+  .promat-jkts-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--promat-jkts-accent);
+    font-size: 10px;
+  }
+  .promat-jkts-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--promat-jkts-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .promat-jkts-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .promat-jkts-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .promat-jkts-core-step {
+    background: var(--promat-jkts-bg3);
+    border: 1px solid var(--promat-jkts-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--promat-jkts-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .promat-jkts-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--promat-jkts-accent);
+    flex-shrink: 0;
+  }
+
+  .promat-jkts-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .promat-jkts-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .promat-jkts-schema-arrow-label {
+    font-size: 9px;
+    color: var(--promat-jkts-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .promat-jkts-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .promat-jkts-decision-card {
+    background: var(--promat-jkts-bg3);
+    border: 1px solid var(--promat-jkts-border);
+    border-radius: var(--promat-jkts-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .promat-jkts-decision-card:hover {
+    border-color: var(--promat-jkts-border2);
+  }
+
+  .promat-jkts-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .promat-jkts-decision-num {
+    font-family: var(--promat-jkts-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--promat-jkts-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .promat-jkts-decision-title {
+    font-family: var(--promat-jkts-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .promat-jkts-decision-problem {
+    font-size: 12px;
+    color: var(--promat-jkts-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--promat-jkts-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .promat-jkts-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .promat-jkts-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .promat-jkts-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .promat-jkts-decision-chosen {
+    color: var(--promat-jkts-accent);
+  }
+  .promat-jkts-decision-tradeoff {
+    color: var(--promat-jkts-amber);
+  }
+  .promat-jkts-decision-col-text {
+    font-size: 12px;
+    color: var(--promat-jkts-text2);
+    line-height: 1.65;
+  }
+
+  .promat-jkts-decision-code {
+    background: var(--promat-jkts-bg);
+    border-top: 1px solid var(--promat-jkts-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--promat-jkts-text2);
+    overflow-x: auto;
+  }
+  .promat-jkts-decision-code pre {
+    margin: 0;
+    font-family: var(--promat-jkts-mono);
+    line-height: 1.6;
+  }
+  .promat-jkts-token-kw {
+    color: #c792ea;
+  }
+  .promat-jkts-token-fn {
+    color: #82aaff;
+  }
+  .promat-jkts-token-str {
+    color: #c3e88d;
+  }
+  .promat-jkts-token-cm {
+    color: var(--promat-jkts-text3);
+    font-style: italic;
+  }
+  .promat-jkts-token-acc {
+    color: var(--promat-jkts-accent);
+  }
+
+  .promat-jkts-impact-wrapper {
+    background: var(--promat-jkts-bg3);
+    border: 1px solid var(--promat-jkts-border);
+    border-radius: var(--promat-jkts-radius);
+    overflow: hidden;
+  }
+  .promat-jkts-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .promat-jkts-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--promat-jkts-text3);
+    border-bottom: 1px solid var(--promat-jkts-border);
+    font-family: var(--promat-jkts-display);
+    font-weight: 600;
+  }
+  .promat-jkts-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--promat-jkts-border);
+    color: var(--promat-jkts-text2);
+  }
+  .promat-jkts-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .promat-jkts-impact-table tr:hover td {
+    background: var(--promat-jkts-surface);
+  }
+  .promat-jkts-before {
+    color: var(--promat-jkts-red);
+  }
+  .promat-jkts-after {
+    color: var(--promat-jkts-accent);
+  }
+  .promat-jkts-delta {
+    color: var(--promat-jkts-accent);
+    font-weight: 500;
+    font-family: var(--promat-jkts-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .promat-jkts-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .promat-jkts-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .promat-jkts-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--promat-jkts-border);
+  }
+  .promat-jkts-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .promat-jkts-layer {
+    color: var(--promat-jkts-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .promat-jkts-tech {
+    color: var(--promat-jkts-accent);
+    font-family: var(--promat-jkts-mono);
+  }
+  .promat-jkts-stack-table tr:hover td {
+    background: var(--promat-jkts-surface);
+  }
+
+  .promat-jkts-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--promat-jkts-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .promat-jkts-footer-text {
+    font-size: 11px;
+    color: var(--promat-jkts-text3);
+  }
+  .promat-jkts-footer-link {
+    font-size: 11px;
+    color: var(--promat-jkts-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .promat-jkts-footer-link:hover {
+    color: var(--promat-jkts-accent);
+  }
+
+  @keyframes promat-jkts-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .promat-jkts-hero {
+    animation: promat-jkts-fadeUp 0.5s ease both;
+  }
+  .promat-jkts-section:nth-child(2) {
+    animation: promat-jkts-fadeUp 0.5s 0.1s ease both;
+  }
+  .promat-jkts-section:nth-child(3) {
+    animation: promat-jkts-fadeUp 0.5s 0.15s ease both;
+  }
+  .promat-jkts-section:nth-child(4) {
+    animation: promat-jkts-fadeUp 0.5s 0.2s ease both;
+  }
+  .promat-jkts-section:nth-child(5) {
+    animation: promat-jkts-fadeUp 0.5s 0.25s ease both;
+  }
+  .promat-jkts-section:nth-child(6) {
+    animation: promat-jkts-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .promat-jkts-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--promat-jkts-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: promat-jkts-blink 1s step-end infinite;
+  }
+  @keyframes promat-jkts-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .promat-jkts-badge-client { background: var(--promat-jkts-accent-dim); color: var(--promat-jkts-accent); border-color: rgba(0,229,160,0.2); }
+  .promat-jkts-metric-val { font-size: 22px; }
+  .promat-jkts-amber .promat-jkts-metric-val { color: var(--promat-jkts-amber); }
+  .promat-jkts-amber::before { background: var(--promat-jkts-amber); }
+  .promat-jkts-red .promat-jkts-metric-val { color: var(--promat-jkts-red); }
+  .promat-jkts-red::before { background: var(--promat-jkts-red); }
+  .promat-jkts-blue .promat-jkts-metric-val { color: var(--promat-jkts-blue); }
+  .promat-jkts-blue::before { background: var(--promat-jkts-blue); }
+  .promat-jkts-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .promat-jkts-business-line-cards { grid-template-columns: 1fr; } }
+  .promat-jkts-bl-card { background: var(--promat-jkts-bg2); border: 1px solid var(--promat-jkts-border); border-radius: var(--promat-jkts-radius); padding: 16px; }
+  .promat-jkts-bl-card-title { font-family: var(--promat-jkts-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .promat-jkts-bl-card-desc { font-size: 11px; color: var(--promat-jkts-text3); line-height: 1.6; }
+  .promat-jkts-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--promat-jkts-accent-dim); color: var(--promat-jkts-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .promat-jkts-bl-card-tag.promat-jkts-amber-tag { background: var(--promat-jkts-amber-dim); color: var(--promat-jkts-amber); border-color: rgba(245,158,11,0.2); }
+  .promat-jkts-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .promat-jkts-cap-list { grid-template-columns: 1fr; } }
+  .promat-jkts-cap-item { background: var(--promat-jkts-bg3); border: 1px solid var(--promat-jkts-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--promat-jkts-text2); }
+  .promat-jkts-cap-item:hover { border-color: var(--promat-jkts-border2); color: var(--promat-jkts-text); }
+  .promat-jkts-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--promat-jkts-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .promat-jkts-flow-panel { background: var(--promat-jkts-bg2); border: 1px solid var(--promat-jkts-border); border-radius: var(--promat-jkts-radius); padding: 20px; margin-top: 20px; }
+  .promat-jkts-flow-panel-title { font-family: var(--promat-jkts-display); font-size: 12px; font-weight: 600; color: var(--promat-jkts-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .promat-jkts-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .promat-jkts-flow-step { display: flex; align-items: center; gap: 8px; }
+  .promat-jkts-flow-step-box { background: var(--promat-jkts-surface); border: 1px solid var(--promat-jkts-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--promat-jkts-text2); white-space: nowrap; }
+  .promat-jkts-flow-step-box.promat-jkts-accent { border-color: rgba(0,229,160,0.3); color: var(--promat-jkts-accent); }
+  .promat-jkts-flow-step-arr { color: var(--promat-jkts-text3); font-size: 11px; margin: 0 4px; }
+</style>

@@ -1,0 +1,812 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Biogen SAP Integration - Mas Muhammad" description="A focused .NET 5.0 background worker service that automates SAP Business ByDesign OData integration. Runs on a configurable timer (hourly), queries customer quote items missing product descriptions, fetches material master data with pagination, cross-references products to quotes, and patches each quote item with the corresponding long description from the material master.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="biogen">
+
+<header class="biogen-hero">
+    <div class="biogen-hero-meta">
+      <span class="biogen-badge biogen-badge-corporate">Corporate</span><span class="biogen-badge biogen-badge-client">Biogen</span> 
+      <span class="biogen-badge biogen-badge-year">July 2021</span>
+    </div>
+    <h1 class="biogen-hero-title">Biogen SAP Integration<br><span>SAP ByDesign OData Automation Worker</span></h1>
+    <p class="biogen-hero-desc">A focused .NET 5.0 background worker service that automates SAP Business ByDesign OData integration. Runs on a configurable timer (hourly), queries customer quote items missing product descriptions, fetches material master data with pagination, cross-references products to quotes, and patches each quote item with the corresponding long description from the material master.</p>
+    <div class="biogen-stack-pills">
+      <span class="biogen-stack-pill">.NET 5</span><span class="biogen-stack-pill">Worker Service</span><span class="biogen-stack-pill">IHostedService</span><span class="biogen-stack-pill">OData REST</span><span class="biogen-stack-pill">SAP ByDesign</span><span class="biogen-stack-pill">Newtonsoft.Json</span><span class="biogen-stack-pill">Timer Scheduler</span>
+    </div>
+  </header>
+
+  <section class="biogen-section">
+    <div class="biogen-section-label">
+      <span class="biogen-section-label-num">01</span>
+      <span class="biogen-section-label-text">Impact &amp; Metrics</span>
+      <span class="biogen-section-label-line"></span>
+    </div>
+    <div class="biogen-metrics-grid">
+      <div class="biogen-metric-card biogen-amber"><div class="biogen-metric-val">365</div><div class="biogen-metric-label">Lines of Code</div><div class="biogen-metric-sub">C# — 11 source files</div></div>
+      <div class="biogen-metric-card biogen-blue"><div class="biogen-metric-val">1</div><div class="biogen-metric-label">Background Worker</div><div class="biogen-metric-sub">Timer-based, single-concurrency</div></div>
+      <div class="biogen-metric-card biogen-amber"><div class="biogen-metric-val">3</div><div class="biogen-metric-label">OData Endpoints</div><div class="biogen-metric-sub">Quote Items, Materials, PATCH update</div></div>
+      <div class="biogen-metric-card biogen-amber"><div class="biogen-metric-val">2</div><div class="biogen-metric-label">Complexity Rating</div><div class="biogen-metric-sub">Utility/Tool</div></div>
+    </div>
+  </section>
+
+  <section class="biogen-section">
+    <div class="biogen-section-label">
+      <span class="biogen-section-label-num">02</span>
+      <span class="biogen-section-label-text">Architecture</span>
+      <span class="biogen-section-label-line"></span>
+    </div>
+    <div class="biogen-arch-diagram">
+      <div class="biogen-arch-diagram-inner">
+        <div class="biogen-arch-node biogen-db-node">
+          <div class="biogen-arch-node-icon"></div>
+          <div class="biogen-arch-node-label">Timer Trigger</div>
+          <div class="biogen-arch-node-sub">Every 60 min</div>
+        </div>
+        <div class="biogen-arch-arrow"><div class="biogen-arch-arrow-line"></div><div class="biogen-arch-arrow-label">fires</div></div>
+        <div class="biogen-arch-node core">
+          <div class="biogen-arch-node-icon"></div>
+          <div class="biogen-arch-node-label">Worker Service</div>
+          <div class="biogen-arch-node-sub">.NET 5 · IHostedService</div>
+          <div class="biogen-core-stack">
+            <div class="biogen-core-step"><span class="biogen-core-step-dot"></span>Fetch empty quote items (GET)</div>
+            <div class="biogen-core-step"><span class="biogen-core-step-dot biogen-blue"></span>Fetch material master (GET paginated)</div>
+            <div class="biogen-core-step"><span class="biogen-core-step-dot"></span>Cross-reference & PATCH update</div>
+          </div>
+        </div>
+        <div class="biogen-arch-arrow"><div class="biogen-arch-arrow-line"></div><div class="biogen-arch-arrow-label">OData</div></div>
+        <div class="biogen-arch-node"><div class="biogen-arch-node-icon"></div><div class="biogen-arch-node-label">SAP ByDesign</div><div class="biogen-arch-node-sub">wiyasa_customerquote</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="biogen-section">
+    <div class="biogen-section-label">
+      <span class="biogen-section-label-num">03</span>
+      <span class="biogen-section-label-text">Key Capabilities</span>
+      <span class="biogen-section-label-line"></span>
+    </div>
+    <div class="biogen-cap-list">
+      <div class="biogen-cap-item"><span class="biogen-cap-icon"></span>Query quote items with missing ProductDetailDescription_SDK</div>
+      <div class="biogen-cap-item"><span class="biogen-cap-icon"></span>Fetch material master catalog with paginated OData</div>
+      <div class="biogen-cap-item"><span class="biogen-cap-icon"></span>Cross-reference products to quotes by InternalID</div>
+      <div class="biogen-cap-item"><span class="biogen-cap-icon"></span>PATCH each quote item with long description</div>
+      <div class="biogen-cap-item"><span class="biogen-cap-icon"></span>CSRF token handling for SAP PATCH requests</div>
+      <div class="biogen-cap-item"><span class="biogen-cap-icon"></span>Timer-based scheduling with concurrency limiter</div>
+      <div class="biogen-cap-item"><span class="biogen-cap-icon"></span>Structured logging with ILogger</div>
+      <div class="biogen-cap-item"><span class="biogen-cap-icon"></span>IOptions configuration for tenant &amp; interval</div>
+    </div>
+  </section>
+
+  <section class="biogen-section">
+    <div class="biogen-section-label">
+      <span class="biogen-section-label-num">04</span>
+      <span class="biogen-section-label-text">Tech Stack</span>
+      <span class="biogen-section-label-line"></span>
+    </div>
+    <div class="biogen-arch-diagram">
+      <table class="biogen-stack-table">
+        <tr><td class="biogen-layer">Runtime</td><td class="biogen-tech">.NET 5.0, Microsoft.Extensions.Hosting</td></tr>
+        <tr><td class="biogen-layer">Pattern</td><td class="biogen-tech">Background Worker Service, IHostedService, Timer-based scheduling</td></tr>
+        <tr><td class="biogen-layer">SAP Integration</td><td class="biogen-tech">OData REST (GET/PATCH), CSRF token, Basic Auth, Paginated queries</td></tr>
+        <tr><td class="biogen-layer">Serialization</td><td class="biogen-tech">Newtonsoft.Json 13.0</td></tr>
+        <tr><td class="biogen-layer">Configuration</td><td class="biogen-tech">IOptions, appsettings.json (Tenant, SchedulerInterval)</td></tr>
+        <tr><td class="biogen-layer">Concurrency</td><td class="biogen-tech">StateOfJobSession (static counter, max 1 active job)</td></tr>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .biogen {
+    --biogen-bg: #0a0b0d;
+    --biogen-bg2: #0f1114;
+    --biogen-bg3: #141720;
+    --biogen-surface: #1a1e28;
+    --biogen-surface2: #212636;
+    --biogen-border: #2a2f40;
+    --biogen-border2: #363c50;
+    --biogen-accent: #00e5a0;
+    --biogen-accent2: #00b87a;
+    --biogen-accent-dim: rgba(0, 229, 160, 0.08);
+    --biogen-accent-dim2: rgba(0, 229, 160, 0.15);
+    --biogen-amber: #f59e0b;
+    --biogen-amber-dim: rgba(245, 158, 11, 0.1);
+    --biogen-blue: #60a5fa;
+    --biogen-blue-dim: rgba(96, 165, 250, 0.1);
+    --biogen-red: #f87171;
+    --biogen-text: #e8eaf0;
+    --biogen-text2: #8b92a8;
+    --biogen-text3: #5a6077;
+    --biogen-mono: "JetBrains Mono", monospace;
+    --biogen-display: "Syne", sans-serif;
+    --biogen-radius: 10px;
+    --biogen-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .biogen * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .biogen body {
+    background: var(--biogen-bg);
+    color: var(--biogen-text);
+    font-family: var(--biogen-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .biogen-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--biogen-border);
+  }
+  .biogen-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--biogen-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .biogen-nav-back:hover {
+    color: var(--biogen-accent);
+  }
+  .biogen-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .biogen-nav-dot {
+    color: var(--biogen-border2);
+  }
+  .biogen-nav-title {
+    color: var(--biogen-text3);
+    font-size: 12px;
+  }
+
+  .biogen-hero {
+    margin-bottom: 56px;
+  }
+  .biogen-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .biogen-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .biogen-badge-corporate {
+    background: var(--biogen-blue-dim);
+    color: var(--biogen-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .biogen-badge-client {
+    background: var(--biogen-accent-dim);
+    color: var(--biogen-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .biogen-badge-year {
+    background: var(--biogen-surface);
+    color: var(--biogen-text3);
+    border-color: var(--biogen-border);
+  }
+
+  .biogen-hero-title {
+    font-family: var(--biogen-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .biogen-hero-title span {
+    color: var(--biogen-accent);
+    position: relative;
+  }
+
+  .biogen-hero-desc {
+    color: var(--biogen-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .biogen-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .biogen-stack-pill {
+    background: var(--biogen-surface);
+    border: 1px solid var(--biogen-border);
+    color: var(--biogen-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .biogen-stack-pill:hover {
+    border-color: var(--biogen-accent);
+    color: var(--biogen-accent);
+    background: var(--biogen-accent-dim);
+  }
+
+  .biogen-section {
+    margin-bottom: 52px;
+  }
+  .biogen-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .biogen-section-label-text {
+    font-family: var(--biogen-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--biogen-text3);
+    text-transform: uppercase;
+  }
+  .biogen-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--biogen-border);
+  }
+  .biogen-section-label-num {
+    font-size: 11px;
+    color: var(--biogen-border2);
+  }
+
+  .biogen-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .biogen-metric-card {
+    background: var(--biogen-bg3);
+    border: 1px solid var(--biogen-border);
+    border-radius: var(--biogen-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .biogen-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--biogen-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .biogen-metric-card:hover {
+    border-color: var(--biogen-border2);
+  }
+  .biogen-metric-card:hover::before {
+    opacity: 1;
+  }
+  .biogen-metric-amber .biogen-metric-val {
+    color: var(--biogen-amber);
+  }
+  .biogen-metric-amber::before {
+    background: var(--biogen-amber);
+  }
+
+  .biogen-metric-val {
+    font-family: var(--biogen-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--biogen-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .biogen-metric-label {
+    font-size: 12px;
+    color: var(--biogen-text2);
+    margin-bottom: 3px;
+  }
+  .biogen-metric-sub {
+    font-size: 11px;
+    color: var(--biogen-text3);
+  }
+
+  .biogen-arch-diagram {
+    background: var(--biogen-bg3);
+    border: 1px solid var(--biogen-border);
+    border-radius: var(--biogen-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .biogen-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .biogen-arch-node {
+    background: var(--biogen-surface);
+    border: 1px solid var(--biogen-border2);
+    border-radius: var(--biogen-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .biogen-core {
+    background: var(--biogen-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .biogen-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .biogen-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--biogen-amber-dim);
+    min-width: 110px;
+  }
+  .biogen-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .biogen-arch-node-label {
+    font-family: var(--biogen-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .biogen-arch-node-sub {
+    font-size: 10px;
+    color: var(--biogen-text3);
+    font-family: var(--biogen-mono);
+  }
+
+  .biogen-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--biogen-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .biogen-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--biogen-border),
+      var(--biogen-accent),
+      var(--biogen-border)
+    );
+    position: relative;
+  }
+  .biogen-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--biogen-accent);
+    font-size: 10px;
+  }
+  .biogen-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--biogen-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .biogen-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .biogen-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .biogen-core-step {
+    background: var(--biogen-bg3);
+    border: 1px solid var(--biogen-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--biogen-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .biogen-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--biogen-accent);
+    flex-shrink: 0;
+  }
+
+  .biogen-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .biogen-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .biogen-schema-arrow-label {
+    font-size: 9px;
+    color: var(--biogen-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .biogen-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .biogen-decision-card {
+    background: var(--biogen-bg3);
+    border: 1px solid var(--biogen-border);
+    border-radius: var(--biogen-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .biogen-decision-card:hover {
+    border-color: var(--biogen-border2);
+  }
+
+  .biogen-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .biogen-decision-num {
+    font-family: var(--biogen-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--biogen-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .biogen-decision-title {
+    font-family: var(--biogen-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .biogen-decision-problem {
+    font-size: 12px;
+    color: var(--biogen-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--biogen-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .biogen-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .biogen-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .biogen-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .biogen-decision-chosen {
+    color: var(--biogen-accent);
+  }
+  .biogen-decision-tradeoff {
+    color: var(--biogen-amber);
+  }
+  .biogen-decision-col-text {
+    font-size: 12px;
+    color: var(--biogen-text2);
+    line-height: 1.65;
+  }
+
+  .biogen-decision-code {
+    background: var(--biogen-bg);
+    border-top: 1px solid var(--biogen-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--biogen-text2);
+    overflow-x: auto;
+  }
+  .biogen-decision-code pre {
+    margin: 0;
+    font-family: var(--biogen-mono);
+    line-height: 1.6;
+  }
+  .biogen-token-kw {
+    color: #c792ea;
+  }
+  .biogen-token-fn {
+    color: #82aaff;
+  }
+  .biogen-token-str {
+    color: #c3e88d;
+  }
+  .biogen-token-cm {
+    color: var(--biogen-text3);
+    font-style: italic;
+  }
+  .biogen-token-acc {
+    color: var(--biogen-accent);
+  }
+
+  .biogen-impact-wrapper {
+    background: var(--biogen-bg3);
+    border: 1px solid var(--biogen-border);
+    border-radius: var(--biogen-radius);
+    overflow: hidden;
+  }
+  .biogen-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .biogen-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--biogen-text3);
+    border-bottom: 1px solid var(--biogen-border);
+    font-family: var(--biogen-display);
+    font-weight: 600;
+  }
+  .biogen-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--biogen-border);
+    color: var(--biogen-text2);
+  }
+  .biogen-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .biogen-impact-table tr:hover td {
+    background: var(--biogen-surface);
+  }
+  .biogen-before {
+    color: var(--biogen-red);
+  }
+  .biogen-after {
+    color: var(--biogen-accent);
+  }
+  .biogen-delta {
+    color: var(--biogen-accent);
+    font-weight: 500;
+    font-family: var(--biogen-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .biogen-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .biogen-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .biogen-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--biogen-border);
+  }
+  .biogen-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .biogen-layer {
+    color: var(--biogen-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .biogen-tech {
+    color: var(--biogen-accent);
+    font-family: var(--biogen-mono);
+  }
+  .biogen-stack-table tr:hover td {
+    background: var(--biogen-surface);
+  }
+
+  .biogen-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--biogen-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .biogen-footer-text {
+    font-size: 11px;
+    color: var(--biogen-text3);
+  }
+  .biogen-footer-link {
+    font-size: 11px;
+    color: var(--biogen-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .biogen-footer-link:hover {
+    color: var(--biogen-accent);
+  }
+
+  @keyframes biogen-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .biogen-hero {
+    animation: biogen-fadeUp 0.5s ease both;
+  }
+  .biogen-section:nth-child(2) {
+    animation: biogen-fadeUp 0.5s 0.1s ease both;
+  }
+  .biogen-section:nth-child(3) {
+    animation: biogen-fadeUp 0.5s 0.15s ease both;
+  }
+  .biogen-section:nth-child(4) {
+    animation: biogen-fadeUp 0.5s 0.2s ease both;
+  }
+  .biogen-section:nth-child(5) {
+    animation: biogen-fadeUp 0.5s 0.25s ease both;
+  }
+  .biogen-section:nth-child(6) {
+    animation: biogen-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .biogen-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--biogen-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: biogen-blink 1s step-end infinite;
+  }
+  @keyframes biogen-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .biogen-badge-client { background: var(--biogen-accent-dim); color: var(--biogen-accent); border-color: rgba(0,229,160,0.2); }
+  .biogen-metric-val { font-size: 22px; }
+  .biogen-amber .biogen-metric-val { color: var(--biogen-amber); }
+  .biogen-amber::before { background: var(--biogen-amber); }
+  .biogen-red .biogen-metric-val { color: var(--biogen-red); }
+  .biogen-red::before { background: var(--biogen-red); }
+  .biogen-blue .biogen-metric-val { color: var(--biogen-blue); }
+  .biogen-blue::before { background: var(--biogen-blue); }
+  .biogen-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .biogen-business-line-cards { grid-template-columns: 1fr; } }
+  .biogen-bl-card { background: var(--biogen-bg2); border: 1px solid var(--biogen-border); border-radius: var(--biogen-radius); padding: 16px; }
+  .biogen-bl-card-title { font-family: var(--biogen-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .biogen-bl-card-desc { font-size: 11px; color: var(--biogen-text3); line-height: 1.6; }
+  .biogen-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--biogen-accent-dim); color: var(--biogen-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .biogen-bl-card-tag.biogen-amber-tag { background: var(--biogen-amber-dim); color: var(--biogen-amber); border-color: rgba(245,158,11,0.2); }
+  .biogen-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .biogen-cap-list { grid-template-columns: 1fr; } }
+  .biogen-cap-item { background: var(--biogen-bg3); border: 1px solid var(--biogen-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--biogen-text2); }
+  .biogen-cap-item:hover { border-color: var(--biogen-border2); color: var(--biogen-text); }
+  .biogen-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--biogen-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .biogen-flow-panel { background: var(--biogen-bg2); border: 1px solid var(--biogen-border); border-radius: var(--biogen-radius); padding: 20px; margin-top: 20px; }
+  .biogen-flow-panel-title { font-family: var(--biogen-display); font-size: 12px; font-weight: 600; color: var(--biogen-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .biogen-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .biogen-flow-step { display: flex; align-items: center; gap: 8px; }
+  .biogen-flow-step-box { background: var(--biogen-surface); border: 1px solid var(--biogen-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--biogen-text2); white-space: nowrap; }
+  .biogen-flow-step-box.biogen-accent { border-color: rgba(0,229,160,0.3); color: var(--biogen-accent); }
+  .biogen-flow-step-arr { color: var(--biogen-text3); font-size: 11px; margin: 0 4px; }
+</style>

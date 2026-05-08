@@ -1,0 +1,875 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="CXO Report - Mas Muhammad" description="Enterprise KPI orchestration service built with Go. ETL background service that aggregates transactional data from MongoDB into a staging/reporting database, computes Balanced Scorecard (BSC) KPIs for corporate and department dashboards, and serves chart-ready data via REST API.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="cxoreport">
+
+<header class="cxoreport-hero">
+<div class="cxoreport-hero-meta">
+<span class="cxoreport-badge cxoreport-badge-corporate">Corporate</span><span class="cxoreport-badge cxoreport-badge-client">Kano Solution</span> 
+<span class="cxoreport-badge cxoreport-badge-year">February 2026</span>
+</div>
+<h1 class="cxoreport-hero-title">CXO <span>Report</span><span class="cxoreport-cursor"></span></h1>
+<p class="cxoreport-hero-desc">
+Enterprise KPI orchestration service built with Go. ETL background service that aggregates transactional data from MongoDB into a staging/reporting database, computes Balanced Scorecard (BSC) KPIs for corporate and department dashboards, and serves chart-ready data via REST API.
+</p>
+<div class="cxoreport-stack-pills">
+<span class="cxoreport-stack-pill">Go 1.23</span>
+<span class="cxoreport-stack-pill">MongoDB</span>
+<span class="cxoreport-stack-pill">REST API</span>
+<span class="cxoreport-stack-pill">JWT Auth</span>
+<span class="cxoreport-stack-pill">Cron Scheduler</span>
+<span class="cxoreport-stack-pill">Balanced Scorecard</span>
+</div>
+</header>
+
+<section class="cxoreport-section">
+<div class="cxoreport-section-label">
+<span class="cxoreport-section-label-text">Impact</span>
+<div class="cxoreport-section-label-line"></div>
+<span class="cxoreport-section-label-num">01</span>
+</div>
+<div class="cxoreport-metrics-grid">
+<div class="cxoreport-metric-card">
+<div class="cxoreport-metric-val">5,260</div>
+<div class="cxoreport-metric-label">Lines of Code</div>
+<div class="cxoreport-metric-sub">Go across 39 source files</div>
+</div>
+<div class="cxoreport-metric-card">
+<div class="cxoreport-metric-val">19</div>
+<div class="cxoreport-metric-label">API Endpoints</div>
+<div class="cxoreport-metric-sub">RESTful interfaces</div>
+</div>
+<div class="cxoreport-metric-card">
+<div class="cxoreport-metric-val">10</div>
+<div class="cxoreport-metric-label">Complexity Score</div>
+<div class="cxoreport-metric-sub">Based on code analysis</div>
+</div>
+<div class="cxoreport-metric-card">
+<div class="cxoreport-metric-val">Mission Critical</div>
+<div class="cxoreport-metric-label">System Level</div>
+<div class="cxoreport-metric-sub">Impact classification</div>
+</div>
+</div>
+</section>
+
+<section class="cxoreport-section">
+<div class="cxoreport-section-label">
+<span class="cxoreport-section-label-text">Architecture</span>
+<div class="cxoreport-section-label-line"></div>
+<span class="cxoreport-section-label-num">02</span>
+</div>
+<div class="cxoreport-arch-diagram">
+<div class="cxoreport-arch-diagram-inner">
+
+<div class="cxoreport-arch-node cxoreport-source">
+<div class="cxoreport-arch-node-icon"></div>
+<div class="cxoreport-arch-node-label">MongoDB</div>
+<div class="cxoreport-arch-node-sub">Source operational DB</div>
+</div>
+
+<div class="cxoreport-arch-arrow">
+<div class="cxoreport-arch-arrow-line"></div>
+<div class="cxoreport-arch-arrow-label">ETL pipeline</div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+<div class="cxoreport-arch-node core" style="width:220px;">
+<div class="cxoreport-arch-node-label" style="font-size:13px; margin-bottom:10px;">Go REST Service</div>
+<div class="cxoreport-core-stack">
+<div class="cxoreport-core-step"><div class="cxoreport-core-step-dot"></div>HTTP Handler</div>
+<div class="cxoreport-core-step"><div class="cxoreport-core-step-dot"></div>Transformer (ETL)</div>
+<div class="cxoreport-core-step"><div class="cxoreport-core-step-dot" style="background:var(--blue)"></div>Repository Layer</div>
+</div>
+</div>
+<div class="cxoreport-schema-connector" style="margin-top:0;">
+<div class="cxoreport-schema-line-v"></div>
+<div class="cxoreport-arch-node cxoreport-schema-node" style="margin-top:8px; border-color:rgba(245,158,11,0.3);">
+<div class="cxoreport-arch-node-label" style="font-size:11px; color: #f59e0b;"> Cron Scheduler</div>
+<div class="cxoreport-arch-node-sub">Interval / CRON / Manual</div>
+</div>
+</div>
+</div>
+
+<div class="cxoreport-arch-arrow">
+<div class="cxoreport-arch-arrow-line"></div>
+<div class="cxoreport-arch-arrow-label">persist</div>
+</div>
+
+<div class="cxoreport-arch-node cxoreport-output">
+<div class="cxoreport-arch-node-icon"></div>
+<div class="cxoreport-arch-node-label">MongoDB</div>
+<div class="cxoreport-arch-node-sub">Staging / Reporting DB</div>
+</div>
+
+<div class="cxoreport-arch-arrow" style="min-width:40px;">
+<div class="cxoreport-arch-arrow-line" style="width:30px;"></div>
+<div class="cxoreport-arch-arrow-label">serve</div>
+</div>
+
+<div class="cxoreport-arch-node cxoreport-source" style="border-color:rgba(96,165,250,0.3);">
+<div class="cxoreport-arch-node-icon"></div>
+<div class="cxoreport-arch-node-label">Dashboard API</div>
+<div class="cxoreport-arch-node-sub">BSC KPIs · Charts</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="cxoreport-section">
+<div class="cxoreport-section-label">
+<span class="cxoreport-section-label-text">Tech Stack</span>
+<div class="cxoreport-section-label-line"></div>
+<span class="cxoreport-section-label-num">03</span>
+</div>
+<div class="cxoreport-impact-wrapper">
+<table class="cxoreport-stack-table">
+<tbody>
+<tr><td class="cxoreport-layer">Runtime</td><td class="cxoreport-tech">Go 1.23.3 (single binary)</td></tr>
+<tr><td class="cxoreport-layer">Web Framework</td><td class="cxoreport-tech">Kaos (internal Kanosolution HTTP framework)</td></tr>
+<tr><td class="cxoreport-layer">Database</td><td class="cxoreport-tech">MongoDB (mongo-driver v1.17)</td></tr>
+<tr><td class="cxoreport-layer">Authentication</td><td class="cxoreport-tech">JWT (golang-jwt/jwt v5, HS256)</td></tr>
+<tr><td class="cxoreport-layer">Scheduler</td><td class="cxoreport-tech">robfig/cron v3 (6-field CRON + interval support)</td></tr>
+<tr><td class="cxoreport-layer">ORM</td><td class="cxoreport-tech">dbflex (internal Kanosolution data framework)</td></tr>
+<tr><td class="cxoreport-layer">Deployment</td><td class="cxoreport-tech">hd (HTTP deployer, internal Kanoteknologi)</td></tr>
+<tr><td class="cxoreport-layer">Configuration</td><td class="cxoreport-tech">YAML (gopkg.in/yaml.v3)</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="cxoreport-section">
+<div class="cxoreport-section-label">
+<span class="cxoreport-section-label-text">Capabilities</span>
+<div class="cxoreport-section-label-line"></div>
+<div class="cxoreport-section-label-num">04</div>
+</div>
+<div class="cxoreport-impact-wrapper">
+<table class="cxoreport-stack-table">
+<tbody>
+<tr><td class="cxoreport-layer">ETL Pipeline</td><td class="cxoreport-tech">MongoDB aggregation pipeline builder that transforms transactional data (Ledger, Cash, Vendor, Customer, Payroll, Assets) into staging outputs</td></tr>
+<tr><td class="cxoreport-layer">Balanced Scorecard</td><td class="cxoreport-tech">Corporate and department BSC computation with 4 perspectives: Finance, Customer, Internal Process, Growth</td></tr>
+<tr><td class="cxoreport-layer">Job Scheduling</td><td class="cxoreport-tech">Background scheduler with interval, CRON, and manual trigger modes; configurable retention policies</td></tr>
+<tr><td class="cxoreport-layer">REST API</td><td class="cxoreport-tech">19 JWT-protected endpoints for mapping management, settings, scorecards, and dashboard chart data</td></tr>
+<tr><td class="cxoreport-layer">Idempotent Processing</td><td class="cxoreport-tech">Deterministic ID generation via MD5 hashing for safe upsert and batch tracking</td></tr>
+<tr><td class="cxoreport-layer">Dashboard Charts</td><td class="cxoreport-tech">Bar/line chart data formatted for ECharts/Chart.js with results, gaps, and quarterly breakdowns</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .cxoreport {
+    --cxoreport-bg: #0a0b0d;
+    --cxoreport-bg2: #0f1114;
+    --cxoreport-bg3: #141720;
+    --cxoreport-surface: #1a1e28;
+    --cxoreport-surface2: #212636;
+    --cxoreport-border: #2a2f40;
+    --cxoreport-border2: #363c50;
+    --cxoreport-accent: #00e5a0;
+    --cxoreport-accent2: #00b87a;
+    --cxoreport-accent-dim: rgba(0, 229, 160, 0.08);
+    --cxoreport-accent-dim2: rgba(0, 229, 160, 0.15);
+    --cxoreport-amber: #f59e0b;
+    --cxoreport-amber-dim: rgba(245, 158, 11, 0.1);
+    --cxoreport-blue: #60a5fa;
+    --cxoreport-blue-dim: rgba(96, 165, 250, 0.1);
+    --cxoreport-red: #f87171;
+    --cxoreport-text: #e8eaf0;
+    --cxoreport-text2: #8b92a8;
+    --cxoreport-text3: #5a6077;
+    --cxoreport-mono: "JetBrains Mono", monospace;
+    --cxoreport-display: "Syne", sans-serif;
+    --cxoreport-radius: 10px;
+    --cxoreport-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .cxoreport * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cxoreport body {
+    background: var(--cxoreport-bg);
+    color: var(--cxoreport-text);
+    font-family: var(--cxoreport-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .cxoreport-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--cxoreport-border);
+  }
+  .cxoreport-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--cxoreport-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .cxoreport-nav-back:hover {
+    color: var(--cxoreport-accent);
+  }
+  .cxoreport-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .cxoreport-nav-dot {
+    color: var(--cxoreport-border2);
+  }
+  .cxoreport-nav-title {
+    color: var(--cxoreport-text3);
+    font-size: 12px;
+  }
+
+  .cxoreport-hero {
+    margin-bottom: 56px;
+  }
+  .cxoreport-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cxoreport-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .cxoreport-badge-corporate {
+    background: var(--cxoreport-blue-dim);
+    color: var(--cxoreport-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .cxoreport-badge-client {
+    background: var(--cxoreport-accent-dim);
+    color: var(--cxoreport-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .cxoreport-badge-year {
+    background: var(--cxoreport-surface);
+    color: var(--cxoreport-text3);
+    border-color: var(--cxoreport-border);
+  }
+
+  .cxoreport-hero-title {
+    font-family: var(--cxoreport-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .cxoreport-hero-title span {
+    color: var(--cxoreport-accent);
+    position: relative;
+  }
+
+  .cxoreport-hero-desc {
+    color: var(--cxoreport-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .cxoreport-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .cxoreport-stack-pill {
+    background: var(--cxoreport-surface);
+    border: 1px solid var(--cxoreport-border);
+    color: var(--cxoreport-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .cxoreport-stack-pill:hover {
+    border-color: var(--cxoreport-accent);
+    color: var(--cxoreport-accent);
+    background: var(--cxoreport-accent-dim);
+  }
+
+  .cxoreport-section {
+    margin-bottom: 52px;
+  }
+  .cxoreport-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .cxoreport-section-label-text {
+    font-family: var(--cxoreport-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--cxoreport-text3);
+    text-transform: uppercase;
+  }
+  .cxoreport-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--cxoreport-border);
+  }
+  .cxoreport-section-label-num {
+    font-size: 11px;
+    color: var(--cxoreport-border2);
+  }
+
+  .cxoreport-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .cxoreport-metric-card {
+    background: var(--cxoreport-bg3);
+    border: 1px solid var(--cxoreport-border);
+    border-radius: var(--cxoreport-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .cxoreport-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--cxoreport-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .cxoreport-metric-card:hover {
+    border-color: var(--cxoreport-border2);
+  }
+  .cxoreport-metric-card:hover::before {
+    opacity: 1;
+  }
+  .cxoreport-metric-amber .cxoreport-metric-val {
+    color: var(--cxoreport-amber);
+  }
+  .cxoreport-metric-amber::before {
+    background: var(--cxoreport-amber);
+  }
+
+  .cxoreport-metric-val {
+    font-family: var(--cxoreport-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--cxoreport-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .cxoreport-metric-label {
+    font-size: 12px;
+    color: var(--cxoreport-text2);
+    margin-bottom: 3px;
+  }
+  .cxoreport-metric-sub {
+    font-size: 11px;
+    color: var(--cxoreport-text3);
+  }
+
+  .cxoreport-arch-diagram {
+    background: var(--cxoreport-bg3);
+    border: 1px solid var(--cxoreport-border);
+    border-radius: var(--cxoreport-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .cxoreport-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .cxoreport-arch-node {
+    background: var(--cxoreport-surface);
+    border: 1px solid var(--cxoreport-border2);
+    border-radius: var(--cxoreport-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .cxoreport-core {
+    background: var(--cxoreport-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .cxoreport-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .cxoreport-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--cxoreport-amber-dim);
+    min-width: 110px;
+  }
+  .cxoreport-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .cxoreport-arch-node-label {
+    font-family: var(--cxoreport-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .cxoreport-arch-node-sub {
+    font-size: 10px;
+    color: var(--cxoreport-text3);
+    font-family: var(--cxoreport-mono);
+  }
+
+  .cxoreport-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--cxoreport-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .cxoreport-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--cxoreport-border),
+      var(--cxoreport-accent),
+      var(--cxoreport-border)
+    );
+    position: relative;
+  }
+  .cxoreport-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--cxoreport-accent);
+    font-size: 10px;
+  }
+  .cxoreport-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--cxoreport-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .cxoreport-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .cxoreport-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .cxoreport-core-step {
+    background: var(--cxoreport-bg3);
+    border: 1px solid var(--cxoreport-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--cxoreport-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cxoreport-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--cxoreport-accent);
+    flex-shrink: 0;
+  }
+
+  .cxoreport-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .cxoreport-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .cxoreport-schema-arrow-label {
+    font-size: 9px;
+    color: var(--cxoreport-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .cxoreport-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cxoreport-decision-card {
+    background: var(--cxoreport-bg3);
+    border: 1px solid var(--cxoreport-border);
+    border-radius: var(--cxoreport-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .cxoreport-decision-card:hover {
+    border-color: var(--cxoreport-border2);
+  }
+
+  .cxoreport-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .cxoreport-decision-num {
+    font-family: var(--cxoreport-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--cxoreport-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .cxoreport-decision-title {
+    font-family: var(--cxoreport-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .cxoreport-decision-problem {
+    font-size: 12px;
+    color: var(--cxoreport-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--cxoreport-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .cxoreport-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .cxoreport-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .cxoreport-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .cxoreport-decision-chosen {
+    color: var(--cxoreport-accent);
+  }
+  .cxoreport-decision-tradeoff {
+    color: var(--cxoreport-amber);
+  }
+  .cxoreport-decision-col-text {
+    font-size: 12px;
+    color: var(--cxoreport-text2);
+    line-height: 1.65;
+  }
+
+  .cxoreport-decision-code {
+    background: var(--cxoreport-bg);
+    border-top: 1px solid var(--cxoreport-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--cxoreport-text2);
+    overflow-x: auto;
+  }
+  .cxoreport-decision-code pre {
+    margin: 0;
+    font-family: var(--cxoreport-mono);
+    line-height: 1.6;
+  }
+  .cxoreport-token-kw {
+    color: #c792ea;
+  }
+  .cxoreport-token-fn {
+    color: #82aaff;
+  }
+  .cxoreport-token-str {
+    color: #c3e88d;
+  }
+  .cxoreport-token-cm {
+    color: var(--cxoreport-text3);
+    font-style: italic;
+  }
+  .cxoreport-token-acc {
+    color: var(--cxoreport-accent);
+  }
+
+  .cxoreport-impact-wrapper {
+    background: var(--cxoreport-bg3);
+    border: 1px solid var(--cxoreport-border);
+    border-radius: var(--cxoreport-radius);
+    overflow: hidden;
+  }
+  .cxoreport-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .cxoreport-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cxoreport-text3);
+    border-bottom: 1px solid var(--cxoreport-border);
+    font-family: var(--cxoreport-display);
+    font-weight: 600;
+  }
+  .cxoreport-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--cxoreport-border);
+    color: var(--cxoreport-text2);
+  }
+  .cxoreport-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .cxoreport-impact-table tr:hover td {
+    background: var(--cxoreport-surface);
+  }
+  .cxoreport-before {
+    color: var(--cxoreport-red);
+  }
+  .cxoreport-after {
+    color: var(--cxoreport-accent);
+  }
+  .cxoreport-delta {
+    color: var(--cxoreport-accent);
+    font-weight: 500;
+    font-family: var(--cxoreport-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .cxoreport-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .cxoreport-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .cxoreport-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--cxoreport-border);
+  }
+  .cxoreport-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .cxoreport-layer {
+    color: var(--cxoreport-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .cxoreport-tech {
+    color: var(--cxoreport-accent);
+    font-family: var(--cxoreport-mono);
+  }
+  .cxoreport-stack-table tr:hover td {
+    background: var(--cxoreport-surface);
+  }
+
+  .cxoreport-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--cxoreport-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .cxoreport-footer-text {
+    font-size: 11px;
+    color: var(--cxoreport-text3);
+  }
+  .cxoreport-footer-link {
+    font-size: 11px;
+    color: var(--cxoreport-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .cxoreport-footer-link:hover {
+    color: var(--cxoreport-accent);
+  }
+
+  @keyframes cxoreport-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .cxoreport-hero {
+    animation: cxoreport-fadeUp 0.5s ease both;
+  }
+  .cxoreport-section:nth-child(2) {
+    animation: cxoreport-fadeUp 0.5s 0.1s ease both;
+  }
+  .cxoreport-section:nth-child(3) {
+    animation: cxoreport-fadeUp 0.5s 0.15s ease both;
+  }
+  .cxoreport-section:nth-child(4) {
+    animation: cxoreport-fadeUp 0.5s 0.2s ease both;
+  }
+  .cxoreport-section:nth-child(5) {
+    animation: cxoreport-fadeUp 0.5s 0.25s ease both;
+  }
+  .cxoreport-section:nth-child(6) {
+    animation: cxoreport-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .cxoreport-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--cxoreport-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: cxoreport-blink 1s step-end infinite;
+  }
+  @keyframes cxoreport-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .cxoreport-badge-client { background: var(--cxoreport-accent-dim); color: var(--cxoreport-accent); border-color: rgba(0,229,160,0.2); }
+  .cxoreport-metric-val { font-size: 22px; }
+  .cxoreport-amber .cxoreport-metric-val { color: var(--cxoreport-amber); }
+  .cxoreport-amber::before { background: var(--cxoreport-amber); }
+  .cxoreport-red .cxoreport-metric-val { color: var(--cxoreport-red); }
+  .cxoreport-red::before { background: var(--cxoreport-red); }
+  .cxoreport-blue .cxoreport-metric-val { color: var(--cxoreport-blue); }
+  .cxoreport-blue::before { background: var(--cxoreport-blue); }
+  .cxoreport-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .cxoreport-business-line-cards { grid-template-columns: 1fr; } }
+  .cxoreport-bl-card { background: var(--cxoreport-bg2); border: 1px solid var(--cxoreport-border); border-radius: var(--cxoreport-radius); padding: 16px; }
+  .cxoreport-bl-card-title { font-family: var(--cxoreport-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .cxoreport-bl-card-desc { font-size: 11px; color: var(--cxoreport-text3); line-height: 1.6; }
+  .cxoreport-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--cxoreport-accent-dim); color: var(--cxoreport-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .cxoreport-bl-card-tag.cxoreport-amber-tag { background: var(--cxoreport-amber-dim); color: var(--cxoreport-amber); border-color: rgba(245,158,11,0.2); }
+  .cxoreport-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .cxoreport-cap-list { grid-template-columns: 1fr; } }
+  .cxoreport-cap-item { background: var(--cxoreport-bg3); border: 1px solid var(--cxoreport-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--cxoreport-text2); }
+  .cxoreport-cap-item:hover { border-color: var(--cxoreport-border2); color: var(--cxoreport-text); }
+  .cxoreport-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--cxoreport-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .cxoreport-flow-panel { background: var(--cxoreport-bg2); border: 1px solid var(--cxoreport-border); border-radius: var(--cxoreport-radius); padding: 20px; margin-top: 20px; }
+  .cxoreport-flow-panel-title { font-family: var(--cxoreport-display); font-size: 12px; font-weight: 600; color: var(--cxoreport-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .cxoreport-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .cxoreport-flow-step { display: flex; align-items: center; gap: 8px; }
+  .cxoreport-flow-step-box { background: var(--cxoreport-surface); border: 1px solid var(--cxoreport-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--cxoreport-text2); white-space: nowrap; }
+  .cxoreport-flow-step-box.cxoreport-accent { border-color: rgba(0,229,160,0.3); color: var(--cxoreport-accent); }
+  .cxoreport-flow-step-arr { color: var(--cxoreport-text3); font-size: 11px; margin: 0 4px; }
+</style>

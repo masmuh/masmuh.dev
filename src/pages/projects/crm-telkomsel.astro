@@ -1,0 +1,1030 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="CRM Telkomsel - Mas Muhammad" description="An internal employee CRM portal for Telkomsel featuring news and highlights management, employee survey and quiz system, and a full admin backend. Built with classic ASP.NET WebForms 3.5 on .NET Framework backed by SQL Server.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="crm-telkomsel">
+
+<header class="crm-telkomsel-hero">
+    <div class="crm-telkomsel-hero-meta">
+      <span class="crm-telkomsel-badge crm-telkomsel-badge-corporate">Corporate</span><span class="crm-telkomsel-badge crm-telkomsel-badge-client">Telkomsel</span> 
+      <span class="crm-telkomsel-badge crm-telkomsel-badge-year">August 2013</span>
+    </div>
+    <h1 class="crm-telkomsel-hero-title">
+      CRM Telkomsel<br>
+      <span>Internal Portal</span>
+    </h1>
+    <p class="crm-telkomsel-hero-desc">
+      An internal employee CRM portal for Telkomsel featuring news and highlights management,
+      employee survey and quiz system, and a full admin backend. Built with classic ASP.NET
+      WebForms 3.5 on .NET Framework backed by SQL Server.
+    </p>
+    <div class="crm-telkomsel-stack-pills">
+      <span class="crm-telkomsel-stack-pill">ASP.NET WebForms 3.5</span>
+      <span class="crm-telkomsel-stack-pill">C#</span>
+      <span class="crm-telkomsel-stack-pill">SQL Server</span>
+      <span class="crm-telkomsel-stack-pill">jQuery 1.10</span>
+      <span class="crm-telkomsel-stack-pill">Bootstrap 3</span>
+      <span class="crm-telkomsel-stack-pill">Metronic Theme</span>
+    </div>
+  </header>
+
+  <section class="crm-telkomsel-section">
+    <div class="crm-telkomsel-section-label">
+      <span class="crm-telkomsel-section-label-num">01</span>
+      <span class="crm-telkomsel-section-label-text">Impact &amp; Metrics</span>
+      <span class="crm-telkomsel-section-label-line"></span>
+    </div>
+
+    <div class="crm-telkomsel-metrics-grid">
+      <div class="crm-telkomsel-metric-card">
+        <div class="crm-telkomsel-metric-val">7.9K+</div>
+        <div class="crm-telkomsel-metric-label">Lines of Code</div>
+        <div class="crm-telkomsel-metric-sub">C# + ASPX markup</div>
+      </div>
+      <div class="crm-telkomsel-metric-card crm-telkomsel-amber">
+        <div class="crm-telkomsel-metric-val">10K+</div>
+        <div class="crm-telkomsel-metric-label">Employees Served</div>
+        <div class="crm-telkomsel-metric-sub">Telkomsel internal users</div>
+      </div>
+      <div class="crm-telkomsel-metric-card">
+        <div class="crm-telkomsel-metric-val">3</div>
+        <div class="crm-telkomsel-metric-label">Database Tables</div>
+        <div class="crm-telkomsel-metric-sub">CRM_HIGHLIGHT, CRM_SURVEY, CRM_SURVEY_DETAIL</div>
+      </div>
+    </div>
+
+    <div class="crm-telkomsel-impact-wrapper" style="margin-top:20px;">
+      <table class="crm-telkomsel-impact-table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Before</th>
+            <th>After</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="crm-telkomsel-row-label">News Distribution</td>
+            <td class="crm-telkomsel-before">Email blasts, no archive</td>
+            <td class="crm-telkomsel-after">Centralized portal with searchable archive</td>
+            <td class="crm-telkomsel-delta">+ unified</td>
+          </tr>
+          <tr>
+            <td class="crm-telkomsel-row-label">Employee Surveys</td>
+            <td class="crm-telkomsel-before">Paper-based, manual tally</td>
+            <td class="crm-telkomsel-after">Digital quiz system with auto-scoring</td>
+            <td class="crm-telkomsel-delta">+ automated</td>
+          </tr>
+          <tr>
+            <td class="crm-telkomsel-row-label">Admin Workflow</td>
+            <td class="crm-telkomsel-before">No standardized backend</td>
+            <td class="crm-telkomsel-after">Login-protected admin dashboard</td>
+            <td class="crm-telkomsel-delta">+ secured</td>
+          </tr>
+          <tr>
+            <td class="crm-telkomsel-row-label">Leadership Comms</td>
+            <td class="crm-telkomsel-before">Limited reach</td>
+            <td class="crm-telkomsel-after">Direct channel to 10K+ employees</td>
+            <td class="crm-telkomsel-delta">+ scaled</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="crm-telkomsel-section">
+    <div class="crm-telkomsel-section-label">
+      <span class="crm-telkomsel-section-label-num">02</span>
+      <span class="crm-telkomsel-section-label-text">Architecture</span>
+      <span class="crm-telkomsel-section-label-line"></span>
+    </div>
+
+    <div class="crm-telkomsel-arch-diagram">
+      <div class="crm-telkomsel-arch-diagram-inner">
+        <div class="crm-telkomsel-arch-node crm-telkomsel-source">
+          <div class="crm-telkomsel-arch-node-icon"></div>
+          <div class="crm-telkomsel-arch-node-label">ASPX Pages</div>
+          <div class="crm-telkomsel-arch-node-sub">Public + Admin</div>
+        </div>
+        <div class="crm-telkomsel-arch-arrow">
+          <div class="crm-telkomsel-arch-arrow-line"></div>
+          <div class="crm-telkomsel-arch-arrow-label">postback</div>
+        </div>
+        <div class="crm-telkomsel-arch-node core">
+          <div class="crm-telkomsel-arch-node-icon"></div>
+          <div class="crm-telkomsel-arch-node-label">Code-Behind</div>
+          <div class="crm-telkomsel-arch-node-sub">C# .NET 3.5</div>
+          <div class="crm-telkomsel-core-stack">
+            <div class="crm-telkomsel-core-step">
+              <span class="crm-telkomsel-core-step-dot"></span>
+              Page_Load — auth &amp; data binding
+            </div>
+            <div class="crm-telkomsel-core-step">
+              <span class="crm-telkomsel-core-step-dot"></span>
+              Button clicks — CRUD operations
+            </div>
+            <div class="crm-telkomsel-core-step">
+              <span class="crm-telkomsel-core-step-dot"></span>
+              Raw ADO.NET — SqlConnection, SqlCommand
+            </div>
+          </div>
+        </div>
+        <div class="crm-telkomsel-arch-arrow">
+          <div class="crm-telkomsel-arch-arrow-line"></div>
+          <div class="crm-telkomsel-arch-arrow-label">T-SQL</div>
+        </div>
+        <div class="crm-telkomsel-arch-node crm-telkomsel-output">
+          <div class="crm-telkomsel-arch-node-icon"></div>
+          <div class="crm-telkomsel-arch-node-label">SQL Server</div>
+          <div class="crm-telkomsel-arch-node-sub">3 tables</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:center;">
+      <div class="crm-telkomsel-arch-node crm-telkomsel-schema-node">
+        <div class="crm-telkomsel-arch-node-icon"></div>
+        <div class="crm-telkomsel-arch-node-label">CRM_HIGHLIGHT</div>
+        <div class="crm-telkomsel-arch-node-sub">news content</div>
+      </div>
+      <div class="crm-telkomsel-schema-connector">
+        <span class="crm-telkomsel-schema-arrow-label">+</span>
+      </div>
+      <div class="crm-telkomsel-arch-node crm-telkomsel-schema-node">
+        <div class="crm-telkomsel-arch-node-icon"></div>
+        <div class="crm-telkomsel-arch-node-label">CRM_SURVEY</div>
+        <div class="crm-telkomsel-arch-node-sub">quiz master</div>
+      </div>
+      <div class="crm-telkomsel-schema-connector">
+        <span class="crm-telkomsel-schema-arrow-label">+</span>
+      </div>
+      <div class="crm-telkomsel-arch-node crm-telkomsel-schema-node">
+        <div class="crm-telkomsel-arch-node-icon"></div>
+        <div class="crm-telkomsel-arch-node-label">CRM_SURVEY_DETAIL</div>
+        <div class="crm-telkomsel-arch-node-sub">responses</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="crm-telkomsel-section">
+    <div class="crm-telkomsel-section-label">
+      <span class="crm-telkomsel-section-label-num">03</span>
+      <span class="crm-telkomsel-section-label-text">Decision Log</span>
+      <span class="crm-telkomsel-section-label-line"></span>
+    </div>
+
+    <div class="crm-telkomsel-decision-list">
+
+      <div class="crm-telkomsel-decision-card">
+        <div class="crm-telkomsel-decision-header">
+          <span class="crm-telkomsel-decision-num">01</span>
+          <div>
+            <div class="crm-telkomsel-decision-title">Why Classic WebForms Instead of MVC</div>
+            <div class="crm-telkomsel-decision-problem">At the time (2013), the team's expertise was in WebForms and the .NET 3.5 runtime was already deployed on Telkomsel's servers. MVC 4 was available but would have required runtime upgrades and a steeper learning curve for the maintenance team.</div>
+          </div>
+        </div>
+        <div class="crm-telkomsel-decision-body">
+          <div>
+            <div class="crm-telkomsel-decision-col-label crm-telkomsel-chosen"> Chosen — WebForms</div>
+            <div class="crm-telkomsel-decision-col-text">Leveraged existing server infrastructure (IIS 7, .NET 3.5). Team was productive immediately. ViewState handled form state across postbacks with zero additional JavaScript for basic CRUD. Metronic theme provided ready-made WebForms templates.</div>
+          </div>
+          <div>
+            <div class="crm-telkomsel-decision-col-label crm-telkomsel-tradeoff">△ Tradeoff — MVC</div>
+            <div class="crm-telkomsel-decision-col-text">Cleaner separation of concerns, better testability, and lighter page markup. But required .NET 4.0+ runtime, new routing configuration, and retraining the internal maintenance team. Risk of delayed delivery.</div>
+          </div>
+        </div>
+        <div class="crm-telkomsel-decision-code">
+<pre><span class="crm-telkomsel-token-cm">// Code-behind pattern used across all pages</span>
+<span class="crm-telkomsel-token-kw">protected void</span> <span class="crm-telkomsel-token-fn">Page_Load</span>(<span class="crm-telkomsel-token-kw">object</span> sender, EventArgs e)
+&#123;
+    <span class="crm-telkomsel-token-kw">if</span> (!IsPostBack) &#123; <span class="crm-telkomsel-token-fn">BindHighlights</span>(); &#125;
+&#125;
+
+<span class="crm-telkomsel-token-kw">private void</span> <span class="crm-telkomsel-token-fn">BindHighlights</span>()
+&#123;
+    <span class="crm-telkomsel-token-kw">using</span> (<span class="crm-telkomsel-token-kw">var</span> conn = <span class="crm-telkomsel-token-kw">new</span> SqlConnection(<span class="crm-telkomsel-token-str">"..."</span>))
+    &#123;
+        <span class="crm-telkomsel-token-kw">var</span> cmd = <span class="crm-telkomsel-token-kw">new</span> SqlCommand(<span class="crm-telkomsel-token-str">"SELECT * FROM CRM_HIGHLIGHT ORDER BY CREATED_DATE DESC"</span>, conn);
+        conn.Open();
+        rptHighlights.DataSource = cmd.<span class="crm-telkomsel-token-fn">ExecuteReader</span>();
+        rptHighlights.DataBind();
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="crm-telkomsel-decision-card">
+        <div class="crm-telkomsel-decision-header">
+          <span class="crm-telkomsel-decision-num">02</span>
+          <div>
+            <div class="crm-telkomsel-decision-title">Raw ADO.NET vs Entity Framework</div>
+            <div class="crm-telkomsel-decision-problem">EF 4.x was available but considered heavy for a 3-table schema. The project had only three database tables; introducing an ORM felt like over-engineering.</div>
+          </div>
+        </div>
+        <div class="crm-telkomsel-decision-body">
+          <div>
+            <div class="crm-telkomsel-decision-col-label crm-telkomsel-chosen"> Chosen — ADO.NET (raw)</div>
+            <div class="crm-telkomsel-decision-col-text">Direct SqlConnection / SqlCommand calls kept full control over T-SQL. No additional assembly references. Queries were simple and readable. Perfect fit for the small schema size and modest data volume.</div>
+          </div>
+          <div>
+            <div class="crm-telkomsel-decision-col-label crm-telkomsel-tradeoff">△ Tradeoff — EF 4.x</div>
+            <div class="crm-telkomsel-decision-col-text">Would have added abstraction overhead and required .NET 4.0. Mapping three tables through an ORM added complexity without proportional benefit. Risk of generated SQL being suboptimal for the reporting queries.</div>
+          </div>
+        </div>
+        <div class="crm-telkomsel-decision-code">
+<pre><span class="crm-telkomsel-token-cm">// All data access — inline in code-behind</span>
+<span class="crm-telkomsel-token-kw">using</span> (<span class="crm-telkomsel-token-kw">var</span> conn = <span class="crm-telkomsel-token-kw">new</span> SqlConnection(cs))
+<span class="crm-telkomsel-token-kw">using</span> (<span class="crm-telkomsel-token-kw">var</span> cmd = <span class="crm-telkomsel-token-kw">new</span> SqlCommand(<span class="crm-telkomsel-token-str">"INSERT INTO CRM_SURVEY (...) VALUES (...)"</span>, conn))
+&#123;
+    conn.Open();
+    cmd.<span class="crm-telkomsel-token-fn">ExecuteNonQuery</span>();
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="crm-telkomsel-decision-card">
+        <div class="crm-telkomsel-decision-header">
+          <span class="crm-telkomsel-decision-num">03</span>
+          <div>
+            <div class="crm-telkomsel-decision-title">Metronic Admin Theme as UI Foundation</div>
+            <div class="crm-telkomsel-decision-problem">Building a custom admin UI from scratch would have taken weeks. The team needed a professional-looking internal portal that felt modern for its time (2013–2015).</div>
+          </div>
+        </div>
+        <div class="crm-telkomsel-decision-body">
+          <div>
+            <div class="crm-telkomsel-decision-col-label crm-telkomsel-chosen"> Chosen — Metronic Theme</div>
+            <div class="crm-telkomsel-decision-col-text">Provided a polished, responsive admin dashboard out of the box. Included Bootstrap 3, Font Awesome, and jQuery. Reduced UI development time by ~60%. The theme's component library (tables, forms, modals) matched the project's CRUD needs perfectly.</div>
+          </div>
+          <div>
+            <div class="crm-telkomsel-decision-col-label crm-telkomsel-tradeoff">△ Tradeoff — Custom UI</div>
+            <div class="crm-telkomsel-decision-col-text">Full design control and no third-party dependency. However, would have required significant front-end effort from a team primarily focused on back-end development. Risk of inconsistent visual quality.</div>
+          </div>
+        </div>
+        <div class="crm-telkomsel-decision-code">
+<pre><span class="crm-telkomsel-token-cm">&lt;%-- Metronic-based admin layout --%&gt;</span>
+&lt;asp:Content ID=<span class="crm-telkomsel-token-str">"BodyContent"</span> ContentPlaceHolderID=<span class="crm-telkomsel-token-str">"MainContent"</span> runat=<span class="crm-telkomsel-token-str">"server"</span>&gt;
+  &lt;div class=<span class="crm-telkomsel-token-str">"page-content"</span>&gt;
+    &lt;h3 class=<span class="crm-telkomsel-token-str">"page-title"</span>&gt;Manage Highlights&lt;/h3&gt;
+    &lt;div class=<span class="crm-telkomsel-token-str">"portlet box green"</span>&gt;
+      <span class="crm-telkomsel-token-cm">&lt;!-- Metronic portlet framework for CRUD forms --&gt;</span>
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/asp:Content&gt;</pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="crm-telkomsel-section">
+    <div class="crm-telkomsel-section-label">
+      <span class="crm-telkomsel-section-label-num">04</span>
+      <span class="crm-telkomsel-section-label-text">Tech Stack</span>
+      <span class="crm-telkomsel-section-label-line"></span>
+    </div>
+
+    <div class="crm-telkomsel-arch-diagram">
+      <table class="crm-telkomsel-stack-table">
+        <tr>
+          <td class="crm-telkomsel-layer">Frontend</td>
+          <td class="crm-telkomsel-tech">ASPX (WebForms markup), jQuery 1.10, Bootstrap 3, Metronic Theme, Font Awesome</td>
+        </tr>
+        <tr>
+          <td class="crm-telkomsel-layer">Backend</td>
+          <td class="crm-telkomsel-tech">C# 3.0, .NET Framework 3.5, ASP.NET WebForms code-behind</td>
+        </tr>
+        <tr>
+          <td class="crm-telkomsel-layer">Database</td>
+          <td class="crm-telkomsel-tech">SQL Server (T-SQL), raw ADO.NET (SqlConnection, SqlCommand, SqlDataReader)</td>
+        </tr>
+        <tr>
+          <td class="crm-telkomsel-layer">IDE &amp; Tooling</td>
+          <td class="crm-telkomsel-tech">Visual Studio 2012, SQL Server Management Studio</td>
+        </tr>
+        <tr>
+          <td class="crm-telkomsel-layer">Server</td>
+          <td class="crm-telkomsel-tech">IIS 7 on Windows Server, .NET 3.5 runtime</td>
+        </tr>
+        <tr>
+          <td class="crm-telkomsel-layer">Auth</td>
+          <td class="crm-telkomsel-tech">ASP.NET Forms Authentication with custom login page</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .crm-telkomsel {
+    --crm-telkomsel-bg: #0a0b0d;
+    --crm-telkomsel-bg2: #0f1114;
+    --crm-telkomsel-bg3: #141720;
+    --crm-telkomsel-surface: #1a1e28;
+    --crm-telkomsel-surface2: #212636;
+    --crm-telkomsel-border: #2a2f40;
+    --crm-telkomsel-border2: #363c50;
+    --crm-telkomsel-accent: #00e5a0;
+    --crm-telkomsel-accent2: #00b87a;
+    --crm-telkomsel-accent-dim: rgba(0, 229, 160, 0.08);
+    --crm-telkomsel-accent-dim2: rgba(0, 229, 160, 0.15);
+    --crm-telkomsel-amber: #f59e0b;
+    --crm-telkomsel-amber-dim: rgba(245, 158, 11, 0.1);
+    --crm-telkomsel-blue: #60a5fa;
+    --crm-telkomsel-blue-dim: rgba(96, 165, 250, 0.1);
+    --crm-telkomsel-red: #f87171;
+    --crm-telkomsel-text: #e8eaf0;
+    --crm-telkomsel-text2: #8b92a8;
+    --crm-telkomsel-text3: #5a6077;
+    --crm-telkomsel-mono: "JetBrains Mono", monospace;
+    --crm-telkomsel-display: "Syne", sans-serif;
+    --crm-telkomsel-radius: 10px;
+    --crm-telkomsel-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .crm-telkomsel * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .crm-telkomsel body {
+    background: var(--crm-telkomsel-bg);
+    color: var(--crm-telkomsel-text);
+    font-family: var(--crm-telkomsel-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .crm-telkomsel-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--crm-telkomsel-border);
+  }
+  .crm-telkomsel-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--crm-telkomsel-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .crm-telkomsel-nav-back:hover {
+    color: var(--crm-telkomsel-accent);
+  }
+  .crm-telkomsel-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .crm-telkomsel-nav-dot {
+    color: var(--crm-telkomsel-border2);
+  }
+  .crm-telkomsel-nav-title {
+    color: var(--crm-telkomsel-text3);
+    font-size: 12px;
+  }
+
+  .crm-telkomsel-hero {
+    margin-bottom: 56px;
+  }
+  .crm-telkomsel-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .crm-telkomsel-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .crm-telkomsel-badge-corporate {
+    background: var(--crm-telkomsel-blue-dim);
+    color: var(--crm-telkomsel-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .crm-telkomsel-badge-client {
+    background: var(--crm-telkomsel-accent-dim);
+    color: var(--crm-telkomsel-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .crm-telkomsel-badge-year {
+    background: var(--crm-telkomsel-surface);
+    color: var(--crm-telkomsel-text3);
+    border-color: var(--crm-telkomsel-border);
+  }
+
+  .crm-telkomsel-hero-title {
+    font-family: var(--crm-telkomsel-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .crm-telkomsel-hero-title span {
+    color: var(--crm-telkomsel-accent);
+    position: relative;
+  }
+
+  .crm-telkomsel-hero-desc {
+    color: var(--crm-telkomsel-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .crm-telkomsel-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .crm-telkomsel-stack-pill {
+    background: var(--crm-telkomsel-surface);
+    border: 1px solid var(--crm-telkomsel-border);
+    color: var(--crm-telkomsel-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .crm-telkomsel-stack-pill:hover {
+    border-color: var(--crm-telkomsel-accent);
+    color: var(--crm-telkomsel-accent);
+    background: var(--crm-telkomsel-accent-dim);
+  }
+
+  .crm-telkomsel-section {
+    margin-bottom: 52px;
+  }
+  .crm-telkomsel-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .crm-telkomsel-section-label-text {
+    font-family: var(--crm-telkomsel-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--crm-telkomsel-text3);
+    text-transform: uppercase;
+  }
+  .crm-telkomsel-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--crm-telkomsel-border);
+  }
+  .crm-telkomsel-section-label-num {
+    font-size: 11px;
+    color: var(--crm-telkomsel-border2);
+  }
+
+  .crm-telkomsel-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .crm-telkomsel-metric-card {
+    background: var(--crm-telkomsel-bg3);
+    border: 1px solid var(--crm-telkomsel-border);
+    border-radius: var(--crm-telkomsel-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .crm-telkomsel-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--crm-telkomsel-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .crm-telkomsel-metric-card:hover {
+    border-color: var(--crm-telkomsel-border2);
+  }
+  .crm-telkomsel-metric-card:hover::before {
+    opacity: 1;
+  }
+  .crm-telkomsel-metric-amber .crm-telkomsel-metric-val {
+    color: var(--crm-telkomsel-amber);
+  }
+  .crm-telkomsel-metric-amber::before {
+    background: var(--crm-telkomsel-amber);
+  }
+
+  .crm-telkomsel-metric-val {
+    font-family: var(--crm-telkomsel-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--crm-telkomsel-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .crm-telkomsel-metric-label {
+    font-size: 12px;
+    color: var(--crm-telkomsel-text2);
+    margin-bottom: 3px;
+  }
+  .crm-telkomsel-metric-sub {
+    font-size: 11px;
+    color: var(--crm-telkomsel-text3);
+  }
+
+  .crm-telkomsel-arch-diagram {
+    background: var(--crm-telkomsel-bg3);
+    border: 1px solid var(--crm-telkomsel-border);
+    border-radius: var(--crm-telkomsel-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .crm-telkomsel-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .crm-telkomsel-arch-node {
+    background: var(--crm-telkomsel-surface);
+    border: 1px solid var(--crm-telkomsel-border2);
+    border-radius: var(--crm-telkomsel-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .crm-telkomsel-core {
+    background: var(--crm-telkomsel-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .crm-telkomsel-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .crm-telkomsel-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--crm-telkomsel-amber-dim);
+    min-width: 110px;
+  }
+  .crm-telkomsel-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .crm-telkomsel-arch-node-label {
+    font-family: var(--crm-telkomsel-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .crm-telkomsel-arch-node-sub {
+    font-size: 10px;
+    color: var(--crm-telkomsel-text3);
+    font-family: var(--crm-telkomsel-mono);
+  }
+
+  .crm-telkomsel-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--crm-telkomsel-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .crm-telkomsel-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--crm-telkomsel-border),
+      var(--crm-telkomsel-accent),
+      var(--crm-telkomsel-border)
+    );
+    position: relative;
+  }
+  .crm-telkomsel-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--crm-telkomsel-accent);
+    font-size: 10px;
+  }
+  .crm-telkomsel-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--crm-telkomsel-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .crm-telkomsel-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .crm-telkomsel-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .crm-telkomsel-core-step {
+    background: var(--crm-telkomsel-bg3);
+    border: 1px solid var(--crm-telkomsel-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--crm-telkomsel-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .crm-telkomsel-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--crm-telkomsel-accent);
+    flex-shrink: 0;
+  }
+
+  .crm-telkomsel-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .crm-telkomsel-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .crm-telkomsel-schema-arrow-label {
+    font-size: 9px;
+    color: var(--crm-telkomsel-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .crm-telkomsel-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .crm-telkomsel-decision-card {
+    background: var(--crm-telkomsel-bg3);
+    border: 1px solid var(--crm-telkomsel-border);
+    border-radius: var(--crm-telkomsel-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .crm-telkomsel-decision-card:hover {
+    border-color: var(--crm-telkomsel-border2);
+  }
+
+  .crm-telkomsel-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .crm-telkomsel-decision-num {
+    font-family: var(--crm-telkomsel-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--crm-telkomsel-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .crm-telkomsel-decision-title {
+    font-family: var(--crm-telkomsel-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .crm-telkomsel-decision-problem {
+    font-size: 12px;
+    color: var(--crm-telkomsel-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--crm-telkomsel-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .crm-telkomsel-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .crm-telkomsel-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .crm-telkomsel-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .crm-telkomsel-decision-chosen {
+    color: var(--crm-telkomsel-accent);
+  }
+  .crm-telkomsel-decision-tradeoff {
+    color: var(--crm-telkomsel-amber);
+  }
+  .crm-telkomsel-decision-col-text {
+    font-size: 12px;
+    color: var(--crm-telkomsel-text2);
+    line-height: 1.65;
+  }
+
+  .crm-telkomsel-decision-code {
+    background: var(--crm-telkomsel-bg);
+    border-top: 1px solid var(--crm-telkomsel-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--crm-telkomsel-text2);
+    overflow-x: auto;
+  }
+  .crm-telkomsel-decision-code pre {
+    margin: 0;
+    font-family: var(--crm-telkomsel-mono);
+    line-height: 1.6;
+  }
+  .crm-telkomsel-token-kw {
+    color: #c792ea;
+  }
+  .crm-telkomsel-token-fn {
+    color: #82aaff;
+  }
+  .crm-telkomsel-token-str {
+    color: #c3e88d;
+  }
+  .crm-telkomsel-token-cm {
+    color: var(--crm-telkomsel-text3);
+    font-style: italic;
+  }
+  .crm-telkomsel-token-acc {
+    color: var(--crm-telkomsel-accent);
+  }
+
+  .crm-telkomsel-impact-wrapper {
+    background: var(--crm-telkomsel-bg3);
+    border: 1px solid var(--crm-telkomsel-border);
+    border-radius: var(--crm-telkomsel-radius);
+    overflow: hidden;
+  }
+  .crm-telkomsel-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .crm-telkomsel-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--crm-telkomsel-text3);
+    border-bottom: 1px solid var(--crm-telkomsel-border);
+    font-family: var(--crm-telkomsel-display);
+    font-weight: 600;
+  }
+  .crm-telkomsel-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--crm-telkomsel-border);
+    color: var(--crm-telkomsel-text2);
+  }
+  .crm-telkomsel-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .crm-telkomsel-impact-table tr:hover td {
+    background: var(--crm-telkomsel-surface);
+  }
+  .crm-telkomsel-before {
+    color: var(--crm-telkomsel-red);
+  }
+  .crm-telkomsel-after {
+    color: var(--crm-telkomsel-accent);
+  }
+  .crm-telkomsel-delta {
+    color: var(--crm-telkomsel-accent);
+    font-weight: 500;
+    font-family: var(--crm-telkomsel-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .crm-telkomsel-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .crm-telkomsel-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .crm-telkomsel-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--crm-telkomsel-border);
+  }
+  .crm-telkomsel-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .crm-telkomsel-layer {
+    color: var(--crm-telkomsel-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .crm-telkomsel-tech {
+    color: var(--crm-telkomsel-accent);
+    font-family: var(--crm-telkomsel-mono);
+  }
+  .crm-telkomsel-stack-table tr:hover td {
+    background: var(--crm-telkomsel-surface);
+  }
+
+  .crm-telkomsel-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--crm-telkomsel-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .crm-telkomsel-footer-text {
+    font-size: 11px;
+    color: var(--crm-telkomsel-text3);
+  }
+  .crm-telkomsel-footer-link {
+    font-size: 11px;
+    color: var(--crm-telkomsel-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .crm-telkomsel-footer-link:hover {
+    color: var(--crm-telkomsel-accent);
+  }
+
+  @keyframes crm-telkomsel-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .crm-telkomsel-hero {
+    animation: crm-telkomsel-fadeUp 0.5s ease both;
+  }
+  .crm-telkomsel-section:nth-child(2) {
+    animation: crm-telkomsel-fadeUp 0.5s 0.1s ease both;
+  }
+  .crm-telkomsel-section:nth-child(3) {
+    animation: crm-telkomsel-fadeUp 0.5s 0.15s ease both;
+  }
+  .crm-telkomsel-section:nth-child(4) {
+    animation: crm-telkomsel-fadeUp 0.5s 0.2s ease both;
+  }
+  .crm-telkomsel-section:nth-child(5) {
+    animation: crm-telkomsel-fadeUp 0.5s 0.25s ease both;
+  }
+  .crm-telkomsel-section:nth-child(6) {
+    animation: crm-telkomsel-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .crm-telkomsel-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--crm-telkomsel-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: crm-telkomsel-blink 1s step-end infinite;
+  }
+  @keyframes crm-telkomsel-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .crm-telkomsel-badge-client { background: var(--crm-telkomsel-accent-dim); color: var(--crm-telkomsel-accent); border-color: rgba(0,229,160,0.2); }
+  .crm-telkomsel-metric-val { font-size: 22px; }
+  .crm-telkomsel-amber .crm-telkomsel-metric-val { color: var(--crm-telkomsel-amber); }
+  .crm-telkomsel-amber::before { background: var(--crm-telkomsel-amber); }
+  .crm-telkomsel-red .crm-telkomsel-metric-val { color: var(--crm-telkomsel-red); }
+  .crm-telkomsel-red::before { background: var(--crm-telkomsel-red); }
+  .crm-telkomsel-blue .crm-telkomsel-metric-val { color: var(--crm-telkomsel-blue); }
+  .crm-telkomsel-blue::before { background: var(--crm-telkomsel-blue); }
+  .crm-telkomsel-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .crm-telkomsel-business-line-cards { grid-template-columns: 1fr; } }
+  .crm-telkomsel-bl-card { background: var(--crm-telkomsel-bg2); border: 1px solid var(--crm-telkomsel-border); border-radius: var(--crm-telkomsel-radius); padding: 16px; }
+  .crm-telkomsel-bl-card-title { font-family: var(--crm-telkomsel-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .crm-telkomsel-bl-card-desc { font-size: 11px; color: var(--crm-telkomsel-text3); line-height: 1.6; }
+  .crm-telkomsel-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--crm-telkomsel-accent-dim); color: var(--crm-telkomsel-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .crm-telkomsel-bl-card-tag.crm-telkomsel-amber-tag { background: var(--crm-telkomsel-amber-dim); color: var(--crm-telkomsel-amber); border-color: rgba(245,158,11,0.2); }
+  .crm-telkomsel-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .crm-telkomsel-cap-list { grid-template-columns: 1fr; } }
+  .crm-telkomsel-cap-item { background: var(--crm-telkomsel-bg3); border: 1px solid var(--crm-telkomsel-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--crm-telkomsel-text2); }
+  .crm-telkomsel-cap-item:hover { border-color: var(--crm-telkomsel-border2); color: var(--crm-telkomsel-text); }
+  .crm-telkomsel-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--crm-telkomsel-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .crm-telkomsel-flow-panel { background: var(--crm-telkomsel-bg2); border: 1px solid var(--crm-telkomsel-border); border-radius: var(--crm-telkomsel-radius); padding: 20px; margin-top: 20px; }
+  .crm-telkomsel-flow-panel-title { font-family: var(--crm-telkomsel-display); font-size: 12px; font-weight: 600; color: var(--crm-telkomsel-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .crm-telkomsel-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .crm-telkomsel-flow-step { display: flex; align-items: center; gap: 8px; }
+  .crm-telkomsel-flow-step-box { background: var(--crm-telkomsel-surface); border: 1px solid var(--crm-telkomsel-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--crm-telkomsel-text2); white-space: nowrap; }
+  .crm-telkomsel-flow-step-box.crm-telkomsel-accent { border-color: rgba(0,229,160,0.3); color: var(--crm-telkomsel-accent); }
+  .crm-telkomsel-flow-step-arr { color: var(--crm-telkomsel-text3); font-size: 11px; margin: 0 4px; }
+</style>

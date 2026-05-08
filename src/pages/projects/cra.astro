@@ -1,0 +1,1178 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="CRA Lead Automation - Mas Muhammad" description="An enterprise customs declaration reconciliation system for import/export compliance and duty optimization. Processes PIB/PEB declarations, reconciles against SAP ERP data (MB51, FBL1N, FBL3N), validates HS codes, freight costs, and certificates of origin — with automated batch scheduling and Power BI reporting.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="cra">
+
+<header class="cra-hero">
+    <div class="cra-hero-meta">
+      <span class="cra-badge cra-badge-corporate">Corporate</span><span class="cra-badge cra-badge-client">Sampoerna</span> 
+      <span class="cra-badge cra-badge-critical">Mission Critical</span>
+      <span class="cra-badge cra-badge-year">October 2020</span>
+    </div>
+    <h1 class="cra-hero-title">
+      CRA Lead Automation<br>
+      <span>Customs Reconciliation Application</span>
+    </h1>
+    <p class="cra-hero-desc">
+      An enterprise customs declaration reconciliation system for import/export compliance and duty optimization. Processes PIB/PEB declarations, reconciles against SAP ERP data (MB51, FBL1N, FBL3N), validates HS codes, freight costs, and certificates of origin — with automated batch scheduling and Power BI reporting.
+    </p>
+    <div class="cra-stack-pills">
+      <span class="cra-stack-pill">C# .NET 4.5/4.8</span>
+      <span class="cra-stack-pill">ASP.NET MVC 5</span>
+      <span class="cra-stack-pill">Entity Framework 6.4</span>
+      <span class="cra-stack-pill">SQL Server</span>
+      <span class="cra-stack-pill">JavaScript</span>
+      <span class="cra-stack-pill">jQuery DataTables</span>
+      <span class="cra-stack-pill">Kendo UI</span>
+      <span class="cra-stack-pill">Knockout.js</span>
+      <span class="cra-stack-pill">Quartz.NET</span>
+      <span class="cra-stack-pill">SSIS</span>
+      <span class="cra-stack-pill">SimpleInjector</span>
+      <span class="cra-stack-pill">EPPlus</span>
+      <span class="cra-stack-pill">NLog</span>
+    </div>
+  </header>
+
+  <section class="cra-section">
+    <div class="cra-section-label">
+      <span class="cra-section-label-num">01</span>
+      <span class="cra-section-label-text">Impact &amp; Metrics</span>
+      <span class="cra-section-label-line"></span>
+    </div>
+
+    <div class="cra-metrics-grid">
+      <div class="cra-metric-card cra-red">
+        <div class="cra-metric-val">627K+</div>
+        <div class="cra-metric-label">Lines of Code</div>
+        <div class="cra-metric-sub">C# + JS + Razor + SQL</div>
+      </div>
+      <div class="cra-metric-card cra-amber">
+        <div class="cra-metric-val">42</div>
+        <div class="cra-metric-label">MVC Controllers</div>
+        <div class="cra-metric-sub">Site area + Account area</div>
+      </div>
+      <div class="cra-metric-card cra-blue">
+        <div class="cra-metric-val">92+</div>
+        <div class="cra-metric-label">Database Entities</div>
+        <div class="cra-metric-sub">EF Database-First EDMX</div>
+      </div>
+      <div class="cra-metric-card cra-red">
+        <div class="cra-metric-val">10</div>
+        <div class="cra-metric-label">Complexity Rating</div>
+        <div class="cra-metric-sub">Mission Critical — Trade Compliance</div>
+      </div>
+    </div>
+
+    <div class="cra-impact-wrapper" style="margin-top:20px;">
+      <table class="cra-impact-table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Before</th>
+            <th>After</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cra-row-label">Reconciliation</td>
+            <td class="cra-before">Manual Excel comparison, high error rate</td>
+            <td class="cra-after">Automated engine — quantity, HS code, freight, export, COO</td>
+            <td class="cra-delta">+ fully automated</td>
+          </tr>
+          <tr>
+            <td class="cra-row-label">SAP Data Processing</td>
+            <td class="cra-before">SAP team manually extracts and sends CSV</td>
+            <td class="cra-after">Auto-pickup XML/EDI from SAP, Quartz-scheduled parsing</td>
+            <td class="cra-delta">+ zero-touch</td>
+          </tr>
+          <tr>
+            <td class="cra-row-label">Reporting</td>
+            <td class="cra-before">Custom SQL queries, no self-service</td>
+            <td class="cra-after">Power BI integration tables + Excel export + SSRS</td>
+            <td class="cra-delta">+ self-service BI</td>
+          </tr>
+          <tr>
+            <td class="cra-row-label">Compliance</td>
+            <td class="cra-before">Reactive, manual audits</td>
+            <td class="cra-after">Proactive HS code validation, COO/FTA checking</td>
+            <td class="cra-delta">+ audit-ready</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="cra-section">
+    <div class="cra-section-label">
+      <span class="cra-section-label-num">02</span>
+      <span class="cra-section-label-text">Architecture</span>
+      <span class="cra-section-label-line"></span>
+    </div>
+
+    <div class="cra-arch-diagram">
+      <div class="cra-arch-diagram-inner">
+        <div class="cra-arch-node cra-source">
+          <div class="cra-arch-node-icon"></div>
+          <div class="cra-arch-node-label">Browser</div>
+          <div class="cra-arch-node-sub">jQuery + Kendo UI + Knockout</div>
+        </div>
+        <div class="cra-arch-arrow">
+          <div class="cra-arch-arrow-line"></div>
+          <div class="cra-arch-arrow-label">HTTP</div>
+        </div>
+        <div class="cra-arch-node core">
+          <div class="cra-arch-node-icon"></div>
+          <div class="cra-arch-node-label">MVC Web App</div>
+          <div class="cra-arch-node-sub">42 Controllers + SimpleInjector DI</div>
+          <div class="cra-core-stack">
+            <div class="cra-core-step">
+              <span class="cra-core-step-dot"></span>
+              Presentation — Razor Views + AJAX
+            </div>
+            <div class="cra-core-step">
+              <span class="cra-core-step-dot cra-blue"></span>
+              Business Logic — 56 Service Modules
+            </div>
+            <div class="cra-core-step">
+              <span class="cra-core-step-dot cra-amber"></span>
+              Repository + Unit of Work — EF 6.4
+            </div>
+          </div>
+        </div>
+        <div class="cra-arch-arrow">
+          <div class="cra-arch-arrow-line"></div>
+          <div class="cra-arch-arrow-label">queries</div>
+        </div>
+        <div class="cra-arch-node cra-output">
+          <div class="cra-arch-node-icon"></div>
+          <div class="cra-arch-node-label">SQL Server</div>
+          <div class="cra-arch-node-sub">CRA Database — 90+ tables</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center;">
+      <div class="cra-arch-node cra-db-node">
+        <div class="cra-arch-node-icon"></div>
+        <div class="cra-arch-node-label">Quartz Scheduler</div>
+        <div class="cra-arch-node-sub">Windows Services (x2)</div>
+      </div>
+      <div class="cra-arch-arrow" style="min-width:40px;">
+        <div class="cra-arch-arrow-line" style="width:20px;"></div>
+        <div class="cra-arch-arrow-label">EDI</div>
+      </div>
+      <div class="cra-arch-node cra-db-node">
+        <div class="cra-arch-node-icon"></div>
+        <div class="cra-arch-node-label">SAP XML/EDI</div>
+        <div class="cra-arch-node-sub">MB51 · FBL1N · FBL3N · CK5</div>
+      </div>
+      <div class="cra-arch-arrow" style="min-width:40px;">
+        <div class="cra-arch-arrow-line" style="width:20px;"></div>
+        <div class="cra-arch-arrow-label">ETL</div>
+      </div>
+      <div class="cra-arch-node cra-db-node">
+        <div class="cra-arch-node-icon"></div>
+        <div class="cra-arch-node-label">SSIS</div>
+        <div class="cra-arch-node-sub">Data Migration</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cra-section">
+    <div class="cra-section-label">
+      <span class="cra-section-label-num">03</span>
+      <span class="cra-section-label-text">Key Capabilities</span>
+      <span class="cra-section-label-line"></span>
+    </div>
+
+    <div class="cra-cap-list">
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        PIB import declaration management with 70+ filter criteria
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        PEB export declaration processing and tracking
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        Quantity &amp; HS code reconciliation engine
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        Freight value &amp; COO reconciliation with variance analysis
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        SAP ERP integration — MB51, FBL1N, FBL3N, VLO60, CK5
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        Automated batch processing via Quartz.NET scheduler
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        Power BI integration with pre-calculated views
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        Excel/SSRS reporting with EPPlus + ReportViewer
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        Role-based access control with Windows Auth
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        Full audit trail with history logging
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        Shipping &amp; freight invoice management
+      </div>
+      <div class="cra-cap-item">
+        <span class="cra-cap-icon"></span>
+        Iron/steel import permit (PI Besi Baja) quota tracking
+      </div>
+    </div>
+  </section>
+
+  <section class="cra-section">
+    <div class="cra-section-label">
+      <span class="cra-section-label-num">04</span>
+      <span class="cra-section-label-text">Decision Log</span>
+      <span class="cra-section-label-line"></span>
+    </div>
+
+    <div class="cra-decision-list">
+
+      <div class="cra-decision-card">
+        <div class="cra-decision-header">
+          <span class="cra-decision-num">01</span>
+          <div>
+            <div class="cra-decision-title">ASP.NET MVC 5 Over .NET Core</div>
+            <div class="cra-decision-problem">The project started in 2019 when .NET Core 3.x was still maturing. The client infrastructure was Windows Server with IIS-only deployment. The existing enterprise ecosystem (SSIS, SSRS, Windows Services) required full .NET Framework compatibility.</div>
+          </div>
+        </div>
+        <div class="cra-decision-body">
+          <div>
+            <div class="cra-decision-col-label cra-chosen"> Chosen — .NET Framework 4.5/4.8</div>
+            <div class="cra-decision-col-text">MVC 5 provided mature tooling, Windows-native SSIS/SSRS integration, and seamless Windows Service deployment for Quartz scheduler. SimpleInjector DI, EF 6 Database-First, and NLog all had proven production track records on full Framework.</div>
+          </div>
+          <div>
+            <div class="cra-decision-col-label cra-tradeoff">△ Tradeoff — .NET Core 3.x</div>
+            <div class="cra-decision-col-text">Would have enabled cross-platform deployment, better performance, and modern middleware pipeline. However, SSIS/SSRS Windows-only dependency, team expertise in .NET Framework, and IIS infrastructure made migration not cost-effective during the project lifecycle.</div>
+          </div>
+        </div>
+        <div class="cra-decision-code">
+<pre><span class="cra-token-cm">// Global.asax — SimpleInjector DI setup</span>
+<span class="cra-token-kw">protected void</span> <span class="cra-token-fn">Application_Start</span>()
+&#123;
+    <span class="cra-token-fn">ConfigureDI</span>();
+    <span class="cra-token-fn">AreaRegistration</span>.<span class="cra-token-fn">RegisterAllAreas</span>();
+    <span class="cra-token-fn">FilterConfig</span>.<span class="cra-token-fn">RegisterGlobalFilters</span>(GlobalFilters.Filters);
+    <span class="cra-token-fn">RouteConfig</span>.<span class="cra-token-fn">RegisterRoutes</span>(RouteTable.Routes);
+    <span class="cra-token-fn">BundleConfig</span>.<span class="cra-token-fn">RegisterBundles</span>(BundleTable.Bundles);
+&#125;
+
+<span class="cra-token-kw">private void</span> <span class="cra-token-fn">ConfigureDI</span>()
+&#123;
+    <span class="cra-token-kw">var</span> container = <span class="cra-token-kw">new</span> <span class="cra-token-fn">Container</span>();
+    container.<span class="cra-token-fn">Register</span>&lt;IUnitOfWork, UnitOfWork&gt;(Lifestyle.Scoped);
+    container.<span class="cra-token-fn">Register</span>&lt;IPIBService, PIBService&gt;(Lifestyle.Scoped);
+    <span class="cra-token-cm">// 56+ service registrations</span>
+    container.<span class="cra-token-fn">Verify</span>();
+    DependencyResolver.<span class="cra-token-fn">SetResolver</span>(<span class="cra-token-kw">new</span> <span class="cra-token-fn">SimpleInjectorDependencyResolver</span>(container));
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="cra-decision-card">
+        <div class="cra-decision-header">
+          <span class="cra-decision-num">02</span>
+          <div>
+            <div class="cra-decision-title">EF Database-First Over Code-First</div>
+            <div class="cra-decision-problem">The CRA database schema was pre-existing and managed by a separate DBA team. 90+ tables with complex relationships, stored procedures, and views were already in production. Code-First would have required full schema redesign and migration management.</div>
+          </div>
+        </div>
+        <div class="cra-decision-body">
+          <div>
+            <div class="cra-decision-col-label cra-chosen"> Chosen — EF 6 Database-First (EDMX)</div>
+            <div class="cra-decision-col-text">EDMX with T4 templates auto-generated entity classes, complex types, and navigation properties from the existing database. Repository + Unit of Work patterns abstracted data access. SQL views and stored procedures were consumed directly via SqlQuery and SP repositories.</div>
+          </div>
+          <div>
+            <div class="cra-decision-col-label cra-tradeoff">△ Tradeoff — EF Core Code-First</div>
+            <div class="cra-decision-col-text">Code-First would have provided better migration management, LINQ improvements, and reduced EDMX bloat. However, the DBA-controlled schema with regular changes from SAP DBAs meant Database-First was more practical — schema changes were applied externally and EDMX updated to match.</div>
+          </div>
+        </div>
+        <div class="cra-decision-code">
+<pre><span class="cra-token-cm">// Generic repository with Unit of Work</span>
+<span class="cra-token-kw">public class</span> <span class="cra-token-fn">GenericRepository</span>&lt;T&gt; : IGenericRepository&lt;T&gt; <span class="cra-token-kw">where</span> T : <span class="cra-token-kw">class</span>
+&#123;
+    <span class="cra-token-kw">private readonly</span> CRAEntities _context;
+    <span class="cra-token-kw">private readonly</span> DbSet&lt;T&gt; _dbSet;
+
+    <span class="cra-token-kw">public virtual</span> IEnumerable&lt;T&gt; <span class="cra-token-fn">Get</span>(out <span class="cra-token-kw">int</span> total,
+        Expression&lt;Func&lt;T, <span class="cra-token-kw">bool</span>&gt;&gt; filter = <span class="cra-token-kw">null</span>,
+        Func&lt;IQueryable&lt;T&gt;, IOrderedQueryable&lt;T&gt;&gt; orderBy = <span class="cra-token-kw">null</span>,
+        <span class="cra-token-kw">int</span>? page = <span class="cra-token-kw">null</span>, <span class="cra-token-kw">int</span>? pageSize = <span class="cra-token-kw">null</span>)
+    &#123;
+        IQueryable&lt;T&gt; query = _dbSet;
+        <span class="cra-token-cm">// Dynamic filtering, sorting, paging</span>
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="cra-decision-card">
+        <div class="cra-decision-header">
+          <span class="cra-decision-num">03</span>
+          <div>
+            <div class="cra-decision-title">Dual UI Layer — jQuery DataTables + Kendo UI</div>
+            <div class="cra-decision-problem">The application needed both simple data grids for master data (users, rates, configs) and complex interactive grids for reconciliation with inline editing, grouping, export, and real-time updates. A one-size-fits-all UI approach would have been suboptimal.</div>
+          </div>
+        </div>
+        <div class="cra-decision-body">
+          <div>
+            <div class="cra-decision-col-label cra-chosen"> Chosen — DataTables + Kendo UI hybrid</div>
+            <div class="cra-decision-col-text">jQuery DataTables with yadcf filtering provided fast, server-side paged grids for 40+ master data screens. Kendo UI was reserved for the complex reconciliation modules requiring inline editing, hierarchy, export to Excel, and advanced interaction patterns via Knockout.js MVVM binding.</div>
+          </div>
+          <div>
+            <div class="cra-decision-col-label cra-tradeoff">△ Tradeoff — Pure SPA (React/Angular)</div>
+            <div class="cra-decision-col-text">A SPA approach would have provided better UX consistency but required significant retraining of the team and a complete rewrite of the existing ASP.NET team's workflow. The hybrid approach let the team use familiar jQuery for simple screens and Kendo for complex ones.</div>
+          </div>
+        </div>
+        <div class="cra-decision-code">
+<pre><span class="cra-token-cm">// DataTable with yadcf server-side filtering</span>
+$().<span class="cra-token-fn">ready</span>(<span class="cra-token-kw">function</span> () &#123;
+    <span class="cra-token-kw">var</span> table = $(<span class="cra-token-str">'#table'</span>).<span class="cra-token-fn">DataTable</span>(&#123;
+        processing: <span class="cra-token-kw">true</span>,
+        serverSide: <span class="cra-token-kw">true</span>,
+        ajax: &#123; url: <span class="cra-token-str">'@Url.Action("GetData")'</span>, type: <span class="cra-token-str">'POST'</span> &#125;,
+        columns: [<span class="cra-token-cm">/* 15+ column defs */</span>]
+    &#125;);
+    <span class="cra-token-fn">yadcf</span>.<span class="cra-token-fn">init</span>(table, [
+        &#123; column_number: 1, filter_type: <span class="cra-token-str">'text'</span> &#125;,
+        &#123; column_number: 2, filter_type: <span class="cra-token-str">'select'</span>, data: <span class="cra-token-fn">getUniqueValues</span>(<span class="cra-token-str">'AjuNumber'</span>) &#125;
+    ]);
+&#125;);</pre>
+        </div>
+      </div>
+
+      <div class="cra-decision-card">
+        <div class="cra-decision-header">
+          <span class="cra-decision-num">04</span>
+          <div>
+            <div class="cra-decision-title">Quartz.NET Windows Services for Batch Processing</div>
+            <div class="cra-decision-problem">SAP team generated XML/EDI files into network folders on an hourly basis. These files needed to be picked up, parsed, reconciled, and loaded into the CRA database. A manual process would have required full-time headcount and introduced delays.</div>
+          </div>
+        </div>
+        <div class="cra-decision-body">
+          <div>
+            <div class="cra-decision-col-label cra-chosen"> Chosen — Quartz.NET + Windows Service</div>
+            <div class="cra-decision-col-text">Two Windows Services were built — a batch processor (XML/EDI parsing, SAP data loading, reconciliation execution) and a scheduler (Quartz job management with configurable triggers). 23 executor classes handled different SAP transaction types with fail/archive/retry logic.</div>
+          </div>
+          <div>
+            <div class="cra-decision-col-label cra-tradeoff">△ Tradeoff — Hangfire / Azure Functions</div>
+            <div class="cra-decision-col-text">Hangfire would have provided a built-in dashboard and simpler setup, but Quartz was already proven in the organization. Azure Functions required cloud migration. Windows Services integrated naturally with the existing IIS/Windows Server infrastructure.</div>
+          </div>
+        </div>
+        <div class="cra-decision-code">
+<pre><span class="cra-token-cm">// Quartz job for PIB EDI file processing</span>
+<span class="cra-token-kw">public class</span> <span class="cra-token-fn">JobSchedulerPIB</span> : IJob
+&#123;
+    <span class="cra-token-kw">public async</span> Task <span class="cra-token-fn">Execute</span>(IJobExecutionContext context)
+    &#123;
+        <span class="cra-token-kw">var</span> config = <span class="cra-token-fn">GetFileConfig</span>(<span class="cra-token-str">"PIB_EDI"</span>);
+        <span class="cra-token-kw">var</span> files = Directory.<span class="cra-token-fn">GetFiles</span>(config.InputPath, <span class="cra-token-str">"*.xml"</span>);
+
+        <span class="cra-token-kw">foreach</span> (<span class="cra-token-kw">var</span> file <span class="cra-token-kw">in</span> files)
+        &#123;
+            <span class="cra-token-kw">try</span>
+            &#123;
+                <span class="cra-token-kw">var</span> executor = <span class="cra-token-fn">GetExecutor</span>(config.Type);
+                <span class="cra-token-fn">executor</span>.<span class="cra-token-fn">Reader</span>(file);
+                File.<span class="cra-token-fn">Move</span>(file, config.ArchivePath);
+            &#125;
+            <span class="cra-token-kw">catch</span>
+            &#123;
+                File.<span class="cra-token-fn">Move</span>(file, config.ErrorPath);
+            &#125;
+        &#125;
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cra-section">
+    <div class="cra-section-label">
+      <span class="cra-section-label-num">05</span>
+      <span class="cra-section-label-text">Tech Stack</span>
+      <span class="cra-section-label-line"></span>
+    </div>
+
+    <div class="cra-arch-diagram">
+      <table class="cra-stack-table">
+        <tr>
+          <td class="cra-layer">Frontend</td>
+          <td class="cra-tech">Razor Views, jQuery 3.x, DataTables 1.10, Kendo UI, Knockout.js 3.5, Bootstrap 3, SweetAlert2, select2, moment.js</td>
+        </tr>
+        <tr>
+          <td class="cra-layer">Web Framework</td>
+          <td class="cra-tech">ASP.NET MVC 5.2, SimpleInjector 5.0, AutoMapper 7.0</td>
+        </tr>
+        <tr>
+          <td class="cra-layer">Data Access</td>
+          <td class="cra-tech">Entity Framework 6.4 (Database-First), Generic Repository + Unit of Work</td>
+        </tr>
+        <tr>
+          <td class="cra-layer">Database</td>
+          <td class="cra-tech">SQL Server (90+ tables, views, stored procedures, Power BI views)</td>
+        </tr>
+        <tr>
+          <td class="cra-layer">Batch Processing</td>
+          <td class="cra-tech">Quartz.NET 2.6, Windows Services (x2: batch + scheduler), 23 EDI executors</td>
+        </tr>
+        <tr>
+          <td class="cra-layer">Reporting</td>
+          <td class="cra-tech">EPPlus 5.5, SpreadsheetLight, SSRS via ReportViewer, Power BI pre-calc views</td>
+        </tr>
+        <tr>
+          <td class="cra-layer">SAP Integration</td>
+          <td class="cra-tech">XML/EDI file pickup, MB51, FBL1N, FBL3N, FB03, VLO60, CK5, ZAAP_SALES</td>
+        </tr>
+        <tr>
+          <td class="cra-layer">ETL</td>
+          <td class="cra-tech">SQL Server Integration Services (SSIS) for data migration</td>
+        </tr>
+        <tr>
+          <td class="cra-layer">Logging</td>
+          <td class="cra-tech">NLog 4.x, Common.Logging</td>
+        </tr>
+        <tr>
+          <td class="cra-layer">Runtime</td>
+          <td class="cra-tech">.NET Framework 4.5 / 4.8, IIS, Windows Server</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .cra {
+    --cra-bg: #0a0b0d;
+    --cra-bg2: #0f1114;
+    --cra-bg3: #141720;
+    --cra-surface: #1a1e28;
+    --cra-surface2: #212636;
+    --cra-border: #2a2f40;
+    --cra-border2: #363c50;
+    --cra-accent: #00e5a0;
+    --cra-accent2: #00b87a;
+    --cra-accent-dim: rgba(0, 229, 160, 0.08);
+    --cra-accent-dim2: rgba(0, 229, 160, 0.15);
+    --cra-amber: #f59e0b;
+    --cra-amber-dim: rgba(245, 158, 11, 0.1);
+    --cra-blue: #60a5fa;
+    --cra-blue-dim: rgba(96, 165, 250, 0.1);
+    --cra-red: #f87171;
+    --cra-text: #e8eaf0;
+    --cra-text2: #8b92a8;
+    --cra-text3: #5a6077;
+    --cra-mono: "JetBrains Mono", monospace;
+    --cra-display: "Syne", sans-serif;
+    --cra-radius: 10px;
+    --cra-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .cra * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cra body {
+    background: var(--cra-bg);
+    color: var(--cra-text);
+    font-family: var(--cra-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .cra-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--cra-border);
+  }
+  .cra-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--cra-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .cra-nav-back:hover {
+    color: var(--cra-accent);
+  }
+  .cra-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .cra-nav-dot {
+    color: var(--cra-border2);
+  }
+  .cra-nav-title {
+    color: var(--cra-text3);
+    font-size: 12px;
+  }
+
+  .cra-hero {
+    margin-bottom: 56px;
+  }
+  .cra-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cra-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .cra-badge-corporate {
+    background: var(--cra-blue-dim);
+    color: var(--cra-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .cra-badge-client {
+    background: var(--cra-accent-dim);
+    color: var(--cra-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .cra-badge-year {
+    background: var(--cra-surface);
+    color: var(--cra-text3);
+    border-color: var(--cra-border);
+  }
+
+  .cra-hero-title {
+    font-family: var(--cra-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .cra-hero-title span {
+    color: var(--cra-accent);
+    position: relative;
+  }
+
+  .cra-hero-desc {
+    color: var(--cra-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .cra-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .cra-stack-pill {
+    background: var(--cra-surface);
+    border: 1px solid var(--cra-border);
+    color: var(--cra-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .cra-stack-pill:hover {
+    border-color: var(--cra-accent);
+    color: var(--cra-accent);
+    background: var(--cra-accent-dim);
+  }
+
+  .cra-section {
+    margin-bottom: 52px;
+  }
+  .cra-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .cra-section-label-text {
+    font-family: var(--cra-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--cra-text3);
+    text-transform: uppercase;
+  }
+  .cra-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--cra-border);
+  }
+  .cra-section-label-num {
+    font-size: 11px;
+    color: var(--cra-border2);
+  }
+
+  .cra-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .cra-metric-card {
+    background: var(--cra-bg3);
+    border: 1px solid var(--cra-border);
+    border-radius: var(--cra-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .cra-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--cra-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .cra-metric-card:hover {
+    border-color: var(--cra-border2);
+  }
+  .cra-metric-card:hover::before {
+    opacity: 1;
+  }
+  .cra-metric-amber .cra-metric-val {
+    color: var(--cra-amber);
+  }
+  .cra-metric-amber::before {
+    background: var(--cra-amber);
+  }
+
+  .cra-metric-val {
+    font-family: var(--cra-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--cra-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .cra-metric-label {
+    font-size: 12px;
+    color: var(--cra-text2);
+    margin-bottom: 3px;
+  }
+  .cra-metric-sub {
+    font-size: 11px;
+    color: var(--cra-text3);
+  }
+
+  .cra-arch-diagram {
+    background: var(--cra-bg3);
+    border: 1px solid var(--cra-border);
+    border-radius: var(--cra-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .cra-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .cra-arch-node {
+    background: var(--cra-surface);
+    border: 1px solid var(--cra-border2);
+    border-radius: var(--cra-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .cra-core {
+    background: var(--cra-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .cra-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .cra-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--cra-amber-dim);
+    min-width: 110px;
+  }
+  .cra-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .cra-arch-node-label {
+    font-family: var(--cra-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .cra-arch-node-sub {
+    font-size: 10px;
+    color: var(--cra-text3);
+    font-family: var(--cra-mono);
+  }
+
+  .cra-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--cra-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .cra-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--cra-border),
+      var(--cra-accent),
+      var(--cra-border)
+    );
+    position: relative;
+  }
+  .cra-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--cra-accent);
+    font-size: 10px;
+  }
+  .cra-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--cra-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .cra-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .cra-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .cra-core-step {
+    background: var(--cra-bg3);
+    border: 1px solid var(--cra-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--cra-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cra-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--cra-accent);
+    flex-shrink: 0;
+  }
+
+  .cra-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .cra-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .cra-schema-arrow-label {
+    font-size: 9px;
+    color: var(--cra-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .cra-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cra-decision-card {
+    background: var(--cra-bg3);
+    border: 1px solid var(--cra-border);
+    border-radius: var(--cra-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .cra-decision-card:hover {
+    border-color: var(--cra-border2);
+  }
+
+  .cra-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .cra-decision-num {
+    font-family: var(--cra-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--cra-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .cra-decision-title {
+    font-family: var(--cra-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .cra-decision-problem {
+    font-size: 12px;
+    color: var(--cra-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--cra-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .cra-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .cra-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .cra-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .cra-decision-chosen {
+    color: var(--cra-accent);
+  }
+  .cra-decision-tradeoff {
+    color: var(--cra-amber);
+  }
+  .cra-decision-col-text {
+    font-size: 12px;
+    color: var(--cra-text2);
+    line-height: 1.65;
+  }
+
+  .cra-decision-code {
+    background: var(--cra-bg);
+    border-top: 1px solid var(--cra-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--cra-text2);
+    overflow-x: auto;
+  }
+  .cra-decision-code pre {
+    margin: 0;
+    font-family: var(--cra-mono);
+    line-height: 1.6;
+  }
+  .cra-token-kw {
+    color: #c792ea;
+  }
+  .cra-token-fn {
+    color: #82aaff;
+  }
+  .cra-token-str {
+    color: #c3e88d;
+  }
+  .cra-token-cm {
+    color: var(--cra-text3);
+    font-style: italic;
+  }
+  .cra-token-acc {
+    color: var(--cra-accent);
+  }
+
+  .cra-impact-wrapper {
+    background: var(--cra-bg3);
+    border: 1px solid var(--cra-border);
+    border-radius: var(--cra-radius);
+    overflow: hidden;
+  }
+  .cra-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .cra-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cra-text3);
+    border-bottom: 1px solid var(--cra-border);
+    font-family: var(--cra-display);
+    font-weight: 600;
+  }
+  .cra-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--cra-border);
+    color: var(--cra-text2);
+  }
+  .cra-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .cra-impact-table tr:hover td {
+    background: var(--cra-surface);
+  }
+  .cra-before {
+    color: var(--cra-red);
+  }
+  .cra-after {
+    color: var(--cra-accent);
+  }
+  .cra-delta {
+    color: var(--cra-accent);
+    font-weight: 500;
+    font-family: var(--cra-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .cra-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .cra-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .cra-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--cra-border);
+  }
+  .cra-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .cra-layer {
+    color: var(--cra-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .cra-tech {
+    color: var(--cra-accent);
+    font-family: var(--cra-mono);
+  }
+  .cra-stack-table tr:hover td {
+    background: var(--cra-surface);
+  }
+
+  .cra-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--cra-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .cra-footer-text {
+    font-size: 11px;
+    color: var(--cra-text3);
+  }
+  .cra-footer-link {
+    font-size: 11px;
+    color: var(--cra-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .cra-footer-link:hover {
+    color: var(--cra-accent);
+  }
+
+  @keyframes cra-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .cra-hero {
+    animation: cra-fadeUp 0.5s ease both;
+  }
+  .cra-section:nth-child(2) {
+    animation: cra-fadeUp 0.5s 0.1s ease both;
+  }
+  .cra-section:nth-child(3) {
+    animation: cra-fadeUp 0.5s 0.15s ease both;
+  }
+  .cra-section:nth-child(4) {
+    animation: cra-fadeUp 0.5s 0.2s ease both;
+  }
+  .cra-section:nth-child(5) {
+    animation: cra-fadeUp 0.5s 0.25s ease both;
+  }
+  .cra-section:nth-child(6) {
+    animation: cra-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .cra-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--cra-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: cra-blink 1s step-end infinite;
+  }
+  @keyframes cra-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .cra-badge-client { background: var(--cra-accent-dim); color: var(--cra-accent); border-color: rgba(0,229,160,0.2); }
+  .cra-metric-val { font-size: 22px; }
+  .cra-amber .cra-metric-val { color: var(--cra-amber); }
+  .cra-amber::before { background: var(--cra-amber); }
+  .cra-red .cra-metric-val { color: var(--cra-red); }
+  .cra-red::before { background: var(--cra-red); }
+  .cra-blue .cra-metric-val { color: var(--cra-blue); }
+  .cra-blue::before { background: var(--cra-blue); }
+  .cra-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .cra-business-line-cards { grid-template-columns: 1fr; } }
+  .cra-bl-card { background: var(--cra-bg2); border: 1px solid var(--cra-border); border-radius: var(--cra-radius); padding: 16px; }
+  .cra-bl-card-title { font-family: var(--cra-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .cra-bl-card-desc { font-size: 11px; color: var(--cra-text3); line-height: 1.6; }
+  .cra-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--cra-accent-dim); color: var(--cra-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .cra-bl-card-tag.cra-amber-tag { background: var(--cra-amber-dim); color: var(--cra-amber); border-color: rgba(245,158,11,0.2); }
+  .cra-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .cra-cap-list { grid-template-columns: 1fr; } }
+  .cra-cap-item { background: var(--cra-bg3); border: 1px solid var(--cra-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--cra-text2); }
+  .cra-cap-item:hover { border-color: var(--cra-border2); color: var(--cra-text); }
+  .cra-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--cra-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .cra-flow-panel { background: var(--cra-bg2); border: 1px solid var(--cra-border); border-radius: var(--cra-radius); padding: 20px; margin-top: 20px; }
+  .cra-flow-panel-title { font-family: var(--cra-display); font-size: 12px; font-weight: 600; color: var(--cra-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .cra-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .cra-flow-step { display: flex; align-items: center; gap: 8px; }
+  .cra-flow-step-box { background: var(--cra-surface); border: 1px solid var(--cra-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--cra-text2); white-space: nowrap; }
+  .cra-flow-step-box.cra-accent { border-color: rgba(0,229,160,0.3); color: var(--cra-accent); }
+  .cra-flow-step-arr { color: var(--cra-text3); font-size: 11px; margin: 0 4px; }
+</style>

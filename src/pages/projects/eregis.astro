@@ -1,0 +1,829 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="e-Registration System - Mas Muhammad" description="A pharmaceutical product registration and expiration tracking system for Sanofi. The application manages product registration data with SAP integration, expiration date tracking, and automated email reminders. Built with VB.NET ASP.NET WebForms with LDAP authentication, it serves both the Pharma and Pasteur divisions, ensuring timely renewals and regulatory compliance.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="eregis">
+
+<header class="eregis-hero">
+<div class="eregis-hero-meta">
+<span class="eregis-badge eregis-badge-corporate">Corporate</span>
+<span class="eregis-badge eregis-badge-year">2010-2015</span>
+</div>
+<h1 class="eregis-hero-title">e-Registration System</h1>
+<p class="eregis-hero-desc">
+A pharmaceutical product registration and expiration tracking system for Sanofi. The application manages product registration data with SAP integration, expiration date tracking, and automated email reminders. Built with VB.NET ASP.NET WebForms with LDAP authentication.
+</p>
+<div class="eregis-stack-pills">
+<span class="eregis-stack-pill">VB.NET</span>
+<span class="eregis-stack-pill">ASP.NET WebForms</span>
+<span class="eregis-stack-pill">.NET 2.0</span>
+<span class="eregis-stack-pill">SQL Server</span>
+<span class="eregis-stack-pill">ASMX Web Services</span>
+<span class="eregis-stack-pill">LDAP</span>
+<span class="eregis-stack-pill">Intersoft WebUI</span>
+</div>
+</header>
+<section class="eregis-section">
+<div class="eregis-section-label">
+<span class="eregis-section-label-text">Impact</span>
+<div class="eregis-section-label-line"></div>
+<span class="eregis-section-label-num">01</span>
+</div>
+<div class="eregis-metrics-grid">
+<div class="eregis-metric-card"><div class="eregis-metric-val">3,300+</div><div class="eregis-metric-label">Lines of Code</div><div class="eregis-metric-sub">VB.NET + ASPX</div></div>
+<div class="eregis-metric-card"><div class="eregis-metric-val">10+</div><div class="eregis-metric-label">Database Tables</div><div class="eregis-metric-sub">SQL Server</div></div>
+<div class="eregis-metric-card"><div class="eregis-metric-val">2</div><div class="eregis-metric-label">ASMX Services</div><div class="eregis-metric-sub">SAP integration</div></div>
+<div class="eregis-metric-card"><div class="eregis-metric-val">1,000+</div><div class="eregis-metric-label">Products Tracked</div><div class="eregis-metric-sub">Pharma + Pasteur</div></div>
+<div class="eregis-metric-card"><div class="eregis-metric-val">6</div><div class="eregis-metric-label">Reminder Intervals</div><div class="eregis-metric-sub">1d to 12mo</div></div>
+<div class="eregis-metric-card"><div class="eregis-metric-val">2</div><div class="eregis-metric-label">Divisions Served</div><div class="eregis-metric-sub">Pharma &amp; Pasteur</div></div>
+</div>
+</section>
+<section class="eregis-section">
+<div class="eregis-section-label">
+<span class="eregis-section-label-text">Architecture</span>
+<div class="eregis-section-label-line"></div>
+<span class="eregis-section-label-num">02</span>
+</div>
+<div class="eregis-arch-diagram">
+<div class="eregis-arch-diagram-inner">
+<div class="eregis-arch-node eregis-source"><div class="eregis-arch-node-label">ASPX Pages</div><div class="eregis-arch-node-sub">Presentation</div></div>
+<div class="eregis-arch-arrow"><div class="eregis-arch-arrow-line"></div><div class="eregis-arch-arrow-label">postback</div></div>
+<div class="eregis-arch-node eregis-core"><div class="eregis-arch-node-label">Code-Behind</div><div class="eregis-arch-node-sub">VB.NET</div></div>
+<div class="eregis-arch-arrow"><div class="eregis-arch-arrow-line"></div><div class="eregis-arch-arrow-label">SOAP</div></div>
+<div class="eregis-arch-node eregis-core"><div class="eregis-arch-node-label">ASMX Services</div><div class="eregis-arch-node-sub">SAP bridge</div></div>
+<div class="eregis-arch-arrow"><div class="eregis-arch-arrow-line"></div><div class="eregis-arch-arrow-label">T-SQL</div></div>
+<div class="eregis-arch-node eregis-output"><div class="eregis-arch-node-label">SQL Server</div><div class="eregis-arch-node-sub">Stored Procedures</div></div>
+</div>
+</div>
+</section>
+<section class="eregis-section">
+<div class="eregis-section-label">
+<span class="eregis-section-label-text">Tech Stack</span>
+<div class="eregis-section-label-line"></div>
+<span class="eregis-section-label-num">03</span>
+</div>
+<div class="eregis-impact-wrapper">
+<table class="eregis-stack-table">
+<tbody>
+<tr><td class="eregis-layer">Languages</td><td class="eregis-tech">VB.NET, JavaScript, jQuery</td></tr>
+<tr><td class="eregis-layer">Framework</td><td class="eregis-tech">ASP.NET WebForms, .NET 2.0</td></tr>
+<tr><td class="eregis-layer">Backend</td><td class="eregis-tech">ASMX Web Services, Stored Procedures</td></tr>
+<tr><td class="eregis-layer">Database</td><td class="eregis-tech">SQL Server</td></tr>
+<tr><td class="eregis-layer">Auth</td><td class="eregis-tech">LDAP / Active Directory</td></tr>
+<tr><td class="eregis-layer">UI</td><td class="eregis-tech">Intersoft WebUI Controls</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="eregis-section">
+<div class="eregis-section-label">
+<span class="eregis-section-label-text">Capabilities</span>
+<div class="eregis-section-label-line"></div>
+<span class="eregis-section-label-num">04</span>
+</div>
+<div class="eregis-cap-list">
+<div class="eregis-cap-item"><div class="eregis-cap-icon">&#10003;</div><span>Product registration with SAP material codes</span></div>
+<div class="eregis-cap-item"><div class="eregis-cap-icon">&#10003;</div><span>Expiration date tracking and monitoring</span></div>
+<div class="eregis-cap-item"><div class="eregis-cap-icon">&#10003;</div><span>Automated email reminders (1d to 12mo)</span></div>
+<div class="eregis-cap-item"><div class="eregis-cap-icon">&#10003;</div><span>SAP material master code integration</span></div>
+<div class="eregis-cap-item"><div class="eregis-cap-icon">&#10003;</div><span>LDAP / Active Directory authentication</span></div>
+<div class="eregis-cap-item"><div class="eregis-cap-icon">&#10003;</div><span>Document upload and download management</span></div>
+<div class="eregis-cap-item"><div class="eregis-cap-icon">&#10003;</div><span>Module-level CRUD user authorization</span></div>
+</div>
+</section>
+<section class="eregis-section">
+<div class="eregis-section-label">
+<span class="eregis-section-label-text">Decision Log</span>
+<div class="eregis-section-label-line"></div>
+<span class="eregis-section-label-num">05</span>
+</div>
+<div class="eregis-decision-list">
+<div class="eregis-decision-card">
+<div class="eregis-decision-header"><span class="eregis-decision-num">01</span><div><div class="eregis-decision-title">VB.NET over C#</div><div class="eregis-decision-problem">Team proficiency and existing codebase alignment; Sanofi's internal standards favoured VB.NET.</div></div></div>
+<div class="eregis-decision-body"><div><div class="eregis-decision-col-label eregis-chosen">&#10003; Chosen</div><div class="eregis-decision-col-text">VB.NET aligned with team expertise and Sanofi's enterprise standards for legacy .NET apps.</div></div><div><div class="eregis-decision-col-label eregis-tradeoff">&#9651; Trade-off</div><div class="eregis-decision-col-text">C# would have provided access to a larger developer pool and modern language features.</div></div></div>
+</div>
+<div class="eregis-decision-card">
+<div class="eregis-decision-header"><span class="eregis-decision-num">02</span><div><div class="eregis-decision-title">ASP.NET WebForms over MVC</div><div class="eregis-decision-problem">Project built on .NET 2.0 in an era where MVC was still maturing.</div></div></div>
+<div class="eregis-decision-body"><div><div class="eregis-decision-col-label eregis-chosen">&#10003; Chosen</div><div class="eregis-decision-col-text">WebForms provided rapid RAD development with server controls for data-heavy forms.</div></div><div><div class="eregis-decision-col-label eregis-tradeoff">&#9651; Trade-off</div><div class="eregis-decision-col-text">MVC would have offered cleaner separation of concerns and better testability.</div></div></div>
+</div>
+<div class="eregis-decision-card">
+<div class="eregis-decision-header"><span class="eregis-decision-num">03</span><div><div class="eregis-decision-title">Stored Procedures over ORM</div><div class="eregis-decision-problem">Complex queries required centralized, DBA-managed data access.</div></div></div>
+<div class="eregis-decision-body"><div><div class="eregis-decision-col-label eregis-chosen">&#10003; Chosen</div><div class="eregis-decision-col-text">All data access through SQL Server stored procedures for performance and security.</div></div><div><div class="eregis-decision-col-label eregis-tradeoff">&#9651; Trade-off</div><div class="eregis-decision-col-text">ORM would have reduced boilerplate but lacked DBA control over query optimization.</div></div></div>
+</div>
+<div class="eregis-decision-card">
+<div class="eregis-decision-header"><span class="eregis-decision-num">04</span><div><div class="eregis-decision-title">LDAP / AD Authentication</div><div class="eregis-decision-problem">Zero sign-on friction needed for Sanofi employees.</div></div></div>
+<div class="eregis-decision-body"><div><div class="eregis-decision-col-label eregis-chosen">&#10003; Chosen</div><div class="eregis-decision-col-text">LDAP integration eliminated separate user store and provided seamless SSO.</div></div><div><div class="eregis-decision-col-label eregis-tradeoff">&#9651; Trade-off</div><div class="eregis-decision-col-text">Forms auth would have supported external users but added credential management overhead.</div></div></div>
+</div>
+</div>
+</section>
+<section class="eregis-section">
+<div class="eregis-section-label">
+<span class="eregis-section-label-text">Business Impact</span>
+<div class="eregis-section-label-line"></div>
+<span class="eregis-section-label-num">06</span>
+</div>
+<div class="eregis-impact-wrapper">
+<table class="eregis-impact-table">
+<thead><tr><th>Area</th><th>Before</th><th>After</th><th></th></tr></thead>
+<tbody>
+<tr><td class="eregis-row-label">Product Registration Tracking</td><td class="eregis-before">Manual spreadsheets</td><td class="eregis-after">Automated system</td><td class="eregis-delta">1,000+ tracked</td></tr>
+<tr><td class="eregis-row-label">Compliance Risk</td><td class="eregis-before">Manual monitoring</td><td class="eregis-after">Automated reminders</td><td class="eregis-delta">Reduced risk</td></tr>
+<tr><td class="eregis-row-label">SAP Integration</td><td class="eregis-before">Manual entry</td><td class="eregis-after">ASMX bridge</td><td class="eregis-delta">Auto sync</td></tr>
+<tr><td class="eregis-row-label">Division Coverage</td><td class="eregis-before">Pharma only</td><td class="eregis-after">Pharma + Pasteur</td><td class="eregis-delta">2x coverage</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .eregis {
+    --eregis-bg: #0a0b0d;
+    --eregis-bg2: #0f1114;
+    --eregis-bg3: #141720;
+    --eregis-surface: #1a1e28;
+    --eregis-surface2: #212636;
+    --eregis-border: #2a2f40;
+    --eregis-border2: #363c50;
+    --eregis-accent: #00e5a0;
+    --eregis-accent2: #00b87a;
+    --eregis-accent-dim: rgba(0, 229, 160, 0.08);
+    --eregis-accent-dim2: rgba(0, 229, 160, 0.15);
+    --eregis-amber: #f59e0b;
+    --eregis-amber-dim: rgba(245, 158, 11, 0.1);
+    --eregis-blue: #60a5fa;
+    --eregis-blue-dim: rgba(96, 165, 250, 0.1);
+    --eregis-red: #f87171;
+    --eregis-text: #e8eaf0;
+    --eregis-text2: #8b92a8;
+    --eregis-text3: #5a6077;
+    --eregis-mono: "JetBrains Mono", monospace;
+    --eregis-display: "Syne", sans-serif;
+    --eregis-radius: 10px;
+    --eregis-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .eregis * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .eregis body {
+    background: var(--eregis-bg);
+    color: var(--eregis-text);
+    font-family: var(--eregis-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .eregis-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--eregis-border);
+  }
+  .eregis-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--eregis-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .eregis-nav-back:hover {
+    color: var(--eregis-accent);
+  }
+  .eregis-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .eregis-nav-dot {
+    color: var(--eregis-border2);
+  }
+  .eregis-nav-title {
+    color: var(--eregis-text3);
+    font-size: 12px;
+  }
+
+  .eregis-hero {
+    margin-bottom: 56px;
+  }
+  .eregis-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .eregis-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .eregis-badge-corporate {
+    background: var(--eregis-blue-dim);
+    color: var(--eregis-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .eregis-badge-client {
+    background: var(--eregis-accent-dim);
+    color: var(--eregis-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .eregis-badge-year {
+    background: var(--eregis-surface);
+    color: var(--eregis-text3);
+    border-color: var(--eregis-border);
+  }
+
+  .eregis-hero-title {
+    font-family: var(--eregis-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .eregis-hero-title span {
+    color: var(--eregis-accent);
+    position: relative;
+  }
+
+  .eregis-hero-desc {
+    color: var(--eregis-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .eregis-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .eregis-stack-pill {
+    background: var(--eregis-surface);
+    border: 1px solid var(--eregis-border);
+    color: var(--eregis-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .eregis-stack-pill:hover {
+    border-color: var(--eregis-accent);
+    color: var(--eregis-accent);
+    background: var(--eregis-accent-dim);
+  }
+
+  .eregis-section {
+    margin-bottom: 52px;
+  }
+  .eregis-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .eregis-section-label-text {
+    font-family: var(--eregis-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--eregis-text3);
+    text-transform: uppercase;
+  }
+  .eregis-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--eregis-border);
+  }
+  .eregis-section-label-num {
+    font-size: 11px;
+    color: var(--eregis-border2);
+  }
+
+  .eregis-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .eregis-metric-card {
+    background: var(--eregis-bg3);
+    border: 1px solid var(--eregis-border);
+    border-radius: var(--eregis-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .eregis-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--eregis-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .eregis-metric-card:hover {
+    border-color: var(--eregis-border2);
+  }
+  .eregis-metric-card:hover::before {
+    opacity: 1;
+  }
+  .eregis-metric-amber .eregis-metric-val {
+    color: var(--eregis-amber);
+  }
+  .eregis-metric-amber::before {
+    background: var(--eregis-amber);
+  }
+
+  .eregis-metric-val {
+    font-family: var(--eregis-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--eregis-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .eregis-metric-label {
+    font-size: 12px;
+    color: var(--eregis-text2);
+    margin-bottom: 3px;
+  }
+  .eregis-metric-sub {
+    font-size: 11px;
+    color: var(--eregis-text3);
+  }
+
+  .eregis-arch-diagram {
+    background: var(--eregis-bg3);
+    border: 1px solid var(--eregis-border);
+    border-radius: var(--eregis-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .eregis-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .eregis-arch-node {
+    background: var(--eregis-surface);
+    border: 1px solid var(--eregis-border2);
+    border-radius: var(--eregis-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .eregis-arch-core {
+    background: var(--eregis-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .eregis-arch-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .eregis-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--eregis-amber-dim);
+    min-width: 110px;
+  }
+  .eregis-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .eregis-arch-node-label {
+    font-family: var(--eregis-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .eregis-arch-node-sub {
+    font-size: 10px;
+    color: var(--eregis-text3);
+    font-family: var(--eregis-mono);
+  }
+
+  .eregis-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--eregis-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .eregis-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--eregis-border),
+      var(--eregis-accent),
+      var(--eregis-border)
+    );
+    position: relative;
+  }
+  .eregis-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--eregis-accent);
+    font-size: 10px;
+  }
+  .eregis-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--eregis-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .eregis-arch-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .eregis-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .eregis-core-step {
+    background: var(--eregis-bg3);
+    border: 1px solid var(--eregis-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--eregis-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eregis-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--eregis-accent);
+    flex-shrink: 0;
+  }
+
+  .eregis-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .eregis-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .eregis-schema-arrow-label {
+    font-size: 9px;
+    color: var(--eregis-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .eregis-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .eregis-decision-card {
+    background: var(--eregis-bg3);
+    border: 1px solid var(--eregis-border);
+    border-radius: var(--eregis-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .eregis-decision-card:hover {
+    border-color: var(--eregis-border2);
+  }
+
+  .eregis-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .eregis-decision-num {
+    font-family: var(--eregis-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--eregis-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .eregis-decision-title {
+    font-family: var(--eregis-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .eregis-decision-problem {
+    font-size: 12px;
+    color: var(--eregis-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--eregis-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .eregis-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .eregis-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .eregis-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .eregis-decision-chosen {
+    color: var(--eregis-accent);
+  }
+  .eregis-decision-tradeoff {
+    color: var(--eregis-amber);
+  }
+  .eregis-decision-col-text {
+    font-size: 12px;
+    color: var(--eregis-text2);
+    line-height: 1.65;
+  }
+
+  .eregis-decision-code {
+    background: var(--eregis-bg);
+    border-top: 1px solid var(--eregis-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--eregis-text2);
+    overflow-x: auto;
+  }
+  .eregis-decision-code pre {
+    margin: 0;
+    font-family: var(--eregis-mono);
+    line-height: 1.6;
+  }
+  .eregis-token-kw {
+    color: #c792ea;
+  }
+  .eregis-token-fn {
+    color: #82aaff;
+  }
+  .eregis-token-str {
+    color: #c3e88d;
+  }
+  .eregis-token-cm {
+    color: var(--eregis-text3);
+    font-style: italic;
+  }
+  .eregis-token-acc {
+    color: var(--eregis-accent);
+  }
+
+  .eregis-impact-wrapper {
+    background: var(--eregis-bg3);
+    border: 1px solid var(--eregis-border);
+    border-radius: var(--eregis-radius);
+    overflow: hidden;
+  }
+  .eregis-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .eregis-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--eregis-text3);
+    border-bottom: 1px solid var(--eregis-border);
+    font-family: var(--eregis-display);
+    font-weight: 600;
+  }
+  .eregis-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--eregis-border);
+    color: var(--eregis-text2);
+  }
+  .eregis-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .eregis-impact-table tr:hover td {
+    background: var(--eregis-surface);
+  }
+  .eregis-before {
+    color: var(--eregis-red);
+  }
+  .eregis-after {
+    color: var(--eregis-accent);
+  }
+  .eregis-delta {
+    color: var(--eregis-accent);
+    font-weight: 500;
+    font-family: var(--eregis-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .eregis-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .eregis-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .eregis-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--eregis-border);
+  }
+  .eregis-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .eregis-layer {
+    color: var(--eregis-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .eregis-tech {
+    color: var(--eregis-accent);
+    font-family: var(--eregis-mono);
+  }
+  .eregis-stack-table tr:hover td {
+    background: var(--eregis-surface);
+  }
+
+  .eregis-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--eregis-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .eregis-footer-text {
+    font-size: 11px;
+    color: var(--eregis-text3);
+  }
+  .eregis-footer-link {
+    font-size: 11px;
+    color: var(--eregis-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .eregis-footer-link:hover {
+    color: var(--eregis-accent);
+  }
+
+  @keyframes eregis-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .eregis-hero {
+    animation: eregis-fadeUp 0.5s ease both;
+  }
+  .eregis-section:nth-child(2) {
+    animation: eregis-fadeUp 0.5s 0.1s ease both;
+  }
+  .eregis-section:nth-child(3) {
+    animation: eregis-fadeUp 0.5s 0.15s ease both;
+  }
+  .eregis-section:nth-child(4) {
+    animation: eregis-fadeUp 0.5s 0.2s ease both;
+  }
+  .eregis-section:nth-child(5) {
+    animation: eregis-fadeUp 0.5s 0.25s ease both;
+  }
+  .eregis-section:nth-child(6) {
+    animation: eregis-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .eregis-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--eregis-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: eregis-blink 1s step-end infinite;
+  }
+  @keyframes eregis-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .eregis-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 540px) { .eregis-cap-list { grid-template-columns: 1fr; } }
+  .eregis-cap-item { background: var(--eregis-bg3); border: 1px solid var(--eregis-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--eregis-text2); }
+  .eregis-cap-item:hover { border-color: var(--eregis-border2); color: var(--eregis-text); }
+  .eregis-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--eregis-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+</style>

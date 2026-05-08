@@ -1,0 +1,928 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="DRMS — SAP Middleware - Mas Muhammad" description="An enterprise SAP Business ByDesign integration middleware comprising two components: a REST API gateway that exposes SAP ERP functions (sales orders, credit notes, returns, stock transfers) as JSON endpoints for external applications, and a background scheduler that periodically extracts SAP master/transactional data to CSV files for a third-party B2B analytics gateway.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="bsci">
+
+<header class="bsci-hero">
+    <div class="bsci-hero-meta">
+      <span class="bsci-badge bsci-badge-corporate">Corporate</span><span class="bsci-badge bsci-badge-client">Boston Scientific</span> 
+      <span class="bsci-badge bsci-badge-year">June 2021</span>
+    </div>
+    <h1 class="bsci-hero-title">DRMS<br><span>Distributor Relationship &amp; SAP Integration Platform</span></h1>
+    <p class="bsci-hero-desc">An enterprise SAP Business ByDesign integration middleware comprising two components: a REST API gateway that exposes SAP ERP functions (sales orders, credit notes, returns, stock transfers) as JSON endpoints for external applications, and a background scheduler that periodically extracts SAP master/transactional data to CSV files for a third-party B2B analytics gateway.</p>
+    <div class="bsci-stack-pills">
+      <span class="bsci-stack-pill">.NET 5</span><span class="bsci-stack-pill">ASP.NET Core</span><span class="bsci-stack-pill">Web API</span><span class="bsci-stack-pill">SOAP/WCF</span><span class="bsci-stack-pill">OData</span><span class="bsci-stack-pill">Redis</span><span class="bsci-stack-pill">CsvHelper</span><span class="bsci-stack-pill">Swagger</span><span class="bsci-stack-pill">MailKit</span><span class="bsci-stack-pill">Worker Service</span>
+    </div>
+  </header>
+
+  <section class="bsci-section">
+    <div class="bsci-section-label">
+      <span class="bsci-section-label-num">01</span>
+      <span class="bsci-section-label-text">Impact &amp; Metrics</span>
+      <span class="bsci-section-label-line"></span>
+    </div>
+    <div class="bsci-metrics-grid">
+      <div class="bsci-metric-card bsci-amber"><div class="bsci-metric-val">62K</div><div class="bsci-metric-label">Lines of Code</div><div class="bsci-metric-sub">C# — 167 source files</div></div>
+      <div class="bsci-metric-card bsci-amber"><div class="bsci-metric-val">6</div><div class="bsci-metric-label">REST API Endpoints</div><div class="bsci-metric-sub">Sales Order, Credit Note, Returns</div></div>
+      <div class="bsci-metric-card bsci-blue"><div class="bsci-metric-val">6</div><div class="bsci-metric-label">Background Workers</div><div class="bsci-metric-sub">CSV export to B2B gateway</div></div>
+      <div class="bsci-metric-card bsci-amber"><div class="bsci-metric-val">6</div><div class="bsci-metric-label">Complexity Rating</div><div class="bsci-metric-sub">Enterprise Application</div></div>
+    </div>
+    <div class="bsci-impact-wrapper" style="margin-top:20px">
+      <table class="bsci-impact-table">
+        <thead><tr><th>Area</th><th>Before</th><th>After</th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="bsci-row-label">SAP Integration</td><td class="bsci-before">Direct SOAP calls, no abstraction</td><td class="bsci-after">Clean REST API with Swagger docs + auth</td><td class="bsci-delta">+ standardized</td></tr>
+          <tr><td class="bsci-row-label">Data Distribution</td><td class="bsci-before">Manual CSV exports</td><td class="bsci-after">6 automated workers with Redis cache</td><td class="bsci-delta">+ fully automated</td></tr>
+          <tr><td class="bsci-row-label">Error Handling</td><td class="bsci-before">Unhandled SOAP faults</td><td class="bsci-after">Structured ResultApi + email notification</td><td class="bsci-delta">+ observable</td></tr>
+          <tr><td class="bsci-row-label">Deployment</td><td class="bsci-before">Manual IIS deploys</td><td class="bsci-after">Windows Service + certificate auth</td><td class="bsci-delta">+ secure</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="bsci-section">
+    <div class="bsci-section-label">
+      <span class="bsci-section-label-num">02</span>
+      <span class="bsci-section-label-text">Architecture</span>
+      <span class="bsci-section-label-line"></span>
+    </div>
+    <div class="bsci-arch-diagram">
+      <div class="bsci-arch-diagram-inner">
+        <div class="bsci-arch-node"><div class="bsci-arch-node-icon"></div><div class="bsci-arch-node-label">External Apps</div><div class="bsci-arch-node-sub">REST JSON clients</div></div>
+        <div class="bsci-arch-arrow"><div class="bsci-arch-arrow-line"></div><div class="bsci-arch-arrow-label">REST API</div></div>
+        <div class="bsci-arch-node core">
+          <div class="bsci-arch-node-icon"></div><div class="bsci-arch-node-label">DRMS API Gateway</div><div class="bsci-arch-node-sub">ASP.NET Core 5 - Swagger</div>
+          <div class="bsci-core-stack">
+            <div class="bsci-core-step"><span class="bsci-core-step-dot"></span>Controllers — JSON in/out</div>
+            <div class="bsci-core-step"><span class="bsci-core-step-dot bsci-blue"></span>Services — Business Logic</div>
+            <div class="bsci-core-step"><span class="bsci-core-step-dot"></span>SOAP/OData — SAP ByDesign</div>
+          </div>
+        </div>
+        <div class="bsci-arch-arrow"><div class="bsci-arch-arrow-line"></div><div class="bsci-arch-arrow-label">SOAP</div></div>
+        <div class="bsci-arch-node"><div class="bsci-arch-node-icon"></div><div class="bsci-arch-node-label">SAP ByDesign</div><div class="bsci-arch-node-sub">Cloud ERP</div></div>
+      </div>
+    </div>
+    <div style="margin-top:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center">
+      <div class="bsci-arch-node bsci-db-node"><div class="bsci-arch-node-icon"></div><div class="bsci-arch-node-label">Scheduler</div><div class="bsci-arch-node-sub">Worker Service - Cronos</div></div>
+      <div class="bsci-arch-arrow" style="min-width:40px"><div class="bsci-arch-arrow-line" style="width:20px"></div><div class="bsci-arch-arrow-label">CSV</div></div>
+      <div class="bsci-arch-node bsci-db-node"><div class="bsci-arch-node-icon"></div><div class="bsci-arch-node-label">B2B Gateway</div><div class="bsci-arch-node-sub">b2bgw.bsci.com</div></div>
+      <div class="bsci-arch-arrow" style="min-width:40px"><div class="bsci-arch-arrow-line" style="width:20px"></div><div class="bsci-arch-arrow-label">cache</div></div>
+      <div class="bsci-arch-node bsci-db-node"><div class="bsci-arch-node-icon"></div><div class="bsci-arch-node-label">Redis</div><div class="bsci-arch-node-sub">Cache tracking</div></div>
+    </div>
+  </section>
+
+  <section class="bsci-section">
+    <div class="bsci-section-label">
+      <span class="bsci-section-label-num">03</span>
+      <span class="bsci-section-label-text">Key Capabilities</span>
+      <span class="bsci-section-label-line"></span>
+    </div>
+    <div class="bsci-cap-list">
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Sales Order creation in SAP ByDesign via REST JSON</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Credit Note processing with/without stock impact</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Return Order (Inbound Delivery Notification)</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Stock Transfer Order (Customer Demand)</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Customer Invoice CSV export to B2B gateway</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Customer &amp; Material master CSV sync</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Account Receivables (all/open/prev-month) CSV</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Pricelist data extraction to CSV</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Posted Inbound Logistics CSV reporting</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Redis cache for incremental data tracking</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Email notifications on job success/failure</div>
+      <div class="bsci-cap-item"><span class="bsci-cap-icon"></span>Certificate + Basic Auth security</div>
+    </div>
+  </section>
+
+  <section class="bsci-section">
+    <div class="bsci-section-label">
+      <span class="bsci-section-label-num">04</span>
+      <span class="bsci-section-label-text">Decision Log</span>
+      <span class="bsci-section-label-line"></span>
+    </div>
+    <div class="bsci-decision-list">
+      <div class="bsci-decision-card">
+        <div class="bsci-decision-header">
+          <span class="bsci-decision-num">01</span>
+          <div>
+            <div class="bsci-decision-title">Clean Architecture Over Traditional N-Tier</div>
+            <div class="bsci-decision-problem">The DRMS needed to be both a REST API gateway and a background scheduler sharing the same business logic. Traditional N-tier would have caused code duplication or tight coupling between the two runtimes.</div>
+          </div>
+        </div>
+        <div class="bsci-decision-body">
+          <div>
+            <div class="bsci-decision-col-label bsci-chosen">Chosen — Clean Architecture</div>
+            <div class="bsci-decision-col-text">drms.domain held pure DTOs with zero dependencies. drms.application housed all business logic (21 service modules) and SOAP/OData connectivity. Both drms-api and scheduler depended on drms.application — sharing 100% of business logic across two entry points.</div>
+          </div>
+          <div>
+            <div class="bsci-decision-col-label bsci-tradeoff">Tradeoff — Monolithic API + Scheduler</div>
+            <div class="bsci-decision-col-text">Combining them would have simplified deployment but created availability coupling. Clean architecture overhead was minimal compared to operational independence gained.</div>
+          </div>
+        </div>
+        <div class="bsci-decision-code">
+<pre><span class="bsci-token-cm">// Shared service consumed by both API and Scheduler</span>
+<span class="bsci-token-kw">public class</span> <span class="bsci-token-fn">SalesOrderService</span> : ISalesOrderService
+&#123;
+    <span class="bsci-token-kw">public async</span> Task&lt;ResultApi&gt; <span class="bsci-token-fn">Insert</span>(string url, string user, string pass, SalesOrderParam param)
+    &#123;
+        <span class="bsci-token-kw">var</span> client = <span class="bsci-token-kw">new</span> <span class="bsci-token-fn">ServiceSalesOrderClient</span>(...);
+        <span class="bsci-token-kw">return await</span> client.<span class="bsci-token-fn">ManageSalesOrderInAsync</span>(<span class="bsci-token-fn">MapFromParam</span>(param));
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="bsci-decision-card">
+        <div class="bsci-decision-header">
+          <span class="bsci-decision-num">02</span>
+          <div>
+            <div class="bsci-decision-title">SOAP + OData Dual Strategy for SAP ByD</div>
+            <div class="bsci-decision-problem">SAP ByDesign exposes SOAP (WCF) for transactional writes and OData REST for queries. SOAP is rich but slow; OData is fast but limited for writes. Choosing one would limit functionality.</div>
+          </div>
+        </div>
+        <div class="bsci-decision-body">
+          <div>
+            <div class="bsci-decision-col-label bsci-chosen">Chosen — SOAP for writes, OData for reads</div>
+            <div class="bsci-decision-col-text">Sales Order creation and Credit Note posting used SOAP via WCF Connected Services. Bulk data population (products, customers, invoices) used OData with pagination for performance. Redis cache tracked OData state.</div>
+          </div>
+          <div>
+            <div class="bsci-decision-col-label bsci-tradeoff">Tradeoff — Single protocol</div>
+            <div class="bsci-decision-col-text">Pure SOAP would be too slow for 3000+ records hourly. Pure OData lacked transactional depth. Dual approach optimized for each use case.</div>
+          </div>
+        </div>
+        <div class="bsci-decision-code">
+<pre><span class="bsci-token-cm">// OData paginated read (fast)</span>
+<span class="bsci-token-kw">var</span> response = <span class="bsci-token-kw">await</span> _httpClient.<span class="bsci-token-fn">GetAsync</span>(
+    <span class="bsci-token-str">$"&#123;url&#125;/sap/byd/odata/.../ProductCollection?$top=3000&$skip=&#123;skip&#125;"</span>);
+
+<span class="bsci-token-cm">// SOAP transactional write (reliable)</span>
+<span class="bsci-token-kw">var</span> client = <span class="bsci-token-kw">new</span> <span class="bsci-token-fn">ServiceSalesOrderClient</span>(...);
+<span class="bsci-token-kw">var</span> result = <span class="bsci-token-kw">await</span> client.<span class="bsci-token-fn">ManageSalesOrderInAsync</span>(request);</pre>
+        </div>
+      </div>
+
+      <div class="bsci-decision-card">
+        <div class="bsci-decision-header">
+          <span class="bsci-decision-num">03</span>
+          <div>
+            <div class="bsci-decision-title">Redis Cache for Scheduler State Tracking</div>
+            <div class="bsci-decision-problem">Six background workers ran on intervals to extract SAP data to CSV. Without state tracking, every run would duplicate records and waste API quota. File-based tracking would fail on restarts.</div>
+          </div>
+        </div>
+        <div class="bsci-decision-body">
+          <div>
+            <div class="bsci-decision-col-label bsci-chosen">Chosen — Redis Cache</div>
+            <div class="bsci-decision-col-text">Each worker stored its last run timestamp and processed IDs in Redis. Workers checked Redis before fetching to only retrieve new records. Cache expiration ensured eventual re-sync.</div>
+          </div>
+          <div>
+            <div class="bsci-decision-col-label bsci-tradeoff">Tradeoff — SQL Server / File-based</div>
+            <div class="bsci-decision-col-text">SQL Server added latency. Files lost data on permission changes. Redis provided sub-ms access, built-in expiration, and survived restarts.</div>
+          </div>
+        </div>
+        <div class="bsci-decision-code">
+<pre><span class="bsci-token-cm">// Redis cache check before OData fetch</span>
+<span class="bsci-token-kw">var</span> cached = <span class="bsci-token-kw">await</span> _cache.<span class="bsci-token-fn">GetAsync</span>(cacheKey);
+<span class="bsci-token-kw">if</span> (cached != <span class="bsci-token-kw">null</span>) <span class="bsci-token-kw">return</span> cached;
+
+<span class="bsci-token-kw">var</span> data = <span class="bsci-token-kw">await</span> <span class="bsci-token-fn">FetchFromOData</span>(url, user, pass);
+<span class="bsci-token-kw">await</span> _cache.<span class="bsci-token-fn">SetAsync</span>(cacheKey, data, TimeSpan.FromHours(1));</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsci-section">
+    <div class="bsci-section-label">
+      <span class="bsci-section-label-num">05</span>
+      <span class="bsci-section-label-text">Tech Stack</span>
+      <span class="bsci-section-label-line"></span>
+    </div>
+    <div class="bsci-arch-diagram">
+      <table class="bsci-stack-table">
+        <tr><td class="bsci-layer">Runtime</td><td class="bsci-tech">.NET 5.0, ASP.NET Core, Kestrel</td></tr>
+        <tr><td class="bsci-layer">API Layer</td><td class="bsci-tech">ASP.NET Core Web API, Swashbuckle 5.6, Basic + Certificate Auth</td></tr>
+        <tr><td class="bsci-layer">SAP Integration</td><td class="bsci-tech">SOAP via WCF Connected Services, OData REST, CSRF token handling</td></tr>
+        <tr><td class="bsci-layer">Scheduler</td><td class="bsci-tech">.NET Worker Service, Cronos 0.7, IHostedService, Windows Service</td></tr>
+        <tr><td class="bsci-layer">Data Export</td><td class="bsci-tech">CsvHelper 27.1, CSV generation, SFTP upload to B2B gateway</td></tr>
+        <tr><td class="bsci-layer">Caching</td><td class="bsci-tech">StackExchange.Redis 6.0, Redis localhost</td></tr>
+        <tr><td class="bsci-layer">Messaging</td><td class="bsci-tech">MailKit 2.15, MimeKit 2.15, SMTP Office 365</td></tr>
+        <tr><td class="bsci-layer">Serialization</td><td class="bsci-tech">Newtonsoft.Json 13.0, System.Text.Json</td></tr>
+        <tr><td class="bsci-layer">Architecture</td><td class="bsci-tech">Clean Architecture: domain / application / api / scheduler</td></tr>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .bsci {
+    --bsci-bg: #0a0b0d;
+    --bsci-bg2: #0f1114;
+    --bsci-bg3: #141720;
+    --bsci-surface: #1a1e28;
+    --bsci-surface2: #212636;
+    --bsci-border: #2a2f40;
+    --bsci-border2: #363c50;
+    --bsci-accent: #00e5a0;
+    --bsci-accent2: #00b87a;
+    --bsci-accent-dim: rgba(0, 229, 160, 0.08);
+    --bsci-accent-dim2: rgba(0, 229, 160, 0.15);
+    --bsci-amber: #f59e0b;
+    --bsci-amber-dim: rgba(245, 158, 11, 0.1);
+    --bsci-blue: #60a5fa;
+    --bsci-blue-dim: rgba(96, 165, 250, 0.1);
+    --bsci-red: #f87171;
+    --bsci-text: #e8eaf0;
+    --bsci-text2: #8b92a8;
+    --bsci-text3: #5a6077;
+    --bsci-mono: "JetBrains Mono", monospace;
+    --bsci-display: "Syne", sans-serif;
+    --bsci-radius: 10px;
+    --bsci-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .bsci * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bsci body {
+    background: var(--bsci-bg);
+    color: var(--bsci-text);
+    font-family: var(--bsci-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .bsci-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--bsci-border);
+  }
+  .bsci-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--bsci-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .bsci-nav-back:hover {
+    color: var(--bsci-accent);
+  }
+  .bsci-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .bsci-nav-dot {
+    color: var(--bsci-border2);
+  }
+  .bsci-nav-title {
+    color: var(--bsci-text3);
+    font-size: 12px;
+  }
+
+  .bsci-hero {
+    margin-bottom: 56px;
+  }
+  .bsci-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .bsci-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .bsci-badge-corporate {
+    background: var(--bsci-blue-dim);
+    color: var(--bsci-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .bsci-badge-client {
+    background: var(--bsci-accent-dim);
+    color: var(--bsci-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .bsci-badge-year {
+    background: var(--bsci-surface);
+    color: var(--bsci-text3);
+    border-color: var(--bsci-border);
+  }
+
+  .bsci-hero-title {
+    font-family: var(--bsci-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .bsci-hero-title span {
+    color: var(--bsci-accent);
+    position: relative;
+  }
+
+  .bsci-hero-desc {
+    color: var(--bsci-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .bsci-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .bsci-stack-pill {
+    background: var(--bsci-surface);
+    border: 1px solid var(--bsci-border);
+    color: var(--bsci-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .bsci-stack-pill:hover {
+    border-color: var(--bsci-accent);
+    color: var(--bsci-accent);
+    background: var(--bsci-accent-dim);
+  }
+
+  .bsci-section {
+    margin-bottom: 52px;
+  }
+  .bsci-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .bsci-section-label-text {
+    font-family: var(--bsci-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--bsci-text3);
+    text-transform: uppercase;
+  }
+  .bsci-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--bsci-border);
+  }
+  .bsci-section-label-num {
+    font-size: 11px;
+    color: var(--bsci-border2);
+  }
+
+  .bsci-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .bsci-metric-card {
+    background: var(--bsci-bg3);
+    border: 1px solid var(--bsci-border);
+    border-radius: var(--bsci-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .bsci-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--bsci-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .bsci-metric-card:hover {
+    border-color: var(--bsci-border2);
+  }
+  .bsci-metric-card:hover::before {
+    opacity: 1;
+  }
+  .bsci-metric-amber .bsci-metric-val {
+    color: var(--bsci-amber);
+  }
+  .bsci-metric-amber::before {
+    background: var(--bsci-amber);
+  }
+
+  .bsci-metric-val {
+    font-family: var(--bsci-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--bsci-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .bsci-metric-label {
+    font-size: 12px;
+    color: var(--bsci-text2);
+    margin-bottom: 3px;
+  }
+  .bsci-metric-sub {
+    font-size: 11px;
+    color: var(--bsci-text3);
+  }
+
+  .bsci-arch-diagram {
+    background: var(--bsci-bg3);
+    border: 1px solid var(--bsci-border);
+    border-radius: var(--bsci-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bsci-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .bsci-arch-node {
+    background: var(--bsci-surface);
+    border: 1px solid var(--bsci-border2);
+    border-radius: var(--bsci-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .bsci-core {
+    background: var(--bsci-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .bsci-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .bsci-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--bsci-amber-dim);
+    min-width: 110px;
+  }
+  .bsci-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .bsci-arch-node-label {
+    font-family: var(--bsci-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .bsci-arch-node-sub {
+    font-size: 10px;
+    color: var(--bsci-text3);
+    font-family: var(--bsci-mono);
+  }
+
+  .bsci-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--bsci-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .bsci-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--bsci-border),
+      var(--bsci-accent),
+      var(--bsci-border)
+    );
+    position: relative;
+  }
+  .bsci-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--bsci-accent);
+    font-size: 10px;
+  }
+  .bsci-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--bsci-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .bsci-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .bsci-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .bsci-core-step {
+    background: var(--bsci-bg3);
+    border: 1px solid var(--bsci-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--bsci-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .bsci-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--bsci-accent);
+    flex-shrink: 0;
+  }
+
+  .bsci-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .bsci-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .bsci-schema-arrow-label {
+    font-size: 9px;
+    color: var(--bsci-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .bsci-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bsci-decision-card {
+    background: var(--bsci-bg3);
+    border: 1px solid var(--bsci-border);
+    border-radius: var(--bsci-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .bsci-decision-card:hover {
+    border-color: var(--bsci-border2);
+  }
+
+  .bsci-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .bsci-decision-num {
+    font-family: var(--bsci-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--bsci-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .bsci-decision-title {
+    font-family: var(--bsci-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .bsci-decision-problem {
+    font-size: 12px;
+    color: var(--bsci-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--bsci-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .bsci-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .bsci-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .bsci-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .bsci-decision-chosen {
+    color: var(--bsci-accent);
+  }
+  .bsci-decision-tradeoff {
+    color: var(--bsci-amber);
+  }
+  .bsci-decision-col-text {
+    font-size: 12px;
+    color: var(--bsci-text2);
+    line-height: 1.65;
+  }
+
+  .bsci-decision-code {
+    background: var(--bsci-bg);
+    border-top: 1px solid var(--bsci-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--bsci-text2);
+    overflow-x: auto;
+  }
+  .bsci-decision-code pre {
+    margin: 0;
+    font-family: var(--bsci-mono);
+    line-height: 1.6;
+  }
+  .bsci-token-kw {
+    color: #c792ea;
+  }
+  .bsci-token-fn {
+    color: #82aaff;
+  }
+  .bsci-token-str {
+    color: #c3e88d;
+  }
+  .bsci-token-cm {
+    color: var(--bsci-text3);
+    font-style: italic;
+  }
+  .bsci-token-acc {
+    color: var(--bsci-accent);
+  }
+
+  .bsci-impact-wrapper {
+    background: var(--bsci-bg3);
+    border: 1px solid var(--bsci-border);
+    border-radius: var(--bsci-radius);
+    overflow: hidden;
+  }
+  .bsci-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .bsci-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bsci-text3);
+    border-bottom: 1px solid var(--bsci-border);
+    font-family: var(--bsci-display);
+    font-weight: 600;
+  }
+  .bsci-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--bsci-border);
+    color: var(--bsci-text2);
+  }
+  .bsci-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .bsci-impact-table tr:hover td {
+    background: var(--bsci-surface);
+  }
+  .bsci-before {
+    color: var(--bsci-red);
+  }
+  .bsci-after {
+    color: var(--bsci-accent);
+  }
+  .bsci-delta {
+    color: var(--bsci-accent);
+    font-weight: 500;
+    font-family: var(--bsci-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .bsci-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .bsci-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .bsci-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--bsci-border);
+  }
+  .bsci-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .bsci-layer {
+    color: var(--bsci-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .bsci-tech {
+    color: var(--bsci-accent);
+    font-family: var(--bsci-mono);
+  }
+  .bsci-stack-table tr:hover td {
+    background: var(--bsci-surface);
+  }
+
+  .bsci-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--bsci-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .bsci-footer-text {
+    font-size: 11px;
+    color: var(--bsci-text3);
+  }
+  .bsci-footer-link {
+    font-size: 11px;
+    color: var(--bsci-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .bsci-footer-link:hover {
+    color: var(--bsci-accent);
+  }
+
+  @keyframes bsci-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .bsci-hero {
+    animation: bsci-fadeUp 0.5s ease both;
+  }
+  .bsci-section:nth-child(2) {
+    animation: bsci-fadeUp 0.5s 0.1s ease both;
+  }
+  .bsci-section:nth-child(3) {
+    animation: bsci-fadeUp 0.5s 0.15s ease both;
+  }
+  .bsci-section:nth-child(4) {
+    animation: bsci-fadeUp 0.5s 0.2s ease both;
+  }
+  .bsci-section:nth-child(5) {
+    animation: bsci-fadeUp 0.5s 0.25s ease both;
+  }
+  .bsci-section:nth-child(6) {
+    animation: bsci-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .bsci-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--bsci-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: bsci-blink 1s step-end infinite;
+  }
+  @keyframes bsci-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .bsci-badge-client { background: var(--bsci-accent-dim); color: var(--bsci-accent); border-color: rgba(0,229,160,0.2); }
+  .bsci-metric-val { font-size: 22px; }
+  .bsci-amber .bsci-metric-val { color: var(--bsci-amber); }
+  .bsci-amber::before { background: var(--bsci-amber); }
+  .bsci-red .bsci-metric-val { color: var(--bsci-red); }
+  .bsci-red::before { background: var(--bsci-red); }
+  .bsci-blue .bsci-metric-val { color: var(--bsci-blue); }
+  .bsci-blue::before { background: var(--bsci-blue); }
+  .bsci-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .bsci-business-line-cards { grid-template-columns: 1fr; } }
+  .bsci-bl-card { background: var(--bsci-bg2); border: 1px solid var(--bsci-border); border-radius: var(--bsci-radius); padding: 16px; }
+  .bsci-bl-card-title { font-family: var(--bsci-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .bsci-bl-card-desc { font-size: 11px; color: var(--bsci-text3); line-height: 1.6; }
+  .bsci-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--bsci-accent-dim); color: var(--bsci-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .bsci-bl-card-tag.bsci-amber-tag { background: var(--bsci-amber-dim); color: var(--bsci-amber); border-color: rgba(245,158,11,0.2); }
+  .bsci-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .bsci-cap-list { grid-template-columns: 1fr; } }
+  .bsci-cap-item { background: var(--bsci-bg3); border: 1px solid var(--bsci-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--bsci-text2); }
+  .bsci-cap-item:hover { border-color: var(--bsci-border2); color: var(--bsci-text); }
+  .bsci-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--bsci-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .bsci-flow-panel { background: var(--bsci-bg2); border: 1px solid var(--bsci-border); border-radius: var(--bsci-radius); padding: 20px; margin-top: 20px; }
+  .bsci-flow-panel-title { font-family: var(--bsci-display); font-size: 12px; font-weight: 600; color: var(--bsci-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .bsci-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .bsci-flow-step { display: flex; align-items: center; gap: 8px; }
+  .bsci-flow-step-box { background: var(--bsci-surface); border: 1px solid var(--bsci-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--bsci-text2); white-space: nowrap; }
+  .bsci-flow-step-box.bsci-accent { border-color: rgba(0,229,160,0.3); color: var(--bsci-accent); }
+  .bsci-flow-step-arr { color: var(--bsci-text3); font-size: 11px; margin: 0 4px; }
+</style>

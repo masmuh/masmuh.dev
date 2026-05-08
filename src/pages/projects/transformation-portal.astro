@@ -1,0 +1,1059 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Transformation Portal - Mas Muhammad" description="A CRM transformation employee engagement portal for Telkomsel featuring interactive quiz/survey systems with leader communications and news management. Built with ASP.NET WebForms on .NET Framework 2.0 with LDAP authentication.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="transformation-portal">
+
+<header class="transformation-portal-hero">
+    <div class="transformation-portal-hero-meta">
+      <span class="transformation-portal-badge transformation-portal-badge-corporate">Corporate</span><span class="transformation-portal-badge transformation-portal-badge-client">Telkomsel</span> 
+      
+      <span class="transformation-portal-badge transformation-portal-badge-year">March 2014</span>
+    </div>
+    <h1 class="transformation-portal-hero-title">Transformation <span>Portal</span><span class="transformation-portal-cursor"></span></h1>
+    <p class="transformation-portal-hero-desc">
+      A CRM transformation employee engagement portal for Telkomsel featuring interactive quiz/survey systems with leader communications and news management. Built with ASP.NET WebForms on .NET Framework 2.0 with LDAP authentication.
+    </p>
+    <div class="transformation-portal-stack-pills">
+      <span class="transformation-portal-stack-pill">ASP.NET WebForms 2.0</span>
+      <span class="transformation-portal-stack-pill">C#</span>
+      <span class="transformation-portal-stack-pill">.NET 2.0</span>
+      <span class="transformation-portal-stack-pill">SQL Server</span>
+      <span class="transformation-portal-stack-pill">LDAP / AD</span>
+      <span class="transformation-portal-stack-pill">jQuery</span>
+      <span class="transformation-portal-stack-pill">CKEditor</span>
+      <span class="transformation-portal-stack-pill">CKFinder</span>
+    </div>
+  </header>
+
+  <section class="transformation-portal-section">
+    <div class="transformation-portal-section-label">
+      <span class="transformation-portal-section-label-text">Impact</span>
+      <div class="transformation-portal-section-label-line"></div>
+      <span class="transformation-portal-section-label-num">01</span>
+    </div>
+    <div class="transformation-portal-metrics-grid">
+      <div class="transformation-portal-metric-card">
+        <div class="transformation-portal-metric-val">23,000+</div>
+        <div class="transformation-portal-metric-label">Lines of Code</div>
+        <div class="transformation-portal-metric-sub">C# ASP.NET WebForms</div>
+      </div>
+      <div class="transformation-portal-metric-card transformation-portal-amber">
+        <div class="transformation-portal-metric-val">0</div>
+        <div class="transformation-portal-metric-label">API Endpoints</div>
+        <div class="transformation-portal-metric-sub">Traditional WebForms (no API)</div>
+      </div>
+      <div class="transformation-portal-metric-card transformation-portal-red">
+        <div class="transformation-portal-metric-val">10</div>
+        <div class="transformation-portal-metric-label">Complexity Score</div>
+        <div class="transformation-portal-metric-sub">Mission Critical</div>
+      </div>
+      <div class="transformation-portal-metric-card transformation-portal-amber">
+        <div class="transformation-portal-metric-val">Mission Critical</div>
+        <div class="transformation-portal-metric-label">System Level</div>
+        <div class="transformation-portal-metric-sub">Enterprise employee platform</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="transformation-portal-section">
+    <div class="transformation-portal-section-label">
+      <span class="transformation-portal-section-label-text">Architecture</span>
+      <div class="transformation-portal-section-label-line"></div>
+      <span class="transformation-portal-section-label-num">02</span>
+    </div>
+    <div class="transformation-portal-arch-diagram">
+      <div class="transformation-portal-arch-diagram-inner">
+
+        <div class="transformation-portal-arch-node transformation-portal-source">
+          <div class="transformation-portal-arch-node-icon"></div>
+          <div class="transformation-portal-arch-node-label">ASPX Pages</div>
+          <div class="transformation-portal-arch-node-sub">UI / Presentation</div>
+        </div>
+
+        <div class="transformation-portal-arch-arrow">
+          <div class="transformation-portal-arch-arrow-line"></div>
+          <div class="transformation-portal-arch-arrow-label">postback</div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+          <div class="transformation-portal-arch-node core" style="width:220px;">
+            <div class="transformation-portal-arch-node-label" style="font-size:13px; margin-bottom:10px;">Code-Behind Layer</div>
+            <div class="transformation-portal-core-stack">
+              <div class="transformation-portal-core-step">
+                <div class="transformation-portal-core-step-dot"></div>
+                Event handlers · Page_Load
+              </div>
+              <div class="transformation-portal-core-step">
+                <div class="transformation-portal-core-step-dot"></div>
+                Business logic · validation
+              </div>
+              <div class="transformation-portal-core-step">
+                <div class="transformation-portal-core-step-dot" style="background:var(--blue)"></div>
+                ADO.NET · SqlConnection
+              </div>
+            </div>
+          </div>
+          <div class="transformation-portal-schema-connector" style="margin-top:0;">
+            <div class="transformation-portal-schema-line-v"></div>
+            <div class="transformation-portal-schema-arrow-label">18 tables</div>
+            <div class="transformation-portal-schema-line-v"></div>
+            <div class="transformation-portal-arch-node transformation-portal-schema-node">
+              <div class="transformation-portal-arch-node-label" style="font-size:11px; color: #f59e0b;">SQL Server</div>
+              <div class="transformation-portal-arch-node-sub">CRUD operations</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="transformation-portal-arch-arrow">
+          <div class="transformation-portal-arch-arrow-line"></div>
+          <div class="transformation-portal-arch-arrow-label">LDAP bind</div>
+        </div>
+
+        <div class="transformation-portal-arch-node transformation-portal-output">
+          <div class="transformation-portal-arch-node-icon"></div>
+          <div class="transformation-portal-arch-node-label">Active Directory</div>
+          <div class="transformation-portal-arch-node-sub">telkomsel.co.id</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="transformation-portal-section">
+    <div class="transformation-portal-section-label">
+      <span class="transformation-portal-section-label-text">Decision Log</span>
+      <div class="transformation-portal-section-label-line"></div>
+      <span class="transformation-portal-section-label-num">03</span>
+    </div>
+    <div class="transformation-portal-decision-list">
+
+      <div class="transformation-portal-decision-card">
+        <div class="transformation-portal-decision-header">
+          <div class="transformation-portal-decision-num">01</div>
+          <div>
+            <div class="transformation-portal-decision-title">Authentication Strategy — LDAP / Active Directory Integration</div>
+            <div class="transformation-portal-decision-problem">
+              Need to authenticate thousands of Telkomsel employees without building a custom auth system.
+            </div>
+          </div>
+        </div>
+        <div class="transformation-portal-decision-body">
+          <div>
+            <div class="transformation-portal-decision-col-label transformation-portal-chosen">▸ Chosen</div>
+            <div class="transformation-portal-decision-col-text">
+              LDAP/Active Directory integration against the telkomsel.co.id domain. Employees authenticate with their existing corporate credentials — zero registration, zero password management.
+            </div>
+          </div>
+          <div>
+            <div class="transformation-portal-decision-col-label transformation-portal-tradeoff">▸ Trade-off</div>
+            <div class="transformation-portal-decision-col-text">
+              Cookie-based auth without modern OAuth — acceptable for an internal corporate portal behind the company firewall. No SSO federation, but operationally simple.
+            </div>
+          </div>
+        </div>
+        <div class="transformation-portal-decision-code">
+<pre><span class="transformation-portal-token-cm">// LDAP authentication against telkomsel.co.id</span>
+<span class="transformation-portal-token-kw">using</span> (DirectoryEntry entry = <span class="transformation-portal-token-kw">new</span> <span class="transformation-portal-token-fn">DirectoryEntry</span>(
+    <span class="transformation-portal-token-str">"LDAP://telkomsel.co.id"</span>, username, password))
+&#123;
+    DirectorySearcher searcher = <span class="transformation-portal-token-kw">new</span> <span class="transformation-portal-token-fn">DirectorySearcher</span>(entry);
+    searcher.Filter = <span class="transformation-portal-token-str">$"(sAMAccountName=&#123;username&#125;)"</span>;
+    SearchResult result = searcher.<span class="transformation-portal-token-fn">FindOne</span>();
+    <span class="transformation-portal-token-kw">return</span> result != <span class="transformation-portal-token-kw">null</span>;
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="transformation-portal-decision-card">
+        <div class="transformation-portal-decision-header">
+          <div class="transformation-portal-decision-num">02</div>
+          <div>
+            <div class="transformation-portal-decision-title">CRUD Architecture — Uniform Content Management Pattern</div>
+            <div class="transformation-portal-decision-problem">
+              Managing multiple content types (highlights, messages, banners, quizzes) with consistent patterns across the portal.
+            </div>
+          </div>
+        </div>
+        <div class="transformation-portal-decision-body">
+          <div>
+            <div class="transformation-portal-decision-col-label transformation-portal-chosen">▸ Chosen</div>
+            <div class="transformation-portal-decision-col-text">
+              Uniform CRUD pattern (content/form/proses/view) applied across all entity types. Each content type follows the same file structure: list page, form page, process handler, and detail view.
+            </div>
+          </div>
+          <div>
+            <div class="transformation-portal-decision-col-label transformation-portal-tradeoff">▸ Trade-off</div>
+            <div class="transformation-portal-decision-col-text">
+              Code duplication vs. consistency — consistency won for maintainability by the operations team. Standardized pattern means any developer can understand any module instantly.
+            </div>
+          </div>
+        </div>
+        <div class="transformation-portal-decision-code">
+<pre><span class="transformation-portal-token-cm">// Uniform CRUD pattern — every content type follows this</span>
+<span class="transformation-portal-token-cm">// /admin/highlights/     → list, form, proses, view</span>
+<span class="transformation-portal-token-cm">// /admin/messages/       → list, form, proses, view</span>
+<span class="transformation-portal-token-cm">// /admin/banners/        → list, form, proses, view</span>
+<span class="transformation-portal-token-cm">// /admin/quizzes/        → list, form, proses, view</span>
+
+<span class="transformation-portal-token-kw">protected void</span> <span class="transformation-portal-token-fn">Page_Load</span>(<span class="transformation-portal-token-kw">object</span> sender, EventArgs e)
+&#123;
+    <span class="transformation-portal-token-kw">if</span> (!IsPostBack) <span class="transformation-portal-token-fn">BindGrid</span>();
+&#125;
+
+<span class="transformation-portal-token-kw">protected void</span> <span class="transformation-portal-token-fn">BtnSave_Click</span>(<span class="transformation-portal-token-kw">object</span> sender, EventArgs e)
+&#123;
+    <span class="transformation-portal-token-fn">ExecuteNonQuery</span>(<span class="transformation-portal-token-str">"INSERT INTO ..."</span>);
+    <span class="transformation-portal-token-fn">BindGrid</span>();
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="transformation-portal-decision-card">
+        <div class="transformation-portal-decision-header">
+          <div class="transformation-portal-decision-num">03</div>
+          <div>
+            <div class="transformation-portal-decision-title">Rich Content — WYSIWYG with CKEditor + CKFinder</div>
+            <div class="transformation-portal-decision-problem">
+              Content editors need to author rich news articles and leadership messages with embedded images, media, and formatted text without HTML knowledge.
+            </div>
+          </div>
+        </div>
+        <div class="transformation-portal-decision-body">
+          <div>
+            <div class="transformation-portal-decision-col-label transformation-portal-chosen">▸ Chosen</div>
+            <div class="transformation-portal-decision-col-text">
+              CKEditor for WYSIWYG editing with CKFinder integration for image/file browsing and upload. Familiar interface for non-technical content editors across multiple departments.
+            </div>
+          </div>
+          <div>
+            <div class="transformation-portal-decision-col-label transformation-portal-tradeoff">▸ Trade-off</div>
+            <div class="transformation-portal-decision-col-text">
+              Third-party dependency adds licensing considerations and version lock-in. CKFinder requires server-side file management — implemented custom ASP.NET handler for uploads.
+            </div>
+          </div>
+        </div>
+        <div class="transformation-portal-decision-code">
+<pre><span class="transformation-portal-token-cm">// CKEditor initialization on admin forms</span>
+&lt;textarea id=<span class="transformation-portal-token-str">"contentBody"</span> runat=<span class="transformation-portal-token-str">"server"</span>&gt;&lt;/textarea&gt;
+
+<span class="transformation-portal-token-fn">CKEditorReplace</span>(<span class="transformation-portal-token-str">"contentBody"</span>, <span class="transformation-portal-token-kw">new</span> CKEditorSettings
+&#123;
+    ToolbarSet = <span class="transformation-portal-token-str">"Full"</span>,
+    FilebrowserImageBrowseUrl = <span class="transformation-portal-token-str">"/ckfinder/ckfinder.html"</span>,
+    Height = <span class="transformation-portal-token-acc">400</span>
+&#125;);</pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="transformation-portal-section">
+    <div class="transformation-portal-section-label">
+      <span class="transformation-portal-section-label-text">Business Impact</span>
+      <div class="transformation-portal-section-label-line"></div>
+      <span class="transformation-portal-section-label-num">04</span>
+    </div>
+    <div class="transformation-portal-impact-wrapper">
+      <table class="transformation-portal-impact-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Before</th>
+            <th>After</th>
+            <th>Delta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="transformation-portal-row-label">Employee engagement</td>
+            <td class="transformation-portal-before">Email / manual comms</td>
+            <td class="transformation-portal-after">Centralized portal</td>
+            <td class="transformation-portal-delta">Enterprise-wide reach</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-row-label">Content publishing</td>
+            <td class="transformation-portal-before">Email newsletters</td>
+            <td class="transformation-portal-after">CMS workflow</td>
+            <td class="transformation-portal-delta">Multi-dept publishing</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-row-label">Quiz / survey adoption</td>
+            <td class="transformation-portal-before">Paper / spreadsheets</td>
+            <td class="transformation-portal-after">Online interactive</td>
+            <td class="transformation-portal-delta">Real-time leaderboard</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-row-label">File management</td>
+            <td class="transformation-portal-before">Shared drives</td>
+            <td class="transformation-portal-after">Structured CMS</td>
+            <td class="transformation-portal-delta">3,000+ files managed</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-row-label">Authentication</td>
+            <td class="transformation-portal-before">Individual credentials</td>
+            <td class="transformation-portal-after">LDAP SSO</td>
+            <td class="transformation-portal-delta">Zero-friction access</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="transformation-portal-section">
+    <div class="transformation-portal-section-label">
+      <span class="transformation-portal-section-label-text">Tech Stack</span>
+      <div class="transformation-portal-section-label-line"></div>
+      <span class="transformation-portal-section-label-num">05</span>
+    </div>
+    <div class="transformation-portal-impact-wrapper">
+      <table class="transformation-portal-stack-table">
+        <tbody>
+          <tr>
+            <td class="transformation-portal-layer">Framework</td>
+            <td class="transformation-portal-tech">ASP.NET WebForms 2.0 · .NET Framework 2.0</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-layer">Language</td>
+            <td class="transformation-portal-tech">C#</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-layer">Database</td>
+            <td class="transformation-portal-tech">SQL Server (18 tables)</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-layer">Data Access</td>
+            <td class="transformation-portal-tech">ADO.NET · SqlConnection · SqlCommand</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-layer">Authentication</td>
+            <td class="transformation-portal-tech">LDAP / Active Directory (telkomsel.co.id)</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-layer">Rich Text</td>
+            <td class="transformation-portal-tech">CKEditor · CKFinder</td>
+          </tr>
+          <tr>
+            <td class="transformation-portal-layer">Frontend</td>
+            <td class="transformation-portal-tech">jQuery · ASP.NET WebForms</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .transformation-portal {
+    --transformation-portal-bg: #0a0b0d;
+    --transformation-portal-bg2: #0f1114;
+    --transformation-portal-bg3: #141720;
+    --transformation-portal-surface: #1a1e28;
+    --transformation-portal-surface2: #212636;
+    --transformation-portal-border: #2a2f40;
+    --transformation-portal-border2: #363c50;
+    --transformation-portal-accent: #00e5a0;
+    --transformation-portal-accent2: #00b87a;
+    --transformation-portal-accent-dim: rgba(0, 229, 160, 0.08);
+    --transformation-portal-accent-dim2: rgba(0, 229, 160, 0.15);
+    --transformation-portal-amber: #f59e0b;
+    --transformation-portal-amber-dim: rgba(245, 158, 11, 0.1);
+    --transformation-portal-blue: #60a5fa;
+    --transformation-portal-blue-dim: rgba(96, 165, 250, 0.1);
+    --transformation-portal-red: #f87171;
+    --transformation-portal-text: #e8eaf0;
+    --transformation-portal-text2: #8b92a8;
+    --transformation-portal-text3: #5a6077;
+    --transformation-portal-mono: "JetBrains Mono", monospace;
+    --transformation-portal-display: "Syne", sans-serif;
+    --transformation-portal-radius: 10px;
+    --transformation-portal-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .transformation-portal * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .transformation-portal body {
+    background: var(--transformation-portal-bg);
+    color: var(--transformation-portal-text);
+    font-family: var(--transformation-portal-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .transformation-portal-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--transformation-portal-border);
+  }
+  .transformation-portal-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--transformation-portal-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .transformation-portal-nav-back:hover {
+    color: var(--transformation-portal-accent);
+  }
+  .transformation-portal-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .transformation-portal-nav-dot {
+    color: var(--transformation-portal-border2);
+  }
+  .transformation-portal-nav-title {
+    color: var(--transformation-portal-text3);
+    font-size: 12px;
+  }
+
+  .transformation-portal-hero {
+    margin-bottom: 56px;
+  }
+  .transformation-portal-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .transformation-portal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .transformation-portal-badge-corporate {
+    background: var(--transformation-portal-blue-dim);
+    color: var(--transformation-portal-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .transformation-portal-badge-client {
+    background: var(--transformation-portal-accent-dim);
+    color: var(--transformation-portal-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .transformation-portal-badge-year {
+    background: var(--transformation-portal-surface);
+    color: var(--transformation-portal-text3);
+    border-color: var(--transformation-portal-border);
+  }
+
+  .transformation-portal-hero-title {
+    font-family: var(--transformation-portal-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .transformation-portal-hero-title span {
+    color: var(--transformation-portal-accent);
+    position: relative;
+  }
+
+  .transformation-portal-hero-desc {
+    color: var(--transformation-portal-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .transformation-portal-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .transformation-portal-stack-pill {
+    background: var(--transformation-portal-surface);
+    border: 1px solid var(--transformation-portal-border);
+    color: var(--transformation-portal-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .transformation-portal-stack-pill:hover {
+    border-color: var(--transformation-portal-accent);
+    color: var(--transformation-portal-accent);
+    background: var(--transformation-portal-accent-dim);
+  }
+
+  .transformation-portal-section {
+    margin-bottom: 52px;
+  }
+  .transformation-portal-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .transformation-portal-section-label-text {
+    font-family: var(--transformation-portal-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--transformation-portal-text3);
+    text-transform: uppercase;
+  }
+  .transformation-portal-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--transformation-portal-border);
+  }
+  .transformation-portal-section-label-num {
+    font-size: 11px;
+    color: var(--transformation-portal-border2);
+  }
+
+  .transformation-portal-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .transformation-portal-metric-card {
+    background: var(--transformation-portal-bg3);
+    border: 1px solid var(--transformation-portal-border);
+    border-radius: var(--transformation-portal-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .transformation-portal-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--transformation-portal-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .transformation-portal-metric-card:hover {
+    border-color: var(--transformation-portal-border2);
+  }
+  .transformation-portal-metric-card:hover::before {
+    opacity: 1;
+  }
+  .transformation-portal-metric-amber .transformation-portal-metric-val {
+    color: var(--transformation-portal-amber);
+  }
+  .transformation-portal-metric-amber::before {
+    background: var(--transformation-portal-amber);
+  }
+
+  .transformation-portal-metric-val {
+    font-family: var(--transformation-portal-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--transformation-portal-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .transformation-portal-metric-label {
+    font-size: 12px;
+    color: var(--transformation-portal-text2);
+    margin-bottom: 3px;
+  }
+  .transformation-portal-metric-sub {
+    font-size: 11px;
+    color: var(--transformation-portal-text3);
+  }
+
+  .transformation-portal-arch-diagram {
+    background: var(--transformation-portal-bg3);
+    border: 1px solid var(--transformation-portal-border);
+    border-radius: var(--transformation-portal-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .transformation-portal-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .transformation-portal-arch-node {
+    background: var(--transformation-portal-surface);
+    border: 1px solid var(--transformation-portal-border2);
+    border-radius: var(--transformation-portal-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .transformation-portal-core {
+    background: var(--transformation-portal-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .transformation-portal-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .transformation-portal-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--transformation-portal-amber-dim);
+    min-width: 110px;
+  }
+  .transformation-portal-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .transformation-portal-arch-node-label {
+    font-family: var(--transformation-portal-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .transformation-portal-arch-node-sub {
+    font-size: 10px;
+    color: var(--transformation-portal-text3);
+    font-family: var(--transformation-portal-mono);
+  }
+
+  .transformation-portal-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--transformation-portal-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .transformation-portal-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--transformation-portal-border),
+      var(--transformation-portal-accent),
+      var(--transformation-portal-border)
+    );
+    position: relative;
+  }
+  .transformation-portal-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--transformation-portal-accent);
+    font-size: 10px;
+  }
+  .transformation-portal-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--transformation-portal-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .transformation-portal-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .transformation-portal-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .transformation-portal-core-step {
+    background: var(--transformation-portal-bg3);
+    border: 1px solid var(--transformation-portal-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--transformation-portal-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .transformation-portal-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--transformation-portal-accent);
+    flex-shrink: 0;
+  }
+
+  .transformation-portal-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .transformation-portal-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .transformation-portal-schema-arrow-label {
+    font-size: 9px;
+    color: var(--transformation-portal-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .transformation-portal-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .transformation-portal-decision-card {
+    background: var(--transformation-portal-bg3);
+    border: 1px solid var(--transformation-portal-border);
+    border-radius: var(--transformation-portal-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .transformation-portal-decision-card:hover {
+    border-color: var(--transformation-portal-border2);
+  }
+
+  .transformation-portal-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .transformation-portal-decision-num {
+    font-family: var(--transformation-portal-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--transformation-portal-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .transformation-portal-decision-title {
+    font-family: var(--transformation-portal-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .transformation-portal-decision-problem {
+    font-size: 12px;
+    color: var(--transformation-portal-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--transformation-portal-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .transformation-portal-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .transformation-portal-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .transformation-portal-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .transformation-portal-decision-chosen {
+    color: var(--transformation-portal-accent);
+  }
+  .transformation-portal-decision-tradeoff {
+    color: var(--transformation-portal-amber);
+  }
+  .transformation-portal-decision-col-text {
+    font-size: 12px;
+    color: var(--transformation-portal-text2);
+    line-height: 1.65;
+  }
+
+  .transformation-portal-decision-code {
+    background: var(--transformation-portal-bg);
+    border-top: 1px solid var(--transformation-portal-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--transformation-portal-text2);
+    overflow-x: auto;
+  }
+  .transformation-portal-decision-code pre {
+    margin: 0;
+    font-family: var(--transformation-portal-mono);
+    line-height: 1.6;
+  }
+  .transformation-portal-token-kw {
+    color: #c792ea;
+  }
+  .transformation-portal-token-fn {
+    color: #82aaff;
+  }
+  .transformation-portal-token-str {
+    color: #c3e88d;
+  }
+  .transformation-portal-token-cm {
+    color: var(--transformation-portal-text3);
+    font-style: italic;
+  }
+  .transformation-portal-token-acc {
+    color: var(--transformation-portal-accent);
+  }
+
+  .transformation-portal-impact-wrapper {
+    background: var(--transformation-portal-bg3);
+    border: 1px solid var(--transformation-portal-border);
+    border-radius: var(--transformation-portal-radius);
+    overflow: hidden;
+  }
+  .transformation-portal-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .transformation-portal-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--transformation-portal-text3);
+    border-bottom: 1px solid var(--transformation-portal-border);
+    font-family: var(--transformation-portal-display);
+    font-weight: 600;
+  }
+  .transformation-portal-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--transformation-portal-border);
+    color: var(--transformation-portal-text2);
+  }
+  .transformation-portal-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .transformation-portal-impact-table tr:hover td {
+    background: var(--transformation-portal-surface);
+  }
+  .transformation-portal-before {
+    color: var(--transformation-portal-red);
+  }
+  .transformation-portal-after {
+    color: var(--transformation-portal-accent);
+  }
+  .transformation-portal-delta {
+    color: var(--transformation-portal-accent);
+    font-weight: 500;
+    font-family: var(--transformation-portal-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .transformation-portal-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .transformation-portal-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .transformation-portal-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--transformation-portal-border);
+  }
+  .transformation-portal-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .transformation-portal-layer {
+    color: var(--transformation-portal-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .transformation-portal-tech {
+    color: var(--transformation-portal-accent);
+    font-family: var(--transformation-portal-mono);
+  }
+  .transformation-portal-stack-table tr:hover td {
+    background: var(--transformation-portal-surface);
+  }
+
+  .transformation-portal-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--transformation-portal-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .transformation-portal-footer-text {
+    font-size: 11px;
+    color: var(--transformation-portal-text3);
+  }
+  .transformation-portal-footer-link {
+    font-size: 11px;
+    color: var(--transformation-portal-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .transformation-portal-footer-link:hover {
+    color: var(--transformation-portal-accent);
+  }
+
+  @keyframes transformation-portal-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .transformation-portal-hero {
+    animation: transformation-portal-fadeUp 0.5s ease both;
+  }
+  .transformation-portal-section:nth-child(2) {
+    animation: transformation-portal-fadeUp 0.5s 0.1s ease both;
+  }
+  .transformation-portal-section:nth-child(3) {
+    animation: transformation-portal-fadeUp 0.5s 0.15s ease both;
+  }
+  .transformation-portal-section:nth-child(4) {
+    animation: transformation-portal-fadeUp 0.5s 0.2s ease both;
+  }
+  .transformation-portal-section:nth-child(5) {
+    animation: transformation-portal-fadeUp 0.5s 0.25s ease both;
+  }
+  .transformation-portal-section:nth-child(6) {
+    animation: transformation-portal-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .transformation-portal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--transformation-portal-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: transformation-portal-blink 1s step-end infinite;
+  }
+  @keyframes transformation-portal-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .transformation-portal-badge-client { background: var(--transformation-portal-accent-dim); color: var(--transformation-portal-accent); border-color: rgba(0,229,160,0.2); }
+  .transformation-portal-metric-val { font-size: 22px; }
+  .transformation-portal-amber .transformation-portal-metric-val { color: var(--transformation-portal-amber); }
+  .transformation-portal-amber::before { background: var(--transformation-portal-amber); }
+  .transformation-portal-red .transformation-portal-metric-val { color: var(--transformation-portal-red); }
+  .transformation-portal-red::before { background: var(--transformation-portal-red); }
+  .transformation-portal-blue .transformation-portal-metric-val { color: var(--transformation-portal-blue); }
+  .transformation-portal-blue::before { background: var(--transformation-portal-blue); }
+  .transformation-portal-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .transformation-portal-business-line-cards { grid-template-columns: 1fr; } }
+  .transformation-portal-bl-card { background: var(--transformation-portal-bg2); border: 1px solid var(--transformation-portal-border); border-radius: var(--transformation-portal-radius); padding: 16px; }
+  .transformation-portal-bl-card-title { font-family: var(--transformation-portal-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .transformation-portal-bl-card-desc { font-size: 11px; color: var(--transformation-portal-text3); line-height: 1.6; }
+  .transformation-portal-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--transformation-portal-accent-dim); color: var(--transformation-portal-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .transformation-portal-bl-card-tag.transformation-portal-amber-tag { background: var(--transformation-portal-amber-dim); color: var(--transformation-portal-amber); border-color: rgba(245,158,11,0.2); }
+  .transformation-portal-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .transformation-portal-cap-list { grid-template-columns: 1fr; } }
+  .transformation-portal-cap-item { background: var(--transformation-portal-bg3); border: 1px solid var(--transformation-portal-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--transformation-portal-text2); }
+  .transformation-portal-cap-item:hover { border-color: var(--transformation-portal-border2); color: var(--transformation-portal-text); }
+  .transformation-portal-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--transformation-portal-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .transformation-portal-flow-panel { background: var(--transformation-portal-bg2); border: 1px solid var(--transformation-portal-border); border-radius: var(--transformation-portal-radius); padding: 20px; margin-top: 20px; }
+  .transformation-portal-flow-panel-title { font-family: var(--transformation-portal-display); font-size: 12px; font-weight: 600; color: var(--transformation-portal-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .transformation-portal-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .transformation-portal-flow-step { display: flex; align-items: center; gap: 8px; }
+  .transformation-portal-flow-step-box { background: var(--transformation-portal-surface); border: 1px solid var(--transformation-portal-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--transformation-portal-text2); white-space: nowrap; }
+  .transformation-portal-flow-step-box.transformation-portal-accent { border-color: rgba(0,229,160,0.3); color: var(--transformation-portal-accent); }
+  .transformation-portal-flow-step-arr { color: var(--transformation-portal-text3); font-size: 11px; margin: 0 4px; }
+</style>

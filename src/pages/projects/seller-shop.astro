@@ -1,0 +1,895 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="MS Glow Seller Shop - Mas Muhammad" description="A multi-service seller management platform for MS Glow cosmetics brand, enabling multi-channel order management, payment processing through Xendit and Midtrans, integrated shipping with Shipper, inventory tracking, and a comprehensive order lifecycle from checkout to delivery. Built with C# (.NET 6) and Go microservices following clean architecture with background workers.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="seller-shop">
+
+<header class="seller-shop-hero">
+    <div class="seller-shop-hero-meta">
+      <span class="seller-shop-badge badge-consulting">Consulting</span>
+      <span class="seller-shop-badge seller-shop-badge-domain">E-commerce</span>
+      <span class="seller-shop-badge seller-shop-badge-year">January 2022</span>
+    </div>
+    <h1 class="seller-shop-hero-title">
+      MS Glow<br>
+      <span>Seller Shop</span><span class="seller-shop-cursor"></span>
+    </h1>
+    <p class="seller-shop-hero-desc">
+      A multi-service seller management platform for MS Glow cosmetics brand, enabling
+      multi-channel order management, payment processing through Xendit and Midtrans,
+      integrated shipping with Shipper, inventory tracking, and a comprehensive order
+      lifecycle from checkout to delivery. Built with C# (.NET 6) and Go microservices
+      following clean architecture with background workers.
+    </p>
+    <div class="seller-shop-stack-pills">
+      <span class="seller-shop-stack-pill">C# .NET 6</span>
+      <span class="seller-shop-stack-pill">Go 1.17</span>
+      <span class="seller-shop-stack-pill">MongoDB</span>
+      <span class="seller-shop-stack-pill">Xendit</span>
+      <span class="seller-shop-stack-pill">Midtrans</span>
+      <span class="seller-shop-stack-pill">Shipper</span>
+      <span class="seller-shop-stack-pill">JWT Auth</span>
+      <span class="seller-shop-stack-pill">Docker + K8s</span>
+    </div>
+  </header>
+
+  <section class="seller-shop-section">
+    <div class="seller-shop-section-label">
+      <span class="seller-shop-section-label-num">01</span>
+      <span class="seller-shop-section-label-text">Impact &amp; Metrics</span>
+      <span class="seller-shop-section-label-line"></span>
+    </div>
+
+    <div class="seller-shop-metrics-grid">
+      <div class="seller-shop-metric-card">
+        <div class="seller-shop-metric-val">78K+</div>
+        <div class="seller-shop-metric-label">Lines of Code</div>
+        <div class="seller-shop-metric-sub">Go + C# + JS + Razor</div>
+      </div>
+      <div class="seller-shop-metric-card">
+        <div class="seller-shop-metric-val">120+</div>
+        <div class="seller-shop-metric-label">API Endpoints</div>
+        <div class="seller-shop-metric-sub">RESTful microservices</div>
+      </div>
+      <div class="seller-shop-metric-card">
+        <div class="seller-shop-metric-val">53+</div>
+        <div class="seller-shop-metric-label">Database Models</div>
+        <div class="seller-shop-metric-sub">MongoDB + SQL</div>
+      </div>
+      <div class="seller-shop-metric-card seller-shop-red">
+        <div class="seller-shop-metric-val">10</div>
+        <div class="seller-shop-metric-label">Complexity Score</div>
+        <div class="seller-shop-metric-sub">Mission Critical</div>
+      </div>
+    </div>
+
+    <div class="seller-shop-business-line-cards">
+      <div class="seller-shop-bl-card">
+        <div class="seller-shop-bl-card-title">E-commerce</div>
+        <div class="seller-shop-bl-card-desc">Multi-channel seller platform for product management, shopping cart order lifecycle, inventory tracking, and pricing with tiering rules across seller networks.</div>
+        <span class="seller-shop-bl-card-tag">Order Management</span>
+      </div>
+      <div class="seller-shop-bl-card">
+        <div class="seller-shop-bl-card-title">Payments</div>
+        <div class="seller-shop-bl-card-desc">Integrated Xendit and Midtrans payment gateways supporting virtual accounts, invoicing, disbursements, balance management, fee rules, and callback processing.</div>
+        <span class="seller-shop-bl-card-tag seller-shop-amber-tag">Xendit + Midtrans</span>
+      </div>
+      <div class="seller-shop-bl-card">
+        <div class="seller-shop-bl-card-title">Shipping</div>
+        <div class="seller-shop-bl-card-desc">Multi-carrier shipping integration via Shipper API v1/v3 for rate lookup, order creation, pickup scheduling, tracking, and AWB monitoring with background workers.</div>
+        <span class="seller-shop-bl-card-tag seller-shop-amber-tag">Shipper API</span>
+      </div>
+      <div class="seller-shop-bl-card">
+        <div class="seller-shop-bl-card-title">Communications</div>
+        <div class="seller-shop-bl-card-desc">In-app chat messaging, WhatsApp/OTP via Twilio, email via MailKit, and push notifications for order status updates and seller alerts.</div>
+        <span class="seller-shop-bl-card-tag">Twilio + MailKit</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="seller-shop-section">
+    <div class="seller-shop-section-label">
+      <span class="seller-shop-section-label-num">02</span>
+      <span class="seller-shop-section-label-text">Architecture</span>
+      <span class="seller-shop-section-label-line"></span>
+    </div>
+
+    <div class="seller-shop-arch-diagram">
+      <div class="seller-shop-arch-diagram-inner">
+        <div class="seller-shop-arch-node seller-shop-source">
+          <div class="seller-shop-arch-node-icon"></div>
+          <div class="seller-shop-arch-node-label">UI Backpanel</div>
+          <div class="seller-shop-arch-node-sub">ASP.NET MVC + JS</div>
+        </div>
+        <div class="seller-shop-arch-arrow">
+          <div class="seller-shop-arch-arrow-line"></div>
+          <div class="seller-shop-arch-arrow-label">HTTPS</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+          <div class="seller-shop-arch-node core" style="width:220px;">
+            <div class="seller-shop-arch-node-label" style="font-size:13px; margin-bottom:10px;">API Gateway</div>
+            <div class="seller-shop-core-stack">
+              <div class="seller-shop-core-step"><div class="seller-shop-core-step-dot"></div>C# Web API (30+ Controllers)</div>
+              <div class="seller-shop-core-step"><div class="seller-shop-core-step-dot"></div>Go Payment Service</div>
+              <div class="seller-shop-core-step"><div class="seller-shop-core-step-dot"></div>Go Shipping Service</div>
+              <div class="seller-shop-core-step"><div class="seller-shop-core-step-dot" style="background:var(--blue)"></div>Go App Service</div>
+              <div class="seller-shop-core-step"><div class="seller-shop-core-step-dot"></div>Scheduler Workers</div>
+            </div>
+          </div>
+        </div>
+        <div class="seller-shop-arch-arrow">
+          <div class="seller-shop-arch-arrow-line"></div>
+          <div class="seller-shop-arch-arrow-label">persist</div>
+        </div>
+        <div class="seller-shop-arch-node seller-shop-output">
+          <div class="seller-shop-arch-node-icon"></div>
+          <div class="seller-shop-arch-node-label">MongoDB</div>
+          <div class="seller-shop-arch-node-sub">Primary database</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seller-shop-section">
+    <div class="seller-shop-section-label">
+      <span class="seller-shop-section-label-num">03</span>
+      <span class="seller-shop-section-label-text">Tech Stack</span>
+      <span class="seller-shop-section-label-line"></span>
+    </div>
+
+    <div class="seller-shop-impact-wrapper">
+      <table class="seller-shop-stack-table">
+        <tbody>
+          <tr><td class="seller-shop-layer">Runtime (C#)</td><td class="seller-shop-tech">.NET 6.0</td></tr>
+          <tr><td class="seller-shop-layer">Runtime (Go)</td><td class="seller-shop-tech">Go 1.17</td></tr>
+          <tr><td class="seller-shop-layer">Web Framework (C#)</td><td class="seller-shop-tech">ASP.NET Core + AutoMapper + Swagger</td></tr>
+          <tr><td class="seller-shop-layer">Web Framework (Go)</td><td class="seller-shop-tech">Go-Chi</td></tr>
+          <tr><td class="seller-shop-layer">Database</td><td class="seller-shop-tech">MongoDB + MySQL + PostgreSQL</td></tr>
+          <tr><td class="seller-shop-layer">Payment Gateway</td><td class="seller-shop-tech">Xendit + Midtrans</td></tr>
+          <tr><td class="seller-shop-layer">Shipping</td><td class="seller-shop-tech">Shipper API v1/v3</td></tr>
+          <tr><td class="seller-shop-layer">Messaging</td><td class="seller-shop-tech">Twilio + MailKit</td></tr>
+          <tr><td class="seller-shop-layer">Auth</td><td class="seller-shop-tech">JWT Bearer + Basic Auth</td></tr>
+          <tr><td class="seller-shop-layer">Background Jobs</td><td class="seller-shop-tech">NCrontab Workers (Invoice Settlement, AWB, Approval)</td></tr>
+          <tr><td class="seller-shop-layer">Monitoring</td><td class="seller-shop-tech">Elastic APM + Logrus</td></tr>
+          <tr><td class="seller-shop-layer">Infrastructure</td><td class="seller-shop-tech">Docker + Kubernetes (GKE) + ArgoCD</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="seller-shop-section">
+    <div class="seller-shop-section-label">
+      <span class="seller-shop-section-label-num">04</span>
+      <span class="seller-shop-section-label-text">Capabilities</span>
+      <span class="seller-shop-section-label-line"></span>
+    </div>
+
+    <div class="seller-shop-impact-wrapper">
+      <table class="seller-shop-stack-table">
+        <tbody>
+          <tr><td class="seller-shop-layer">Order Lifecycle</td><td class="seller-shop-tech">Checkout, approval, picking, shipment, delivery, receive, close, cancel, force-close</td></tr>
+          <tr><td class="seller-shop-layer">Payment Processing</td><td class="seller-shop-tech">Virtual account, transfer, balance, invoice, fee rules, disbursement, callback</td></tr>
+          <tr><td class="seller-shop-layer">Shipping</td><td class="seller-shop-tech">Rate lookup, order creation, pickup scheduling, tracking, AWB, multi-carrier</td></tr>
+          <tr><td class="seller-shop-layer">Seller Management</td><td class="seller-shop-tech">Registration, activation, tiering, pricing, product sync, downline network</td></tr>
+          <tr><td class="seller-shop-layer">Product Management</td><td class="seller-shop-tech">Catalog, inventory, pricing, margin, markup, stock sync, barcode scan</td></tr>
+          <tr><td class="seller-shop-layer">Finance</td><td class="seller-shop-tech">Balance history, withdrawal, invoicing, receivable settings, reconciliation</td></tr>
+          <tr><td class="seller-shop-layer">Communications</td><td class="seller-shop-tech">Chat messaging, WhatsApp OTP, email notifications, push notifications</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .seller-shop {
+    --seller-shop-bg: #0a0b0d;
+    --seller-shop-bg2: #0f1114;
+    --seller-shop-bg3: #141720;
+    --seller-shop-surface: #1a1e28;
+    --seller-shop-surface2: #212636;
+    --seller-shop-border: #2a2f40;
+    --seller-shop-border2: #363c50;
+    --seller-shop-accent: #00e5a0;
+    --seller-shop-accent2: #00b87a;
+    --seller-shop-accent-dim: rgba(0, 229, 160, 0.08);
+    --seller-shop-accent-dim2: rgba(0, 229, 160, 0.15);
+    --seller-shop-amber: #f59e0b;
+    --seller-shop-amber-dim: rgba(245, 158, 11, 0.1);
+    --seller-shop-blue: #60a5fa;
+    --seller-shop-blue-dim: rgba(96, 165, 250, 0.1);
+    --seller-shop-red: #f87171;
+    --seller-shop-text: #e8eaf0;
+    --seller-shop-text2: #8b92a8;
+    --seller-shop-text3: #5a6077;
+    --seller-shop-mono: "JetBrains Mono", monospace;
+    --seller-shop-display: "Syne", sans-serif;
+    --seller-shop-radius: 10px;
+    --seller-shop-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .seller-shop * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .seller-shop body {
+    background: var(--seller-shop-bg);
+    color: var(--seller-shop-text);
+    font-family: var(--seller-shop-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .seller-shop-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--seller-shop-border);
+  }
+  .seller-shop-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--seller-shop-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .seller-shop-nav-back:hover {
+    color: var(--seller-shop-accent);
+  }
+  .seller-shop-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .seller-shop-nav-dot {
+    color: var(--seller-shop-border2);
+  }
+  .seller-shop-nav-title {
+    color: var(--seller-shop-text3);
+    font-size: 12px;
+  }
+
+  .seller-shop-hero {
+    margin-bottom: 56px;
+  }
+  .seller-shop-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .seller-shop-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .seller-shop-badge-corporate {
+    background: var(--seller-shop-blue-dim);
+    color: var(--seller-shop-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .seller-shop-badge-client {
+    background: var(--seller-shop-accent-dim);
+    color: var(--seller-shop-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .seller-shop-badge-year {
+    background: var(--seller-shop-surface);
+    color: var(--seller-shop-text3);
+    border-color: var(--seller-shop-border);
+  }
+
+  .seller-shop-hero-title {
+    font-family: var(--seller-shop-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .seller-shop-hero-title span {
+    color: var(--seller-shop-accent);
+    position: relative;
+  }
+
+  .seller-shop-hero-desc {
+    color: var(--seller-shop-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .seller-shop-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .seller-shop-stack-pill {
+    background: var(--seller-shop-surface);
+    border: 1px solid var(--seller-shop-border);
+    color: var(--seller-shop-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .seller-shop-stack-pill:hover {
+    border-color: var(--seller-shop-accent);
+    color: var(--seller-shop-accent);
+    background: var(--seller-shop-accent-dim);
+  }
+
+  .seller-shop-section {
+    margin-bottom: 52px;
+  }
+  .seller-shop-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .seller-shop-section-label-text {
+    font-family: var(--seller-shop-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--seller-shop-text3);
+    text-transform: uppercase;
+  }
+  .seller-shop-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--seller-shop-border);
+  }
+  .seller-shop-section-label-num {
+    font-size: 11px;
+    color: var(--seller-shop-border2);
+  }
+
+  .seller-shop-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .seller-shop-metric-card {
+    background: var(--seller-shop-bg3);
+    border: 1px solid var(--seller-shop-border);
+    border-radius: var(--seller-shop-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .seller-shop-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--seller-shop-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .seller-shop-metric-card:hover {
+    border-color: var(--seller-shop-border2);
+  }
+  .seller-shop-metric-card:hover::before {
+    opacity: 1;
+  }
+  .seller-shop-metric-amber .seller-shop-metric-val {
+    color: var(--seller-shop-amber);
+  }
+  .seller-shop-metric-amber::before {
+    background: var(--seller-shop-amber);
+  }
+
+  .seller-shop-metric-val {
+    font-family: var(--seller-shop-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--seller-shop-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .seller-shop-metric-label {
+    font-size: 12px;
+    color: var(--seller-shop-text2);
+    margin-bottom: 3px;
+  }
+  .seller-shop-metric-sub {
+    font-size: 11px;
+    color: var(--seller-shop-text3);
+  }
+
+  .seller-shop-arch-diagram {
+    background: var(--seller-shop-bg3);
+    border: 1px solid var(--seller-shop-border);
+    border-radius: var(--seller-shop-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .seller-shop-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .seller-shop-arch-node {
+    background: var(--seller-shop-surface);
+    border: 1px solid var(--seller-shop-border2);
+    border-radius: var(--seller-shop-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .seller-shop-core {
+    background: var(--seller-shop-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .seller-shop-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .seller-shop-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--seller-shop-amber-dim);
+    min-width: 110px;
+  }
+  .seller-shop-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .seller-shop-arch-node-label {
+    font-family: var(--seller-shop-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .seller-shop-arch-node-sub {
+    font-size: 10px;
+    color: var(--seller-shop-text3);
+    font-family: var(--seller-shop-mono);
+  }
+
+  .seller-shop-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--seller-shop-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .seller-shop-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--seller-shop-border),
+      var(--seller-shop-accent),
+      var(--seller-shop-border)
+    );
+    position: relative;
+  }
+  .seller-shop-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--seller-shop-accent);
+    font-size: 10px;
+  }
+  .seller-shop-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--seller-shop-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .seller-shop-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .seller-shop-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .seller-shop-core-step {
+    background: var(--seller-shop-bg3);
+    border: 1px solid var(--seller-shop-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--seller-shop-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .seller-shop-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--seller-shop-accent);
+    flex-shrink: 0;
+  }
+
+  .seller-shop-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .seller-shop-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .seller-shop-schema-arrow-label {
+    font-size: 9px;
+    color: var(--seller-shop-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .seller-shop-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .seller-shop-decision-card {
+    background: var(--seller-shop-bg3);
+    border: 1px solid var(--seller-shop-border);
+    border-radius: var(--seller-shop-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .seller-shop-decision-card:hover {
+    border-color: var(--seller-shop-border2);
+  }
+
+  .seller-shop-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .seller-shop-decision-num {
+    font-family: var(--seller-shop-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--seller-shop-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .seller-shop-decision-title {
+    font-family: var(--seller-shop-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .seller-shop-decision-problem {
+    font-size: 12px;
+    color: var(--seller-shop-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--seller-shop-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .seller-shop-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .seller-shop-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .seller-shop-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .seller-shop-decision-chosen {
+    color: var(--seller-shop-accent);
+  }
+  .seller-shop-decision-tradeoff {
+    color: var(--seller-shop-amber);
+  }
+  .seller-shop-decision-col-text {
+    font-size: 12px;
+    color: var(--seller-shop-text2);
+    line-height: 1.65;
+  }
+
+  .seller-shop-decision-code {
+    background: var(--seller-shop-bg);
+    border-top: 1px solid var(--seller-shop-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--seller-shop-text2);
+    overflow-x: auto;
+  }
+  .seller-shop-decision-code pre {
+    margin: 0;
+    font-family: var(--seller-shop-mono);
+    line-height: 1.6;
+  }
+  .seller-shop-token-kw {
+    color: #c792ea;
+  }
+  .seller-shop-token-fn {
+    color: #82aaff;
+  }
+  .seller-shop-token-str {
+    color: #c3e88d;
+  }
+  .seller-shop-token-cm {
+    color: var(--seller-shop-text3);
+    font-style: italic;
+  }
+  .seller-shop-token-acc {
+    color: var(--seller-shop-accent);
+  }
+
+  .seller-shop-impact-wrapper {
+    background: var(--seller-shop-bg3);
+    border: 1px solid var(--seller-shop-border);
+    border-radius: var(--seller-shop-radius);
+    overflow: hidden;
+  }
+  .seller-shop-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .seller-shop-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--seller-shop-text3);
+    border-bottom: 1px solid var(--seller-shop-border);
+    font-family: var(--seller-shop-display);
+    font-weight: 600;
+  }
+  .seller-shop-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--seller-shop-border);
+    color: var(--seller-shop-text2);
+  }
+  .seller-shop-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .seller-shop-impact-table tr:hover td {
+    background: var(--seller-shop-surface);
+  }
+  .seller-shop-before {
+    color: var(--seller-shop-red);
+  }
+  .seller-shop-after {
+    color: var(--seller-shop-accent);
+  }
+  .seller-shop-delta {
+    color: var(--seller-shop-accent);
+    font-weight: 500;
+    font-family: var(--seller-shop-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .seller-shop-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .seller-shop-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .seller-shop-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--seller-shop-border);
+  }
+  .seller-shop-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .seller-shop-layer {
+    color: var(--seller-shop-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .seller-shop-tech {
+    color: var(--seller-shop-accent);
+    font-family: var(--seller-shop-mono);
+  }
+  .seller-shop-stack-table tr:hover td {
+    background: var(--seller-shop-surface);
+  }
+
+  .seller-shop-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--seller-shop-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .seller-shop-footer-text {
+    font-size: 11px;
+    color: var(--seller-shop-text3);
+  }
+  .seller-shop-footer-link {
+    font-size: 11px;
+    color: var(--seller-shop-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .seller-shop-footer-link:hover {
+    color: var(--seller-shop-accent);
+  }
+
+  @keyframes seller-shop-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .seller-shop-hero {
+    animation: seller-shop-fadeUp 0.5s ease both;
+  }
+  .seller-shop-section:nth-child(2) {
+    animation: seller-shop-fadeUp 0.5s 0.1s ease both;
+  }
+  .seller-shop-section:nth-child(3) {
+    animation: seller-shop-fadeUp 0.5s 0.15s ease both;
+  }
+  .seller-shop-section:nth-child(4) {
+    animation: seller-shop-fadeUp 0.5s 0.2s ease both;
+  }
+  .seller-shop-section:nth-child(5) {
+    animation: seller-shop-fadeUp 0.5s 0.25s ease both;
+  }
+  .seller-shop-section:nth-child(6) {
+    animation: seller-shop-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .seller-shop-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--seller-shop-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: seller-shop-blink 1s step-end infinite;
+  }
+  @keyframes seller-shop-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .seller-shop-badge-client { background: var(--seller-shop-accent-dim); color: var(--seller-shop-accent); border-color: rgba(0,229,160,0.2); }
+  .seller-shop-metric-val { font-size: 22px; }
+  .seller-shop-amber .seller-shop-metric-val { color: var(--seller-shop-amber); }
+  .seller-shop-amber::before { background: var(--seller-shop-amber); }
+  .seller-shop-red .seller-shop-metric-val { color: var(--seller-shop-red); }
+  .seller-shop-red::before { background: var(--seller-shop-red); }
+  .seller-shop-blue .seller-shop-metric-val { color: var(--seller-shop-blue); }
+  .seller-shop-blue::before { background: var(--seller-shop-blue); }
+  .seller-shop-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .seller-shop-business-line-cards { grid-template-columns: 1fr; } }
+  .seller-shop-bl-card { background: var(--seller-shop-bg2); border: 1px solid var(--seller-shop-border); border-radius: var(--seller-shop-radius); padding: 16px; }
+  .seller-shop-bl-card-title { font-family: var(--seller-shop-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .seller-shop-bl-card-desc { font-size: 11px; color: var(--seller-shop-text3); line-height: 1.6; }
+  .seller-shop-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--seller-shop-accent-dim); color: var(--seller-shop-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .seller-shop-bl-card-tag.seller-shop-amber-tag { background: var(--seller-shop-amber-dim); color: var(--seller-shop-amber); border-color: rgba(245,158,11,0.2); }
+  .seller-shop-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .seller-shop-cap-list { grid-template-columns: 1fr; } }
+  .seller-shop-cap-item { background: var(--seller-shop-bg3); border: 1px solid var(--seller-shop-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--seller-shop-text2); }
+  .seller-shop-cap-item:hover { border-color: var(--seller-shop-border2); color: var(--seller-shop-text); }
+  .seller-shop-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--seller-shop-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .seller-shop-flow-panel { background: var(--seller-shop-bg2); border: 1px solid var(--seller-shop-border); border-radius: var(--seller-shop-radius); padding: 20px; margin-top: 20px; }
+  .seller-shop-flow-panel-title { font-family: var(--seller-shop-display); font-size: 12px; font-weight: 600; color: var(--seller-shop-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .seller-shop-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .seller-shop-flow-step { display: flex; align-items: center; gap: 8px; }
+  .seller-shop-flow-step-box { background: var(--seller-shop-surface); border: 1px solid var(--seller-shop-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--seller-shop-text2); white-space: nowrap; }
+  .seller-shop-flow-step-box.seller-shop-accent { border-color: rgba(0,229,160,0.3); color: var(--seller-shop-accent); }
+  .seller-shop-flow-step-arr { color: var(--seller-shop-text3); font-size: 11px; margin: 0 4px; }
+</style>

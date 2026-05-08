@@ -1,0 +1,1222 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Alpha Incentive System - Mas Muhammad" description="A sales incentive calculation system for Sanofi pharmaceutical company enabling monthly, quarterly, and yearly incentive computation for sales representatives with approval workflows. Built with ASP.NET WebForms on .NET Framework 2.0 with SQL Server Reporting Services.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="insentif-alpha">
+
+<header class="insentif-alpha-hero">
+    <div class="insentif-alpha-hero-meta">
+      <span class="insentif-alpha-badge insentif-alpha-badge-corporate">Corporate</span><span class="insentif-alpha-badge insentif-alpha-badge-client">Sanofi</span> 
+      <span class="insentif-alpha-badge insentif-alpha-badge-domain">Pharma</span>
+      <span class="insentif-alpha-badge insentif-alpha-badge-year">September 2014</span>
+    </div>
+    <h1 class="insentif-alpha-hero-title">
+      Alpha Incentive<br>
+      <span>System</span><span class="insentif-alpha-cursor"></span>
+    </h1>
+    <p class="insentif-alpha-hero-desc">
+      A sales incentive calculation system for Sanofi pharmaceutical company enabling
+      monthly, quarterly, and yearly incentive computation for sales representatives
+      with approval workflows. Built with ASP.NET WebForms on .NET Framework 2.0
+      with SQL Server Reporting Services.
+    </p>
+    <div class="insentif-alpha-stack-pills">
+      <span class="insentif-alpha-stack-pill">ASP.NET WebForms 2.0</span>
+      <span class="insentif-alpha-stack-pill">C#</span>
+      <span class="insentif-alpha-stack-pill">.NET 2.0</span>
+      <span class="insentif-alpha-stack-pill">SQL Server</span>
+      <span class="insentif-alpha-stack-pill">SSRS (RDLC)</span>
+      <span class="insentif-alpha-stack-pill">Typed DataSets</span>
+      <span class="insentif-alpha-stack-pill">Windows Auth</span>
+    </div>
+  </header>
+
+  <section class="insentif-alpha-section">
+    <div class="insentif-alpha-section-label">
+      <span class="insentif-alpha-section-label-num">01</span>
+      <span class="insentif-alpha-section-label-text">Impact &amp; Metrics</span>
+      <span class="insentif-alpha-section-label-line"></span>
+    </div>
+
+    <div class="insentif-alpha-metrics-grid">
+      <div class="insentif-alpha-metric-card">
+        <div class="insentif-alpha-metric-val">19K+</div>
+        <div class="insentif-alpha-metric-label">Lines of Code</div>
+        <div class="insentif-alpha-metric-sub">C# + ASPX + RDLC</div>
+      </div>
+      <div class="insentif-alpha-metric-card insentif-alpha-amber">
+        <div class="insentif-alpha-metric-val">0</div>
+        <div class="insentif-alpha-metric-label">API Endpoints</div>
+        <div class="insentif-alpha-metric-sub">Traditional WebForms</div>
+      </div>
+      <div class="insentif-alpha-metric-card">
+        <div class="insentif-alpha-metric-val">40+</div>
+        <div class="insentif-alpha-metric-label">Database Tables</div>
+        <div class="insentif-alpha-metric-sub">Normalized schema</div>
+      </div>
+      <div class="insentif-alpha-metric-card insentif-alpha-red">
+        <div class="insentif-alpha-metric-val">10</div>
+        <div class="insentif-alpha-metric-label">Complexity Score</div>
+        <div class="insentif-alpha-metric-sub">Mission Critical</div>
+      </div>
+    </div>
+
+    <div class="insentif-alpha-business-line-cards">
+      <div class="insentif-alpha-bl-card">
+        <div class="insentif-alpha-bl-card-title">Pharma</div>
+        <div class="insentif-alpha-bl-card-desc">Sales incentive calculation for pharmaceutical sales force with monthly/quarterly/yearly targets, qualitative scoring, and new customer validation.</div>
+        <span class="insentif-alpha-bl-card-tag">Incentive Rules Engine</span>
+      </div>
+      <div class="insentif-alpha-bl-card">
+        <div class="insentif-alpha-bl-card-title">Pasteur (Vaccine)</div>
+        <div class="insentif-alpha-bl-card-desc">Dedicated business line for Sanofi Pasteur vaccine division with distinct calculation rules, budget allocation, and reporting structures.</div>
+        <span class="insentif-alpha-bl-card-tag insentif-alpha-amber-tag">Separate Calculation Logic</span>
+      </div>
+    </div>
+
+    <div class="insentif-alpha-impact-wrapper" style="margin-top:20px;">
+      <table class="insentif-alpha-impact-table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Before</th>
+            <th>After</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="insentif-alpha-row-label">Incentive Calculation</td>
+            <td class="insentif-alpha-before">Manual Excel spreadsheets</td>
+            <td class="insentif-alpha-after">Automated system with audit trail</td>
+            <td class="insentif-alpha-delta">+ 100% accurate</td>
+          </tr>
+          <tr>
+            <td class="insentif-alpha-row-label">Calculation Frequency</td>
+            <td class="insentif-alpha-before">Monthly manual processing</td>
+            <td class="insentif-alpha-after">Monthly + quarterly + yearly auto</td>
+            <td class="insentif-alpha-delta">+ multi-period</td>
+          </tr>
+          <tr>
+            <td class="insentif-alpha-row-label">Approval Workflow</td>
+            <td class="insentif-alpha-before">Email-based approvals</td>
+            <td class="insentif-alpha-after">In-system role-based approval (ADMIN &gt; AM &gt; SM)</td>
+            <td class="insentif-alpha-delta">+ auditable</td>
+          </tr>
+          <tr>
+            <td class="insentif-alpha-row-label">Reporting</td>
+            <td class="insentif-alpha-before">Static manual reports</td>
+            <td class="insentif-alpha-after">SSRS RDLC reports with drill-down</td>
+            <td class="insentif-alpha-delta">+ interactive</td>
+          </tr>
+          <tr>
+            <td class="insentif-alpha-row-label">Business Lines</td>
+            <td class="insentif-alpha-before">Single-track processing</td>
+            <td class="insentif-alpha-after">Pharma + Pasteur with distinct rules</td>
+            <td class="insentif-alpha-delta">+ 2x coverage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="insentif-alpha-section">
+    <div class="insentif-alpha-section-label">
+      <span class="insentif-alpha-section-label-num">02</span>
+      <span class="insentif-alpha-section-label-text">Architecture</span>
+      <span class="insentif-alpha-section-label-line"></span>
+    </div>
+
+    <div class="insentif-alpha-arch-diagram">
+      <div class="insentif-alpha-arch-row" style="gap:0;">
+
+        <div class="insentif-alpha-arch-flow-vertical">
+          <div class="insentif-alpha-arch-node insentif-alpha-source">
+            <div class="insentif-alpha-arch-node-icon"></div>
+            <div class="insentif-alpha-arch-node-label">ASPX Pages</div>
+            <div class="insentif-alpha-arch-node-sub">UI / Presentation</div>
+          </div>
+          <div class="insentif-alpha-arch-flow-arrow-down"></div>
+          <div class="insentif-alpha-arch-node core">
+            <div class="insentif-alpha-arch-node-icon"></div>
+            <div class="insentif-alpha-arch-node-label">BLL Classes</div>
+            <div class="insentif-alpha-arch-node-sub">Business Logic Layer</div>
+            <div class="insentif-alpha-core-stack">
+              <div class="insentif-alpha-core-step">
+                <span class="insentif-alpha-core-step-dot"></span>
+                Incentive calculation engine
+              </div>
+              <div class="insentif-alpha-core-step">
+                <span class="insentif-alpha-core-step-dot"></span>
+                Approval workflow logic
+              </div>
+              <div class="insentif-alpha-core-step">
+                <span class="insentif-alpha-core-step-dot"></span>
+                Validation &amp; scoring rules
+              </div>
+            </div>
+          </div>
+          <div class="insentif-alpha-arch-flow-arrow-down"></div>
+          <div class="insentif-alpha-arch-node" style="border-color: rgba(96,165,250,0.3); background: var(--blue-dim);">
+            <div class="insentif-alpha-arch-node-icon"></div>
+            <div class="insentif-alpha-arch-node-label">DAL Layer</div>
+            <div class="insentif-alpha-arch-node-sub">Typed DataSets / TableAdapters</div>
+          </div>
+          <div class="insentif-alpha-arch-flow-arrow-down"></div>
+          <div class="insentif-alpha-arch-node insentif-alpha-output">
+            <div class="insentif-alpha-arch-node-icon"></div>
+            <div class="insentif-alpha-arch-node-label">SQL Server</div>
+            <div class="insentif-alpha-arch-node-sub">40+ tables</div>
+          </div>
+        </div>
+
+        <div style="width:24px;"></div>
+
+        <div style="display:flex; flex-direction:column; gap:16px; align-self:stretch; justify-content:center;">
+          <div class="insentif-alpha-arch-node insentif-alpha-report-node">
+            <div class="insentif-alpha-arch-node-icon"></div>
+            <div class="insentif-alpha-arch-node-label">SSRS RDLC</div>
+            <div class="insentif-alpha-arch-node-sub">Reporting Services</div>
+            <div class="insentif-alpha-core-stack">
+              <div class="insentif-alpha-core-step">
+                <span class="insentif-alpha-core-step-dot" style="background:var(--blue)"></span>
+                Incentive reports
+              </div>
+              <div class="insentif-alpha-core-step">
+                <span class="insentif-alpha-core-step-dot" style="background:var(--blue)"></span>
+                Performance dashboards
+              </div>
+            </div>
+          </div>
+          <div class="insentif-alpha-arch-node" style="border-color: rgba(245,158,11,0.3); background: var(--amber-dim);">
+            <div class="insentif-alpha-arch-node-icon"></div>
+            <div class="insentif-alpha-arch-node-label">Windows Auth</div>
+            <div class="insentif-alpha-arch-node-sub">AD groups · Role-based</div>
+            <div class="insentif-alpha-core-stack">
+              <div class="insentif-alpha-core-step">
+                <span class="insentif-alpha-core-step-dot" style="background:var(--amber)"></span>
+                ADMIN / AM / SM roles
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="insentif-alpha-flow-panel">
+      <div class="insentif-alpha-flow-panel-title">Architecture Flow</div>
+      <div class="insentif-alpha-flow-steps">
+        <div class="insentif-alpha-flow-step">
+          <div class="insentif-alpha-flow-step-box">ASPX Pages</div>
+          <span class="insentif-alpha-flow-step-arr">→</span>
+        </div>
+        <div class="insentif-alpha-flow-step">
+          <div class="insentif-alpha-flow-step-box insentif-alpha-accent">BLL Classes</div>
+          <span class="insentif-alpha-flow-step-arr">→</span>
+        </div>
+        <div class="insentif-alpha-flow-step">
+          <div class="insentif-alpha-flow-step-box">Typed DataSets</div>
+          <span class="insentif-alpha-flow-step-arr">→</span>
+        </div>
+        <div class="insentif-alpha-flow-step">
+          <div class="insentif-alpha-flow-step-box">TableAdapters</div>
+          <span class="insentif-alpha-flow-step-arr">→</span>
+        </div>
+        <div class="insentif-alpha-flow-step">
+          <div class="insentif-alpha-flow-step-box insentif-alpha-accent">SQL Server</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:center;">
+      <div class="insentif-alpha-arch-node insentif-alpha-schema-node">
+        <div class="insentif-alpha-arch-node-icon"></div>
+        <div class="insentif-alpha-arch-node-label" style="font-size:11px;">MST_REP</div>
+        <div class="insentif-alpha-arch-node-sub">representatives</div>
+      </div>
+      <div class="insentif-alpha-schema-connector">
+        <span class="insentif-alpha-schema-arrow-label">+</span>
+      </div>
+      <div class="insentif-alpha-arch-node insentif-alpha-schema-node">
+        <div class="insentif-alpha-arch-node-icon"></div>
+        <div class="insentif-alpha-arch-node-label" style="font-size:11px;">TRN_TARGET</div>
+        <div class="insentif-alpha-arch-node-sub">monthly targets</div>
+      </div>
+      <div class="insentif-alpha-schema-connector">
+        <span class="insentif-alpha-schema-arrow-label">+</span>
+      </div>
+      <div class="insentif-alpha-arch-node insentif-alpha-schema-node">
+        <div class="insentif-alpha-arch-node-icon"></div>
+        <div class="insentif-alpha-arch-node-label" style="font-size:11px;">TRN_INCENTIVE</div>
+        <div class="insentif-alpha-arch-node-sub">calculated incentives</div>
+      </div>
+      <div class="insentif-alpha-schema-connector">
+        <span class="insentif-alpha-schema-arrow-label">+</span>
+      </div>
+      <div class="insentif-alpha-arch-node insentif-alpha-schema-node">
+        <div class="insentif-alpha-arch-node-icon"></div>
+        <div class="insentif-alpha-arch-node-label" style="font-size:11px;">MST_APPROVAL</div>
+        <div class="insentif-alpha-arch-node-sub">workflow status</div>
+      </div>
+      <div class="insentif-alpha-schema-connector">
+        <span class="insentif-alpha-schema-arrow-label">+</span>
+      </div>
+      <div class="insentif-alpha-arch-node insentif-alpha-schema-node">
+        <div class="insentif-alpha-arch-node-icon"></div>
+        <div class="insentif-alpha-arch-node-label" style="font-size:11px;">MST_NEWCUST</div>
+        <div class="insentif-alpha-arch-node-sub">new customer validation</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="insentif-alpha-section">
+    <div class="insentif-alpha-section-label">
+      <span class="insentif-alpha-section-label-num">03</span>
+      <span class="insentif-alpha-section-label-text">Capabilities</span>
+      <span class="insentif-alpha-section-label-line"></span>
+    </div>
+
+    <div class="insentif-alpha-metrics-grid">
+      <div class="insentif-alpha-metric-card">
+        <div class="insentif-alpha-metric-val" style="font-size:26px;"> Monthly</div>
+        <div class="insentif-alpha-metric-label">Incentive Periods</div>
+        <div class="insentif-alpha-metric-sub">Monthly + Quarterly + Yearly calculation cycles with configurable rules per period</div>
+      </div>
+      <div class="insentif-alpha-metric-card">
+        <div class="insentif-alpha-metric-val" style="font-size:26px;"> Excel</div>
+        <div class="insentif-alpha-metric-label">Data Upload</div>
+        <div class="insentif-alpha-metric-sub">Excel-based sales and budget data import with validation and error reporting</div>
+      </div>
+      <div class="insentif-alpha-metric-card insentif-alpha-amber">
+        <div class="insentif-alpha-metric-val" style="font-size:26px;"> Role-Based</div>
+        <div class="insentif-alpha-metric-label">Access Control</div>
+        <div class="insentif-alpha-metric-sub">ADMIN, Area Manager (AM), Sales Manager (SM) roles via Windows Authentication</div>
+      </div>
+      <div class="insentif-alpha-metric-card">
+        <div class="insentif-alpha-metric-val" style="font-size:26px;"> SSRS</div>
+        <div class="insentif-alpha-metric-label">Reporting</div>
+        <div class="insentif-alpha-metric-sub">SQL Server Reporting Services (RDLC) with drill-down and export capabilities</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="insentif-alpha-section">
+    <div class="insentif-alpha-section-label">
+      <span class="insentif-alpha-section-label-num">04</span>
+      <span class="insentif-alpha-section-label-text">Decision Log</span>
+      <span class="insentif-alpha-section-label-line"></span>
+    </div>
+
+    <div class="insentif-alpha-decision-list">
+
+      <div class="insentif-alpha-decision-card">
+        <div class="insentif-alpha-decision-header">
+          <span class="insentif-alpha-decision-num">01</span>
+          <div>
+            <div class="insentif-alpha-decision-title">Typed DataSets / TableAdapters Instead of Modern ORM</div>
+            <div class="insentif-alpha-decision-problem">The project was locked to .NET Framework 2.0 (corporate standard at Sanofi in 2013). Entity Framework 1.0 was available but immature and poorly suited for the complex stored procedure-heavy calculation logic required by the incentive engine.</div>
+          </div>
+        </div>
+        <div class="insentif-alpha-decision-body">
+          <div>
+            <div class="insentif-alpha-decision-col-label insentif-alpha-chosen"> Chosen — Typed DataSets</div>
+            <div class="insentif-alpha-decision-col-text">TableAdapters provided strongly-typed data access with full stored procedure support. The visual designer made it easy to map 40+ tables. Queries were optimized for the incentive calculation engine. No ORM overhead — direct ADO.NET under the hood when needed.</div>
+          </div>
+          <div>
+            <div class="insentif-alpha-decision-col-label insentif-alpha-tradeoff">△ Tradeoff — EF / NHibernate</div>
+            <div class="insentif-alpha-decision-col-text">EF 1.0 on .NET 2.0 had limited LINQ support and poor stored procedure mapping. NHibernate required XML mapping files and had a steep learning curve. Neither would have handled the complex aggregate calculations efficiently.</div>
+          </div>
+        </div>
+        <div class="insentif-alpha-decision-code">
+<pre><span class="insentif-alpha-token-cm">// Typed DataSet TableAdapter — strongly-typed data access</span>
+<span class="insentif-alpha-token-type">IncentiveDataSet</span> ds = <span class="insentif-alpha-token-kw">new</span> <span class="insentif-alpha-token-fn">IncentiveDataSet</span>();
+<span class="insentif-alpha-token-type">IncentiveDataSetTableAdapters</span>.<span class="insentif-alpha-token-type">TrnIncentiveTableAdapter</span> ta =
+    <span class="insentif-alpha-token-kw">new</span> <span class="insentif-alpha-token-type">IncentiveDataSetTableAdapters</span>.<span class="insentif-alpha-token-fn">TrnIncentiveTableAdapter</span>();
+
+ta.<span class="insentif-alpha-token-fn">FillByPeriod</span>(ds.TrnIncentive, year, month, <span class="insentif-alpha-token-str">"PHARMA"</span>);
+
+<span class="insentif-alpha-token-cm">// Calculate incentive across all reps in the dataset</span>
+<span class="insentif-alpha-token-kw">foreach</span> (<span class="insentif-alpha-token-type">IncentiveDataSet.TrnIncentiveRow</span> row <span class="insentif-alpha-token-kw">in</span> ds.TrnIncentive)
+&#123;
+    row.IncentiveAmount = <span class="insentif-alpha-token-fn">CalculateIncentive</span>(
+        row.SalesAmount, row.TargetAmount, row.QualitativeScore);
+&#125;</pre>
+        </div>
+      </div>
+
+      <div class="insentif-alpha-decision-card">
+        <div class="insentif-alpha-decision-header">
+          <span class="insentif-alpha-decision-num">02</span>
+          <div>
+            <div class="insentif-alpha-decision-title">Windows Authentication vs Custom Forms Auth</div>
+            <div class="insentif-alpha-decision-problem">Sanofi's IT environment was fully domain-joined with Active Directory. The system needed role-based access for ADMIN, Area Managers (AM), and Sales Managers (SM) without maintaining a separate user database.</div>
+          </div>
+        </div>
+        <div class="insentif-alpha-decision-body">
+          <div>
+            <div class="insentif-alpha-decision-col-label insentif-alpha-chosen"> Chosen — Windows Auth (Integrated)</div>
+            <div class="insentif-alpha-decision-col-text">Leveraged Active Directory groups for role assignment. Zero password management — users authenticated with their corporate credentials. ASP.NET integrated Windows auth with URL-based role authorization via web.config. Seamless SSO for domain users.</div>
+          </div>
+          <div>
+            <div class="insentif-alpha-decision-col-label insentif-alpha-tradeoff">△ Tradeoff — Forms Auth</div>
+            <div class="insentif-alpha-decision-col-text">Would have required maintaining a separate user table, password policies, and login pages. No SSO — users would need yet another set of credentials. Increased support burden for password resets and account management.</div>
+          </div>
+        </div>
+        <div class="insentif-alpha-decision-code">
+<pre><span class="insentif-alpha-token-cm">// Web.config — Windows Auth with role-based URL authorization</span>
+&lt;authentication mode=<span class="insentif-alpha-token-str">"Windows"</span> /&gt;
+&lt;authorization&gt;
+  &lt;deny users=<span class="insentif-alpha-token-str">"?"</span> /&gt;
+&lt;/authorization&gt;
+
+<span class="insentif-alpha-token-cm">// Role-based access for admin area</span>
+&lt;location path=<span class="insentif-alpha-token-str">"Admin"</span>&gt;
+  &lt;system.web&gt;
+    &lt;authorization&gt;
+      &lt;allow roles=<span class="insentif-alpha-token-str">"SANOFI\ALPHA_ADMIN"</span> /&gt;
+      &lt;deny users=<span class="insentif-alpha-token-str">"*"</span> /&gt;
+    &lt;/authorization&gt;
+  &lt;/system.web&gt;
+&lt;/location&gt;</pre>
+        </div>
+      </div>
+
+      <div class="insentif-alpha-decision-card">
+        <div class="insentif-alpha-decision-header">
+          <span class="insentif-alpha-decision-num">03</span>
+          <div>
+            <div class="insentif-alpha-decision-title">SSRS RDLC for Reporting Instead of Custom Reports</div>
+            <div class="insentif-alpha-decision-problem">The system required complex incentive reports with drill-down capability, export to Excel/PDF, and printed layouts for management sign-off. Building a custom reporting engine would have been prohibitively expensive.</div>
+          </div>
+        </div>
+        <div class="insentif-alpha-decision-body">
+          <div>
+            <div class="insentif-alpha-decision-col-label insentif-alpha-chosen"> Chosen — SSRS RDLC (Local Mode)</div>
+            <div class="insentif-alpha-decision-col-text">SQL Server Reporting Services (RDLC) provided professional-grade reports with drill-down, sorting, and export. Integrated directly with Typed DataSets for strongly-typed report binding. Report Viewer control embedded in ASPX pages. No separate SSRS server required.</div>
+          </div>
+          <div>
+            <div class="insentif-alpha-decision-col-label insentif-alpha-tradeoff">△ Tradeoff — Custom Reports</div>
+            <div class="insentif-alpha-decision-col-text">Full control over rendering and layout, but would have required building pagination, export, and drill-down from scratch. Crystal Reports was considered but required additional licensing and runtime deployment.</div>
+          </div>
+        </div>
+        <div class="insentif-alpha-decision-code">
+<pre><span class="insentif-alpha-token-cm">// RDLC report binding with Typed DataSet</span>
+<span class="insentif-alpha-token-type">ReportViewer1</span>.LocalReport.ReportPath = <span class="insentif-alpha-token-str">"Reports/IncentiveSummary.rdlc"</span>;
+<span class="insentif-alpha-token-type">ReportViewer1</span>.LocalReport.DataSources.Clear();
+
+<span class="insentif-alpha-token-type">ReportDataSource</span> rds = <span class="insentif-alpha-token-kw">new</span> <span class="insentif-alpha-token-fn">ReportDataSource</span>(
+    <span class="insentif-alpha-token-str">"IncentiveDataSet_TrnIncentive"</span>, <span class="insentif-alpha-token-fn">GetIncentiveData</span>(periodId));
+
+<span class="insentif-alpha-token-type">ReportViewer1</span>.LocalReport.DataSources.Add(rds);
+<span class="insentif-alpha-token-type">ReportViewer1</span>.LocalReport.<span class="insentif-alpha-token-fn">Refresh</span>();</pre>
+        </div>
+      </div>
+
+      <div class="insentif-alpha-decision-card">
+        <div class="insentif-alpha-decision-header">
+          <span class="insentif-alpha-decision-num">04</span>
+          <div>
+            <div class="insentif-alpha-decision-title">3-Layer N-Tier (BLL/DAL/UI) Architecture</div>
+            <div class="insentif-alpha-decision-problem">The incentive calculation logic was mission critical — errors in calculations would directly impact sales rep compensation. The system needed clear separation between presentation, business logic, and data access for maintainability and testing.</div>
+          </div>
+        </div>
+        <div class="insentif-alpha-decision-body">
+          <div>
+            <div class="insentif-alpha-decision-col-label insentif-alpha-chosen"> Chosen — Classic N-Tier</div>
+            <div class="insentif-alpha-decision-col-text">BLL classes encapsulated all incentive calculation rules and approval workflows. DAL layer (Typed DataSets/TableAdapters) handled all data access. UI (ASPX pages) focused on presentation only. Each layer could be modified independently. Business rules were testable in isolation.</div>
+          </div>
+          <div>
+            <div class="insentif-alpha-decision-col-label insentif-alpha-tradeoff">△ Tradeoff — Code-Behind Only</div>
+            <div class="insentif-alpha-decision-col-text">Mixing business logic in code-behind would have been faster initially but created an unmaintainable system. With 40+ tables and complex calculation rules, a flat architecture would have resulted in significant code duplication and calculation errors.</div>
+          </div>
+        </div>
+        <div class="insentif-alpha-decision-code">
+<pre><span class="insentif-alpha-token-cm">// BLL — Incentive calculation encapsulated in business layer</span>
+<span class="insentif-alpha-token-kw">public class</span> <span class="insentif-alpha-token-fn">IncentiveCalculator</span>
+&#123;
+    <span class="insentif-alpha-token-kw">public decimal</span> <span class="insentif-alpha-token-fn">CalculateMonthlyIncentive</span>(
+        <span class="insentif-alpha-token-kw">decimal</span> salesAmount, <span class="insentif-alpha-token-kw">decimal</span> targetAmount, <span class="insentif-alpha-token-kw">decimal</span> qualScore)
+    &#123;
+        <span class="insentif-alpha-token-cm">// Business logic: tiered commission with qualitative multiplier</span>
+        <span class="insentif-alpha-token-kw">decimal</span> achievement = salesAmount / targetAmount;
+        <span class="insentif-alpha-token-kw">decimal</span> commission = achievement &gt;= <span class="insentif-alpha-token-acc">1.0m</span>
+            ? salesAmount * <span class="insentif-alpha-token-acc">0.05m</span>
+            : salesAmount * <span class="insentif-alpha-token-acc">0.03m</span>;
+
+        <span class="insentif-alpha-token-kw">return</span> commission * (<span class="insentif-alpha-token-acc">1.0m</span> + qualScore / <span class="insentif-alpha-token-acc">100.0m</span>);
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="insentif-alpha-section">
+    <div class="insentif-alpha-section-label">
+      <span class="insentif-alpha-section-label-num">05</span>
+      <span class="insentif-alpha-section-label-text">Tech Stack</span>
+      <span class="insentif-alpha-section-label-line"></span>
+    </div>
+
+    <div class="insentif-alpha-impact-wrapper">
+      <table class="insentif-alpha-stack-table">
+        <tr>
+          <td class="insentif-alpha-layer">Framework</td>
+          <td class="insentif-alpha-tech">ASP.NET WebForms 2.0 · .NET Framework 2.0</td>
+        </tr>
+        <tr>
+          <td class="insentif-alpha-layer">Language</td>
+          <td class="insentif-alpha-tech">C# (ASP.NET WebForms code-behind)</td>
+        </tr>
+        <tr>
+          <td class="insentif-alpha-layer">Database</td>
+          <td class="insentif-alpha-tech">SQL Server · 40+ tables · Stored Procedures · Functions</td>
+        </tr>
+        <tr>
+          <td class="insentif-alpha-layer">Data Access</td>
+          <td class="insentif-alpha-tech">Typed DataSets · TableAdapters · ADO.NET</td>
+        </tr>
+        <tr>
+          <td class="insentif-alpha-layer">Reporting</td>
+          <td class="insentif-alpha-tech">SQL Server Reporting Services · RDLC Local Reports · Report Viewer</td>
+        </tr>
+        <tr>
+          <td class="insentif-alpha-layer">Authentication</td>
+          <td class="insentif-alpha-tech">Windows Authentication · Active Directory · Role-based (ADMIN · AM · SM)</td>
+        </tr>
+        <tr>
+          <td class="insentif-alpha-layer">Architecture</td>
+          <td class="insentif-alpha-tech">3-Layer N-Tier (BLL · DAL · UI) · Classic N-tier Pattern</td>
+        </tr>
+        <tr>
+          <td class="insentif-alpha-layer">Data Import</td>
+          <td class="insentif-alpha-tech">Excel Upload · Validation Engine · Batch Processing</td>
+        </tr>
+        <tr>
+          <td class="insentif-alpha-layer">IDE &amp; Tooling</td>
+          <td class="insentif-alpha-tech">Visual Studio 2012 · SQL Server Management Studio · Report Builder</td>
+        </tr>
+        <tr>
+          <td class="insentif-alpha-layer">Server</td>
+          <td class="insentif-alpha-tech">IIS 7 · Windows Server · .NET 2.0 Runtime</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .insentif-alpha {
+    --insentif-alpha-bg: #0a0b0d;
+    --insentif-alpha-bg2: #0f1114;
+    --insentif-alpha-bg3: #141720;
+    --insentif-alpha-surface: #1a1e28;
+    --insentif-alpha-surface2: #212636;
+    --insentif-alpha-border: #2a2f40;
+    --insentif-alpha-border2: #363c50;
+    --insentif-alpha-accent: #00e5a0;
+    --insentif-alpha-accent2: #00b87a;
+    --insentif-alpha-accent-dim: rgba(0, 229, 160, 0.08);
+    --insentif-alpha-accent-dim2: rgba(0, 229, 160, 0.15);
+    --insentif-alpha-amber: #f59e0b;
+    --insentif-alpha-amber-dim: rgba(245, 158, 11, 0.1);
+    --insentif-alpha-blue: #60a5fa;
+    --insentif-alpha-blue-dim: rgba(96, 165, 250, 0.1);
+    --insentif-alpha-red: #f87171;
+    --insentif-alpha-text: #e8eaf0;
+    --insentif-alpha-text2: #8b92a8;
+    --insentif-alpha-text3: #5a6077;
+    --insentif-alpha-mono: "JetBrains Mono", monospace;
+    --insentif-alpha-display: "Syne", sans-serif;
+    --insentif-alpha-radius: 10px;
+    --insentif-alpha-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .insentif-alpha * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .insentif-alpha body {
+    background: var(--insentif-alpha-bg);
+    color: var(--insentif-alpha-text);
+    font-family: var(--insentif-alpha-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .insentif-alpha-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--insentif-alpha-border);
+  }
+  .insentif-alpha-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--insentif-alpha-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .insentif-alpha-nav-back:hover {
+    color: var(--insentif-alpha-accent);
+  }
+  .insentif-alpha-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .insentif-alpha-nav-dot {
+    color: var(--insentif-alpha-border2);
+  }
+  .insentif-alpha-nav-title {
+    color: var(--insentif-alpha-text3);
+    font-size: 12px;
+  }
+
+  .insentif-alpha-hero {
+    margin-bottom: 56px;
+  }
+  .insentif-alpha-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .insentif-alpha-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .insentif-alpha-badge-corporate {
+    background: var(--insentif-alpha-blue-dim);
+    color: var(--insentif-alpha-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .insentif-alpha-badge-client {
+    background: var(--insentif-alpha-accent-dim);
+    color: var(--insentif-alpha-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .insentif-alpha-badge-year {
+    background: var(--insentif-alpha-surface);
+    color: var(--insentif-alpha-text3);
+    border-color: var(--insentif-alpha-border);
+  }
+
+  .insentif-alpha-hero-title {
+    font-family: var(--insentif-alpha-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .insentif-alpha-hero-title span {
+    color: var(--insentif-alpha-accent);
+    position: relative;
+  }
+
+  .insentif-alpha-hero-desc {
+    color: var(--insentif-alpha-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .insentif-alpha-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .insentif-alpha-stack-pill {
+    background: var(--insentif-alpha-surface);
+    border: 1px solid var(--insentif-alpha-border);
+    color: var(--insentif-alpha-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .insentif-alpha-stack-pill:hover {
+    border-color: var(--insentif-alpha-accent);
+    color: var(--insentif-alpha-accent);
+    background: var(--insentif-alpha-accent-dim);
+  }
+
+  .insentif-alpha-section {
+    margin-bottom: 52px;
+  }
+  .insentif-alpha-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .insentif-alpha-section-label-text {
+    font-family: var(--insentif-alpha-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--insentif-alpha-text3);
+    text-transform: uppercase;
+  }
+  .insentif-alpha-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--insentif-alpha-border);
+  }
+  .insentif-alpha-section-label-num {
+    font-size: 11px;
+    color: var(--insentif-alpha-border2);
+  }
+
+  .insentif-alpha-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .insentif-alpha-metric-card {
+    background: var(--insentif-alpha-bg3);
+    border: 1px solid var(--insentif-alpha-border);
+    border-radius: var(--insentif-alpha-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .insentif-alpha-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--insentif-alpha-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .insentif-alpha-metric-card:hover {
+    border-color: var(--insentif-alpha-border2);
+  }
+  .insentif-alpha-metric-card:hover::before {
+    opacity: 1;
+  }
+  .insentif-alpha-metric-amber .insentif-alpha-metric-val {
+    color: var(--insentif-alpha-amber);
+  }
+  .insentif-alpha-metric-amber::before {
+    background: var(--insentif-alpha-amber);
+  }
+
+  .insentif-alpha-metric-val {
+    font-family: var(--insentif-alpha-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--insentif-alpha-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .insentif-alpha-metric-label {
+    font-size: 12px;
+    color: var(--insentif-alpha-text2);
+    margin-bottom: 3px;
+  }
+  .insentif-alpha-metric-sub {
+    font-size: 11px;
+    color: var(--insentif-alpha-text3);
+  }
+
+  .insentif-alpha-arch-diagram {
+    background: var(--insentif-alpha-bg3);
+    border: 1px solid var(--insentif-alpha-border);
+    border-radius: var(--insentif-alpha-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .insentif-alpha-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .insentif-alpha-arch-node {
+    background: var(--insentif-alpha-surface);
+    border: 1px solid var(--insentif-alpha-border2);
+    border-radius: var(--insentif-alpha-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .insentif-alpha-core {
+    background: var(--insentif-alpha-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .insentif-alpha-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .insentif-alpha-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--insentif-alpha-amber-dim);
+    min-width: 110px;
+  }
+  .insentif-alpha-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .insentif-alpha-arch-node-label {
+    font-family: var(--insentif-alpha-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .insentif-alpha-arch-node-sub {
+    font-size: 10px;
+    color: var(--insentif-alpha-text3);
+    font-family: var(--insentif-alpha-mono);
+  }
+
+  .insentif-alpha-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--insentif-alpha-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .insentif-alpha-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--insentif-alpha-border),
+      var(--insentif-alpha-accent),
+      var(--insentif-alpha-border)
+    );
+    position: relative;
+  }
+  .insentif-alpha-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--insentif-alpha-accent);
+    font-size: 10px;
+  }
+  .insentif-alpha-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--insentif-alpha-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .insentif-alpha-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .insentif-alpha-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .insentif-alpha-core-step {
+    background: var(--insentif-alpha-bg3);
+    border: 1px solid var(--insentif-alpha-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--insentif-alpha-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .insentif-alpha-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--insentif-alpha-accent);
+    flex-shrink: 0;
+  }
+
+  .insentif-alpha-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .insentif-alpha-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .insentif-alpha-schema-arrow-label {
+    font-size: 9px;
+    color: var(--insentif-alpha-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .insentif-alpha-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .insentif-alpha-decision-card {
+    background: var(--insentif-alpha-bg3);
+    border: 1px solid var(--insentif-alpha-border);
+    border-radius: var(--insentif-alpha-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .insentif-alpha-decision-card:hover {
+    border-color: var(--insentif-alpha-border2);
+  }
+
+  .insentif-alpha-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .insentif-alpha-decision-num {
+    font-family: var(--insentif-alpha-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--insentif-alpha-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .insentif-alpha-decision-title {
+    font-family: var(--insentif-alpha-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .insentif-alpha-decision-problem {
+    font-size: 12px;
+    color: var(--insentif-alpha-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--insentif-alpha-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .insentif-alpha-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .insentif-alpha-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .insentif-alpha-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .insentif-alpha-decision-chosen {
+    color: var(--insentif-alpha-accent);
+  }
+  .insentif-alpha-decision-tradeoff {
+    color: var(--insentif-alpha-amber);
+  }
+  .insentif-alpha-decision-col-text {
+    font-size: 12px;
+    color: var(--insentif-alpha-text2);
+    line-height: 1.65;
+  }
+
+  .insentif-alpha-decision-code {
+    background: var(--insentif-alpha-bg);
+    border-top: 1px solid var(--insentif-alpha-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--insentif-alpha-text2);
+    overflow-x: auto;
+  }
+  .insentif-alpha-decision-code pre {
+    margin: 0;
+    font-family: var(--insentif-alpha-mono);
+    line-height: 1.6;
+  }
+  .insentif-alpha-token-kw {
+    color: #c792ea;
+  }
+  .insentif-alpha-token-fn {
+    color: #82aaff;
+  }
+  .insentif-alpha-token-str {
+    color: #c3e88d;
+  }
+  .insentif-alpha-token-cm {
+    color: var(--insentif-alpha-text3);
+    font-style: italic;
+  }
+  .insentif-alpha-token-acc {
+    color: var(--insentif-alpha-accent);
+  }
+
+  .insentif-alpha-impact-wrapper {
+    background: var(--insentif-alpha-bg3);
+    border: 1px solid var(--insentif-alpha-border);
+    border-radius: var(--insentif-alpha-radius);
+    overflow: hidden;
+  }
+  .insentif-alpha-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .insentif-alpha-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--insentif-alpha-text3);
+    border-bottom: 1px solid var(--insentif-alpha-border);
+    font-family: var(--insentif-alpha-display);
+    font-weight: 600;
+  }
+  .insentif-alpha-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--insentif-alpha-border);
+    color: var(--insentif-alpha-text2);
+  }
+  .insentif-alpha-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .insentif-alpha-impact-table tr:hover td {
+    background: var(--insentif-alpha-surface);
+  }
+  .insentif-alpha-before {
+    color: var(--insentif-alpha-red);
+  }
+  .insentif-alpha-after {
+    color: var(--insentif-alpha-accent);
+  }
+  .insentif-alpha-delta {
+    color: var(--insentif-alpha-accent);
+    font-weight: 500;
+    font-family: var(--insentif-alpha-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .insentif-alpha-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .insentif-alpha-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .insentif-alpha-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--insentif-alpha-border);
+  }
+  .insentif-alpha-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .insentif-alpha-layer {
+    color: var(--insentif-alpha-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .insentif-alpha-tech {
+    color: var(--insentif-alpha-accent);
+    font-family: var(--insentif-alpha-mono);
+  }
+  .insentif-alpha-stack-table tr:hover td {
+    background: var(--insentif-alpha-surface);
+  }
+
+  .insentif-alpha-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--insentif-alpha-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .insentif-alpha-footer-text {
+    font-size: 11px;
+    color: var(--insentif-alpha-text3);
+  }
+  .insentif-alpha-footer-link {
+    font-size: 11px;
+    color: var(--insentif-alpha-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .insentif-alpha-footer-link:hover {
+    color: var(--insentif-alpha-accent);
+  }
+
+  @keyframes insentif-alpha-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .insentif-alpha-hero {
+    animation: insentif-alpha-fadeUp 0.5s ease both;
+  }
+  .insentif-alpha-section:nth-child(2) {
+    animation: insentif-alpha-fadeUp 0.5s 0.1s ease both;
+  }
+  .insentif-alpha-section:nth-child(3) {
+    animation: insentif-alpha-fadeUp 0.5s 0.15s ease both;
+  }
+  .insentif-alpha-section:nth-child(4) {
+    animation: insentif-alpha-fadeUp 0.5s 0.2s ease both;
+  }
+  .insentif-alpha-section:nth-child(5) {
+    animation: insentif-alpha-fadeUp 0.5s 0.25s ease both;
+  }
+  .insentif-alpha-section:nth-child(6) {
+    animation: insentif-alpha-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .insentif-alpha-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--insentif-alpha-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: insentif-alpha-blink 1s step-end infinite;
+  }
+  @keyframes insentif-alpha-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .insentif-alpha-badge-client { background: var(--insentif-alpha-accent-dim); color: var(--insentif-alpha-accent); border-color: rgba(0,229,160,0.2); }
+  .insentif-alpha-metric-val { font-size: 22px; }
+  .insentif-alpha-amber .insentif-alpha-metric-val { color: var(--insentif-alpha-amber); }
+  .insentif-alpha-amber::before { background: var(--insentif-alpha-amber); }
+  .insentif-alpha-red .insentif-alpha-metric-val { color: var(--insentif-alpha-red); }
+  .insentif-alpha-red::before { background: var(--insentif-alpha-red); }
+  .insentif-alpha-blue .insentif-alpha-metric-val { color: var(--insentif-alpha-blue); }
+  .insentif-alpha-blue::before { background: var(--insentif-alpha-blue); }
+  .insentif-alpha-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .insentif-alpha-business-line-cards { grid-template-columns: 1fr; } }
+  .insentif-alpha-bl-card { background: var(--insentif-alpha-bg2); border: 1px solid var(--insentif-alpha-border); border-radius: var(--insentif-alpha-radius); padding: 16px; }
+  .insentif-alpha-bl-card-title { font-family: var(--insentif-alpha-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .insentif-alpha-bl-card-desc { font-size: 11px; color: var(--insentif-alpha-text3); line-height: 1.6; }
+  .insentif-alpha-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--insentif-alpha-accent-dim); color: var(--insentif-alpha-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .insentif-alpha-bl-card-tag.insentif-alpha-amber-tag { background: var(--insentif-alpha-amber-dim); color: var(--insentif-alpha-amber); border-color: rgba(245,158,11,0.2); }
+  .insentif-alpha-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .insentif-alpha-cap-list { grid-template-columns: 1fr; } }
+  .insentif-alpha-cap-item { background: var(--insentif-alpha-bg3); border: 1px solid var(--insentif-alpha-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--insentif-alpha-text2); }
+  .insentif-alpha-cap-item:hover { border-color: var(--insentif-alpha-border2); color: var(--insentif-alpha-text); }
+  .insentif-alpha-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--insentif-alpha-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .insentif-alpha-flow-panel { background: var(--insentif-alpha-bg2); border: 1px solid var(--insentif-alpha-border); border-radius: var(--insentif-alpha-radius); padding: 20px; margin-top: 20px; }
+  .insentif-alpha-flow-panel-title { font-family: var(--insentif-alpha-display); font-size: 12px; font-weight: 600; color: var(--insentif-alpha-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .insentif-alpha-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .insentif-alpha-flow-step { display: flex; align-items: center; gap: 8px; }
+  .insentif-alpha-flow-step-box { background: var(--insentif-alpha-surface); border: 1px solid var(--insentif-alpha-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--insentif-alpha-text2); white-space: nowrap; }
+  .insentif-alpha-flow-step-box.insentif-alpha-accent { border-color: rgba(0,229,160,0.3); color: var(--insentif-alpha-accent); }
+  .insentif-alpha-flow-step-arr { color: var(--insentif-alpha-text3); font-size: 11px; margin: 0 4px; }
+</style>

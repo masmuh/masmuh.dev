@@ -1,0 +1,890 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="ISMS NextGen - Mas Muhammad" description="An enterprise trade management data integration system built with C# (.NET Framework 4.8) and T-SQL. Orchestrates ETL pipelines across 4 SQL Server instances, processes product data exports to CSV, manages file transfers to AWS S3, generates HTML email notifications, and provides CSV comparison tooling — all driven by 180+ automated batch scripts.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="isms-nextgen">
+
+<header class="isms-nextgen-hero">
+<div class="isms-nextgen-hero-meta">
+<span class="isms-nextgen-badge isms-nextgen-badge-corporate">Corporate</span><span class="isms-nextgen-badge isms-nextgen-badge-client">Sampoerna</span> 
+<span class="isms-nextgen-badge isms-nextgen-badge-year">April 2024</span>
+</div>
+<h1 class="isms-nextgen-hero-title">ISMS <span>NextGen</span><span class="isms-nextgen-cursor"></span></h1>
+<p class="isms-nextgen-hero-desc">
+An enterprise trade management data integration system built with C# (.NET Framework 4.8) and T-SQL. Orchestrates ETL pipelines across 4 SQL Server instances, processes product data exports to CSV, manages file transfers to AWS S3, generates HTML email notifications, and provides CSV comparison tooling — all driven by 180+ automated batch scripts.
+</p>
+<div class="isms-nextgen-stack-pills">
+<span class="isms-nextgen-stack-pill">C# .NET 4.8</span>
+<span class="isms-nextgen-stack-pill">T-SQL</span>
+<span class="isms-nextgen-stack-pill">AWS S3</span>
+<span class="isms-nextgen-stack-pill">NLog</span>
+<span class="isms-nextgen-stack-pill">EPPlus</span>
+<span class="isms-nextgen-stack-pill">SharpZipLib</span>
+<span class="isms-nextgen-stack-pill">Batch Automation</span>
+</div>
+</header>
+
+<section class="isms-nextgen-section">
+<div class="isms-nextgen-section-label">
+<span class="isms-nextgen-section-label-text">Impact</span>
+<div class="isms-nextgen-section-label-line"></div>
+<span class="isms-nextgen-section-label-num">01</span>
+</div>
+<div class="isms-nextgen-metrics-grid">
+<div class="isms-nextgen-metric-card">
+<div class="isms-nextgen-metric-val">9,000+</div>
+<div class="isms-nextgen-metric-label">Lines of Code</div>
+<div class="isms-nextgen-metric-sub">C# + T-SQL</div>
+</div>
+<div class="isms-nextgen-metric-card">
+<div class="isms-nextgen-metric-val">180+</div>
+<div class="isms-nextgen-metric-label">Batch Scripts</div>
+<div class="isms-nextgen-metric-sub">Automation jobs</div>
+</div>
+<div class="isms-nextgen-metric-card">
+<div class="isms-nextgen-metric-val">134</div>
+<div class="isms-nextgen-metric-label">SQL Queries</div>
+<div class="isms-nextgen-metric-sub">ETL pipelines</div>
+</div>
+<div class="isms-nextgen-metric-card isms-nextgen-red">
+<div class="isms-nextgen-metric-val">Mission Critical</div>
+<div class="isms-nextgen-metric-label">System Level</div>
+<div class="isms-nextgen-metric-sub">Data integration hub</div>
+</div>
+</div>
+</section>
+
+<section class="isms-nextgen-section">
+<div class="isms-nextgen-section-label">
+<span class="isms-nextgen-section-label-text">Architecture</span>
+<div class="isms-nextgen-section-label-line"></div>
+<span class="isms-nextgen-section-label-num">02</span>
+</div>
+<div class="isms-nextgen-arch-diagram">
+<div class="isms-nextgen-arch-diagram-inner">
+
+<div class="isms-nextgen-arch-node isms-nextgen-source">
+<div class="isms-nextgen-arch-node-icon"></div>
+<div class="isms-nextgen-arch-node-label">SQL Server</div>
+<div class="isms-nextgen-arch-node-sub">4 instances · 87 queries</div>
+</div>
+
+<div class="isms-nextgen-arch-arrow">
+<div class="isms-nextgen-arch-arrow-line"></div>
+<div class="isms-nextgen-arch-arrow-label">ETL</div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+<div class="isms-nextgen-arch-node core" style="width:220px;">
+<div class="isms-nextgen-arch-node-label" style="font-size:13px; margin-bottom:10px;">.NET ETL Service</div>
+<div class="isms-nextgen-core-stack">
+<div class="isms-nextgen-core-step"><div class="isms-nextgen-core-step-dot"></div>Core Job · data processing</div>
+<div class="isms-nextgen-core-step"><div class="isms-nextgen-core-step-dot"></div>Master Job · master data</div>
+<div class="isms-nextgen-core-step"><div class="isms-nextgen-core-step-dot" style="background:var(--blue)"></div>Report Job · notifications</div>
+</div>
+</div>
+<div class="isms-nextgen-schema-connector" style="margin-top:0;">
+<div class="isms-nextgen-schema-line-v"></div>
+<div class="isms-nextgen-schema-arrow-label">+180 batch jobs</div>
+<div class="isms-nextgen-schema-line-v"></div>
+<div class="isms-nextgen-arch-node isms-nextgen-schema-node">
+<div class="isms-nextgen-arch-node-label" style="font-size:11px; color: #f59e0b;">Scheduler</div>
+<div class="isms-nextgen-arch-node-sub">Windows Task Scheduler</div>
+</div>
+</div>
+</div>
+
+<div class="isms-nextgen-arch-arrow">
+<div class="isms-nextgen-arch-arrow-line"></div>
+<div class="isms-nextgen-arch-arrow-label">upload</div>
+</div>
+
+<div class="isms-nextgen-arch-node isms-nextgen-output">
+<div class="isms-nextgen-arch-node-icon"></div>
+<div class="isms-nextgen-arch-node-label">AWS S3</div>
+<div class="isms-nextgen-arch-node-sub">Cloud storage</div>
+</div>
+
+<div class="isms-nextgen-arch-arrow" style="min-width:40px; flex-direction:column-reverse;">
+<div class="isms-nextgen-arch-arrow-label">notify</div>
+<div class="isms-nextgen-arch-arrow-line"></div>
+</div>
+
+<div class="isms-nextgen-arch-node isms-nextgen-source" style="border-color:rgba(245,158,11,0.3);">
+<div class="isms-nextgen-arch-node-icon"></div>
+<div class="isms-nextgen-arch-node-label">Email Reports</div>
+<div class="isms-nextgen-arch-node-sub">HTML notifications</div>
+</div>
+
+<div class="isms-nextgen-arch-arrow" style="min-width:40px;">
+<div class="isms-nextgen-arch-arrow-line" style="width:30px;"></div>
+<div class="isms-nextgen-arch-arrow-label">export</div>
+</div>
+
+<div class="isms-nextgen-arch-node isms-nextgen-output" style="border-color:rgba(96,165,250,0.3);">
+<div class="isms-nextgen-arch-node-icon"></div>
+<div class="isms-nextgen-arch-node-label">CSV Files</div>
+<div class="isms-nextgen-arch-node-sub">Downstream systems</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="isms-nextgen-section">
+<div class="isms-nextgen-section-label">
+<span class="isms-nextgen-section-label-text">Tech Stack</span>
+<div class="isms-nextgen-section-label-line"></div>
+<span class="isms-nextgen-section-label-num">03</span>
+</div>
+<div class="isms-nextgen-impact-wrapper">
+<table class="isms-nextgen-stack-table">
+<tbody>
+<tr><td class="isms-nextgen-layer">Runtime</td><td class="isms-nextgen-tech">.NET Framework 4.8 / 4.8.1 (C#)</td></tr>
+<tr><td class="isms-nextgen-layer">Database</td><td class="isms-nextgen-tech">Microsoft SQL Server (T-SQL)</td></tr>
+<tr><td class="isms-nextgen-layer">Cloud Storage</td><td class="isms-nextgen-tech">AWS S3 (AWSSDK.SDK 3.7)</td></tr>
+<tr><td class="isms-nextgen-layer">File Processing</td><td class="isms-nextgen-tech">EPPlus · SharpZipLib · CsvHelper</td></tr>
+<tr><td class="isms-nextgen-layer">Logging</td><td class="isms-nextgen-tech">NLog · Serilog</td></tr>
+<tr><td class="isms-nextgen-layer">DI/Config</td><td class="isms-nextgen-tech">Microsoft.Extensions.DependencyInjection 8.0</td></tr>
+<tr><td class="isms-nextgen-layer">Tools</td><td class="isms-nextgen-tech">CSV Diff Tool · Encrypt/Decrypt Utility</td></tr>
+<tr><td class="isms-nextgen-layer">Scheduling</td><td class="isms-nextgen-tech">Windows Task Scheduler (180+ batch scripts)</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="isms-nextgen-section">
+<div class="isms-nextgen-section-label">
+<span class="isms-nextgen-section-label-text">Capabilities</span>
+<div class="isms-nextgen-section-label-line"></div>
+<span class="isms-nextgen-section-label-num">04</span>
+</div>
+<div class="isms-nextgen-impact-wrapper">
+<table class="isms-nextgen-stack-table">
+<tbody>
+<tr><td class="isms-nextgen-layer">Data Export</td><td class="isms-nextgen-tech">Extract trade management data from SQL Server and export to CSV files</td></tr>
+<tr><td class="isms-nextgen-layer">Cloud Sync</td><td class="isms-nextgen-tech">Upload processed files to AWS S3 with compression and encryption</td></tr>
+<tr><td class="isms-nextgen-layer">Report Generation</td><td class="isms-nextgen-tech">Automated email reports with HTML templates (file registration, errors, performance)</td></tr>
+<tr><td class="isms-nextgen-layer">Product Data</td><td class="isms-nextgen-tech">Product detail export with custom SQL-driven ETL pipelines</td></tr>
+<tr><td class="isms-nextgen-layer">File Comparison</td><td class="isms-nextgen-tech">Dedicated CSV diff tool for data reconciliation</td></tr>
+<tr><td class="isms-nextgen-layer">Encryption</td><td class="isms-nextgen-tech">WinForms utility for AES/SHA256 encryption of sensitive data</td></tr>
+<tr><td class="isms-nextgen-layer">Monitoring</td><td class="isms-nextgen-tech">Performance monitoring, error notifications, and automated cleanup jobs</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .isms-nextgen {
+    --isms-nextgen-bg: #0a0b0d;
+    --isms-nextgen-bg2: #0f1114;
+    --isms-nextgen-bg3: #141720;
+    --isms-nextgen-surface: #1a1e28;
+    --isms-nextgen-surface2: #212636;
+    --isms-nextgen-border: #2a2f40;
+    --isms-nextgen-border2: #363c50;
+    --isms-nextgen-accent: #00e5a0;
+    --isms-nextgen-accent2: #00b87a;
+    --isms-nextgen-accent-dim: rgba(0, 229, 160, 0.08);
+    --isms-nextgen-accent-dim2: rgba(0, 229, 160, 0.15);
+    --isms-nextgen-amber: #f59e0b;
+    --isms-nextgen-amber-dim: rgba(245, 158, 11, 0.1);
+    --isms-nextgen-blue: #60a5fa;
+    --isms-nextgen-blue-dim: rgba(96, 165, 250, 0.1);
+    --isms-nextgen-red: #f87171;
+    --isms-nextgen-text: #e8eaf0;
+    --isms-nextgen-text2: #8b92a8;
+    --isms-nextgen-text3: #5a6077;
+    --isms-nextgen-mono: "JetBrains Mono", monospace;
+    --isms-nextgen-display: "Syne", sans-serif;
+    --isms-nextgen-radius: 10px;
+    --isms-nextgen-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .isms-nextgen * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .isms-nextgen body {
+    background: var(--isms-nextgen-bg);
+    color: var(--isms-nextgen-text);
+    font-family: var(--isms-nextgen-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .isms-nextgen-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--isms-nextgen-border);
+  }
+  .isms-nextgen-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--isms-nextgen-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .isms-nextgen-nav-back:hover {
+    color: var(--isms-nextgen-accent);
+  }
+  .isms-nextgen-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .isms-nextgen-nav-dot {
+    color: var(--isms-nextgen-border2);
+  }
+  .isms-nextgen-nav-title {
+    color: var(--isms-nextgen-text3);
+    font-size: 12px;
+  }
+
+  .isms-nextgen-hero {
+    margin-bottom: 56px;
+  }
+  .isms-nextgen-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .isms-nextgen-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .isms-nextgen-badge-corporate {
+    background: var(--isms-nextgen-blue-dim);
+    color: var(--isms-nextgen-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .isms-nextgen-badge-client {
+    background: var(--isms-nextgen-accent-dim);
+    color: var(--isms-nextgen-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .isms-nextgen-badge-year {
+    background: var(--isms-nextgen-surface);
+    color: var(--isms-nextgen-text3);
+    border-color: var(--isms-nextgen-border);
+  }
+
+  .isms-nextgen-hero-title {
+    font-family: var(--isms-nextgen-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .isms-nextgen-hero-title span {
+    color: var(--isms-nextgen-accent);
+    position: relative;
+  }
+
+  .isms-nextgen-hero-desc {
+    color: var(--isms-nextgen-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .isms-nextgen-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .isms-nextgen-stack-pill {
+    background: var(--isms-nextgen-surface);
+    border: 1px solid var(--isms-nextgen-border);
+    color: var(--isms-nextgen-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .isms-nextgen-stack-pill:hover {
+    border-color: var(--isms-nextgen-accent);
+    color: var(--isms-nextgen-accent);
+    background: var(--isms-nextgen-accent-dim);
+  }
+
+  .isms-nextgen-section {
+    margin-bottom: 52px;
+  }
+  .isms-nextgen-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .isms-nextgen-section-label-text {
+    font-family: var(--isms-nextgen-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--isms-nextgen-text3);
+    text-transform: uppercase;
+  }
+  .isms-nextgen-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--isms-nextgen-border);
+  }
+  .isms-nextgen-section-label-num {
+    font-size: 11px;
+    color: var(--isms-nextgen-border2);
+  }
+
+  .isms-nextgen-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .isms-nextgen-metric-card {
+    background: var(--isms-nextgen-bg3);
+    border: 1px solid var(--isms-nextgen-border);
+    border-radius: var(--isms-nextgen-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .isms-nextgen-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--isms-nextgen-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .isms-nextgen-metric-card:hover {
+    border-color: var(--isms-nextgen-border2);
+  }
+  .isms-nextgen-metric-card:hover::before {
+    opacity: 1;
+  }
+  .isms-nextgen-metric-amber .isms-nextgen-metric-val {
+    color: var(--isms-nextgen-amber);
+  }
+  .isms-nextgen-metric-amber::before {
+    background: var(--isms-nextgen-amber);
+  }
+
+  .isms-nextgen-metric-val {
+    font-family: var(--isms-nextgen-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--isms-nextgen-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .isms-nextgen-metric-label {
+    font-size: 12px;
+    color: var(--isms-nextgen-text2);
+    margin-bottom: 3px;
+  }
+  .isms-nextgen-metric-sub {
+    font-size: 11px;
+    color: var(--isms-nextgen-text3);
+  }
+
+  .isms-nextgen-arch-diagram {
+    background: var(--isms-nextgen-bg3);
+    border: 1px solid var(--isms-nextgen-border);
+    border-radius: var(--isms-nextgen-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .isms-nextgen-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .isms-nextgen-arch-node {
+    background: var(--isms-nextgen-surface);
+    border: 1px solid var(--isms-nextgen-border2);
+    border-radius: var(--isms-nextgen-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .isms-nextgen-core {
+    background: var(--isms-nextgen-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .isms-nextgen-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .isms-nextgen-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--isms-nextgen-amber-dim);
+    min-width: 110px;
+  }
+  .isms-nextgen-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .isms-nextgen-arch-node-label {
+    font-family: var(--isms-nextgen-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .isms-nextgen-arch-node-sub {
+    font-size: 10px;
+    color: var(--isms-nextgen-text3);
+    font-family: var(--isms-nextgen-mono);
+  }
+
+  .isms-nextgen-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--isms-nextgen-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .isms-nextgen-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--isms-nextgen-border),
+      var(--isms-nextgen-accent),
+      var(--isms-nextgen-border)
+    );
+    position: relative;
+  }
+  .isms-nextgen-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--isms-nextgen-accent);
+    font-size: 10px;
+  }
+  .isms-nextgen-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--isms-nextgen-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .isms-nextgen-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-nextgen-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .isms-nextgen-core-step {
+    background: var(--isms-nextgen-bg3);
+    border: 1px solid var(--isms-nextgen-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--isms-nextgen-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .isms-nextgen-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--isms-nextgen-accent);
+    flex-shrink: 0;
+  }
+
+  .isms-nextgen-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .isms-nextgen-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .isms-nextgen-schema-arrow-label {
+    font-size: 9px;
+    color: var(--isms-nextgen-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .isms-nextgen-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .isms-nextgen-decision-card {
+    background: var(--isms-nextgen-bg3);
+    border: 1px solid var(--isms-nextgen-border);
+    border-radius: var(--isms-nextgen-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .isms-nextgen-decision-card:hover {
+    border-color: var(--isms-nextgen-border2);
+  }
+
+  .isms-nextgen-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .isms-nextgen-decision-num {
+    font-family: var(--isms-nextgen-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--isms-nextgen-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .isms-nextgen-decision-title {
+    font-family: var(--isms-nextgen-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .isms-nextgen-decision-problem {
+    font-size: 12px;
+    color: var(--isms-nextgen-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--isms-nextgen-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .isms-nextgen-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .isms-nextgen-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .isms-nextgen-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .isms-nextgen-decision-chosen {
+    color: var(--isms-nextgen-accent);
+  }
+  .isms-nextgen-decision-tradeoff {
+    color: var(--isms-nextgen-amber);
+  }
+  .isms-nextgen-decision-col-text {
+    font-size: 12px;
+    color: var(--isms-nextgen-text2);
+    line-height: 1.65;
+  }
+
+  .isms-nextgen-decision-code {
+    background: var(--isms-nextgen-bg);
+    border-top: 1px solid var(--isms-nextgen-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--isms-nextgen-text2);
+    overflow-x: auto;
+  }
+  .isms-nextgen-decision-code pre {
+    margin: 0;
+    font-family: var(--isms-nextgen-mono);
+    line-height: 1.6;
+  }
+  .isms-nextgen-token-kw {
+    color: #c792ea;
+  }
+  .isms-nextgen-token-fn {
+    color: #82aaff;
+  }
+  .isms-nextgen-token-str {
+    color: #c3e88d;
+  }
+  .isms-nextgen-token-cm {
+    color: var(--isms-nextgen-text3);
+    font-style: italic;
+  }
+  .isms-nextgen-token-acc {
+    color: var(--isms-nextgen-accent);
+  }
+
+  .isms-nextgen-impact-wrapper {
+    background: var(--isms-nextgen-bg3);
+    border: 1px solid var(--isms-nextgen-border);
+    border-radius: var(--isms-nextgen-radius);
+    overflow: hidden;
+  }
+  .isms-nextgen-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .isms-nextgen-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--isms-nextgen-text3);
+    border-bottom: 1px solid var(--isms-nextgen-border);
+    font-family: var(--isms-nextgen-display);
+    font-weight: 600;
+  }
+  .isms-nextgen-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--isms-nextgen-border);
+    color: var(--isms-nextgen-text2);
+  }
+  .isms-nextgen-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-nextgen-impact-table tr:hover td {
+    background: var(--isms-nextgen-surface);
+  }
+  .isms-nextgen-before {
+    color: var(--isms-nextgen-red);
+  }
+  .isms-nextgen-after {
+    color: var(--isms-nextgen-accent);
+  }
+  .isms-nextgen-delta {
+    color: var(--isms-nextgen-accent);
+    font-weight: 500;
+    font-family: var(--isms-nextgen-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .isms-nextgen-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .isms-nextgen-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .isms-nextgen-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--isms-nextgen-border);
+  }
+  .isms-nextgen-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .isms-nextgen-layer {
+    color: var(--isms-nextgen-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .isms-nextgen-tech {
+    color: var(--isms-nextgen-accent);
+    font-family: var(--isms-nextgen-mono);
+  }
+  .isms-nextgen-stack-table tr:hover td {
+    background: var(--isms-nextgen-surface);
+  }
+
+  .isms-nextgen-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--isms-nextgen-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .isms-nextgen-footer-text {
+    font-size: 11px;
+    color: var(--isms-nextgen-text3);
+  }
+  .isms-nextgen-footer-link {
+    font-size: 11px;
+    color: var(--isms-nextgen-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .isms-nextgen-footer-link:hover {
+    color: var(--isms-nextgen-accent);
+  }
+
+  @keyframes isms-nextgen-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .isms-nextgen-hero {
+    animation: isms-nextgen-fadeUp 0.5s ease both;
+  }
+  .isms-nextgen-section:nth-child(2) {
+    animation: isms-nextgen-fadeUp 0.5s 0.1s ease both;
+  }
+  .isms-nextgen-section:nth-child(3) {
+    animation: isms-nextgen-fadeUp 0.5s 0.15s ease both;
+  }
+  .isms-nextgen-section:nth-child(4) {
+    animation: isms-nextgen-fadeUp 0.5s 0.2s ease both;
+  }
+  .isms-nextgen-section:nth-child(5) {
+    animation: isms-nextgen-fadeUp 0.5s 0.25s ease both;
+  }
+  .isms-nextgen-section:nth-child(6) {
+    animation: isms-nextgen-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .isms-nextgen-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--isms-nextgen-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: isms-nextgen-blink 1s step-end infinite;
+  }
+  @keyframes isms-nextgen-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .isms-nextgen-badge-client { background: var(--isms-nextgen-accent-dim); color: var(--isms-nextgen-accent); border-color: rgba(0,229,160,0.2); }
+  .isms-nextgen-metric-val { font-size: 22px; }
+  .isms-nextgen-amber .isms-nextgen-metric-val { color: var(--isms-nextgen-amber); }
+  .isms-nextgen-amber::before { background: var(--isms-nextgen-amber); }
+  .isms-nextgen-red .isms-nextgen-metric-val { color: var(--isms-nextgen-red); }
+  .isms-nextgen-red::before { background: var(--isms-nextgen-red); }
+  .isms-nextgen-blue .isms-nextgen-metric-val { color: var(--isms-nextgen-blue); }
+  .isms-nextgen-blue::before { background: var(--isms-nextgen-blue); }
+  .isms-nextgen-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .isms-nextgen-business-line-cards { grid-template-columns: 1fr; } }
+  .isms-nextgen-bl-card { background: var(--isms-nextgen-bg2); border: 1px solid var(--isms-nextgen-border); border-radius: var(--isms-nextgen-radius); padding: 16px; }
+  .isms-nextgen-bl-card-title { font-family: var(--isms-nextgen-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .isms-nextgen-bl-card-desc { font-size: 11px; color: var(--isms-nextgen-text3); line-height: 1.6; }
+  .isms-nextgen-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--isms-nextgen-accent-dim); color: var(--isms-nextgen-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .isms-nextgen-bl-card-tag.isms-nextgen-amber-tag { background: var(--isms-nextgen-amber-dim); color: var(--isms-nextgen-amber); border-color: rgba(245,158,11,0.2); }
+  .isms-nextgen-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .isms-nextgen-cap-list { grid-template-columns: 1fr; } }
+  .isms-nextgen-cap-item { background: var(--isms-nextgen-bg3); border: 1px solid var(--isms-nextgen-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--isms-nextgen-text2); }
+  .isms-nextgen-cap-item:hover { border-color: var(--isms-nextgen-border2); color: var(--isms-nextgen-text); }
+  .isms-nextgen-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--isms-nextgen-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .isms-nextgen-flow-panel { background: var(--isms-nextgen-bg2); border: 1px solid var(--isms-nextgen-border); border-radius: var(--isms-nextgen-radius); padding: 20px; margin-top: 20px; }
+  .isms-nextgen-flow-panel-title { font-family: var(--isms-nextgen-display); font-size: 12px; font-weight: 600; color: var(--isms-nextgen-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .isms-nextgen-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .isms-nextgen-flow-step { display: flex; align-items: center; gap: 8px; }
+  .isms-nextgen-flow-step-box { background: var(--isms-nextgen-surface); border: 1px solid var(--isms-nextgen-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--isms-nextgen-text2); white-space: nowrap; }
+  .isms-nextgen-flow-step-box.isms-nextgen-accent { border-color: rgba(0,229,160,0.3); color: var(--isms-nextgen-accent); }
+  .isms-nextgen-flow-step-arr { color: var(--isms-nextgen-text3); font-size: 11px; margin: 0 4px; }
+</style>

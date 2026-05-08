@@ -1,0 +1,889 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Logdis Middleware - Mas Muhammad" description="A last-mile delivery dispatch system built with C# (.NET Core 3.1). Bridges ERP order data (iSMS/AYO) to last-mile logistics platforms (LOCUS), manages delivery notes, customer master data, vehicle fleet, and provides real-time task tracking with cron-scheduled background workers.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="logdis">
+
+<header class="logdis-hero">
+<div class="logdis-hero-meta">
+<span class="logdis-badge logdis-badge-corporate">Corporate</span><span class="logdis-badge logdis-badge-client">Sampoerna</span> 
+<span class="logdis-badge logdis-badge-year">April 2023</span>
+</div>
+<h1 class="logdis-hero-title">Logdis <span>Middleware</span><span class="logdis-cursor"></span></h1>
+<p class="logdis-hero-desc">
+A last-mile delivery dispatch system built with C# (.NET Core 3.1). Bridges ERP order data (iSMS/AYO) to last-mile logistics platforms (LOCUS), manages delivery notes, customer master data, vehicle fleet, and provides real-time task tracking with cron-scheduled background workers.
+</p>
+<div class="logdis-stack-pills">
+<span class="logdis-stack-pill">C# .NET Core 3.1</span>
+<span class="logdis-stack-pill">ASP.NET Core</span>
+<span class="logdis-stack-pill">SQL Server</span>
+<span class="logdis-stack-pill">MongoDB</span>
+<span class="logdis-stack-pill">KendoUI</span>
+<span class="logdis-stack-pill">KnockoutJS</span>
+<span class="logdis-stack-pill">Docker</span>
+</div>
+</header>
+
+<section class="logdis-section">
+<div class="logdis-section-label">
+<span class="logdis-section-label-text">Impact</span>
+<div class="logdis-section-label-line"></div>
+<span class="logdis-section-label-num">01</span>
+</div>
+<div class="logdis-metrics-grid">
+<div class="logdis-metric-card">
+<div class="logdis-metric-val">13,700+</div>
+<div class="logdis-metric-label">Lines of Code</div>
+<div class="logdis-metric-sub">C# across 5 projects</div>
+</div>
+<div class="logdis-metric-card">
+<div class="logdis-metric-val">50+</div>
+<div class="logdis-metric-label">API Endpoints</div>
+<div class="logdis-metric-sub">MVC + API routes</div>
+</div>
+<div class="logdis-metric-card">
+<div class="logdis-metric-val">37+</div>
+<div class="logdis-metric-label">Domain Models</div>
+<div class="logdis-metric-sub">Entities & DTOs</div>
+</div>
+<div class="logdis-metric-card logdis-red">
+<div class="logdis-metric-val">Mission Critical</div>
+<div class="logdis-metric-label">System Level</div>
+<div class="logdis-metric-sub">Logistics backbone</div>
+</div>
+</div>
+</section>
+
+<section class="logdis-section">
+<div class="logdis-section-label">
+<span class="logdis-section-label-text">Architecture</span>
+<div class="logdis-section-label-line"></div>
+<span class="logdis-section-label-num">02</span>
+</div>
+<div class="logdis-arch-diagram">
+<div class="logdis-arch-diagram-inner">
+
+<div class="logdis-arch-node logdis-source">
+<div class="logdis-arch-node-icon"></div>
+<div class="logdis-arch-node-label">ERP Systems</div>
+<div class="logdis-arch-node-sub">iSMS · AYO</div>
+</div>
+
+<div class="logdis-arch-arrow">
+<div class="logdis-arch-arrow-line"></div>
+<div class="logdis-arch-arrow-label">API sync</div>
+</div>
+
+<div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+<div class="logdis-arch-node core" style="width:220px;">
+<div class="logdis-arch-node-label" style="font-size:13px; margin-bottom:10px;">ASP.NET Core App</div>
+<div class="logdis-core-stack">
+<div class="logdis-core-step"><div class="logdis-core-step-dot"></div>MVC + API Controllers</div>
+<div class="logdis-core-step"><div class="logdis-core-step-dot"></div>BLL Business Logic</div>
+<div class="logdis-core-step"><div class="logdis-core-step-dot" style="background:var(--blue)"></div>DB · Migrations · Repo</div>
+</div>
+</div>
+<div class="logdis-schema-connector" style="margin-top:0;">
+<div class="logdis-schema-line-v"></div>
+<div class="logdis-schema-arrow-label">cron worker</div>
+<div class="logdis-schema-line-v"></div>
+<div class="logdis-arch-node logdis-schema-node">
+<div class="logdis-arch-node-label" style="font-size:11px; color: #f59e0b;">Worker Service</div>
+<div class="logdis-arch-node-sub">Background scheduling</div>
+</div>
+</div>
+</div>
+
+<div class="logdis-arch-arrow">
+<div class="logdis-arch-arrow-line"></div>
+<div class="logdis-arch-arrow-label">persist</div>
+</div>
+
+<div class="logdis-arch-node logdis-output">
+<div class="logdis-arch-node-icon"></div>
+<div class="logdis-arch-node-label">SQL Server</div>
+<div class="logdis-arch-node-sub">Primary database</div>
+</div>
+
+<div class="logdis-arch-arrow" style="min-width:40px;">
+<div class="logdis-arch-arrow-line" style="width:30px;"></div>
+<div class="logdis-arch-arrow-label">doc store</div>
+</div>
+
+<div class="logdis-arch-node logdis-source" style="border-color:rgba(96,165,250,0.3);">
+<div class="logdis-arch-node-icon"></div>
+<div class="logdis-arch-node-label">MongoDB</div>
+<div class="logdis-arch-node-sub">Secondary store</div>
+</div>
+
+<div class="logdis-arch-arrow" style="min-width:40px;">
+<div class="logdis-arch-arrow-line" style="width:30px;"></div>
+<div class="logdis-arch-arrow-label">webhook</div>
+</div>
+
+<div class="logdis-arch-node logdis-output" style="border-color:rgba(245,158,11,0.3);">
+<div class="logdis-arch-node-icon"></div>
+<div class="logdis-arch-node-label">LOCUS</div>
+<div class="logdis-arch-node-sub">Last-mile platform</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="logdis-section">
+<div class="logdis-section-label">
+<span class="logdis-section-label-text">Tech Stack</span>
+<div class="logdis-section-label-line"></div>
+<span class="logdis-section-label-num">03</span>
+</div>
+<div class="logdis-impact-wrapper">
+<table class="logdis-stack-table">
+<tbody>
+<tr><td class="logdis-layer">Runtime</td><td class="logdis-tech">.NET Core 3.1 (C#)</td></tr>
+<tr><td class="logdis-layer">Web Framework</td><td class="logdis-tech">ASP.NET Core MVC + Web API</td></tr>
+<tr><td class="logdis-layer">Databases</td><td class="logdis-tech">SQL Server (primary) + MongoDB (secondary)</td></tr>
+<tr><td class="logdis-layer">Frontend</td><td class="logdis-tech">KendoUI · KnockoutJS · jQuery · Bootstrap</td></tr>
+<tr><td class="logdis-layer">ORM/Data</td><td class="logdis-tech">Amaterasu (custom ORM) · MongoDB.Driver</td></tr>
+<tr><td class="logdis-layer">Background Jobs</td><td class="logdis-tech">Windows Service · NCrontab scheduling</td></tr>
+<tr><td class="logdis-layer">Reporting</td><td class="logdis-tech">Aspose.Cells · Serilog</td></tr>
+<tr><td class="logdis-layer">CI/CD</td><td class="logdis-tech">GitLab CI · Docker</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="logdis-section">
+<div class="logdis-section-label">
+<span class="logdis-section-label-text">Capabilities</span>
+<div class="logdis-section-label-line"></div>
+<span class="logdis-section-label-num">04</span>
+</div>
+<div class="logdis-impact-wrapper">
+<table class="logdis-stack-table">
+<tbody>
+<tr><td class="logdis-layer">Order Sync</td><td class="logdis-tech">Fetch delivery notes from ERP (iSMS/AYO) and sync to last-mile platform</td></tr>
+<tr><td class="logdis-layer">Dispatch Mgmt</td><td class="logdis-tech">Plan creation, task assignment, vehicle & homebase management</td></tr>
+<tr><td class="logdis-layer">Real-time Tracking</td><td class="logdis-tech">Task status callbacks from LOCUS with plan/task status updates</td></tr>
+<tr><td class="logdis-layer">Master Data</td><td class="logdis-tech">Customer, product, plant management with Excel upload</td></tr>
+<tr><td class="logdis-layer">History & Audit</td><td class="logdis-tech">Full execution history, submission logs, and export capabilities</td></tr>
+<tr><td class="logdis-layer">DB Migrations</td><td class="logdis-tech">24 FluentMigrator scripts for schema evolution</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .logdis {
+    --logdis-bg: #0a0b0d;
+    --logdis-bg2: #0f1114;
+    --logdis-bg3: #141720;
+    --logdis-surface: #1a1e28;
+    --logdis-surface2: #212636;
+    --logdis-border: #2a2f40;
+    --logdis-border2: #363c50;
+    --logdis-accent: #00e5a0;
+    --logdis-accent2: #00b87a;
+    --logdis-accent-dim: rgba(0, 229, 160, 0.08);
+    --logdis-accent-dim2: rgba(0, 229, 160, 0.15);
+    --logdis-amber: #f59e0b;
+    --logdis-amber-dim: rgba(245, 158, 11, 0.1);
+    --logdis-blue: #60a5fa;
+    --logdis-blue-dim: rgba(96, 165, 250, 0.1);
+    --logdis-red: #f87171;
+    --logdis-text: #e8eaf0;
+    --logdis-text2: #8b92a8;
+    --logdis-text3: #5a6077;
+    --logdis-mono: "JetBrains Mono", monospace;
+    --logdis-display: "Syne", sans-serif;
+    --logdis-radius: 10px;
+    --logdis-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .logdis * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logdis body {
+    background: var(--logdis-bg);
+    color: var(--logdis-text);
+    font-family: var(--logdis-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .logdis-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--logdis-border);
+  }
+  .logdis-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--logdis-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .logdis-nav-back:hover {
+    color: var(--logdis-accent);
+  }
+  .logdis-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .logdis-nav-dot {
+    color: var(--logdis-border2);
+  }
+  .logdis-nav-title {
+    color: var(--logdis-text3);
+    font-size: 12px;
+  }
+
+  .logdis-hero {
+    margin-bottom: 56px;
+  }
+  .logdis-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .logdis-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .logdis-badge-corporate {
+    background: var(--logdis-blue-dim);
+    color: var(--logdis-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .logdis-badge-client {
+    background: var(--logdis-accent-dim);
+    color: var(--logdis-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .logdis-badge-year {
+    background: var(--logdis-surface);
+    color: var(--logdis-text3);
+    border-color: var(--logdis-border);
+  }
+
+  .logdis-hero-title {
+    font-family: var(--logdis-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .logdis-hero-title span {
+    color: var(--logdis-accent);
+    position: relative;
+  }
+
+  .logdis-hero-desc {
+    color: var(--logdis-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .logdis-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .logdis-stack-pill {
+    background: var(--logdis-surface);
+    border: 1px solid var(--logdis-border);
+    color: var(--logdis-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .logdis-stack-pill:hover {
+    border-color: var(--logdis-accent);
+    color: var(--logdis-accent);
+    background: var(--logdis-accent-dim);
+  }
+
+  .logdis-section {
+    margin-bottom: 52px;
+  }
+  .logdis-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .logdis-section-label-text {
+    font-family: var(--logdis-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--logdis-text3);
+    text-transform: uppercase;
+  }
+  .logdis-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--logdis-border);
+  }
+  .logdis-section-label-num {
+    font-size: 11px;
+    color: var(--logdis-border2);
+  }
+
+  .logdis-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .logdis-metric-card {
+    background: var(--logdis-bg3);
+    border: 1px solid var(--logdis-border);
+    border-radius: var(--logdis-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .logdis-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--logdis-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .logdis-metric-card:hover {
+    border-color: var(--logdis-border2);
+  }
+  .logdis-metric-card:hover::before {
+    opacity: 1;
+  }
+  .logdis-metric-amber .logdis-metric-val {
+    color: var(--logdis-amber);
+  }
+  .logdis-metric-amber::before {
+    background: var(--logdis-amber);
+  }
+
+  .logdis-metric-val {
+    font-family: var(--logdis-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--logdis-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .logdis-metric-label {
+    font-size: 12px;
+    color: var(--logdis-text2);
+    margin-bottom: 3px;
+  }
+  .logdis-metric-sub {
+    font-size: 11px;
+    color: var(--logdis-text3);
+  }
+
+  .logdis-arch-diagram {
+    background: var(--logdis-bg3);
+    border: 1px solid var(--logdis-border);
+    border-radius: var(--logdis-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .logdis-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .logdis-arch-node {
+    background: var(--logdis-surface);
+    border: 1px solid var(--logdis-border2);
+    border-radius: var(--logdis-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .logdis-core {
+    background: var(--logdis-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .logdis-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .logdis-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--logdis-amber-dim);
+    min-width: 110px;
+  }
+  .logdis-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .logdis-arch-node-label {
+    font-family: var(--logdis-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .logdis-arch-node-sub {
+    font-size: 10px;
+    color: var(--logdis-text3);
+    font-family: var(--logdis-mono);
+  }
+
+  .logdis-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--logdis-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .logdis-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--logdis-border),
+      var(--logdis-accent),
+      var(--logdis-border)
+    );
+    position: relative;
+  }
+  .logdis-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--logdis-accent);
+    font-size: 10px;
+  }
+  .logdis-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--logdis-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .logdis-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .logdis-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .logdis-core-step {
+    background: var(--logdis-bg3);
+    border: 1px solid var(--logdis-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--logdis-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logdis-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--logdis-accent);
+    flex-shrink: 0;
+  }
+
+  .logdis-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .logdis-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .logdis-schema-arrow-label {
+    font-size: 9px;
+    color: var(--logdis-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .logdis-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .logdis-decision-card {
+    background: var(--logdis-bg3);
+    border: 1px solid var(--logdis-border);
+    border-radius: var(--logdis-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .logdis-decision-card:hover {
+    border-color: var(--logdis-border2);
+  }
+
+  .logdis-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .logdis-decision-num {
+    font-family: var(--logdis-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--logdis-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .logdis-decision-title {
+    font-family: var(--logdis-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .logdis-decision-problem {
+    font-size: 12px;
+    color: var(--logdis-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--logdis-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .logdis-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .logdis-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .logdis-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .logdis-decision-chosen {
+    color: var(--logdis-accent);
+  }
+  .logdis-decision-tradeoff {
+    color: var(--logdis-amber);
+  }
+  .logdis-decision-col-text {
+    font-size: 12px;
+    color: var(--logdis-text2);
+    line-height: 1.65;
+  }
+
+  .logdis-decision-code {
+    background: var(--logdis-bg);
+    border-top: 1px solid var(--logdis-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--logdis-text2);
+    overflow-x: auto;
+  }
+  .logdis-decision-code pre {
+    margin: 0;
+    font-family: var(--logdis-mono);
+    line-height: 1.6;
+  }
+  .logdis-token-kw {
+    color: #c792ea;
+  }
+  .logdis-token-fn {
+    color: #82aaff;
+  }
+  .logdis-token-str {
+    color: #c3e88d;
+  }
+  .logdis-token-cm {
+    color: var(--logdis-text3);
+    font-style: italic;
+  }
+  .logdis-token-acc {
+    color: var(--logdis-accent);
+  }
+
+  .logdis-impact-wrapper {
+    background: var(--logdis-bg3);
+    border: 1px solid var(--logdis-border);
+    border-radius: var(--logdis-radius);
+    overflow: hidden;
+  }
+  .logdis-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .logdis-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--logdis-text3);
+    border-bottom: 1px solid var(--logdis-border);
+    font-family: var(--logdis-display);
+    font-weight: 600;
+  }
+  .logdis-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--logdis-border);
+    color: var(--logdis-text2);
+  }
+  .logdis-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .logdis-impact-table tr:hover td {
+    background: var(--logdis-surface);
+  }
+  .logdis-before {
+    color: var(--logdis-red);
+  }
+  .logdis-after {
+    color: var(--logdis-accent);
+  }
+  .logdis-delta {
+    color: var(--logdis-accent);
+    font-weight: 500;
+    font-family: var(--logdis-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .logdis-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .logdis-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .logdis-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--logdis-border);
+  }
+  .logdis-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .logdis-layer {
+    color: var(--logdis-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .logdis-tech {
+    color: var(--logdis-accent);
+    font-family: var(--logdis-mono);
+  }
+  .logdis-stack-table tr:hover td {
+    background: var(--logdis-surface);
+  }
+
+  .logdis-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--logdis-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .logdis-footer-text {
+    font-size: 11px;
+    color: var(--logdis-text3);
+  }
+  .logdis-footer-link {
+    font-size: 11px;
+    color: var(--logdis-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .logdis-footer-link:hover {
+    color: var(--logdis-accent);
+  }
+
+  @keyframes logdis-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .logdis-hero {
+    animation: logdis-fadeUp 0.5s ease both;
+  }
+  .logdis-section:nth-child(2) {
+    animation: logdis-fadeUp 0.5s 0.1s ease both;
+  }
+  .logdis-section:nth-child(3) {
+    animation: logdis-fadeUp 0.5s 0.15s ease both;
+  }
+  .logdis-section:nth-child(4) {
+    animation: logdis-fadeUp 0.5s 0.2s ease both;
+  }
+  .logdis-section:nth-child(5) {
+    animation: logdis-fadeUp 0.5s 0.25s ease both;
+  }
+  .logdis-section:nth-child(6) {
+    animation: logdis-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .logdis-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--logdis-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: logdis-blink 1s step-end infinite;
+  }
+  @keyframes logdis-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .logdis-badge-client { background: var(--logdis-accent-dim); color: var(--logdis-accent); border-color: rgba(0,229,160,0.2); }
+  .logdis-metric-val { font-size: 22px; }
+  .logdis-amber .logdis-metric-val { color: var(--logdis-amber); }
+  .logdis-amber::before { background: var(--logdis-amber); }
+  .logdis-red .logdis-metric-val { color: var(--logdis-red); }
+  .logdis-red::before { background: var(--logdis-red); }
+  .logdis-blue .logdis-metric-val { color: var(--logdis-blue); }
+  .logdis-blue::before { background: var(--logdis-blue); }
+  .logdis-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .logdis-business-line-cards { grid-template-columns: 1fr; } }
+  .logdis-bl-card { background: var(--logdis-bg2); border: 1px solid var(--logdis-border); border-radius: var(--logdis-radius); padding: 16px; }
+  .logdis-bl-card-title { font-family: var(--logdis-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .logdis-bl-card-desc { font-size: 11px; color: var(--logdis-text3); line-height: 1.6; }
+  .logdis-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--logdis-accent-dim); color: var(--logdis-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .logdis-bl-card-tag.logdis-amber-tag { background: var(--logdis-amber-dim); color: var(--logdis-amber); border-color: rgba(245,158,11,0.2); }
+  .logdis-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .logdis-cap-list { grid-template-columns: 1fr; } }
+  .logdis-cap-item { background: var(--logdis-bg3); border: 1px solid var(--logdis-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--logdis-text2); }
+  .logdis-cap-item:hover { border-color: var(--logdis-border2); color: var(--logdis-text); }
+  .logdis-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--logdis-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .logdis-flow-panel { background: var(--logdis-bg2); border: 1px solid var(--logdis-border); border-radius: var(--logdis-radius); padding: 20px; margin-top: 20px; }
+  .logdis-flow-panel-title { font-family: var(--logdis-display); font-size: 12px; font-weight: 600; color: var(--logdis-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .logdis-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .logdis-flow-step { display: flex; align-items: center; gap: 8px; }
+  .logdis-flow-step-box { background: var(--logdis-surface); border: 1px solid var(--logdis-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--logdis-text2); white-space: nowrap; }
+  .logdis-flow-step-box.logdis-accent { border-color: rgba(0,229,160,0.3); color: var(--logdis-accent); }
+  .logdis-flow-step-arr { color: var(--logdis-text3); font-size: 11px; margin: 0 4px; }
+</style>

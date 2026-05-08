@@ -1,0 +1,1134 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Teman Telkomsel (Web2SMS) - Mas Muhammad" description="An enterprise SMS broadcast platform for Telkomsel enabling member management, community grouping, and scheduled SMS broadcasting with bulk MSISDN import. Built with CodeIgniter PHP framework on Oracle database using Modular HMVC architecture. The primary subscriber engagement system serving millions of Telkomsel customers.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="teman-telkomsel">
+
+<header class="teman-telkomsel-hero">
+    <div class="teman-telkomsel-hero-meta">
+      <span class="teman-telkomsel-badge teman-telkomsel-badge-corporate">Corporate</span><span class="teman-telkomsel-badge teman-telkomsel-badge-client">Telkomsel</span> 
+      
+      <span class="teman-telkomsel-badge teman-telkomsel-badge-year">June 2014</span>
+    </div>
+    <h1 class="teman-telkomsel-hero-title"><span>Teman</span> Telkomsel<span class="teman-telkomsel-cursor"></span></h1>
+    <p class="teman-telkomsel-hero-desc">
+      An enterprise SMS broadcast platform for Telkomsel enabling member management, community grouping, and scheduled SMS broadcasting with bulk MSISDN import. Built with CodeIgniter PHP framework on Oracle database using Modular HMVC architecture. The primary subscriber engagement system serving millions of Telkomsel customers.
+    </p>
+    <div class="teman-telkomsel-stack-pills">
+      <span class="teman-telkomsel-stack-pill">PHP 5.x</span>
+      <span class="teman-telkomsel-stack-pill">CodeIgniter 2.1.2</span>
+      <span class="teman-telkomsel-stack-pill">Oracle DB (OCI8)</span>
+      <span class="teman-telkomsel-stack-pill">jQuery</span>
+      <span class="teman-telkomsel-stack-pill">Bootstrap 2</span>
+      <span class="teman-telkomsel-stack-pill">Flexigrid</span>
+      <span class="teman-telkomsel-stack-pill">PHPExcel</span>
+    </div>
+  </header>
+
+  <!-- METRICS -->
+  <section class="teman-telkomsel-section">
+    <div class="teman-telkomsel-section-label">
+      <span class="teman-telkomsel-section-label-text">Impact</span>
+      <div class="teman-telkomsel-section-label-line"></div>
+      <span class="teman-telkomsel-section-label-num">01</span>
+    </div>
+    <div class="teman-telkomsel-metrics-grid">
+      <div class="teman-telkomsel-metric-card">
+        <div class="teman-telkomsel-metric-val">14,000+</div>
+        <div class="teman-telkomsel-metric-label">Lines of Code</div>
+        <div class="teman-telkomsel-metric-sub">PHP + JS + SQL</div>
+      </div>
+      <div class="teman-telkomsel-metric-card">
+        <div class="teman-telkomsel-metric-val">35+</div>
+        <div class="teman-telkomsel-metric-label">API Endpoints</div>
+        <div class="teman-telkomsel-metric-sub">5 REST + 30 AJAX</div>
+      </div>
+      <div class="teman-telkomsel-metric-card">
+        <div class="teman-telkomsel-metric-val">36</div>
+        <div class="teman-telkomsel-metric-label">Database Tables</div>
+        <div class="teman-telkomsel-metric-sub">Oracle DB schema</div>
+      </div>
+      <div class="teman-telkomsel-metric-card teman-telkomsel-amber">
+        <div class="teman-telkomsel-metric-val">10</div>
+        <div class="teman-telkomsel-metric-label">Complexity Score</div>
+        <div class="teman-telkomsel-metric-sub">Mission Critical</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="teman-telkomsel-section">
+    <div class="teman-telkomsel-section-label">
+      <span class="teman-telkomsel-section-label-text">Architecture</span>
+      <div class="teman-telkomsel-section-label-line"></div>
+      <span class="teman-telkomsel-section-label-num">02</span>
+    </div>
+    <div class="teman-telkomsel-arch-diagram">
+      <div class="teman-telkomsel-arch-diagram-inner">
+
+        <!-- Source -->
+        <div class="teman-telkomsel-arch-node teman-telkomsel-source">
+          <div class="teman-telkomsel-arch-node-icon"></div>
+          <div class="teman-telkomsel-arch-node-label">Web Browser</div>
+          <div class="teman-telkomsel-arch-node-sub">Admin Panel</div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="teman-telkomsel-arch-arrow">
+          <div class="teman-telkomsel-arch-arrow-line"></div>
+          <div class="teman-telkomsel-arch-arrow-label">HTTP request</div>
+        </div>
+
+        <!-- Core HMVC App -->
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+          <div class="teman-telkomsel-arch-node core" style="width:240px;">
+            <div class="teman-telkomsel-arch-node-label" style="font-size:13px; margin-bottom:10px;">CodeIgniter HMVC App</div>
+            <div class="teman-telkomsel-core-stack">
+              <div class="teman-telkomsel-core-step">
+                <div class="teman-telkomsel-core-step-dot"></div>
+                Controllers · routing
+              </div>
+              <div class="teman-telkomsel-core-step">
+                <div class="teman-telkomsel-core-step-dot"></div>
+                Models · business logic
+              </div>
+              <div class="teman-telkomsel-core-step">
+                <div class="teman-telkomsel-core-step-dot" style="background:var(--blue)"></div>
+                Views · Bootstrap UI
+              </div>
+            </div>
+          </div>
+          <!-- Oracle connector going down -->
+          <div class="teman-telkomsel-schema-connector" style="margin-top:0;">
+            <div class="teman-telkomsel-schema-line-v"></div>
+            <div class="teman-telkomsel-schema-arrow-label">OCI8 persist</div>
+            <div class="teman-telkomsel-schema-line-v"></div>
+            <div class="teman-telkomsel-arch-node teman-telkomsel-schema-node">
+              <div class="teman-telkomsel-arch-node-label" style="font-size:11px; color: #f59e0b;">Oracle DB</div>
+              <div class="teman-telkomsel-arch-node-sub">36 tables</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="teman-telkomsel-arch-arrow">
+          <div class="teman-telkomsel-arch-arrow-line"></div>
+          <div class="teman-telkomsel-arch-arrow-label">SMS API</div>
+        </div>
+
+        <!-- Output -->
+        <div class="teman-telkomsel-arch-node teman-telkomsel-output">
+          <div class="teman-telkomsel-arch-node-icon"></div>
+          <div class="teman-telkomsel-arch-node-label">SMS Gateway</div>
+          <div class="teman-telkomsel-arch-node-sub">Telkomsel infra</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DECISIONS -->
+  <section class="teman-telkomsel-section">
+    <div class="teman-telkomsel-section-label">
+      <span class="teman-telkomsel-section-label-text">Decision Log</span>
+      <div class="teman-telkomsel-section-label-line"></div>
+      <span class="teman-telkomsel-section-label-num">03</span>
+    </div>
+    <div class="teman-telkomsel-decision-list">
+
+      <!-- Decision 1 -->
+      <div class="teman-telkomsel-decision-card">
+        <div class="teman-telkomsel-decision-header">
+          <div class="teman-telkomsel-decision-num">01</div>
+          <div>
+            <div class="teman-telkomsel-decision-title">Modular HMVC — Hierarchical Separation of Concerns</div>
+            <div class="teman-telkomsel-decision-problem">
+              Monolithic MVC controllers became unmanageable as the platform grew to support multiple community groups, scheduling modes, and role-based access across dozens of modules.
+            </div>
+          </div>
+        </div>
+        <div class="teman-telkomsel-decision-body">
+          <div>
+            <div class="teman-telkomsel-decision-col-label teman-telkomsel-chosen">▸ Chosen</div>
+            <div class="teman-telkomsel-decision-col-text">
+              Modular HMVC (Hierarchical Model-View-Controller) pattern using CodeIgniter with third-party HMVC extension. Each domain (member management, scheduling, import, reporting) became an isolated module with its own controllers, models, and views.
+            </div>
+          </div>
+          <div>
+            <div class="teman-telkomsel-decision-col-label teman-telkomsel-tradeoff">▸ Trade-off</div>
+            <div class="teman-telkomsel-decision-col-text">
+              Increased initial architecture complexity and module wiring overhead. Accepted because it enabled parallel development, clear ownership boundaries, and independent deployment of modules without touching the core.
+            </div>
+          </div>
+        </div>
+        <div class="teman-telkomsel-decision-code">
+<pre><span class="teman-telkomsel-token-cm">//  Before: flat MVC — everything in one controller</span>
+<span class="teman-telkomsel-token-kw">class</span> <span class="teman-telkomsel-token-fn">Sms extends CI_Controller &#123;</span>
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">send</span>() &#123; &#125;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">schedule</span>() &#123; &#125;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">import_member</span>() &#123; &#125;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">group_management</span>() &#123; &#125;
+<span class="teman-telkomsel-token-kw">&#125;</span>
+
+<span class="teman-telkomsel-token-cm">//  After: modular HMVC — each domain isolated</span>
+<span class="teman-telkomsel-token-kw">class</span> <span class="teman-telkomsel-token-fn">Sms_Broadcast extends MX_Controller</span> &#123;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">send</span>() &#123; &#125;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">schedule</span>() &#123; &#125;
+<span class="teman-telkomsel-token-kw">&#125;</span>
+<span class="teman-telkomsel-token-kw">class</span> <span class="teman-telkomsel-token-fn">Member_Import extends MX_Controller</span> &#123;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">upload_excel</span>() &#123; &#125;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">validate</span>() &#123; &#125;
+<span class="teman-telkomsel-token-kw">&#125;</span>
+<span class="teman-telkomsel-token-kw">class</span> <span class="teman-telkomsel-token-fn">Community extends MX_Controller</span> &#123;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">manage_groups</span>() &#123; &#125;
+<span class="teman-telkomsel-token-kw">&#125;</span></pre>
+        </div>
+      </div>
+
+      <!-- Decision 2 -->
+      <div class="teman-telkomsel-decision-card">
+        <div class="teman-telkomsel-decision-header">
+          <div class="teman-telkomsel-decision-num">02</div>
+          <div>
+            <div class="teman-telkomsel-decision-title">SMS Scheduling — Cron-Driven Broadcast Engine</div>
+            <div class="teman-telkomsel-decision-problem">
+              Manual SMS dispatching was error-prone and unscalable. Operators needed to schedule campaigns for specific dates and repeat intervals across millions of subscribers without human intervention.
+            </div>
+          </div>
+        </div>
+        <div class="teman-telkomsel-decision-body">
+          <div>
+            <div class="teman-telkomsel-decision-col-label teman-telkomsel-chosen">▸ Chosen</div>
+            <div class="teman-telkomsel-decision-col-text">
+              Database-driven scheduler with server cron triggering. Scheduling support for one-time, daily, weekly, and monthly recurrence. The cron job polls pending broadcasts, batches subscribers, and dispatches via SMS gateway API with retry logic.
+            </div>
+          </div>
+          <div>
+            <div class="teman-telkomsel-decision-col-label teman-telkomsel-tradeoff">▸ Trade-off</div>
+            <div class="teman-telkomsel-decision-col-text">
+              Polling-based scheduling introduces slight delay between scheduled time and actual dispatch. Accepted: cron granularity at 1-minute intervals was sufficient for Telkomsel's operational requirements without real-time constraints.
+            </div>
+          </div>
+        </div>
+        <div class="teman-telkomsel-decision-code">
+<pre><span class="teman-telkomsel-token-cm">// Scheduler cron handler — polls pending broadcasts</span>
+<span class="teman-telkomsel-token-kw">class</span> <span class="teman-telkomsel-token-fn">Scheduler extends MX_Controller</span> &#123;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">process_queue</span>() &#123;
+        <span class="teman-telkomsel-token-kw">$pending</span> = <span class="teman-telkomsel-token-acc">$this</span>-><span class="teman-telkomsel-token-fn">scheduler_model</span>
+            -><span class="teman-telkomsel-token-fn">getDueBroadcasts</span>();
+
+        <span class="teman-telkomsel-token-kw">foreach</span> (<span class="teman-telkomsel-token-acc">$pending</span> <span class="teman-telkomsel-token-kw">as</span> <span class="teman-telkomsel-token-acc">$broadcast</span>) &#123;
+            <span class="teman-telkomsel-token-acc">$batches</span> = <span class="teman-telkomsel-token-fn">array_chunk</span>(
+                <span class="teman-telkomsel-token-acc">$broadcast</span>->recipients, <span class="teman-telkomsel-token-acc">1000</span>
+            );
+            <span class="teman-telkomsel-token-kw">foreach</span> (<span class="teman-telkomsel-token-acc">$batches</span> <span class="teman-telkomsel-token-kw">as</span> <span class="teman-telkomsel-token-acc">$batch</span>) &#123;
+                <span class="teman-telkomsel-token-acc">$this</span>-><span class="teman-telkomsel-token-fn">gateway</span>-><span class="teman-telkomsel-token-fn">send</span>(<span class="teman-telkomsel-token-acc">$batch</span>);
+            &#125;
+        &#125;
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+      <!-- Decision 3 -->
+      <div class="teman-telkomsel-decision-card">
+        <div class="teman-telkomsel-decision-header">
+          <div class="teman-telkomsel-decision-num">03</div>
+          <div>
+            <div class="teman-telkomsel-decision-title">Bulk MSISDN Import — Excel-Based Validation Pipeline</div>
+            <div class="teman-telkomsel-decision-problem">
+              Operators managed subscriber lists in Excel spreadsheets. Manual entry of MSISDN numbers into the web interface was slow, error-prone, and lacked validation for phone number formatting and duplicates.
+            </div>
+          </div>
+        </div>
+        <div class="teman-telkomsel-decision-body">
+          <div>
+            <div class="teman-telkomsel-decision-col-label teman-telkomsel-chosen">▸ Chosen</div>
+            <div class="teman-telkomsel-decision-col-text">
+              PHPExcel-powered bulk import pipeline. Operators upload .xls files containing MSISDN lists. The system validates formatting, strips invalid numbers, checks duplicates against existing members, and inserts validated records in a single transaction.
+            </div>
+          </div>
+          <div>
+            <div class="teman-telkomsel-decision-col-label teman-telkomsel-tradeoff">▸ Trade-off</div>
+            <div class="teman-telkomsel-decision-col-text">
+              Large Excel files consume significant PHP memory during parsing. Mitigated with row-by-row streaming and a max-rows cap per import session. Very large datasets require splitting across multiple uploads.
+            </div>
+          </div>
+        </div>
+        <div class="teman-telkomsel-decision-code">
+<pre><span class="teman-telkomsel-token-cm">// Bulk MSISDN import with validation pipeline</span>
+<span class="teman-telkomsel-token-kw">class</span> <span class="teman-telkomsel-token-fn">Member_Import extends MX_Controller</span> &#123;
+    <span class="teman-telkomsel-token-kw">function</span> <span class="teman-telkomsel-token-fn">process_upload</span>() &#123;
+        <span class="teman-telkomsel-token-acc">$excel</span> = <span class="teman-telkomsel-token-acc">$this</span>-><span class="teman-telkomsel-token-fn">phpexcel</span>-><span class="teman-telkomsel-token-fn">load</span>(<span class="teman-telkomsel-token-acc">$uploaded_file</span>);
+        <span class="teman-telkomsel-token-acc">$valid</span> = [];
+        <span class="teman-telkomsel-token-acc">$errors</span> = [];
+
+        <span class="teman-telkomsel-token-kw">foreach</span> (<span class="teman-telkomsel-token-acc">$excel</span>-><span class="teman-telkomsel-token-fn">getRowIterator</span>() <span class="teman-telkomsel-token-kw">as</span> <span class="teman-telkomsel-token-acc">$row</span>) &#123;
+            <span class="teman-telkomsel-token-acc">$msisdn</span> = <span class="teman-telkomsel-token-fn">trim</span>(<span class="teman-telkomsel-token-acc">$row</span>[<span class="teman-telkomsel-token-str">'msisdn'</span>]);
+            <span class="teman-telkomsel-token-kw">if</span> (<span class="teman-telkomsel-token-acc">$this</span>-><span class="teman-telkomsel-token-fn">validation</span>-><span class="teman-telkomsel-token-fn">isValidMsisdn</span>(<span class="teman-telkomsel-token-acc">$msisdn</span>)) &#123;
+                <span class="teman-telkomsel-token-acc">$valid</span>[] = <span class="teman-telkomsel-token-acc">$msisdn</span>;
+            &#125; <span class="teman-telkomsel-token-kw">else</span> &#123;
+                <span class="teman-telkomsel-token-acc">$errors</span>[] = <span class="teman-telkomsel-token-acc">$row</span>[<span class="teman-telkomsel-token-str">'row'</span>] . <span class="teman-telkomsel-token-str">': invalid'</span>;
+            &#125;
+        &#125;
+
+        <span class="teman-telkomsel-token-acc">$this</span>-><span class="teman-telkomsel-token-fn">member_model</span>-><span class="teman-telkomsel-token-fn">batch_insert</span>(<span class="teman-telkomsel-token-acc">$valid</span>);
+        <span class="teman-telkomsel-token-acc">$this</span>-><span class="teman-telkomsel-token-fn">session</span>-><span class="teman-telkomsel-token-fn">set_flashdata</span>(<span class="teman-telkomsel-token-str">'import_result'</span>, [
+            <span class="teman-telkomsel-token-str">'imported'</span> => <span class="teman-telkomsel-token-fn">count</span>(<span class="teman-telkomsel-token-acc">$valid</span>),
+            <span class="teman-telkomsel-token-str">'rejected'</span> => <span class="teman-telkomsel-token-acc">$errors</span>
+        ]);
+    &#125;
+&#125;</pre>
+        </div>
+      </div>
+
+      <!-- Decision 4 -->
+      <div class="teman-telkomsel-decision-card">
+        <div class="teman-telkomsel-decision-header">
+          <div class="teman-telkomsel-decision-num">04</div>
+          <div>
+            <div class="teman-telkomsel-decision-title">Role-Based Access Control — Menu-Level Privileges</div>
+            <div class="teman-telkomsel-decision-problem">
+              The platform served multiple Telkomsel teams with different operational responsibilities. A flat permission model posed security risks and made audit compliance difficult.
+            </div>
+          </div>
+        </div>
+        <div class="teman-telkomsel-decision-body">
+          <div>
+            <div class="teman-telkomsel-decision-col-label teman-telkomsel-chosen">▸ Chosen</div>
+            <div class="teman-telkomsel-decision-col-text">
+              Hierarchical RBAC with menu-level privilege granularity. Each user role maps to a set of visible menu items and actions. Combined with session-based authentication and IP binding for additional security in Telkomsel's internal network.
+            </div>
+          </div>
+          <div>
+            <div class="teman-telkomsel-decision-col-label teman-telkomsel-tradeoff">▸ Trade-off</div>
+            <div class="teman-telkomsel-decision-col-text">
+              Menu-level RBAC requires explicit permission definitions for each new feature. Accepted: the audit trail and security compliance requirements from Telkomsel's IT security team made this granularity necessary rather than optional.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BUSINESS IMPACT -->
+  <section class="teman-telkomsel-section">
+    <div class="teman-telkomsel-section-label">
+      <span class="teman-telkomsel-section-label-text">Business Impact</span>
+      <div class="teman-telkomsel-section-label-line"></div>
+      <span class="teman-telkomsel-section-label-num">04</span>
+    </div>
+    <div class="teman-telkomsel-impact-wrapper">
+      <table class="teman-telkomsel-impact-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Before</th>
+            <th>After</th>
+            <th>Delta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="teman-telkomsel-row-label">Subscriber engagement</td>
+            <td class="teman-telkomsel-before">Manual campaign dispatch</td>
+            <td class="teman-telkomsel-after">Automated broadcasts</td>
+            <td class="teman-telkomsel-delta">Full automation</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-row-label">SMS scheduling</td>
+            <td class="teman-telkomsel-before">Ad-hoc manual sending</td>
+            <td class="teman-telkomsel-after">Cron-driven scheduler</td>
+            <td class="teman-telkomsel-delta">Once/daily/weekly/monthly</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-row-label">Member import</td>
+            <td class="teman-telkomsel-before">Manual data entry</td>
+            <td class="teman-telkomsel-after">Excel bulk upload</td>
+            <td class="teman-telkomsel-delta">10× throughput</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-row-label">Access control</td>
+            <td class="teman-telkomsel-before">No role separation</td>
+            <td class="teman-telkomsel-after">RBAC + IP binding</td>
+            <td class="teman-telkomsel-delta">Full audit trail</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-row-label">Scale</td>
+            <td class="teman-telkomsel-before">Limited subscribers</td>
+            <td class="teman-telkomsel-after">Millions of subscribers</td>
+            <td class="teman-telkomsel-delta">Mission Critical</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="teman-telkomsel-section">
+    <div class="teman-telkomsel-section-label">
+      <span class="teman-telkomsel-section-label-text">Tech Stack</span>
+      <div class="teman-telkomsel-section-label-line"></div>
+      <span class="teman-telkomsel-section-label-num">05</span>
+    </div>
+    <div class="teman-telkomsel-impact-wrapper">
+      <table class="teman-telkomsel-stack-table">
+        <tbody>
+          <tr>
+            <td class="teman-telkomsel-layer">Language</td>
+            <td class="teman-telkomsel-tech">PHP 5.x</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-layer">Framework</td>
+            <td class="teman-telkomsel-tech">CodeIgniter 2.1.2</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-layer">Architecture</td>
+            <td class="teman-telkomsel-tech">Modular HMVC</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-layer">Database</td>
+            <td class="teman-telkomsel-tech">Oracle DB (OCI8) · 36 tables</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-layer">Frontend</td>
+            <td class="teman-telkomsel-tech">jQuery · Bootstrap 2 · Flexigrid</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-layer">Excel Processing</td>
+            <td class="teman-telkomsel-tech">PHPExcel</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-layer">SMS Gateway</td>
+            <td class="teman-telkomsel-tech">Telkomsel SMS Gateway API</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-layer">Scheduling</td>
+            <td class="teman-telkomsel-tech">DB-driven cron dispatcher</td>
+          </tr>
+          <tr>
+            <td class="teman-telkomsel-layer">Auth</td>
+            <td class="teman-telkomsel-tech">Session-based · IP binding · RBAC</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .teman-telkomsel {
+    --teman-telkomsel-bg: #0a0b0d;
+    --teman-telkomsel-bg2: #0f1114;
+    --teman-telkomsel-bg3: #141720;
+    --teman-telkomsel-surface: #1a1e28;
+    --teman-telkomsel-surface2: #212636;
+    --teman-telkomsel-border: #2a2f40;
+    --teman-telkomsel-border2: #363c50;
+    --teman-telkomsel-accent: #00e5a0;
+    --teman-telkomsel-accent2: #00b87a;
+    --teman-telkomsel-accent-dim: rgba(0, 229, 160, 0.08);
+    --teman-telkomsel-accent-dim2: rgba(0, 229, 160, 0.15);
+    --teman-telkomsel-amber: #f59e0b;
+    --teman-telkomsel-amber-dim: rgba(245, 158, 11, 0.1);
+    --teman-telkomsel-blue: #60a5fa;
+    --teman-telkomsel-blue-dim: rgba(96, 165, 250, 0.1);
+    --teman-telkomsel-red: #f87171;
+    --teman-telkomsel-text: #e8eaf0;
+    --teman-telkomsel-text2: #8b92a8;
+    --teman-telkomsel-text3: #5a6077;
+    --teman-telkomsel-mono: "JetBrains Mono", monospace;
+    --teman-telkomsel-display: "Syne", sans-serif;
+    --teman-telkomsel-radius: 10px;
+    --teman-telkomsel-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .teman-telkomsel * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .teman-telkomsel body {
+    background: var(--teman-telkomsel-bg);
+    color: var(--teman-telkomsel-text);
+    font-family: var(--teman-telkomsel-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .teman-telkomsel-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--teman-telkomsel-border);
+  }
+  .teman-telkomsel-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--teman-telkomsel-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .teman-telkomsel-nav-back:hover {
+    color: var(--teman-telkomsel-accent);
+  }
+  .teman-telkomsel-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .teman-telkomsel-nav-dot {
+    color: var(--teman-telkomsel-border2);
+  }
+  .teman-telkomsel-nav-title {
+    color: var(--teman-telkomsel-text3);
+    font-size: 12px;
+  }
+
+  .teman-telkomsel-hero {
+    margin-bottom: 56px;
+  }
+  .teman-telkomsel-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .teman-telkomsel-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .teman-telkomsel-badge-corporate {
+    background: var(--teman-telkomsel-blue-dim);
+    color: var(--teman-telkomsel-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .teman-telkomsel-badge-client {
+    background: var(--teman-telkomsel-accent-dim);
+    color: var(--teman-telkomsel-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .teman-telkomsel-badge-year {
+    background: var(--teman-telkomsel-surface);
+    color: var(--teman-telkomsel-text3);
+    border-color: var(--teman-telkomsel-border);
+  }
+
+  .teman-telkomsel-hero-title {
+    font-family: var(--teman-telkomsel-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .teman-telkomsel-hero-title span {
+    color: var(--teman-telkomsel-accent);
+    position: relative;
+  }
+
+  .teman-telkomsel-hero-desc {
+    color: var(--teman-telkomsel-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .teman-telkomsel-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .teman-telkomsel-stack-pill {
+    background: var(--teman-telkomsel-surface);
+    border: 1px solid var(--teman-telkomsel-border);
+    color: var(--teman-telkomsel-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .teman-telkomsel-stack-pill:hover {
+    border-color: var(--teman-telkomsel-accent);
+    color: var(--teman-telkomsel-accent);
+    background: var(--teman-telkomsel-accent-dim);
+  }
+
+  .teman-telkomsel-section {
+    margin-bottom: 52px;
+  }
+  .teman-telkomsel-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .teman-telkomsel-section-label-text {
+    font-family: var(--teman-telkomsel-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--teman-telkomsel-text3);
+    text-transform: uppercase;
+  }
+  .teman-telkomsel-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--teman-telkomsel-border);
+  }
+  .teman-telkomsel-section-label-num {
+    font-size: 11px;
+    color: var(--teman-telkomsel-border2);
+  }
+
+  .teman-telkomsel-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .teman-telkomsel-metric-card {
+    background: var(--teman-telkomsel-bg3);
+    border: 1px solid var(--teman-telkomsel-border);
+    border-radius: var(--teman-telkomsel-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .teman-telkomsel-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--teman-telkomsel-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .teman-telkomsel-metric-card:hover {
+    border-color: var(--teman-telkomsel-border2);
+  }
+  .teman-telkomsel-metric-card:hover::before {
+    opacity: 1;
+  }
+  .teman-telkomsel-metric-amber .teman-telkomsel-metric-val {
+    color: var(--teman-telkomsel-amber);
+  }
+  .teman-telkomsel-metric-amber::before {
+    background: var(--teman-telkomsel-amber);
+  }
+
+  .teman-telkomsel-metric-val {
+    font-family: var(--teman-telkomsel-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--teman-telkomsel-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .teman-telkomsel-metric-label {
+    font-size: 12px;
+    color: var(--teman-telkomsel-text2);
+    margin-bottom: 3px;
+  }
+  .teman-telkomsel-metric-sub {
+    font-size: 11px;
+    color: var(--teman-telkomsel-text3);
+  }
+
+  .teman-telkomsel-arch-diagram {
+    background: var(--teman-telkomsel-bg3);
+    border: 1px solid var(--teman-telkomsel-border);
+    border-radius: var(--teman-telkomsel-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .teman-telkomsel-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .teman-telkomsel-arch-node {
+    background: var(--teman-telkomsel-surface);
+    border: 1px solid var(--teman-telkomsel-border2);
+    border-radius: var(--teman-telkomsel-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .teman-telkomsel-core {
+    background: var(--teman-telkomsel-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .teman-telkomsel-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .teman-telkomsel-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--teman-telkomsel-amber-dim);
+    min-width: 110px;
+  }
+  .teman-telkomsel-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .teman-telkomsel-arch-node-label {
+    font-family: var(--teman-telkomsel-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .teman-telkomsel-arch-node-sub {
+    font-size: 10px;
+    color: var(--teman-telkomsel-text3);
+    font-family: var(--teman-telkomsel-mono);
+  }
+
+  .teman-telkomsel-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--teman-telkomsel-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .teman-telkomsel-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--teman-telkomsel-border),
+      var(--teman-telkomsel-accent),
+      var(--teman-telkomsel-border)
+    );
+    position: relative;
+  }
+  .teman-telkomsel-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--teman-telkomsel-accent);
+    font-size: 10px;
+  }
+  .teman-telkomsel-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--teman-telkomsel-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .teman-telkomsel-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .teman-telkomsel-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .teman-telkomsel-core-step {
+    background: var(--teman-telkomsel-bg3);
+    border: 1px solid var(--teman-telkomsel-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--teman-telkomsel-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .teman-telkomsel-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--teman-telkomsel-accent);
+    flex-shrink: 0;
+  }
+
+  .teman-telkomsel-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .teman-telkomsel-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .teman-telkomsel-schema-arrow-label {
+    font-size: 9px;
+    color: var(--teman-telkomsel-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .teman-telkomsel-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .teman-telkomsel-decision-card {
+    background: var(--teman-telkomsel-bg3);
+    border: 1px solid var(--teman-telkomsel-border);
+    border-radius: var(--teman-telkomsel-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .teman-telkomsel-decision-card:hover {
+    border-color: var(--teman-telkomsel-border2);
+  }
+
+  .teman-telkomsel-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .teman-telkomsel-decision-num {
+    font-family: var(--teman-telkomsel-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--teman-telkomsel-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .teman-telkomsel-decision-title {
+    font-family: var(--teman-telkomsel-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .teman-telkomsel-decision-problem {
+    font-size: 12px;
+    color: var(--teman-telkomsel-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--teman-telkomsel-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .teman-telkomsel-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .teman-telkomsel-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .teman-telkomsel-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .teman-telkomsel-decision-chosen {
+    color: var(--teman-telkomsel-accent);
+  }
+  .teman-telkomsel-decision-tradeoff {
+    color: var(--teman-telkomsel-amber);
+  }
+  .teman-telkomsel-decision-col-text {
+    font-size: 12px;
+    color: var(--teman-telkomsel-text2);
+    line-height: 1.65;
+  }
+
+  .teman-telkomsel-decision-code {
+    background: var(--teman-telkomsel-bg);
+    border-top: 1px solid var(--teman-telkomsel-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--teman-telkomsel-text2);
+    overflow-x: auto;
+  }
+  .teman-telkomsel-decision-code pre {
+    margin: 0;
+    font-family: var(--teman-telkomsel-mono);
+    line-height: 1.6;
+  }
+  .teman-telkomsel-token-kw {
+    color: #c792ea;
+  }
+  .teman-telkomsel-token-fn {
+    color: #82aaff;
+  }
+  .teman-telkomsel-token-str {
+    color: #c3e88d;
+  }
+  .teman-telkomsel-token-cm {
+    color: var(--teman-telkomsel-text3);
+    font-style: italic;
+  }
+  .teman-telkomsel-token-acc {
+    color: var(--teman-telkomsel-accent);
+  }
+
+  .teman-telkomsel-impact-wrapper {
+    background: var(--teman-telkomsel-bg3);
+    border: 1px solid var(--teman-telkomsel-border);
+    border-radius: var(--teman-telkomsel-radius);
+    overflow: hidden;
+  }
+  .teman-telkomsel-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .teman-telkomsel-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teman-telkomsel-text3);
+    border-bottom: 1px solid var(--teman-telkomsel-border);
+    font-family: var(--teman-telkomsel-display);
+    font-weight: 600;
+  }
+  .teman-telkomsel-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--teman-telkomsel-border);
+    color: var(--teman-telkomsel-text2);
+  }
+  .teman-telkomsel-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .teman-telkomsel-impact-table tr:hover td {
+    background: var(--teman-telkomsel-surface);
+  }
+  .teman-telkomsel-before {
+    color: var(--teman-telkomsel-red);
+  }
+  .teman-telkomsel-after {
+    color: var(--teman-telkomsel-accent);
+  }
+  .teman-telkomsel-delta {
+    color: var(--teman-telkomsel-accent);
+    font-weight: 500;
+    font-family: var(--teman-telkomsel-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .teman-telkomsel-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .teman-telkomsel-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .teman-telkomsel-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--teman-telkomsel-border);
+  }
+  .teman-telkomsel-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .teman-telkomsel-layer {
+    color: var(--teman-telkomsel-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .teman-telkomsel-tech {
+    color: var(--teman-telkomsel-accent);
+    font-family: var(--teman-telkomsel-mono);
+  }
+  .teman-telkomsel-stack-table tr:hover td {
+    background: var(--teman-telkomsel-surface);
+  }
+
+  .teman-telkomsel-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--teman-telkomsel-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .teman-telkomsel-footer-text {
+    font-size: 11px;
+    color: var(--teman-telkomsel-text3);
+  }
+  .teman-telkomsel-footer-link {
+    font-size: 11px;
+    color: var(--teman-telkomsel-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .teman-telkomsel-footer-link:hover {
+    color: var(--teman-telkomsel-accent);
+  }
+
+  @keyframes teman-telkomsel-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .teman-telkomsel-hero {
+    animation: teman-telkomsel-fadeUp 0.5s ease both;
+  }
+  .teman-telkomsel-section:nth-child(2) {
+    animation: teman-telkomsel-fadeUp 0.5s 0.1s ease both;
+  }
+  .teman-telkomsel-section:nth-child(3) {
+    animation: teman-telkomsel-fadeUp 0.5s 0.15s ease both;
+  }
+  .teman-telkomsel-section:nth-child(4) {
+    animation: teman-telkomsel-fadeUp 0.5s 0.2s ease both;
+  }
+  .teman-telkomsel-section:nth-child(5) {
+    animation: teman-telkomsel-fadeUp 0.5s 0.25s ease both;
+  }
+  .teman-telkomsel-section:nth-child(6) {
+    animation: teman-telkomsel-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .teman-telkomsel-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--teman-telkomsel-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: teman-telkomsel-blink 1s step-end infinite;
+  }
+  @keyframes teman-telkomsel-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .teman-telkomsel-badge-client { background: var(--teman-telkomsel-accent-dim); color: var(--teman-telkomsel-accent); border-color: rgba(0,229,160,0.2); }
+  .teman-telkomsel-metric-val { font-size: 22px; }
+  .teman-telkomsel-amber .teman-telkomsel-metric-val { color: var(--teman-telkomsel-amber); }
+  .teman-telkomsel-amber::before { background: var(--teman-telkomsel-amber); }
+  .teman-telkomsel-red .teman-telkomsel-metric-val { color: var(--teman-telkomsel-red); }
+  .teman-telkomsel-red::before { background: var(--teman-telkomsel-red); }
+  .teman-telkomsel-blue .teman-telkomsel-metric-val { color: var(--teman-telkomsel-blue); }
+  .teman-telkomsel-blue::before { background: var(--teman-telkomsel-blue); }
+  .teman-telkomsel-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .teman-telkomsel-business-line-cards { grid-template-columns: 1fr; } }
+  .teman-telkomsel-bl-card { background: var(--teman-telkomsel-bg2); border: 1px solid var(--teman-telkomsel-border); border-radius: var(--teman-telkomsel-radius); padding: 16px; }
+  .teman-telkomsel-bl-card-title { font-family: var(--teman-telkomsel-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .teman-telkomsel-bl-card-desc { font-size: 11px; color: var(--teman-telkomsel-text3); line-height: 1.6; }
+  .teman-telkomsel-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--teman-telkomsel-accent-dim); color: var(--teman-telkomsel-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .teman-telkomsel-bl-card-tag.teman-telkomsel-amber-tag { background: var(--teman-telkomsel-amber-dim); color: var(--teman-telkomsel-amber); border-color: rgba(245,158,11,0.2); }
+  .teman-telkomsel-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .teman-telkomsel-cap-list { grid-template-columns: 1fr; } }
+  .teman-telkomsel-cap-item { background: var(--teman-telkomsel-bg3); border: 1px solid var(--teman-telkomsel-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--teman-telkomsel-text2); }
+  .teman-telkomsel-cap-item:hover { border-color: var(--teman-telkomsel-border2); color: var(--teman-telkomsel-text); }
+  .teman-telkomsel-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--teman-telkomsel-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .teman-telkomsel-flow-panel { background: var(--teman-telkomsel-bg2); border: 1px solid var(--teman-telkomsel-border); border-radius: var(--teman-telkomsel-radius); padding: 20px; margin-top: 20px; }
+  .teman-telkomsel-flow-panel-title { font-family: var(--teman-telkomsel-display); font-size: 12px; font-weight: 600; color: var(--teman-telkomsel-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .teman-telkomsel-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .teman-telkomsel-flow-step { display: flex; align-items: center; gap: 8px; }
+  .teman-telkomsel-flow-step-box { background: var(--teman-telkomsel-surface); border: 1px solid var(--teman-telkomsel-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--teman-telkomsel-text2); white-space: nowrap; }
+  .teman-telkomsel-flow-step-box.teman-telkomsel-accent { border-color: rgba(0,229,160,0.3); color: var(--teman-telkomsel-accent); }
+  .teman-telkomsel-flow-step-arr { color: var(--teman-telkomsel-text3); font-size: 11px; margin: 0 4px; }
+</style>

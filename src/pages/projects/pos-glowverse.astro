@@ -1,0 +1,840 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="POS Glowverse - Mas Muhammad" description="A point-of-sale and seller commerce platform for MS Glow cosmetics brand enabling product and inventory management, complete shopping cart order lifecycle with multi-status workflow, payment processing via Xendit, shipment tracking with AWB integration, invoice management, chat messaging, and real-time dashboard analytics. Built with C# (.NET 6) and Go microservices with clean architecture.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="pos-glowverse">
+
+<header class="pos-glowverse-hero">
+    <div class="pos-glowverse-hero-meta">
+      <span class="pos-glowverse-badge badge-consulting">Consulting</span>
+      <span class="pos-glowverse-badge pos-glowverse-badge-domain">E-commerce / POS</span>
+      <span class="pos-glowverse-badge pos-glowverse-badge-year">February 2024</span>
+    </div>
+    <h1 class="pos-glowverse-hero-title">
+      POS<br>
+      <span>Glowverse</span><span class="pos-glowverse-cursor"></span>
+    </h1>
+    <p class="pos-glowverse-hero-desc">
+      A point-of-sale and seller commerce platform for MS Glow cosmetics brand enabling
+      product and inventory management, complete shopping cart order lifecycle with
+      multi-status workflow, payment processing via Xendit, shipment tracking with AWB
+      integration, invoice management, chat messaging, and real-time dashboard analytics.
+      Built with C# (.NET 6) and Go microservices with clean architecture.
+    </p>
+    <div class="pos-glowverse-stack-pills">
+      <span class="pos-glowverse-stack-pill">C# .NET 6</span>
+      <span class="pos-glowverse-stack-pill">Go 1.17</span>
+      <span class="pos-glowverse-stack-pill">MongoDB</span>
+      <span class="pos-glowverse-stack-pill">Xendit</span>
+      <span class="pos-glowverse-stack-pill">Twilio</span>
+      <span class="pos-glowverse-stack-pill">JWT Auth</span>
+      <span class="pos-glowverse-stack-pill">Docker + K8s</span>
+    </div>
+  </header>
+
+  <section class="pos-glowverse-section">
+    <div class="pos-glowverse-section-label">
+      <span class="pos-glowverse-section-label-num">01</span>
+      <span class="pos-glowverse-section-label-text">Impact &amp; Metrics</span>
+      <span class="pos-glowverse-section-label-line"></span>
+    </div>
+    <div class="pos-glowverse-metrics-grid">
+      <div class="pos-glowverse-metric-card"><div class="pos-glowverse-metric-val">60K+</div><div class="pos-glowverse-metric-label">Lines of Code</div><div class="pos-glowverse-metric-sub">C# + Go + Razor</div></div>
+      <div class="pos-glowverse-metric-card"><div class="pos-glowverse-metric-val">108+</div><div class="pos-glowverse-metric-label">API Endpoints</div><div class="pos-glowverse-metric-sub">RESTful + Go services</div></div>
+      <div class="pos-glowverse-metric-card"><div class="pos-glowverse-metric-val">50+</div><div class="pos-glowverse-metric-label">Database Models</div><div class="pos-glowverse-metric-sub">MongoDB collections</div></div>
+      <div class="pos-glowverse-metric-card pos-glowverse-red"><div class="pos-glowverse-metric-val">10</div><div class="pos-glowverse-metric-label">Complexity Score</div><div class="pos-glowverse-metric-sub">Mission Critical</div></div>
+    </div>
+    <div class="pos-glowverse-business-line-cards">
+      <div class="pos-glowverse-bl-card"><div class="pos-glowverse-bl-card-title">Order Management</div><div class="pos-glowverse-bl-card-desc">Complete order lifecycle with checkout, approval, picking, shipment, delivery, receive, close, cancel, force-close, and manual received workflows.</div><span class="pos-glowverse-bl-card-tag">Order Lifecycle</span></div>
+      <div class="pos-glowverse-bl-card"><div class="pos-glowverse-bl-card-title">Payments &amp; Finance</div><div class="pos-glowverse-bl-card-desc">Xendit payment gateway integration for transactions, balance management, withdrawal history, invoice processing, account receivable, and callbacks.</div><span class="pos-glowverse-bl-card-tag pos-glowverse-amber-tag">Xendit Gateway</span></div>
+      <div class="pos-glowverse-bl-card"><div class="pos-glowverse-bl-card-title">Seller Commerce</div><div class="pos-glowverse-bl-card-desc">Seller registration, product management with margin/markup rules, inventory sync, outlet management, discount/promo engine, and dashboard analytics.</div><span class="pos-glowverse-bl-card-tag">Seller Tools</span></div>
+      <div class="pos-glowverse-bl-card"><div class="pos-glowverse-bl-card-title">Communications</div><div class="pos-glowverse-bl-card-desc">In-app chat, WhatsApp/SMS via Twilio, email via MailKit, push notifications, and background workers for settlement, AWB updates, and approval expiry.</div><span class="pos-glowverse-bl-card-tag pos-glowverse-amber-tag">Twilio + MailKit</span></div>
+    </div>
+  </section>
+
+  <section class="pos-glowverse-section">
+    <div class="pos-glowverse-section-label">
+      <span class="pos-glowverse-section-label-num">02</span>
+      <span class="pos-glowverse-section-label-text">Architecture</span>
+      <span class="pos-glowverse-section-label-line"></span>
+    </div>
+    <div class="pos-glowverse-arch-diagram">
+      <div class="pos-glowverse-arch-diagram-inner">
+        <div class="pos-glowverse-arch-node pos-glowverse-source"><div class="pos-glowverse-arch-node-icon"></div><div class="pos-glowverse-arch-node-label">API Client</div><div class="pos-glowverse-arch-node-sub">Mobile / Web</div></div>
+        <div class="pos-glowverse-arch-arrow"><div class="pos-glowverse-arch-arrow-line"></div><div class="pos-glowverse-arch-arrow-label">HTTPS</div></div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+          <div class="pos-glowverse-arch-node core" style="width:220px;">
+            <div class="pos-glowverse-arch-node-label" style="font-size:13px; margin-bottom:10px;">Backend Services</div>
+            <div class="pos-glowverse-core-stack">
+              <div class="pos-glowverse-core-step"><div class="pos-glowverse-core-step-dot"></div>C# Web API (26+ Controllers)</div>
+              <div class="pos-glowverse-core-step"><div class="pos-glowverse-core-step-dot"></div>Go App Service (Auth)</div>
+              <div class="pos-glowverse-core-step"><div class="pos-glowverse-core-step-dot"></div>Application Layer (40+ Services)</div>
+              <div class="pos-glowverse-core-step"><div class="pos-glowverse-core-step-dot" style="background:var(--blue)"></div>Scheduler Workers (4)</div>
+            </div>
+          </div>
+        </div>
+        <div class="pos-glowverse-arch-arrow"><div class="pos-glowverse-arch-arrow-line"></div><div class="pos-glowverse-arch-arrow-label">persist</div></div>
+        <div class="pos-glowverse-arch-node pos-glowverse-output"><div class="pos-glowverse-arch-node-icon"></div><div class="pos-glowverse-arch-node-label">MongoDB</div><div class="pos-glowverse-arch-node-sub">Primary database</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pos-glowverse-section">
+    <div class="pos-glowverse-section-label">
+      <span class="pos-glowverse-section-label-num">03</span>
+      <span class="pos-glowverse-section-label-text">Tech Stack</span>
+      <span class="pos-glowverse-section-label-line"></span>
+    </div>
+    <div class="pos-glowverse-impact-wrapper">
+      <table class="pos-glowverse-stack-table">
+        <tbody>
+          <tr><td class="pos-glowverse-layer">Runtime (C#)</td><td class="pos-glowverse-tech">.NET 6.0</td></tr>
+          <tr><td class="pos-glowverse-layer">Runtime (Go)</td><td class="pos-glowverse-tech">Go 1.17</td></tr>
+          <tr><td class="pos-glowverse-layer">Web Framework (C#)</td><td class="pos-glowverse-tech">ASP.NET Core + AutoMapper + Swagger</td></tr>
+          <tr><td class="pos-glowverse-layer">Web Framework (Go)</td><td class="pos-glowverse-tech">Go-Chi with JWT middleware</td></tr>
+          <tr><td class="pos-glowverse-layer">Database</td><td class="pos-glowverse-tech">MongoDB (primary) + PostgreSQL + MySQL</td></tr>
+          <tr><td class="pos-glowverse-layer">Payment Gateway</td><td class="pos-glowverse-tech">Xendit (invoice, VA, transfer, disbursement)</td></tr>
+          <tr><td class="pos-glowverse-layer">Messaging</td><td class="pos-glowverse-tech">Twilio (WhatsApp/SMS) + MailKit (Email)</td></tr>
+          <tr><td class="pos-glowverse-layer">Auth</td><td class="pos-glowverse-tech">JWT Bearer + Basic Auth + Bcrypt</td></tr>
+          <tr><td class="pos-glowverse-layer">Background Jobs</td><td class="pos-glowverse-tech">NCrontab Workers (Settlement, AWB, Approval, Sync)</td></tr>
+          <tr><td class="pos-glowverse-layer">Monitoring</td><td class="pos-glowverse-tech">Elastic APM + Logrus</td></tr>
+          <tr><td class="pos-glowverse-layer">Infrastructure</td><td class="pos-glowverse-tech">Docker + Kubernetes (GKE) + GitLab CI</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="pos-glowverse-section">
+    <div class="pos-glowverse-section-label">
+      <span class="pos-glowverse-section-label-num">04</span>
+      <span class="pos-glowverse-section-label-text">Capabilities</span>
+      <span class="pos-glowverse-section-label-line"></span>
+    </div>
+    <div class="pos-glowverse-impact-wrapper">
+      <table class="pos-glowverse-stack-table">
+        <tbody>
+          <tr><td class="pos-glowverse-layer">Order Workflow</td><td class="pos-glowverse-tech">Checkout, approve, process, ready-to-pick, ship, receive, close, cancel, force-close, manual-receive</td></tr>
+          <tr><td class="pos-glowverse-layer">Product Management</td><td class="pos-glowverse-tech">Catalog, inventory, pricing, margin/markup, stock sync, barcode scan, discount promo engine</td></tr>
+          <tr><td class="pos-glowverse-layer">Payment Processing</td><td class="pos-glowverse-tech">Transaction, balance, withdrawal, invoice, callback, OTP confirmation, account receivable</td></tr>
+          <tr><td class="pos-glowverse-layer">Shipment</td><td class="pos-glowverse-tech">Shipping rate, area management, tracking, AWB, pickup scheduling, callback tracking</td></tr>
+          <tr><td class="pos-glowverse-layer">Dashboard</td><td class="pos-glowverse-tech">Best-selling products, low-stock alerts, transaction lists, seller performance metrics</td></tr>
+          <tr><td class="pos-glowverse-layer">Auth &amp; Security</td><td class="pos-glowverse-tech">JWT tokens, Basic Auth, bcrypt passwords, session management, role-based access, rate limiting</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .pos-glowverse {
+    --pos-glowverse-bg: #0a0b0d;
+    --pos-glowverse-bg2: #0f1114;
+    --pos-glowverse-bg3: #141720;
+    --pos-glowverse-surface: #1a1e28;
+    --pos-glowverse-surface2: #212636;
+    --pos-glowverse-border: #2a2f40;
+    --pos-glowverse-border2: #363c50;
+    --pos-glowverse-accent: #00e5a0;
+    --pos-glowverse-accent2: #00b87a;
+    --pos-glowverse-accent-dim: rgba(0, 229, 160, 0.08);
+    --pos-glowverse-accent-dim2: rgba(0, 229, 160, 0.15);
+    --pos-glowverse-amber: #f59e0b;
+    --pos-glowverse-amber-dim: rgba(245, 158, 11, 0.1);
+    --pos-glowverse-blue: #60a5fa;
+    --pos-glowverse-blue-dim: rgba(96, 165, 250, 0.1);
+    --pos-glowverse-red: #f87171;
+    --pos-glowverse-text: #e8eaf0;
+    --pos-glowverse-text2: #8b92a8;
+    --pos-glowverse-text3: #5a6077;
+    --pos-glowverse-mono: "JetBrains Mono", monospace;
+    --pos-glowverse-display: "Syne", sans-serif;
+    --pos-glowverse-radius: 10px;
+    --pos-glowverse-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .pos-glowverse * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pos-glowverse body {
+    background: var(--pos-glowverse-bg);
+    color: var(--pos-glowverse-text);
+    font-family: var(--pos-glowverse-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .pos-glowverse-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--pos-glowverse-border);
+  }
+  .pos-glowverse-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--pos-glowverse-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .pos-glowverse-nav-back:hover {
+    color: var(--pos-glowverse-accent);
+  }
+  .pos-glowverse-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .pos-glowverse-nav-dot {
+    color: var(--pos-glowverse-border2);
+  }
+  .pos-glowverse-nav-title {
+    color: var(--pos-glowverse-text3);
+    font-size: 12px;
+  }
+
+  .pos-glowverse-hero {
+    margin-bottom: 56px;
+  }
+  .pos-glowverse-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .pos-glowverse-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .pos-glowverse-badge-corporate {
+    background: var(--pos-glowverse-blue-dim);
+    color: var(--pos-glowverse-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .pos-glowverse-badge-client {
+    background: var(--pos-glowverse-accent-dim);
+    color: var(--pos-glowverse-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .pos-glowverse-badge-year {
+    background: var(--pos-glowverse-surface);
+    color: var(--pos-glowverse-text3);
+    border-color: var(--pos-glowverse-border);
+  }
+
+  .pos-glowverse-hero-title {
+    font-family: var(--pos-glowverse-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .pos-glowverse-hero-title span {
+    color: var(--pos-glowverse-accent);
+    position: relative;
+  }
+
+  .pos-glowverse-hero-desc {
+    color: var(--pos-glowverse-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .pos-glowverse-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .pos-glowverse-stack-pill {
+    background: var(--pos-glowverse-surface);
+    border: 1px solid var(--pos-glowverse-border);
+    color: var(--pos-glowverse-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .pos-glowverse-stack-pill:hover {
+    border-color: var(--pos-glowverse-accent);
+    color: var(--pos-glowverse-accent);
+    background: var(--pos-glowverse-accent-dim);
+  }
+
+  .pos-glowverse-section {
+    margin-bottom: 52px;
+  }
+  .pos-glowverse-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .pos-glowverse-section-label-text {
+    font-family: var(--pos-glowverse-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--pos-glowverse-text3);
+    text-transform: uppercase;
+  }
+  .pos-glowverse-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--pos-glowverse-border);
+  }
+  .pos-glowverse-section-label-num {
+    font-size: 11px;
+    color: var(--pos-glowverse-border2);
+  }
+
+  .pos-glowverse-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .pos-glowverse-metric-card {
+    background: var(--pos-glowverse-bg3);
+    border: 1px solid var(--pos-glowverse-border);
+    border-radius: var(--pos-glowverse-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .pos-glowverse-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--pos-glowverse-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .pos-glowverse-metric-card:hover {
+    border-color: var(--pos-glowverse-border2);
+  }
+  .pos-glowverse-metric-card:hover::before {
+    opacity: 1;
+  }
+  .pos-glowverse-metric-amber .pos-glowverse-metric-val {
+    color: var(--pos-glowverse-amber);
+  }
+  .pos-glowverse-metric-amber::before {
+    background: var(--pos-glowverse-amber);
+  }
+
+  .pos-glowverse-metric-val {
+    font-family: var(--pos-glowverse-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--pos-glowverse-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .pos-glowverse-metric-label {
+    font-size: 12px;
+    color: var(--pos-glowverse-text2);
+    margin-bottom: 3px;
+  }
+  .pos-glowverse-metric-sub {
+    font-size: 11px;
+    color: var(--pos-glowverse-text3);
+  }
+
+  .pos-glowverse-arch-diagram {
+    background: var(--pos-glowverse-bg3);
+    border: 1px solid var(--pos-glowverse-border);
+    border-radius: var(--pos-glowverse-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .pos-glowverse-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .pos-glowverse-arch-node {
+    background: var(--pos-glowverse-surface);
+    border: 1px solid var(--pos-glowverse-border2);
+    border-radius: var(--pos-glowverse-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .pos-glowverse-core {
+    background: var(--pos-glowverse-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .pos-glowverse-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .pos-glowverse-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--pos-glowverse-amber-dim);
+    min-width: 110px;
+  }
+  .pos-glowverse-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .pos-glowverse-arch-node-label {
+    font-family: var(--pos-glowverse-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .pos-glowverse-arch-node-sub {
+    font-size: 10px;
+    color: var(--pos-glowverse-text3);
+    font-family: var(--pos-glowverse-mono);
+  }
+
+  .pos-glowverse-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--pos-glowverse-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .pos-glowverse-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--pos-glowverse-border),
+      var(--pos-glowverse-accent),
+      var(--pos-glowverse-border)
+    );
+    position: relative;
+  }
+  .pos-glowverse-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--pos-glowverse-accent);
+    font-size: 10px;
+  }
+  .pos-glowverse-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--pos-glowverse-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .pos-glowverse-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .pos-glowverse-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .pos-glowverse-core-step {
+    background: var(--pos-glowverse-bg3);
+    border: 1px solid var(--pos-glowverse-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--pos-glowverse-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pos-glowverse-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--pos-glowverse-accent);
+    flex-shrink: 0;
+  }
+
+  .pos-glowverse-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .pos-glowverse-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .pos-glowverse-schema-arrow-label {
+    font-size: 9px;
+    color: var(--pos-glowverse-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .pos-glowverse-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .pos-glowverse-decision-card {
+    background: var(--pos-glowverse-bg3);
+    border: 1px solid var(--pos-glowverse-border);
+    border-radius: var(--pos-glowverse-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .pos-glowverse-decision-card:hover {
+    border-color: var(--pos-glowverse-border2);
+  }
+
+  .pos-glowverse-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .pos-glowverse-decision-num {
+    font-family: var(--pos-glowverse-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--pos-glowverse-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .pos-glowverse-decision-title {
+    font-family: var(--pos-glowverse-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .pos-glowverse-decision-problem {
+    font-size: 12px;
+    color: var(--pos-glowverse-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--pos-glowverse-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .pos-glowverse-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .pos-glowverse-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .pos-glowverse-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .pos-glowverse-decision-chosen {
+    color: var(--pos-glowverse-accent);
+  }
+  .pos-glowverse-decision-tradeoff {
+    color: var(--pos-glowverse-amber);
+  }
+  .pos-glowverse-decision-col-text {
+    font-size: 12px;
+    color: var(--pos-glowverse-text2);
+    line-height: 1.65;
+  }
+
+  .pos-glowverse-decision-code {
+    background: var(--pos-glowverse-bg);
+    border-top: 1px solid var(--pos-glowverse-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--pos-glowverse-text2);
+    overflow-x: auto;
+  }
+  .pos-glowverse-decision-code pre {
+    margin: 0;
+    font-family: var(--pos-glowverse-mono);
+    line-height: 1.6;
+  }
+  .pos-glowverse-token-kw {
+    color: #c792ea;
+  }
+  .pos-glowverse-token-fn {
+    color: #82aaff;
+  }
+  .pos-glowverse-token-str {
+    color: #c3e88d;
+  }
+  .pos-glowverse-token-cm {
+    color: var(--pos-glowverse-text3);
+    font-style: italic;
+  }
+  .pos-glowverse-token-acc {
+    color: var(--pos-glowverse-accent);
+  }
+
+  .pos-glowverse-impact-wrapper {
+    background: var(--pos-glowverse-bg3);
+    border: 1px solid var(--pos-glowverse-border);
+    border-radius: var(--pos-glowverse-radius);
+    overflow: hidden;
+  }
+  .pos-glowverse-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .pos-glowverse-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pos-glowverse-text3);
+    border-bottom: 1px solid var(--pos-glowverse-border);
+    font-family: var(--pos-glowverse-display);
+    font-weight: 600;
+  }
+  .pos-glowverse-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--pos-glowverse-border);
+    color: var(--pos-glowverse-text2);
+  }
+  .pos-glowverse-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .pos-glowverse-impact-table tr:hover td {
+    background: var(--pos-glowverse-surface);
+  }
+  .pos-glowverse-before {
+    color: var(--pos-glowverse-red);
+  }
+  .pos-glowverse-after {
+    color: var(--pos-glowverse-accent);
+  }
+  .pos-glowverse-delta {
+    color: var(--pos-glowverse-accent);
+    font-weight: 500;
+    font-family: var(--pos-glowverse-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .pos-glowverse-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .pos-glowverse-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .pos-glowverse-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--pos-glowverse-border);
+  }
+  .pos-glowverse-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .pos-glowverse-layer {
+    color: var(--pos-glowverse-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .pos-glowverse-tech {
+    color: var(--pos-glowverse-accent);
+    font-family: var(--pos-glowverse-mono);
+  }
+  .pos-glowverse-stack-table tr:hover td {
+    background: var(--pos-glowverse-surface);
+  }
+
+  .pos-glowverse-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--pos-glowverse-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .pos-glowverse-footer-text {
+    font-size: 11px;
+    color: var(--pos-glowverse-text3);
+  }
+  .pos-glowverse-footer-link {
+    font-size: 11px;
+    color: var(--pos-glowverse-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .pos-glowverse-footer-link:hover {
+    color: var(--pos-glowverse-accent);
+  }
+
+  @keyframes pos-glowverse-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .pos-glowverse-hero {
+    animation: pos-glowverse-fadeUp 0.5s ease both;
+  }
+  .pos-glowverse-section:nth-child(2) {
+    animation: pos-glowverse-fadeUp 0.5s 0.1s ease both;
+  }
+  .pos-glowverse-section:nth-child(3) {
+    animation: pos-glowverse-fadeUp 0.5s 0.15s ease both;
+  }
+  .pos-glowverse-section:nth-child(4) {
+    animation: pos-glowverse-fadeUp 0.5s 0.2s ease both;
+  }
+  .pos-glowverse-section:nth-child(5) {
+    animation: pos-glowverse-fadeUp 0.5s 0.25s ease both;
+  }
+  .pos-glowverse-section:nth-child(6) {
+    animation: pos-glowverse-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .pos-glowverse-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--pos-glowverse-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: pos-glowverse-blink 1s step-end infinite;
+  }
+  @keyframes pos-glowverse-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .pos-glowverse-badge-client { background: var(--pos-glowverse-accent-dim); color: var(--pos-glowverse-accent); border-color: rgba(0,229,160,0.2); }
+  .pos-glowverse-metric-val { font-size: 22px; }
+  .pos-glowverse-amber .pos-glowverse-metric-val { color: var(--pos-glowverse-amber); }
+  .pos-glowverse-amber::before { background: var(--pos-glowverse-amber); }
+  .pos-glowverse-red .pos-glowverse-metric-val { color: var(--pos-glowverse-red); }
+  .pos-glowverse-red::before { background: var(--pos-glowverse-red); }
+  .pos-glowverse-blue .pos-glowverse-metric-val { color: var(--pos-glowverse-blue); }
+  .pos-glowverse-blue::before { background: var(--pos-glowverse-blue); }
+  .pos-glowverse-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .pos-glowverse-business-line-cards { grid-template-columns: 1fr; } }
+  .pos-glowverse-bl-card { background: var(--pos-glowverse-bg2); border: 1px solid var(--pos-glowverse-border); border-radius: var(--pos-glowverse-radius); padding: 16px; }
+  .pos-glowverse-bl-card-title { font-family: var(--pos-glowverse-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .pos-glowverse-bl-card-desc { font-size: 11px; color: var(--pos-glowverse-text3); line-height: 1.6; }
+  .pos-glowverse-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--pos-glowverse-accent-dim); color: var(--pos-glowverse-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .pos-glowverse-bl-card-tag.pos-glowverse-amber-tag { background: var(--pos-glowverse-amber-dim); color: var(--pos-glowverse-amber); border-color: rgba(245,158,11,0.2); }
+  .pos-glowverse-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .pos-glowverse-cap-list { grid-template-columns: 1fr; } }
+  .pos-glowverse-cap-item { background: var(--pos-glowverse-bg3); border: 1px solid var(--pos-glowverse-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--pos-glowverse-text2); }
+  .pos-glowverse-cap-item:hover { border-color: var(--pos-glowverse-border2); color: var(--pos-glowverse-text); }
+  .pos-glowverse-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--pos-glowverse-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .pos-glowverse-flow-panel { background: var(--pos-glowverse-bg2); border: 1px solid var(--pos-glowverse-border); border-radius: var(--pos-glowverse-radius); padding: 20px; margin-top: 20px; }
+  .pos-glowverse-flow-panel-title { font-family: var(--pos-glowverse-display); font-size: 12px; font-weight: 600; color: var(--pos-glowverse-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .pos-glowverse-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .pos-glowverse-flow-step { display: flex; align-items: center; gap: 8px; }
+  .pos-glowverse-flow-step-box { background: var(--pos-glowverse-surface); border: 1px solid var(--pos-glowverse-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--pos-glowverse-text2); white-space: nowrap; }
+  .pos-glowverse-flow-step-box.pos-glowverse-accent { border-color: rgba(0,229,160,0.3); color: var(--pos-glowverse-accent); }
+  .pos-glowverse-flow-step-arr { color: var(--pos-glowverse-text3); font-size: 11px; margin: 0 4px; }
+</style>

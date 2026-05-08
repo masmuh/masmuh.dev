@@ -1,0 +1,1071 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="COMMET - Mas Muhammad" description="A Closed User Group (CUG) whitelist management system for Telkomsel telecom subscribers — processing SMS/USSD messages for subscriber registration, program offerings, and premium activations. Built with Oracle PL/SQL with SOAP-based API integrations.">
+  <nav>
+    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
+    <a href="/portfolio" class="nav-back">&larr; Back to Portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon-light">&#9728;&#65039;</span>
+      <span class="theme-icon-dark">&#127769;</span>
+    </button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV PANEL -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="nav-logo">MAS<span>.</span>MUH</div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  </div>
+
+  <div class="commet">
+
+<header class="commet-hero">
+    <div class="commet-hero-meta">
+      <span class="commet-badge commet-badge-corporate">Corporate</span><span class="commet-badge commet-badge-client">Telkomsel</span> 
+      <span class="commet-badge commet-badge-year">July 2014</span>
+      <span class="commet-badge commet-badge-critical">Mission Critical</span>
+    </div>
+    <h1 class="commet-hero-title">COMMET<span class="commet-cursor"></span></h1>
+    <p class="commet-hero-desc">
+      A Closed User Group (CUG) whitelist management system for Telkomsel telecom subscribers — processing SMS/USSD messages for subscriber registration, program offerings, and premium activations. Built with Oracle PL/SQL with SOAP-based API integrations.
+    </p>
+    <div class="commet-stack-pills">
+      <span class="commet-stack-pill">Oracle PL/SQL</span>
+      <span class="commet-stack-pill">SOAP/XML</span>
+      <span class="commet-stack-pill">Oracle Database</span>
+      <span class="commet-stack-pill">SMS Gateway</span>
+    </div>
+  </header>
+
+  <section class="commet-section">
+    <div class="commet-section-label">
+      <span class="commet-section-label-text">Impact</span>
+      <div class="commet-section-label-line"></div>
+      <span class="commet-section-label-num">01</span>
+    </div>
+    <div class="commet-metrics-grid">
+      <div class="commet-metric-card">
+        <div class="commet-metric-val">1,300+</div>
+        <div class="commet-metric-label">Lines of Code</div>
+        <div class="commet-metric-sub">Oracle PL/SQL</div>
+      </div>
+      <div class="commet-metric-card">
+        <div class="commet-metric-val">5+</div>
+        <div class="commet-metric-label">SOAP API Calls</div>
+        <div class="commet-metric-sub">Outbound integrations</div>
+      </div>
+      <div class="commet-metric-card commet-red">
+        <div class="commet-metric-val">8</div>
+        <div class="commet-metric-label">Complexity Score</div>
+        <div class="commet-metric-sub">Mission Critical</div>
+      </div>
+      <div class="commet-metric-card commet-amber">
+        <div class="commet-metric-val">30+</div>
+        <div class="commet-metric-label">Database Tables</div>
+        <div class="commet-metric-sub">Oracle schema</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commet-section">
+    <div class="commet-section-label">
+      <span class="commet-section-label-text">Architecture</span>
+      <div class="commet-section-label-line"></div>
+      <span class="commet-section-label-num">02</span>
+    </div>
+    <div class="commet-arch-diagram">
+      <div class="commet-arch-diagram-inner">
+
+        <div class="commet-arch-node commet-source">
+          <div class="commet-arch-node-icon"></div>
+          <div class="commet-arch-node-label">SMS / USSD</div>
+          <div class="commet-arch-node-sub">Subscriber input</div>
+        </div>
+
+        <div class="commet-arch-arrow">
+          <div class="commet-arch-arrow-line"></div>
+          <div class="commet-arch-arrow-label">keyword route</div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+          <div class="commet-arch-node core" style="width:220px;">
+            <div class="commet-arch-node-label" style="font-size:13px; margin-bottom:10px;">PL/SQL Packages</div>
+            <div class="commet-core-stack">
+              <div class="commet-core-step">
+                <div class="commet-core-step-dot"></div>
+                Entry Layer · Keyword routing
+              </div>
+              <div class="commet-core-step">
+                <div class="commet-core-step-dot"></div>
+                Business Logic · CUG validation
+              </div>
+              <div class="commet-core-step">
+                <div class="commet-core-step-dot" style="background:var(--blue)"></div>
+                Utility Layer · SOAP dispatch
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="commet-arch-arrow">
+          <div class="commet-arch-arrow-line"></div>
+          <div class="commet-arch-arrow-label">SOAP/XML</div>
+        </div>
+
+        <div class="commet-arch-node commet-output">
+          <div class="commet-arch-node-icon"></div>
+          <div class="commet-arch-node-label">Telkomsel SOAP</div>
+          <div class="commet-arch-node-sub">Region lookup · APIs</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="commet-section">
+    <div class="commet-section-label">
+      <span class="commet-section-label-text">Capabilities</span>
+      <div class="commet-section-label-line"></div>
+      <span class="commet-section-label-num">03</span>
+    </div>
+    <div class="commet-cap-grid">
+      <div class="commet-cap-item">
+        <div class="commet-cap-icon"></div>
+        <div class="commet-cap-text">SMS keyword-based routing and procedure execution</div>
+      </div>
+      <div class="commet-cap-item">
+        <div class="commet-cap-icon"></div>
+        <div class="commet-cap-text">BTPN bank subscriber CUG whitelist registration</div>
+      </div>
+      <div class="commet-cap-item">
+        <div class="commet-cap-icon"></div>
+        <div class="commet-cap-text">Subscriber program offering lookup and eligibility</div>
+      </div>
+      <div class="commet-cap-item">
+        <div class="commet-cap-icon"></div>
+        <div class="commet-cap-text">Prepaid / postpaid premium offer activation</div>
+      </div>
+      <div class="commet-cap-item">
+        <div class="commet-cap-icon"></div>
+        <div class="commet-cap-text">Whitelist validation for closed user groups</div>
+      </div>
+      <div class="commet-cap-item">
+        <div class="commet-cap-icon"></div>
+        <div class="commet-cap-text">SOAP-based region lookup and API integrations</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commet-section">
+    <div class="commet-section-label">
+      <span class="commet-section-label-text">Decision Log</span>
+      <div class="commet-section-label-line"></div>
+      <span class="commet-section-label-num">04</span>
+    </div>
+    <div class="commet-decision-list">
+
+      <div class="commet-decision-card">
+        <div class="commet-decision-header">
+          <div class="commet-decision-num">01</div>
+          <div>
+            <div class="commet-decision-title">Packaged Architecture — Standalone → Package-based Design</div>
+            <div class="commet-decision-problem">
+              v1.0 relied on standalone PL/SQL procedures with duplicated logic across modules — maintenance became increasingly fragile as the CUG rule set grew.
+            </div>
+          </div>
+        </div>
+        <div class="commet-decision-body">
+          <div>
+            <div class="commet-decision-col-label commet-chosen">▸ Chosen</div>
+            <div class="commet-decision-col-text">
+              Refactored into Oracle PL/SQL packages with a three-layer structure: entry routines for keyword routing, business logic for CUG validation, and utility procedures for SOAP dispatch. Centralized error handling and logging.
+            </div>
+          </div>
+          <div>
+            <div class="commet-decision-col-label commet-tradeoff">▸ Trade-off</div>
+            <div class="commet-decision-col-text">
+              Required a full regression cycle across all SMS keyword flows. Package dependencies introduced stricter compilation ordering — mitigated by a build manifest that ensured correct deployment sequencing.
+            </div>
+          </div>
+        </div>
+        <div class="commet-decision-code">
+<pre><span class="commet-token-cm">--  v1.0: standalone procedures, duplicated logic</span>
+<span class="commet-token-kw">PROCEDURE</span> <span class="commet-token-fn">register_cug</span> (p_msisdn VARCHAR2) <span class="commet-token-kw">IS</span> ...
+<span class="commet-token-kw">PROCEDURE</span> <span class="commet-token-fn">validate_cug</span> (p_msisdn VARCHAR2) <span class="commet-token-kw">IS</span> ...
+
+<span class="commet-token-cm">--  v2.0: packaged, layered</span>
+<span class="commet-token-kw">PACKAGE</span> <span class="commet-token-fn">commet_entry</span>  <span class="commet-token-kw">IS</span> ...  <span class="commet-token-cm">-- keyword routing</span>
+<span class="commet-token-kw">PACKAGE</span> <span class="commet-token-fn">commet_biz</span>    <span class="commet-token-kw">IS</span> ...  <span class="commet-token-cm">-- business logic</span>
+<span class="commet-token-kw">PACKAGE</span> <span class="commet-token-fn">commet_util</span>   <span class="commet-token-kw">IS</span> ...  <span class="commet-token-cm">-- SOAP dispatch</span></pre>
+        </div>
+      </div>
+
+      <div class="commet-decision-card">
+        <div class="commet-decision-header">
+          <div class="commet-decision-num">02</div>
+          <div>
+            <div class="commet-decision-title">Integration Pattern — SOAP/XML over REST</div>
+            <div class="commet-decision-problem">
+              Telkomsel's existing infrastructure was built on SOAP-based middleware — REST endpoints were not available for CUG whitelist operations and region lookups.
+            </div>
+          </div>
+        </div>
+        <div class="commet-decision-body">
+          <div>
+            <div class="commet-decision-col-label commet-chosen">▸ Chosen</div>
+            <div class="commet-decision-col-text">
+              Native Oracle PL/SQL SOAP calls via <code>UTL_HTTP</code> + XML parsing with <code>XMLDOM</code>. Five outbound SOAP operations wrapped in dedicated utility functions with timeout and retry handling.
+            </div>
+          </div>
+          <div>
+            <div class="commet-decision-col-label commet-tradeoff">▸ Trade-off</div>
+            <div class="commet-decision-col-text">
+              XML parsing in PL/SQL is verbose and resource-intensive compared to JSON. SOAP envelope construction required careful string handling. Mitigated by parameterized XML templates stored in database constants.
+            </div>
+          </div>
+        </div>
+        <div class="commet-decision-code">
+<pre><span class="commet-token-cm">-- SOAP request via UTL_HTTP</span>
+<span class="commet-token-fn">commet_util.soap_region_lookup</span>(
+  p_msisdn =&gt; <span class="commet-token-str">'6281xxxx'</span>,
+  p_result  =&gt; l_region
+);
+
+<span class="commet-token-cm">-- Parsed with XMLDOM</span>
+l_node := <span class="commet-token-fn">XMLDOM.getNodeValue</span>(
+  <span class="commet-token-fn">XMLDOM.getFirstChild</span>(l_elem)
+);</pre>
+        </div>
+      </div>
+
+      <div class="commet-decision-card">
+        <div class="commet-decision-header">
+          <div class="commet-decision-num">03</div>
+          <div>
+            <div class="commet-decision-title">SMS Keyword Routing — Prefix-based Dispatch</div>
+            <div class="commet-decision-problem">
+              Multiple CUG programs (BTPN bank registration, premium offers, whitelist validation) all shared a single shortcode — routing logic needed to parse SMS prefixes to determine the correct procedure.
+            </div>
+          </div>
+        </div>
+        <div class="commet-decision-body">
+          <div>
+            <div class="commet-decision-col-label commet-chosen">▸ Chosen</div>
+            <div class="commet-decision-col-text">
+              Keyword routing table driven: each SMS prefix mapped to a PL/SQL procedure via a lookup table. Adding new CUG programs required only a new table row and a targeted package procedure — no routing logic changes.
+            </div>
+          </div>
+          <div>
+            <div class="commet-decision-col-label commet-tradeoff">▸ Trade-off</div>
+            <div class="commet-decision-col-text">
+              Keyword collisions required careful prefix design. Ambiguous prefixes would fall through to a default handler returning an error SMS. Mitigated by prefix length ordering: longer (more specific) prefixes matched first.
+            </div>
+          </div>
+        </div>
+        <div class="commet-decision-code">
+<pre><span class="commet-token-cm">-- Routing table entry</span>
+<span class="commet-token-kw">INSERT INTO</span> sms_keyword_routing
+  (prefix, pkg_procedure, description)
+<span class="commet-token-kw">VALUES</span>
+  (<span class="commet-token-str">'DAFTAR'</span>,  <span class="commet-token-str">'commet_entry.register_cug'</span>,   <span class="commet-token-str">'CUG registration'</span>);
+  (<span class="commet-token-str">'CEK'</span>,      <span class="commet-token-str">'commet_entry.check_offer'</span>,   <span class="commet-token-str">'Offer eligibility'</span>);
+  (<span class="commet-token-str">'AKTIF'</span>,    <span class="commet-token-str">'commet_entry.activate_premium'</span>, <span class="commet-token-str">'Premium activation'</span>);</pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="commet-section">
+    <div class="commet-section-label">
+      <span class="commet-section-label-text">Business Impact</span>
+      <div class="commet-section-label-line"></div>
+      <span class="commet-section-label-num">05</span>
+    </div>
+    <div class="commet-impact-wrapper">
+      <table class="commet-impact-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Before</th>
+            <th>After</th>
+            <th>Delta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="commet-row-label">CUG whitelist management</td>
+            <td class="commet-before">Manual process</td>
+            <td class="commet-after">Real-time SMS activation</td>
+            <td class="commet-delta">Fully automated</td>
+          </tr>
+          <tr>
+            <td class="commet-row-label">Subscriber activation</td>
+            <td class="commet-before">Manual entry</td>
+            <td class="commet-after">SMS-based self-service</td>
+            <td class="commet-delta">↓ Zero-touch</td>
+          </tr>
+          <tr>
+            <td class="commet-row-label">Code maintainability</td>
+            <td class="commet-before">Standalone procedures</td>
+            <td class="commet-after">Packaged PL/SQL</td>
+            <td class="commet-delta">v1.0 → v2.0 evolved</td>
+          </tr>
+          <tr>
+            <td class="commet-row-label">SOAP infrastructure</td>
+            <td class="commet-before">No integration</td>
+            <td class="commet-after">5+ API integrations</td>
+            <td class="commet-delta">Telkomsel SOAP</td>
+          </tr>
+          <tr>
+            <td class="commet-row-label">Error handling</td>
+            <td class="commet-before">Per-procedure</td>
+            <td class="commet-after">Centralized logging</td>
+            <td class="commet-delta">Consistent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="commet-section">
+    <div class="commet-section-label">
+      <span class="commet-section-label-text">Tech Stack</span>
+      <div class="commet-section-label-line"></div>
+      <span class="commet-section-label-num">06</span>
+    </div>
+    <div class="commet-impact-wrapper">
+      <table class="commet-stack-table">
+        <tbody>
+          <tr>
+            <td class="commet-layer">Language</td>
+            <td class="commet-tech">Oracle PL/SQL</td>
+          </tr>
+          <tr>
+            <td class="commet-layer">Database</td>
+            <td class="commet-tech">Oracle Database</td>
+          </tr>
+          <tr>
+            <td class="commet-layer">Protocol</td>
+            <td class="commet-tech">SOAP/XML · UTL_HTTP</td>
+          </tr>
+          <tr>
+            <td class="commet-layer">XML Parsing</td>
+            <td class="commet-tech">XMLDOM · XMLSequence</td>
+          </tr>
+          <tr>
+            <td class="commet-layer">Messaging</td>
+            <td class="commet-tech">SMS Gateway · USSD</td>
+          </tr>
+          <tr>
+            <td class="commet-layer">Architecture</td>
+            <td class="commet-tech">PL/SQL Layered (Entry → Biz → Utility)</td>
+          </tr>
+          <tr>
+            <td class="commet-layer">Integration</td>
+            <td class="commet-tech">Telkomsel SOAP Infrastructure</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-txt">&copy; 2026 Mas Muhammad</div>
+    <div class="footer-txt">Built with <span>Astro</span></div>
+  </footer>
+</Layout>
+
+<style is:global>
+
+  .commet {
+    --commet-bg: #0a0b0d;
+    --commet-bg2: #0f1114;
+    --commet-bg3: #141720;
+    --commet-surface: #1a1e28;
+    --commet-surface2: #212636;
+    --commet-border: #2a2f40;
+    --commet-border2: #363c50;
+    --commet-accent: #00e5a0;
+    --commet-accent2: #00b87a;
+    --commet-accent-dim: rgba(0, 229, 160, 0.08);
+    --commet-accent-dim2: rgba(0, 229, 160, 0.15);
+    --commet-amber: #f59e0b;
+    --commet-amber-dim: rgba(245, 158, 11, 0.1);
+    --commet-blue: #60a5fa;
+    --commet-blue-dim: rgba(96, 165, 250, 0.1);
+    --commet-red: #f87171;
+    --commet-text: #e8eaf0;
+    --commet-text2: #8b92a8;
+    --commet-text3: #5a6077;
+    --commet-mono: "JetBrains Mono", monospace;
+    --commet-display: "Syne", sans-serif;
+    --commet-radius: 10px;
+    --commet-radius-lg: 16px;
+
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 110px 32px 96px;
+  }
+
+  .commet * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .commet body {
+    background: var(--commet-bg);
+    color: var(--commet-text);
+    font-family: var(--commet-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .commet-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--commet-border);
+  }
+  .commet-nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--commet-text2);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .commet-nav-back:hover {
+    color: var(--commet-accent);
+  }
+  .commet-nav-back svg {
+    width: 14px;
+    height: 14px;
+  }
+  .commet-nav-dot {
+    color: var(--commet-border2);
+  }
+  .commet-nav-title {
+    color: var(--commet-text3);
+    font-size: 12px;
+  }
+
+  .commet-hero {
+    margin-bottom: 56px;
+  }
+  .commet-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .commet-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .commet-badge-corporate {
+    background: var(--commet-blue-dim);
+    color: var(--commet-blue);
+    border-color: rgba(96, 165, 250, 0.2);
+  }
+  .commet-badge-client {
+    background: var(--commet-accent-dim);
+    color: var(--commet-accent);
+    border-color: rgba(0, 229, 160, 0.2);
+  }
+  .commet-badge-year {
+    background: var(--commet-surface);
+    color: var(--commet-text3);
+    border-color: var(--commet-border);
+  }
+
+  .commet-hero-title {
+    font-family: var(--commet-display);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .commet-hero-title span {
+    color: var(--commet-accent);
+    position: relative;
+  }
+
+  .commet-hero-desc {
+    color: var(--commet-text2);
+    font-size: 14px;
+    max-width: 620px;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .commet-stack-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .commet-stack-pill {
+    background: var(--commet-surface);
+    border: 1px solid var(--commet-border);
+    color: var(--commet-text2);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .commet-stack-pill:hover {
+    border-color: var(--commet-accent);
+    color: var(--commet-accent);
+    background: var(--commet-accent-dim);
+  }
+
+  .commet-section {
+    margin-bottom: 52px;
+  }
+  .commet-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .commet-section-label-text {
+    font-family: var(--commet-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--commet-text3);
+    text-transform: uppercase;
+  }
+  .commet-section-label-line {
+    flex: 1;
+    height: 1px;
+    background: var(--commet-border);
+  }
+  .commet-section-label-num {
+    font-size: 11px;
+    color: var(--commet-border2);
+  }
+
+  .commet-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .commet-metric-card {
+    background: var(--commet-bg3);
+    border: 1px solid var(--commet-border);
+    border-radius: var(--commet-radius);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .commet-metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--commet-accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .commet-metric-card:hover {
+    border-color: var(--commet-border2);
+  }
+  .commet-metric-card:hover::before {
+    opacity: 1;
+  }
+  .commet-metric-amber .commet-metric-val {
+    color: var(--commet-amber);
+  }
+  .commet-metric-amber::before {
+    background: var(--commet-amber);
+  }
+
+  .commet-metric-val {
+    font-family: var(--commet-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--commet-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .commet-metric-label {
+    font-size: 12px;
+    color: var(--commet-text2);
+    margin-bottom: 3px;
+  }
+  .commet-metric-sub {
+    font-size: 11px;
+    color: var(--commet-text3);
+  }
+
+  .commet-arch-diagram {
+    background: var(--commet-bg3);
+    border: 1px solid var(--commet-border);
+    border-radius: var(--commet-radius-lg);
+    padding: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .commet-arch-diagram-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .commet-arch-node {
+    background: var(--commet-surface);
+    border: 1px solid var(--commet-border2);
+    border-radius: var(--commet-radius);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+  }
+  .commet-core {
+    background: var(--commet-surface2);
+    border: 1px solid rgba(0, 229, 160, 0.3);
+    min-width: 200px;
+  }
+  .commet-output {
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+  .commet-schema-node {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: var(--commet-amber-dim);
+    min-width: 110px;
+  }
+  .commet-arch-node-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .commet-arch-node-label {
+    font-family: var(--commet-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+  .commet-arch-node-sub {
+    font-size: 10px;
+    color: var(--commet-text3);
+    font-family: var(--commet-mono);
+  }
+
+  .commet-arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--commet-text3);
+    font-size: 11px;
+    gap: 4px;
+    min-width: 60px;
+  }
+  .commet-arch-arrow-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--commet-border),
+      var(--commet-accent),
+      var(--commet-border)
+    );
+    position: relative;
+  }
+  .commet-arch-arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    color: var(--commet-accent);
+    font-size: 10px;
+  }
+  .commet-arch-arrow-label {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--commet-text3);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .commet-core-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .commet-core-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .commet-core-step {
+    background: var(--commet-bg3);
+    border: 1px solid var(--commet-border);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 11px;
+    color: var(--commet-text2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .commet-core-step-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--commet-accent);
+    flex-shrink: 0;
+  }
+
+  .commet-schema-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .commet-schema-line-v {
+    width: 1px;
+    height: 20px;
+    background: rgba(245, 158, 11, 0.4);
+  }
+  .commet-schema-arrow-label {
+    font-size: 9px;
+    color: var(--commet-amber);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .commet-decision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .commet-decision-card {
+    background: var(--commet-bg3);
+    border: 1px solid var(--commet-border);
+    border-radius: var(--commet-radius);
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+  .commet-decision-card:hover {
+    border-color: var(--commet-border2);
+  }
+
+  .commet-decision-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px 0;
+  }
+  .commet-decision-num {
+    font-family: var(--commet-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--commet-border2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    min-width: 32px;
+  }
+  .commet-decision-title {
+    font-family: var(--commet-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .commet-decision-problem {
+    font-size: 12px;
+    color: var(--commet-text3);
+    font-style: italic;
+    padding: 8px 12px;
+    border-left: 2px solid var(--commet-border2);
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+  .commet-decision-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 24px 20px;
+  }
+  @media (max-width: 540px) {
+    .commet-decision-body {
+      grid-template-columns: 1fr;
+    }
+  }
+  .commet-decision-col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .commet-decision-chosen {
+    color: var(--commet-accent);
+  }
+  .commet-decision-tradeoff {
+    color: var(--commet-amber);
+  }
+  .commet-decision-col-text {
+    font-size: 12px;
+    color: var(--commet-text2);
+    line-height: 1.65;
+  }
+
+  .commet-decision-code {
+    background: var(--commet-bg);
+    border-top: 1px solid var(--commet-border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--commet-text2);
+    overflow-x: auto;
+  }
+  .commet-decision-code pre {
+    margin: 0;
+    font-family: var(--commet-mono);
+    line-height: 1.6;
+  }
+  .commet-token-kw {
+    color: #c792ea;
+  }
+  .commet-token-fn {
+    color: #82aaff;
+  }
+  .commet-token-str {
+    color: #c3e88d;
+  }
+  .commet-token-cm {
+    color: var(--commet-text3);
+    font-style: italic;
+  }
+  .commet-token-acc {
+    color: var(--commet-accent);
+  }
+
+  .commet-impact-wrapper {
+    background: var(--commet-bg3);
+    border: 1px solid var(--commet-border);
+    border-radius: var(--commet-radius);
+    overflow: hidden;
+  }
+  .commet-impact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .commet-impact-table th {
+    text-align: left;
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--commet-text3);
+    border-bottom: 1px solid var(--commet-border);
+    font-family: var(--commet-display);
+    font-weight: 600;
+  }
+  .commet-impact-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--commet-border);
+    color: var(--commet-text2);
+  }
+  .commet-impact-table tr:last-child td {
+    border-bottom: none;
+  }
+  .commet-impact-table tr:hover td {
+    background: var(--commet-surface);
+  }
+  .commet-before {
+    color: var(--commet-red);
+  }
+  .commet-after {
+    color: var(--commet-accent);
+  }
+  .commet-delta {
+    color: var(--commet-accent);
+    font-weight: 500;
+    font-family: var(--commet-display);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .commet-row-label {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .commet-stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .commet-stack-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--commet-border);
+  }
+  .commet-stack-table tr:last-child td {
+    border-bottom: none;
+  }
+  .commet-layer {
+    color: var(--commet-text3);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .commet-tech {
+    color: var(--commet-accent);
+    font-family: var(--commet-mono);
+  }
+  .commet-stack-table tr:hover td {
+    background: var(--commet-surface);
+  }
+
+  .commet-footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--commet-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .commet-footer-text {
+    font-size: 11px;
+    color: var(--commet-text3);
+  }
+  .commet-footer-link {
+    font-size: 11px;
+    color: var(--commet-text3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .commet-footer-link:hover {
+    color: var(--commet-accent);
+  }
+
+  @keyframes commet-fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .commet-hero {
+    animation: commet-fadeUp 0.5s ease both;
+  }
+  .commet-section:nth-child(2) {
+    animation: commet-fadeUp 0.5s 0.1s ease both;
+  }
+  .commet-section:nth-child(3) {
+    animation: commet-fadeUp 0.5s 0.15s ease both;
+  }
+  .commet-section:nth-child(4) {
+    animation: commet-fadeUp 0.5s 0.2s ease both;
+  }
+  .commet-section:nth-child(5) {
+    animation: commet-fadeUp 0.5s 0.25s ease both;
+  }
+  .commet-section:nth-child(6) {
+    animation: commet-fadeUp 0.5s 0.3s ease both;
+  }
+
+  .commet-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--commet-accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: commet-blink 1s step-end infinite;
+  }
+  @keyframes commet-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .commet-badge-client { background: var(--commet-accent-dim); color: var(--commet-accent); border-color: rgba(0,229,160,0.2); }
+  .commet-metric-val { font-size: 22px; }
+  .commet-amber .commet-metric-val { color: var(--commet-amber); }
+  .commet-amber::before { background: var(--commet-amber); }
+  .commet-red .commet-metric-val { color: var(--commet-red); }
+  .commet-red::before { background: var(--commet-red); }
+  .commet-blue .commet-metric-val { color: var(--commet-blue); }
+  .commet-blue::before { background: var(--commet-blue); }
+  .commet-business-line-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 540px) { .commet-business-line-cards { grid-template-columns: 1fr; } }
+  .commet-bl-card { background: var(--commet-bg2); border: 1px solid var(--commet-border); border-radius: var(--commet-radius); padding: 16px; }
+  .commet-bl-card-title { font-family: var(--commet-display); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .commet-bl-card-desc { font-size: 11px; color: var(--commet-text3); line-height: 1.6; }
+  .commet-bl-card-tag { display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px; font-size: 10px; background: var(--commet-accent-dim); color: var(--commet-accent); border: 1px solid rgba(0,229,160,0.2); }
+  .commet-bl-card-tag.commet-amber-tag { background: var(--commet-amber-dim); color: var(--commet-amber); border-color: rgba(245,158,11,0.2); }
+  .commet-cap-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @@media (max-width: 540px) { .commet-cap-list { grid-template-columns: 1fr; } }
+  .commet-cap-item { background: var(--commet-bg3); border: 1px solid var(--commet-border); border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--commet-text2); }
+  .commet-cap-item:hover { border-color: var(--commet-border2); color: var(--commet-text); }
+  .commet-cap-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--commet-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .commet-flow-panel { background: var(--commet-bg2); border: 1px solid var(--commet-border); border-radius: var(--commet-radius); padding: 20px; margin-top: 20px; }
+  .commet-flow-panel-title { font-family: var(--commet-display); font-size: 12px; font-weight: 600; color: var(--commet-text3); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+  .commet-flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; row-gap: 14px; }
+  .commet-flow-step { display: flex; align-items: center; gap: 8px; }
+  .commet-flow-step-box { background: var(--commet-surface); border: 1px solid var(--commet-border2); border-radius: 6px; padding: 6px 12px; font-size: 11px; color: var(--commet-text2); white-space: nowrap; }
+  .commet-flow-step-box.commet-accent { border-color: rgba(0,229,160,0.3); color: var(--commet-accent); }
+  .commet-flow-step-arr { color: var(--commet-text3); font-size: 11px; margin: 0 4px; }
+</style>
