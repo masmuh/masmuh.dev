@@ -1,9 +1,7 @@
 const CF_API = 'https://api.cloudflare.com/client/v4/graphql';
 
-function daysAgo(n) {
-  const d = new Date();
-  d.setDate(d.getDate() - n);
-  return d.toISOString().slice(0, 10);
+function hoursAgo(n) {
+  return new Date(Date.now() - n * 3600000).toISOString();
 }
 
 async function graphql(query) {
@@ -28,24 +26,36 @@ exports.handler = async () => {
     return { statusCode: 500, body: JSON.stringify({ error: 'CF_ZONE_ID not configured' }) };
   }
 
-  // Fetch analytics for last 7 days
-  const start = daysAgo(7);
+  // Free plan: max 24h query window
+  const start = hoursAgo(24);
+  const end = new Date().toISOString();
 
   const queries = {
-    threats: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { firewallEventsAdaptiveGroups(limit: 1, filter: { date_geq: "${start}", action: "block" }) { count } } } }`,
-    countries: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { firewallEventsAdaptiveGroups(limit: 5, filter: { date_geq: "${start}", action: "block" }, orderBy: [count_DESC]) { count dimensions { clientCountryName } } } } }`,
+    // Blocked requests (403 = WAF/firewall block)
+    threats: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { httpRequestsAdaptiveGroups(limit: 1, filter: { datetime_geq: "${start}", datetime_leq: "${end}", edgeResponseStatus: 403 }) { count } } } }`,
+
+    // Top countries with blocked requests
+    countries: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { httpRequestsAdaptiveGroups(limit: 10, filter: { datetime_geq: "${start}", datetime_leq: "${end}", edgeResponseStatus: 403 }, orderBy: [count_DESC]) { count dimensions { clientCountryName } } } } }`,
+
+    // Total requests
+    total: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { httpRequestsAdaptiveGroups(limit: 1, filter: { datetime_geq: "${start}", datetime_leq: "${end}" }) { count } } } }`,
   };
 
   try {
-    const [threatRes, countriesRes] = await Promise.all([
+    const [threatRes, countriesRes, totalRes] = await Promise.all([
       graphql(queries.threats),
       graphql(queries.countries),
+      graphql(queries.total),
     ]);
 
     const zones = (d) => d?.data?.viewer?.zones?.[0] || {};
-    const threatGroups = zones(threatRes).firewallEventsAdaptiveGroups || [];
+    const threatGroups = zones(threatRes).httpRequestsAdaptiveGroups || [];
     const threatsBlocked = threatGroups.reduce((sum, g) => sum + g.count, 0);
-    const topCountries = (zones(countriesRes).firewallEventsAdaptiveGroups || []).map((g) => ({
+
+    const totalGroups = zones(totalRes).httpRequestsAdaptiveGroups || [];
+    const requestsToday = totalGroups.reduce((sum, g) => sum + g.count, 0);
+
+    const topCountries = (zones(countriesRes).httpRequestsAdaptiveGroups || []).map((g) => ({
       country: g.dimensions?.clientCountryName || 'Unknown',
       count: g.count,
     }));
@@ -54,7 +64,7 @@ exports.handler = async () => {
       statusCode: 200,
       body: JSON.stringify({
         threatsBlocked,
-        requestsToday: 0,
+        requestsToday,
         topCountries,
       }),
     };
