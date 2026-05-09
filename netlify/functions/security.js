@@ -31,7 +31,7 @@ exports.handler = async () => {
   const start = daysAgo(7);
 
   const queries = {
-    threats: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { firewallEventsAdaptive(filter: { date_geq: "${start}", action: "block" }) { count sum { threats } } } } }`,
+    threats: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { firewallEventsAdaptiveGroups(limit: 1, filter: { date_geq: "${start}", action: "block" }) { count } } } }`,
     countries: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { firewallEventsAdaptiveGroups(limit: 5, filter: { date_geq: "${start}", action: "block" }, orderBy: [count_DESC]) { count dimensions { country } } } } }`,
   };
 
@@ -42,7 +42,8 @@ exports.handler = async () => {
     ]);
 
     const zones = (d) => d?.data?.viewer?.zones?.[0] || {};
-    const threats = zones(threatRes).firewallEventsAdaptive || {};
+    const threatGroups = zones(threatRes).firewallEventsAdaptiveGroups || [];
+    const threatsBlocked = threatGroups.reduce((sum, g) => sum + g.count, 0);
     const topCountries = (zones(countriesRes).firewallEventsAdaptiveGroups || []).map((g) => ({
       country: g.dimensions?.country || 'Unknown',
       count: g.count,
@@ -51,7 +52,7 @@ exports.handler = async () => {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        threatsBlocked: threats.count || 0,
+        threatsBlocked,
         requestsToday: 0,
         topCountries,
       }),
