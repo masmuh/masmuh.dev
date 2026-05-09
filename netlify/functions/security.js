@@ -28,21 +28,21 @@ exports.handler = async () => {
   const end = new Date(nowMs).toISOString();
 
   const queries = {
-    // Blocked requests (403 = WAF/firewall block)
     threats: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { httpRequestsAdaptiveGroups(limit: 1, filter: { datetime_geq: "${start}", datetime_leq: "${end}", edgeResponseStatus: 403 }) { count } } } }`,
 
-    // Top countries with blocked requests
     countries: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { httpRequestsAdaptiveGroups(limit: 10, filter: { datetime_geq: "${start}", datetime_leq: "${end}", edgeResponseStatus: 403 }, orderBy: [count_DESC]) { count dimensions { clientCountryName } } } } }`,
 
-    // Total requests
     total: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { httpRequestsAdaptiveGroups(limit: 1, filter: { datetime_geq: "${start}", datetime_leq: "${end}" }) { count } } } }`,
+
+    timeline: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { httpRequestsAdaptiveGroups(limit: 24, filter: { datetime_geq: "${start}", datetime_leq: "${end}", edgeResponseStatus: 403 }, orderBy: [datetimeHour_ASC]) { count dimensions { datetimeHour } } } } }`,
   };
 
   try {
-    const [threatRes, countriesRes, totalRes] = await Promise.all([
+    const [threatRes, countriesRes, totalRes, timelineRes] = await Promise.all([
       graphql(queries.threats),
       graphql(queries.countries),
       graphql(queries.total),
+      graphql(queries.timeline),
     ]);
 
     const zones = (d) => d?.data?.viewer?.zones?.[0] || {};
@@ -57,12 +57,22 @@ exports.handler = async () => {
       count: g.count,
     }));
 
+    const timeline = (zones(timelineRes).httpRequestsAdaptiveGroups || []).map((g) => {
+      const raw = g.dimensions?.datetimeHour || '';
+      const hour = raw.length >= 13 ? raw.slice(11, 13) : '';
+      return {
+        hour: hour + ':00',
+        count: g.count,
+      };
+    });
+
     return {
       statusCode: 200,
       body: JSON.stringify({
         threatsBlocked,
         requestsToday,
         topCountries,
+        timeline,
       }),
     };
   } catch (err) {

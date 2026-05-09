@@ -71,28 +71,28 @@ import Layout from "../layouts/Layout.astro";
       </div>
       
       <div class="security-grid">
-        <div class="stat-card threat-blocked">
+        <div class="stat-card">
           <div class="stat-icon">🛡️</div>
-          <div class="stat-value" id="stat-threats">12,847</div>
-          <div class="stat-label">Threats Blocked</div>
+          <div class="stat-value" id="stat-threats">—</div>
+          <div class="stat-label">Threats Blocked (24h)</div>
         </div>
         
-        <div class="stat-card bot-traffic">
-          <div class="stat-icon">🤖</div>
-          <div class="stat-value" id="stat-bots">34%</div>
-          <div class="stat-label">Bot Traffic</div>
-        </div>
-        
-        <div class="stat-card top-attacker">
-          <div class="stat-icon">🌍</div>
-          <div class="stat-value" id="stat-top-country">🇮🇩</div>
-          <div class="stat-label">Top Attacker</div>
-        </div>
-        
-        <div class="stat-card requests-today">
+        <div class="stat-card">
           <div class="stat-icon">📊</div>
-          <div class="stat-value" id="stat-requests">4,291</div>
-          <div class="stat-label">Requests Today</div>
+          <div class="stat-value" id="stat-requests">—</div>
+          <div class="stat-label">Total Requests (24h)</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-value" id="stat-top-country">—</div>
+          <div class="stat-label" id="stat-top-label">Top Attacker</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-value" id="stat-rate">—</div>
+          <div class="stat-label">Block Rate</div>
         </div>
       </div>
     </section>
@@ -106,9 +106,25 @@ import Layout from "../layouts/Layout.astro";
       
       <div class="timeline-chart">
         <div class="chart-bars" id="timeline-bars">
-          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
-            <span class="bar-tooltip">—</span>
-          </div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+        </div>
+        <div class="chart-labels" id="timeline-labels">
+          <span>00:00</span><span>02:00</span><span>04:00</span><span>06:00</span>
+          <span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span>
+          <span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span>
+        </div>
+      </div>
           <div class="chart-bar chart-bar--loading" style="--height: 10%;">
             <span class="bar-tooltip">—</span>
           </div>
@@ -132,60 +148,33 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
 
-    <section class="breakdown-section">
+    <section class="protected-section">
       <div class="section-header">
-        <span class="section-num">[THREATS]</span>
-        <h2 class="section-title">Breakdown</h2>
+        <span class="section-num">[PROTECTION]</span>
+        <h2 class="section-title">Cloudflare Protections</h2>
         <div class="section-line"></div>
       </div>
       
-      <div class="breakdown-grid">
-        <div class="breakdown-card">
-          <div class="breakdown-header">
-            <span class="breakdown-icon">💉</span>
-            <span class="breakdown-name">SQL Injection</span>
-            <span class="breakdown-value">4,291</span>
-          </div>
-          <div class="breakdown-bar">
-            <div class="breakdown-fill" style="--width: 67%;"></div>
-          </div>
-          <div class="breakdown-percent">67%</div>
+      <div class="protected-grid">
+        <div class="protected-item">
+          <span class="protected-icon">🛡️</span>
+          <strong>WAF</strong>
+          <p>Web Application Firewall blocks OWASP Top 10 attacks including SQLi, XSS, and path traversal at the edge before they reach your server.</p>
         </div>
-        
-        <div class="breakdown-card">
-          <div class="breakdown-header">
-            <span class="breakdown-icon">⚡</span>
-            <span class="breakdown-name">XSS</span>
-            <span class="breakdown-value">1,843</span>
-          </div>
-          <div class="breakdown-bar">
-            <div class="breakdown-fill" style="--width: 33%;"></div>
-          </div>
-          <div class="breakdown-percent">33%</div>
+        <div class="protected-item">
+          <span class="protected-icon">🌊</span>
+          <strong>DDoS Mitigation</strong>
+          <p>Cloudflare automatically detects and mitigates volumetric DDoS attacks across L3/L4/L7, scrubbing malicious traffic in real-time.</p>
         </div>
-        
-        <div class="breakdown-card">
-          <div class="breakdown-header">
-            <span class="breakdown-icon">🔓</span>
-            <span class="breakdown-name">CUJs</span>
-            <span class="breakdown-value">956</span>
-          </div>
-          <div class="breakdown-bar">
-            <div class="breakdown-fill" style="--width: 18%;"></div>
-          </div>
-          <div class="breakdown-percent">18%</div>
+        <div class="protected-item">
+          <span class="protected-icon">🤖</span>
+          <strong>Bot Management</strong>
+          <p>Machine learning-based bot detection classifies traffic as automated or human, blocking malicious scrapers and credential stuffers.</p>
         </div>
-        
-        <div class="breakdown-card">
-          <div class="breakdown-header">
-            <span class="breakdown-icon">🤖</span>
-            <span class="breakdown-name">Bad Bot</span>
-            <span class="breakdown-value">5,757</span>
-          </div>
-          <div class="breakdown-bar">
-            <div class="breakdown-fill" style="--width: 85%;"></div>
-          </div>
-          <div class="breakdown-percent">85%</div>
+        <div class="protected-item">
+          <span class="protected-icon">🔒</span>
+          <strong>SSL/TLS</strong>
+          <p>End-to-end encryption with automatic certificate management, HSTS preloading, and forced HTTPS for all visitor connections.</p>
         </div>
       </div>
     </section>
@@ -199,34 +188,10 @@ import Layout from "../layouts/Layout.astro";
       
       <div class="countries-list" id="countries-list">
         <div class="country-item">
-          <span class="country-rank">#1</span>
-          <span class="country-flag">🇮🇩</span>
-          <span class="country-name">Indonesia</span>
-          <span class="country-count">4,291</span>
-        </div>
-        <div class="country-item">
-          <span class="country-rank">#2</span>
-          <span class="country-flag">🇨🇳</span>
-          <span class="country-name">China</span>
-          <span class="country-count">2,156</span>
-        </div>
-        <div class="country-item">
-          <span class="country-rank">#3</span>
-          <span class="country-flag">🇷🇺</span>
-          <span class="country-name">Russia</span>
-          <span class="country-count">1,843</span>
-        </div>
-        <div class="country-item">
-          <span class="country-rank">#4</span>
-          <span class="country-flag">🇺🇸</span>
-          <span class="country-name">United States</span>
-          <span class="country-count">1,247</span>
-        </div>
-        <div class="country-item">
-          <span class="country-rank">#5</span>
-          <span class="country-flag">🇧🇷</span>
-          <span class="country-name">Brazil</span>
-          <span class="country-count">956</span>
+          <span class="country-rank">—</span>
+          <span class="country-flag">—</span>
+          <span class="country-name">Waiting for data...</span>
+          <span class="country-count">—</span>
         </div>
       </div>
     </section>
@@ -235,7 +200,7 @@ import Layout from "../layouts/Layout.astro";
       <button class="btn-secondary refresh-btn" id="refresh-btn">
         ↻ Refresh Data
       </button>
-      <p class="last-updated" id="last-updated">Sample data — connect to Netlify for live updates</p>
+      <p class="last-updated" id="last-updated">Loading Cloudflare analytics...</p>
     </section>
   </main>
 
@@ -255,9 +220,20 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script>
-function formatNumber(n) {
-  return n.toLocaleString();
-}
+const formatNumber = n => n.toLocaleString();
+
+const COUNTRY_NAMES = {
+  US: 'United States', CN: 'China', RU: 'Russia', BR: 'Brazil', IN: 'India',
+  ID: 'Indonesia', GB: 'United Kingdom', DE: 'Germany', FR: 'France', JP: 'Japan',
+  KR: 'South Korea', SG: 'Singapore', MY: 'Malaysia', PH: 'Philippines', TH: 'Thailand',
+  VN: 'Vietnam', NL: 'Netherlands', AU: 'Australia', CA: 'Canada', IT: 'Italy',
+  UA: 'Ukraine', IR: 'Iran', IL: 'Israel', TR: 'Turkey', AR: 'Argentina',
+  MX: 'Mexico', NG: 'Nigeria', ZA: 'South Africa', BD: 'Bangladesh', PL: 'Poland',
+  SE: 'Sweden', NO: 'Norway', FI: 'Finland', CH: 'Switzerland', AT: 'Austria',
+  TW: 'Taiwan', HK: 'Hong Kong', RO: 'Romania', HU: 'Hungary', CZ: 'Czech Republic',
+  SK: 'Slovakia', SI: 'Slovenia', HR: 'Croatia', BG: 'Bulgaria', GR: 'Greece',
+  PT: 'Portugal', ES: 'Spain', BE: 'Belgium', DK: 'Denmark', IE: 'Ireland',
+};
 
 const COUNTRY_FLAGS = {
   US: '🇺🇸', CN: '🇨🇳', RU: '🇷🇺', BR: '🇧🇷', IN: '🇮🇳',
@@ -272,25 +248,95 @@ const COUNTRY_FLAGS = {
   PT: '🇵🇹', ES: '🇪🇸', BE: '🇧🇪', DK: '🇩🇰', IE: '🇮🇪',
 };
 
+function countryName(code) {
+  return COUNTRY_NAMES[code] || code || 'Unknown';
+}
+
 function flagFor(code) {
   if (!code || code === 'Unknown') return '🌍';
   if (COUNTRY_FLAGS[code]) return COUNTRY_FLAGS[code];
-  const letters = code.toUpperCase().split('');
-  if (letters.length === 2) {
-    return String.fromCodePoint(0x1F1E6 + letters[0].charCodeAt(0) - 65) +
-           String.fromCodePoint(0x1F1E6 + letters[1].charCodeAt(0) - 65);
-  }
+  const l = code.toUpperCase().split('');
+  if (l.length === 2) return String.fromCodePoint(0x1F1E6 + l[0].charCodeAt(0) - 65) + String.fromCodePoint(0x1F1E6 + l[1].charCodeAt(0) - 65);
   return '🌍';
 }
 
-function dayName(dateStr) {
-  const d = new Date(dateStr + 'T00:00:00');
-  return d.toLocaleDateString('en', { weekday: 'short' });
-}
+// Sample data for local dev fallback
+const SAMPLE = {
+  threatsBlocked: 12847,
+  requestsToday: 4291,
+  timeline: [
+    { hour: '00:00', count: 42 }, { hour: '01:00', count: 38 },
+    { hour: '02:00', count: 25 }, { hour: '03:00', count: 18 },
+    { hour: '04:00', count: 22 }, { hour: '05:00', count: 31 },
+    { hour: '06:00', count: 45 }, { hour: '07:00', count: 67 },
+    { hour: '08:00', count: 89 }, { hour: '09:00', count: 120 },
+    { hour: '10:00', count: 145 }, { hour: '11:00', count: 132 },
+    { hour: '12:00', count: 98 }, { hour: '13:00', count: 87 },
+    { hour: '14:00', count: 112 }, { hour: '15:00', count: 95 },
+    { hour: '16:00', count: 78 }, { hour: '17:00', count: 65 },
+    { hour: '18:00', count: 54 }, { hour: '19:00', count: 48 },
+    { hour: '20:00', count: 52 }, { hour: '21:00', count: 43 },
+    { hour: '22:00', count: 38 }, { hour: '23:00', count: 29 },
+  ],
+  topCountries: [
+    { country: 'ID', count: 4291 }, { country: 'CN', count: 2156 },
+    { country: 'RU', count: 1843 }, { country: 'US', count: 1247 },
+    { country: 'BR', count: 956 },
+  ],
+};
 
-function monthDay(dateStr) {
-  const d = new Date(dateStr + 'T00:00:00');
-  return d.toLocaleDateString('en', { month: 'short', day: 'numeric' });
+function populateUI(data) {
+  document.getElementById('stat-threats').textContent = formatNumber(data.threatsBlocked);
+  document.getElementById('stat-requests').textContent = formatNumber(data.requestsToday);
+
+  const rate = data.requestsToday > 0
+    ? ((data.threatsBlocked / data.requestsToday) * 100).toFixed(1) + '%'
+    : '0%';
+  document.getElementById('stat-rate').textContent = rate;
+
+  const top = data.topCountries?.[0];
+  const topEl = document.getElementById('stat-top-country');
+  const topLabel = document.getElementById('stat-top-label');
+  if (top && top.country) {
+    topEl.textContent = flagFor(top.country);
+    topLabel.textContent = countryName(top.country);
+  }
+
+  // Timeline
+  const barsEl = document.getElementById('timeline-bars');
+  const labelsEl = document.getElementById('timeline-labels');
+  if (data.timeline && barsEl) {
+    const maxC = Math.max(...data.timeline.map(t => t.count), 1);
+    barsEl.innerHTML = '';
+    labelsEl.innerHTML = '';
+    for (const t of data.timeline) {
+      const pct = (t.count / maxC) * 85 + 5;
+      const bar = document.createElement('div');
+      bar.className = 'chart-bar';
+      bar.style.setProperty('--height', pct + '%');
+      bar.innerHTML = `<span class="bar-tooltip">${formatNumber(t.count)}</span>`;
+      barsEl.appendChild(bar);
+      const lbl = document.createElement('span');
+      lbl.textContent = t.hour;
+      labelsEl.appendChild(lbl);
+    }
+  }
+
+  // Countries
+  const cEl = document.getElementById('countries-list');
+  if (data.topCountries && cEl) {
+    cEl.innerHTML = '';
+    data.topCountries.slice(0, 5).forEach((c, i) => {
+      const item = document.createElement('div');
+      item.className = 'country-item';
+      item.innerHTML = `
+        <span class="country-rank">#${i + 1}</span>
+        <span class="country-flag">${flagFor(c.country)}</span>
+        <span class="country-name">${countryName(c.country)}</span>
+        <span class="country-count">${formatNumber(c.count)}</span>`;
+      cEl.appendChild(item);
+    });
+  }
 }
 
 async function loadData() {
@@ -303,34 +349,11 @@ async function loadData() {
     const res = await fetch('/.netlify/functions/security');
     if (!res.ok) throw new Error('API error');
     const data = await res.json();
-
-    document.getElementById('stat-threats').textContent = formatNumber(data.threatsBlocked);
-    document.getElementById('stat-requests').textContent = formatNumber(data.requestsToday);
-
-    const top = data.topCountries?.[0];
-    const topEl = document.getElementById('stat-top-country');
-    if (top && top.country) {
-      topEl.textContent = flagFor(top.country);
-    }
-
-    const countriesContainer = document.getElementById('countries-list');
-    if (data.topCountries && countriesContainer) {
-      countriesContainer.innerHTML = '';
-      data.topCountries.slice(0, 5).forEach((c, i) => {
-        const item = document.createElement('div');
-        item.className = 'country-item';
-        item.innerHTML = `
-          <span class="country-rank">#${i + 1}</span>
-          <span class="country-flag">${flagFor(c.country)}</span>
-          <span class="country-name">${c.country || 'Unknown'}</span>
-          <span class="country-count">${formatNumber(c.count)}</span>`;
-        countriesContainer.appendChild(item);
-      });
-    }
-
+    populateUI(data);
     if (lastUpdated) lastUpdated.textContent = 'Last updated: ' + new Date().toLocaleTimeString();
-  } catch (e) {
-    if (lastUpdated) lastUpdated.textContent = 'Sample data — configure Netlify env vars for live updates.';
+  } catch {
+    populateUI(SAMPLE);
+    if (lastUpdated) lastUpdated.textContent = 'Sample data — connect to Netlify for live updates.';
   } finally {
     if (refreshBtn) refreshBtn.disabled = false;
   }
@@ -709,6 +732,46 @@ loadData();
     font-size: 11px;
     color: var(--muted);
     letter-spacing: 1px;
+  }
+
+  /* Protection Section */
+  .protected-section {
+    padding: 60px;
+  }
+
+  .protected-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .protected-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+  }
+
+  .protected-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .protected-item strong {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .protected-item p {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
   }
 
   /* Mobile Responsive */
