@@ -1,9 +1,5 @@
 const CF_API = 'https://api.cloudflare.com/client/v4/graphql';
 
-function hoursAgo(n) {
-  return new Date(Date.now() - n * 3600000).toISOString();
-}
-
 async function graphql(query) {
   const token = process.env.CF_API_TOKEN;
   if (!token) throw new Error('CF_API_TOKEN not configured');
@@ -26,9 +22,10 @@ exports.handler = async () => {
     return { statusCode: 500, body: JSON.stringify({ error: 'CF_ZONE_ID not configured' }) };
   }
 
-  // Free plan: max 24h query window
-  const start = hoursAgo(24);
-  const end = new Date().toISOString();
+  // Free plan: max 24h query window — use 23h for margin
+  const nowMs = Date.now();
+  const start = new Date(nowMs - 82800000).toISOString();
+  const end = new Date(nowMs).toISOString();
 
   const queries = {
     // Blocked requests (403 = WAF/firewall block)
