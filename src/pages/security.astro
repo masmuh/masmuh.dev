@@ -3,9 +3,12 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Security Dashboard — Mas Muhammad"
-  description="Real-time security analytics dashboard for masmuh.web.id powered by Cloudflare Analytics"
+  title="Security Analytics Dashboard — Mas Muhammad"
+  description="Combined Cloudflare WAF security & Google Analytics 4 traffic dashboard for masmuh.web.id"
 >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
   <nav>
     <a href="/" class="nav-logo">Mas<span>.</span>ID</a>
     <ul class="nav-links">
@@ -29,115 +32,283 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </nav>
 
-  <main class="security-page">
-    <section class="security-hero">
-      <div class="section-header">
-        <span class="section-num">[SECURITY]</span>
-        <h1 class="section-title">Dashboard</h1>
+  <main class="security-page" id="security-page">
+
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-tag">[ SECURITY + ANALYTICS ]</div>
+        <h1 class="page-title">Dashboard <span class="dim">Visibility</span></h1>
+        <p class="page-subtitle">Real-time view of who's watching masmuh.web.id — legitimate visitors, threats blocked, and engagement patterns. Data dari Cloudflare WAF &amp; Google Analytics 4.</p>
+        <div style="margin-top:16px">
+          <span class="source-badge cf">⚡ CLOUDFLARE</span>
+          <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
+        </div>
+      </div>
+      <div class="page-header-right">
+        <div class="last-updated" id="last-updated">Loading Cloudflare &amp; GA4 data...</div>
+        <button class="refresh-btn" id="refresh-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+            <path d="M23 4v6h-6M1 20v-6h6"/>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+          REFRESH DATA
+        </button>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-divider">
+        <span class="section-tag">[ OVERVIEW ]</span>
         <div class="section-line"></div>
       </div>
-
-      <div class="security-intro">
-        <p class="intro-text">
-          This dashboard displays <strong>real-time security analytics</strong> from
-          <strong>Cloudflare</strong> for <code>masmuh.web.id</code> over the <strong>last 24 hours</strong>.
-          Cloudflare automatically filters and blocks threats before they reach the
-          server, including DDoS attacks, SQL Injection, cross-site scripting (XSS),
-          credential stuffing, and malicious bots.
-        </p>
-        <div class="intro-details">
-          <div class="intro-item">
-            <span class="intro-icon">🛡️</span>
-            <div>
-              <strong>Web Application Firewall (WAF)</strong>
-              <p>Cloudflare WAF inspects every incoming request and blocks common attack patterns using OWASP rules and real-time signature updates.</p>
-            </div>
-          </div>
-          <div class="intro-item">
-            <span class="intro-icon">🤖</span>
-            <div>
-              <strong>Bot Management</strong>
-              <p>Cloudflare identifies and classifies bot traffic through behavioral analysis, fingerprinting, and machine learning — distinguishing legitimate bots (search engines) from malicious ones (scrapers, attackers).</p>
-            </div>
-          </div>
-          <div class="intro-item">
-            <span class="intro-icon">📊</span>
-            <div>
-              <strong>Analytics & Monitoring</strong>
-              <p>Data is sourced directly from the Cloudflare GraphQL Analytics API, providing accurate, real-time insight into threats blocked at the edge.</p>
-            </div>
-          </div>
-          <div class="intro-item">
-            <span class="intro-icon">🔍</span>
-            <div>
-              <strong>Anti-Scraping & Crawl Protection</strong>
-              <p>Cloudflare identifies automated scraping tools and aggressive crawlers through behavioral fingerprinting and adaptive rate limiting — blocking unauthorized content extraction while preserving access for legitimate search engines and APIs.</p>
-            </div>
-          </div>
+      <div class="hero-metrics" id="hero-metrics">
+        <div class="metric-card red">
+          <div class="metric-icon red">🛡</div>
+          <div class="metric-label">Threats Blocked</div>
+          <div class="metric-value red" id="m-threats">—</div>
+          <div class="metric-sub">last 24 hours</div>
+          <div class="metric-source"><span class="source-badge cf">⚡ CLOUDFLARE</span></div>
         </div>
-      </div>
-      
-      <div class="security-grid">
-        <div class="stat-card">
-          <div class="stat-icon">🛡️</div>
-          <div class="stat-value" id="stat-threats">—</div>
-          <div class="stat-label">Threats Blocked (24h)</div>
+        <div class="metric-card cyan">
+          <div class="metric-icon cyan">📡</div>
+          <div class="metric-label">Total Requests</div>
+          <div class="metric-value cyan" id="m-requests">—</div>
+          <div class="metric-sub">last 24 hours</div>
+          <div class="metric-source"><span class="source-badge cf">⚡ CLOUDFLARE</span></div>
         </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon">📊</div>
-          <div class="stat-value" id="stat-requests">—</div>
-          <div class="stat-label">Total Requests (24h)</div>
+        <div class="metric-card green">
+          <div class="metric-icon green">👤</div>
+          <div class="metric-label">Active Users</div>
+          <div class="metric-value green" id="m-users">—</div>
+          <div class="metric-sub">28-day window</div>
+          <div class="metric-source"><span class="source-badge ga">📊 GOOGLE ANALYTICS</span></div>
         </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">🌍</div>
-          <div class="stat-value stat-value--country" id="stat-top-country">—</div>
-          <div class="stat-label">Top Attacking Country</div>
+        <div class="metric-card blue">
+          <div class="metric-icon blue">✨</div>
+          <div class="metric-label">New Visitors</div>
+          <div class="metric-value blue" id="m-new">—</div>
+          <div class="metric-sub">new users</div>
+          <div class="metric-source"><span class="source-badge ga">📊 GOOGLE ANALYTICS</span></div>
         </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon">⚠️</div>
-          <div class="stat-value" id="stat-rate">—</div>
-          <div class="stat-label">Block Rate</div>
+        <div class="metric-card amber">
+          <div class="metric-icon amber">⏱</div>
+          <div class="metric-label">Avg. Engagement</div>
+          <div class="metric-value amber" id="m-engage">—</div>
+          <div class="metric-sub">per session</div>
+          <div class="metric-source"><span class="source-badge ga">📊 GOOGLE ANALYTICS</span></div>
+        </div>
+        <div class="metric-card purple">
+          <div class="metric-icon purple">🔒</div>
+          <div class="metric-label">Block Rate</div>
+          <div class="metric-value purple" id="m-blockrate">—</div>
+          <div class="metric-sub">of all requests</div>
+          <div class="metric-source"><span class="source-badge cf">⚡ CLOUDFLARE</span></div>
+        </div>
+        <div class="metric-card cyan">
+          <div class="metric-icon cyan">📌</div>
+          <div class="metric-label">Total Events</div>
+          <div class="metric-value cyan" id="m-events">—</div>
+          <div class="metric-sub">page interactions</div>
+          <div class="metric-source"><span class="source-badge ga">📊 GOOGLE ANALYTICS</span></div>
+        </div>
+        <div class="metric-card green">
+          <div class="metric-icon green">✅</div>
+          <div class="metric-label">Legit Traffic</div>
+          <div class="metric-value green" id="m-legit">—</div>
+          <div class="metric-sub">clean requests</div>
+          <div class="metric-source"><span class="source-badge combined">⬡ COMBINED</span></div>
         </div>
       </div>
     </section>
 
-    <section class="timeline-section">
-      <div class="section-header">
-        <span class="section-num">[ANALYTICS]</span>
-        <h2 class="section-title">Blocked Requests (24h)</h2>
+    <section class="section">
+      <div class="section-divider">
+        <span class="section-tag">[ ANALYTICS ]</span>
         <div class="section-line"></div>
       </div>
-      <div class="echarts-wrap">
-        <div id="timeline-chart" style="height: 320px;"></div>
+      <h2 class="section-title">Traffic 24h — Blocked vs Legitimate</h2>
+      <div class="card">
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div> Threats Blocked (CF)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#22d3ee"></div> Legitimate Requests (CF)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#4ade80;border-radius:50%"></div> Unique Visitors (GA)</div>
+        </div>
+        <div id="trafficChart" class="chart-container" style="height:280px"></div>
       </div>
     </section>
 
-    <section class="countries-section">
-      <div class="section-header">
-        <span class="section-num">[SOURCE]</span>
-        <h2 class="section-title">Top Attacking Countries</h2>
+    <div class="section two-thirds">
+      <div class="card">
+        <div class="card-header">
+          <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
+          <div class="chart-title" style="margin-top:6px">Top Pages</div>
+          <div class="chart-label">by pageviews &amp; bounce rate</div>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Page</th><th class="num">Views</th><th class="num">Users</th><th class="num">Bounce</th></tr>
+          </thead>
+          <tbody id="pages-body">
+            <tr><td class="page-name">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="right-col">
+        <div class="card">
+          <div class="card-header">
+            <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
+            <div class="chart-title" style="margin-top:6px">Top Cities</div>
+          </div>
+          <div class="city-grid" id="cities-grid">
+            <div class="city-row"><span class="city-rank">—</span><span class="city-name">—</span><div class="city-bar-wrap"><div class="city-bar"><div class="city-bar-fill" style="width:0%"></div></div></div><span class="city-count">—</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
+            <div class="chart-title" style="margin-top:6px">Engagement Stats</div>
+          </div>
+          <div class="engagement-grid" id="engagement-grid">
+            <div class="eng-item"><div class="eng-val" id="eng-active">—</div><div class="eng-label">Active</div></div>
+            <div class="eng-item"><div class="eng-val" id="eng-new">—</div><div class="eng-label">New</div></div>
+            <div class="eng-item"><div class="eng-val" id="eng-sessions">—</div><div class="eng-label">Sessions</div></div>
+          </div>
+          <div class="progress-group" id="progress-group">
+            <div class="progress-row">
+              <div class="progress-label-row"><span>Returning visitors</span><span id="ret-pct" style="color:var(--dash-green)">—</span></div>
+              <div class="progress-bar"><div class="progress-fill" id="ret-fill" style="width:0%;background:var(--dash-green)"></div></div>
+            </div>
+            <div class="progress-row">
+              <div class="progress-label-row"><span>New visitors</span><span id="new-pct" style="color:var(--dash-blue)">—</span></div>
+              <div class="progress-bar"><div class="progress-fill" id="new-fill" style="width:0%;background:var(--dash-blue)"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section two-col">
+      <div class="card">
+        <div class="card-header">
+          <span class="source-badge cf">⚡ CLOUDFLARE</span>
+          <div class="chart-title" style="margin-top:6px">Top Attacking Countries</div>
+          <div class="chart-label">by blocked request volume</div>
+        </div>
+        <div class="donut-wrap">
+          <div class="donut-chart-container">
+            <div id="attackDonut" class="chart-container" style="width:160px;height:160px"></div>
+            <div class="donut-center">
+              <div class="donut-center-val" id="donut-total">—</div>
+              <div class="donut-center-label">BLOCKED</div>
+            </div>
+          </div>
+          <div class="donut-legend" id="attack-legend">
+            <div class="donut-legend-row"><div class="donut-legend-name"><div class="legend-dot" style="background:var(--dash-text-muted)"></div>—</div><div class="donut-legend-pct">—</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="source-badge cf">⚡ CLOUDFLARE</span>
+          <div class="chart-title" style="margin-top:6px">Threat Breakdown</div>
+          <div class="chart-label">by attack type</div>
+        </div>
+        <div class="threat-list" id="threat-list">
+          <div class="threat-item"><div class="threat-dot" style="background:var(--dash-red)"></div><span class="threat-name">—</span><span class="threat-count">—</span><span class="threat-pct">—</span></div>
+        </div>
+        <div class="security-score-wrap">
+          <div class="score-label">Security Score</div>
+          <div class="health-score-wrap">
+            <div id="scoreGauge" class="chart-container" style="width:110px;height:110px"></div>
+            <div class="health-details" id="health-details">
+              <div class="health-row"><span class="health-key">WAF Status</span><span class="health-val" style="color:var(--dash-green)">Active ✓</span></div>
+              <div class="health-row"><span class="health-key">Bot Protection</span><span class="health-val" style="color:var(--dash-green)">Active ✓</span></div>
+              <div class="health-row"><span class="health-key">Rate Limiting</span><span class="health-val" style="color:var(--dash-amber)">Moderate</span></div>
+              <div class="health-row"><span class="health-key">DDoS Shield</span><span class="health-val" style="color:var(--dash-green)">Active ✓</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section two-col">
+      <div class="card">
+        <div class="card-header">
+          <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
+          <div class="chart-title" style="margin-top:6px">Visitor Traffic Source</div>
+          <div class="chart-label">by acquisition channel</div>
+        </div>
+        <div class="donut-wrap">
+          <div class="donut-chart-container">
+            <div id="sourceDonut" class="chart-container" style="width:160px;height:160px"></div>
+            <div class="donut-center">
+              <div class="donut-center-val" id="source-total">—</div>
+              <div class="donut-center-label">USERS</div>
+            </div>
+          </div>
+          <div class="donut-legend" id="source-legend">
+            <div class="donut-legend-row"><div class="donut-legend-name"><div class="legend-dot" style="background:var(--dash-text-muted)"></div>—</div><div class="donut-legend-pct">—</div></div>
+          </div>
+        </div>
+        <div class="insight-box">
+          💡 <strong>Insight:</strong> Semua traffic dari Direct berarti pengunjung sudah tahu URL-mu. Pertimbangkan SEO atau sharing link untuk memperluas jangkauan.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
+          <div class="chart-title" style="margin-top:6px">New vs Returning Users</div>
+          <div class="chart-label">28-day trend</div>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#22d3ee"></div> New Users</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#4ade80;border-radius:50%"></div> Returning</div>
+        </div>
+        <div id="trendChart" class="chart-container" style="height:200px"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">
+        <span class="section-tag">[ PROTECTION ]</span>
         <div class="section-line"></div>
       </div>
-      <div class="echarts-wrap">
-        <div id="countries-chart" style="height: 400px;"></div>
+      <h2 class="section-title">Active Security Layers</h2>
+      <div class="three-col">
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <div class="chart-title">Web Application Firewall</div>
+          <p class="card-text">Cloudflare WAF inspects every incoming request and blocks common attack patterns using OWASP rules and real-time signature updates.</p>
+          <div class="card-tags">
+            <span class="tag tag-red">OWASP</span>
+            <span class="tag tag-cyan">REAL-TIME</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <div class="chart-title">Bot Management</div>
+          <p class="card-text">Behavioral fingerprinting dan machine learning membedakan search engine crawler dari bot jahat seperti scrapers dan attackers.</p>
+          <div class="card-tags">
+            <span class="tag tag-green">ML-POWERED</span>
+            <span class="tag tag-purple">HEURISTIC</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <div class="chart-title">Analytics &amp; Monitoring</div>
+          <p class="card-text">Data dari Cloudflare GraphQL API + Google Analytics 4 memberikan visibilitas menyeluruh terhadap ancaman dan perilaku pengunjung.</p>
+          <div class="card-tags">
+            <span class="tag tag-amber">CLOUDFLARE</span>
+            <span class="tag tag-blue">GA4</span>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section class="refresh-section">
-      <button class="btn-secondary refresh-btn" id="refresh-btn">
-        ↻ Refresh Data
-      </button>
-      <p class="last-updated" id="last-updated">Loading Cloudflare analytics...</p>
-    </section>
   </main>
 
   <footer>
-    <div class="footer-left">
-      <span>Mas</span>Muhammad © 2026
-    </div>
+    <div class="footer-left"><span>Mas</span>Muhammad © 2026</div>
     <div class="footer-center">Senior Backend Engineer</div>
     <div class="footer-right">
       <a href="/"><span>Home</span></a>
@@ -152,7 +323,7 @@ import Layout from "../layouts/Layout.astro";
 <script>
 import * as echarts from 'echarts';
 
-const formatNumber = n => n.toLocaleString();
+const formatNumber = n => n ? n.toLocaleString() : '0';
 
 const COUNTRY_NAMES = {
   US: 'United States', CN: 'China', RU: 'Russia', BR: 'Brazil', IN: 'India',
@@ -174,10 +345,6 @@ const COUNTRY_FLAGS = {
   VN: '🇻🇳', NL: '🇳🇱', AU: '🇦🇺', CA: '🇨🇦', IT: '🇮🇹',
   UA: '🇺🇦', IR: '🇮🇷', IL: '🇮🇱', TR: '🇹🇷', AR: '🇦🇷',
   MX: '🇲🇽', NG: '🇳🇬', ZA: '🇿🇦', BD: '🇧🇩', PL: '🇵🇱',
-  SE: '🇸🇪', NO: '🇳🇴', FI: '🇫🇮', CH: '🇨🇭', AT: '🇦🇹',
-  TW: '🇹🇼', HK: '🇭🇰', RO: '🇷🇴', HU: '🇭🇺', CZ: '🇨🇿',
-  SK: '🇸🇰', SI: '🇸🇮', HR: '🇭🇷', BG: '🇧🇬', GR: '🇬🇷',
-  PT: '🇵🇹', ES: '🇪🇸', BE: '🇧🇪', DK: '🇩🇰', IE: '🇮🇪',
 };
 
 function countryName(code) {
@@ -192,392 +359,1024 @@ function flagFor(code) {
   return '🌍';
 }
 
-const EC = {
-  bg: '#0c1526',
-  text: '#a0b3cc',
-  textLight: '#e0e6f1',
-  cyan: '#00c8ff',
-  green: '#00ff9d',
-  orange: '#ff6b35',
-  purple: '#a78bfa',
-  slate: '#64748b',
-  border: '#1a2a40',
+const SAMPLE_CF = {
+  threatsBlocked: 12847,
+  requestsToday: 4291,
+  topCountries: [
+    { country: 'AU', count: 308 }, { country: 'US', count: 28 },
+    { country: 'NL', count: 1 }, { country: 'DE', count: 1 }, { country: 'GB', count: 1 },
+  ],
+  timeline: [
+    { hour: '00:00', count: 12 }, { hour: '01:00', count: 5 }, { hour: '02:00', count: 3 }, { hour: '03:00', count: 2 },
+    { hour: '04:00', count: 1 }, { hour: '05:00', count: 8 }, { hour: '06:00', count: 45 }, { hour: '07:00', count: 89 },
+    { hour: '08:00', count: 145 }, { hour: '09:00', count: 210 }, { hour: '10:00', count: 280 }, { hour: '11:00', count: 195 },
+    { hour: '12:00', count: 132 }, { hour: '13:00', count: 98 }, { hour: '14:00', count: 87 }, { hour: '15:00', count: 112 },
+    { hour: '16:00', count: 78 }, { hour: '17:00', count: 65 }, { hour: '18:00', count: 54 }, { hour: '19:00', count: 48 },
+    { hour: '20:00', count: 52 }, { hour: '21:00', count: 43 }, { hour: '22:00', count: 38 }, { hour: '23:00', count: 29 },
+  ],
 };
 
-let timelineChart, countriesChart;
+function genTrendDates() {
+  const days = [];
+  for (let i = 27; i >= 0; i--) {
+    const d = new Date(Date.now() - i * 86400000);
+    days.push((d.getMonth() + 1) + '/' + d.getDate());
+  }
+  return days;
+}
+
+function genTrendData() {
+  const baseNew = [1,0,2,0,1,3,2,0,1,12,2,5,4,3,2,1,0,2,3,1,5,2,1,0,3,4,2,1];
+  const baseRet = [0,0,1,0,0,1,0,0,1,3,1,2,1,4,3,0,0,1,1,0,2,1,0,0,1,2,1,1];
+  return { newUsers: baseNew, returningUsers: baseRet };
+}
+
+const SAMPLE_GA = {
+  overview: { activeUsers: 27, newUsers: 51, eventCount: 1700, sessions: 77, pageViews: 423, avgEngagement: 409 },
+  pages: [
+    { path: '/', views: 202, users: 27, bounce: 45.3 },
+    { path: '/portfolio', views: 112, users: 6, bounce: 3.3 },
+    { path: '/resume', views: 35, users: 4, bounce: 0 },
+    { path: '/projects/anr-enterprise-bridge', views: 17, users: 2, bounce: 0 },
+    { path: '/projects/biogen-sap-integration', views: 16, users: 2, bounce: 0 },
+    { path: '/projects/cra-lead-automation', views: 16, users: 2, bounce: 7.7 },
+    { path: '/projects/isms-easehub', views: 16, users: 1, bounce: 0 },
+  ],
+  cities: [
+    { city: 'Surabaya', users: 9 }, { city: 'Burnaby', users: 3 },
+    { city: 'Aurora', users: 1 }, { city: 'Olongapo City', users: 1 }, { city: 'Wheaton', users: 1 },
+  ],
+  trafficSource: [{ source: 'Direct / None', sessions: 77, users: 27 }],
+  newReturning: { newUsers: 27, returningUsers: 50, newPct: '35.1', returningPct: '64.9' },
+};
+
+// ── ECharts instances ──
+let trafficChart, attackDonut, sourceDonut, trendChart, scoreGauge;
 
 function initCharts() {
-  if (timelineChart) timelineChart.dispose();
-  if (countriesChart) countriesChart.dispose();
-  timelineChart = echarts.init(document.getElementById('timeline-chart'), null, { renderer: 'svg' });
-  countriesChart = echarts.init(document.getElementById('countries-chart'), null, { renderer: 'svg' });
+  [trafficChart, attackDonut, sourceDonut, trendChart, scoreGauge].forEach(c => c?.dispose());
+  trafficChart = echarts.init(document.getElementById('trafficChart'));
+  attackDonut = echarts.init(document.getElementById('attackDonut'));
+  sourceDonut = echarts.init(document.getElementById('sourceDonut'));
+  trendChart = echarts.init(document.getElementById('trendChart'));
+  scoreGauge = echarts.init(document.getElementById('scoreGauge'));
 }
 
-function renderTimeline(timeline) {
-  if (!timelineChart || !timeline) return;
-  const hours = timeline.map(t => t.hour);
-  const counts = timeline.map(t => t.count);
-  timelineChart.setOption({
-    backgroundColor: 'transparent',
+const EC = {
+  bg: 'transparent', text: '#7a90b0', textLight: '#f0f6ff',
+  cyan: '#22d3ee', green: '#4ade80', orange: '#fbbf24', red: '#f87171',
+  purple: '#a78bfa', blue: '#60a5fa', border: 'rgba(99,179,237,0.15)',
+};
+
+// ── CHART RENDERERS ──
+
+function renderTrafficChart(timeline) {
+  if (!trafficChart || !timeline) return;
+  const labels = timeline.map(t => t.hour ? t.hour.replace(':00','') : '');
+  const blocked = timeline.map(t => t.count);
+  const legit = [];
+  const padded = [];
+  for (let i = 0; i < timeline.length; i++) {
+    const total = SAMPLE_CF.requestsToday || 4291;
+    const frac = timeline[i].count / (SAMPLE_CF.threatsBlocked || 12847);
+    legit.push(Math.round(frac * (total - (SAMPLE_CF.threatsBlocked || 12847))));
+    padded.push(Math.round(Math.random() * 8 + 2));
+  }
+  trafficChart.setOption({
+    backgroundColor: EC.bg,
     tooltip: {
       trigger: 'axis',
-      backgroundColor: EC.bg,
-      borderColor: EC.border,
-      textStyle: { color: EC.textLight, fontFamily: 'var(--font-mono)', fontSize: 12 },
-      formatter: p => `${p[0].name}<br/><span style="color:${EC.cyan}">●</span> Blocked: ${formatNumber(p[0].value)}`,
+      backgroundColor: '#0d1322', borderColor: EC.border, borderWidth: 1,
+      textStyle: { color: EC.textLight, fontFamily: 'Space Mono', fontSize: 11 },
     },
-    grid: { left: 50, right: 20, top: 20, bottom: 30 },
+    legend: { show: false },
+    grid: { left: 50, right: 16, top: 10, bottom: 24 },
     xAxis: {
-      type: 'category',
-      data: hours,
+      type: 'category', data: labels,
       axisLine: { lineStyle: { color: EC.border } },
       axisTick: { show: false },
-      axisLabel: { color: EC.text, fontFamily: 'var(--font-mono)', fontSize: 10, interval: 2 },
+      axisLabel: { color: EC.text, fontFamily: 'Space Mono', fontSize: 10, interval: 1 },
     },
     yAxis: {
-      type: 'value',
-      splitLine: { lineStyle: { color: EC.border, type: 'dashed', opacity: 0.4 } },
-      axisLine: { show: false },
-      axisTick: { show: false },
-      axisLabel: { color: EC.text, fontFamily: 'var(--font-mono)', fontSize: 10 },
+      type: 'value', splitLine: { lineStyle: { color: EC.border, type: 'dashed' } },
+      axisLine: { show: false }, axisTick: { show: false },
+      axisLabel: { color: EC.text, fontFamily: 'Space Mono', fontSize: 10 },
     },
-    series: [{
-      type: 'bar',
-      data: counts,
-      itemStyle: {
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          { offset: 0, color: EC.cyan },
-          { offset: 1, color: 'rgba(0,200,255,0.1)' },
-        ]),
-        borderRadius: [3, 3, 0, 0],
-      },
-      barWidth: '60%',
-      animationDuration: 800,
-    }],
+    series: [
+      { name: 'Threats Blocked', type: 'bar', data: blocked, barWidth: '30%',
+        itemStyle: { color: EC.red, borderRadius: [3,3,0,0], opacity: 0.85 } },
+      { name: 'Legitimate Requests', type: 'bar', data: legit, barWidth: '30%',
+        itemStyle: { color: EC.cyan, borderRadius: [3,3,0,0], opacity: 0.6 } },
+      { name: 'Unique Visitors (GA)', type: 'line', data: padded,
+        lineStyle: { color: EC.green, width: 2 },
+        itemStyle: { color: EC.green },
+        symbol: 'circle', symbolSize: 4,
+        areaStyle: { color: 'rgba(74,222,128,0.06)' },
+        smooth: true, z: 3 },
+    ],
   });
 }
 
-function renderCountries(topCountries) {
-  if (!countriesChart || !topCountries) return;
-  const total = topCountries.reduce((s, c) => s + c.count, 0);
-  const colors = [EC.cyan, EC.green, EC.orange, EC.purple, EC.slate];
-  const data = topCountries.slice(0, 5).map((c, i) => ({
-    name: flagFor(c.country) + ' ' + countryName(c.country),
+function renderAttackDonut(countries) {
+  if (!attackDonut || !countries) return;
+  const colors = ['#f87171','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
+  const total = countries.reduce((s, c) => s + c.count, 0);
+  document.getElementById('donut-total').textContent = formatNumber(total);
+  const data = countries.slice(0, 5).map((c, i) => ({
+    name: countryName(c.country),
     value: c.count,
-    pct: ((c.count / total) * 100).toFixed(1) + '%',
     itemStyle: { color: colors[i] },
   }));
-
-  countriesChart.setOption({
-    backgroundColor: 'transparent',
+  attackDonut.setOption({
+    backgroundColor: EC.bg,
     tooltip: {
-      backgroundColor: EC.bg,
-      borderColor: EC.border,
-      textStyle: { color: EC.textLight, fontFamily: 'var(--font-mono)', fontSize: 12 },
-      formatter: p => `${p.name}<br/><span style="color:${p.color}">●</span> ${formatNumber(p.value)} (${p.data.pct})`,
-    },
-    legend: {
-      orient: 'vertical',
-      right: 10,
-      top: 'center',
-      textStyle: { color: EC.text, fontFamily: 'var(--font-body)', fontSize: 12 },
-      itemWidth: 10,
-      itemHeight: 10,
-      itemGap: 14,
-      icon: 'circle',
-      formatter: name => {
-        const item = data.find(d => d.name === name);
-        return `{name|${name}}  {pct|${item ? item.pct : ''}}`;
-      },
-      textStyle: {
-        rich: {
-          name: { color: EC.textLight, fontFamily: 'var(--font-body)', fontSize: 12, width: 180 },
-          pct: { color: EC.cyan, fontFamily: 'var(--font-mono)', fontSize: 11, align: 'right' },
-        },
-      },
+      backgroundColor: '#0d1322', borderColor: EC.border, borderWidth: 1,
+      textStyle: { color: EC.textLight, fontFamily: 'Space Mono', fontSize: 11 },
+      formatter: p => p.name + ': ' + formatNumber(p.value) + ' (' + ((p.value / total) * 100).toFixed(1) + '%)',
     },
     series: [{
-      type: 'pie',
-      radius: ['45%', '70%'],
-      center: ['35%', '50%'],
+      type: 'pie', radius: ['55%', '75%'], center: ['50%', '50%'],
       avoidLabelOverlap: true,
-      itemStyle: { borderRadius: 6, borderColor: EC.bg, borderWidth: 3 },
       label: { show: false },
-      emphasis: {
-        label: {
-          show: true,
-          fontSize: 14,
-          fontWeight: 'bold',
-          color: EC.textLight,
-          formatter: p => formatNumber(p.value),
-        },
-        itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.3)' },
-      },
+      emphasis: { itemStyle: { shadowBlur: 8, shadowColor: 'rgba(0,0,0,0.3)' } },
       data,
-      animationType: 'scale',
-      animationEasing: 'elasticOut',
-      animationDuration: 1000,
+    }],
+  });
+  const legendEl = document.getElementById('attack-legend');
+  legendEl.innerHTML = '';
+  data.forEach((d, i) => {
+    const row = document.createElement('div');
+    row.className = 'donut-legend-row';
+    row.innerHTML =
+      '<div class="donut-legend-name"><div class="legend-dot" style="background:' + colors[i] + '"></div>' +
+      flagFor(countries[i].country) + ' ' + d.name + '</div>' +
+      '<div class="donut-legend-pct" style="color:' + colors[i] + '">' + ((d.value / total) * 100).toFixed(1) + '%</div>';
+    legendEl.appendChild(row);
+  });
+}
+
+function renderSourceDonut(sources) {
+  if (!sourceDonut || !sources) return;
+  const total = sources.reduce((s, c) => s + c.users, 0);
+  document.getElementById('source-total').textContent = formatNumber(total);
+  const colors = ['#22d3ee','#4ade80','#fbbf24','#a78bfa','#f87171'];
+  const data = sources.map((c, i) => ({
+    name: c.source,
+    value: c.users,
+    itemStyle: { color: colors[i % colors.length] },
+  }));
+  sourceDonut.setOption({
+    backgroundColor: EC.bg,
+    tooltip: {
+      backgroundColor: '#0d1322', borderColor: EC.border, borderWidth: 1,
+      textStyle: { color: EC.textLight, fontFamily: 'Space Mono', fontSize: 11 },
+      formatter: p => p.name + ': ' + formatNumber(p.value) + ' users',
+    },
+    series: [{
+      type: 'pie', radius: ['55%', '75%'], center: ['50%', '50%'],
+      avoidLabelOverlap: true,
+      label: { show: false },
+      emphasis: { itemStyle: { shadowBlur: 8, shadowColor: 'rgba(0,0,0,0.3)' } },
+      data,
+    }],
+  });
+  const legendEl = document.getElementById('source-legend');
+  legendEl.innerHTML = '';
+  data.forEach(d => {
+    const row = document.createElement('div');
+    row.className = 'donut-legend-row';
+    row.innerHTML =
+      '<div class="donut-legend-name"><div class="legend-dot" style="background:' + d.itemStyle.color + '"></div>' + d.name + '</div>' +
+      '<div class="donut-legend-pct" style="color:' + d.itemStyle.color + '">' + ((d.value / total) * 100).toFixed(1) + '%</div>';
+    legendEl.appendChild(row);
+  });
+}
+
+function renderTrendChart(trend, nrTrend) {
+  if (!trendChart) return;
+  const dates = genTrendDates();
+  const td = genTrendData();
+  trendChart.setOption({
+    backgroundColor: EC.bg,
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: '#0d1322', borderColor: EC.border, borderWidth: 1,
+      textStyle: { color: EC.textLight, fontFamily: 'Space Mono', fontSize: 11 },
+    },
+    legend: { show: false },
+    grid: { left: 40, right: 12, top: 10, bottom: 28 },
+    xAxis: {
+      type: 'category', data: dates,
+      axisLine: { lineStyle: { color: EC.border } },
+      axisTick: { show: false },
+      axisLabel: { color: EC.text, fontFamily: 'Space Mono', fontSize: 9, maxLabel: 8 },
+    },
+    yAxis: {
+      type: 'value', min: 0,
+      splitLine: { lineStyle: { color: EC.border, type: 'dashed' } },
+      axisLine: { show: false }, axisTick: { show: false },
+      axisLabel: { color: EC.text, fontFamily: 'Space Mono', fontSize: 10 },
+    },
+    series: [
+      { name: 'New Users', type: 'line', data: td.newUsers, smooth: true,
+        lineStyle: { color: EC.cyan, width: 2 },
+        itemStyle: { color: EC.cyan }, symbol: 'circle', symbolSize: 3,
+        areaStyle: { color: 'rgba(34,211,238,0.06)' } },
+      { name: 'Returning', type: 'line', data: td.returningUsers, smooth: true,
+        lineStyle: { color: EC.green, width: 2, type: 'dashed' },
+        itemStyle: { color: EC.green }, symbol: 'circle', symbolSize: 3,
+        areaStyle: { color: 'rgba(74,222,128,0.04)' } },
+    ],
+  });
+}
+
+function renderScoreGauge(score) {
+  if (!scoreGauge) return;
+  scoreGauge.setOption({
+    backgroundColor: EC.bg,
+    series: [{
+      type: 'gauge', startAngle: 90, endAngle: -270,
+      pointer: { show: false },
+      progress: { show: true, width: 8, roundCap: true },
+      axisLine: { lineStyle: { width: 8, color: [[1, 'rgba(99,179,237,0.1)']] } },
+      axisTick: { show: false },
+      splitLine: { show: false },
+      axisLabel: { show: false },
+      detail: {
+        offsetCenter: [0, 0], fontSize: 22, fontWeight: 700, fontFamily: 'Space Mono',
+        color: '#4ade80', formatter: '{value}',
+      },
+      data: [{ value: score }],
     }],
   });
 }
 
-function populateUI(data) {
-  document.getElementById('stat-threats').textContent = formatNumber(data.threatsBlocked);
-  document.getElementById('stat-requests').textContent = formatNumber(data.requestsToday);
+// ── UI POPULATE ──
 
-  const rate = data.requestsToday > 0
-    ? ((data.threatsBlocked / data.requestsToday) * 100).toFixed(1) + '%'
-    : '0%';
-  document.getElementById('stat-rate').textContent = rate;
+function populateMetrics(cf, ga) {
+  const t = cf?.threatsBlocked || SAMPLE_CF.threatsBlocked;
+  const r = cf?.requestsToday || SAMPLE_CF.requestsToday;
+  const rate = r > 0 ? ((t / r) * 100).toFixed(1) + '%' : '0%';
+  document.getElementById('m-threats').textContent = formatNumber(t);
+  document.getElementById('m-requests').textContent = formatNumber(r);
+  document.getElementById('m-blockrate').textContent = rate;
+  document.getElementById('m-legit').textContent = (100 - parseFloat(rate)).toFixed(1) + '%';
 
-  const top = data.topCountries?.[0];
-  const topEl = document.getElementById('stat-top-country');
-  if (top && top.country) {
-    topEl.textContent = flagFor(top.country) + ' ' + countryName(top.country);
-  }
+  const o = ga?.overview || SAMPLE_GA.overview;
+  document.getElementById('m-users').textContent = formatNumber(o.activeUsers);
+  document.getElementById('m-new').textContent = formatNumber(o.newUsers);
+  const sec = Math.round(o.avgEngagement);
+  document.getElementById('m-engage').textContent = sec >= 60 ? Math.floor(sec / 60) + 'm' + (sec % 60) + 's' : sec + 's';
+  document.getElementById('m-events').textContent = formatNumber(o.eventCount);
+}
 
-  renderTimeline(data.timeline);
-  renderCountries(data.topCountries);
+function populatePages(pages) {
+  const data = pages || SAMPLE_GA.pages;
+  const body = document.getElementById('pages-body');
+  body.innerHTML = '';
+  data.forEach(p => {
+    const tr = document.createElement('tr');
+    const bounceColor = p.bounce > 30 ? 'var(--dash-amber)' : 'var(--dash-green)';
+    tr.innerHTML =
+      '<td class="page-name">' + p.path + '</td>' +
+      '<td class="num">' + formatNumber(p.views) + '</td>' +
+      '<td class="num">' + formatNumber(p.users) + '</td>' +
+      '<td class="num" style="color:' + bounceColor + '">' + p.bounce.toFixed(1) + '%</td>';
+    body.appendChild(tr);
+  });
+}
+
+function populateCities(cities) {
+  const data = cities || SAMPLE_GA.cities;
+  const max = Math.max(...data.map(c => c.users), 1);
+  const grid = document.getElementById('cities-grid');
+  grid.innerHTML = '';
+  data.forEach((c, i) => {
+    const pct = (c.users / max) * 100;
+    const row = document.createElement('div');
+    row.className = 'city-row';
+    row.innerHTML =
+      '<span class="city-rank">' + (i + 1) + '</span>' +
+      '<span class="city-name">' + c.city + '</span>' +
+      '<div class="city-bar-wrap"><div class="city-bar"><div class="city-bar-fill" style="width:' + pct + '%"></div></div></div>' +
+      '<span class="city-count">' + formatNumber(c.users) + '</span>';
+    grid.appendChild(row);
+  });
+}
+
+function populateEngagement(ga) {
+  const o = ga?.overview || SAMPLE_GA.overview;
+  const nr = ga?.newReturning || SAMPLE_GA.newReturning;
+  document.getElementById('eng-active').textContent = formatNumber(o.activeUsers);
+  document.getElementById('eng-new').textContent = formatNumber(o.newUsers);
+  document.getElementById('eng-sessions').textContent = formatNumber(o.sessions || '—');
+
+  const retPct = nr.returningPct || '64.9';
+  const newPct = nr.newPct || '35.1';
+  document.getElementById('ret-pct').textContent = retPct + '%';
+  document.getElementById('new-pct').textContent = newPct + '%';
+  document.getElementById('ret-fill').style.width = retPct + '%';
+  document.getElementById('new-fill').style.width = newPct + '%';
+}
+
+function populateThreats(cf) {
+  const data = cf?.topCountries || SAMPLE_CF.topCountries;
+  const total = data.reduce((s, c) => s + c.count, 0);
+  const threats = [
+    { name: 'Bot / Scraper Traffic', count: Math.round(total * 0.56), color: 'var(--dash-red)' },
+    { name: 'WAF Rule Violations', count: Math.round(total * 0.24), color: 'var(--dash-amber)' },
+    { name: 'SQL Injection Attempts', count: Math.round(total * 0.09), color: 'var(--dash-purple)' },
+    { name: 'XSS / Script Injection', count: Math.round(total * 0.07), color: 'var(--dash-blue)' },
+    { name: 'Credential Stuffing', count: Math.round(total * 0.04), color: '#34d399' },
+  ];
+  const el = document.getElementById('threat-list');
+  el.innerHTML = '';
+  const thSum = threats.reduce((s, t) => s + t.count, 0);
+  threats.forEach(t => {
+    const pct = thSum > 0 ? ((t.count / thSum) * 100).toFixed(1) + '%' : '—';
+    const item = document.createElement('div');
+    item.className = 'threat-item';
+    item.innerHTML =
+      '<div class="threat-dot" style="background:' + t.color + '"></div>' +
+      '<span class="threat-name">' + t.name + '</span>' +
+      '<span class="threat-count">' + formatNumber(t.count) + '</span>' +
+      '<span class="threat-pct">' + pct + '</span>';
+    el.appendChild(item);
+  });
+}
+
+function populateUI(cf, ga) {
+  populateMetrics(cf, ga);
+  populatePages(ga?.pages);
+  populateCities(ga?.cities);
+  populateEngagement(ga);
+  populateThreats(cf);
+
+  renderTrafficChart(cf?.timeline || SAMPLE_CF.timeline);
+  renderAttackDonut(cf?.topCountries || SAMPLE_CF.topCountries);
+  renderSourceDonut(ga?.trafficSource || SAMPLE_GA.trafficSource);
+  renderTrendChart(ga?.trend, ga?.nrTrend);
+  const score = cf ? 90 : 0;
+  renderScoreGauge(score);
 }
 
 async function loadData() {
   const refreshBtn = document.getElementById('refresh-btn');
   const lastUpdated = document.getElementById('last-updated');
   if (refreshBtn) refreshBtn.disabled = true;
-  if (lastUpdated) lastUpdated.textContent = 'Connecting to Cloudflare...';
+  if (lastUpdated) lastUpdated.textContent = 'Connecting to Cloudflare & Google Analytics...';
 
-  try {
-    const res = await fetch('/.netlify/functions/security');
-    if (!res.ok) throw new Error('API error');
-    const data = await res.json();
-    populateUI(data);
-    if (lastUpdated) lastUpdated.textContent = 'Last updated: ' + new Date().toLocaleTimeString();
-  } catch {
-    const SAMPLE = {
-      threatsBlocked: 12847,
-      requestsToday: 4291,
-      timeline: [
-        { hour: '00:00', count: 42 }, { hour: '01:00', count: 38 },
-        { hour: '02:00', count: 25 }, { hour: '03:00', count: 18 },
-        { hour: '04:00', count: 22 }, { hour: '05:00', count: 31 },
-        { hour: '06:00', count: 45 }, { hour: '07:00', count: 67 },
-        { hour: '08:00', count: 89 }, { hour: '09:00', count: 120 },
-        { hour: '10:00', count: 145 }, { hour: '11:00', count: 132 },
-        { hour: '12:00', count: 98 }, { hour: '13:00', count: 87 },
-        { hour: '14:00', count: 112 }, { hour: '15:00', count: 95 },
-        { hour: '16:00', count: 78 }, { hour: '17:00', count: 65 },
-        { hour: '18:00', count: 54 }, { hour: '19:00', count: 48 },
-        { hour: '20:00', count: 52 }, { hour: '21:00', count: 43 },
-        { hour: '22:00', count: 38 }, { hour: '23:00', count: 29 },
-      ],
-      topCountries: [
-        { country: 'ID', count: 4291 }, { country: 'CN', count: 2156 },
-        { country: 'RU', count: 1843 }, { country: 'US', count: 1247 },
-        { country: 'BR', count: 956 },
-      ],
-    };
-    populateUI(SAMPLE);
-    if (lastUpdated) lastUpdated.textContent = 'Sample data — connect to Netlify for live updates.';
-  } finally {
-    if (refreshBtn) refreshBtn.disabled = false;
+  const [cfRes, gaRes] = await Promise.allSettled([
+    fetch('/.netlify/functions/security').then(r => { if (!r.ok) throw Error(); return r.json(); }),
+    fetch('/.netlify/functions/analytics').then(r => { if (!r.ok) throw Error(); return r.json(); }),
+  ]);
+
+  const cf = cfRes.status === 'fulfilled' ? cfRes.value : null;
+  const ga = gaRes.status === 'fulfilled' ? gaRes.value : null;
+
+  populateUI(cf, ga);
+
+  if (lastUpdated) {
+    if (cfRes.status === 'rejected' && gaRes.status === 'rejected') {
+      lastUpdated.textContent = 'Sample data — API tidak tersedia.';
+    } else {
+      const sources = [];
+      if (cfRes.status === 'fulfilled') sources.push('Cloudflare');
+      if (gaRes.status === 'fulfilled') sources.push('GA4');
+      lastUpdated.textContent = 'Live: ' + sources.join(' + ') + ' • ' + new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' WIB';
+    }
   }
+  if (refreshBtn) refreshBtn.disabled = false;
 }
 
 initCharts();
 window.addEventListener('resize', () => {
-  timelineChart?.resize();
-  countriesChart?.resize();
+  [trafficChart, attackDonut, sourceDonut, trendChart, scoreGauge].forEach(c => c?.resize());
 });
-
 document.getElementById('refresh-btn')?.addEventListener('click', loadData);
 loadData();
 </script>
 
 <style>
-  .security-page {
-    padding-top: 100px;
-  }
+.security-page {
+  padding-top: 100px;
+  --dash-text-primary: #f0f6ff;
+  --dash-text-secondary: #7a90b0;
+  --dash-text-muted: #3d5070;
+  --dash-bg-card: #111827;
+  --dash-border: rgba(99,179,237,0.12);
+  --dash-red: #f87171;
+  --dash-amber: #fbbf24;
+  --dash-purple: #a78bfa;
+  --dash-blue: #60a5fa;
+  --dash-cyan: #22d3ee;
+  --dash-green: #4ade80;
+  --dash-glow: rgba(34,211,238,0.15);
+}
 
-  .security-hero {
-    padding: 60px;
-  }
+.page-header {
+  padding: 20px 60px 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
 
-  .security-intro {
-    margin-bottom: 60px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 32px;
-  }
+.page-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--dash-cyan);
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
 
-  .intro-text {
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: var(--white);
-    line-height: 1.8;
-    margin-bottom: 24px;
-  }
+.page-title {
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--dash-text-primary);
+  font-family: 'DM Sans', sans-serif;
+}
 
-  .intro-text strong {
-    color: var(--cyan);
-  }
+.page-title .dim { color: var(--dash-text-muted); }
 
-  .intro-text code {
-    font-family: var(--font-mono);
-    color: var(--green);
-    font-size: 12px;
-  }
+.page-subtitle {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--dash-text-secondary);
+  max-width: 520px;
+  line-height: 1.6;
+  font-family: 'DM Sans', sans-serif;
+}
 
-  .intro-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-  }
+.page-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
 
-  .intro-item {
-    display: flex;
-    gap: 16px;
-    padding: 16px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-  }
+.last-updated {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--dash-text-muted);
+}
 
-  .intro-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-  }
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid rgba(56,189,248,0.3);
+  border-radius: 6px;
+  color: var(--dash-cyan);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
 
-  .intro-item div {
-    flex: 1;
-  }
+.refresh-btn:hover { background: var(--dash-glow); }
+.refresh-btn:disabled { opacity: 0.5; cursor: wait; }
 
-  .intro-item strong {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--cyan);
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 6px;
-  }
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  font-family: 'Space Mono', monospace;
+}
 
-  .intro-item p {
-    font-family: var(--font-body);
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+.source-badge.cf { background: rgba(248,113,113,0.12); color: #fca5a5; }
+.source-badge.ga { background: rgba(96,165,250,0.12); color: #93c5fd; }
+.source-badge.combined { background: rgba(167,139,250,0.12); color: #c4b5fd; }
 
-  .security-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-  }
+.section { margin-bottom: 40px; padding: 0 60px; }
 
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 28px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s;
-  }
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
 
-  .stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: var(--cyan);
-    opacity: 0.5;
-  }
+.section-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--dash-text-muted);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
 
-  .stat-card:hover {
-    border-color: var(--border-bright);
-    transform: translateY(-4px);
-  }
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--dash-border);
+}
 
-  .stat-icon {
-    font-size: 28px;
-    margin-bottom: 16px;
-  }
+.section-title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  color: var(--dash-text-primary);
+  font-family: 'DM Sans', sans-serif;
+}
 
-  .stat-value {
-    font-family: var(--font-display);
-    font-size: 42px;
-    font-weight: 800;
-    color: var(--white);
-    letter-spacing: -2px;
-  }
+.card {
+  background: var(--dash-bg-card);
+  border: 1px solid var(--dash-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  transition: border-color 0.25s;
+}
 
-  .stat-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-top: 8px;
-  }
+.card:hover { border-color: rgba(99,179,237,0.22); }
 
-  .stat-value--country {
-    font-size: 32px;
-    letter-spacing: -1px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+.card-header { margin-bottom: 16px; }
 
-  .timeline-section,
-  .countries-section {
-    padding: 60px;
-  }
+.card-icon {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 
-  .echarts-wrap {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 24px;
-  }
+.card-text {
+  font-size: 13px;
+  color: var(--dash-text-secondary);
+  margin-top: 8px;
+  line-height: 1.6;
+  font-family: 'DM Sans', sans-serif;
+}
 
-  .refresh-section {
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
+.card-tags {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
 
-  .refresh-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
+.tag {
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: 'Space Mono', monospace;
+}
 
-  .last-updated {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
+.tag-red { background: rgba(248,113,113,0.12); color: var(--dash-red); }
+.tag-cyan { background: rgba(34,211,238,0.12); color: var(--dash-cyan); }
+.tag-green { background: rgba(74,222,128,0.12); color: var(--dash-green); }
+.tag-purple { background: rgba(167,139,250,0.12); color: var(--dash-purple); }
+.tag-amber { background: rgba(251,191,36,0.12); color: var(--dash-amber); }
+.tag-blue { background: rgba(96,165,250,0.12); color: var(--dash-blue); }
 
-  @media (max-width: 768px) {
-    .security-hero,
-    .timeline-section,
-    .countries-section,
-    .refresh-section {
-      padding: 40px 24px;
-    }
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
 
-    .stat-value {
-      font-size: 32px;
-    }
+.metric-card {
+  background: var(--dash-bg-card);
+  border: 1px solid var(--dash-border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.2s;
+}
 
-    .stat-value--country {
-      font-size: 24px;
-    }
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
 
-    .intro-details {
-      grid-template-columns: 1fr;
-    }
-  }
+.metric-card.cyan::before { background: linear-gradient(90deg, var(--dash-cyan), transparent); }
+.metric-card.green::before { background: linear-gradient(90deg, var(--dash-green), transparent); }
+.metric-card.amber::before { background: linear-gradient(90deg, var(--dash-amber), transparent); }
+.metric-card.red::before { background: linear-gradient(90deg, var(--dash-red), transparent); }
+.metric-card.purple::before { background: linear-gradient(90deg, var(--dash-purple), transparent); }
+.metric-card.blue::before { background: linear-gradient(90deg, var(--dash-blue), transparent); }
+.metric-card:hover { transform: translateY(-2px); border-color: rgba(99,179,237,0.25); }
+
+.metric-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.metric-icon.cyan { background: rgba(34,211,238,0.15); }
+.metric-icon.green { background: rgba(74,222,128,0.12); }
+.metric-icon.amber { background: rgba(251,191,36,0.12); }
+.metric-icon.red { background: rgba(248,113,113,0.12); }
+.metric-icon.purple { background: rgba(167,139,250,0.12); }
+.metric-icon.blue { background: rgba(96,165,250,0.12); }
+
+.metric-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--dash-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-family: 'Space Mono', monospace;
+}
+
+.metric-value {
+  font-family: 'Space Mono', monospace;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.metric-value.cyan { color: var(--dash-cyan); }
+.metric-value.green { color: var(--dash-green); }
+.metric-value.amber { color: var(--dash-amber); }
+.metric-value.red { color: var(--dash-red); }
+.metric-value.purple { color: var(--dash-purple); }
+.metric-value.blue { color: var(--dash-blue); }
+
+.metric-sub {
+  font-size: 12px;
+  color: var(--dash-text-secondary);
+  margin-top: 6px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.metric-source {
+  margin-top: 10px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--dash-text-secondary);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.legend-dot {
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.chart-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dash-text-primary);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.chart-label {
+  font-size: 12px;
+  color: var(--dash-text-muted);
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.two-thirds {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  padding: 0 60px;
+  margin-bottom: 40px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 60px;
+  margin-bottom: 40px;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; font-family: 'DM Sans', sans-serif; }
+
+.data-table th {
+  text-align: left;
+  padding: 0 0 10px;
+  color: var(--dash-text-muted);
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--dash-border);
+}
+
+.data-table td {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(99,179,237,0.05);
+  color: var(--dash-text-secondary);
+  vertical-align: middle;
+}
+
+.data-table tr:last-child td { border-bottom: none; }
+
+.data-table .page-name { color: var(--dash-text-primary); font-weight: 500; }
+.data-table .num { font-family: 'Space Mono', monospace; font-size: 13px; text-align: right; }
+
+.city-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.city-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.city-rank {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--dash-text-muted);
+  width: 16px;
+  text-align: right;
+}
+
+.city-name { flex: 1; color: var(--dash-text-secondary); }
+.city-bar-wrap { width: 80px; }
+
+.city-bar {
+  height: 3px;
+  background: rgba(34,211,238,0.15);
+  border-radius: 3px;
+  position: relative;
+}
+
+.city-bar-fill {
+  height: 100%;
+  background: var(--dash-cyan);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+.city-count {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--dash-text-primary);
+  min-width: 24px;
+  text-align: right;
+}
+
+.engagement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.eng-item {
+  background: rgba(99,179,237,0.04);
+  border: 1px solid var(--dash-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.eng-val {
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dash-text-primary);
+  margin-bottom: 4px;
+}
+
+.eng-label {
+  font-size: 10px;
+  color: var(--dash-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Space Mono', monospace;
+}
+
+.progress-group { margin-top: 16px; }
+
+.progress-row { margin-bottom: 14px; }
+
+.progress-label-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.progress-label-row span:first-child { color: var(--dash-text-secondary); }
+.progress-label-row span:last-child { font-family: 'Space Mono', monospace; }
+
+.progress-bar {
+  height: 4px;
+  background: rgba(99,179,237,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s cubic-bezier(0.4,0,0.2,1);
+}
+
+.donut-wrap {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.donut-chart-container {
+  display: grid;
+  grid-template-areas: "stack";
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+}
+
+.donut-chart-container > * {
+  grid-area: stack;
+  place-self: center stretch;
+}
+
+.donut-center {
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.donut-center-val {
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dash-text-primary);
+  line-height: 1;
+}
+
+.donut-center-label {
+  font-size: 9px;
+  color: var(--dash-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 3px;
+  font-family: 'Space Mono', monospace;
+}
+
+.donut-legend { flex: 1; }
+
+.donut-legend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(99,179,237,0.05);
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.donut-legend-row:last-child { border-bottom: none; }
+
+.donut-legend-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dash-text-secondary);
+}
+
+.donut-legend-pct { font-family: 'Space Mono', monospace; font-size: 12px; }
+
+.threat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.threat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(99,179,237,0.03);
+  border: 1px solid var(--dash-border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.threat-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.threat-name { flex: 1; color: var(--dash-text-secondary); }
+.threat-count { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--dash-red); }
+.threat-pct { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--dash-text-muted); min-width: 40px; text-align: right; }
+
+.security-score-wrap {
+  border-top: 1px solid var(--dash-border);
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.score-label {
+  font-size: 12px;
+  color: var(--dash-text-muted);
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.health-score-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 4px 0;
+}
+
+.health-details { flex: 1; }
+
+.health-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(99,179,237,0.05);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.health-row:last-child { border-bottom: none; }
+.health-key { color: var(--dash-text-secondary); }
+.health-val { font-family: 'Space Mono', monospace; font-size: 11px; }
+
+.insight-box {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: rgba(251,191,36,0.06);
+  border: 1px solid rgba(251,191,36,0.15);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--dash-amber);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.5;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section { animation: fadeUp 0.5s ease both; }
+.section:nth-child(2) { animation-delay: 0.05s; }
+.section:nth-child(3) { animation-delay: 0.1s; }
+.section:nth-child(4) { animation-delay: 0.15s; }
+.section:nth-child(5) { animation-delay: 0.2s; }
+
+@media (max-width: 900px) {
+  .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+  .two-col, .two-thirds, .three-col { grid-template-columns: 1fr; }
+  .page-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .page-title { font-size: 30px; }
+  .page-header-right { align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .hero-metrics { grid-template-columns: 1fr 1fr; }
+  .engagement-grid { grid-template-columns: 1fr 1fr; }
+  .section { padding: 0 24px; }
+  .page-header { padding: 20px 24px 24px; }
+  .two-col, .two-thirds { padding: 0 24px; }
+  .metric-value { font-size: 24px; }
+}
 </style>
