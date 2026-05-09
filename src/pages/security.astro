@@ -1,0 +1,741 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Security Dashboard — Mas Muhammad"
+  description="Real-time security analytics dashboard for masmuh.web.id powered by Cloudflare Analytics"
+>
+  <nav>
+    <a href="/" class="nav-logo">Mas<span>.</span>ID</a>
+    <ul class="nav-links">
+      <li><a href="/">About</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/resume">CV</a></li>
+      <li><a href="/security" class="active-link">Security</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        LIVE
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <span class="theme-icon-dark">☀</span>
+        <span class="theme-icon-light">☾</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="security-page">
+    <section class="security-hero">
+      <div class="section-header">
+        <span class="section-num">[SECURITY]</span>
+        <h1 class="section-title">Dashboard</h1>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="security-intro">
+        <p class="intro-text">
+          This dashboard displays <strong>real-time security analytics</strong> from
+          <strong>Cloudflare</strong> for <code>masmuh.web.id</code>.
+          Cloudflare automatically filters and blocks threats before they reach the
+          server, including DDoS attacks, SQL Injection, cross-site scripting (XSS),
+          credential stuffing, and malicious bots.
+        </p>
+        <div class="intro-details">
+          <div class="intro-item">
+            <span class="intro-icon">🛡️</span>
+            <div>
+              <strong>Web Application Firewall (WAF)</strong>
+              <p>Cloudflare WAF inspects every incoming request and blocks common attack patterns using OWASP rules and real-time signature updates.</p>
+            </div>
+          </div>
+          <div class="intro-item">
+            <span class="intro-icon">🤖</span>
+            <div>
+              <strong>Bot Management</strong>
+              <p>Cloudflare identifies and classifies bot traffic through behavioral analysis, fingerprinting, and machine learning — distinguishing legitimate bots (search engines) from malicious ones (scrapers, attackers).</p>
+            </div>
+          </div>
+          <div class="intro-item">
+            <span class="intro-icon">📊</span>
+            <div>
+              <strong>Analytics & Monitoring</strong>
+              <p>Data is sourced directly from the Cloudflare GraphQL Analytics API, providing accurate, real-time insight into threats blocked at the edge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="security-grid">
+        <div class="stat-card threat-blocked">
+          <div class="stat-icon">🛡️</div>
+          <div class="stat-value" id="stat-threats">12,847</div>
+          <div class="stat-label">Threats Blocked</div>
+        </div>
+        
+        <div class="stat-card bot-traffic">
+          <div class="stat-icon">🤖</div>
+          <div class="stat-value" id="stat-bots">34%</div>
+          <div class="stat-label">Bot Traffic</div>
+        </div>
+        
+        <div class="stat-card top-attacker">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-value" id="stat-top-country">🇮🇩</div>
+          <div class="stat-label">Top Attacker</div>
+        </div>
+        
+        <div class="stat-card requests-today">
+          <div class="stat-icon">📊</div>
+          <div class="stat-value" id="stat-requests">4,291</div>
+          <div class="stat-label">Requests Today</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <div class="section-header">
+        <span class="section-num">[ANALYTICS]</span>
+        <h2 class="section-title">Attack Timeline</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="timeline-chart">
+        <div class="chart-bars" id="timeline-bars">
+          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
+            <span class="bar-tooltip">—</span>
+          </div>
+          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
+            <span class="bar-tooltip">—</span>
+          </div>
+          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
+            <span class="bar-tooltip">—</span>
+          </div>
+          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
+            <span class="bar-tooltip">—</span>
+          </div>
+          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
+            <span class="bar-tooltip">—</span>
+          </div>
+          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
+            <span class="bar-tooltip">—</span>
+          </div>
+          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
+            <span class="bar-tooltip">—</span>
+          </div>
+        </div>
+        <div class="chart-labels" id="timeline-labels"></div>
+      </div>
+    </section>
+
+    <section class="breakdown-section">
+      <div class="section-header">
+        <span class="section-num">[THREATS]</span>
+        <h2 class="section-title">Breakdown</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="breakdown-grid">
+        <div class="breakdown-card">
+          <div class="breakdown-header">
+            <span class="breakdown-icon">💉</span>
+            <span class="breakdown-name">SQL Injection</span>
+            <span class="breakdown-value">4,291</span>
+          </div>
+          <div class="breakdown-bar">
+            <div class="breakdown-fill" style="--width: 67%;"></div>
+          </div>
+          <div class="breakdown-percent">67%</div>
+        </div>
+        
+        <div class="breakdown-card">
+          <div class="breakdown-header">
+            <span class="breakdown-icon">⚡</span>
+            <span class="breakdown-name">XSS</span>
+            <span class="breakdown-value">1,843</span>
+          </div>
+          <div class="breakdown-bar">
+            <div class="breakdown-fill" style="--width: 33%;"></div>
+          </div>
+          <div class="breakdown-percent">33%</div>
+        </div>
+        
+        <div class="breakdown-card">
+          <div class="breakdown-header">
+            <span class="breakdown-icon">🔓</span>
+            <span class="breakdown-name">CUJs</span>
+            <span class="breakdown-value">956</span>
+          </div>
+          <div class="breakdown-bar">
+            <div class="breakdown-fill" style="--width: 18%;"></div>
+          </div>
+          <div class="breakdown-percent">18%</div>
+        </div>
+        
+        <div class="breakdown-card">
+          <div class="breakdown-header">
+            <span class="breakdown-icon">🤖</span>
+            <span class="breakdown-name">Bad Bot</span>
+            <span class="breakdown-value">5,757</span>
+          </div>
+          <div class="breakdown-bar">
+            <div class="breakdown-fill" style="--width: 85%;"></div>
+          </div>
+          <div class="breakdown-percent">85%</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="countries-section">
+      <div class="section-header">
+        <span class="section-num">[SOURCE]</span>
+        <h2 class="section-title">Top Attacking Countries</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="countries-list" id="countries-list">
+        <div class="country-item">
+          <span class="country-rank">#1</span>
+          <span class="country-flag">🇮🇩</span>
+          <span class="country-name">Indonesia</span>
+          <span class="country-count">4,291</span>
+        </div>
+        <div class="country-item">
+          <span class="country-rank">#2</span>
+          <span class="country-flag">🇨🇳</span>
+          <span class="country-name">China</span>
+          <span class="country-count">2,156</span>
+        </div>
+        <div class="country-item">
+          <span class="country-rank">#3</span>
+          <span class="country-flag">🇷🇺</span>
+          <span class="country-name">Russia</span>
+          <span class="country-count">1,843</span>
+        </div>
+        <div class="country-item">
+          <span class="country-rank">#4</span>
+          <span class="country-flag">🇺🇸</span>
+          <span class="country-name">United States</span>
+          <span class="country-count">1,247</span>
+        </div>
+        <div class="country-item">
+          <span class="country-rank">#5</span>
+          <span class="country-flag">🇧🇷</span>
+          <span class="country-name">Brazil</span>
+          <span class="country-count">956</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="refresh-section">
+      <button class="btn-secondary refresh-btn" id="refresh-btn">
+        ↻ Refresh Data
+      </button>
+      <p class="last-updated" id="last-updated">Sample data — connect to Netlify for live updates</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <span>Mas</span>Muhammad © 2026
+    </div>
+    <div class="footer-center">Senior Backend Engineer</div>
+    <div class="footer-right">
+      <a href="/"><span>Home</span></a>
+      <span>·</span>
+      <a href="/resume"><span>CV</span></a>
+      <span>·</span>
+      <a href="/security"><span>Security</span></a>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+function formatNumber(n) {
+  return n.toLocaleString();
+}
+
+const COUNTRY_FLAGS = {
+  US: '🇺🇸', CN: '🇨🇳', RU: '🇷🇺', BR: '🇧🇷', IN: '🇮🇳',
+  ID: '🇮🇩', GB: '🇬🇧', DE: '🇩🇪', FR: '🇫🇷', JP: '🇯🇵',
+  KR: '🇰🇷', SG: '🇸🇬', MY: '🇲🇾', PH: '🇵🇭', TH: '🇹🇭',
+  VN: '🇻🇳', NL: '🇳🇱', AU: '🇦🇺', CA: '🇨🇦', IT: '🇮🇹',
+  UA: '🇺🇦', IR: '🇮🇷', IL: '🇮🇱', TR: '🇹🇷', AR: '🇦🇷',
+  MX: '🇲🇽', NG: '🇳🇬', ZA: '🇿🇦', BD: '🇧🇩', PL: '🇵🇱',
+  SE: '🇸🇪', NO: '🇳🇴', FI: '🇫🇮', CH: '🇨🇭', AT: '🇦🇹',
+  TW: '🇹🇼', HK: '🇭🇰', RO: '🇷🇴', HU: '🇭🇺', CZ: '🇨🇿',
+  SK: '🇸🇰', SI: '🇸🇮', HR: '🇭🇷', BG: '🇧🇬', GR: '🇬🇷',
+  PT: '🇵🇹', ES: '🇪🇸', BE: '🇧🇪', DK: '🇩🇰', IE: '🇮🇪',
+};
+
+function flagFor(code) {
+  if (!code || code === 'Unknown') return '🌍';
+  if (COUNTRY_FLAGS[code]) return COUNTRY_FLAGS[code];
+  const letters = code.toUpperCase().split('');
+  if (letters.length === 2) {
+    return String.fromCodePoint(0x1F1E6 + letters[0].charCodeAt(0) - 65) +
+           String.fromCodePoint(0x1F1E6 + letters[1].charCodeAt(0) - 65);
+  }
+  return '🌍';
+}
+
+function dayName(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('en', { weekday: 'short' });
+}
+
+function monthDay(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('en', { month: 'short', day: 'numeric' });
+}
+
+async function loadData() {
+  const refreshBtn = document.getElementById('refresh-btn');
+  const lastUpdated = document.getElementById('last-updated');
+  if (refreshBtn) refreshBtn.disabled = true;
+  if (lastUpdated) lastUpdated.textContent = 'Connecting to Cloudflare...';
+
+  try {
+    const res = await fetch('/.netlify/functions/security');
+    if (!res.ok) throw new Error('API error');
+    const data = await res.json();
+
+    document.getElementById('stat-threats').textContent = formatNumber(data.threatsBlocked);
+    document.getElementById('stat-requests').textContent = formatNumber(data.requestsToday);
+
+    const top = data.topCountries?.[0];
+    const topEl = document.getElementById('stat-top-country');
+    if (top && top.country) {
+      topEl.textContent = flagFor(top.country);
+    }
+
+    const countriesContainer = document.getElementById('countries-list');
+    if (data.topCountries && countriesContainer) {
+      countriesContainer.innerHTML = '';
+      data.topCountries.slice(0, 5).forEach((c, i) => {
+        const item = document.createElement('div');
+        item.className = 'country-item';
+        item.innerHTML = `
+          <span class="country-rank">#${i + 1}</span>
+          <span class="country-flag">${flagFor(c.country)}</span>
+          <span class="country-name">${c.country || 'Unknown'}</span>
+          <span class="country-count">${formatNumber(c.count)}</span>`;
+        countriesContainer.appendChild(item);
+      });
+    }
+
+    if (lastUpdated) lastUpdated.textContent = 'Last updated: ' + new Date().toLocaleTimeString();
+  } catch (e) {
+    if (lastUpdated) lastUpdated.textContent = 'Sample data — configure Netlify env vars for live updates.';
+  } finally {
+    if (refreshBtn) refreshBtn.disabled = false;
+  }
+}
+
+document.getElementById('refresh-btn')?.addEventListener('click', loadData);
+loadData();
+</script>
+
+<style>
+  .security-page {
+    padding-top: 100px;
+  }
+
+  .security-hero {
+    padding: 60px;
+  }
+
+  .security-intro {
+    margin-bottom: 60px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px;
+  }
+
+  .intro-text {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--white);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .intro-text strong {
+    color: var(--cyan);
+  }
+
+  .intro-text code {
+    font-family: var(--font-mono);
+    color: var(--green);
+    font-size: 12px;
+  }
+
+  .intro-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .intro-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+  }
+
+  .intro-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .intro-item div {
+    flex: 1;
+  }
+
+  .intro-item strong {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .intro-item p {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--cyan);
+    opacity: 0.5;
+  }
+
+  .stat-card:hover {
+    border-color: var(--border-bright);
+    transform: translateY(-4px);
+  }
+
+  .stat-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -2px;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  .stat-trend {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    margin-top: 12px;
+    padding: 4px 10px;
+    display: inline-block;
+    clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+  }
+
+  .stat-trend.positive {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--green);
+    border: 1px solid rgba(0, 255, 157, 0.3);
+  }
+
+  .stat-trend.negative {
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--orange);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+  }
+
+  .stat-trend.neutral {
+    background: rgba(0, 200, 255, 0.1);
+    color: var(--cyan);
+    border: 1px solid var(--border-bright);
+  }
+
+  .threat-blocked .stat-value { color: var(--cyan); }
+  .bot-traffic .stat-value { color: var(--orange); }
+  .top-attacker .stat-value { font-size: 36px; }
+
+  /* Timeline Section */
+  .timeline-section {
+    padding: 60px;
+  }
+
+  .timeline-chart {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 40px;
+  }
+
+  .chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 200px;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chart-bar {
+    flex: 1;
+    max-width: 80px;
+    height: var(--height);
+    background: linear-gradient(to top, var(--cyan), var(--green));
+    position: relative;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .chart-bar:hover {
+    opacity: 0.8;
+    transform: scaleY(1.02);
+  }
+
+  .chart-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 200, 255, 0.3), transparent);
+  }
+
+  .bar-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg);
+    border: 1px solid var(--border-bright);
+    padding: 4px 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cyan);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .chart-bar:hover .bar-tooltip {
+    opacity: 1;
+  }
+
+  .chart-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  /* Breakdown Section */
+  .breakdown-section {
+    padding: 60px;
+  }
+
+  .breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .breakdown-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
+
+  .breakdown-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .breakdown-icon {
+    font-size: 20px;
+  }
+
+  .breakdown-name {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-transform: uppercase;
+    flex: 1;
+  }
+
+  .breakdown-value {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .breakdown-bar {
+    height: 8px;
+    background: var(--bg2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .breakdown-fill {
+    height: 100%;
+    width: var(--width);
+    background: linear-gradient(90deg, var(--cyan), var(--green));
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+
+  .breakdown-percent {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cyan);
+    margin-top: 8px;
+    text-align: right;
+  }
+
+  /* Countries Section */
+  .countries-section {
+    padding: 60px;
+  }
+
+  .countries-list {
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+
+  .country-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .country-item:last-child {
+    border-bottom: none;
+  }
+
+  .country-item:hover {
+    background: var(--cyan-glow);
+  }
+
+  .country-rank {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--cyan);
+    width: 30px;
+  }
+
+  .country-flag {
+    font-size: 24px;
+  }
+
+  .country-name {
+    font-family: var(--font-body);
+    flex: 1;
+    color: var(--white);
+  }
+
+  .country-count {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  /* Refresh Section */
+  .refresh-section {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .last-updated {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .security-hero,
+    .timeline-section,
+    .breakdown-section,
+    .countries-section,
+    .refresh-section {
+      padding: 40px 24px;
+    }
+
+    .stat-value {
+      font-size: 32px;
+    }
+
+    .chart-bars {
+      height: 150px;
+    }
+
+    .country-item {
+      padding: 16px 20px;
+      gap: 12px;
+    }
+
+    .intro-details {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
