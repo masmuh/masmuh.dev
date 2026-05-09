@@ -28,6 +28,7 @@ exports.handler = async () => {
     return { statusCode: 500, body: JSON.stringify({ error: 'CF_ZONE_ID not configured' }) };
   }
 
+  // Fetch analytics for last 7 days
   const start = daysAgo(7);
 
   const queries = {
