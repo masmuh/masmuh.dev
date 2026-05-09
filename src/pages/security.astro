@@ -33,12 +33,13 @@ import Layout from "../layouts/Layout.astro";
   </nav>
 
   <main class="security-page" id="security-page">
+    <div class="wrap">
 
     <div class="page-header">
       <div class="page-header-left">
         <div class="page-tag">[ SECURITY + ANALYTICS ]</div>
         <h1 class="page-title">Dashboard <span class="dim">Visibility</span></h1>
-        <p class="page-subtitle">Real-time view of who's watching masmuh.web.id — legitimate visitors, threats blocked, and engagement patterns. Data dari Cloudflare WAF &amp; Google Analytics 4.</p>
+        <p class="page-subtitle">Real-time view of who's watching masmuh.web.id — legitimate visitors, threats blocked, and engagement patterns. Data from Cloudflare WAF &amp; Google Analytics 4.</p>
         <div style="margin-top:16px">
           <span class="source-badge cf">⚡ CLOUDFLARE</span>
           <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
@@ -196,7 +197,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="donut-wrap">
           <div class="donut-chart-container">
-            <div id="attackDonut" class="chart-container" style="width:160px;height:160px"></div>
+            <div id="attackDonut" class="chart-container" style="width:140px;height:140px"></div>
             <div class="donut-center">
               <div class="donut-center-val" id="donut-total">—</div>
               <div class="donut-center-label">BLOCKED</div>
@@ -240,7 +241,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="donut-wrap">
           <div class="donut-chart-container">
-            <div id="sourceDonut" class="chart-container" style="width:160px;height:160px"></div>
+            <div id="sourceDonut" class="chart-container" style="width:140px;height:140px"></div>
             <div class="donut-center">
               <div class="donut-center-val" id="source-total">—</div>
               <div class="donut-center-label">USERS</div>
@@ -251,7 +252,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
         <div class="insight-box">
-          💡 <strong>Insight:</strong> Semua traffic dari Direct berarti pengunjung sudah tahu URL-mu. Pertimbangkan SEO atau sharing link untuk memperluas jangkauan.
+          💡 <strong>Insight:</strong> 100% Direct traffic means visitors already know your URL. Consider SEO or link sharing to expand your reach.
         </div>
       </div>
       <div class="card">
@@ -287,7 +288,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="card">
           <div class="card-icon">🤖</div>
           <div class="chart-title">Bot Management</div>
-          <p class="card-text">Behavioral fingerprinting dan machine learning membedakan search engine crawler dari bot jahat seperti scrapers dan attackers.</p>
+          <p class="card-text">Behavioral fingerprinting and machine learning distinguish legitimate search engine crawlers from malicious bots such as scrapers and attackers.</p>
           <div class="card-tags">
             <span class="tag tag-green">ML-POWERED</span>
             <span class="tag tag-purple">HEURISTIC</span>
@@ -296,7 +297,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="card">
           <div class="card-icon">📊</div>
           <div class="chart-title">Analytics &amp; Monitoring</div>
-          <p class="card-text">Data dari Cloudflare GraphQL API + Google Analytics 4 memberikan visibilitas menyeluruh terhadap ancaman dan perilaku pengunjung.</p>
+          <p class="card-text">Data from Cloudflare GraphQL API + Google Analytics 4 provides comprehensive visibility into threats and visitor behavior.</p>
           <div class="card-tags">
             <span class="tag tag-amber">CLOUDFLARE</span>
             <span class="tag tag-blue">GA4</span>
@@ -305,6 +306,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
 
+    </div><!-- /wrap -->
   </main>
 
   <footer>
@@ -735,7 +737,7 @@ async function loadData() {
 
   if (lastUpdated) {
     if (cfRes.status === 'rejected' && gaRes.status === 'rejected') {
-      lastUpdated.textContent = 'Sample data — API tidak tersedia.';
+      lastUpdated.textContent = 'Sample data — API unavailable.';
     } else {
       const sources = [];
       if (cfRes.status === 'fulfilled') sources.push('Cloudflare');
@@ -754,7 +756,19 @@ document.getElementById('refresh-btn')?.addEventListener('click', loadData);
 loadData();
 </script>
 
-<style>
+<style is:global>
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34,211,238,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,211,238,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .security-page {
   padding-top: 100px;
   --text-primary: #f0f6ff;
@@ -771,8 +785,26 @@ loadData();
   --glow: rgba(34,211,238,0.15);
 }
 
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,12,20,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+}
+
 .page-header {
-  padding: 20px 60px 32px;
+  padding: 20px 0 32px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -854,7 +886,7 @@ loadData();
 .source-badge.ga { background: rgba(96,165,250,0.12); color: #93c5fd; }
 .source-badge.combined { background: rgba(167,139,250,0.12); color: #c4b5fd; }
 
-.section { margin-bottom: 40px; padding: 0 60px; }
+.section { margin-bottom: 40px; padding: 0; }
 
 .section-divider {
   display: flex;
@@ -1057,7 +1089,7 @@ loadData();
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 16px;
-  padding: 0 60px;
+  padding: 0;
   margin-bottom: 40px;
 }
 
@@ -1065,7 +1097,7 @@ loadData();
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  padding: 0 60px;
+  padding: 0;
   margin-bottom: 40px;
 }
 
@@ -1222,8 +1254,8 @@ loadData();
 .donut-chart-container {
   display: grid;
   grid-template-areas: "stack";
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   flex-shrink: 0;
 }
 
@@ -1350,6 +1382,28 @@ loadData();
   line-height: 1.5;
 }
 
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 64px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: 'Space Mono', monospace;
+}
+.footer-left { color: var(--text-muted); }
+.footer-left span { color: var(--cyan); }
+.footer-center { color: var(--text-muted); opacity: 0.6; }
+.footer-right { display: flex; gap: 16px; align-items: center; }
+.footer-right a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.footer-right a:hover { color: var(--cyan); }
+.footer-right span { color: var(--text-muted); opacity: 0.3; }
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1371,9 +1425,10 @@ loadData();
 @media (max-width: 600px) {
   .hero-metrics { grid-template-columns: 1fr 1fr; }
   .engagement-grid { grid-template-columns: 1fr 1fr; }
-  .section { padding: 0 24px; }
-  .page-header { padding: 20px 24px 24px; }
-  .two-col, .two-thirds { padding: 0 24px; }
+  .section { padding: 0; }
+  .page-header { padding: 20px 0 24px; }
+  .two-col, .two-thirds { padding: 0; }
   .metric-value { font-size: 24px; }
+  .wrap { padding: 0 16px; }
 }
 </style>
