@@ -40,7 +40,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="security-intro">
         <p class="intro-text">
           This dashboard displays <strong>real-time security analytics</strong> from
-          <strong>Cloudflare</strong> for <code>masmuh.web.id</code>.
+          <strong>Cloudflare</strong> for <code>masmuh.web.id</code> over the <strong>last 24 hours</strong>.
           Cloudflare automatically filters and blocks threats before they reach the
           server, including DDoS attacks, SQL Injection, cross-site scripting (XSS),
           credential stuffing, and malicious bots.
@@ -67,6 +67,13 @@ import Layout from "../layouts/Layout.astro";
               <p>Data is sourced directly from the Cloudflare GraphQL Analytics API, providing accurate, real-time insight into threats blocked at the edge.</p>
             </div>
           </div>
+          <div class="intro-item">
+            <span class="intro-icon">🔍</span>
+            <div>
+              <strong>Anti-Scraping & Crawl Protection</strong>
+              <p>Cloudflare identifies automated scraping tools and aggressive crawlers through behavioral fingerprinting and adaptive rate limiting — blocking unauthorized content extraction while preserving access for legitimate search engines and APIs.</p>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -85,8 +92,8 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="stat-card">
           <div class="stat-icon">🌍</div>
-          <div class="stat-value" id="stat-top-country">—</div>
-          <div class="stat-label" id="stat-top-label">Top Attacker</div>
+          <div class="stat-value stat-value--country" id="stat-top-country">—</div>
+          <div class="stat-label">Top Attacking Country</div>
         </div>
         
         <div class="stat-card">
@@ -100,81 +107,38 @@ import Layout from "../layouts/Layout.astro";
     <section class="timeline-section">
       <div class="section-header">
         <span class="section-num">[ANALYTICS]</span>
-        <h2 class="section-title">Attack Timeline</h2>
+        <h2 class="section-title">Blocked Requests (24h)</h2>
         <div class="section-line"></div>
       </div>
-      
-      <div class="timeline-chart">
-        <div class="chart-bars" id="timeline-bars">
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-          <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-        </div>
-        <div class="chart-labels" id="timeline-labels">
-          <span>00:00</span><span>02:00</span><span>04:00</span><span>06:00</span>
-          <span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span>
-          <span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span>
-        </div>
-      </div>
-          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
-            <span class="bar-tooltip">—</span>
-          </div>
-          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
-            <span class="bar-tooltip">—</span>
-          </div>
-          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
-            <span class="bar-tooltip">—</span>
-          </div>
-          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
-            <span class="bar-tooltip">—</span>
-          </div>
-          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
-            <span class="bar-tooltip">—</span>
-          </div>
-          <div class="chart-bar chart-bar--loading" style="--height: 10%;">
-            <span class="bar-tooltip">—</span>
-          </div>
-        </div>
-        <div class="chart-labels" id="timeline-labels"></div>
-      </div>
-    </section>
 
-    <section class="protected-section">
-      <div class="section-header">
-        <span class="section-num">[PROTECTION]</span>
-        <h2 class="section-title">Cloudflare Protections</h2>
-        <div class="section-line"></div>
-      </div>
-      
-      <div class="protected-grid">
-        <div class="protected-item">
-          <span class="protected-icon">🛡️</span>
-          <strong>WAF</strong>
-          <p>Web Application Firewall blocks OWASP Top 10 attacks including SQLi, XSS, and path traversal at the edge before they reach your server.</p>
-        </div>
-        <div class="protected-item">
-          <span class="protected-icon">🌊</span>
-          <strong>DDoS Mitigation</strong>
-          <p>Cloudflare automatically detects and mitigates volumetric DDoS attacks across L3/L4/L7, scrubbing malicious traffic in real-time.</p>
-        </div>
-        <div class="protected-item">
-          <span class="protected-icon">🤖</span>
-          <strong>Bot Management</strong>
-          <p>Machine learning-based bot detection classifies traffic as automated or human, blocking malicious scrapers and credential stuffers.</p>
-        </div>
-        <div class="protected-item">
-          <span class="protected-icon">🔒</span>
-          <strong>SSL/TLS</strong>
-          <p>End-to-end encryption with automatic certificate management, HSTS preloading, and forced HTTPS for all visitor connections.</p>
+      <div class="timeline-chart">
+        <div class="chart-body">
+          <div class="chart-y-axis">
+            <span>100</span>
+            <span>50</span>
+            <span>0</span>
+          </div>
+          <div class="chart-main">
+            <div class="chart-bars" id="timeline-bars">
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
+            </div>
+            <div class="chart-labels" id="timeline-labels">
+              <span>00:00</span><span>02:00</span><span>04:00</span><span>06:00</span>
+              <span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span>
+              <span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -186,14 +150,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="section-line"></div>
       </div>
       
-      <div class="countries-list" id="countries-list">
-        <div class="country-item">
-          <span class="country-rank">—</span>
-          <span class="country-flag">—</span>
-          <span class="country-name">Waiting for data...</span>
-          <span class="country-count">—</span>
-        </div>
-      </div>
+      <div class="countries-chart" id="countries-chart"></div>
     </section>
 
     <section class="refresh-section">
@@ -296,10 +253,8 @@ function populateUI(data) {
 
   const top = data.topCountries?.[0];
   const topEl = document.getElementById('stat-top-country');
-  const topLabel = document.getElementById('stat-top-label');
   if (top && top.country) {
-    topEl.textContent = flagFor(top.country);
-    topLabel.textContent = countryName(top.country);
+    topEl.textContent = flagFor(top.country) + ' ' + countryName(top.country);
   }
 
   // Timeline
@@ -322,18 +277,23 @@ function populateUI(data) {
     }
   }
 
-  // Countries
-  const cEl = document.getElementById('countries-list');
+  // Countries bar chart
+  const cEl = document.getElementById('countries-chart');
   if (data.topCountries && cEl) {
     cEl.innerHTML = '';
+    const maxC = Math.max(...data.topCountries.map(c => c.count), 1);
     data.topCountries.slice(0, 5).forEach((c, i) => {
+      const pct = (c.count / maxC) * 100;
       const item = document.createElement('div');
-      item.className = 'country-item';
+      item.className = 'country-bar-item';
       item.innerHTML = `
-        <span class="country-rank">#${i + 1}</span>
-        <span class="country-flag">${flagFor(c.country)}</span>
-        <span class="country-name">${countryName(c.country)}</span>
-        <span class="country-count">${formatNumber(c.count)}</span>`;
+        <span class="country-bar-rank">#${i + 1}</span>
+        <span class="country-bar-flag">${flagFor(c.country)}</span>
+        <span class="country-bar-name">${countryName(c.country)}</span>
+        <div class="country-bar-track">
+          <div class="country-bar-fill" style="width:${pct}%"></div>
+        </div>
+        <span class="country-bar-count">${formatNumber(c.count)}</span>`;
       cEl.appendChild(item);
     });
   }
@@ -521,6 +481,14 @@ loadData();
   .bot-traffic .stat-value { color: var(--orange); }
   .top-attacker .stat-value { font-size: 36px; }
 
+  .stat-value--country {
+    font-size: 32px;
+    letter-spacing: -1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   /* Timeline Section */
   .timeline-section {
     padding: 60px;
@@ -529,7 +497,34 @@ loadData();
   .timeline-chart {
     background: var(--surface);
     border: 1px solid var(--border);
-    padding: 40px;
+    padding: 32px;
+  }
+
+  .chart-body {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .chart-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 36px;
+    width: 40px;
+    flex-shrink: 0;
+  }
+
+  .chart-y-axis span {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .chart-main {
+    flex: 1;
+    min-width: 0;
   }
 
   .chart-bars {
@@ -537,31 +532,41 @@ loadData();
     align-items: flex-end;
     justify-content: space-between;
     height: 200px;
-    gap: 16px;
+    gap: 4px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .chart-bars::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to top,
+      transparent,
+      transparent 24%,
+      var(--border) 24%,
+      var(--border) 25%
+    );
+    opacity: 0.15;
+    pointer-events: none;
   }
 
   .chart-bar {
     flex: 1;
-    max-width: 80px;
     height: var(--height);
     background: linear-gradient(to top, var(--cyan), var(--green));
     position: relative;
     transition: all 0.3s;
     cursor: pointer;
+    min-height: 6px;
+    border-radius: 2px 2px 0 0;
   }
 
   .chart-bar:hover {
-    opacity: 0.8;
-    transform: scaleY(1.02);
-  }
-
-  .chart-bar::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 200, 255, 0.3), transparent);
+    opacity: 0.85;
+    transform: scaleY(1.03);
   }
 
   .bar-tooltip {
@@ -571,14 +576,15 @@ loadData();
     transform: translateX(-50%);
     background: var(--bg);
     border: 1px solid var(--border-bright);
-    padding: 4px 10px;
+    padding: 4px 8px;
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--cyan);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.2s;
     white-space: nowrap;
     pointer-events: none;
+    z-index: 2;
   }
 
   .chart-bar:hover .bar-tooltip {
@@ -588,128 +594,84 @@ loadData();
   .chart-labels {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
-
-  /* Breakdown Section */
-  .breakdown-section {
-    padding: 60px;
-  }
-
-  .breakdown-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
-  .breakdown-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 24px;
-  }
-
-  .breakdown-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
-  .breakdown-icon {
-    font-size: 20px;
-  }
-
-  .breakdown-name {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: var(--muted);
-    text-transform: uppercase;
-    flex: 1;
-  }
-
-  .breakdown-value {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--white);
-  }
-
-  .breakdown-bar {
-    height: 8px;
-    background: var(--bg2);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .breakdown-fill {
-    height: 100%;
-    width: var(--width);
-    background: linear-gradient(90deg, var(--cyan), var(--green));
-    border-radius: 4px;
-    transition: width 0.5s ease;
-  }
-
-  .breakdown-percent {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--cyan);
     margin-top: 8px;
-    text-align: right;
   }
 
-  /* Countries Section */
+  .chart-labels span {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--muted);
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Countries Bar Chart */
   .countries-section {
     padding: 60px;
   }
 
-  .countries-list {
+  .countries-chart {
     background: var(--surface);
     border: 1px solid var(--border);
+    padding: 24px 28px;
   }
 
-  .country-item {
+  .country-bar-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px 28px;
+    gap: 16px;
+    padding: 14px 0;
     border-bottom: 1px solid var(--border);
-    transition: all 0.3s;
   }
 
-  .country-item:last-child {
+  .country-bar-item:last-child {
     border-bottom: none;
   }
 
-  .country-item:hover {
-    background: var(--cyan-glow);
-  }
-
-  .country-rank {
+  .country-bar-rank {
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: 11px;
     color: var(--cyan);
-    width: 30px;
+    width: 28px;
+    flex-shrink: 0;
   }
 
-  .country-flag {
-    font-size: 24px;
+  .country-bar-flag {
+    font-size: 20px;
+    flex-shrink: 0;
   }
 
-  .country-name {
+  .country-bar-name {
     font-family: var(--font-body);
-    flex: 1;
+    font-size: 13px;
     color: var(--white);
+    width: 130px;
+    flex-shrink: 0;
   }
 
-  .country-count {
+  .country-bar-track {
+    flex: 1;
+    height: 20px;
+    background: var(--bg2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .country-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--cyan), var(--green));
+    border-radius: 2px;
+    transition: width 0.6s ease;
+  }
+
+  .country-bar-count {
     font-family: var(--font-mono);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
+    width: 80px;
+    text-align: right;
+    flex-shrink: 0;
   }
 
   /* Refresh Section */
@@ -734,51 +696,11 @@ loadData();
     letter-spacing: 1px;
   }
 
-  /* Protection Section */
-  .protected-section {
-    padding: 60px;
-  }
-
-  .protected-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-  }
-
-  .protected-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 28px;
-  }
-
-  .protected-icon {
-    font-size: 24px;
-    display: block;
-    margin-bottom: 12px;
-  }
-
-  .protected-item strong {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--cyan);
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  .protected-item p {
-    font-family: var(--font-body);
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
     .security-hero,
     .timeline-section,
-    .breakdown-section,
     .countries-section,
     .refresh-section {
       padding: 40px 24px;
@@ -788,13 +710,35 @@ loadData();
       font-size: 32px;
     }
 
+    .stat-value--country {
+      font-size: 24px;
+    }
+
     .chart-bars {
       height: 150px;
     }
 
-    .country-item {
-      padding: 16px 20px;
-      gap: 12px;
+    .chart-y-axis {
+      width: 28px;
+    }
+
+    .chart-y-axis span {
+      font-size: 8px;
+    }
+
+    .country-bar-item {
+      gap: 10px;
+      padding: 12px 0;
+    }
+
+    .country-bar-name {
+      width: 80px;
+      font-size: 12px;
+    }
+
+    .country-bar-count {
+      width: 60px;
+      font-size: 11px;
     }
 
     .intro-details {
