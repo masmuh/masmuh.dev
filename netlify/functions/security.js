@@ -32,7 +32,7 @@ exports.handler = async () => {
 
   const queries = {
     threats: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { firewallEventsAdaptiveGroups(limit: 1, filter: { date_geq: "${start}", action: "block" }) { count } } } }`,
-    countries: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { firewallEventsAdaptiveGroups(limit: 5, filter: { date_geq: "${start}", action: "block" }, orderBy: [count_DESC]) { count dimensions { country } } } } }`,
+    countries: `{ viewer { zones(filter: {zoneTag: "${zoneId}"}) { firewallEventsAdaptiveGroups(limit: 5, filter: { date_geq: "${start}", action: "block" }, orderBy: [count_DESC]) { count dimensions { clientCountryName } } } } }`,
   };
 
   try {
@@ -45,7 +45,7 @@ exports.handler = async () => {
     const threatGroups = zones(threatRes).firewallEventsAdaptiveGroups || [];
     const threatsBlocked = threatGroups.reduce((sum, g) => sum + g.count, 0);
     const topCountries = (zones(countriesRes).firewallEventsAdaptiveGroups || []).map((g) => ({
-      country: g.dimensions?.country || 'Unknown',
+      country: g.dimensions?.clientCountryName || 'Unknown',
       count: g.count,
     }));
 
