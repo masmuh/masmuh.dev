@@ -110,36 +110,8 @@ import Layout from "../layouts/Layout.astro";
         <h2 class="section-title">Blocked Requests (24h)</h2>
         <div class="section-line"></div>
       </div>
-
-      <div class="timeline-chart">
-        <div class="chart-body">
-          <div class="chart-y-axis">
-            <span>100</span>
-            <span>50</span>
-            <span>0</span>
-          </div>
-          <div class="chart-main">
-            <div class="chart-bars" id="timeline-bars">
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-              <div class="chart-bar" style="--height: 5%;"><span class="bar-tooltip">—</span></div>
-            </div>
-            <div class="chart-labels" id="timeline-labels">
-              <span>00:00</span><span>02:00</span><span>04:00</span><span>06:00</span>
-              <span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span>
-              <span>16:00</span><span>18:00</span><span>20:00</span><span>22:00</span>
-            </div>
-          </div>
-        </div>
+      <div class="echarts-wrap">
+        <div id="timeline-chart" style="height: 320px;"></div>
       </div>
     </section>
 
@@ -149,17 +121,8 @@ import Layout from "../layouts/Layout.astro";
         <h2 class="section-title">Top Attacking Countries</h2>
         <div class="section-line"></div>
       </div>
-      
-      <div class="countries-chart" id="countries-chart">
-        <div class="donut-wrap">
-          <svg viewBox="0 0 200 200" class="donut-svg">
-            <circle cx="100" cy="100" r="76" fill="none" stroke="var(--bg2)" stroke-width="22"/>
-            <g id="donut-segments"></g>
-            <text x="100" y="94" text-anchor="middle" class="donut-total" id="donut-total">—</text>
-            <text x="100" y="115" text-anchor="middle" class="donut-label">blocked</text>
-          </svg>
-        </div>
-        <div class="donut-legend" id="donut-legend"></div>
+      <div class="echarts-wrap">
+        <div id="countries-chart" style="height: 400px;"></div>
       </div>
     </section>
 
@@ -187,6 +150,8 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script>
+import * as echarts from 'echarts';
+
 const formatNumber = n => n.toLocaleString();
 
 const COUNTRY_NAMES = {
@@ -227,30 +192,134 @@ function flagFor(code) {
   return '🌍';
 }
 
-// Sample data for local dev fallback
-const SAMPLE = {
-  threatsBlocked: 12847,
-  requestsToday: 4291,
-  timeline: [
-    { hour: '00:00', count: 42 }, { hour: '01:00', count: 38 },
-    { hour: '02:00', count: 25 }, { hour: '03:00', count: 18 },
-    { hour: '04:00', count: 22 }, { hour: '05:00', count: 31 },
-    { hour: '06:00', count: 45 }, { hour: '07:00', count: 67 },
-    { hour: '08:00', count: 89 }, { hour: '09:00', count: 120 },
-    { hour: '10:00', count: 145 }, { hour: '11:00', count: 132 },
-    { hour: '12:00', count: 98 }, { hour: '13:00', count: 87 },
-    { hour: '14:00', count: 112 }, { hour: '15:00', count: 95 },
-    { hour: '16:00', count: 78 }, { hour: '17:00', count: 65 },
-    { hour: '18:00', count: 54 }, { hour: '19:00', count: 48 },
-    { hour: '20:00', count: 52 }, { hour: '21:00', count: 43 },
-    { hour: '22:00', count: 38 }, { hour: '23:00', count: 29 },
-  ],
-  topCountries: [
-    { country: 'ID', count: 4291 }, { country: 'CN', count: 2156 },
-    { country: 'RU', count: 1843 }, { country: 'US', count: 1247 },
-    { country: 'BR', count: 956 },
-  ],
+const EC = {
+  bg: '#0c1526',
+  text: '#a0b3cc',
+  textLight: '#e0e6f1',
+  cyan: '#00c8ff',
+  green: '#00ff9d',
+  orange: '#ff6b35',
+  purple: '#a78bfa',
+  slate: '#64748b',
+  border: '#1a2a40',
 };
+
+let timelineChart, countriesChart;
+
+function initCharts() {
+  if (timelineChart) timelineChart.dispose();
+  if (countriesChart) countriesChart.dispose();
+  timelineChart = echarts.init(document.getElementById('timeline-chart'), null, { renderer: 'svg' });
+  countriesChart = echarts.init(document.getElementById('countries-chart'), null, { renderer: 'svg' });
+}
+
+function renderTimeline(timeline) {
+  if (!timelineChart || !timeline) return;
+  const hours = timeline.map(t => t.hour);
+  const counts = timeline.map(t => t.count);
+  timelineChart.setOption({
+    backgroundColor: 'transparent',
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: EC.bg,
+      borderColor: EC.border,
+      textStyle: { color: EC.textLight, fontFamily: 'var(--font-mono)', fontSize: 12 },
+      formatter: p => `${p[0].name}<br/><span style="color:${EC.cyan}">●</span> Blocked: ${formatNumber(p[0].value)}`,
+    },
+    grid: { left: 50, right: 20, top: 20, bottom: 30 },
+    xAxis: {
+      type: 'category',
+      data: hours,
+      axisLine: { lineStyle: { color: EC.border } },
+      axisTick: { show: false },
+      axisLabel: { color: EC.text, fontFamily: 'var(--font-mono)', fontSize: 10, interval: 2 },
+    },
+    yAxis: {
+      type: 'value',
+      splitLine: { lineStyle: { color: EC.border, type: 'dashed', opacity: 0.4 } },
+      axisLine: { show: false },
+      axisTick: { show: false },
+      axisLabel: { color: EC.text, fontFamily: 'var(--font-mono)', fontSize: 10 },
+    },
+    series: [{
+      type: 'bar',
+      data: counts,
+      itemStyle: {
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          { offset: 0, color: EC.cyan },
+          { offset: 1, color: 'rgba(0,200,255,0.1)' },
+        ]),
+        borderRadius: [3, 3, 0, 0],
+      },
+      barWidth: '60%',
+      animationDuration: 800,
+    }],
+  });
+}
+
+function renderCountries(topCountries) {
+  if (!countriesChart || !topCountries) return;
+  const total = topCountries.reduce((s, c) => s + c.count, 0);
+  const colors = [EC.cyan, EC.green, EC.orange, EC.purple, EC.slate];
+  const data = topCountries.slice(0, 5).map((c, i) => ({
+    name: flagFor(c.country) + ' ' + countryName(c.country),
+    value: c.count,
+    pct: ((c.count / total) * 100).toFixed(1) + '%',
+    itemStyle: { color: colors[i] },
+  }));
+
+  countriesChart.setOption({
+    backgroundColor: 'transparent',
+    tooltip: {
+      backgroundColor: EC.bg,
+      borderColor: EC.border,
+      textStyle: { color: EC.textLight, fontFamily: 'var(--font-mono)', fontSize: 12 },
+      formatter: p => `${p.name}<br/><span style="color:${p.color}">●</span> ${formatNumber(p.value)} (${p.data.pct})`,
+    },
+    legend: {
+      orient: 'vertical',
+      right: 10,
+      top: 'center',
+      textStyle: { color: EC.text, fontFamily: 'var(--font-body)', fontSize: 12 },
+      itemWidth: 10,
+      itemHeight: 10,
+      itemGap: 14,
+      icon: 'circle',
+      formatter: name => {
+        const item = data.find(d => d.name === name);
+        return `{name|${name}}  {pct|${item ? item.pct : ''}}`;
+      },
+      textStyle: {
+        rich: {
+          name: { color: EC.textLight, fontFamily: 'var(--font-body)', fontSize: 12, width: 180 },
+          pct: { color: EC.cyan, fontFamily: 'var(--font-mono)', fontSize: 11, align: 'right' },
+        },
+      },
+    },
+    series: [{
+      type: 'pie',
+      radius: ['45%', '70%'],
+      center: ['35%', '50%'],
+      avoidLabelOverlap: true,
+      itemStyle: { borderRadius: 6, borderColor: EC.bg, borderWidth: 3 },
+      label: { show: false },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 14,
+          fontWeight: 'bold',
+          color: EC.textLight,
+          formatter: p => formatNumber(p.value),
+        },
+        itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.3)' },
+      },
+      data,
+      animationType: 'scale',
+      animationEasing: 'elasticOut',
+      animationDuration: 1000,
+    }],
+  });
+}
 
 function populateUI(data) {
   document.getElementById('stat-threats').textContent = formatNumber(data.threatsBlocked);
@@ -267,94 +336,8 @@ function populateUI(data) {
     topEl.textContent = flagFor(top.country) + ' ' + countryName(top.country);
   }
 
-  // Timeline
-  const barsEl = document.getElementById('timeline-bars');
-  const labelsEl = document.getElementById('timeline-labels');
-  if (data.timeline && barsEl) {
-    const maxC = Math.max(...data.timeline.map(t => t.count), 1);
-    barsEl.innerHTML = '';
-    labelsEl.innerHTML = '';
-    for (const t of data.timeline) {
-      const pct = (t.count / maxC) * 85 + 5;
-      const bar = document.createElement('div');
-      bar.className = 'chart-bar';
-      bar.style.setProperty('--height', pct + '%');
-      bar.innerHTML = `<span class="bar-tooltip">${formatNumber(t.count)}</span>`;
-      barsEl.appendChild(bar);
-      const lbl = document.createElement('span');
-      lbl.textContent = t.hour;
-      labelsEl.appendChild(lbl);
-    }
-  }
-
-  // Countries donut chart
-  const cEl = document.getElementById('countries-chart');
-  const segEl = document.getElementById('donut-segments');
-  const legendEl = document.getElementById('donut-legend');
-  const totalEl = document.getElementById('donut-total');
-  if (data.topCountries && cEl) {
-    const total = data.topCountries.reduce((s, c) => s + c.count, 0);
-    const colors = ['#00c8ff', '#00ff9d', '#ff6b35', '#a78bfa', '#94a3b8'];
-    const r = 76;
-    const circumf = 2 * Math.PI * r;
-
-    totalEl.textContent = formatNumber(total);
-
-    // Group into max 2 segments + Others
-    const show = data.topCountries.slice(0, 5);
-    let othersSum = 0;
-    const segments = [];
-    show.forEach((c, i) => {
-      if (i < 2) {
-        segments.push({ name: countryName(c.country), count: c.count, pct: c.count / total, color: colors[i] });
-      } else {
-        othersSum += c.count;
-      }
-    });
-    if (othersSum > 0) {
-      segments.push({ name: 'Others', count: othersSum, pct: othersSum / total, color: colors[4] });
-    }
-
-    // Render donut
-    let offset = 0;
-    segEl.innerHTML = '';
-    for (const seg of segments) {
-      const dash = Math.max(seg.pct * circumf, 10);
-      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      circle.setAttribute('cx', '100');
-      circle.setAttribute('cy', '100');
-      circle.setAttribute('r', r + '');
-      circle.setAttribute('fill', 'none');
-      circle.setAttribute('stroke', seg.color);
-      circle.setAttribute('stroke-width', '22');
-      circle.setAttribute('stroke-dasharray', dash + ' ' + (circumf - dash));
-      circle.setAttribute('stroke-dashoffset', '-' + offset);
-      circle.setAttribute('stroke-linecap', 'butt');
-      circle.setAttribute('transform', 'rotate(-90 100 100)');
-      const t = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-      t.textContent = seg.name + ': ' + formatNumber(seg.count) + ' (' + (seg.pct * 100).toFixed(1) + '%)';
-      circle.appendChild(t);
-      segEl.appendChild(circle);
-      offset += dash;
-    }
-
-    // Render legend
-    legendEl.innerHTML = '';
-    show.forEach((c, i) => {
-      const pct = c.count / total;
-      const color = i < 5 ? colors[i] : colors[4];
-      const item = document.createElement('div');
-      item.className = 'legend-item';
-      item.innerHTML =
-        '<span class="legend-dot" style="--dot-color:' + color + '"></span>' +
-        '<span class="legend-flag">' + flagFor(c.country) + '</span>' +
-        '<span class="legend-name">' + countryName(c.country) + '</span>' +
-        '<div class="legend-track"><div class="legend-fill" style="width:' + (pct * 100) + '%;--fill-color:' + color + '"></div></div>' +
-        '<span class="legend-count">' + formatNumber(c.count) + '</span>' +
-        '<span class="legend-pct">' + (pct * 100).toFixed(1) + '%</span>';
-      legendEl.appendChild(item);
-    });
-  }
+  renderTimeline(data.timeline);
+  renderCountries(data.topCountries);
 }
 
 async function loadData() {
@@ -370,12 +353,41 @@ async function loadData() {
     populateUI(data);
     if (lastUpdated) lastUpdated.textContent = 'Last updated: ' + new Date().toLocaleTimeString();
   } catch {
+    const SAMPLE = {
+      threatsBlocked: 12847,
+      requestsToday: 4291,
+      timeline: [
+        { hour: '00:00', count: 42 }, { hour: '01:00', count: 38 },
+        { hour: '02:00', count: 25 }, { hour: '03:00', count: 18 },
+        { hour: '04:00', count: 22 }, { hour: '05:00', count: 31 },
+        { hour: '06:00', count: 45 }, { hour: '07:00', count: 67 },
+        { hour: '08:00', count: 89 }, { hour: '09:00', count: 120 },
+        { hour: '10:00', count: 145 }, { hour: '11:00', count: 132 },
+        { hour: '12:00', count: 98 }, { hour: '13:00', count: 87 },
+        { hour: '14:00', count: 112 }, { hour: '15:00', count: 95 },
+        { hour: '16:00', count: 78 }, { hour: '17:00', count: 65 },
+        { hour: '18:00', count: 54 }, { hour: '19:00', count: 48 },
+        { hour: '20:00', count: 52 }, { hour: '21:00', count: 43 },
+        { hour: '22:00', count: 38 }, { hour: '23:00', count: 29 },
+      ],
+      topCountries: [
+        { country: 'ID', count: 4291 }, { country: 'CN', count: 2156 },
+        { country: 'RU', count: 1843 }, { country: 'US', count: 1247 },
+        { country: 'BR', count: 956 },
+      ],
+    };
     populateUI(SAMPLE);
     if (lastUpdated) lastUpdated.textContent = 'Sample data — connect to Netlify for live updates.';
   } finally {
     if (refreshBtn) refreshBtn.disabled = false;
   }
 }
+
+initCharts();
+window.addEventListener('resize', () => {
+  timelineChart?.resize();
+  countriesChart?.resize();
+});
 
 document.getElementById('refresh-btn')?.addEventListener('click', loadData);
 loadData();
@@ -508,37 +520,6 @@ loadData();
     margin-top: 8px;
   }
 
-  .stat-trend {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    margin-top: 12px;
-    padding: 4px 10px;
-    display: inline-block;
-    clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
-  }
-
-  .stat-trend.positive {
-    background: rgba(0, 255, 157, 0.1);
-    color: var(--green);
-    border: 1px solid rgba(0, 255, 157, 0.3);
-  }
-
-  .stat-trend.negative {
-    background: rgba(255, 107, 53, 0.1);
-    color: var(--orange);
-    border: 1px solid rgba(255, 107, 53, 0.3);
-  }
-
-  .stat-trend.neutral {
-    background: rgba(0, 200, 255, 0.1);
-    color: var(--cyan);
-    border: 1px solid var(--border-bright);
-  }
-
-  .threat-blocked .stat-value { color: var(--cyan); }
-  .bot-traffic .stat-value { color: var(--orange); }
-  .top-attacker .stat-value { font-size: 36px; }
-
   .stat-value--country {
     font-size: 32px;
     letter-spacing: -1px;
@@ -547,229 +528,17 @@ loadData();
     white-space: nowrap;
   }
 
-  /* Timeline Section */
-  .timeline-section {
-    padding: 60px;
-  }
-
-  .timeline-chart {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 32px;
-  }
-
-  .chart-body {
-    display: flex;
-    gap: 12px;
-    align-items: stretch;
-  }
-
-  .chart-y-axis {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 36px;
-    width: 40px;
-    flex-shrink: 0;
-  }
-
-  .chart-y-axis span {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--muted);
-    text-align: right;
-  }
-
-  .chart-main {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .chart-bars {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    height: 200px;
-    gap: 4px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
-
-  .chart-bars::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      to top,
-      transparent,
-      transparent 24%,
-      var(--border) 24%,
-      var(--border) 25%
-    );
-    opacity: 0.15;
-    pointer-events: none;
-  }
-
-  .chart-bar {
-    flex: 1;
-    height: var(--height);
-    background: linear-gradient(to top, var(--cyan), var(--green));
-    position: relative;
-    transition: all 0.3s;
-    cursor: pointer;
-    min-height: 6px;
-    border-radius: 2px 2px 0 0;
-  }
-
-  .chart-bar:hover {
-    opacity: 0.85;
-    transform: scaleY(1.03);
-  }
-
-  .bar-tooltip {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg);
-    border: 1px solid var(--border-bright);
-    padding: 4px 8px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--cyan);
-    opacity: 0;
-    transition: opacity 0.2s;
-    white-space: nowrap;
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  .chart-bar:hover .bar-tooltip {
-    opacity: 1;
-  }
-
-  .chart-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 8px;
-  }
-
-  .chart-labels span {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    color: var(--muted);
-    flex: 1;
-    text-align: center;
-  }
-
-  /* Countries Donut Chart */
+  .timeline-section,
   .countries-section {
     padding: 60px;
   }
 
-  .countries-chart {
+  .echarts-wrap {
     background: var(--surface);
     border: 1px solid var(--border);
-    padding: 36px 40px;
-    display: flex;
-    align-items: center;
-    gap: 48px;
+    padding: 24px;
   }
 
-  .donut-wrap {
-    flex-shrink: 0;
-  }
-
-  .donut-svg {
-    width: 180px;
-    height: 180px;
-  }
-
-  .donut-total {
-    font-family: var(--font-display);
-    font-size: 28px;
-    font-weight: 800;
-    fill: var(--white);
-  }
-
-  .donut-label {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    fill: var(--muted);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .donut-legend {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 6px 0;
-  }
-
-  .legend-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--dot-color);
-    flex-shrink: 0;
-  }
-
-  .legend-flag {
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-
-  .legend-name {
-    font-family: var(--font-body);
-    font-size: 12px;
-    color: var(--white);
-    width: 120px;
-    flex-shrink: 0;
-  }
-
-  .legend-track {
-    flex: 1;
-    height: 6px;
-    background: var(--bg2);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .legend-fill {
-    height: 100%;
-    background: var(--fill-color);
-    border-radius: 3px;
-    transition: width 0.6s ease;
-  }
-
-  .legend-count {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--muted);
-    width: 50px;
-    text-align: right;
-    flex-shrink: 0;
-  }
-
-  .legend-pct {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--cyan-dim);
-    width: 48px;
-    text-align: right;
-    flex-shrink: 0;
-  }
-
-  /* Refresh Section */
   .refresh-section {
     padding: 60px;
     display: flex;
@@ -791,8 +560,6 @@ loadData();
     letter-spacing: 1px;
   }
 
-
-  /* Mobile Responsive */
   @media (max-width: 768px) {
     .security-hero,
     .timeline-section,
@@ -807,44 +574,6 @@ loadData();
 
     .stat-value--country {
       font-size: 24px;
-    }
-
-    .chart-bars {
-      height: 150px;
-    }
-
-    .chart-y-axis {
-      width: 28px;
-    }
-
-    .chart-y-axis span {
-      font-size: 8px;
-    }
-
-    .countries-chart {
-      flex-direction: column;
-      gap: 24px;
-      padding: 24px;
-    }
-
-    .donut-svg {
-      width: 140px;
-      height: 140px;
-    }
-
-    .legend-name {
-      width: 80px;
-      font-size: 11px;
-    }
-
-    .legend-count {
-      width: 40px;
-      font-size: 11px;
-    }
-
-    .legend-pct {
-      width: 40px;
-      font-size: 10px;
     }
 
     .intro-details {
