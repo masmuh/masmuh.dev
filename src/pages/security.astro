@@ -150,7 +150,17 @@ import Layout from "../layouts/Layout.astro";
         <div class="section-line"></div>
       </div>
       
-      <div class="countries-chart" id="countries-chart"></div>
+      <div class="countries-chart" id="countries-chart">
+        <div class="donut-wrap">
+          <svg viewBox="0 0 200 200" class="donut-svg">
+            <circle cx="100" cy="100" r="76" fill="none" stroke="var(--bg2)" stroke-width="22"/>
+            <g id="donut-segments"></g>
+            <text x="100" y="94" text-anchor="middle" class="donut-total" id="donut-total">—</text>
+            <text x="100" y="115" text-anchor="middle" class="donut-label">blocked</text>
+          </svg>
+        </div>
+        <div class="donut-legend" id="donut-legend"></div>
+      </div>
     </section>
 
     <section class="refresh-section">
@@ -277,24 +287,72 @@ function populateUI(data) {
     }
   }
 
-  // Countries bar chart
+  // Countries donut chart
   const cEl = document.getElementById('countries-chart');
+  const segEl = document.getElementById('donut-segments');
+  const legendEl = document.getElementById('donut-legend');
+  const totalEl = document.getElementById('donut-total');
   if (data.topCountries && cEl) {
-    cEl.innerHTML = '';
-    const maxC = Math.max(...data.topCountries.map(c => c.count), 1);
-    data.topCountries.slice(0, 5).forEach((c, i) => {
-      const pct = (c.count / maxC) * 100;
+    const total = data.topCountries.reduce((s, c) => s + c.count, 0);
+    const colors = ['#00c8ff', '#00ff9d', '#ff6b35', '#a78bfa', '#94a3b8'];
+    const r = 76;
+    const circumf = 2 * Math.PI * r;
+
+    totalEl.textContent = formatNumber(total);
+
+    // Group into max 2 segments + Others
+    const show = data.topCountries.slice(0, 5);
+    let othersSum = 0;
+    const segments = [];
+    show.forEach((c, i) => {
+      if (i < 2) {
+        segments.push({ name: countryName(c.country), count: c.count, pct: c.count / total, color: colors[i] });
+      } else {
+        othersSum += c.count;
+      }
+    });
+    if (othersSum > 0) {
+      segments.push({ name: 'Others', count: othersSum, pct: othersSum / total, color: colors[4] });
+    }
+
+    // Render donut
+    let offset = 0;
+    segEl.innerHTML = '';
+    for (const seg of segments) {
+      const dash = Math.max(seg.pct * circumf, 10);
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle.setAttribute('cx', '100');
+      circle.setAttribute('cy', '100');
+      circle.setAttribute('r', r + '');
+      circle.setAttribute('fill', 'none');
+      circle.setAttribute('stroke', seg.color);
+      circle.setAttribute('stroke-width', '22');
+      circle.setAttribute('stroke-dasharray', dash + ' ' + (circumf - dash));
+      circle.setAttribute('stroke-dashoffset', '-' + offset);
+      circle.setAttribute('stroke-linecap', 'butt');
+      circle.setAttribute('transform', 'rotate(-90 100 100)');
+      const t = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+      t.textContent = seg.name + ': ' + formatNumber(seg.count) + ' (' + (seg.pct * 100).toFixed(1) + '%)';
+      circle.appendChild(t);
+      segEl.appendChild(circle);
+      offset += dash;
+    }
+
+    // Render legend
+    legendEl.innerHTML = '';
+    show.forEach((c, i) => {
+      const pct = c.count / total;
+      const color = i < 5 ? colors[i] : colors[4];
       const item = document.createElement('div');
-      item.className = 'country-bar-item';
-      item.innerHTML = `
-        <span class="country-bar-rank">#${i + 1}</span>
-        <span class="country-bar-flag">${flagFor(c.country)}</span>
-        <span class="country-bar-name">${countryName(c.country)}</span>
-        <div class="country-bar-track">
-          <div class="country-bar-fill" style="width:${pct}%"></div>
-        </div>
-        <span class="country-bar-count">${formatNumber(c.count)}</span>`;
-      cEl.appendChild(item);
+      item.className = 'legend-item';
+      item.innerHTML =
+        '<span class="legend-dot" style="--dot-color:' + color + '"></span>' +
+        '<span class="legend-flag">' + flagFor(c.country) + '</span>' +
+        '<span class="legend-name">' + countryName(c.country) + '</span>' +
+        '<div class="legend-track"><div class="legend-fill" style="width:' + (pct * 100) + '%;--fill-color:' + color + '"></div></div>' +
+        '<span class="legend-count">' + formatNumber(c.count) + '</span>' +
+        '<span class="legend-pct">' + (pct * 100).toFixed(1) + '%</span>';
+      legendEl.appendChild(item);
     });
   }
 }
@@ -605,7 +663,7 @@ loadData();
     text-align: center;
   }
 
-  /* Countries Bar Chart */
+  /* Countries Donut Chart */
   .countries-section {
     padding: 60px;
   }
@@ -613,63 +671,100 @@ loadData();
   .countries-chart {
     background: var(--surface);
     border: 1px solid var(--border);
-    padding: 24px 28px;
-  }
-
-  .country-bar-item {
+    padding: 36px 40px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
+    gap: 48px;
   }
 
-  .country-bar-item:last-child {
-    border-bottom: none;
+  .donut-wrap {
+    flex-shrink: 0;
   }
 
-  .country-bar-rank {
+  .donut-svg {
+    width: 180px;
+    height: 180px;
+  }
+
+  .donut-total {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    fill: var(--white);
+  }
+
+  .donut-label {
     font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--cyan);
-    width: 28px;
-    flex-shrink: 0;
+    font-size: 9px;
+    fill: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 
-  .country-bar-flag {
-    font-size: 20px;
-    flex-shrink: 0;
-  }
-
-  .country-bar-name {
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: var(--white);
-    width: 130px;
-    flex-shrink: 0;
-  }
-
-  .country-bar-track {
+  .donut-legend {
     flex: 1;
-    height: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--dot-color);
+    flex-shrink: 0;
+  }
+
+  .legend-flag {
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .legend-name {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--white);
+    width: 120px;
+    flex-shrink: 0;
+  }
+
+  .legend-track {
+    flex: 1;
+    height: 6px;
     background: var(--bg2);
-    border-radius: 2px;
+    border-radius: 3px;
     overflow: hidden;
   }
 
-  .country-bar-fill {
+  .legend-fill {
     height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, var(--cyan), var(--green));
-    border-radius: 2px;
+    background: var(--fill-color);
+    border-radius: 3px;
     transition: width 0.6s ease;
   }
 
-  .country-bar-count {
+  .legend-count {
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
-    width: 80px;
+    width: 50px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .legend-pct {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cyan-dim);
+    width: 48px;
     text-align: right;
     flex-shrink: 0;
   }
@@ -726,19 +821,30 @@ loadData();
       font-size: 8px;
     }
 
-    .country-bar-item {
-      gap: 10px;
-      padding: 12px 0;
+    .countries-chart {
+      flex-direction: column;
+      gap: 24px;
+      padding: 24px;
     }
 
-    .country-bar-name {
+    .donut-svg {
+      width: 140px;
+      height: 140px;
+    }
+
+    .legend-name {
       width: 80px;
-      font-size: 12px;
+      font-size: 11px;
     }
 
-    .country-bar-count {
-      width: 60px;
+    .legend-count {
+      width: 40px;
       font-size: 11px;
+    }
+
+    .legend-pct {
+      width: 40px;
+      font-size: 10px;
     }
 
     .intro-details {
