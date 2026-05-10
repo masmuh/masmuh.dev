@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout
   title="Security Analytics Dashboard — Mas Muhammad"
-  description="Combined Cloudflare WAF security & Google Analytics 4 traffic dashboard for masmuh.web.id"
+  description="Combined Cloudflare WAF security dashboard for masmuh.web.id"
 >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -39,14 +39,13 @@ import Layout from "../layouts/Layout.astro";
       <div class="page-header-left">
         <div class="page-tag">[ SECURITY + ANALYTICS ]</div>
         <h1 class="page-title">Dashboard <span class="dim">Visibility</span></h1>
-        <p class="page-subtitle">Real-time view of who's watching masmuh.web.id — legitimate visitors, threats blocked, and engagement patterns. Data from Cloudflare WAF &amp; Google Analytics 4.</p>
+        <p class="page-subtitle">Real-time view of who's watching masmuh.web.id — legitimate visitors, threats blocked, and engagement patterns. Data from Cloudflare WAF.</p>
         <div style="margin-top:16px">
           <span class="source-badge cf">⚡ CLOUDFLARE</span>
-          <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
         </div>
       </div>
       <div class="page-header-right">
-        <div class="last-updated" id="last-updated">Loading Cloudflare &amp; GA4 data...</div>
+        <div class="last-updated" id="last-updated">Loading Cloudflare data...</div>
         <button class="refresh-btn" id="refresh-btn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
             <path d="M23 4v6h-6M1 20v-6h6"/>
@@ -77,27 +76,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="metric-sub">last 24 hours</div>
           <div class="metric-source"><span class="source-badge cf">⚡ CLOUDFLARE</span></div>
         </div>
-        <div class="metric-card green">
-          <div class="metric-icon green">👤</div>
-          <div class="metric-label">Active Users</div>
-          <div class="metric-value green" id="m-users">—</div>
-          <div class="metric-sub">28-day window</div>
-          <div class="metric-source"><span class="source-badge ga">📊 GOOGLE ANALYTICS</span></div>
-        </div>
-        <div class="metric-card blue">
-          <div class="metric-icon blue">✨</div>
-          <div class="metric-label">New Visitors</div>
-          <div class="metric-value blue" id="m-new">—</div>
-          <div class="metric-sub">new users</div>
-          <div class="metric-source"><span class="source-badge ga">📊 GOOGLE ANALYTICS</span></div>
-        </div>
-        <div class="metric-card amber">
-          <div class="metric-icon amber">⏱</div>
-          <div class="metric-label">Avg. Engagement</div>
-          <div class="metric-value amber" id="m-engage">—</div>
-          <div class="metric-sub">per session</div>
-          <div class="metric-source"><span class="source-badge ga">📊 GOOGLE ANALYTICS</span></div>
-        </div>
+
         <div class="metric-card purple">
           <div class="metric-icon purple">🔒</div>
           <div class="metric-label">Block Rate</div>
@@ -105,13 +84,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="metric-sub">of all requests</div>
           <div class="metric-source"><span class="source-badge cf">⚡ CLOUDFLARE</span></div>
         </div>
-        <div class="metric-card cyan">
-          <div class="metric-icon cyan">📌</div>
-          <div class="metric-label">Total Events</div>
-          <div class="metric-value cyan" id="m-events">—</div>
-          <div class="metric-sub">page interactions</div>
-          <div class="metric-source"><span class="source-badge ga">📊 GOOGLE ANALYTICS</span></div>
-        </div>
+
         <div class="metric-card green">
           <div class="metric-icon green">✅</div>
           <div class="metric-label">Legit Traffic</div>
@@ -132,61 +105,13 @@ import Layout from "../layouts/Layout.astro";
         <div class="legend">
           <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div> Threats Blocked (CF)</div>
           <div class="legend-item"><div class="legend-dot" style="background:#22d3ee"></div> Legitimate Requests (CF)</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#4ade80;border-radius:50%"></div> Unique Visitors (GA)</div>
+
         </div>
         <div id="trafficChart" class="chart-container" style="height:280px"></div>
       </div>
     </section>
 
-    <div class="section two-thirds">
-      <div class="card">
-        <div class="card-header">
-          <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
-          <div class="chart-title" style="margin-top:6px">Top Pages</div>
-          <div class="chart-label">by pageviews &amp; bounce rate</div>
-        </div>
-        <table class="data-table">
-          <thead>
-            <tr><th>Page</th><th style="text-align:right">Views</th><th style="text-align:right">Users</th><th style="text-align:right">Bounce</th></tr>
-          </thead>
-          <tbody id="pages-body">
-            <tr><td class="page-name">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="right-col">
-        <div class="card">
-          <div class="card-header">
-            <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
-            <div class="chart-title" style="margin-top:6px">Top Cities</div>
-          </div>
-          <div class="city-grid" id="cities-grid">
-            <div class="city-row"><span class="city-rank">—</span><span class="city-name">—</span><div class="city-bar-wrap"><div class="city-bar"><div class="city-bar-fill" style="width:0%"></div></div></div><span class="city-count">—</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
-            <div class="chart-title" style="margin-top:6px">Engagement Stats</div>
-          </div>
-          <div class="engagement-grid" id="engagement-grid">
-            <div class="eng-item"><div class="eng-val" id="eng-active">—</div><div class="eng-label">Active</div></div>
-            <div class="eng-item"><div class="eng-val" id="eng-new">—</div><div class="eng-label">New</div></div>
-            <div class="eng-item"><div class="eng-val" id="eng-sessions">—</div><div class="eng-label">Sessions</div></div>
-          </div>
-          <div class="progress-group" id="progress-group">
-            <div class="progress-row">
-              <div class="progress-label-row"><span>Returning visitors</span><span id="ret-pct" style="color:#4ade80">—</span></div>
-              <div class="progress-bar"><div class="progress-fill" id="ret-fill" style="width:0%;background:#4ade80"></div></div>
-            </div>
-            <div class="progress-row">
-              <div class="progress-label-row"><span>New visitors</span><span id="new-pct" style="color:#60a5fa">—</span></div>
-              <div class="progress-bar"><div class="progress-fill" id="new-fill" style="width:0%;background:#60a5fa"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
     <div class="section two-col">
       <div class="card">
@@ -232,42 +157,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
 
-    <div class="section two-col">
-      <div class="card">
-        <div class="card-header">
-          <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
-          <div class="chart-title" style="margin-top:6px">Visitor Traffic Source</div>
-          <div class="chart-label">by acquisition channel</div>
-        </div>
-        <div class="donut-wrap">
-          <div class="donut-chart-container">
-            <div id="sourceDonut" class="chart-container" style="width:140px;height:140px"></div>
-            <div class="donut-center">
-              <div class="donut-center-val" id="source-total">—</div>
-              <div class="donut-center-label">USERS</div>
-            </div>
-          </div>
-          <div class="donut-legend" id="source-legend">
-            <div class="donut-legend-row"><div class="donut-legend-name"><div class="legend-dot" style="background:#3d5070"></div>—</div><div class="donut-legend-pct">—</div></div>
-          </div>
-        </div>
-        <div class="insight-box">
-          💡 <strong>Insight:</strong> 100% Direct traffic means visitors already know your URL. Consider SEO or link sharing to expand your reach.
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          <span class="source-badge ga">📊 GOOGLE ANALYTICS</span>
-          <div class="chart-title" style="margin-top:6px">New vs Returning Users</div>
-          <div class="chart-label">28-day trend</div>
-        </div>
-        <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#22d3ee"></div> New Users</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#4ade80;border-radius:50%"></div> Returning</div>
-        </div>
-        <div id="trendChart" class="chart-container" style="height:200px"></div>
-      </div>
-    </div>
+
 
     <div class="section">
       <div class="section-divider">
@@ -297,10 +187,9 @@ import Layout from "../layouts/Layout.astro";
         <div class="card">
           <div class="card-icon">📊</div>
           <div class="chart-title">Analytics &amp; Monitoring</div>
-          <p class="card-text">Data from Cloudflare GraphQL API + Google Analytics 4 provides comprehensive visibility into threats and visitor behavior.</p>
+          <p class="card-text">Data from Cloudflare GraphQL API provides comprehensive visibility into threats and visitor behavior.</p>
           <div class="card-tags">
             <span class="tag tag-amber">CLOUDFLARE</span>
-            <span class="tag tag-blue">GA4</span>
           </div>
         </div>
       </div>
@@ -379,49 +268,13 @@ const SAMPLE_CF = {
   threatsByType: [],
 };
 
-function genTrendDates() {
-  const days = [];
-  for (let i = 27; i >= 0; i--) {
-    const d = new Date(Date.now() - i * 86400000);
-    days.push((d.getMonth() + 1) + '/' + d.getDate());
-  }
-  return days;
-}
-
-function genTrendData() {
-  const baseNew = [1,0,2,0,1,3,2,0,1,12,2,5,4,3,2,1,0,2,3,1,5,2,1,0,3,4,2,1];
-  const baseRet = [0,0,1,0,0,1,0,0,1,3,1,2,1,4,3,0,0,1,1,0,2,1,0,0,1,2,1,1];
-  return { newUsers: baseNew, returningUsers: baseRet };
-}
-
-const SAMPLE_GA = {
-  overview: { activeUsers: 27, newUsers: 51, eventCount: 1700, sessions: 77, pageViews: 423, avgEngagement: 409 },
-  pages: [
-    { title: 'Senior Backend Dev', views: 202, users: 27, bounce: 45.3 },
-    { title: 'Portfolio', views: 112, users: 6, bounce: 3.3 },
-    { title: 'Resume / CV', views: 35, users: 4, bounce: 0 },
-    { title: 'ANR Enterprise Bridge', views: 17, users: 2, bounce: 0 },
-    { title: 'Biogen SAP Integration', views: 16, users: 2, bounce: 0 },
-    { title: 'CRA Lead Automation', views: 16, users: 2, bounce: 7.7 },
-    { title: 'ISMS EaseHub', views: 16, users: 1, bounce: 0 },
-  ],
-  cities: [
-    { city: 'Surabaya', users: 9 }, { city: 'Burnaby', users: 3 },
-    { city: 'Aurora', users: 1 }, { city: 'Olongapo City', users: 1 }, { city: 'Wheaton', users: 1 },
-  ],
-  trafficSource: [{ source: 'Direct / None', sessions: 77, users: 27 }],
-  newReturning: { newUsers: 27, returningUsers: 50, newPct: '35.1', returningPct: '64.9' },
-};
-
 // ── ECharts instances ──
-let trafficChart, attackDonut, sourceDonut, trendChart, scoreGauge;
+let trafficChart, attackDonut, scoreGauge;
 
 function initCharts() {
-  [trafficChart, attackDonut, sourceDonut, trendChart, scoreGauge].forEach(c => c?.dispose());
+  [trafficChart, attackDonut, scoreGauge].forEach(c => c?.dispose());
   trafficChart = echarts.init(document.getElementById('trafficChart'));
   attackDonut = echarts.init(document.getElementById('attackDonut'));
-  sourceDonut = echarts.init(document.getElementById('sourceDonut'));
-  trendChart = echarts.init(document.getElementById('trendChart'));
   scoreGauge = echarts.init(document.getElementById('scoreGauge'));
 }
 
@@ -439,7 +292,7 @@ function renderTrafficChart(timeline) {
   const sumT = timeline.reduce((s, t) => s + t.count, 1);
   const blocked = timeline.map(t => t.count);
   const legit = timeline.map(t => Math.round((t.count / sumT) * 290));
-  const visitors = [5, 3, 2, 1, 0, 2, 8, 12, 18, 14, 10, 6, 4, 3, 5, 8, 6, 4, 3, 2, 4, 6, 3, 2];
+
   trafficChart.setOption({
     backgroundColor: EC.bg,
     tooltip: {
@@ -467,12 +320,7 @@ function renderTrafficChart(timeline) {
       { name: 'Legitimate Requests', type: 'bar', barWidth: '30%',
         data: legit,
         itemStyle: { color: EC.cyan, borderRadius: [3,3,0,0], opacity: 0.7 } },
-      { name: 'Unique Visitors (GA)', type: 'line', data: visitors,
-        lineStyle: { color: EC.green, width: 2 },
-        itemStyle: { color: EC.green },
-        symbol: 'circle', symbolSize: 5,
-        areaStyle: { color: 'rgba(74,222,128,0.06)' },
-        smooth: true, z: 3 },
+
     ],
   });
 }
@@ -515,81 +363,6 @@ function renderAttackDonut(countries) {
   });
 }
 
-function renderSourceDonut(sources) {
-  if (!sourceDonut || !sources) return;
-  const total = sources.reduce((s, c) => s + c.users, 0);
-  document.getElementById('source-total').textContent = formatNumber(total);
-  const colors = ['#22d3ee','#4ade80','#fbbf24','#a78bfa','#f87171'];
-  const data = sources.map((c, i) => ({
-    name: c.source,
-    value: c.users,
-    itemStyle: { color: colors[i % colors.length] },
-  }));
-  sourceDonut.setOption({
-    backgroundColor: EC.bg,
-    tooltip: {
-      backgroundColor: '#0d1322', borderColor: EC.border, borderWidth: 1,
-      textStyle: { color: EC.textLight, fontFamily: 'Space Mono', fontSize: 11 },
-      formatter: p => p.name + ': ' + formatNumber(p.value) + ' users',
-    },
-    series: [{
-      type: 'pie', radius: ['55%', '75%'], center: ['50%', '50%'],
-      avoidLabelOverlap: true,
-      label: { show: false },
-      emphasis: { itemStyle: { shadowBlur: 8, shadowColor: 'rgba(0,0,0,0.3)' } },
-      data,
-    }],
-  });
-  const legendEl = document.getElementById('source-legend');
-  legendEl.innerHTML = '';
-  data.forEach(d => {
-    const row = document.createElement('div');
-    row.className = 'donut-legend-row';
-    row.innerHTML =
-      '<div class="donut-legend-name"><div class="legend-dot" style="background:' + d.itemStyle.color + '"></div>' + d.name + '</div>' +
-      '<div class="donut-legend-pct" style="color:' + d.itemStyle.color + '">' + ((d.value / total) * 100).toFixed(1) + '%</div>';
-    legendEl.appendChild(row);
-  });
-}
-
-function renderTrendChart(trend, nrTrend) {
-  if (!trendChart) return;
-  const dates = genTrendDates();
-  const td = genTrendData();
-  trendChart.setOption({
-    backgroundColor: EC.bg,
-    tooltip: {
-      trigger: 'axis',
-      backgroundColor: '#0d1322', borderColor: EC.border, borderWidth: 1,
-      textStyle: { color: EC.textLight, fontFamily: 'Space Mono', fontSize: 11 },
-    },
-    legend: { show: false },
-    grid: { left: 40, right: 12, top: 10, bottom: 28 },
-    xAxis: {
-      type: 'category', data: dates,
-      axisLine: { lineStyle: { color: EC.border } },
-      axisTick: { show: false },
-      axisLabel: { color: EC.text, fontFamily: 'Space Mono', fontSize: 9, maxLabel: 8 },
-    },
-    yAxis: {
-      type: 'value', min: 0,
-      splitLine: { lineStyle: { color: EC.border, type: 'dashed' } },
-      axisLine: { show: false }, axisTick: { show: false },
-      axisLabel: { color: EC.text, fontFamily: 'Space Mono', fontSize: 10 },
-    },
-    series: [
-      { name: 'New Users', type: 'line', data: td.newUsers, smooth: true,
-        lineStyle: { color: EC.cyan, width: 2 },
-        itemStyle: { color: EC.cyan }, symbol: 'circle', symbolSize: 3,
-        areaStyle: { color: 'rgba(34,211,238,0.06)' } },
-      { name: 'Returning', type: 'line', data: td.returningUsers, smooth: true,
-        lineStyle: { color: EC.green, width: 2, type: 'dashed' },
-        itemStyle: { color: EC.green }, symbol: 'circle', symbolSize: 3,
-        areaStyle: { color: 'rgba(74,222,128,0.04)' } },
-    ],
-  });
-}
-
 function renderScoreGauge(score) {
   if (!scoreGauge) return;
   scoreGauge.setOption({
@@ -613,7 +386,7 @@ function renderScoreGauge(score) {
 
 // ── UI POPULATE ──
 
-function populateMetrics(cf, ga) {
+function populateMetrics(cf) {
   const t = cf?.threatsBlocked || SAMPLE_CF.threatsBlocked;
   const r = cf?.requestsToday || SAMPLE_CF.requestsToday;
   const rate = r > 0 ? ((t / r) * 100).toFixed(1) + '%' : '0%';
@@ -621,62 +394,6 @@ function populateMetrics(cf, ga) {
   document.getElementById('m-requests').textContent = formatNumber(r);
   document.getElementById('m-blockrate').textContent = rate;
   document.getElementById('m-legit').textContent = (100 - parseFloat(rate)).toFixed(1) + '%';
-
-  const o = ga?.overview || SAMPLE_GA.overview;
-  document.getElementById('m-users').textContent = formatNumber(o.activeUsers);
-  document.getElementById('m-new').textContent = formatNumber(o.newUsers);
-  const sec = Math.round(o.avgEngagement);
-  document.getElementById('m-engage').textContent = sec >= 60 ? Math.floor(sec / 60) + 'm' + (sec % 60) + 's' : sec + 's';
-  document.getElementById('m-events').textContent = formatNumber(o.eventCount);
-}
-
-function populatePages(pages) {
-  const data = pages || SAMPLE_GA.pages;
-  const body = document.getElementById('pages-body');
-  body.innerHTML = '';
-  data.forEach(p => {
-    const tr = document.createElement('tr');
-    const bounceColor = p.bounce > 30 ? '#fbbf24' : '#4ade80';
-    tr.innerHTML =
-      '<td><span class="page-name">' + p.title + '</span></td>' +
-      '<td class="num" style="color:#f0f6ff">' + formatNumber(p.views) + '</td>' +
-      '<td class="num">' + formatNumber(p.users) + '</td>' +
-      '<td class="num" style="color:' + bounceColor + '">' + p.bounce.toFixed(1) + '%</td>';
-    body.appendChild(tr);
-  });
-}
-
-function populateCities(cities) {
-  const data = cities || SAMPLE_GA.cities;
-  const max = Math.max(...data.map(c => c.users), 1);
-  const grid = document.getElementById('cities-grid');
-  grid.innerHTML = '';
-  data.forEach((c, i) => {
-    const pct = (c.users / max) * 100;
-    const row = document.createElement('div');
-    row.className = 'city-row';
-    row.innerHTML =
-      '<span class="city-rank">' + (i + 1) + '</span>' +
-      '<span class="city-name">' + c.city + '</span>' +
-      '<div class="city-bar-wrap"><div class="city-bar"><div class="city-bar-fill" style="width:' + pct + '%"></div></div></div>' +
-      '<span class="city-count"' + (i === 0 ? ' style="color:#22d3ee"' : '') + '>' + formatNumber(c.users) + '</span>';
-    grid.appendChild(row);
-  });
-}
-
-function populateEngagement(ga) {
-  const o = ga?.overview || SAMPLE_GA.overview;
-  const nr = ga?.newReturning || SAMPLE_GA.newReturning;
-  document.getElementById('eng-active').innerHTML = '<span style="color:#4ade80">' + formatNumber(o.activeUsers) + '</span>';
-  document.getElementById('eng-new').innerHTML = '<span style="color:#60a5fa">' + formatNumber(o.newUsers) + '</span>';
-  document.getElementById('eng-sessions').innerHTML = '<span style="color:#fbbf24">' + formatNumber(o.sessions || '—') + '</span>';
-
-  const retPct = nr.returningPct || '64.9';
-  const newPct = nr.newPct || '35.1';
-  document.getElementById('ret-pct').textContent = retPct + '%';
-  document.getElementById('new-pct').textContent = newPct + '%';
-  document.getElementById('ret-fill').style.width = retPct + '%';
-  document.getElementById('new-fill').style.width = newPct + '%';
 }
 
 const ACTION_LABELS = {
@@ -720,17 +437,12 @@ function populateThreats(cf) {
   });
 }
 
-function populateUI(cf, ga) {
-  populateMetrics(cf, ga);
-  populatePages(ga?.pages);
-  populateCities(ga?.cities);
-  populateEngagement(ga);
+function populateUI(cf) {
+  populateMetrics(cf);
   populateThreats(cf);
 
   renderTrafficChart(cf?.timeline || SAMPLE_CF.timeline);
   renderAttackDonut(cf?.topCountries || SAMPLE_CF.topCountries);
-  renderSourceDonut(ga?.trafficSource || SAMPLE_GA.trafficSource);
-  renderTrendChart(ga?.trend, ga?.nrTrend);
   const score = cf ? 90 : 0;
   renderScoreGauge(score);
 }
@@ -739,26 +451,17 @@ async function loadData() {
   const refreshBtn = document.getElementById('refresh-btn');
   const lastUpdated = document.getElementById('last-updated');
   if (refreshBtn) refreshBtn.disabled = true;
-  if (lastUpdated) lastUpdated.textContent = 'Connecting to Cloudflare & Google Analytics...';
+  if (lastUpdated) lastUpdated.textContent = 'Connecting to Cloudflare...';
 
-  const [cfRes, gaRes] = await Promise.allSettled([
-    fetch('/.netlify/functions/security').then(r => { if (!r.ok) throw Error(); return r.json(); }),
-    fetch('/.netlify/functions/analytics').then(r => { if (!r.ok) throw Error(); return r.json(); }),
-  ]);
+  const cfRes = await fetch('/.netlify/functions/security').then(r => { if (!r.ok) throw Error(); return r.json(); }).catch(() => null);
 
-  const cf = cfRes.status === 'fulfilled' ? cfRes.value : null;
-  const ga = gaRes.status === 'fulfilled' ? gaRes.value : null;
-
-  populateUI(cf, ga);
+  populateUI(cfRes);
 
   if (lastUpdated) {
-    if (cfRes.status === 'rejected' && gaRes.status === 'rejected') {
+    if (!cfRes) {
       lastUpdated.textContent = 'Sample data — API unavailable.';
     } else {
-      const sources = [];
-      if (cfRes.status === 'fulfilled') sources.push('Cloudflare');
-      if (gaRes.status === 'fulfilled') sources.push('GA4');
-      lastUpdated.textContent = 'Live: ' + sources.join(' + ') + ' • ' + new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' WIB';
+      lastUpdated.textContent = 'Live: Cloudflare • ' + new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' WIB';
     }
   }
   if (refreshBtn) refreshBtn.disabled = false;
@@ -766,7 +469,7 @@ async function loadData() {
 
 initCharts();
 window.addEventListener('resize', () => {
-  [trafficChart, attackDonut, sourceDonut, trendChart, scoreGauge].forEach(c => c?.resize());
+  [trafficChart, attackDonut, scoreGauge].forEach(c => c?.resize());
 });
 document.getElementById('refresh-btn')?.addEventListener('click', loadData);
 loadData();
@@ -899,7 +602,6 @@ nav {
 }
 
 .source-badge.cf { background: rgba(248,113,113,0.12); color: #fca5a5; }
-.source-badge.ga { background: rgba(96,165,250,0.12); color: #93c5fd; }
 .source-badge.combined { background: rgba(167,139,250,0.12); color: #c4b5fd; }
 
 .section { margin-bottom: 40px; padding: 0; }
