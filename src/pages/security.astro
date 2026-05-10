@@ -100,13 +100,8 @@ import Layout from "../layouts/Layout.astro";
         <span class="section-tag">[ ANALYTICS ]</span>
         <div class="section-line"></div>
       </div>
-      <h2 class="section-title">Traffic 24h — Blocked vs Legitimate</h2>
+      <h2 class="section-title">Traffic 24h — Threats Blocked</h2>
       <div class="card">
-        <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div> Threats Blocked (CF)</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#22d3ee"></div> Legitimate Requests (CF)</div>
-
-        </div>
         <div id="trafficChart" class="chart-container" style="height:280px"></div>
       </div>
     </section>
@@ -289,10 +284,6 @@ const EC = {
 function renderTrafficChart(timeline) {
   if (!trafficChart || !timeline) return;
   const labels = timeline.map(t => t.hour ? t.hour.replace(':00','') : '');
-  const sumT = timeline.reduce((s, t) => s + t.count, 1);
-  const blocked = timeline.map(t => t.count);
-  const legit = timeline.map(t => Math.round((t.count / sumT) * 290));
-
   trafficChart.setOption({
     backgroundColor: EC.bg,
     tooltip: {
@@ -314,13 +305,9 @@ function renderTrafficChart(timeline) {
       axisLabel: { color: EC.text, fontFamily: 'Space Mono', fontSize: 10 },
     },
     series: [
-      { name: 'Threats Blocked', type: 'bar', barWidth: '30%', barGap: '60%',
-        data: blocked,
+      { name: 'Threats Blocked', type: 'bar', barWidth: '30%',
+        data: timeline.map(t => t.count),
         itemStyle: { color: EC.red, borderRadius: [3,3,0,0], opacity: 0.9 } },
-      { name: 'Legitimate Requests', type: 'bar', barWidth: '30%',
-        data: legit,
-        itemStyle: { color: EC.cyan, borderRadius: [3,3,0,0], opacity: 0.7 } },
-
     ],
   });
 }
