@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
 import { getCollection } from "astro:content";
 
 const projects = (await getCollection("projects")).sort((a, b) => {
@@ -10,35 +11,7 @@ const projects = (await getCollection("projects")).sort((a, b) => {
 ---
 
 <Layout title="Portfolio — Mas Muhammad" description="Selected projects spanning enterprise architectures, distributed systems, and AI tooling — 26 systems built for Biogen, Sanofi, Shell, Sampoerna and more.">
-  <nav>
-    <a href="/" class="nav-logo">MAS<span>.</span>MUH</a>
-    <a href="/" class="nav-back">← Back to Home</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <span class="theme-icon-light">☀️</span>
-      <span class="theme-icon-dark">🌙</span>
-    </button>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- MOBILE NAV PANEL -->
-  <div class="mobile-overlay" id="mobileOverlay"></div>
-  <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header">
-      <div class="nav-logo">MAS<span>.</span>MUH</div>
-      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
-    </div>
-    <ul class="mobile-nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/#about">About</a></li>
-      <li><a href="/#skills">Skills</a></li>
-      <li><a href="/#experience">Experience</a></li>
-      <li><a href="/portfolio">Portfolio</a></li>
-      <li><a href="/#contact">Contact</a></li>
-    </ul>
-    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
-  </div>
+  <Nav variant="subpage" backText="← Back to Home" />
 
   <div class="page-header">
     <div class="page-eyebrow">// Selected Work</div>

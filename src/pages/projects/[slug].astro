@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -27,35 +28,7 @@ const { title, client, date, description } = entry.data;
 ---
 
 <Layout title={`${title} — Project Detail`} description={description}>
-  <nav>
-    <a href="/portfolio" class="nav-logo">MAS<span>.</span>MUH</a>
-    <a href="/portfolio" class="nav-back">← Back to Portfolio</a>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <span class="theme-icon-light">️</span>
-      <span class="theme-icon-dark"></span>
-    </button>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- MOBILE NAV PANEL -->
-  <div class="mobile-overlay" id="mobileOverlay"></div>
-  <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header">
-      <div class="nav-logo">MAS<span>.</span>MUH</div>
-      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"></button>
-    </div>
-    <ul class="mobile-nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/#about">About</a></li>
-      <li><a href="/#skills">Skills</a></li>
-      <li><a href="/#experience">Experience</a></li>
-      <li><a href="/portfolio">Portfolio</a></li>
-      <li><a href="/#contact">Contact</a></li>
-    </ul>
-    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
-  </div>
+  <Nav variant="subpage" backHref="/portfolio" backText="← Back to Portfolio" />
 
   <article class="project-detail reveal">
     <header class="project-header">

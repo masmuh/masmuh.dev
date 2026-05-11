@@ -1,58 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
 import SectionSwitcher from "../components/home/SectionSwitcher.astro";
 ---
 
 <Layout>
-  <!-- NAV -->
-  <nav>
-      <a href="/" class="nav-logo" data-section="hero">MAS<span>.</span>MUH</a>
-    <ul class="nav-links">
-      <li><a href="#about" data-section="about">About</a></li>
-      <li><a href="#skills" data-section="skills">Skills</a></li>
-      <li><a href="#experience" data-section="experience">Experience</a></li>
-      <li><a href="#projects" data-section="projects">Projects</a></li>
-      <li><a href="/resume">CV</a></li>
-      <li><a href="/security">Security</a></li>
-      <li><a href="#contact" data-section="contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="theme-icon-light">☀️</span>
-        <span class="theme-icon-dark">🌙</span>
-      </button>
-      <div class="nav-status">
-        <div class="status-dot"></div>
-        Open to Remote
-      </div>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- MOBILE NAV PANEL -->
-  <div class="mobile-overlay" id="mobileOverlay"></div>
-  <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header">
-    <a href="/" class="nav-logo" data-section="hero">MAS<span>.</span>MUH</a>
-      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
-    </div>
-    <ul class="mobile-nav-links">
-      <li><a href="#about" data-section="about">About</a></li>
-      <li><a href="#skills" data-section="skills">Skills</a></li>
-      <li><a href="#experience" data-section="experience">Experience</a></li>
-      <li><a href="#projects" data-section="projects">Projects</a></li>
-      <li><a href="/resume">CV</a></li>
-      <li><a href="/security">Security</a></li>
-      <li><a href="#contact" data-section="contact">Contact</a></li>
-    </ul>
-    <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
-    <div class="mobile-nav-status">
-      <div class="status-dot"></div>
-      Open to Remote
-    </div>
-  </div>
+  <Nav variant="home" />
 
   <!-- SECTION SWITCHER -->
   <SectionSwitcher />

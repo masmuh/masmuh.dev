@@ -1,0 +1,447 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<Layout title="Articles — Mas Muhammad" description="Latest articles and technical writing by Mas Muhammad, published on DEV.to">
+  <Nav variant="default" activePath="/articles" statusText="DEV.TO" />
+
+  <main class="articles-page">
+    <div class="wrap">
+      <div class="page-header">
+        <div class="page-header-left">
+          <div class="page-tag">[ ARTICLES + WRITING ]</div>
+          <h1 class="page-title">Latest <span class="dim">Article</span></h1>
+          <p class="page-subtitle">My latest technical writing on software engineering, distributed systems, and backend architecture — automatically fetched from DEV.to.</p>
+        </div>
+        <div class="page-header-right">
+          <div class="last-updated" id="last-updated">Loading latest article...</div>
+          <a href="https://dev.to/insight105" target="_blank" rel="noopener noreferrer" class="source-badge devto">DEV.TO</a>
+        </div>
+      </div>
+
+      <div class="article-card" id="article-card">
+        <div class="article-loading" id="article-loading">
+          <div class="loading-spinner"></div>
+          <span>Fetching latest article...</span>
+        </div>
+      </div>
+
+      <div class="article-error" id="article-error">
+        <div class="error-icon">!</div>
+        <div class="error-text">Unable to fetch the latest article. Check back later or visit</div>
+        <a href="https://dev.to/insight105" target="_blank" rel="noopener noreferrer" class="error-link">dev.to/insight105 →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-left"><span>Mas</span>Muhammad © 2026</div>
+    <div class="footer-center">Senior Backend Engineer</div>
+    <div class="footer-right">
+      <a href="/"><span>Home</span></a>
+      <span>·</span>
+      <a href="/resume"><span>CV</span></a>
+      <span>·</span>
+      <a href="/security"><span>Security</span></a>
+      <span>·</span>
+      <a href="/articles"><span>Articles</span></a>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+async function loadLatestArticle() {
+  const container = document.getElementById('article-card');
+  const loading = document.getElementById('article-loading');
+  const error = document.getElementById('article-error');
+  const updated = document.getElementById('last-updated');
+
+  async function fetchFrom(url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('API error');
+    const json = await res.json();
+    return json;
+  }
+
+  async function renderArticle(article) {
+    loading.style.display = 'none';
+    error.style.display = 'none';
+    updated.textContent = 'DEV.to • ' + new Date(article.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+    const tagsHtml = (article.tags || []).map(t => `<span class="tag">#${t}</span>`).join('');
+
+    container.innerHTML = `
+      <div class="article-cover">
+        <img src="${article.coverImage || '/og-image.png'}" alt="${article.title.replace(/"/g, '&quot;')}" loading="lazy" />
+      </div>
+      <div class="article-body">
+        <div class="article-meta">
+          <span class="article-reading-time">${article.readingTime} min read</span>
+          <span class="article-date">${new Date(article.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        </div>
+        <h2 class="article-title">${article.title}</h2>
+        <p class="article-description">${article.description}</p>
+        <div class="article-tags">${tagsHtml}</div>
+        <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="article-read-btn">
+          Read full article on DEV.to →
+        </a>
+      </div>
+    `;
+  }
+
+  try {
+    // Try Netlify function first (works on production)
+    const json = await fetchFrom('/.netlify/functions/devto-posts?per_page=1');
+    if (json.success && json.data && json.data.length) {
+      return renderArticle(json.data[0]);
+    }
+    throw new Error('No articles from Netlify function');
+  } catch {
+    try {
+      // Fallback: fetch directly from dev.to API (works locally)
+      const posts = await fetchFrom('https://dev.to/api/articles?username=insight105&per_page=1');
+      if (posts && posts.length) {
+        const p = posts[0];
+        return renderArticle({
+          title: p.title,
+          description: p.description || p.social_media_text || '',
+          url: p.url,
+          publishedAt: p.published_at,
+          tags: p.tag_list || [],
+          readingTime: p.reading_time_minutes || 0,
+          coverImage: p.cover_image || null
+        });
+      }
+      throw new Error('No articles from dev.to');
+    } catch {
+      loading.style.display = 'none';
+      error.style.display = 'flex';
+      updated.textContent = 'Unable to load article';
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadLatestArticle);
+</script>
+
+<style is:global>
+.articles-page {
+  padding-top: 100px;
+  --text-primary: #f0f6ff;
+  --text-secondary: #7a90b0;
+  --text-muted: #3d5070;
+  --bg-card: #111827;
+  --border: rgba(99,179,237,0.12);
+  --cyan-dim: #5eead4;
+  --green: #10b981;
+  --surface: #0f172a;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  gap: 24px;
+}
+
+.page-header-left { flex: 1; }
+
+.page-tag {
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.page-title .dim {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.page-subtitle {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+.page-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.last-updated {
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.source-badge.devto {
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.source-badge.devto:hover {
+  background: var(--cyan-glow);
+  border-color: var(--border-bright);
+}
+
+/* Article Card */
+.article-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation: fadeUp 0.5s ease both;
+}
+
+.article-cover {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+
+.article-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.article-body {
+  padding: 40px;
+}
+
+.article-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.article-reading-time {
+  color: var(--green);
+  border: 1px solid rgba(16,185,129,0.3);
+  padding: 3px 8px;
+}
+
+.article-date {
+  color: var(--text-muted);
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.article-description {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.tag {
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--cyan-dim);
+  padding: 4px 10px;
+  border: 1px solid rgba(94,234,212,0.15);
+  background: rgba(94,234,212,0.04);
+}
+
+.article-read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  background: var(--cyan);
+  color: #0a0a1a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+.article-read-btn:hover {
+  background: var(--green);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(16,185,129,0.3);
+}
+
+/* Loading State */
+.article-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  gap: 16px;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border);
+  border-top-color: var(--cyan);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.article-loading span {
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Error State */
+.article-error {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 40px;
+  background: var(--surface);
+  border: 1px solid rgba(239,68,68,0.2);
+  flex-direction: column;
+  text-align: center;
+}
+
+.error-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(239,68,68,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 16px;
+  color: #ef4444;
+  margin-bottom: 8px;
+}
+
+.error-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.error-link {
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--cyan);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.error-link:hover {
+  color: var(--green);
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+  border-top: 1px solid var(--border);
+  font-family: 'Space Mono', var(--font-mono);
+  font-size: 12px;
+}
+
+.footer-left { color: var(--text-muted); }
+.footer-left span { color: var(--cyan); }
+.footer-center { color: var(--text-muted); opacity: 0.6; }
+.footer-right { display: flex; gap: 16px; align-items: center; }
+.footer-right a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.footer-right a:hover { color: var(--cyan); }
+.footer-right span { color: var(--text-muted); opacity: 0.3; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .page-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .page-title { font-size: 30px; }
+  .page-header-right { align-items: flex-start; }
+  .wrap { padding: 40px 24px; }
+  .article-body { padding: 24px; }
+}
+
+@media (max-width: 600px) {
+  footer { flex-direction: column; gap: 8px; padding: 16px 24px; text-align: center; }
+  .wrap { padding: 24px 16px; }
+  .article-body { padding: 20px; }
+  .page-header { margin-bottom: 32px; }
+}
+</style>
