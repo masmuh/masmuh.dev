@@ -8,6 +8,7 @@ description: "For MS Glow. 27+ service domains. Robust anti-counterfeiting verif
 stack: [".NET Core", "MongoDB", "Kubernetes", "Nginx", "Docker", "GitLab CI"]
 icon: "🧴"
 thumbClass: "thumb-msglow"
+image: "/gallery/reborn-apps.webp"
 --- 
 
 ### 1. Project Identity

@@ -8,6 +8,7 @@ description: "For Sanofi. Eliminated manual spreadsheet tracking. Zero product r
 stack: ["VB.NET", "ASP.NET Web Forms", "SQL Server", "LDAP"]
 icon: "📋"
 thumbClass: "thumb-blue"
+image: "/gallery/eregis.webp"
 ---
 
 ### 1. Project Identity

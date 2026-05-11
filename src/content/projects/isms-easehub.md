@@ -8,6 +8,7 @@ description: "For Sampoerna. Data reconciliation from 4-6 hrs - 15 min. 99.8% ba
 stack: [".NET 9", "WPF", "SQL Server", "SQLite"]
 icon: "📦"
 thumbClass: "thumb-academic"
+image: "/gallery/isms-easehub.webp"
 ---
 
 ---

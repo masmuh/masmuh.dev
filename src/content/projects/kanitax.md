@@ -8,6 +8,7 @@ description: "For Tri Hasta Perkasa. 90% reduction in manual tax entry. Real-tim
 stack: [".NET Core 3.1", "EF Core", "E-Faktur API", "SQL Server"]
 icon: "📑"
 thumbClass: "thumb-sampoerna"
+image: "/gallery/kanitax.webp"
 ---
 
 ---

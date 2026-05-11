@@ -8,6 +8,7 @@ description: "For Boston Scientific. Cut order-to-ERP from 24 hrs - 5 min. Recon
 stack: [".NET 5", "MongoDB", "Redis", "WCF/SOAP", "SAP ByD"]
 icon: "⚙️"
 thumbClass: "thumb-telkomsel"
+image: "/gallery/bsci.webp"
 ---
 
 ---

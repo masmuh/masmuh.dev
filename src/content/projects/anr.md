@@ -8,6 +8,7 @@ description: "For Bank Mandiri. ~90% manual ops reduction. 100% bank-compliant b
 stack: [".NET 9", "LiteDB", "SAP OData", "Windows Service"]
 icon: "🌉"
 thumbClass: "thumb-shell"
+image: "/gallery/anr.webp"
 ---
 
 ---

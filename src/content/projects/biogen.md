@@ -8,6 +8,7 @@ description: "For Biogen. Eliminated 15-20 min/quote manual effort. 99.9% uptime
 stack: [".NET Core 3.1", "Quartz.NET", "SAP OData", "LiteDB"]
 icon: "🧬"
 thumbClass: "thumb-sampoerna"
+image: "/gallery/biogen.webp"
 ---
 
 ---

@@ -8,6 +8,7 @@ description: "For Sampoerna. 100% reduction in manual data aggregation effort. S
 stack: ["InfluxDB", "Grafana", "NLog", ".NET Worker"]
 icon: "👁️"
 thumbClass: "thumb-oats"
+image: "/gallery/isms-hawkeye.webp"
 ---
 
 ---

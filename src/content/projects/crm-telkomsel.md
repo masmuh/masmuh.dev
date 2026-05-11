@@ -8,6 +8,7 @@ description: "For Telkomsel. Transformed paper-based surveys to real-time digita
 stack: ["ASP.NET 3.5", "C#", "SQL Server", "ADO.NET", "Windows Auth", "jQuery"]
 icon: "📊"
 thumbClass: "thumb-crm-tsel"
+image: "/gallery/crm-telkomsel.webp"
 ---
 
 ---

@@ -8,6 +8,7 @@ description: "For Sampoerna. 85% reduction in audit latency. 60% fewer false-pos
 stack: [".NET 9", "SQL Server", "SMTP", "EPPlus", "NLog"]
 icon: "✉️"
 thumbClass: "thumb-foculing"
+image: "/gallery/isms-echomail.webp"
 ---
 
 ---

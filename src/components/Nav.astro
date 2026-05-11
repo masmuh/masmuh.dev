@@ -29,7 +29,7 @@ const isSubpage = variant === 'subpage';
         <li><a href={isHome ? '#about' : '/#about'} data-section={isHome ? 'about' : undefined}>About</a></li>
         <li><a href={isHome ? '#skills' : '/#skills'} data-section={isHome ? 'skills' : undefined}>Skills</a></li>
         <li><a href={isHome ? '#experience' : '/#experience'} data-section={isHome ? 'experience' : undefined}>Experience</a></li>
-        <li><a href={isHome ? '#projects' : '/#projects'} data-section={isHome ? 'projects' : undefined}>Projects</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
         <li><a href="/resume">CV</a></li>
         <li><a href="/security" class={activePath === '/security' ? 'active-link' : ''}>Security</a></li>
         <li><a href="/articles" class={activePath === '/articles' ? 'active-link' : ''}>Articles</a></li>
@@ -66,7 +66,6 @@ const isSubpage = variant === 'subpage';
     <li><a href="/#about">About</a></li>
     <li><a href="/#skills">Skills</a></li>
     <li><a href="/#experience">Experience</a></li>
-    <li><a href="/#projects">Projects</a></li>
     <li><a href="/portfolio">Portfolio</a></li>
     <li><a href="/resume">CV</a></li>
     <li><a href="/security" class={activePath === '/security' ? 'active-link' : ''}>Security</a></li>

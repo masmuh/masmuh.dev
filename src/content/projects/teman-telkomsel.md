@@ -8,6 +8,7 @@ description: "For Telkomsel. High-volume SMS broadcast automation. Real-time Sen
 stack: ["PHP", "CodeIgniter", "Oracle 11g", "OCI8", "AES-256", "Flexigrid"]
 icon: "📱"
 thumbClass: "thumb-teman-tsel"
+image: "/gallery/teman-telkomsel.webp"
 ---
 
 ---

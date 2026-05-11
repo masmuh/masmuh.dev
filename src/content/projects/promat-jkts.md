@@ -8,6 +8,7 @@ description: "For Sanofi. ~40% reduction in approval turnaround time. Closed-loo
 stack: ["VB.NET", "ASP.NET Web Forms", "SQL Server", "SSRS", "JavaScript"]
 icon: "📦"
 thumbClass: "thumb-blue"
+image: "/gallery/promat-jkts.webp"
 ---
 
 ### 1. Project Identity

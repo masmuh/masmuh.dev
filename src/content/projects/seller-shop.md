@@ -8,6 +8,7 @@ description: "For MS Glow. Auto-scaling on GKE - zero transaction failures at pe
 stack: ["Go", ".NET Core", "GKE", "MongoDB", "PostgreSQL", "Xendit", "GitLab CI"]
 icon: "🛍️"
 thumbClass: "thumb-msglow"
+image: "/gallery/seller-shop.webp"
 ---
 
 ### 1. Project Identity

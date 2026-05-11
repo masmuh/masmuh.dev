@@ -8,6 +8,7 @@ description: "For Sampoerna. 90% reduction in manual labor. Real-time distributi
 stack: [".NET Core 3.1", "Dapper", "SQL Server", "Clean Architecture"]
 icon: "🚚"
 thumbClass: "thumb-telkomsel"
+image: "/gallery/logdis.webp"
 ---
 
 ---

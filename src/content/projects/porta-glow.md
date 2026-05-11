@@ -8,6 +8,7 @@ description: "For MS Glow. Google OAuth boosted registration conversions. ~60% j
 stack: [".NET 6", "MongoDB", "Google OAuth", "AspNetCoreRateLimit", "AutoMapper"]
 icon: "✨"
 thumbClass: "thumb-portaglow"
+image: "/gallery/porta-glow.webp"
 ---
 
 ### 1. Project Identity

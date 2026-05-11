@@ -8,6 +8,7 @@ description: "For Telkomsel. ~70% reduction in backend support workload. 99.9% a
 stack: ["Oracle PL/SQL", "Oracle Database", "SOAP/XML", "USSD/SMS Gateway", "Enterprise Service Bus"]
 icon: "🌐"
 thumbClass: "thumb-commet"
+image: "/gallery/commet.webp"
 ---
 
 ---

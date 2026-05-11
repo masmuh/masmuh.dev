@@ -8,6 +8,7 @@ description: "For Sampoerna. Automated reconciliation from weeks - hours. Saved 
 stack: [".NET 5", "EF Core", "SQL Server", "SignalR"]
 icon: "📈"
 thumbClass: "thumb-jobhunter"
+image: "/gallery/cra.webp"
 ---
 
 ---

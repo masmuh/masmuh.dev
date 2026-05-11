@@ -8,6 +8,7 @@ description: "For Telkomsel. Centralized corporate communication for thousands o
 stack: ["ASP.NET Web Forms", "C#", "SQL Server", "LDAP/AD"]
 icon: "🚀"
 thumbClass: "thumb-transformation"
+image: "/gallery/transformation-portal.webp"
 ---
 
 ---

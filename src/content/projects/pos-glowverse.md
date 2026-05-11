@@ -8,6 +8,7 @@ description: "For MS Glow. 1-2M daily transactions. ~80% reduction in manual sto
 stack: [".NET 6", "Golang", "MongoDB", "Xendit", "Docker", "Kubernetes"]
 icon: "🛒"
 thumbClass: "thumb-posglowverse"
+image: "/gallery/pos-glowverse.webp"
 ---
 
 ### 1. Project Identity

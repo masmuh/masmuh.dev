@@ -8,6 +8,7 @@ description: "For MS Glow. 27+ service domains unified. Real-time anti-counterfe
 stack: [".NET 5", "MongoDB", "Docker", "GitLab CI", "JWT"]
 icon: "🧴"
 thumbClass: "thumb-msglow"
+image: "/gallery/msglowid-cms.webp"
 ---
 
 ### 1. Project Identity

@@ -8,6 +8,7 @@ description: "For Sanofi. Reduced monthly incentive processing from days - hours
 stack: ["C#", "ASP.NET Web Forms", "SQL Server", "Stored Procedures"]
 icon: "💰"
 thumbClass: "thumb-green"
+image: "/gallery/insentif-alpha.webp"
 ---
 
 ### 1. Project Identity

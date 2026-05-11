@@ -8,6 +8,7 @@ description: "For Shell. Reduced well planning cycle from days - hours. Centrali
 stack: ["MongoDB", "ASP.NET MVC", "Knockout.js", "SignalR"]
 icon: "⛽"
 thumbClass: "thumb-msglow"
+image: "/gallery/weis.webp"
 ---
 
 ---

@@ -14,6 +14,7 @@ const projects = defineCollection({
     stack: z.array(z.string()),
     icon: z.string(),
     thumbClass: z.string().optional(),
+    image: z.string().optional(),
   }),
 });
 

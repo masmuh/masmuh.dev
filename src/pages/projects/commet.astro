@@ -53,6 +53,8 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </header>
 
+  <img src="/gallery/commet.webp" alt="COMMET" class="commet-hero-img" loading="lazy" />
+
   <section class="commet-section">
     <div class="commet-section-label">
       <span class="commet-section-label-text">Impact</span>
@@ -512,6 +514,13 @@ l_node := <span class="commet-token-fn">XMLDOM.getNodeValue</span>(
     background: var(--commet-surface);
     color: var(--commet-text3);
     border-color: var(--commet-border);
+  }
+
+  .commet-hero-img {
+    width: 100%;
+    border-radius: var(--commet-radius-lg);
+    border: 1px solid var(--commet-border);
+    margin-bottom: 52px;
   }
 
   .commet-hero-title {

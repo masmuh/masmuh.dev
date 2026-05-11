@@ -8,6 +8,7 @@ description: "For Sampoerna. 90% reduction in manual tax document generation. 24
 stack: [".NET Core 3.1", "Dapper", "SQL Server", "Clean Architecture"]
 icon: "🏢"
 thumbClass: "thumb-msglow"
+image: "/gallery/ems.webp"
 ---
 
 ---

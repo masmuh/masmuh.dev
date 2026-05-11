@@ -8,6 +8,7 @@ description: "For Bagong. Near-real-time C-level KPI dashboards. 5-min data refr
 stack: ["Go 1.23", "MongoDB", "ETL", "Cron"]
 icon: "📊"
 thumbClass: "thumb-oats"
+image: "/gallery/cxoreport.webp"
 ---
 
 ### 1. Project Identity
