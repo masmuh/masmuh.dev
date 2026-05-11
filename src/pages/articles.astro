@@ -64,6 +64,11 @@ async function loadLatestArticle() {
     return json;
   }
 
+  function proxyImage(url) {
+    if (!url) return '/og-image.png';
+    return '/.netlify/functions/devto-image-proxy?url=' + encodeURIComponent(url);
+  }
+
   async function renderArticle(article) {
     loading.style.display = 'none';
     error.style.display = 'none';
@@ -73,7 +78,7 @@ async function loadLatestArticle() {
 
     container.innerHTML = `
       <div class="article-cover">
-        <img src="${article.coverImage || '/og-image.png'}" alt="${article.title.replace(/"/g, '&quot;')}" loading="lazy" referrerpolicy="no-referrer" />
+        <img src="${proxyImage(article.coverImage)}" alt="${article.title.replace(/"/g, '&quot;')}" loading="lazy" />
       </div>
       <div class="article-body">
         <div class="article-meta">
