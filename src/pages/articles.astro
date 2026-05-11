@@ -73,7 +73,7 @@ async function loadLatestArticle() {
 
     container.innerHTML = `
       <div class="article-cover">
-        <img src="${article.coverImage || '/og-image.png'}" alt="${article.title.replace(/"/g, '&quot;')}" loading="lazy" />
+        <img src="${article.coverImage || '/og-image.png'}" alt="${article.title.replace(/"/g, '&quot;')}" loading="lazy" referrerpolicy="no-referrer" />
       </div>
       <div class="article-body">
         <div class="article-meta">
