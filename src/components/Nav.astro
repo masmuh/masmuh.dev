@@ -33,6 +33,7 @@ const isSubpage = variant === 'subpage';
         <li><a href="/resume">CV</a></li>
         <li><a href="/security" class={activePath === '/security' ? 'active-link' : ''}>Security</a></li>
         <li><a href="/articles" class={activePath === '/articles' ? 'active-link' : ''}>Articles</a></li>
+        <li><a href="/uses" class={activePath === '/uses' ? 'active-link' : ''}>Uses</a></li>
         <li><a href={isHome ? '#contact' : '/#contact'} data-section={isHome ? 'contact' : undefined}>Contact</a></li>
       </ul>
     )
@@ -70,6 +71,7 @@ const isSubpage = variant === 'subpage';
     <li><a href="/resume">CV</a></li>
     <li><a href="/security" class={activePath === '/security' ? 'active-link' : ''}>Security</a></li>
     <li><a href="/articles" class={activePath === '/articles' ? 'active-link' : ''}>Articles</a></li>
+    <li><a href="/uses" class={activePath === '/uses' ? 'active-link' : ''}>Uses</a></li>
     <li><a href="/#contact">Contact</a></li>
   </ul>
   <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
