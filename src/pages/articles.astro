@@ -69,26 +69,32 @@ async function loadLatestArticle() {
     return '/.netlify/functions/devto-image-proxy?url=' + encodeURIComponent(url);
   }
 
+  function escapeHtml(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
   async function renderArticle(article) {
     loading.style.display = 'none';
     error.style.display = 'none';
     updated.textContent = 'DEV.to • ' + new Date(article.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
-    const tagsHtml = (article.tags || []).map(t => `<span class="tag">#${t}</span>`).join('');
+    const tagsHtml = (article.tags || []).map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join('');
 
     container.innerHTML = `
       <div class="article-cover">
-        <img src="${proxyImage(article.coverImage)}" alt="${article.title.replace(/"/g, '&quot;')}" loading="lazy" />
+        <img src="${proxyImage(article.coverImage)}" alt="${escapeHtml(article.title)}" loading="lazy" />
       </div>
       <div class="article-body">
         <div class="article-meta">
           <span class="article-reading-time">${article.readingTime} min read</span>
           <span class="article-date">${new Date(article.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
         </div>
-        <h2 class="article-title">${article.title}</h2>
-        <p class="article-description">${article.description}</p>
+        <h2 class="article-title">${escapeHtml(article.title)}</h2>
+        <p class="article-description">${escapeHtml(article.description)}</p>
         <div class="article-tags">${tagsHtml}</div>
-        <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="article-read-btn">
+        <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer" class="article-read-btn">
           Read full article on DEV.to →
         </a>
       </div>

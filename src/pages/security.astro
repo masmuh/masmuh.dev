@@ -323,9 +323,19 @@ function renderAttackDonut(countries) {
     const row = document.createElement('div');
     row.className = 'donut-legend-row';
     const code = countries[i].country;
-    row.innerHTML =
-      '<div class="donut-legend-name"><div class="legend-dot" style="background:' + colors[i] + '"></div>' + code + ' ' + d.name + '</div>' +
-      '<div class="donut-legend-pct" style="color:' + colors[i] + '">' + ((d.value / total) * 100).toFixed(1) + '%</div>';
+    const nameDiv = document.createElement('div');
+    nameDiv.className = 'donut-legend-name';
+    const dot = document.createElement('div');
+    dot.className = 'legend-dot';
+    dot.style.background = colors[i];
+    nameDiv.appendChild(dot);
+    nameDiv.appendChild(document.createTextNode(code + ' ' + d.name));
+    row.appendChild(nameDiv);
+    const pctDiv = document.createElement('div');
+    pctDiv.className = 'donut-legend-pct';
+    pctDiv.style.color = colors[i];
+    pctDiv.textContent = ((d.value / total) * 100).toFixed(1) + '%';
+    row.appendChild(pctDiv);
     legendEl.appendChild(row);
   });
 }
@@ -383,7 +393,7 @@ function populateThreats(cf) {
     item.className = 'threat-item';
     item.style.justifyContent = 'center';
     item.style.padding = '16px 14px';
-    item.innerHTML = '<span style="color:var(--text-muted);font-size:12px">No threat breakdown data available (Free plan)</span>';
+    item.textContent = 'No threat breakdown data available (Free plan)';
     el.appendChild(item);
     return;
   }
@@ -395,11 +405,23 @@ function populateThreats(cf) {
     const pct = total > 0 ? ((t.count / total) * 100).toFixed(1) + '%' : '—';
     const item = document.createElement('div');
     item.className = 'threat-item';
-    item.innerHTML =
-      '<div class="threat-dot" style="background:' + color + '"></div>' +
-      '<span class="threat-name">' + label + '</span>' +
-      '<span class="threat-count" style="color:' + color + '">' + formatNumber(t.count) + '</span>' +
-      '<span class="threat-pct">' + pct + '</span>';
+    const dot = document.createElement('div');
+    dot.className = 'threat-dot';
+    dot.style.background = color;
+    item.appendChild(dot);
+    const nameEl = document.createElement('span');
+    nameEl.className = 'threat-name';
+    nameEl.textContent = label;
+    item.appendChild(nameEl);
+    const countEl = document.createElement('span');
+    countEl.className = 'threat-count';
+    countEl.style.color = color;
+    countEl.textContent = formatNumber(t.count);
+    item.appendChild(countEl);
+    const pctEl = document.createElement('span');
+    pctEl.className = 'threat-pct';
+    pctEl.textContent = pct;
+    item.appendChild(pctEl);
     el.appendChild(item);
   });
 }
