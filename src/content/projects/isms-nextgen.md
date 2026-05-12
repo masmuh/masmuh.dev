@@ -8,6 +8,7 @@ description: "For Sampoerna. Data sync from hours - minutes. 90% fewer manual se
 stack: [".NET Core 3.1", "SQL Server", "Clean Architecture"]
 icon: "🚀"
 thumbClass: "thumb-shell"
+image: "/gallery/isms-nextgen.webp"
 ---
 
 ---

@@ -8,6 +8,7 @@ description: "For Sampoerna. 75% reduction in data latency. 99.9% error reductio
 stack: [".NET Worker", "Aspose.Words", "iText7", "NPOI"]
 icon: "📄"
 thumbClass: "thumb-wicara"
+image: "/gallery/isms-download-generator.webp?v=2"
 ---
 
 ---
