@@ -8,36 +8,66 @@
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">Apr 2020 — Present</div>
-      <div class="timeline-role">Senior Backend Engineer</div>
+      <div class="timeline-role">Senior Backend Engineer &amp; Architect</div>
       <div class="timeline-company">Kano Solution · Remote</div>
       <ul class="timeline-points">
         <li>
-          <strong>Enterprise ERP Transformation (Project Bagong):</strong> Architected a high-performance Go-based data staging and transformation engine. Implemented automated Balanced Scorecard (BSC) indexing and KPI calculation pipelines using MongoDB Aggregation and distributed cron orchestration, ensuring real-time analytical accuracy across Finance, SCM, and Manufacturing modules.
+          <strong>Sole architect</strong> across <strong>10+ concurrent enterprise systems</strong>.
+          Progressed from senior engineer to primary architect and client-facing technical lead
+          within 18 months.
         </li>
         <li>
-          Architected and maintain the backend processing <strong>25,000+ ZIP archives/month</strong> across <strong>128 database shards</strong> with <strong>67 orchestrated background jobs</strong> — maintaining zero critical downtime throughout.
+          <strong>Authored</strong> company-wide <strong>Clean Architecture Blueprint</strong> —
+          <strong>50% faster</strong> engineer onboarding, standardized across 3 product teams.
         </li>
         <li>
-          Led a team of 3 developers as Technical Lead for Project CRA (Sampoerna) and served as the primary client liaison — delivered the full project within a 6-month timeline.
+          <strong>Mentored</strong> 3 junior developers to independent productivity within
+          <strong>3 months</strong>.
         </li>
         <li>
-          Authored the organization-wide Clean Architecture Blueprint, now standard across all teams — <strong>reduced engineer onboarding time by ~50%</strong>.
-        </li>
-        <li>
-          Upskilled 3 junior developers; all reached independent productivity within 3 months.
-        </li>
-        <li>
-          Maintained 5+ third-party API integrations including SAP ERP, Xendit (fintech), and Shipper (logistics) across concurrent production systems.
-        </li>
-        <li>
-          Led the refactor from a monolithic legacy codebase to modular .NET Core — <strong>reducing deployment cycles from days to hours</strong>.
-        </li>
-        <li>
-          Engineered and maintained core backend services for <strong>Sampoerna</strong>, operating across multi-timezone delivery cycles.
+          <strong>Modernized</strong> monolithic legacy codebases to modular .NET Core —
+          deployment cycle from <strong>days to hours</strong>.
         </li>
       </ul>
+      <div class="timeline-table">
+        <div class="timeline-table-header">
+          <span class="tt-col-client">Client</span>
+          <span class="tt-col-project">Project</span>
+          <span class="tt-col-highlights">Highlights</span>
+        </div>
+        <div class="timeline-table-row">
+          <span class="tt-col-client">Sampoerna</span>
+          <span class="tt-col-project">ISMS Logistics Suite</span>
+          <span class="tt-col-highlights">128 DB shards · 67 background jobs · 25K+ archives/month · zero downtime 4+ yrs</span>
+        </div>
+        <div class="timeline-table-row">
+          <span class="tt-col-client">MS Glow</span>
+          <span class="tt-col-project">Enterprise Ecosystem</span>
+          <span class="tt-col-highlights">1–2M daily transactions · GKE polyglot Go/.NET</span>
+        </div>
+        <div class="timeline-table-row">
+          <span class="tt-col-client">Bagong</span>
+          <span class="tt-col-project">CXO Staging Report</span>
+          <span class="tt-col-highlights">Go ETL engine for real-time C-level KPI dashboards</span>
+        </div>
+        <div class="timeline-table-row">
+          <span class="tt-col-client">Bank Amartha</span>
+          <span class="tt-col-project">ANR Financial Bridge</span>
+          <span class="tt-col-highlights">SAP ByDesign → Bank Mandiri automation · ~90% manual ops reduction</span>
+        </div>
+        <div class="timeline-table-row">
+          <span class="tt-col-client">Sampoerna</span>
+          <span class="tt-col-project">CRA Lead Automation</span>
+          <span class="tt-col-highlights">Led team of 3 · delivered on-time in 6 months as Technical Lead</span>
+        </div>
+        <div class="timeline-table-row">
+          <span class="tt-col-client">Kano POS 🆕</span>
+          <span class="tt-col-project">Multi-tenant POS System</span>
+          <span class="tt-col-highlights">425 PHP files · 11 modules · 259 API endpoints · auto-journal · PPN Coretax 2025</span>
+        </div>
+      </div>
       <div class="timeline-stack">
-        <span class="stack-tag">C#</span><span class="stack-tag">.NET Core</span><span class="stack-tag">Go</span><span class="stack-tag">SQL Server</span><span class="stack-tag">MongoDB</span><span class="stack-tag">Docker</span><span class="stack-tag">AWS S3</span><span class="stack-tag">SSIS</span>
+        <span class="stack-tag">C#</span><span class="stack-tag">.NET 6/8/9/10</span><span class="stack-tag">Laravel 13</span><span class="stack-tag">PHP</span><span class="stack-tag">Go</span><span class="stack-tag">SQL Server</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">MongoDB</span><span class="stack-tag">Redis</span><span class="stack-tag">Docker</span><span class="stack-tag">Kubernetes/GKE</span><span class="stack-tag">AWS S3</span>
       </div>
     </div>
 
@@ -232,10 +262,76 @@
 
   .timeline-points strong { color: var(--white); font-weight: 400; }
 
+  .timeline-table {
+    margin: 20px 0;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    font-family: var(--font-mono);
+    overflow: hidden;
+  }
+  .timeline-table-header {
+    display: grid;
+    grid-template-columns: 120px 1fr 1.8fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg2);
+  }
+  .timeline-table-header span {
+    padding: 8px 12px;
+    color: var(--cyan);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .timeline-table-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 1.8fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .timeline-table-row:last-child {
+    border-bottom: none;
+  }
+  .timeline-table-row:hover {
+    background: var(--cyan-glow);
+  }
+  .timeline-table-row span {
+    padding: 10px 12px;
+    color: var(--muted);
+    line-height: 1.5;
+    border-right: 1px solid var(--border);
+  }
+  .timeline-table-row span:last-child {
+    border-right: none;
+  }
+  .tt-col-client {
+    color: var(--white) !important;
+    font-weight: 600;
+  }
+  .tt-col-project {
+    color: var(--green) !important;
+  }
+
   @media (max-width: 768px) {
     .timeline { margin-left: 10px; }
     .timeline-item { padding-left: 24px; }
     .timeline-role { font-size: 18px; }
+
+    .timeline-table-header,
+    .timeline-table-row {
+      grid-template-columns: 1fr;
+    }
+    .timeline-table-header span,
+    .timeline-table-row span {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 6px 10px;
+    }
+    .timeline-table-header span:last-child,
+    .timeline-table-row span:last-child {
+      border-bottom: none;
+    }
   }
 </style>
 

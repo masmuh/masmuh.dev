@@ -10,7 +10,7 @@ const projects = (await getCollection("projects")).sort((a, b) => {
 });
 ---
 
-<Layout title="Portfolio — Mas Muhammad" description="Selected projects spanning enterprise architectures, distributed systems, and AI tooling — 26 systems built for Biogen, Sanofi, Shell, Sampoerna and more.">
+<Layout title="Portfolio — Mas Muhammad" description="Selected projects spanning enterprise architectures, distributed systems, and AI tooling — 28 systems built for Biogen, Sanofi, Shell, Sampoerna and more.">
   <Nav variant="subpage" backText="← Back to Home" />
 
   <div class="page-header">
@@ -25,7 +25,7 @@ const projects = (await getCollection("projects")).sort((a, b) => {
 
   <div class="hero-strip">
     <div class="hero-strip-inner">
-      <span class="hero-stat"><strong>26</strong> enterprise systems</span>
+      <span class="hero-stat"><strong>{projects.length}</strong> systems</span>
       <span class="hero-divider">&middot;</span>
       <span class="hero-stat"><strong>11</strong> years</span>
       <span class="hero-divider">&middot;</span>
