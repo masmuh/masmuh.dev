@@ -220,6 +220,35 @@ const { title, client, date, description } = entry.data;
     margin: 48px 0;
   }
 
+  .project-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 32px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .project-content th {
+    background: var(--bg2);
+    color: var(--cyan);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+  }
+  .project-content td {
+    padding: 10px 14px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+  .project-content tr:hover td {
+    background: var(--cyan-glow);
+  }
+  .project-content table strong {
+    color: var(--white);
+  }
+
   @media (max-width: 768px) {
     .project-detail {
       padding: 100px 24px 60px;
