@@ -31,8 +31,12 @@ exports.handler = async (event, context) => {
     const username = 'insight105';
     const params = event.queryStringParameters || {};
     const perPage = parseInt(params.per_page, 10) || 30;
-    const posts = await fetchDevToPosts(username, perPage);
+    // Dev.to API has a bug where per_page=1 returns wrong ordering.
+    // Fetch extra articles to ensure correct sort, then truncate locally.
+    const fetchSize = Math.max(perPage, 3);
+    const posts = await fetchDevToPosts(username, fetchSize);
     
+    const data = posts.slice(0, perPage);
     return {
       statusCode: 200,
       headers: {
@@ -40,8 +44,8 @@ exports.handler = async (event, context) => {
       },
       body: JSON.stringify({
         success: true,
-        data: posts,
-        count: posts.length
+        data,
+        count: data.length
       })
     };
   } catch (error) {
