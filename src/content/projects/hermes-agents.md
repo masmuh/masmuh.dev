@@ -1,7 +1,7 @@
 ---
 title: "Hermes Agents — AI Test Automation"
 client: "Kano Solution"
-date: "June 2025"
+date: "May 2025 — Present"
 category: "open-source"
 type: "Test Automation · AI Agents"
 description: "AI-powered automated testing framework that generates, executes, and reports end-to-end test scenarios for REST API systems. 95 test cases across 56 pages with dependency tracking, role-based testing, and financial integrity checks."
