@@ -1,7 +1,7 @@
 ---
 title: "Hermes Agents — AI Test Automation"
 client: "Kano Solution"
-date: "May 2025 — Present"
+date: "2026"
 category: "open-source"
 type: "Test Automation · AI Agents"
 description: "AI-powered QA automation pipeline integrated with GitLab: every issue labeled Done is tested end-to-end (UI + API 1:1) with screenshot evidence, then auto-closed on pass or reopened with a bug report on failure. 39 standardized test-case documents; 6+ backend & UI bugs caught before release."

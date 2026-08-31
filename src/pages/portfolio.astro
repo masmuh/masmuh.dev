@@ -4,10 +4,33 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
 
+const parseProjectDate = (s) => {
+  if (!s) return { ts: 0, ongoing: false };
+  const ongoing = /present|ongoing/i.test(s);
+  const y = String(s).match(/^(\d{4})$/);
+  const ym = String(s).match(/(\d{4})-(\d{2})/);
+  let ts;
+  if (y) {
+    ts = new Date(+y[1], 11, 31).getTime();
+  } else if (ym) {
+    ts = new Date(+ym[1], +ym[2] - 1, 1).getTime();
+  } else {
+    const md = String(s).match(/([A-Za-z]+)\s+(\d{4})/);
+    if (md) {
+      ts = new Date(`${md[1]} 1, ${md[2]}`).getTime();
+    } else {
+      const t = new Date(s).getTime();
+      ts = isNaN(t) ? 0 : t;
+    }
+  }
+  return { ts, ongoing };
+};
+
 const projects = (await getCollection("projects")).sort((a, b) => {
-  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
-  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
-  return dateB - dateA;
+  const pa = parseProjectDate(a.data.date);
+  const pb = parseProjectDate(b.data.date);
+  if (pa.ongoing !== pb.ongoing) return pa.ongoing ? -1 : 1;
+  return pb.ts - pa.ts;
 });
 ---
 

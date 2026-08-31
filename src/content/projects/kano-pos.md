@@ -1,7 +1,7 @@
 ---
 title: "Kano POS — Multi-tenant Point of Sale"
 client: "Kano Solution"
-date: "May 2025 — Present"
+date: "2026"
 category: "corporate"
 type: "POS · Backend · Multi-tenant"
 description: "Full-featured multi-tenant Point of Sale system: PostgreSQL schema-per-tenant, modular monolith, auto-journal engine, dynamic approval workflows, PPN Coretax 2025 compliance, and 259 auto-documented API endpoints."
