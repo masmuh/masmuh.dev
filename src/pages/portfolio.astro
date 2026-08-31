@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
 
 const projects = (await getCollection("projects")).sort((a, b) => {
@@ -10,480 +11,126 @@ const projects = (await getCollection("projects")).sort((a, b) => {
 });
 ---
 
-<Layout title="Portfolio — Mas Muhammad" description="Selected projects spanning enterprise architectures, distributed systems, and AI tooling — 28 systems built for Biogen, Sanofi, Shell, Sampoerna and more.">
-  <Nav variant="subpage" backText="← Back to Home" />
+<Layout
+  title="Portfolio — Mas Muhammad"
+  description="Selected projects spanning enterprise architectures, distributed systems, and AI tooling — 28 systems built for Biogen, Sanofi, Shell, Sampoerna and more."
+>
+  <Nav variant="subpage" backText="Back to Home" activePath="/portfolio" />
 
-  <div class="page-header">
-    <div class="page-eyebrow">// Selected Work</div>
-    <h1 class="page-title">Portfolio</h1>
-    <p class="page-subtitle">
-      A collection of corporate, open-source, consulting, and personal projects
-      — spanning enterprise architectures, autonomous AI pipelines, and
-      high-performance backend systems.
-    </p>
-  </div>
-
-  <div class="hero-strip">
-    <div class="hero-strip-inner">
-      <span class="hero-stat"><strong>{projects.length}</strong> systems</span>
-      <span class="hero-divider">&middot;</span>
-      <span class="hero-stat"><strong>11</strong> years</span>
-      <span class="hero-divider">&middot;</span>
-      <span class="hero-stat"><strong>Fortune 500</strong> clients</span>
-      <span class="hero-divider">&middot;</span>
-      <span class="hero-stat"><strong>Zero</strong> critical downtime</span>
+  <main class="container-page pt-14 pb-4 md:pt-20">
+    <div class="border-b-2 border-ink/10 pb-8">
+      <div class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent-deep">
+        // Selected Work
+      </div>
+      <h1 class="mt-2 text-[clamp(2.4rem,6vw,4.5rem)] font-extrabold leading-none tracking-tight">
+        Portfolio<span class="text-accent-deep">.</span>
+      </h1>
+      <p class="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-ink-soft">
+        A collection of corporate, consulting, open-source, and personal projects —
+        spanning enterprise architectures, autonomous AI pipelines, and high-performance
+        backend systems.
+      </p>
     </div>
-  </div>
 
-  <div class="filter-bar">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="corporate">Corporate</button>
-    <button class="filter-btn" data-filter="consulting">Consulting</button>
-    <button class="filter-btn" data-filter="open-source">Open Source</button>
-    <button class="filter-btn" data-filter="personal">Personal</button>
-  </div>
+    <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-bold text-ink-soft">
+      <span class="text-ink"><span class="text-accent-deep">{projects.length}</span> systems</span>
+      <span class="text-ink/20">·</span>
+      <span><span class="text-accent-deep">13</span> years</span>
+      <span class="text-ink/20">·</span>
+      <span>Fortune 500 clients</span>
+      <span class="text-ink/20">·</span>
+      <span>Zero critical downtime</span>
+    </div>
 
-  <div class="grid" id="grid">
-    {
-      projects.map((project) => (
-        <a
-          href={`/projects/${project.id}`}
-          class="card reveal"
-          data-cat={project.data.category}
-        >
-          <div class={`card-thumb ${project.data.thumbClass || "thumb-shell"}`}>
-            <div class="thumb-bg" />
-            {project.data.image ? (
-              <img src={project.data.image} alt={project.data.title} class="thumb-img" loading="lazy" />
-            ) : (
-              <div class="thumb-icon">{project.data.icon}</div>
-            )}
-            <span class="thumb-label">{project.data.category}</span>
-          </div>
-          <div class="card-body">
-            <div class="card-type">{project.data.type}</div>
-            <div class="card-name">{project.data.title}</div>
-            <div class="card-desc">{project.data.description}</div>
-            <div class="card-stack">
-              {project.data.stack.map((tag) => (
-                <span class="stack-tag">{tag}</span>
-              ))}
+    <div class="filter-bar mt-8 flex flex-wrap gap-2.5" role="tablist" aria-label="Filter projects">
+      <button class="chip active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all shadow-brutal-sm border-2 !border-ink bg-accent text-white" data-filter="all">All</button>
+      <button class="chip active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all shadow-brutal-sm border-2 !border-ink" data-filter="corporate">Corporate</button>
+      <button class="chip active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all shadow-brutal-sm border-2 !border-ink" data-filter="consulting">Consulting</button>
+      <button class="chip active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all shadow-brutal-sm border-2 !border-ink" data-filter="open-source">Open Source</button>
+      <button class="chip active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all shadow-brutal-sm border-2 !border-ink" data-filter="personal">Personal</button>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      {
+        projects.map((project) => (
+          <a
+            href={`/projects/${project.id}`}
+            class="card reveal group flex flex-col overflow-hidden rounded-2xl border-2 border-ink bg-paper shadow-brutal-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-brutal-sm"
+            data-cat={project.data.category}
+          >
+            <div class={`relative flex aspect-video items-center justify-center overflow-hidden ${project.data.thumbClass || "thumb-shell"}`}>
+              {project.data.image ? (
+                <img
+                  src={project.data.image}
+                  alt={project.data.title}
+                  class="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="text-5xl opacity-70">{project.data.icon}</div>
+              )}
+              <span class="absolute bottom-3 right-3 rounded-lg border-2 border-ink bg-paper/90 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wide shadow-brutal-sm">
+                {project.data.category}
+              </span>
             </div>
-            <div class="card-link">View Details</div>
-          </div>
-        </a>
-      ))
-    }
-  </div>
-
-  <footer>
-    <div class="footer-left">© 2026 <span>Mas Muhammad</span></div>
-    <div class="footer-center">
-      PORTFOLIO.SHIELD // {projects.length} PROJECTS
+            <div class="flex flex-1 flex-col p-5">
+              <div class="font-mono text-[0.65rem] font-bold uppercase tracking-[0.15em] text-accent-deep">
+                {project.data.type}
+              </div>
+              <div class="mt-1.5 text-lg font-extrabold tracking-tight">{project.data.title}</div>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">
+                {project.data.description}
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                {project.data.stack.slice(0, 5).map((tag) => (
+                  <span class="stack-tag">{tag}</span>
+                ))}
+              </div>
+              <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-accent-deep">
+                View Details
+                <i class="bi bi-arrow-right transition-transform duration-200 group-hover:translate-x-1"></i>
+              </div>
+            </div>
+          </a>
+        ))
+      }
     </div>
-    <div class="footer-right">Indonesia 🇮🇩</div>
-  </footer>
+  </main>
+
+  <Footer />
 
   <script>
     function filter(cat, btn) {
       document
-        .querySelectorAll(".filter-btn")
-        .forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+        .querySelectorAll(".filter-bar .chip")
+        .forEach((b) => b.classList.remove("!bg-accent", "!text-white"));
+      btn.classList.add("!bg-accent", "!text-white");
       document.querySelectorAll(".card").forEach((card) => {
         const match = cat === "all" || card.dataset.cat === cat;
         card.classList.toggle("hidden", !match);
-        card.setAttribute("aria-hidden", !match);
+        card.setAttribute("aria-hidden", String(!match));
       });
     }
 
-    document.querySelectorAll(".filter-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        filter(btn.dataset.filter, btn);
-      });
+    document.querySelectorAll(".filter-bar .chip").forEach((btn) => {
+      btn.addEventListener("click", () => filter(btn.dataset.filter, btn));
     });
   </script>
 </Layout>
 
 <style>
-  .page-header {
-    padding: 140px 60px 60px;
-    position: relative;
-    z-index: 1;
-    border-bottom: 1px solid var(--border);
-  }
-  .page-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 4px;
-    color: var(--cyan);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .page-title {
-    font-family: var(--font-display);
-    font-size: clamp(40px, 7vw, 80px);
-    font-weight: 800;
-    letter-spacing: -2px;
-    line-height: 1;
-    color: var(--white);
-    margin-bottom: 20px;
-  }
-  .page-subtitle {
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: var(--muted);
-    max-width: 500px;
-    line-height: 1.8;
-  }
+  .filter-bar .chip { cursor: pointer; }
+  .card.hidden { display: none; }
 
-  .hero-strip {
-    padding: 28px 60px;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    z-index: 1;
-    background: var(--bg2);
-  }
-  .hero-strip-inner {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .hero-stat {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
-  .hero-stat strong {
-    color: var(--cyan);
-    font-weight: 700;
-  }
-  .hero-divider {
-    color: var(--border);
-    font-size: 14px;
-  }
-
-  .filter-bar {
-    padding: 32px 60px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-    border-bottom: 1px solid var(--border);
-  }
-  .filter-btn {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 8px 18px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  .filter-btn.active,
-  .filter-btn:hover {
-    border-color: var(--border-bright);
-    color: var(--cyan);
-    background: var(--cyan-glow);
-  }
-
-  .grid {
-    padding: 60px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 32px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s;
-    text-decoration: none;
-    display: block;
-  }
-  .card.hidden {
-    display: none;
-  }
-  .card::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--cyan), var(--green));
-    transform: scaleX(0);
-    transition: transform 0.4s;
-    transform-origin: left;
-  }
-  .card:hover {
-    border-color: var(--border-bright);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  }
-  .card:hover::after {
-    transform: scaleX(1);
-  }
-
-  .card-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    position: relative;
-    overflow: hidden;
-    background: var(--bg2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .card-thumb-inner {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .thumb-icon {
-    font-size: 48px;
-    opacity: 0.6;
-    position: relative;
-    z-index: 1;
-  }
-  .thumb-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.4s ease;
-  }
-  .card:hover .thumb-img {
-    transform: scale(1.08);
-  }
-  .thumb-bg {
-    position: absolute;
-    inset: 0;
-    opacity: 0.15;
-  }
-
-  /* Unique thumb BGs */
-  .thumb-oats {
-    background: radial-gradient(ellipse at 30% 50%, #1a0a2e, #050810);
-  }
-  .thumb-oats .thumb-bg {
-    background: linear-gradient(135deg, #6b21a8, #3b0764);
-  }
-  .thumb-wicara {
-    background: radial-gradient(ellipse at 70% 30%, #0a1a2e, #050810);
-  }
-  .thumb-wicara .thumb-bg {
-    background: linear-gradient(135deg, #0c4a6e, #082f49);
-  }
-  .thumb-jobhunter {
-    background: radial-gradient(ellipse at 50% 70%, #0a2e1a, #050810);
-  }
-  .thumb-jobhunter .thumb-bg {
-    background: linear-gradient(135deg, #14532d, #052e16);
-  }
-  .thumb-foculing {
-    background: radial-gradient(ellipse at 80% 20%, #2e1a0a, #050810);
-  }
-  .thumb-foculing .thumb-bg {
-    background: linear-gradient(135deg, #7c2d12, #431407);
-  }
-  .thumb-msglow {
-    background: radial-gradient(ellipse at 20% 80%, #0a2e2e, #050810);
-  }
-  .thumb-msglow .thumb-bg {
-    background: linear-gradient(135deg, #134e4a, #042f2e);
-  }
-  .thumb-portaglow {
-    background: radial-gradient(ellipse at 50% 50%, #2e260a, #050810);
-  }
-  .thumb-portaglow .thumb-bg {
-    background: linear-gradient(135deg, #f59e0b, #92400e);
-  }
-  .thumb-posglowverse {
-    background: radial-gradient(ellipse at 40% 40%, #0a2e1f, #050810);
-  }
-  .thumb-posglowverse .thumb-bg {
-    background: linear-gradient(135deg, #059669, #064e3b);
-  }
-  .thumb-academic {
-    background: radial-gradient(ellipse at 60% 40%, #1a2e0a, #050810);
-  }
-  .thumb-academic .thumb-bg {
-    background: linear-gradient(135deg, #365314, #1a2e05);
-  }
-  .thumb-sampoerna {
-    background: radial-gradient(ellipse at 40% 60%, #2e0a0a, #050810);
-  }
-  .thumb-sampoerna .thumb-bg {
-    background: linear-gradient(135deg, #7f1d1d, #450a0a);
-  }
-  .thumb-shell {
-    background: radial-gradient(ellipse at 70% 50%, #2e240a, #050810);
-  }
-  .thumb-shell .thumb-bg {
-    background: linear-gradient(135deg, #a16207, #422006);
-  }
-  .thumb-telkomsel {
-    background: radial-gradient(ellipse at 30% 70%, #2e0a1a, #050810);
-  }
-  .thumb-telkomsel .thumb-bg {
-    background: linear-gradient(135deg, #9d174d, #4c0519);
-  }
-
-  .thumb-label {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border: 1px solid var(--border-bright);
-    color: var(--cyan);
-    background: rgba(5, 8, 16, 0.7);
-  }
-
-  .card-body {
-    padding: 28px;
-  }
-  .card-type {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--cyan);
-    margin-bottom: 8px;
-    opacity: 0.7;
-  }
-  .card-name {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: var(--white);
-    margin-bottom: 10px;
-  }
-  .card-desc {
-    font-family: var(--font-body);
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 16px;
-  }
-  .card-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 20px;
-  }
-  .stack-tag {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    padding: 3px 8px;
-    background: rgba(0, 200, 255, 0.06);
-    border: 1px solid var(--border);
-    color: var(--cyan-dim);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .card-link {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--cyan);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-  .card-link::before {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 1px;
-    background: var(--cyan);
-    transition: width 0.3s ease;
-    box-shadow: 0 0 8px var(--cyan);
-  }
-  .card-link::after {
-    content: "→";
-    transition: transform 0.3s ease;
-  }
-  .card:hover .card-link {
-    color: var(--white);
-    text-shadow: 0 0 8px var(--cyan);
-  }
-  .card:hover .card-link::before {
-    width: 100%;
-  }
-  .card:hover .card-link::after {
-    transform: translateX(4px);
-  }
-
-  html.light .thumb-oats { background: radial-gradient(ellipse at 30% 50%, #e8d5f5, #f0eef5); }
-  html.light .thumb-oats .thumb-bg { background: linear-gradient(135deg, #d4b8f0, #c4a8e0); }
-  html.light .thumb-wicara { background: radial-gradient(ellipse at 70% 30%, #d0e4f0, #eef2f5); }
-  html.light .thumb-wicara .thumb-bg { background: linear-gradient(135deg, #b0d0e8, #98c0d8); }
-  html.light .thumb-jobhunter { background: radial-gradient(ellipse at 50% 70%, #d8f0e0, #eef5f0); }
-  html.light .thumb-jobhunter .thumb-bg { background: linear-gradient(135deg, #b0e0c0, #98d0b0); }
-  html.light .thumb-foculing { background: radial-gradient(ellipse at 80% 20%, #f0e0d0, #f5f0ee); }
-  html.light .thumb-foculing .thumb-bg { background: linear-gradient(135deg, #e0c0a8, #d0b098); }
-  html.light .thumb-msglow { background: radial-gradient(ellipse at 20% 80%, #d0e8e8, #eef5f5); }
-  html.light .thumb-msglow .thumb-bg { background: linear-gradient(135deg, #b0d0d0, #98c0c0); }
-  html.light .thumb-portaglow { background: radial-gradient(ellipse at 50% 50%, #f0e8d0, #f5f2ee); }
-  html.light .thumb-portaglow .thumb-bg { background: linear-gradient(135deg, #f5d8a0, #e8c890); }
-  html.light .thumb-posglowverse { background: radial-gradient(ellipse at 40% 40%, #d0f0e0, #eef5f0); }
-  html.light .thumb-posglowverse .thumb-bg { background: linear-gradient(135deg, #a8e0c0, #90d0b0); }
-  html.light .thumb-academic { background: radial-gradient(ellipse at 60% 40%, #e0e8d0, #f0f5ee); }
-  html.light .thumb-academic .thumb-bg { background: linear-gradient(135deg, #c0d8a0, #b0c890); }
-  html.light .thumb-sampoerna { background: radial-gradient(ellipse at 40% 60%, #f0d8d8, #f5eeef); }
-  html.light .thumb-sampoerna .thumb-bg { background: linear-gradient(135deg, #e0b0b0, #d0a0a0); }
-  html.light .thumb-shell { background: radial-gradient(ellipse at 70% 50%, #f0e8d0, #f5f2ee); }
-  html.light .thumb-shell .thumb-bg { background: linear-gradient(135deg, #e0c890, #d0b888); }
-  html.light .thumb-telkomsel { background: radial-gradient(ellipse at 30% 70%, #f0d8e0, #f5eef0); }
-  html.light .thumb-telkomsel .thumb-bg { background: linear-gradient(135deg, #e0b0c0, #d0a0b0); }
-  html.light .thumb-label { background: rgba(255, 255, 255, 0.8); }
-
-  @media (max-width: 768px) {
-    nav,
-    footer {
-      padding: 16px 24px;
-    }
-    .page-header,
-    .hero-strip,
-    .filter-bar {
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-    .hero-strip-inner {
-      gap: 12px;
-    }
-    .hero-stat {
-      font-size: 10px;
-    }
-    .grid {
-      padding: 24px;
-      grid-template-columns: 1fr;
-    }
-  }
+  .thumb-oats { background: linear-gradient(135deg, #d4b8f0, #c4a8e0); }
+  .thumb-wicara { background: linear-gradient(135deg, #b0d0e8, #98c0d8); }
+  .thumb-jobhunter { background: linear-gradient(135deg, #b0e0c0, #98d0b0); }
+  .thumb-foculing { background: linear-gradient(135deg, #e0c0a8, #d0b098); }
+  .thumb-msglow { background: linear-gradient(135deg, #b0d0d0, #98c0c0); }
+  .thumb-portaglow { background: linear-gradient(135deg, #f5d8a0, #e8c890); }
+  .thumb-posglowverse { background: linear-gradient(135deg, #a8e0c0, #90d0b0); }
+  .thumb-academic { background: linear-gradient(135deg, #c0d8a0, #b0c890); }
+  .thumb-sampoerna { background: linear-gradient(135deg, #e0b0b0, #d0a0a0); }
+  .thumb-shell { background: linear-gradient(135deg, #e0c890, #d0b888); }
+  .thumb-telkomsel { background: linear-gradient(135deg, #e0b0c0, #d0a0b0); }
 </style>

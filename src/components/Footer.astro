@@ -1,0 +1,21 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer
+  class="relative z-10 mt-20 border-t-2 border-ink/10 bg-paper"
+>
+  <div class="container-page flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
+    <div class="footer-left">
+      <span>MAS.MUH</span> &copy; {year}
+    </div>
+    <div class="footer-center hidden md:block">Senior Backend Engineer</div>
+    <div class="footer-right flex flex-wrap items-center gap-x-5 gap-y-2">
+      <a href="/security">Security</a>
+      <a href="/articles">Articles</a>
+      <a href="/uses">Uses</a>
+      <a href="https://github.com/masmuh" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://linkedin.com/in/masmuh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</footer>

@@ -1,15 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout
   title="Security Analytics Dashboard — Mas Muhammad"
   description="Combined Cloudflare WAF security dashboard for masmuh.web.id"
 >
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-
   <Nav variant="default" activePath="/security" statusText="LIVE" />
 
   <main class="security-page" id="security-page">
@@ -173,17 +171,7 @@ import Nav from "../components/Nav.astro";
     </div><!-- /wrap -->
   </main>
 
-  <footer>
-    <div class="footer-left"><span>Mas</span>Muhammad © 2026</div>
-    <div class="footer-center">Senior Backend Engineer</div>
-    <div class="footer-right">
-      <a href="/"><span>Home</span></a>
-      <span>·</span>
-      <a href="/resume"><span>CV</span></a>
-      <span>·</span>
-      <a href="/security"><span>Security</span></a>
-    </div>
-  </footer>
+  <Footer />
 </Layout>
 
 <script>
@@ -254,9 +242,9 @@ function initCharts() {
 }
 
 const EC = {
-  bg: 'transparent', text: '#7a90b0', textLight: '#f0f6ff',
-  cyan: '#22d3ee', green: '#4ade80', orange: '#fbbf24', red: '#f87171',
-  purple: '#a78bfa', blue: '#60a5fa', border: 'rgba(99,179,237,0.15)',
+  bg: 'transparent', text: '#67707f', textLight: '#171717',
+  cyan: '#38b1ed', green: '#00b87a', orange: '#d97706', red: '#dc2626',
+  purple: '#8b5cf6', blue: '#2563eb', border: 'rgba(23,23,23,0.12)',
 };
 
 // ── CHART RENDERERS ──
@@ -268,8 +256,8 @@ function renderTrafficChart(timeline) {
     backgroundColor: EC.bg,
     tooltip: {
       trigger: 'axis',
-      backgroundColor: '#0d1322', borderColor: EC.border, borderWidth: 1,
-      textStyle: { color: EC.textLight, fontFamily: 'Space Mono', fontSize: 11 },
+      backgroundColor: '#ffffff', borderColor: '#171717', borderWidth: 2,
+      textStyle: { color: EC.textLight, fontFamily: 'JetBrains Mono', fontSize: 11 },
     },
     legend: { show: false },
     grid: { left: 50, right: 16, top: 10, bottom: 24 },
@@ -294,7 +282,7 @@ function renderTrafficChart(timeline) {
 
 function renderAttackDonut(countries) {
   if (!attackDonut || !countries) return;
-  const colors = ['#f87171','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
+  const colors = ['#dc2626','#d97706','#8b5cf6','#2563eb','#94a3b8'];
   const total = countries.reduce((s, c) => s + c.count, 0);
   document.getElementById('donut-total').textContent = formatNumber(total);
   const data = countries.slice(0, 5).map((c, i) => ({
@@ -305,8 +293,8 @@ function renderAttackDonut(countries) {
   attackDonut.setOption({
     backgroundColor: EC.bg,
     tooltip: {
-      backgroundColor: '#0d1322', borderColor: EC.border, borderWidth: 1,
-      textStyle: { color: EC.textLight, fontFamily: 'Space Mono', fontSize: 11 },
+      backgroundColor: '#ffffff', borderColor: '#171717', borderWidth: 2,
+      textStyle: { color: EC.textLight, fontFamily: 'JetBrains Mono', fontSize: 11 },
       formatter: p => p.name + ': ' + formatNumber(p.value) + ' (' + ((p.value / total) * 100).toFixed(1) + '%)',
     },
     series: [{
@@ -348,13 +336,13 @@ function renderScoreGauge(score) {
       type: 'gauge', startAngle: 90, endAngle: -270,
       pointer: { show: false },
       progress: { show: true, width: 8, roundCap: true },
-      axisLine: { lineStyle: { width: 8, color: [[1, 'rgba(99,179,237,0.1)']] } },
+      axisLine: { lineStyle: { width: 8, color: [[1, 'rgba(23,23,23,0.08)']] } },
       axisTick: { show: false },
       splitLine: { show: false },
       axisLabel: { show: false },
       detail: {
-        offsetCenter: [0, 0], fontSize: 22, fontWeight: 700, fontFamily: 'Space Mono',
-        color: '#4ade80', formatter: '{value}',
+        offsetCenter: [0, 0], fontSize: 22, fontWeight: 700, fontFamily: 'JetBrains Mono',
+        color: '#00b87a', formatter: '{value}',
       },
       data: [{ value: score }],
     }],
@@ -379,8 +367,8 @@ const ACTION_LABELS = {
 };
 
 const ACTION_COLORS = {
-  block: '#f87171', challenge: '#fbbf24', jschallenge: '#a78bfa',
-  managed_challenge: '#60a5fa', log: '#94a3b8', bypass: '#34d399',
+  block: '#dc2626', challenge: '#d97706', jschallenge: '#8b5cf6',
+  managed_challenge: '#2563eb', log: '#94a3b8', bypass: '#00b87a',
 };
 
 function populateThreats(cf) {
@@ -1128,4 +1116,58 @@ footer {
   .metric-value { font-size: 24px; }
   .wrap { padding: 0 16px; }
 }
+</style>
+
+<style>
+  .security-page {
+    --text-primary: #171717;
+    --text-secondary: #67707f;
+    --text-muted: #94a3b8;
+    --bg-card: #ffffff;
+    --border: rgba(23, 23, 23, 0.12);
+    --red: #dc2626;
+    --amber: #d97706;
+    --purple: #8b5cf6;
+    --blue: #2563eb;
+    --cyan: #38b1ed;
+    --green: #00b87a;
+    --glow: rgba(56, 177, 237, 0.12);
+    padding-top: 6rem;
+  }
+  .page-title {
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  .page-subtitle {
+    font-family: var(--font-sans);
+  }
+  .metric-card,
+  .card {
+    border: 2px solid var(--color-ink);
+    border-radius: 0.9rem;
+    box-shadow: 3px 3px 0 0 rgba(23, 23, 23, 0.9);
+    background: var(--color-paper);
+  }
+  .tag {
+    border: 2px solid var(--color-ink);
+    border-radius: 0.5rem;
+  }
+  .section-tag {
+    color: var(--color-accent-deep);
+  }
+  .refresh-btn {
+    border: 2px solid var(--color-ink);
+    border-radius: 0.6rem;
+    box-shadow: 2px 2px 0 0 rgba(23, 23, 23, 0.9);
+    color: var(--color-ink);
+    font-family: var(--font-mono);
+  }
+  .source-badge.cf,
+  .source-badge.combined {
+    border: 2px solid var(--color-ink);
+    border-radius: 0.5rem;
+  }
+  :global(body::before) {
+    display: none;
+  }
 </style>

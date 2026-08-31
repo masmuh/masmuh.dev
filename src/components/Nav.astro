@@ -11,49 +11,77 @@ const {
   activePath = '',
   variant = 'default',
   backHref = '/',
-  backText = '← Back',
+  backText = 'Back to Portfolio',
   statusText = 'Open to Remote',
 } = Astro.props;
 
 const isHome = variant === 'home';
 const isSubpage = variant === 'subpage';
+
+const links = [
+  { href: isHome ? '#about' : '/#about', label: 'About' },
+  { href: isHome ? '#skills' : '/#skills', label: 'Skills' },
+  { href: isHome ? '#experience' : '/#experience', label: 'Experience' },
+  { href: '/portfolio', label: 'Portfolio', active: activePath === '/portfolio' },
+  { href: '/resume', label: 'CV', active: activePath === '/resume' },
+  { href: '/articles', label: 'Articles', active: activePath === '/articles' },
+  { href: isHome ? '#contact' : '/#contact', label: 'Contact' },
+];
 ---
 
-<nav>
-  <a href="/" class="nav-logo">MAS<span>.</span>MUH</a>
-  {
-    isSubpage ? (
-      <a href={backHref} class="nav-back">{backText}</a>
-    ) : (
-      <ul class="nav-links">
-        <li><a href={isHome ? '#about' : '/#about'} data-section={isHome ? 'about' : undefined}>About</a></li>
-        <li><a href={isHome ? '#skills' : '/#skills'} data-section={isHome ? 'skills' : undefined}>Skills</a></li>
-        <li><a href={isHome ? '#experience' : '/#experience'} data-section={isHome ? 'experience' : undefined}>Experience</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/resume">CV</a></li>
-        <li><a href="/security" class={activePath === '/security' ? 'active-link' : ''}>Security</a></li>
-        <li><a href="/articles" class={activePath === '/articles' ? 'active-link' : ''}>Articles</a></li>
-        <li><a href="/uses" class={activePath === '/uses' ? 'active-link' : ''}>Uses</a></li>
-        <li><a href={isHome ? '#contact' : '/#contact'} data-section={isHome ? 'contact' : undefined}>Contact</a></li>
-      </ul>
-    )
-  }
-  <div class="nav-right">
-    {!isSubpage && (
-      <div class="nav-status">
-        <div class="status-dot"></div>
-        {statusText}
+<header class="sticky top-3 z-50 px-3 md:top-4 md:px-6">
+  <div class="relative mx-auto max-w-5xl">
+    <nav
+      class="flex items-center justify-between gap-3 rounded-2xl border-2 border-ink bg-white/75 px-4 py-2.5 shadow-brutal backdrop-blur-xl backdrop-saturate-150 md:px-5"
+    >
+      <a href="/" class="nav-logo shrink-0">MAS<span>.</span>MUH</a>
+
+      {isSubpage ? (
+        <a
+          href={backHref}
+          class="inline-flex items-center gap-1.5 text-sm font-bold text-ink-soft transition-colors hover:text-accent-deep"
+        >
+          <i class="bi bi-arrow-left"></i>
+          {backText}
+        </a>
+      ) : (
+        <ul class="hidden items-center gap-0.5 lg:flex">
+          {links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class={`inline-flex items-center rounded-xl border-2 border-transparent px-3 py-1.5 text-sm font-semibold text-ink-soft transition-all hover:border-ink hover:bg-white hover:shadow-brutal-sm ${
+                  link.active ? 'border-ink bg-white text-ink shadow-brutal-sm' : ''
+                }`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div class="nav-right">
+        {!isSubpage && (
+          <div class="nav-status hidden md:flex">
+            <div class="status-dot"></div>
+            {statusText}
+          </div>
+        )}
+        <a
+          href={isHome ? '#contact' : '/#contact'}
+          class="btn-brutal btn-accent hidden !px-4 !py-2 !text-sm lg:inline-flex"
+        >
+          Let's Talk
+          <i class="bi bi-arrow-up-right"></i>
+        </a>
+        <button class="nav-hamburger lg:hidden" id="navHamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    )}
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <span class="theme-icon-light">☀️</span>
-      <span class="theme-icon-dark">🌙</span>
-    </button>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    </nav>
   </div>
-</nav>
+</header>
 
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <div class="mobile-nav" id="mobileNav">
@@ -66,14 +94,26 @@ const isSubpage = variant === 'subpage';
     <li><a href="/#about">About</a></li>
     <li><a href="/#skills">Skills</a></li>
     <li><a href="/#experience">Experience</a></li>
-    <li><a href="/portfolio">Portfolio</a></li>
-    <li><a href="/resume">CV</a></li>
-    <li><a href="/security" class={activePath === '/security' ? 'active-link' : ''}>Security</a></li>
-    <li><a href="/articles" class={activePath === '/articles' ? 'active-link' : ''}>Articles</a></li>
-    <li><a href="/uses" class={activePath === '/uses' ? 'active-link' : ''}>Uses</a></li>
+    <li>
+      <a href="/portfolio" class={activePath === '/portfolio' ? 'active-link' : ''}>Portfolio</a>
+    </li>
+    <li>
+      <a href="/resume" class={activePath === '/resume' ? 'active-link' : ''}>CV</a>
+    </li>
+    <li>
+      <a href="/security" class={activePath === '/security' ? 'active-link' : ''}>Security</a>
+    </li>
+    <li>
+      <a href="/articles" class={activePath === '/articles' ? 'active-link' : ''}>Articles</a>
+    </li>
+    <li>
+      <a href="/uses" class={activePath === '/uses' ? 'active-link' : ''}>Uses</a>
+    </li>
     <li><a href="/#contact">Contact</a></li>
   </ul>
-  <button class="mobile-nav-toggle" id="mobileThemeToggle">Toggle Theme</button>
+  <a href={isHome ? '#contact' : '/#contact'} class="btn-brutal btn-accent w-full !py-3 mt-4">
+    Let's Talk
+  </a>
   {!isSubpage && (
     <div class="mobile-nav-status">
       <div class="status-dot"></div>
@@ -81,9 +121,3 @@ const isSubpage = variant === 'subpage';
     </div>
   )}
 </div>
-
-<style>
-  .nav-links {
-    gap: 24px;
-  }
-</style>

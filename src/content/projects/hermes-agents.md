@@ -4,8 +4,8 @@ client: "Kano Solution"
 date: "May 2025 — Present"
 category: "open-source"
 type: "Test Automation · AI Agents"
-description: "AI-powered automated testing framework that generates, executes, and reports end-to-end test scenarios for REST API systems. 95 test cases across 56 pages with dependency tracking, role-based testing, and financial integrity checks."
-stack: ["Node.js", "AI Agents", "LLM-driven", "Swagger/OpenAPI", "Bruno", "Automation"]
+description: "AI-powered QA automation pipeline integrated with GitLab: every issue labeled Done is tested end-to-end (UI + API 1:1) with screenshot evidence, then auto-closed on pass or reopened with a bug report on failure. 39 standardized test-case documents; 6+ backend & UI bugs caught before release."
+stack: ["Node.js", "AI Agents", "LLM-driven", "GitLab API", "Playwright", "Automation"]
 icon: "🤖"
 thumbClass: "thumb-shell"
 image: ""
@@ -13,109 +13,78 @@ image: ""
 
 ## 1. Project Identity
 
-**Hermes Agents** is an AI-powered end-to-end test automation framework purpose-built for the Kano POS system — a 259-endpoint, 11-module Laravel backend. Instead of manually scripting tests, Hermes consumes the system's OpenAPI/Swagger spec to **autonomously discover, generate, execute, and validate** test scenarios across all modules.
+**Hermes Agents** is an AI-powered QA automation pipeline purpose-built for the Kano POS system — a 259-endpoint, 11-module Laravel backend with a Next.js frontend. Instead of manual, per-issue regression testing, Hermes operates a scheduled pipeline that automatically **tests, comments, completes, and reopens** GitLab issues based on real UI + API evidence.
 
-Built with a multi-agent architecture: dedicated agents for planning, execution, validation, and reporting — each with role-specific knowledge of the POS domain.
-
-## 2. Architecture
+## 2. Architecture — Three Automated Pipelines
 
 ```
-OpenAPI Spec (swagger.json)
-       │
-       ▼
-┌──────────────────────────┐
-│  Discovery Agent         │──► Maps all endpoints, params, schemas
-└──────────┬───────────────┘
-           ▼
-┌──────────────────────────┐
-│  Planner Agent           │──► Generates dependency-ordered test plan
-│                          │    (respects prerequisites & data flow)
-└──────────┬───────────────┘
-           ▼
-┌──────────────────────────┐
-│  Execution Agent         │──► Runs tests sequentially per plan
-│  ┌────────────────────┐  │    - Auto-creates prerequisite data
-│  │ Role-based Runner  │  │    - Rotates roles (Admin, Kasir, dll)
-│  │ Financial Checker  │  │    - Rejects invalid state transitions
-│  └────────────────────┘  │
-└──────────┬───────────────┘
-           ▼
-┌──────────────────────────┐
-│  Reporter Agent          │──► Generates pass/fail matrix
-│                          │    - Failure logs with request/response
-│                          │    - Financial integrity verifications
-└──────────────────────────┘
+GitLab Issues (project 565)
+        │
+        ▼
+┌─ UI/UX Tester (hourly) ────────────────────────────────┐
+│ Picks first OPEN issue labeled "Done"                  │
+│ → logs into dev UI → runs multi-scenario tests         │
+│ → cross-checks UI data 1:1 against API JSON            │
+│ → captures & uploads screenshots to GitLab             │
+│ → verdict: PASS / UI bug / backend issue / no data     │
+└────────────────────────────────────────────────────────┘
+        │
+        ├─ PASS ────────────► CLOSE issue + appreciation comment @developer
+        ├─ UI/UX bug ───────► REOPEN + label + detailed comment + screenshot @assignee
+        ├─ Backend/API error► REOPEN + "Backend Issue" label + comment @backend
+        ├─ No data (0 rec) ─► NOT closed → "Backend Issue" + seed-data request
+        └─ Questions ────────► Comment Reply Bot answers / escalates
+
+┌─ Comment Reply Bot (hourly) ───────────────────────────┐
+│ Monitors issue comments, replies to questions using    │
+│ verified API responses, skips noise (anti-spam rules)  │
+└────────────────────────────────────────────────────────┘
+
+┌─ Sync & Test Case Generator (hourly) ──────────────────┐
+│ Keeps status tables (Done / In Progress / Open) in     │
+│ the Master Control issue in sync with GitLab state     │
+└────────────────────────────────────────────────────────┘
 ```
 
 ## 3. How It Works
 
-### 3.1 Discovery Phase
-The Discovery Agent parses the OpenAPI spec (`swagger.json`) and extracts:
-- Each endpoint path, method, and expected status codes
-- Request/response schemas (required fields, data types, constraints)
-- Relationships between endpoints (e.g., `POST /api/lokasi` must precede `POST /api/gudang`)
+### 3.1 Test → Comment → Complete → Reopen Loop
 
-From 259 endpoints across 44 controllers, the agent identifies **95 unique testable scenarios** and maps their dependencies into a directed acyclic graph (DAG).
+- **Test**: every issue marked `Done` is picked up within an hour. The agent logs into the dev environment, navigates the feature page, and cross-checks every displayed value against the raw API JSON response (1:1 verification).
+- **Comment**: results are posted back to the issue — verdict, API endpoint + status code, response body, and screenshot evidence uploaded via the GitLab uploads API. Developers are @mentioned so they are notified immediately.
+- **Complete (close)**: an issue is closed only when 100% of scenarios pass with real data present.
+- **Reopen**: on a UI bug the issue is reopened with a detailed report and the `Done` label removed; on a backend error it is reopened with the `Backend Issue` label and escalated to the backend owner.
 
-### 3.2 Planning Phase
-The Planner Agent produces a dependency-ordered execution plan:
+### 3.2 Evidence-Based Reporting
 
-```
-Priority 0 (Critical — 43 tests)
-├── Auth flows (login, token refresh, logout)
-├── CRUD master data (location → warehouse → item → customer)
-├── POS transaction lifecycle (create → settle → void)
-├── Stock mutations (transfer → receive → adjust)
-└── Financial closure (journal post → GL reconciliation)
+- Screenshots captured during testing are uploaded and embedded directly in the GitLab comment.
+- Every decision leaves a full audit trail: comments, screenshots, label changes, and state changes.
 
-Priority 1 (Important — 28 tests)
-├── Purchase order lifecycle
-├── Multi-role access boundaries
-├── Discount & tax calculations
-└── Inventory stock opname
+### 3.3 Anti-Spam Comment Handling
 
-Priority 2 (Enhancement — 11 tests)
-├── Report generation & filtering
-├── Approval workflow chains
-└── Edge cases (negative quantities, past dates)
-```
+The reply bot never replies to itself, skips system notes, skips already-answered questions, and skips informational messages — only genuinely unanswered questions get a reply (max 3 per run).
 
-### 3.3 Execution Phase
-The Execution Agent runs tests in strict dependency order:
-- **Auto-provisioning**: Before testing "Create Stock Transfer", it creates the source location, destination warehouse, and item data first
-- **Role rotation**: Each test scenario runs across **5 roles** (Admin, Kasir, Gudang, Finance, Manager) to verify permission boundaries
-- **Financial assertions**: After every transaction, validates the balance sheet equation (Assets = Liabilities + Equity) — catching silent financial integrity bugs
-- **Idempotency checks**: Certain endpoints are called twice to verify safe repeatability
+## 4. Test Case Documentation
 
-### 3.4 Reporting Phase
-Aggregates all execution results into a pass/fail matrix:
+- **39 standardized test-case documents** — one per application page — in a fixed 8-column QA table format: Step, Desc, Iteration, Expected, Actual, Result, Evidence, Defect ID.
+- Split into **UI/UX** and **API** test cases per page.
+- Stored in the backend repo (`docs/test-case/`) and registered as GitLab issues (#42–#80) with a Master Control issue (#89) tracking status.
 
-| Module | Total | Pass | Fail | Coverage |
-|--------|-------|------|------|----------|
-| Login & Auth | 5 | 5 | 0 | 3 pages |
-| Master Data | 22 | 22 | 0 | 11 pages |
-| Transactions | 24 | 23 | 1 | 10 pages |
-| Inventory | 7 | 7 | 0 | 4 pages |
-| Journal & Financial | 13 | 13 | 0 | 6 pages |
-| Reports | 14 | 14 | 0 | 12 pages |
-| System & Approval | 6 | 5 | 1 | 4 pages |
-| End-to-End | 4 | 4 | 0 | All pages |
-| **Total** | **95** | **93** | **2** | **56 pages** |
+## 5. Bugs Caught (Real Findings)
 
-Each failure includes the full request payload, response body, and the specific assertion that failed — enabling rapid root-cause analysis.
+| Area | Finding |
+|------|---------|
+| Reports (3 issues) | Export Excel returned **HTTP 405** — frontend & spec sent `POST`, backend only accepted `GET` |
+| Receivables spec | Documented endpoint returned **404**; the real endpoint was verified via OpenAPI + live calls |
+| Stock API | `GET /stock` was forced to `per_page=100` — pagination loop required |
+| POS item click | Toast "Stok kosong" despite available stock — client-side stock map out of sync with API |
+| Journal list | "Lihat Detail" button unbound — API returned 200 OK, UI handler missing |
+| Empty data | Several modules had 0 records — flagged as backend issues with seed-data requests |
 
-## 4. Technical Highlights
+## 6. Business Impact
 
-- **LLM-agnostic**: Pluggable model backend — works with OpenRouter, 9Router, or local LLMs for environments without internet access
-- **Dependency-aware execution**: A DAG scheduler ensures no test runs before its prerequisites are satisfied
-- **Financial integrity validation**: Custom assertion engine verifies double-entry accounting rules automatically after each transaction
-- **Bruno integration**: Auto-generates Bruno API collections alongside test execution for manual debugging
-- **Minimal config**: Single YAML file specifies endpoints, roles, and authentication flow — everything else is auto-discovered
-
-## 5. Business Impact
-
-- **Zero manual test scripting**: 95 test cases generated from API spec alone
-- **Role boundary gaps exposed**: Found 3 permissions issues where unauthorized roles could access restricted endpoints
-- **Financial bugs caught early**: Identified 2 journal entry imbalances during execution
-- **Regression safety net**: Full suite runs in ~15 minutes, enabling frequent regression cycles
-
+- **From manual to hourly automated**: regression testing that previously ran per-issue by hand now runs automatically every hour.
+- **Bug feedback loop: days → real-time** — verdict + screenshot + @mention land on the right developer's desk within minutes.
+- **6+ backend & UI bugs** caught and documented before release.
+- **Empirical API verification** — multiple spec errors (404 endpoints, wrong HTTP methods) discovered by testing reality instead of trusting documentation.
+- **Full audit trail** — every test decision is permanently recorded in GitLab.

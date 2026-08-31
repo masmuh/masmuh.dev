@@ -1,219 +1,121 @@
 ---
 ---
 
-<section class="hero">
-  <div class="hero-scan"></div>
+<section class="relative overflow-hidden">
+  <div class="container-page pt-10 pb-14 md:pt-16 md:pb-24">
+    <div class="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+      <div>
+        <div class="chip chip-mint mb-5">
+          <div class="status-dot"></div>
+          Open to Remote Worldwide
+        </div>
+        <h1 class="text-[clamp(2.6rem,8vw,4.8rem)] font-extrabold leading-[0.95] tracking-[-0.04em]">
+          MAS
+          <span class="block">MUHAMMAD<span class="text-accent-deep">.</span></span>
+        </h1>
+        <p class="mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
+          <strong class="font-bold text-ink">Senior Backend Engineer</strong> building
+          <strong class="font-bold text-ink">.NET, distributed systems &amp; containerized architectures</strong>
+          for Fortune 500 clients —
+          <span class="font-semibold text-accent-deep">Biogen, Sanofi, Shell, Boston Scientific &amp; Sampoerna</span>.
+          13 years of experience, published author, remote-work veteran.
+        </p>
+        <div class="hero-badges mt-6">
+          <span class="badge">.NET Core</span>
+          <span class="badge">C# / Go</span>
+          <span class="badge">Microservices</span>
+          <span class="badge">Docker</span>
+          <span class="badge green">100% Delivery Rate</span>
+          <span class="badge green">8+ Yrs Remote</span>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" class="btn-brutal btn-accent">
+            Get In Touch
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <a href="/portfolio" class="btn-brutal btn-light">View Portfolio</a>
+          <a href="/resume" class="btn-brutal btn-light">Download CV</a>
+        </div>
+        <div class="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div class="card-brutal px-4 py-4 text-center">
+            <div class="stat-num text-2xl font-extrabold text-accent-deep md:text-3xl" data-count="13">0</div>
+            <div class="mt-1 text-[0.7rem] font-semibold uppercase tracking-wide text-ink-mute">Years Exp.</div>
+          </div>
+          <div class="card-brutal px-4 py-4 text-center">
+            <div class="stat-num text-2xl font-extrabold text-accent-deep md:text-3xl" data-count="128">0</div>
+            <div class="mt-1 text-[0.7rem] font-semibold uppercase tracking-wide text-ink-mute">DB Shards</div>
+          </div>
+          <div class="card-brutal px-4 py-4 text-center">
+            <div class="stat-num text-2xl font-extrabold text-accent-deep md:text-3xl" data-count="25" data-suffix="K+">0</div>
+            <div class="mt-1 text-[0.7rem] font-semibold uppercase tracking-wide text-ink-mute">Archives / Mo</div>
+          </div>
+          <div class="card-brutal px-4 py-4 text-center">
+            <div class="stat-num text-2xl font-extrabold text-accent-deep md:text-3xl" data-count="67">0</div>
+            <div class="mt-1 text-[0.7rem] font-semibold uppercase tracking-wide text-ink-mute">Background Jobs</div>
+          </div>
+        </div>
+      </div>
 
-  <svg
-    class="hero-visual"
-    viewBox="0 0 400 400"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="200" cy="200" r="180" stroke="#00c8ff" stroke-width="0.5"></circle>
-    <circle cx="200" cy="200" r="140" stroke="#00c8ff" stroke-width="0.5" stroke-dasharray="4 8"></circle>
-    <circle cx="200" cy="200" r="100" stroke="#00ff9d" stroke-width="0.5"></circle>
-    <circle cx="200" cy="200" r="60" stroke="#00c8ff" stroke-width="0.5" stroke-dasharray="2 6"></circle>
-    <circle cx="200" cy="200" r="20" stroke="#00ff9d" stroke-width="1"></circle>
-    <line x1="200" y1="10" x2="200" y2="390" stroke="#00c8ff" stroke-width="0.3" stroke-dasharray="4 12"></line>
-    <line x1="10" y1="200" x2="390" y2="200" stroke="#00c8ff" stroke-width="0.3" stroke-dasharray="4 12"></line>
-    <rect x="170" y="20" width="60" height="1" fill="#00c8ff"></rect>
-    <rect x="170" y="379" width="60" height="1" fill="#00c8ff"></rect>
-    <rect x="20" y="170" width="1" height="60" fill="#00c8ff"></rect>
-    <rect x="379" y="170" width="1" height="60" fill="#00c8ff"></rect>
-    <circle cx="200" cy="20" r="3" fill="#00c8ff"></circle>
-    <circle cx="200" cy="380" r="3" fill="#00c8ff"></circle>
-    <circle cx="20" cy="200" r="3" fill="#00c8ff"></circle>
-    <circle cx="380" cy="200" r="3" fill="#00c8ff"></circle>
-    <line x1="74" y1="74" x2="326" y2="326" stroke="#00ff9d" stroke-width="0.3" opacity="0.5"></line>
-    <line x1="326" y1="74" x2="74" y2="326" stroke="#00ff9d" stroke-width="0.3" opacity="0.5"></line>
-  </svg>
-
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-eyebrow">Senior Backend Engineer &amp; System Architect · Indonesia</div>
-      <h1 class="hero-name">
-        <span class="glitch" data-text="MAS">MAS</span>
-        <span class="line2">MUHAMMAD</span>
-      </h1>
-    </div>
-    <p class="hero-title">
-      <span class="highlight">.NET · Distributed Systems · Containerized Architectures</span><br />
-      <span class="hl2">11 years</span> building mission-critical backend infrastructure
-      for <span class="highlight">Biogen, Sanofi, Shell, Boston Scientific & Sampoerna</span>.<br />
-      Published author. Remote-work veteran. Currently focused on building AI-integrated tooling and on-device inference pipelines.
-    </p>
-    <div class="hero-badges">
-      <span class="badge">.NET Core</span>
-      <span class="badge">C# / Go</span>
-      <span class="badge">Microservices</span>
-      <span class="badge">Docker</span>
-      <span class="badge green">100% Delivery Rate</span>
-      <span class="badge green">8+ Yrs Remote</span>
-    </div>
-    <div class="hero-cta">
-      <a href="#contact" class="btn-primary" data-section="contact">Get In Touch</a>
-      <a href="/portfolio" class="btn-secondary">View Portfolio</a>
-      <a href="/resume" class="btn-secondary">Download CV</a>
-    </div>
-  </div>
-
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-num">11</div>
-      <div class="stat-label">Years Exp.</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">128</div>
-      <div class="stat-label">DB Shards</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">25K+</div>
-      <div class="stat-label">Archives/Mo</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">67</div>
-      <div class="stat-label">Background Jobs</div>
+      <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+        <div class="card-brutal relative bg-paper p-5 shadow-brutal-lg md:p-6">
+          <div class="flex items-center gap-2 border-b-2 border-ink/10 pb-3">
+            <span class="h-3 w-3 rounded-full border-2 border-ink bg-amber"></span>
+            <span class="h-3 w-3 rounded-full border-2 border-ink bg-mint"></span>
+            <span class="h-3 w-3 rounded-full border-2 border-ink bg-accent"></span>
+            <span class="ml-2 font-mono text-xs text-ink-mute">masmuh@web.id</span>
+          </div>
+          <div class="mt-4 space-y-2 font-mono text-[0.8rem] leading-relaxed md:text-sm">
+            <p class="text-ink-soft">$ whoami</p>
+            <p class="font-semibold text-accent-deep">senior-backend-engineer / system-architect</p>
+            <p class="text-ink-soft">$ cat current-focus.txt</p>
+            <p class="text-ink-soft">AI-integrated tooling · on-device inference pipelines</p>
+            <p class="text-ink-soft">$ ./ship --delivery-rate</p>
+            <p class="font-semibold text-ink">100% <span class="text-ink-mute">// on-time, 0 critical downtime</span></p>
+            <p class="text-ink-soft">$ uptime</p>
+            <p class="text-ink-soft">8+ years remote · <span class="font-semibold text-ink">ID-Surabaya</span></p>
+          </div>
+        </div>
+        <div class="chip absolute -right-3 -top-4 rotate-3 bg-accent text-white shadow-brutal-sm md:-right-6">
+          <i class="bi bi-lightning-charge-fill"></i>
+          13+ yrs
+        </div>
+        <div class="chip absolute -bottom-4 -left-3 -rotate-3 bg-paper shadow-brutal-sm md:-left-6">
+          <i class="bi bi-book-fill text-accent-deep"></i>
+          Author · .NET 10
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<style>
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 120px 60px 60px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+<script>
+  const counters = document.querySelectorAll(".stat-num[data-count]");
+  if (counters.length) {
+    const animate = (el) => {
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || "";
+      let current = 0;
+      const step = Math.max(1, Math.round(target / 50));
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = current + suffix;
+      }, 20);
+    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+    counters.forEach((el) => observer.observe(el));
   }
-
-  .hero-scan {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-    animation: scan 4s ease-in-out infinite;
-  }
-
-  @keyframes scan {
-    0% { top: 0; opacity: 1; }
-    100% { top: 100%; opacity: 0; }
-  }
-
-  .hero-content { max-width: 900px; }
-
-  .hero-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--cyan);
-    margin-bottom: 24px;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  .hero-eyebrow::before {
-    content: '// ';
-    color: var(--muted);
-  }
-
-  .hero-name {
-    font-family: var(--font-display);
-    font-size: clamp(52px, 8vw, 110px);
-    font-weight: 800;
-    line-height: 0.92;
-    letter-spacing: -3px;
-    animation: fadeUp 0.8s 0.1s ease both;
-    color: var(--white);
-  }
-
-  .hero-name .line2 {
-    display: block;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(232, 244, 255, 0.3);
-  }
-
-  .hero-title {
-    margin-top: 32px;
-    font-family: var(--font-mono);
-    font-size: 15px;
-    color: var(--muted);
-    letter-spacing: 1px;
-    animation: fadeUp 0.8s 0.2s ease both;
-    max-width: 600px;
-    line-height: 1.8;
-  }
-
-  .hero-title .highlight { color: var(--cyan); }
-  .hero-title .hl2 { color: var(--green); }
-
-  .hero-cta {
-    margin-top: 52px;
-    display: flex;
-    gap: 16px;
-    animation: fadeUp 0.8s 0.4s ease both;
-  }
-
-  .hero-visual {
-    position: absolute;
-    right: -100px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 600px;
-    height: 600px;
-    opacity: 0.15;
-    animation: rotate-slow 40s linear infinite;
-  }
-
-  @keyframes rotate-slow {
-    to { transform: translateY(-50%) rotate(360deg); }
-  }
-
-  .hero-stats {
-    position: absolute;
-    right: 60px;
-    bottom: 80px;
-    display: flex;
-    gap: 40px;
-    animation: fadeUp 0.8s 0.5s ease both;
-    z-index: 2;
-  }
-
-  .stat { text-align: center; }
-
-  .stat-num {
-    font-family: var(--font-display);
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--cyan);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
-
-  @media (max-width: 768px) {
-    .hero { padding: 100px 24px 60px; }
-
-    .hero-stats {
-      position: relative;
-      right: auto;
-      bottom: auto;
-      margin-top: 40px;
-      justify-content: center;
-    }
-
-    .hero-visual { display: none; }
-  }
-</style>
-
+</script>

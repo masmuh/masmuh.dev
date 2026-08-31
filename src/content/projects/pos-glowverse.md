@@ -1,7 +1,7 @@
 ---
 title: "POS-Glowverse: Distributed Point-of-Sale Ecosystem"
 client: "MS Glow (J99 Corp)"
-date: "February 2024"
+date: "December 2022"
 category: "consulting"
 type: "POS System · Multi-tenant Inventory · Distributed Payments"
 description: "For MS Glow. 1-2M daily transactions. ~80% reduction in manual stock checks. Zero failures at peak load."

@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import "../styles/case-study.css";
 
 interface Props {
 	title?: string;
@@ -8,7 +9,7 @@ interface Props {
 
 const {
 	title = "Mas Muhammad — Senior Backend Engineer",
-	description = "Senior Backend Engineer with 11 years of experience in .NET, distributed systems, and containerized architectures. Built mission-critical systems for Biogen, Sanofi, Shell, Boston Scientific & Sampoerna.",
+	description = "Senior Backend Engineer with 13 years of experience in .NET, distributed systems, and containerized architectures. Built mission-critical systems for Biogen, Sanofi, Shell, Boston Scientific & Sampoerna.",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -19,12 +20,14 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="author" content="Mas Muhammad" />
+		<meta name="color-scheme" content="light" />
+		<meta name="theme-color" content="#f6f8fb" />
 		<link rel="canonical" href={canonicalURL.href} />
 
 		<!-- Open Graph -->
@@ -47,7 +50,7 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
 			rel="stylesheet"
 		/>
 
@@ -59,7 +62,7 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
 			"jobTitle": "Senior Backend Engineer",
 			"url": "https://masmuh.web.id",
 			"image": ogImageURL.href,
-			"description": "Senior Backend Engineer with 11 years of experience specializing in .NET, distributed systems, and containerized backend architectures.",
+			"description": "Senior Backend Engineer with 13 years of experience specializing in .NET, distributed systems, and containerized backend architectures.",
 			"sameAs": [
 				"https://linkedin.com/in/masmuh",
 				"https://github.com/masmuh",
@@ -76,7 +79,7 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
 			},
 			"knowsAbout": [
 				".NET Core", "C#", "Go", "Distributed Systems", "Microservices",
-				"Docker", "Kubernetes", "Clean Architecture", "CQRS",
+				"Docker", "Clean Architecture", "CQRS",
 				"SQL Server", "PostgreSQL", "MongoDB"
 			],
 			"nationality": {
@@ -84,32 +87,11 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
 				"name": "Indonesia"
 			}
 		})} />
-
-		<script is:inline>
-			(function() {
-				const stored = localStorage.getItem("theme");
-				const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-				if (stored === "light" || (!stored && !prefersDark)) {
-					document.documentElement.classList.add("light");
-				}
-			})();
-		</script>
 	</head>
 	<body>
 		<slot />
 
 		<script>
-			// THEME TOGGLE
-			function toggleTheme() {
-				document.documentElement.classList.toggle("light");
-				localStorage.setItem(
-					"theme",
-					document.documentElement.classList.contains("light") ? "light" : "dark"
-				);
-			}
-			document.getElementById("themeToggle")?.addEventListener("click", toggleTheme);
-			document.getElementById("mobileThemeToggle")?.addEventListener("click", toggleTheme);
-
 			// MOBILE NAV
 			const hamburger = document.getElementById("navHamburger");
 			const mobileNav = document.getElementById("mobileNav");
@@ -142,7 +124,7 @@ const ogImageURL = new URL('/og-image.png', Astro.site);
 			if (reveals.length) {
 				const observer = new IntersectionObserver(
 					(entries) => {
-						entries.forEach((entry, i) => {
+						entries.forEach((entry) => {
 							if (entry.isIntersecting) {
 								setTimeout(
 									() => entry.target.classList.add("visible"),

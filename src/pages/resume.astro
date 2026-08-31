@@ -1,22 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Resume — Mas Muhammad" description="Download or print the resume of Mas Muhammad, Senior Backend Engineer with 11 years of experience in .NET, distributed systems, and containerized architectures.">
-  <div class="resume-page">
-    <div class="resume-actions">
-      <button class="resume-btn" id="printBtn">📄 Download as PDF</button>
-      <a href="/" class="resume-btn resume-btn-secondary">← Back to Home</a>
-    </div>
-    <div class="resume-hint">Tip: In the print dialog, select <strong>"Save as PDF"</strong> as the destination</div>
+<Layout title="Resume — Mas Muhammad" description="Download or print the resume of Mas Muhammad, Senior Backend Engineer with 13 years of experience in .NET, distributed systems, and containerized architectures.">
+  <Nav variant="default" activePath="/resume" />
 
-    <div class="resume-sheet" id="resumeSheet">
-      <header class="resume-header">
+  <main class="container-page pt-10 pb-4 md:pt-14">
+    <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+      <a href="/" class="btn-brutal btn-light !px-4 !py-2 text-sm">
+        <i class="bi bi-arrow-left"></i>
+        Back to Home
+      </a>
+      <button class="btn-brutal btn-accent !px-4 !py-2 text-sm" id="printBtn">
+        <i class="bi bi-printer-fill"></i>
+        Download as PDF
+      </button>
+    </div>
+    <div class="mb-6 text-right font-mono text-xs text-ink-mute">
+      Tip: In the print dialog, select <strong class="text-accent-deep">"Save as PDF"</strong> as the destination
+    </div>
+
+    <div class="resume-sheet card-brutal bg-paper p-6 shadow-brutal md:p-12" id="resumeSheet">
+      <header class="resume-header flex flex-col justify-between gap-4 border-b-2 border-accent pb-6 md:flex-row md:items-start">
         <div>
-          <h1 class="resume-name">Mas Muhammad</h1>
-          <div class="resume-role">Senior Backend Engineer</div>
+          <h1 class="resume-name text-3xl font-extrabold tracking-tight md:text-4xl">Mas Muhammad</h1>
+          <div class="resume-role mt-1 font-mono text-xs font-bold uppercase tracking-[0.15em] text-accent-deep">
+            Senior Backend Engineer
+          </div>
         </div>
-        <div class="resume-contact">
+        <div class="resume-contact font-mono text-xs leading-loose text-ink-soft md:text-right">
           <div><a href="mailto:masmuh@engineer.com" style="color:inherit;text-decoration:none">masmuh@engineer.com</a></div>
           <div><a href="https://linkedin.com/in/masmuh" style="color:inherit;text-decoration:none">linkedin.com/in/masmuh</a></div>
           <div><a href="https://github.com/masmuh" style="color:inherit;text-decoration:none">github.com/masmuh</a></div>
@@ -24,410 +38,174 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </header>
 
-      <section class="resume-section">
-        <h2 class="resume-section-title">Summary</h2>
-        <p class="resume-body">Senior Backend Engineer with 11 years of experience — including 2 years as Technical Lead — specializing in the .NET ecosystem, distributed systems, and containerized backend architectures. Proven track record delivering mission-critical, high-availability systems for multinational clients including Sanofi, Shell, Boston Scientific, Biogen, and Sampoerna. Recently delivered Kano POS (Laravel 13 multi-tenant POS with 259 API endpoints) and Hermes Agents AI test automation. Published author of <em>Mastering .NET 10: Modern Backend Development</em>. Remote-work veteran (8+ years).</p>
+      <section class="resume-section mt-7">
+        <h2 class="resume-section-title mb-3 border-b border-ink/10 pb-2 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-accent-deep">
+          Summary
+        </h2>
+        <p class="resume-body text-[0.9rem] leading-relaxed text-ink-soft">Senior Backend Engineer with 13 years of experience — including 2 years as Technical Lead — specializing in the .NET ecosystem, distributed systems, and containerized backend architectures. Proven track record delivering mission-critical, high-availability systems for multinational clients including Sanofi, Shell, Boston Scientific, Biogen, and Sampoerna. Recently delivered Kano POS (Laravel 13 multi-tenant POS with 259 API endpoints) and Hermes Agents AI test automation. Published author of <em>Mastering .NET 10: Modern Backend Development</em>. Remote-work veteran (8+ years).</p>
       </section>
 
-      <section class="resume-section">
-        <h2 class="resume-section-title">Key Achievements</h2>
-        <ul class="resume-list">
-          <li>Architected backend processing 25,000+ ZIP archives/month across 128 database shards with 67 orchestrated background jobs — zero critical downtime for 4+ years</li>
-          <li>Built high-performance SAP middleware for Boston Scientific (DRMS) and Biogen — reducing order-to-ERP cycle from 24 hrs to 5 min, reconciliation errors -90%</li>
-          <li>Engineered full SAP ByDesign ERP automation — eliminating ~20 hrs/week of manual data entry</li>
-          <li>Led refactor from monolithic legacy codebase to modular .NET Core — reducing deployment cycles from days to hours</li>
-          <li>Authored organization-wide Clean Architecture Blueprint — reduced engineer onboarding time by ~50%</li>
-          <li>Published <em>Mastering .NET 10: Modern Backend Development</em> on Amazon — covering Cloud-Native patterns, Multi-Tenancy, CQRS, and Kubernetes orchestration</li>
+      <section class="resume-section mt-7">
+        <h2 class="resume-section-title mb-3 border-b border-ink/10 pb-2 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-accent-deep">
+          Key Achievements
+        </h2>
+        <ul class="resume-list space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+          <li class="relative pl-5">Architected backend processing 25,000+ ZIP archives/month across 128 database shards with 67 orchestrated background jobs — zero critical downtime for 4+ years</li>
+          <li class="relative pl-5">Built high-performance SAP middleware for Boston Scientific (DRMS) and Biogen — reducing order-to-ERP cycle from 24 hrs to 5 min, reconciliation errors -90%</li>
+          <li class="relative pl-5">Engineered full SAP ByDesign ERP automation — eliminating ~20 hrs/week of manual data entry</li>
+          <li class="relative pl-5">Led refactor from monolithic legacy codebase to modular .NET Core — reducing deployment cycles from days to hours</li>
+          <li class="relative pl-5">Authored organization-wide Clean Architecture Blueprint — reduced engineer onboarding time by ~50%</li>
+          <li class="relative pl-5">Published <em>Mastering .NET 10: Modern Backend Development</em> on Amazon — covering Cloud-Native patterns, Multi-Tenancy, CQRS, and Event Sourcing</li>
+          <li class="relative pl-5">Built an AI-driven QA automation pipeline for Kano POS — every GitLab issue labeled "Done" is tested end-to-end (UI + API 1:1), auto-closed on pass and reopened with screenshot evidence on failure: 39 standardized test cases, 6+ bugs caught before release</li>
         </ul>
       </section>
 
-      <section class="resume-section">
-        <h2 class="resume-section-title">Experience</h2>
+      <section class="resume-section mt-7">
+        <h2 class="resume-section-title mb-4 border-b border-ink/10 pb-2 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-accent-deep">
+          Experience
+        </h2>
 
-        <div class="resume-job">
-          <div class="resume-job-header">
+        <div class="resume-job mb-5">
+          <div class="resume-job-header mb-2 flex flex-col justify-between gap-1 md:flex-row md:items-start">
             <div>
-              <div class="resume-job-title">Senior Backend Engineer &amp; Architect</div>
-              <div class="resume-job-company">Kano Solution · Remote</div>
+              <div class="resume-job-title text-base font-bold">Senior Backend Engineer &amp; Architect</div>
+              <div class="resume-job-company mt-0.5 font-mono text-xs font-semibold text-accent-deep">Kano Solution · Remote</div>
             </div>
-            <div class="resume-job-date">Apr 2020 — Present</div>
+            <div class="resume-job-date font-mono text-[0.7rem] uppercase tracking-wide text-ink-mute">Apr 2020 — Present</div>
           </div>
-          <ul class="resume-list">
-            <li>Architected a custom high-throughput distributed backend managing 67 background jobs and 128 database shards, processing 25,000+ complex archives/month — zero critical downtime for 4+ years</li>
-            <li>Authored organization-wide Clean Architecture Blueprint — reduced engineer onboarding time by ~50%, standardized across 3 product teams</li>
-            <li>Led team of 3 developers as Technical Lead for Project CRA (Sampoerna) — delivered on-time within 6-month timeline</li>
-            <li>Refactored monolithic legacy codebase into modular .NET Core — reducing deployment cycle from days to hours</li>
-            <li>Maintained 5+ third-party API integrations (SAP ERP, Xendit, Shipper) across concurrent production systems</li>
-            <li>Built Go-based data staging engine for Project Bagong with MongoDB Aggregation and distributed cron orchestration</li>
+          <ul class="resume-list space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+            <li class="relative pl-5">Architected a custom high-throughput distributed backend managing 67 background jobs and 128 database shards, processing 25,000+ complex archives/month — zero critical downtime for 4+ years</li>
+            <li class="relative pl-5">Authored organization-wide Clean Architecture Blueprint — reduced engineer onboarding time by ~50%, standardized across 3 product teams</li>
+            <li class="relative pl-5">Led team of 3 developers as Technical Lead for Project CRA (Sampoerna) — delivered on-time within 6-month timeline</li>
+            <li class="relative pl-5">Refactored monolithic legacy codebase into modular .NET Core — reducing deployment cycle from days to hours</li>
+            <li class="relative pl-5">Maintained 5+ third-party API integrations (SAP ERP, Xendit, Shipper) across concurrent production systems</li>
+            <li class="relative pl-5">Built Go-based data staging engine for Project Bagong with MongoDB Aggregation and distributed cron orchestration</li>
+            <li class="relative pl-5">Automated the QA lifecycle: AI-driven GitLab pipeline testing every "Done" issue (UI + API 1:1) with screenshot evidence and auto close/reopen workflows — 39 standardized test cases, 6+ bugs caught</li>
           </ul>
         </div>
 
-        <div class="resume-job">
-          <div class="resume-job-header">
+        <div class="resume-job mb-5">
+          <div class="resume-job-header mb-2 flex flex-col justify-between gap-1 md:flex-row md:items-start">
             <div>
-              <div class="resume-job-title">Software Engineer</div>
-              <div class="resume-job-company">Wiyasa / EACIIT · Remote</div>
+              <div class="resume-job-title text-base font-bold">Software Engineer</div>
+              <div class="resume-job-company mt-0.5 font-mono text-xs font-semibold text-accent-deep">EACIIT · Remote</div>
             </div>
-            <div class="resume-job-date">Oct 2015 — Mar 2020</div>
+            <div class="resume-job-date font-mono text-[0.7rem] uppercase tracking-wide text-ink-mute">Oct 2015 — Mar 2020</div>
           </div>
-          <ul class="resume-list">
-            <li>Solely responsible for architecture, development, and maintenance of backend services for Shell across 3+ regional business units</li>
-            <li>Led SAP ByDesign ERP integration — automating critical workflows and eliminating ~20 hrs/week of manual data entry</li>
-            <li>Built high-performance SAP middleware for Boston Scientific &amp; Biogen — order-to-ERP: 24 hrs → 5 min, reconciliation errors -90%</li>
-            <li>Implemented PCI-compliant Xendit payment flow and Shipper logistics API for live shipment tracking</li>
-            <li>Built automated Power BI data pipeline serving 10+ stakeholders with near-real-time dashboards</li>
-            <li>SQL Server &amp; MongoDB performance overhaul — query latency -70% under peak transactional loads</li>
+          <ul class="resume-list space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+            <li class="relative pl-5">Solely responsible for architecture, development, and maintenance of backend services for Shell across 3+ regional business units</li>
+            <li class="relative pl-5">Led SAP ByDesign ERP integration — automating critical workflows and eliminating ~20 hrs/week of manual data entry</li>
+            <li class="relative pl-5">Built high-performance SAP middleware for Boston Scientific &amp; Biogen — order-to-ERP: 24 hrs → 5 min, reconciliation errors -90%</li>
+            <li class="relative pl-5">Implemented PCI-compliant Xendit payment flow and Shipper logistics API for live shipment tracking</li>
+            <li class="relative pl-5">Built automated Power BI data pipeline serving 10+ stakeholders with near-real-time dashboards</li>
+            <li class="relative pl-5">SQL Server &amp; MongoDB performance overhaul — query latency -70% under peak transactional loads</li>
           </ul>
         </div>
 
-        <div class="resume-job">
-          <div class="resume-job-header">
+        <div class="resume-job mb-5">
+          <div class="resume-job-header mb-2 flex flex-col justify-between gap-1 md:flex-row md:items-start">
             <div>
-              <div class="resume-job-title">Technical Lead / Software Engineer</div>
-              <div class="resume-job-company">Quantum Leap · Surabaya</div>
+              <div class="resume-job-title text-base font-bold">Technical Lead / Software Engineer</div>
+              <div class="resume-job-company mt-0.5 font-mono text-xs font-semibold text-accent-deep">Quantum Leap · Surabaya</div>
             </div>
-            <div class="resume-job-date">Nov 2014 — Sep 2015</div>
+            <div class="resume-job-date font-mono text-[0.7rem] uppercase tracking-wide text-ink-mute">Nov 2014 — Sep 2015</div>
           </div>
-          <ul class="resume-list">
-            <li>Delivered custom ERP modules for 4 clients spanning manufacturing and trading sectors</li>
+          <ul class="resume-list space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+            <li class="relative pl-5">Delivered custom ERP modules for 4 clients spanning manufacturing and trading sectors</li>
           </ul>
         </div>
 
-        <div class="resume-job">
-          <div class="resume-job-header">
+        <div class="resume-job mb-5">
+          <div class="resume-job-header mb-2 flex flex-col justify-between gap-1 md:flex-row md:items-start">
             <div>
-              <div class="resume-job-title">Full Stack Developer</div>
-              <div class="resume-job-company">Infomedia · Jakarta</div>
+              <div class="resume-job-title text-base font-bold">Full Stack Developer</div>
+              <div class="resume-job-company mt-0.5 font-mono text-xs font-semibold text-accent-deep">Infomedia · Jakarta</div>
             </div>
-            <div class="resume-job-date">Jul 2014 — Oct 2014</div>
+            <div class="resume-job-date font-mono text-[0.7rem] uppercase tracking-wide text-ink-mute">Jul 2014 — Oct 2014</div>
           </div>
-          <ul class="resume-list">
-            <li>Solely designed and implemented 4 interconnected business systems for Sanofi (Sales Incentive, Inventory, Registration, Scrap Management)</li>
+          <ul class="resume-list space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+            <li class="relative pl-5">Solely designed and implemented 4 interconnected business systems for Sanofi (Sales Incentive, Inventory, Registration, Scrap Management)</li>
           </ul>
         </div>
 
-        <div class="resume-job">
-          <div class="resume-job-header">
+        <div class="resume-job mb-5">
+          <div class="resume-job-header mb-2 flex flex-col justify-between gap-1 md:flex-row md:items-start">
             <div>
-              <div class="resume-job-title">Backend Developer</div>
-              <div class="resume-job-company">Solusi247 · Jakarta</div>
+              <div class="resume-job-title text-base font-bold">Backend Developer</div>
+              <div class="resume-job-company mt-0.5 font-mono text-xs font-semibold text-accent-deep">Solusi247 · Jakarta</div>
             </div>
-            <div class="resume-job-date">Jun 2013 — Jul 2014</div>
+            <div class="resume-job-date font-mono text-[0.7rem] uppercase tracking-wide text-ink-mute">Jun 2013 — Jul 2014</div>
           </div>
-          <ul class="resume-list">
-            <li>Managed backend services for Telkomsel broadcast system — high-volume SMS gateway processing thousands of messages daily</li>
-            <li>Built COMMET middleware (Oracle PL/SQL) for real-time CUG provisioning for millions of MSISDNs</li>
-            <li>Engineered Teman Telkomsel (Web-to-SMS Gateway) with AES-256 PII encryption</li>
-            <li>Intensive PL/SQL optimization for OLTP/OLAP workloads — reducing report generation time by ~50%</li>
+          <ul class="resume-list space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+            <li class="relative pl-5">Managed backend services for Telkomsel broadcast system — high-volume SMS gateway processing thousands of messages daily</li>
+            <li class="relative pl-5">Built COMMET middleware (Oracle PL/SQL) for real-time CUG provisioning for millions of MSISDNs</li>
+            <li class="relative pl-5">Engineered Teman Telkomsel (Web-to-SMS Gateway) with AES-256 PII encryption</li>
+            <li class="relative pl-5">Intensive PL/SQL optimization for OLTP/OLAP workloads — reducing report generation time by ~50%</li>
           </ul>
         </div>
       </section>
 
-      <section class="resume-section">
-        <h2 class="resume-section-title">Tech Stack</h2>
-        <div class="resume-skills">
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">Languages:</span>
-            <span>C#, .NET 6/8/10, ASP.NET Core, Go, Laravel 13 / PHP, TypeScript, Oracle PL/SQL</span>
-          </div>
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">Architecture:</span>
-            <span>Clean Architecture, Microservices, CQRS, Event Sourcing, DDD, Multi-Tenancy</span>
-          </div>
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">Databases:</span>
-            <span>SQL Server, PostgreSQL, MongoDB, Oracle, Redis, InfluxDB, LiteDB</span>
-          </div>
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">Infrastructure:</span>
-            <span>Docker, Kubernetes/GKE, AWS S3, Nginx, GitHub Actions, GitLab CI</span>
-          </div>
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">AI/ML Tooling:</span>
-            <span>Whisper.cpp, OpenRouter LLM API, 9Router AI Gateway, Autonomous Pipelines, On-device Inference, Tauri v2</span>
-          </div>
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">Frontend:</span>
-            <span>React.js, Vue.js, Tauri/Wails, .NET MAUI, SignalR</span>
-          </div>
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">Integrations:</span>
-            <span>SAP ByDesign (OData/SOAP), Xendit (PCI), Shipper, E-Faktur, Bank Mandiri, Power BI</span>
-          </div>
-
-          <div class="resume-skill-group">
-            <span class="resume-skill-cat">Observability:</span>
-            <span>Grafana, InfluxDB, NLog, Structured Logging</span>
-          </div>
+      <section class="resume-section mt-7">
+        <h2 class="resume-section-title mb-3 border-b border-ink/10 pb-2 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-accent-deep">
+          Tech Stack
+        </h2>
+        <div class="resume-skills space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+          <div class="resume-skill-group"><span class="resume-skill-cat font-mono font-bold text-accent-deep">Languages:</span> C#, .NET 6/8/10, ASP.NET Core, Go, Laravel 13 / PHP, TypeScript, Oracle PL/SQL</div>
+          <div class="resume-skill-group"><span class="resume-skill-cat font-mono font-bold text-accent-deep">Architecture:</span> Clean Architecture, Microservices, CQRS, Event Sourcing, DDD, Multi-Tenancy</div>
+          <div class="resume-skill-group"><span class="resume-skill-cat font-mono font-bold text-accent-deep">Databases:</span> SQL Server, PostgreSQL, MongoDB, Oracle, Redis, InfluxDB, LiteDB</div>
+          <div class="resume-skill-group"><span class="resume-skill-cat font-mono font-bold text-accent-deep">Infrastructure:</span> Docker, AWS S3, Nginx, GitHub Actions, GitLab CI</div>
+          <div class="resume-skill-group"><span class="resume-skill-cat font-mono font-bold text-accent-deep">AI/ML Tooling:</span> Whisper.cpp, OpenRouter LLM API, 9Router AI Gateway, Autonomous Pipelines, On-device Inference, Tauri v2</div>
+          <div class="resume-skill-group"><span class="resume-skill-cat font-mono font-bold text-accent-deep">Frontend:</span> React.js, Vue.js, Tauri/Wails, .NET MAUI, SignalR</div>
+          <div class="resume-skill-group"><span class="resume-skill-cat font-mono font-bold text-accent-deep">Integrations:</span> SAP ByDesign (OData/SOAP), Xendit (PCI), Shipper, E-Faktur, Bank Mandiri, Power BI</div>
+          <div class="resume-skill-group"><span class="resume-skill-cat font-mono font-bold text-accent-deep">Observability:</span> Grafana, InfluxDB, NLog, Structured Logging</div>
         </div>
       </section>
 
-      <section class="resume-section">
-        <h2 class="resume-section-title">Education</h2>
-        <ul class="resume-list">
-          <li><strong>B.CS (S.Kom)</strong> — Computer Science, Universitas Muhammadiyah Malang. GPA: 3.39 / 4.0. Graduated May 2013.</li>
+      <section class="resume-section mt-7">
+        <h2 class="resume-section-title mb-3 border-b border-ink/10 pb-2 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-accent-deep">
+          Education
+        </h2>
+        <ul class="resume-list space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+          <li class="relative pl-5"><strong class="font-bold text-ink">B.CS (S.Kom)</strong> — Computer Science, Universitas Muhammadiyah Malang. GPA: 3.39 / 4.0. Graduated May 2013.</li>
         </ul>
       </section>
 
-      <section class="resume-section">
-        <h2 class="resume-section-title">Languages</h2>
-        <ul class="resume-list">
-          <li><strong>Bahasa Indonesia</strong> — Native</li>
-          <li><strong>English</strong> — Professional Working Proficiency (8+ years daily async collaboration across global teams)</li>
+      <section class="resume-section mt-7">
+        <h2 class="resume-section-title mb-3 border-b border-ink/10 pb-2 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-accent-deep">
+          Languages
+        </h2>
+        <ul class="resume-list space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+          <li class="relative pl-5"><strong class="font-bold text-ink">Bahasa Indonesia</strong> — Native</li>
+          <li class="relative pl-5"><strong class="font-bold text-ink">English</strong> — Professional Working Proficiency (8+ years daily async collaboration across global teams)</li>
         </ul>
       </section>
 
-      <section class="resume-section">
-        <h2 class="resume-section-title">Publication</h2>
-        <ul class="resume-list">
-          <li><strong>Mastering .NET 10: Modern Backend Development</strong> — Amazon, 2024. Covers Cloud-Native patterns, Multi-Tenancy, CQRS, Event Sourcing, and Kubernetes orchestration.</li>
+      <section class="resume-section mt-7">
+        <h2 class="resume-section-title mb-3 border-b border-ink/10 pb-2 font-mono text-[0.7rem] font-bold uppercase tracking-[0.2em] text-accent-deep">
+          Publication
+        </h2>
+        <ul class="resume-list space-y-1.5 text-[0.9rem] leading-relaxed text-ink-soft">
+          <li class="relative pl-5"><strong class="font-bold text-ink">Mastering .NET 10: Modern Backend Development</strong> — Amazon, 2024. Covers Cloud-Native patterns, Multi-Tenancy, CQRS, and Event Sourcing.</li>
         </ul>
       </section>
 
-      <footer class="resume-footer">
-        Full portfolio &amp; case studies: <strong><a href="https://masmuh.web.id/portfolio" style="color:inherit;text-decoration:none">masmuh.web.id/portfolio</a></strong>
+      <footer class="resume-footer mt-8 border-t border-ink/10 pt-4 font-mono text-xs text-ink-soft">
+        Full portfolio &amp; case studies: <strong class="text-accent-deep"><a href="https://masmuh.web.id/portfolio" style="color:inherit;text-decoration:none">masmuh.web.id/portfolio</a></strong>
       </footer>
     </div>
-  </div>
+  </main>
+
+  <Footer />
 </Layout>
 
-<style is:global>
-  .resume-page {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 100px 24px 60px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .resume-actions {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 32px;
-    justify-content: flex-end;
-  }
-
-  .resume-hint {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--muted);
-    text-align: right;
-    margin-bottom: 24px;
-    letter-spacing: 1px;
-    opacity: 0.7;
-  }
-
-  .resume-hint strong {
-    color: var(--cyan);
-  }
-
-  .resume-btn {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 12px 24px;
-    background: var(--cyan);
-    color: var(--bg);
-    text-decoration: none;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-  }
-
-  .resume-btn:hover {
-    background: var(--green);
-    transform: translateY(-2px);
-  }
-
-  .resume-btn-secondary {
-    background: transparent;
-    border: 1px solid var(--border-bright);
-    color: var(--cyan);
-    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-  }
-
-  .resume-btn-secondary:hover {
-    background: var(--cyan-glow);
-  }
-
-  .resume-sheet {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 48px;
-  }
-
-  .resume-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 2px solid var(--cyan);
-  }
-
-  .resume-name {
-    font-family: var(--font-display);
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--white);
-    letter-spacing: -1px;
-    margin-bottom: 4px;
-  }
-
-  .resume-role {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--cyan);
-  }
-
-  .resume-contact {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    text-align: right;
-    line-height: 1.8;
-  }
-
-  .resume-section {
-    margin-bottom: 28px;
-  }
-
-  .resume-section-title {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--cyan);
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .resume-body {
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.8;
-  }
-
-  .resume-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .resume-list li {
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.7;
-    padding-left: 16px;
-    margin-bottom: 6px;
-    position: relative;
-  }
-
+<style>
   .resume-list li::before {
-    content: '▸';
+    content: "▸";
     position: absolute;
     left: 0;
-    color: var(--cyan);
-    font-size: 10px;
-  }
-
-  .resume-list strong {
-    color: var(--white);
-    font-weight: 400;
-  }
-
-  .resume-job {
-    margin-bottom: 20px;
-  }
-
-  .resume-job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 8px;
-  }
-
-  .resume-job-title {
-    font-family: var(--font-display);
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--white);
-  }
-
-  .resume-job-company {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--green);
-    letter-spacing: 1px;
-  }
-
-  .resume-job-date {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .resume-skills {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .resume-skill-group {
-    font-family: var(--font-body);
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  .resume-skill-cat {
-    color: var(--cyan);
-    font-family: var(--font-mono);
-    font-weight: 600;
-  }
-
-  .resume-footer {
-    margin-top: 32px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-  }
-
-  .resume-footer strong {
-    color: var(--cyan);
-  }
-
-  @media (max-width: 768px) {
-    .resume-header {
-      flex-direction: column;
-      gap: 16px;
-    }
-    .resume-contact {
-      text-align: left;
-    }
-    .resume-job-header {
-      flex-direction: column;
-      gap: 2px;
-    }
-    .resume-sheet {
-      padding: 24px;
-    }
-    .resume-actions {
-      justify-content: center;
-    }
+    color: var(--color-accent-deep);
+    font-size: 0.65rem;
+    top: 0.35em;
   }
 
   @page {
@@ -435,7 +213,8 @@ import Layout from "../layouts/Layout.astro";
   }
 
   @media print {
-    html, body {
+    html,
+    body {
       background: white !important;
       color: #1a1a1a !important;
       -webkit-print-color-adjust: exact;
@@ -443,18 +222,10 @@ import Layout from "../layouts/Layout.astro";
       font-size: 9.5pt;
       line-height: 1.35;
     }
-    body::before, body::after {
+    header.sticky,
+    footer,
+    #printBtn {
       display: none !important;
-    }
-    .cursor, .cursor-ring {
-      display: none !important;
-    }
-    nav, .resume-actions, .mobile-overlay, .mobile-nav, .nav-hamburger {
-      display: none !important;
-    }
-    .resume-page {
-      padding: 0 !important;
-      max-width: none !important;
     }
     .resume-sheet {
       border: none !important;
@@ -463,7 +234,6 @@ import Layout from "../layouts/Layout.astro";
       box-shadow: none !important;
       page-break-after: avoid;
     }
-
     .resume-section {
       page-break-inside: avoid;
       margin-bottom: 14px;
@@ -489,20 +259,19 @@ import Layout from "../layouts/Layout.astro";
       padding-top: 10px;
       border-top-color: #cccccc !important;
     }
-
     .resume-name {
       color: #0a0a0a !important;
       font-size: 22pt !important;
     }
-    .resume-role, .resume-section-title, .resume-skill-cat {
+    .resume-role,
+    .resume-section-title,
+    .resume-skill-cat {
       color: #0066cc !important;
     }
-    .resume-contact, .resume-body, .resume-list li, .resume-skill-group {
+    .resume-body,
+    .resume-list li,
+    .resume-skill-group {
       color: #333333 !important;
-    }
-    .resume-body {
-      font-size: 9.5pt !important;
-      line-height: 1.4 !important;
     }
     .resume-job-title {
       color: #0a0a0a !important;
@@ -512,48 +281,24 @@ import Layout from "../layouts/Layout.astro";
       color: #0066cc !important;
       font-size: 9pt !important;
     }
-    .resume-job-date {
-      font-size: 8pt !important;
-    }
     .resume-section-title {
       font-size: 9pt !important;
-      margin-bottom: 6px !important;
-      padding-bottom: 4px !important;
       border-bottom-color: #cccccc !important;
-    }
-    .resume-list li {
-      font-size: 9.5pt !important;
-      line-height: 1.35 !important;
-      padding-left: 12px !important;
     }
     .resume-list li::before {
       color: #0066cc !important;
-      font-size: 8px !important;
     }
     .resume-list strong {
       color: #0a0a0a !important;
     }
-    .resume-skills {
-      gap: 3px !important;
-    }
-    .resume-skill-group {
-      font-size: 9pt !important;
-      line-height: 1.4 !important;
-    }
-    .resume-footer {
-      font-size: 9pt !important;
-    }
     .resume-footer strong {
       color: #0066cc !important;
-    }
-    .resume-btn, .resume-btn-secondary {
-      display: none !important;
     }
   }
 </style>
 
 <script is:inline>
-  document.getElementById('printBtn')?.addEventListener('click', function() {
+  document.getElementById("printBtn")?.addEventListener("click", function () {
     window.print();
   });
 </script>

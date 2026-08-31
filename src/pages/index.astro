@@ -1,14 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
-import SectionSwitcher from "../components/home/SectionSwitcher.astro";
+import Footer from "../components/Footer.astro";
+import HeroSection from "../components/home/HeroSection.astro";
+import AboutSection from "../components/home/AboutSection.astro";
+import SkillsSection from "../components/home/SkillsSection.astro";
+import ExperienceSection from "../components/home/ExperienceSection.astro";
+import ContactSection from "../components/home/ContactSection.astro";
 ---
 
 <Layout>
   <Nav variant="home" />
-
-  <!-- SECTION SWITCHER -->
-  <SectionSwitcher />
+  <main>
+    <HeroSection />
+    <AboutSection />
+    <SkillsSection />
+    <ExperienceSection />
+    <ContactSection />
+  </main>
+  <Footer />
 </Layout>
-
-

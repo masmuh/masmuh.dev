@@ -23,8 +23,8 @@ As the sole architect, the objective was to build a production-grade financial s
 - **42 database migrations** — full PostgreSQL schema
 - **44 REST API controllers** — 259 auto-documented endpoints
 - **67 service classes** — business logic layer
-- **50 unit tests** — covering critical paths
-- **95 end-to-end test scenarios** via Hermes Agents automation
+- **39 standardized test cases** — per-page QA documents (8-column format: Step, Desc, Iteration, Expected, Actual, Result, Evidence, Defect ID), covering UI/UX & API
+- **Automated QA pipeline** — hourly GitLab-driven testing of every issue labeled Done: UI + API 1:1 verification, screenshot evidence, auto close/reopen/comment
 
 ## 3. Architecture Decisions
 
@@ -44,7 +44,7 @@ As the sole architect, the objective was to build a production-grade financial s
 - Auto-generated Bruno + Postman API collections via custom PowerShell script
 - Event-driven sync/async separation for data integrity within DB transactions
 - Template schema for rapid tenant onboarding (< 5 seconds provisioning)
-- Hermes Agents AI automation for 95 end-to-end test scenarios
+- Hermes Agents AI automation: hourly GitLab-driven QA pipeline (test → comment → complete → reopen) with standardized test-case documentation
 
 ## 5. Business Impact
 

@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
-    "@rollup/rollup-linux-x64-gnu": "^4.62.0",
+    "@tailwindcss/vite": "^4.3.3",
     "astro": "^6.1.10",
-    "echarts": "^6.0.0"
+    "bootstrap-icons": "^1.13.1",
+    "echarts": "^6.0.0",
+    "tailwindcss": "^4.3.3"
   }
 }
